@@ -1,8 +1,8 @@
 ################################# Default configuration ###################
-baseURL = "https://rotational.io"
+baseURL = "https://rotational.github.io"
 title = "Rotational"
 theme = "meghna-hugo"
-themesDir = "../.."
+# themesDir = "../.."
 # post pagination
 paginate = "6"
 # post excerpt
