@@ -1,0 +1,11 @@
+############################# call to action ##############################
+cta:
+  enable : true
+  bg_image : "images/backgrounds/clouds.jpg"
+  bg_image_webp : "images/backgrounds/clouds.webp"
+  title : "Drawing Strength from Scale"
+  content : "Supporting geo-distributed companies, creators, and communities in the modern digital landscape."
+  button:
+    enable : true
+    label : "Build on us"
+    link : "#contact"

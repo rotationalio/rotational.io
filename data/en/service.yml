@@ -1,0 +1,19 @@
+################################# Service #################################
+service:
+  enable : true
+  title : Our Services
+  service_item :
+    # service item loop
+    - name : Contracting
+      icon : ti-support # themify icon pack : https://themify.me/themify-icons
+      content : Data Systems, Data Engineering, Data Science, ML
+
+    # service item loop
+    - name : Data Products
+      icon : ti-server # themify icon pack : https://themify.me/themify-icons
+      content : RotationalFS, Alia, GDX, Geodistributed.Systems
+
+    # service item loop
+    - name : Open Source
+      icon : ti-star # themify icon pack : https://themify.me/themify-icons
+      content : Scikit-Yellowbrick, TRISA, Baleen, Radish, Tidal

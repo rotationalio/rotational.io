@@ -1,0 +1,12 @@
+############################### Banner ################################
+banner:
+  enable : true
+  bg_image_webp : "images/backgrounds/NASA_NEurope.webp"
+  bg_image : "images/backgrounds/NASA_NEurope.jpg"
+  icon : "" # themify icon pack : https://themify.me/themify-icons
+  title : "Rotational Labs"
+  content : "Données qui tournent comme le monde"
+  button:
+    enable : true
+    label : "Explore Us"
+    link : "#services"
