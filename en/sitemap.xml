@@ -3,23 +3,8 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://rotationalio.github.io/blog/simple-blog-post-8/</loc>
-    <lastmod>2018-09-12T14:51:12+06:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="fr"
-                href="https://rotationalio.github.io/fr/blog/simple-blog-post-8/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://rotationalio.github.io/blog/simple-blog-post-8/"
-                />
-  </url>
-  
-  <url>
     <loc>https://rotationalio.github.io/blog/</loc>
-    <lastmod>2018-09-12T14:51:12+06:00</lastmod>
+    <lastmod>2021-01-21T17:45:35+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
@@ -33,23 +18,23 @@
   </url>
   
   <url>
-    <loc>https://rotationalio.github.io/blog/installation/</loc>
-    <lastmod>2018-09-12T14:51:12+06:00</lastmod>
+    <loc>https://rotationalio.github.io/blog/2021-01-21-grpc-openapi-docs/</loc>
+    <lastmod>2021-01-21T17:45:35+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://rotationalio.github.io/fr/blog/installation/"
+                href="https://rotationalio.github.io/fr/blog/2021-01-21-grpc-openapi-docs/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://rotationalio.github.io/blog/installation/"
+                href="https://rotationalio.github.io/blog/2021-01-21-grpc-openapi-docs/"
                 />
   </url>
   
   <url>
     <loc>https://rotationalio.github.io/</loc>
-    <lastmod>2018-09-12T14:51:12+06:00</lastmod>
+    <lastmod>2021-01-21T17:45:35+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
@@ -59,111 +44,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://rotationalio.github.io/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://rotationalio.github.io/blog/simple-blog-post-1/</loc>
-    <lastmod>2018-09-12T12:52:36+06:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="fr"
-                href="https://rotationalio.github.io/fr/blog/simple-blog-post-1/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://rotationalio.github.io/blog/simple-blog-post-1/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://rotationalio.github.io/blog/simple-blog-post-2/</loc>
-    <lastmod>2018-09-12T12:52:36+06:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="fr"
-                href="https://rotationalio.github.io/fr/blog/simple-blog-post-2/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://rotationalio.github.io/blog/simple-blog-post-2/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://rotationalio.github.io/blog/simple-blog-post-3/</loc>
-    <lastmod>2018-09-12T12:52:36+06:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="fr"
-                href="https://rotationalio.github.io/fr/blog/simple-blog-post-3/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://rotationalio.github.io/blog/simple-blog-post-3/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://rotationalio.github.io/blog/simple-blog-post-4/</loc>
-    <lastmod>2018-09-12T12:52:36+06:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="fr"
-                href="https://rotationalio.github.io/fr/blog/simple-blog-post-4/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://rotationalio.github.io/blog/simple-blog-post-4/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://rotationalio.github.io/blog/simple-blog-post-5/</loc>
-    <lastmod>2018-09-12T12:52:36+06:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="fr"
-                href="https://rotationalio.github.io/fr/blog/simple-blog-post-5/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://rotationalio.github.io/blog/simple-blog-post-5/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://rotationalio.github.io/blog/simple-blog-post-6/</loc>
-    <lastmod>2018-09-12T12:52:36+06:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="fr"
-                href="https://rotationalio.github.io/fr/blog/simple-blog-post-6/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://rotationalio.github.io/blog/simple-blog-post-6/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://rotationalio.github.io/blog/simple-blog-post-7/</loc>
-    <lastmod>2018-09-12T12:52:36+06:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="fr"
-                href="https://rotationalio.github.io/fr/blog/simple-blog-post-7/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://rotationalio.github.io/blog/simple-blog-post-7/"
                 />
   </url>
   
@@ -182,6 +62,20 @@
   </url>
   
   <url>
+    <loc>https://rotationalio.github.io/author/benjamin-bengfort/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="https://rotationalio.github.io/fr/author/benjamin-bengfort/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://rotationalio.github.io/author/benjamin-bengfort/"
+                />
+  </url>
+  
+  <url>
     <loc>https://rotationalio.github.io/categories/</loc>
     <xhtml:link
                 rel="alternate"
@@ -196,30 +90,16 @@
   </url>
   
   <url>
-    <loc>https://rotationalio.github.io/author/john-doe/</loc>
+    <loc>https://rotationalio.github.io/author/rebecca-bilbro/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://rotationalio.github.io/fr/author/john-doe/"
+                href="https://rotationalio.github.io/fr/author/rebecca-bilbro/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://rotationalio.github.io/author/john-doe/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://rotationalio.github.io/author/mark-dinn/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="fr"
-                href="https://rotationalio.github.io/fr/author/mark-dinn/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://rotationalio.github.io/author/mark-dinn/"
+                href="https://rotationalio.github.io/author/rebecca-bilbro/"
                 />
   </url>
   
