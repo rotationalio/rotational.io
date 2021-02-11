@@ -27,6 +27,15 @@
     </item>
     
     <item>
+      <title>The Georeplication Bakeoff</title>
+      <link>https://rotationalio.github.io/blog/2019-03-02-georeplication-bakeoff/</link>
+      <pubDate>Sat, 02 Mar 2019 14:59:00 +0000</pubDate>
+      
+      <guid>https://rotationalio.github.io/blog/2019-03-02-georeplication-bakeoff/</guid>
+      <description>In this post, I&amp;rsquo;ll present a comparison of the experimental results of several published implementations of consensus methods for wide-area/geo replication.</description>
+    </item>
+    
+    <item>
       <title>The Actor Model</title>
       <link>https://rotationalio.github.io/blog/2018-08-03-actor-model/</link>
       <pubDate>Fri, 03 Aug 2018 07:27:36 +0000</pubDate>

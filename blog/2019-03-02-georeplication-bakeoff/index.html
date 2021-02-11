@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+	<meta charset="utf-8">
+	<title>The Georeplication Bakeoff</title>
+
+	<!-- mobile responsive meta -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="description" content="Data that turns with the world">
+	
+	<meta name="author" content="Themefisher">
+	<meta name="generator" content="Hugo 0.79.1" />
+
+	<!-- plugins -->
+	
+	<link rel="stylesheet" href="https://rotationalio.github.io/plugins/bootstrap/bootstrap.min.css">
+	
+	<link rel="stylesheet" href="https://rotationalio.github.io/plugins/themify-icons/themify-icons.css">
+	
+	<link rel="stylesheet" href="https://rotationalio.github.io/plugins/magnific-popup/magnific-popup.css">
+	
+	<link rel="stylesheet" href="https://rotationalio.github.io/plugins/slick/slick.css">
+	
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Anaheim%7cQuattrocento&#43;Sans:400,700&amp;display=swap">
+	
+
+	<!-- Main Stylesheet -->
+	
+	<link rel="stylesheet" href="https://rotationalio.github.io/css/style.min.css" media="screen">
+
+	<!-- Custom stylesheet - for your changes -->
+	
+  <link rel="stylesheet" href="https://rotationalio.github.io/css/custom.min.css" media="screen">
+
+	<!--Favicon-->
+	<link rel="shortcut icon" href="https://rotationalio.github.io/images/favicon.png" type="image/x-icon">
+	<link rel="icon" href="https://rotationalio.github.io/images/favicon.png" type="image/x-icon">
+
+	
+
+</head>
+
+
+<body id="body" data-spy="scroll" data-target=".navbar" data-offset="55">
+  <div id="content">
+    
+
+
+<section class="sticky-top navigation">
+	<div class="container">
+		<nav class="navbar navbar-expand-lg navbar-dark">
+			<a class="navbar-brand p-0" href="/">
+				
+				<img class="lozad" data-src="https://rotationalio.github.io/images/logo.png" alt="Rotational" height="42">
+				
+			</a>
+
+			<button class="navbar-toggler rounded-0" type="button" data-toggle="collapse" data-target="#navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navigation">
+				<ul class="navbar-nav ml-auto">
+					
+					<li class="nav-item">
+            <a class="nav-link" href="https://rotationalio.github.io/#about">about</a>
+					</li>
+					
+					<li class="nav-item">
+            <a class="nav-link" href="https://rotationalio.github.io/#services">services</a>
+					</li>
+					
+					<li class="nav-item">
+            <a class="nav-link" href="https://rotationalio.github.io/#team">team</a>
+					</li>
+					
+					<li class="nav-item">
+            <a class="nav-link" href="https://rotationalio.github.io/#blog">blog</a>
+					</li>
+					
+					<li class="nav-item">
+            <a class="nav-link" href="https://rotationalio.github.io/#contact">contact</a>
+					</li>
+					
+				</ul>
+				
+				<select id="select-language" onchange="location = this.value;">
+					
+					
+					
+					
+					
+					
+					
+					
+					<option id="en" value="https://rotationalio.github.io/blog/2019-03-02-georeplication-bakeoff/" selected>En
+					</option>
+					
+					
+					
+					
+					
+					
+				</select>
+				
+			</div>
+		</nav>
+	</div>
+</section>
+
+
+<section class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 offset-lg-2 text-center">
+        <h1>The Georeplication Bakeoff</h1>
+        <ul class="list-inline mb-50">
+          <li class="list-inline-item"><a href="/author/rebecca-bilbro/">Rebecca Bilbro</a></li>
+          <li class="list-inline-item">Saturday, Mar 2, 2019</li>
+        </ul>
+        <img class="img-fluid mb-50 lozad" data-src="https://rotationalio.github.io/images/blog/desert.jpg" alt="blog-image">
+      </div>
+      <div class="col-lg-8 offset-lg-2">
+        <div class="post-single-content">
+          <p>In this post, I&rsquo;ll present a comparison of the experimental results of several published implementations of consensus methods for wide-area/geo replication. For each, I&rsquo;ll attempt to capture which experiments were reported, what quorum sizes were used, and what the throughput and latency numbers were.</p>
+<h2 id="epaxos">ePaxos</h2>
+<p>Iulian Moraru, David G. Andersen, and Michael Kaminsky. <a href="https://www.cs.cmu.edu/~dga/papers/epaxos-sosp2013.pdf"><em>There is more consensus in egalitarian parliaments.</em></a> In Proceedings of the Twenty-Fourth ACM Symposium on Operating Systems Principles, pages 358–372. ACM, 2013.</p>
+<p><a href="http://sigops.org/s/conferences/sosp/2013/talks/moraru_epaxos_se07_03.pdf">Slides</a></p>
+<h3 id="abstract">Abstract</h3>
+<blockquote>
+<p>This paper describes the design and implementation of Egalitarian Paxos (EPaxos), a new distributed consensus algorithm based on Paxos. EPaxos achieves three goals: (1) optimal commit latency in the wide-area when tolerating one and two failures, under realistic conditions; (2) uniform load balancing across all replicas (thus achieving high throughput); and (3) graceful performance degradation when replicas are slow or crash. Egalitarian Paxos is to our knowledge the first protocol to achieve the previously stated goals efficiently—that is, requiring only a simple majority of replicas to be nonfaulty, using a number of messages linear in the number of replicas to choose a command, and committing commands after just one communication round (one round trip) in the common case or after at most two rounds in any case. We prove Egalitarian Paxos’s properties theoretically and demonstrate its advantages empirically through an implementation running on Amazon EC2.</p>
+</blockquote>
+<h3 id="leadership-style">Leadership Style</h3>
+<p>There is no designated leader, and there are no leader elections. Each command gets a new leader. Multiple replicas can act as leader simultaneously for different commands.</p>
+<h3 id="experiments">Experiments</h3>
+<ul>
+<li>Amazon EC2, using large instances for both state machine replicas and clients, running Ubuntu Linux 11.10.</li>
+<li>Quorum sizes: 3, 5</li>
+<li>Replicas located in Amazon EC2 datacenters in California (CA), Virginia (VA) and Ireland (EU), plus Oregon (OR) and Japan (JP) for the 5-replica experiment.</li>
+<li>10 clients co-located w/ each replica (50 total). Clients generate requests simultaneously, and measure the commit and execute latency for each request.</li>
+<li>Latency is determined by a round-trip to the farthest replica.</li>
+</ul>
+<h3 id="results">Results</h3>
+<p><em>Latency</em></p>
+<ul>
+<li>3 replicas w/ 100% interference: median execution latencies of 125-139 ms (depending on site).</li>
+<li>5 replicas w/ 100% interference: median execution latencies of 304-319 ms (depending on site).</li>
+</ul>
+<p><img src="/images/blog/2019-03-02-epaxos-latency-map.png" alt="latency map"></p>
+<p><img src="/images/blog/2019-03-02-epaxos-latency-tables.png" alt="latency tables"></p>
+<p><em>Throughput</em></p>
+<ul>
+<li>3 replica, 0% interference, 16 B commands: ~53,000 reqs/sec</li>
+<li>3 replica, 2% interference, 16 B commands: ~46,250 reqs/sec</li>
+<li>3 replica, 25% interference, 16 B commands: ~43,750 reqs/sec</li>
+<li>3 replica, 100% interference, 16 B commands: ~45,250 reqs/sec</li>
+<li>3 replica, slow-accept, 0% interference, 16 B commands: ~45,150 reqs/sec</li>
+<li>3 replica, slow-accept, 100% interference, 16 B commands: ~23,750 reqs/sec</li>
+<li>5 replica, 0% interference, 16 B commands: ~51,250 reqs/sec</li>
+<li>5 replica, 2% interference, 16 B commands: ~48,125 reqs/sec</li>
+<li>5 replica, 25% interference, 16 B commands: ~41,875 reqs/sec</li>
+<li>5 replica, 100% interference, 16 B commands: ~31,250 reqs/sec</li>
+<li>5 replica, slow-accept, 0% interference, 16 B commands: ~35,625 reqs/sec</li>
+<li>5 replica, slow-accept, 100% interference, 16 B commands: ~21,000 reqs/sec</li>
+<li>3 replica, 0% interference, 1 KB commands: ~23,250 reqs/sec</li>
+<li>3 replica, 2% interference, 1 KB commands: ~22,750 reqs/sec</li>
+<li>3 replica, 25% interference, 1 KB commands: ~22,500 reqs/sec</li>
+<li>3 replica, 100% interference, 1 KB commands: ~22,250 reqs/sec</li>
+<li>3 replica, slow-accept, 0% interference, 1 KB commands: ~17,500 reqs/sec</li>
+<li>3 replica, slow-accept, 100% interference, 1 KB commands: ~9,000 reqs/sec</li>
+<li>5 replica, 0% interference, 1 KB commands: ~20,500 reqs/sec</li>
+<li>5 replica, 2% interference, 1 KB commands: ~20,250 reqs/sec</li>
+<li>5 replica, 25% interference, 1 KB commands: ~18,750 reqs/sec</li>
+<li>5 replica, 100% interference, 1 KB commands: ~19,500 reqs/sec</li>
+<li>5 replica, slow-accept, 0% interference, 1 KB commands: ~14,250 reqs/sec</li>
+<li>5 replica, slow-accept, 100% interference, 1 KB commands: ~7,500 reqs/sec</li>
+</ul>
+<p><img src="/images/blog/2019-03-02-epaxos-throughput-plots.png" alt="throughput plots"></p>
+<p><img src="/images/blog/2019-03-02-epaxos-latency-v-throughput.png" alt="throughput vs latency"></p>
+<p><em>Notes</em>
+For ePaxos, execution latency differs from commit latency because a replica must delay executing a command until it receives commit confirmations for the command’s dependencies.</p>
+<h2 id="calvin">Calvin</h2>
+<p>Alexander Thomson, Thaddeus Diamond, Shu-Chun Weng, Kun Ren, Philip
+Shao, and Daniel J Abadi. <a href="http://cs.yale.edu/homes/thomson/publications/calvin-sigmod12.pdf"><em>Calvin: Fast distributed transactions for partitioned database systems.</em></a> In Proceedings of the 2012 ACM SIGMOD International Conference on Management of Data, pages 1–12. ACM, 2012</p>
+<h3 id="abstract-1">Abstract</h3>
+<blockquote>
+<p>Many distributed storage systems achieve high data access throughput via partitioning and replication, each system with its own advantages and tradeoffs. In order to achieve high scalability, however, today’s systems generally reduce transactional support, disallowing single transactions from spanning multiple partitions. Calvin is a practical transaction scheduling and data replication layer that uses a deterministic ordering guarantee to significantly reduce the normally prohibitive contention costs associated with distributed transactions. Unlike previous deterministic database system prototypes, Calvin supports disk-based storage, scales near-linearly on a cluster of commodity machines, and has no single point of failure. By replicating transaction inputs rather than effects, Calvin is also able to support multiple consistency levels — including Paxos-based strong consistency across geographically distant replicas — at no cost to transactional throughput.</p>
+</blockquote>
+<h3 id="leadership-style-1">Leadership Style</h3>
+<p>Strong leader. One replica is designated as master; transaction requests are forwarded to sequencers located at nodes of the master. After compiling each batch, the sequencer component on each master node forwards the batch to all other (slave) sequencers in its replication group. If the master fails, the replication group has to agree on (a) last valid batch and (b) specific transactions of that batch.</p>
+<h3 id="experiments-1">Experiments</h3>
+<ul>
+<li>All experiments were run on Amazon EC2 using High-CPU/Extra-Large instances (7GB of memory and 20 EC2 Compute Units — 8 virtual cores w/ 2.5 EC2 Compute Units each)</li>
+<li>4 EC2 High-CPU machines per replica, running 40000 microbenchmark transactions per second (10000 per
+node), 10% of which were multipartition</li>
+<li>Quorum size: 3 (12 total nodes)</li>
+<li>Across data centers, one replica on Amazon’s East US (Virginia) data center, one on Amazon’s West US (Northern California) data center, and one on Amazon’s EU (Ireland) data center. Ping times between replicas ranged from 100-170 ms. 1ms ping time between replicas within a single data center.</li>
+<li>2 benchmarks: TPC-C and custom microbenchmark.</li>
+</ul>
+<h3 id="results-1">Results</h3>
+<ul>
+<li>Without agreement protocol, ~5,000 transactions per second per node in clusters larger than 10 nodes, and scales linearly.</li>
+<li>Can achieve nearly half a million TPC-C transactions per second on a 100 node cluster.</li>
+<li>Under low contention, 5x to 7x slowdown — from 27,000 transactions per second to about 5,000 transactions per second (4 nodes) or 4,000 transactions per second (8 nodes). Same slowdown as seen going from 1 machine to 4 or 8.</li>
+</ul>
+<p><img src="/images/blog/2019-03-02-calvin-throughput-v-machines.png" alt="Throughput by deployment size"></p>
+<p><img src="/images/blog/2019-03-02-calvin-microbenchmark.png" alt="Microbenchmark throughput"></p>
+<p><img src="/images/blog/2019-03-02-calvin-contention.png" alt="Contention factor"></p>
+<p><em>Notes</em></p>
+<p>The more machines there are, the more likely at any given time there will be at least one that is slightly behind for some reason. The fewer machines there are in the cluster, the more each additional machine will increase skew. The higher the contention rate, the more likely a machine’s random slowdown will slow others. Not all EC2 instances yield equivalent performance, and sometimes an EC2 user gets stuck with a slow instance — a slightly slow machine was added when they went from 6 nodes to 8 nodes.</p>
+<h2 id="mdcc">MDCC</h2>
+<p>Tim Kraska, Gene Pang, Michael J. Franklin, Samuel Madden, and Alan
+Fekete. <a href="http://mdcc.cs.berkeley.edu/mdcc.pdf"><em>MDCC: Multi-Data Center Consistency.</em></a> In Proceedings of the 8th
+ACM European Conference on Computer Systems, pages 113–126. ACM, 2013.</p>
+<h3 id="abstract-2">Abstract</h3>
+<blockquote>
+<p>Replicating data across multiple data centers allows using data closer to the client, reducing latency for applications, and increases the availability in the event of a data center failure. MDCC (Multi-Data Center Consistency) is an optimistic commit protocol for geo-replicated transactions, that does not require a master or static partitioning, and is strongly consistent at a cost similar to eventually consistent protocols. MDCC takes advantage of Generalized Paxos for transaction processing and exploits commutative updates with value constraints in a quorum-based system. Our experiments show that MDCC outperforms existing synchronous transactional replication protocols, such as Megastore, by requiring only a single message round-trip in the normal operational case independent of the master-location and by scaling linearly with the number of machines as long as transaction conflict rates permit.</p>
+</blockquote>
+<h3 id="leadership-style-2">Leadership Style</h3>
+<p>No strong leader required. Needs only a single wide-area message round-trip to commit a transaction in the common case. Is &ldquo;master-bypassing&rdquo; — can read or update from
+any node in any data center.</p>
+<h3 id="experiments-2">Experiments</h3>
+<ul>
+<li>Amazon EC2: US West (N. California), US East (Virginia), EU (Ireland), Asia Pacific (Singapore), and Asia Pacific (Tokyo).</li>
+<li>m1.large instances (4 cores, 7.5GB memory)</li>
+<li>2 benchmarks: TPC-W (e-commerce transactions) and micro-benchmark
+<ul>
+<li>TPC-W scale factor of 10,000 items, w/ data evenly partitioned and replicated to 4 storage nodes per data center. 100 evenly geo-distributed clients (on separate machines) each ran the TPC-W benchmark for 2 minutes, after a 1 minute warm-up period.</li>
+</ul>
+</li>
+<li>compared MDCC to other transactional and other non-transactional, eventually consistent protocols.</li>
+<li>Quorum size:
+<ul>
+<li>Write quorum: 3/5 replicas (&ldquo;QW-3&rdquo;) and 4/5 replicas (&ldquo;QW-4&rdquo;)</li>
+<li>Read quorum: 1/5 replicas</li>
+</ul>
+</li>
+<li>scale-out experiment: 50 clients w/ 5,000 items =&gt; 100 clients w/ 10,000 items =&gt; 200 clients w/ 20,000 items
+(fixed amount of data per storage node to a TPC-W scale-factor of 2,500 items; scaled the number of nodes accordingly)</li>
+</ul>
+<h3 id="results-2">Results</h3>
+<p><em>Median response times for TPC-W</em></p>
+<ul>
+<li>188ms for QW-3 (non-transactional)</li>
+<li>260ms for QW-4 (non-transactional)</li>
+<li>278ms for MDCC (transactional)</li>
+<li>668ms for 2-phase commit (transactional)</li>
+<li>17,810ms for Megastore (transactional)</li>
+</ul>
+<p><em>Throughput</em></p>
+<ul>
+<li>50 concurrent clients: ~250 txns per sec</li>
+<li>100 concurrent clients: ~575 txns per sec</li>
+<li>200 concurrent clients: ~1075 txns per sec (within 10% of throughput of QW-4)</li>
+<li>MDCC has higher throughput than 2-phase commit and Megastore.</li>
+<li>QW protocols scale almost linearly; similar scaling for MDCC and 2PC.</li>
+</ul>
+<p><img src="/images/blog/2019-03-02-mdcc-latency.png" alt="MDCC latency and throughput"></p>
+<p><em>Median response times for micro-benchmark</em></p>
+<ul>
+<li>245ms for MDCC (full protocol)</li>
+<li>276ms for Fast (without commutative update support)</li>
+<li>388ms for Multi (all instances Multi-Paxos so a stable master can skip Phase 1)</li>
+<li>543ms for 2-phase commit</li>
+</ul>
+<p><img src="/images/blog/2019-03-02-mdcc-microbenchmark-response.png" alt="Microbenchmark response"></p>
+<p><em>Failure Scenario</em></p>
+<ul>
+<li>173.5 ms avg response time before data center failure</li>
+<li>211.7 ms avg response time after data center failure</li>
+</ul>
+<h2 id="boxwood">Boxwood</h2>
+<p>John MacCormick, Nick Murphy, Marc Najork, Chandramohan A. Thekkath,
+and Lidong Zhou. <a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.134.8940&amp;rep=rep1&amp;type=pdf"><em>Boxwood: Abstractions as the Foundation for Storage Infrastructure.</em></a> In OSDI, volume 4, pages 105–120, 2004.</p>
+<h3 id="abstract-3">Abstract</h3>
+<blockquote>
+<p>Writers of complex storage applications such as distributed file systems and databases are faced with the challenges of building complex abstractions over simple storage devices like disks. These challenges are exacerbated due to the additional requirements for fault tolerance and scaling. This paper explores the premise that high-level, fault-tolerant abstractions supported directly by the storage infrastructure can ameliorate these problems. We have built a system called Boxwood to explore the feasibility and utility of providing high-level abstractions or data structures as the fundamental storage infrastructure. Boxwood currently runs on a small cluster of eight machines. The Boxwood abstractions perform very close to the limits imposed by the processor, disk, and the native networking subsystem. Using these abstractions directly, we have implemented an NFSv2 file service that demonstrates the promise of our approach.</p>
+</blockquote>
+<h3 id="leadership-style-3">Leadership Style</h3>
+<p>Uses a single master. Lock service w/ single master server and 1+ slave servers. Only master hands out leases. Master&rsquo;s identity is part of the global state. Lock service keeps the list of clerks as state. If master dies, slave takes over after passing a Paxos decree that changes the identity of the current master. New master recovers lease state by reading Paxos state to get list of clerks &amp; gets lease state from them.</p>
+<h3 id="experiments-3">Experiments</h3>
+<ul>
+<li>Deployed on cluster of eight machines connected by a Gigabit Ethernet switch. Each
+machine is a Dell PowerEdge 2650 server with a single 2.4 GHz Xeon processor, 1GB of RAM, with an Adaptec AIC-7899 dual SCSI adapter, and 5 SCSI drives. One of these, a 36GB 15K RPM (Maxtor Atlas15K) drive, is used as the system disk. The remaining four 18GB 15K RPM drives (Seagate Cheetah 15K.3 ST318453LC) store data.</li>
+<li>Boxwood runs as a user-level process on a Windows Server 2003 kernel.</li>
+<li>Networking subsystem can transmit data at 115 MB/sec using TCP. RPC system can deliver ~110 MB/sec.</li>
+</ul>
+<h3 id="results-3">Results</h3>
+<p><em>Throughput</em>
+<img src="/images/blog/2019-03-02-boxwood-throughput.png" alt="Boxwood throughput"></p>
+<p><img src="/images/blog/2019-03-02-boxwood-scaling.png" alt="Boxwood scaling"></p>
+<p><em>Latency</em></p>
+<p>(Effect of batching on allocations)</p>
+<ul>
+<li>batch size 1: 24 ms</li>
+<li>batch size 10: 3.3 ms</li>
+<li>batch size 100: 1.0 ms</li>
+<li>batch size 1000: 1.0 ms</li>
+</ul>
+<p><em>B-Tree</em></p>
+<p><img src="/images/blog/2019-03-02-boxwood-b-tree.png" alt="Boxwood B-tree"></p>
+<h2 id="niobe">Niobe</h2>
+<p>John MacCormick, Chandramohan A. Thekkath, Marcus Jager, Kristof
+Roomp, Lidong Zhou, and Ryan Peterson. <a href="https://scholar.dickinson.edu/cgi/viewcontent.cgi?article=1694&amp;context=faculty_publications"><em>Niobe: A practical replication protocol.</em></a> 3(4):1, 2008.</p>
+<h3 id="abstract-4">Abstract</h3>
+<blockquote>
+<p>The task of consistently and reliably replicating data is fundamental in distributed systems, and numerous existing protocols are able to achieve such replication efficiently. When called on to build a large-scale enterprise storage system with built-in replication, we were therefore surprised to discover that no existing protocols met our requirements. As a result, we designed and deployed a new replication protocol called Niobe. Niobe is in the primary-backup family of protocols, and shares many similarities with other protocols in this family. But we believe Niobe is significantly more practical for large-scale enterprise storage than previously-published protocols. In particular, Niobe is simple, flexible, has rigorously-proven yet simply-stated consistency guarantees, and exhibits excellent performance. Niobe has been deployed as the backend for a commercial Internet service; its consistency properties have been proved formally from first principles, and further verified using the TLA+ specification language. We describe the protocol itself, the system built to deploy it, and some of our experiences in doing so.</p>
+</blockquote>
+<h3 id="leadership-style-4">Leadership Style</h3>
+<p>Uses the &ldquo;primary-backup&rdquo; or &ldquo;primary copy&rdquo; paradigm for fault-tolerance — primary receives an update from client, sends it to one or more secondaries, and then replies to client. Some machines (less than 10) run a global state manager (GSM) module, which uses a consensus service (Paxos) to reliably store critical global state used by storage and policy manager subsystems. Technique of using the GSM to kill and reincarnate secondaries, while using all live replicas (but not the GSM) for performing updates, is mathematically equivalent to the &ldquo;wheel&rdquo; quorum system.</p>
+<h3 id="experiments--results">Experiments &amp; Results</h3>
+<p><em>Note: these aren&rsquo;t framed exactly as experiments &amp; results so much as observations of the deployed system</em></p>
+<ul>
+<li>Typical server-class rack-mounted machines, connected by a combination of 100 Mb and Gigabit ethernet in a data center. Each machine has multiple processors, a &ldquo;modest amount&rdquo; of memory, several terabytes of attached storage in one or two disk arrays.</li>
+<li>2 hardware configurations: RAID-5 and JBOD</li>
+<li>Quorum size: N = 2, 3, &ldquo;or more&rdquo;</li>
+</ul>
+<p><img src="/images/blog/2019-03-02-niobe.png" alt="Niobe"></p>
+<h2 id="mencius">Mencius</h2>
+<p>Yanhua Mao, Flavio Paiva Junqueira, and Keith Marzullo. <a href="http://www.sysnet.ucsd.edu/~yamao/pub/mencius-osdi.pdf"><em>Mencius: Building efficient replicated state machines for WANs.</em></a> In OSDI, volume 8, pages 369–384, 2008.</p>
+<h3 id="abstract-5">Abstract</h3>
+<blockquote>
+<p>We present a protocol for general state machine replication – a method that provides strong consistency – that has high performance in a wide-area network. In particular, our protocol Mencius has high throughput under high client load and low latency under low client load even under changing wide-area network environment and client load. We develop our protocol as a derivation from the well-known protocol Paxos. Such a development can be changed or further refined to take advantage of specific network or application requirements.</p>
+</blockquote>
+<h3 id="leadership-style-5">Leadership Style</h3>
+<p>Implements a multi-leader state machine replication protocol derived from Paxos.</p>
+<h3 id="experiments-4">Experiments</h3>
+<ul>
+<li>parameters: 20 messages, 50 ms, 100,000 instances.</li>
+<li>3-server clique simulating 3 data centers (A, B and C) connected by dedicated links. Each site had one server node running the replicated register service, and one client node that generated all the client requests from that site. Each node was a 3.0 GHz Dual-Xeon PC with 2.0 GB memory running Fedora 6.</li>
+<li>Each client generated requests at either a fixed rate or with inter-request delays chosen randomly from a uniform distribution. 0 or 4,000 byte payload, w 5/ 50% read requests and 50% write requests. Each client generated requests at a constant rate of 100 ops.</li>
+</ul>
+<h3 id="results-4">Results</h3>
+<ul>
+<li>When <code>ρ = 4,000</code>, the system was network-bound: all four Mencius variants had a fixed throughput of about 1,550 operations per sec (ops). This corresponds to 99.2 Mbps, or 82.7% utilization of the total bandwidth, not counting the TCP/IP and MAC header overhead. Paxos had a throughput of about 540 ops, or one third of Mencius’s throughput.</li>
+<li>When <code>ρ = 0</code>, the system is CPU-bound. Paxos presents a throughput of 6,000 ops, with 100% CPU utilization at the leader and 50% at the other servers.</li>
+<li>Site C eventually saturated its outgoing links first; and from that point on committed requests at a maximum throughput of 285 ops. Throughput at both A and B increased until site B saturated its outgoing links at 420 ops. Finally site A saturated its outgoing links at 530 ops. Maximum throughput at each site is proportional to the outgoing bandwidth.</li>
+<li>Site A, B and C initially committed requests with throughput of about 450 ops, 300 ops, and 150 ops respectively, reflecting the bandwidth available to them.</li>
+</ul>
+<p><img src="/images/blog/images/2019-03-02-mencius-throughput.png" alt="Mencius Throughput"></p>
+<p><img src="/images/blog/2019-03-02-mencius-throughput-latency.png" alt="Mencius Throughput and Latency"></p>
+<p><img src="/images/blog/2019-03-02-mencius-latency.png" alt="Mencius Latency"></p>
+<h2 id="corfu">Corfu</h2>
+<p>Mahesh Balakrishnan, Dahlia Malkhi, Vijayan Prabhakaran, Ted Wobber,
+Michael Wei, and John D Davis. <a href="http://www.cs.yale.edu/homes/mahesh/papers/corfumain-final.pdf"><em>CORFU: A Shared Log Design for Flash Clusters.</em></a> In NSDI, pages 1–14, 2012.</p>
+<h3 id="abstract-6">Abstract</h3>
+<blockquote>
+<p>CORFU organizes a cluster of flash devices as a single, shared log that can be accessed concurrently by multiple clients over the network. The CORFU shared log makes it easy to build distributed applications that require strong consistency at high speeds, such as databases, transactional key-value stores, replicated state machines, and metadata services. CORFU can be viewed as a distributed SSD, providing advantages over conventional SSDs such as distributed wear-leveling, network locality, fault tolerance, incremental scalability and geodistribution. A single CORFU instance can support up to 200K appends/sec, while reads scale linearly with cluster size. Importantly, CORFU is designed to work directly over network-attached flash devices, slashing cost, power consumption and latency by eliminating storage servers.</p>
+</blockquote>
+<h3 id="leadership-style-6">Leadership Style</h3>
+<p>Chain replication</p>
+<blockquote>
+<p>When a client wants to write to a replica set of flash pages, it updates them in a deterministic order, waiting for each flash unit to respond before moving to the next one. The write is successfully completed when the last flash unit in the chain is updated. As a result, if two clients attempt to concurrently update the same replica set of flash pages, one of them will arrive second at the first unit of the chain and receive an error overwrite. This ensures safety-under-contention.</p>
+</blockquote>
+<h3 id="results-5">Results</h3>
+<p><em>Latency</em>
+<img src="/images/blog/2019-03-02-corfu-latency.png" alt="Corfu Latency"></p>
+<p><img src="/images/blog/2019-03-02-corfu-latency-and-throughput.png" alt="Corfu Latency and Throughput"></p>
+<p><img src="/images/blog/2019-03-02-corfu-recovery-and-scaling.png" alt="Corfu Recovery and Scaling"></p>
+<p><img src="/images/blog/2019-03-02-corfu-smr.png" alt="Corfu State Machine Replication"></p>
+<h2 id="previous-write-ups-on-consensus-research">Previous Write-ups on Consensus Research</h2>
+<ul>
+<li><a href="https://rebeccabilbro.github.io/the-pains-of-bureaucracy/">ePaxos writeup</a></li>
+<li><a href="https://rebeccabilbro.github.io/cmsc-818e-day-10/">ePaxos class notes</a></li>
+<li><a href="https://rebeccabilbro.github.io/calvin/">Calvin writeup</a></li>
+<li><a href="https://rebeccabilbro.github.io/the-shared-log-abstraction/">Corfu writeup</a></li>
+<li><a href="https://rebeccabilbro.github.io/laissez-faire-systems/">Eris writeup</a></li>
+</ul>
+
+        </div>
+        
+        
+
+<div class="social-share pt-4">
+	<h4>Share:</h4>
+	
+	<a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2frotationalio.github.io%2fblog%2f2019-03-02-georeplication-bakeoff%2f" target="_blank"
+		rel="noopener" aria-label="">
+		<div class="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--small">
+			<div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+					<path d="M18.77 7.46H14.5v-1.9c0-.9.6-1.1 1-1.1h3V.5h-4.33C10.24.5 9.5 3.44 9.5 5.32v2.15h-3v4h3v12h5v-12h3.85l.42-4z" />
+				</svg>
+			</div>
+		</div>
+	</a>
+
+	
+	<a class="resp-sharing-button__link" href="https://twitter.com/intent/tweet/?text=The%20Georeplication%20Bakeoff&amp;url=https%3a%2f%2frotationalio.github.io%2fblog%2f2019-03-02-georeplication-bakeoff%2f"
+		target="_blank" rel="noopener" aria-label="">
+		<div class="resp-sharing-button resp-sharing-button--twitter resp-sharing-button--small">
+			<div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+					<path
+						d="M23.44 4.83c-.8.37-1.5.38-2.22.02.93-.56.98-.96 1.32-2.02-.88.52-1.86.9-2.9 1.1-.82-.88-2-1.43-3.3-1.43-2.5 0-4.55 2.04-4.55 4.54 0 .36.03.7.1 1.04-3.77-.2-7.12-2-9.36-4.75-.4.67-.6 1.45-.6 2.3 0 1.56.8 2.95 2 3.77-.74-.03-1.44-.23-2.05-.57v.06c0 2.2 1.56 4.03 3.64 4.44-.67.2-1.37.2-2.06.08.58 1.8 2.26 3.12 4.25 3.16C5.78 18.1 3.37 18.74 1 18.46c2 1.3 4.4 2.04 6.97 2.04 8.35 0 12.92-6.92 12.92-12.93 0-.2 0-.4-.02-.6.9-.63 1.96-1.22 2.56-2.14z" />
+				</svg>
+			</div>
+		</div>
+	</a>
+
+	
+	<a class="resp-sharing-button__link" href="https://plus.google.com/share?url=https%3a%2f%2frotationalio.github.io%2fblog%2f2019-03-02-georeplication-bakeoff%2f" target="_blank"
+		rel="noopener" aria-label="">
+		<div class="resp-sharing-button resp-sharing-button--google resp-sharing-button--small">
+			<div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+					<path
+						d="M11.37 12.93c-.73-.52-1.4-1.27-1.4-1.5 0-.43.03-.63.98-1.37 1.23-.97 1.9-2.23 1.9-3.57 0-1.22-.36-2.3-1-3.05h.5c.1 0 .2-.04.28-.1l1.36-.98c.16-.12.23-.34.17-.54-.07-.2-.25-.33-.46-.33H7.6c-.66 0-1.34.12-2 .35-2.23.76-3.78 2.66-3.78 4.6 0 2.76 2.13 4.85 5 4.9-.07.23-.1.45-.1.66 0 .43.1.83.33 1.22h-.08c-2.72 0-5.17 1.34-6.1 3.32-.25.52-.37 1.04-.37 1.56 0 .5.13.98.38 1.44.6 1.04 1.84 1.86 3.55 2.28.87.23 1.82.34 2.8.34.88 0 1.7-.1 2.5-.34 2.4-.7 3.97-2.48 3.97-4.54 0-1.97-.63-3.15-2.33-4.35zm-7.7 4.5c0-1.42 1.8-2.68 3.9-2.68h.05c.45 0 .9.07 1.3.2l.42.28c.96.66 1.6 1.1 1.77 1.8.05.16.07.33.07.5 0 1.8-1.33 2.7-3.96 2.7-1.98 0-3.54-1.23-3.54-2.8zM5.54 3.9c.33-.38.75-.58 1.23-.58h.05c1.35.05 2.64 1.55 2.88 3.35.14 1.02-.08 1.97-.6 2.55-.32.37-.74.56-1.23.56h-.03c-1.32-.04-2.63-1.6-2.87-3.4-.13-1 .08-1.92.58-2.5zM23.5 9.5h-3v-3h-2v3h-3v2h3v3h2v-3h3" />
+				</svg>
+			</div>
+		</div>
+	</a>
+
+	
+	<a class="resp-sharing-button__link" href="mailto:?subject=The%20Georeplication%20Bakeoff&amp;body=https%3a%2f%2frotationalio.github.io%2fblog%2f2019-03-02-georeplication-bakeoff%2f" target="_self"
+		rel="noopener" aria-label="">
+		<div class="resp-sharing-button resp-sharing-button--email resp-sharing-button--small">
+			<div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+					<path
+						d="M22 4H2C.9 4 0 4.9 0 6v12c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zM7.25 14.43l-3.5 2c-.08.05-.17.07-.25.07-.17 0-.34-.1-.43-.25-.14-.24-.06-.55.18-.68l3.5-2c.24-.14.55-.06.68.18.14.24.06.55-.18.68zm4.75.07c-.1 0-.2-.03-.27-.08l-8.5-5.5c-.23-.15-.3-.46-.15-.7.15-.22.46-.3.7-.14L12 13.4l8.23-5.32c.23-.15.54-.08.7.15.14.23.07.54-.16.7l-8.5 5.5c-.08.04-.17.07-.27.07zm8.93 1.75c-.1.16-.26.25-.43.25-.08 0-.17-.02-.25-.07l-3.5-2c-.24-.13-.32-.44-.18-.68s.44-.32.68-.18l3.5 2c.24.13.32.44.18.68z" />
+				</svg>
+			</div>
+		</div>
+	</a>
+
+	
+	<a class="resp-sharing-button__link"
+		href="https://reddit.com/submit/?url=https%3a%2f%2frotationalio.github.io%2fblog%2f2019-03-02-georeplication-bakeoff%2f&amp;resubmit=true&amp;title=The%20Georeplication%20Bakeoff" target="_blank"
+		rel="noopener" aria-label="">
+		<div class="resp-sharing-button resp-sharing-button--reddit resp-sharing-button--small">
+			<div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+					<path
+						d="M24 11.5c0-1.65-1.35-3-3-3-.96 0-1.86.48-2.42 1.24-1.64-1-3.75-1.64-6.07-1.72.08-1.1.4-3.05 1.52-3.7.72-.4 1.73-.24 3 .5C17.2 6.3 18.46 7.5 20 7.5c1.65 0 3-1.35 3-3s-1.35-3-3-3c-1.38 0-2.54.94-2.88 2.22-1.43-.72-2.64-.8-3.6-.25-1.64.94-1.95 3.47-2 4.55-2.33.08-4.45.7-6.1 1.72C4.86 8.98 3.96 8.5 3 8.5c-1.65 0-3 1.35-3 3 0 1.32.84 2.44 2.05 2.84-.03.22-.05.44-.05.66 0 3.86 4.5 7 10 7s10-3.14 10-7c0-.22-.02-.44-.05-.66 1.2-.4 2.05-1.54 2.05-2.84zM2.3 13.37C1.5 13.07 1 12.35 1 11.5c0-1.1.9-2 2-2 .64 0 1.22.32 1.6.82-1.1.85-1.92 1.9-2.3 3.05zm3.7.13c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2zm9.8 4.8c-1.08.63-2.42.96-3.8.96-1.4 0-2.74-.34-3.8-.95-.24-.13-.32-.44-.2-.68.15-.24.46-.32.7-.18 1.83 1.06 4.76 1.06 6.6 0 .23-.13.53-.05.67.2.14.23.06.54-.18.67zm.2-2.8c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm5.7-2.13c-.38-1.16-1.2-2.2-2.3-3.05.38-.5.97-.82 1.6-.82 1.1 0 2 .9 2 2 0 .84-.53 1.57-1.3 1.87z" />
+				</svg>
+			</div>
+		</div>
+	</a>
+
+	
+	<a class="resp-sharing-button__link" href="whatsapp://send?text=The%20Georeplication%20Bakeoff%20https%3a%2f%2frotationalio.github.io%2fblog%2f2019-03-02-georeplication-bakeoff%2f" target="_blank"
+		rel="noopener" aria-label="">
+		<div class="resp-sharing-button resp-sharing-button--whatsapp resp-sharing-button--small">
+			<div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+					<path
+						d="M20.1 3.9C17.9 1.7 15 .5 12 .5 5.8.5.7 5.6.7 11.9c0 2 .5 3.9 1.5 5.6L.6 23.4l6-1.6c1.6.9 3.5 1.3 5.4 1.3 6.3 0 11.4-5.1 11.4-11.4-.1-2.8-1.2-5.7-3.3-7.8zM12 21.4c-1.7 0-3.3-.5-4.8-1.3l-.4-.2-3.5 1 1-3.4L4 17c-1-1.5-1.4-3.2-1.4-5.1 0-5.2 4.2-9.4 9.4-9.4 2.5 0 4.9 1 6.7 2.8 1.8 1.8 2.8 4.2 2.8 6.7-.1 5.2-4.3 9.4-9.5 9.4zm5.1-7.1c-.3-.1-1.7-.9-1.9-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.1-.2.2-.3.2-.6.1s-1.2-.5-2.3-1.4c-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6s.3-.3.4-.5c.2-.1.3-.3.4-.5.1-.2 0-.4 0-.5C10 9 9.3 7.6 9 7c-.1-.4-.4-.3-.5-.3h-.6s-.4.1-.7.3c-.3.3-1 1-1 2.4s1 2.8 1.1 3c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.3.2-.7.2-1.2.2-1.3-.1-.3-.3-.4-.6-.5z" />
+				</svg>
+			</div>
+		</div>
+	</a>
+
+	
+	<a class="resp-sharing-button__link" href="https://telegram.me/share/url?text=The%20Georeplication%20Bakeoff&amp;url=https%3a%2f%2frotationalio.github.io%2fblog%2f2019-03-02-georeplication-bakeoff%2f"
+		target="_blank" rel="noopener" aria-label="">
+		<div class="resp-sharing-button resp-sharing-button--telegram resp-sharing-button--small">
+			<div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+					<path
+						d="M.707 8.475C.275 8.64 0 9.508 0 9.508s.284.867.718 1.03l5.09 1.897 1.986 6.38a1.102 1.102 0 0 0 1.75.527l2.96-2.41a.405.405 0 0 1 .494-.013l5.34 3.87a1.1 1.1 0 0 0 1.046.135 1.1 1.1 0 0 0 .682-.803l3.91-18.795A1.102 1.102 0 0 0 22.5.075L.706 8.475z" />
+				</svg>
+			</div>
+		</div>
+	</a>
+
+</div>
+        
+        
+        <div class="mt-5">
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  </div><!-- end Contact Area -->
+<footer id="footer" class="section-bg">
+	<div class="container">
+		<div class="row wow fadeInUp" data-wow-duration="500ms">
+			<div class="col-xl-12">
+
+				<!-- Footer Social Links -->
+				<div class="social-icon">
+					<ul class="list-inline">
+						
+						<li class="list-inline-item"><a href="#"><i class="ti-facebook"></i></a></li>
+						
+						<li class="list-inline-item"><a href="#"><i class="ti-twitter-alt"></i></a></li>
+						
+						<li class="list-inline-item"><a href="#"><i class="ti-youtube"></i></a></li>
+						
+						<li class="list-inline-item"><a href="#"><i class="ti-linkedin"></i></a></li>
+						
+						<li class="list-inline-item"><a href="#"><i class="ti-dribbble"></i></a></li>
+						
+						<li class="list-inline-item"><a href="#"><i class="ti-pinterest"></i></a></li>
+						
+					</ul>
+				</div>
+
+				<!-- copyright -->
+				<div class="copyright text-center">
+					<a href="https://rotationalio.github.io/">
+						<img src="https://rotationalio.github.io/images/logo.png" alt="Rotational" height="42" />
+					</a>
+					<br>
+					<p>Copyright © 2020 Designed by <a href="https://themefisher.com">Themefisher</a> &amp; Developed by <a href="https://gethugothemes.com">Gethugothemes</a></p>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+<!-- /footer -->
+
+<!-- Google Map API -->
+
+
+<!-- JS Plugins -->
+
+<script src="https://rotationalio.github.io/plugins/jquery/jquery.min.js"></script>
+
+<script src="https://rotationalio.github.io/plugins/bootstrap/bootstrap.min.js"></script>
+
+<script src="https://rotationalio.github.io/plugins/slick/slick.min.js"></script>
+
+<script src="https://rotationalio.github.io/plugins/shuffle/shuffle.min.js"></script>
+
+<script src="https://rotationalio.github.io/plugins/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+<script src="https://rotationalio.github.io/plugins/lazy-load/lozad.min.js"></script>
+
+<script src="https://rotationalio.github.io/plugins/google-map/map.js"></script>
+
+
+<!-- Main Script -->
+
+<script src="https://rotationalio.github.io/js/script.min.a04247499d1b47349e9b15e536b4303bff63b1b6b8b5b74605302e956ed68179703fe8d52b0c3b0d9022d056576c679f.js" integrity="sha384-oEJHSZ0bRzSemxXlNrQwO/9jsba4tbdGBTAulW7WgXlwP&#43;jVKww7DZAi0FZXbGef"></script>
+
+
+</body>
+
+</html>
