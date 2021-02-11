@@ -108,7 +108,7 @@ weight = 5
 [params]
 logo = "images/logo.png"
 # Meta data
-description = "Responsive Multipurpose Parallax Hugo Template"
+description = "Data that turns with the world"
 author = "Themefisher"
 # Google Analytics
 google_analytics_id = "" # Your ID
