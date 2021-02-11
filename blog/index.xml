@@ -17,5 +17,14 @@
       <description>gRPC makes the specification and implementation of networked APIs a snap. But what is the simplest way to document a gRPC API?</description>
     </item>
     
+    <item>
+      <title>The Actor Model</title>
+      <link>https://rotationalio.github.io/blog/2018-08-03-actor-model/</link>
+      <pubDate>Fri, 03 Aug 2018 07:27:36 +0000</pubDate>
+      
+      <guid>https://rotationalio.github.io/blog/2018-08-03-actor-model/</guid>
+      <description>Building correct concurrent programs in a distributed system with multiple threads and processes can quickly become very complex to reason about.</description>
+    </item>
+    
   </channel>
 </rss>

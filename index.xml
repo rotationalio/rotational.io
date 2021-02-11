@@ -18,6 +18,15 @@
     </item>
     
     <item>
+      <title>The Actor Model</title>
+      <link>https://rotationalio.github.io/blog/2018-08-03-actor-model/</link>
+      <pubDate>Fri, 03 Aug 2018 07:27:36 +0000</pubDate>
+      
+      <guid>https://rotationalio.github.io/blog/2018-08-03-actor-model/</guid>
+      <description>Building correct concurrent programs in a distributed system with multiple threads and processes can quickly become very complex to reason about.</description>
+    </item>
+    
+    <item>
       <title>Benjamin Bengfort</title>
       <link>https://rotationalio.github.io/author/benjamin-bengfort/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
