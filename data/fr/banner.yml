@@ -8,5 +8,5 @@ banner:
   content : "Données qui tournent comme le monde"
   button:
     enable : true
-    label : "Explore Us"
+    label : "Explorer"
     link : "#services"

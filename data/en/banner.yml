@@ -8,5 +8,5 @@ banner:
   content : "Data that turns with the world"
   button:
     enable : true
-    label : "Explore Us"
+    label : "Explore"
     link : "#services"
