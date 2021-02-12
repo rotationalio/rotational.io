@@ -134,30 +134,30 @@ map_longitude = "-0.1622023"
 map_marker = "images/marker.png"
 
 ############################# social icons ##########################
-[[params.social]]
-icon = "ti-facebook" # themify icon pack : https://themify.me/themify-icons
-link = "#"
-
-[[params.social]]
-icon = "ti-twitter-alt" # themify icon pack : https://themify.me/themify-icons
-link = "#"
-
-[[params.social]]
-icon = "ti-youtube" # themify icon pack : https://themify.me/themify-icons
-link = "#"
-
-[[params.social]]
-icon = "ti-linkedin" # themify icon pack : https://themify.me/themify-icons
-link = "#"
-
-[[params.social]]
-icon = "ti-dribbble" # themify icon pack : https://themify.me/themify-icons
-link = "#"
-
-[[params.social]]
-icon = "ti-pinterest" # themify icon pack : https://themify.me/themify-icons
-link = "#"
-
+# [[params.social]]
+# icon = "ti-facebook" # themify icon pack : https://themify.me/themify-icons
+# link = "#"
+#
+# [[params.social]]
+# icon = "ti-twitter-alt" # themify icon pack : https://themify.me/themify-icons
+# link = "#"
+#
+# [[params.social]]
+# icon = "ti-youtube" # themify icon pack : https://themify.me/themify-icons
+# link = "#"
+#
+# [[params.social]]
+# icon = "ti-linkedin" # themify icon pack : https://themify.me/themify-icons
+# link = "#"
+#
+# [[params.social]]
+# icon = "ti-dribbble" # themify icon pack : https://themify.me/themify-icons
+# link = "#"
+#
+# [[params.social]]
+# icon = "ti-pinterest" # themify icon pack : https://themify.me/themify-icons
+# link = "#"
+#
 
 ################################ English Language ########################
 [Languages.en]
@@ -166,7 +166,7 @@ languageCode = "en-us"
 contentDir = "content/english"
 weight = 1
 home = "Home"
-copyright = "Copyright &copy; 2020 Designed by [Themefisher](https://themefisher.com) & Developed by [Gethugothemes](https://gethugothemes.com)"
+copyright = "Copyright &copy; 2021 Rotational Labs, LLC · Powered by [Hugo](https://gethugothemes.com) · Theme by [Themefisher](https://themefisher.com)"
 
 ################################ France Language ########################
 [Languages.fr]
@@ -175,4 +175,4 @@ languageCode = "fr-fr"
 contentDir = "content/french"
 weight = 2
 home = "Accueil"
-copyright = "Copyright &copy; 2020 Designed by [Themefisher](https://themefisher.com) & Developed by [Gethugothemes](https://gethugothemes.com)"
+copyright = "Copyright &copy; 2021 Rotational Labs, LLC · Powered by [Hugo](https://gethugothemes.com) · Theme by [Themefisher](https://themefisher.com)"
