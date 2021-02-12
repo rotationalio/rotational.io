@@ -27,6 +27,15 @@
     </item>
     
     <item>
+      <title>Basic Python Profiling</title>
+      <link>https://rotationalio.github.io/blog/2020-07-14-basic-python-profiling/</link>
+      <pubDate>Tue, 14 Jul 2020 18:01:08 +0000</pubDate>
+      
+      <guid>https://rotationalio.github.io/blog/2020-07-14-basic-python-profiling/</guid>
+      <description>I&amp;rsquo;m getting started on some projects that will make use of extensive Python performance profiling, unfortunately Python doesn&amp;rsquo;t focus on performance and so doesn&amp;rsquo;t have benchmark tools like I might find in Go.</description>
+    </item>
+    
+    <item>
       <title>The Georeplication Bakeoff</title>
       <link>https://rotationalio.github.io/blog/2019-03-02-georeplication-bakeoff/</link>
       <pubDate>Sat, 02 Mar 2019 14:59:00 +0000</pubDate>
@@ -51,6 +60,24 @@
       
       <guid>https://rotationalio.github.io/blog/2018-12-02-laissez-faire-systems/</guid>
       <description>What do we want? Distribution with strong consistency! When do we want it? Faster than the speed of consistency protocols!</description>
+    </item>
+    
+    <item>
+      <title>Go Testing Notes</title>
+      <link>https://rotationalio.github.io/blog/2018-09-22-go-testing-notes/</link>
+      <pubDate>Sat, 22 Sep 2018 09:58:12 +0000</pubDate>
+      
+      <guid>https://rotationalio.github.io/blog/2018-09-22-go-testing-notes/</guid>
+      <description>In this post I&amp;rsquo;m just going to maintain a list of notes for Go testing that I seem to commonly need to reference.</description>
+    </item>
+    
+    <item>
+      <title>Streaming Remote Throughput</title>
+      <link>https://rotationalio.github.io/blog/2018-09-11-streaming-remote-throughput/</link>
+      <pubDate>Tue, 11 Sep 2018 15:19:17 +0000</pubDate>
+      
+      <guid>https://rotationalio.github.io/blog/2018-09-11-streaming-remote-throughput/</guid>
+      <description>In order to improve the performance of asynchronous message passing in Alia, I&amp;rsquo;m using gRPC bidirectional streaming to create the peer to peer connections.</description>
     </item>
     
     <item>

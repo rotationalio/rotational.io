@@ -63,6 +63,21 @@
   </url>
   
   <url>
+    <loc>https://rotationalio.github.io/blog/2020-07-14-basic-python-profiling/</loc>
+    <lastmod>2020-07-14T18:01:08+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="https://rotationalio.github.io/fr/blog/2020-07-14-basic-python-profiling/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://rotationalio.github.io/blog/2020-07-14-basic-python-profiling/"
+                />
+  </url>
+  
+  <url>
     <loc>https://rotationalio.github.io/blog/2019-03-02-georeplication-bakeoff/</loc>
     <lastmod>2019-03-02T14:59:00+00:00</lastmod>
     <xhtml:link
@@ -104,6 +119,36 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://rotationalio.github.io/blog/2018-12-02-laissez-faire-systems/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://rotationalio.github.io/blog/2018-09-22-go-testing-notes/</loc>
+    <lastmod>2018-09-22T09:58:12+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="https://rotationalio.github.io/fr/blog/2018-09-22-go-testing-notes/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://rotationalio.github.io/blog/2018-09-22-go-testing-notes/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://rotationalio.github.io/blog/2018-09-11-streaming-remote-throughput/</loc>
+    <lastmod>2018-09-11T15:19:17+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="https://rotationalio.github.io/fr/blog/2018-09-11-streaming-remote-throughput/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://rotationalio.github.io/blog/2018-09-11-streaming-remote-throughput/"
                 />
   </url>
   
