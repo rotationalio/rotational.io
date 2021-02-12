@@ -27,12 +27,66 @@
     </item>
     
     <item>
+      <title>The Georeplication Bakeoff</title>
+      <link>https://rotationalio.github.io/fr/blog/2019-03-02-georeplication-bakeoff/</link>
+      <pubDate>Sat, 02 Mar 2019 14:59:00 +0000</pubDate>
+      
+      <guid>https://rotationalio.github.io/fr/blog/2019-03-02-georeplication-bakeoff/</guid>
+      <description>In this post, I&amp;rsquo;ll present a comparison of the experimental results of several published implementations of consensus methods for wide-area/geo replication.</description>
+    </item>
+    
+    <item>
+      <title>Pop Distributed Systems</title>
+      <link>https://rotationalio.github.io/fr/blog/2019-02-08-pop-dist-sys/</link>
+      <pubDate>Fri, 08 Feb 2019 10:07:00 +0000</pubDate>
+      
+      <guid>https://rotationalio.github.io/fr/blog/2019-02-08-pop-dist-sys/</guid>
+      <description>This past Fall, I took a course in distributed systems at the University of Maryland College Park.</description>
+    </item>
+    
+    <item>
+      <title>Laissez-Faire in Distributed Systems</title>
+      <link>https://rotationalio.github.io/fr/blog/2018-12-02-laissez-faire-systems/</link>
+      <pubDate>Sun, 02 Dec 2018 16:42:00 +0000</pubDate>
+      
+      <guid>https://rotationalio.github.io/fr/blog/2018-12-02-laissez-faire-systems/</guid>
+      <description>What do we want? Distribution with strong consistency! When do we want it? Faster than the speed of consistency protocols!</description>
+    </item>
+    
+    <item>
       <title>The Actor Model</title>
       <link>https://rotationalio.github.io/fr/blog/2018-08-03-actor-model/</link>
       <pubDate>Fri, 03 Aug 2018 07:27:36 +0000</pubDate>
       
       <guid>https://rotationalio.github.io/fr/blog/2018-08-03-actor-model/</guid>
       <description>Building correct concurrent programs in a distributed system with multiple threads and processes can quickly become very complex to reason about.</description>
+    </item>
+    
+    <item>
+      <title>Messaging Throughput gRPC vs. ZMQ</title>
+      <link>https://rotationalio.github.io/fr/blog/2017-09-04-message-throughput/</link>
+      <pubDate>Mon, 04 Sep 2017 17:20:06 +0000</pubDate>
+      
+      <guid>https://rotationalio.github.io/fr/blog/2017-09-04-message-throughput/</guid>
+      <description>Building distributed systems in Go requires an RPC or message framework of some sort. In the systems I build I prefer to pass messages serialized with protocol buffers therefore a natural choice for me is grpc.</description>
+    </item>
+    
+    <item>
+      <title>Synchronizing Structs for Safe Concurrency in Go</title>
+      <link>https://rotationalio.github.io/fr/blog/2017-02-21-synchronizing-structs/</link>
+      <pubDate>Tue, 21 Feb 2017 10:48:24 +0000</pubDate>
+      
+      <guid>https://rotationalio.github.io/fr/blog/2017-02-21-synchronizing-structs/</guid>
+      <description>Go is built for concurrency by providing language features that allow developers to embed complex concurrency patterns into their applications.</description>
+    </item>
+    
+    <item>
+      <title>Visualizing Distributed Systems</title>
+      <link>https://rotationalio.github.io/fr/blog/2016-04-26-visualizing-distributed-systems/</link>
+      <pubDate>Tue, 26 Apr 2016 11:34:42 +0000</pubDate>
+      
+      <guid>https://rotationalio.github.io/fr/blog/2016-04-26-visualizing-distributed-systems/</guid>
+      <description>As I&amp;rsquo;ve dug into my distributed systems research, one question keeps coming up: “How do you visualize distributed systems?</description>
     </item>
     
   </channel>

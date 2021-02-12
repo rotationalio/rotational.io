@@ -65,6 +65,46 @@
   <url>
     <loc>https://rotationalio.github.io/blog/2019-03-02-georeplication-bakeoff/</loc>
     <lastmod>2019-03-02T14:59:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="https://rotationalio.github.io/fr/blog/2019-03-02-georeplication-bakeoff/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://rotationalio.github.io/blog/2019-03-02-georeplication-bakeoff/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://rotationalio.github.io/blog/2019-02-08-pop-dist-sys/</loc>
+    <lastmod>2019-02-08T10:07:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="https://rotationalio.github.io/fr/blog/2019-02-08-pop-dist-sys/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://rotationalio.github.io/blog/2019-02-08-pop-dist-sys/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://rotationalio.github.io/blog/2018-12-02-laissez-faire-systems/</loc>
+    <lastmod>2018-12-02T16:42:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="https://rotationalio.github.io/fr/blog/2018-12-02-laissez-faire-systems/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://rotationalio.github.io/blog/2018-12-02-laissez-faire-systems/"
+                />
   </url>
   
   <url>
@@ -79,6 +119,51 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://rotationalio.github.io/blog/2018-08-03-actor-model/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://rotationalio.github.io/blog/2017-09-04-message-throughput/</loc>
+    <lastmod>2017-09-04T17:20:06+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="https://rotationalio.github.io/fr/blog/2017-09-04-message-throughput/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://rotationalio.github.io/blog/2017-09-04-message-throughput/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://rotationalio.github.io/blog/2017-02-21-synchronizing-structs/</loc>
+    <lastmod>2017-02-21T10:48:24+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="https://rotationalio.github.io/fr/blog/2017-02-21-synchronizing-structs/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://rotationalio.github.io/blog/2017-02-21-synchronizing-structs/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://rotationalio.github.io/blog/2016-04-26-visualizing-distributed-systems/</loc>
+    <lastmod>2016-04-26T11:34:42+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="https://rotationalio.github.io/fr/blog/2016-04-26-visualizing-distributed-systems/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://rotationalio.github.io/blog/2016-04-26-visualizing-distributed-systems/"
                 />
   </url>
   
