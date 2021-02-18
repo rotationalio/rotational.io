@@ -1,8 +1,8 @@
 ################################# Testimonial #########################
 testimonial:
   enable : true
-  bg_image : images/backgrounds/potw2040a.jpg
-  bg_image_webp : images/backgrounds/potw2040a.webp
+  bg_image : images/backgrounds/17-042_main_image.jpg
+  bg_image_webp : images/backgrounds/17-042_main_image.webp
   testimonial_item :
     # testimonial item loop
     - name : Jonathon Andrew
