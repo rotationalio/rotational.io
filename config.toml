@@ -1,5 +1,5 @@
 ################################# Default configuration ###################
-baseURL = "https://rotationalio.github.io/"
+baseURL = "https://rotational.io/"
 title = "Rotational"
 theme = "meghna-hugo"
 # themesDir = "../.."
