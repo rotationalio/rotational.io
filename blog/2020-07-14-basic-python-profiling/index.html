@@ -135,25 +135,25 @@
       <div class="col-lg-8 offset-lg-2">
         <div class="post-single-content">
           <p>I&rsquo;m getting started on some projects that will make use of extensive Python performance profiling, unfortunately Python doesn&rsquo;t focus on performance and so doesn&rsquo;t have benchmark tools like I might find in Go. I&rsquo;ve noticed that the two most important usages I&rsquo;m looking at when profiling are speed and memory usage. For the latter, I simply use <a href="https://pypi.org/project/memory-profiler/"><code>memory_profiler</code></a> from the command line - which is pretty straight forward. However for speed usage, I did find a snippet that I thought would be useful to include and update depending on how my usage changes.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> cProfile
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#6ab825;font-weight:bold">import</span> <span style="color:#447fcf;text-decoration:underline">cProfile</span>
 
-<span style="color:#f92672">from</span> pstats <span style="color:#f92672">import</span> Stats
-<span style="color:#f92672">from</span> functools <span style="color:#f92672">import</span> wraps
+<span style="color:#6ab825;font-weight:bold">from</span> <span style="color:#447fcf;text-decoration:underline">pstats</span> <span style="color:#6ab825;font-weight:bold">import</span> Stats
+<span style="color:#6ab825;font-weight:bold">from</span> <span style="color:#447fcf;text-decoration:underline">functools</span> <span style="color:#6ab825;font-weight:bold">import</span> wraps
 
 
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">sprofile</span>(func):
-    <span style="color:#a6e22e">@wraps</span>(func)
-    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">wrapper</span>(<span style="color:#f92672">*</span>args, <span style="color:#f92672">**</span>kwargs):
-        pr <span style="color:#f92672">=</span> cProfile<span style="color:#f92672">.</span>Profile()
-        pr<span style="color:#f92672">.</span>enable()
+<span style="color:#6ab825;font-weight:bold">def</span> <span style="color:#447fcf">sprofile</span>(func):
+    <span style="color:#ffa500">@wraps</span>(func)
+    <span style="color:#6ab825;font-weight:bold">def</span> <span style="color:#447fcf">wrapper</span>(*args, **kwargs):
+        pr = cProfile.Profile()
+        pr.enable()
 
-        result <span style="color:#f92672">=</span> func(<span style="color:#f92672">*</span>args, <span style="color:#f92672">**</span>kwargs)
+        result = func(*args, **kwargs)
 
-        pr<span style="color:#f92672">.</span>disable()
-        Stats(pr)<span style="color:#f92672">.</span>strip_dirs()<span style="color:#f92672">.</span>sort_stats(<span style="color:#e6db74">&#39;cumulative&#39;</span>)<span style="color:#f92672">.</span>print_stats(<span style="color:#ae81ff">20</span>)
-        <span style="color:#66d9ef">return</span> result
+        pr.disable()
+        Stats(pr).strip_dirs().sort_stats(<span style="color:#ed9d13">&#39;cumulative&#39;</span>).print_stats(<span style="color:#3677a9">20</span>)
+        <span style="color:#6ab825;font-weight:bold">return</span> result
 
-    <span style="color:#66d9ef">return</span> wrapper
+    <span style="color:#6ab825;font-weight:bold">return</span> wrapper
 </code></pre></div><p>This decorator allows you to profile the speed performance of functions on the stack below the function being decorated. It uses standard library dependencies, which is great, and you can <a href="https://docs.python.org/3.7/library/profile.html#module-pstats">change the way the stats are printed out</a> to suit your needs (e.g. this is formatted well for my analysis style).</p>
 <p>The report it prints out is as follows:</p>
 <pre><code>        7636523 function calls (7636479 primitive calls) in 14.669 seconds

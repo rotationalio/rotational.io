@@ -140,56 +140,56 @@
 <p>Consider an operation that is not <a href="https://en.wikipedia.org/wiki/Commutative_property">commutative</a> or not <a href="https://en.wikipedia.org/wiki/Associative_property">associative</a> (operations that are can be implemented with <a href="https://en.wikipedia.org/wiki/Conflict-free_replicated_data_type">CRDTs</a>), for example concatenating data to a buffer. This operation must be synchronized because the original state must be preserved during the operation. A simple explanation of this is the <code>+=</code> which (for the purpose of our discussion) fetches the original value of the variable, performs the operation and stores the result back to the value. If two processes attempt to <code>+=</code> concurrently a <a href="https://en.wikipedia.org/wiki/Race_condition">race condition</a> occurs because whichever process is first to complete will have its answer overridden. In the following example, the final result of the variable will be <code>&quot;hello Bob&quot;</code> or <code>&quot;hello Alice&quot;</code> depending on which process gets there last, an undesirable state (the second operation may have preferred the concatenation to be <code>&quot;hello Bob and Alice&quot;</code> or <code>&quot;hello Alice and Bob&quot;</code>).</p>
 <p><a href="/images/2017-02-21-race-condition.png"><img src="/images/blog/2017-02-21-race-condition.png" alt="Race Condition"></a></p>
 <p>The solution is to lock the variable whenever the first process accesses it and then release it when it&rsquo;s done, that way the process is guaranteed the state of the variable for the duration of the operation. Here&rsquo;s how I implement this with a <code>struct</code> in Go:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Buffer</span> <span style="color:#66d9ef">struct</span> {
-    <span style="color:#a6e22e">sync</span>.<span style="color:#a6e22e">Mutex</span>        <span style="color:#75715e">// wraps a synchronization flag
-</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">buf</span>        <span style="color:#66d9ef">string</span> <span style="color:#75715e">// the string being concatenated to
-</span><span style="color:#75715e"></span>}
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#6ab825;font-weight:bold">type</span> Buffer <span style="color:#6ab825;font-weight:bold">struct</span> {
+    sync.Mutex        <span style="color:#999;font-style:italic">// wraps a synchronization flag
+</span><span style="color:#999;font-style:italic"></span>    buf        <span style="color:#6ab825;font-weight:bold">string</span> <span style="color:#999;font-style:italic">// the string being concatenated to
+</span><span style="color:#999;font-style:italic"></span>}
 </code></pre></div><p>By embedding the <code>sync.Mutex</code> into the struct, it can now be locked and unlocked. Even more powerfully, you can write methods that lock and <code>defer</code> unlock for very easy thread safe synchronization. Here is an example of safe and unsafe concatenation to the buffer:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">b</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Buffer</span>) <span style="color:#a6e22e">Concat</span>(<span style="color:#a6e22e">s</span> <span style="color:#66d9ef">string</span>) {
-	<span style="color:#a6e22e">b</span>.<span style="color:#a6e22e">buf</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">s</span>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#6ab825;font-weight:bold">func</span> (b *Buffer) <span style="color:#447fcf">Concat</span>(s <span style="color:#6ab825;font-weight:bold">string</span>) {
+	b.buf += s
 }
 
-<span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">b</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Buffer</span>) <span style="color:#a6e22e">SafeConcat</span>(<span style="color:#a6e22e">s</span> <span style="color:#66d9ef">string</span>) {
-	<span style="color:#a6e22e">b</span>.<span style="color:#a6e22e">Lock</span>()
-	<span style="color:#66d9ef">defer</span> <span style="color:#a6e22e">b</span>.<span style="color:#a6e22e">Unlock</span>()
-	<span style="color:#a6e22e">b</span>.<span style="color:#a6e22e">Concat</span>(<span style="color:#a6e22e">s</span>)
+<span style="color:#6ab825;font-weight:bold">func</span> (b *Buffer) <span style="color:#447fcf">SafeConcat</span>(s <span style="color:#6ab825;font-weight:bold">string</span>) {
+	b.<span style="color:#447fcf">Lock</span>()
+	<span style="color:#6ab825;font-weight:bold">defer</span> b.<span style="color:#447fcf">Unlock</span>()
+	b.<span style="color:#447fcf">Concat</span>(s)
 }
 </code></pre></div><p>It is important to note that safety does not mean that you&rsquo;re guaranteed some other arbitrary order of operations when using goroutines. Consider the following concurrent concatenate example that injects some sleep into the concat function (find the <a href="https://gist.github.com/bbengfort/dcd6a1a36a9670562fe8a04cf836ce49">complete code on Gist</a>):</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">var</span> (
-	<span style="color:#a6e22e">safe</span>   <span style="color:#66d9ef">bool</span>
-	<span style="color:#a6e22e">start</span>  <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Time</span>
-	<span style="color:#a6e22e">group</span>  <span style="color:#f92672">*</span><span style="color:#a6e22e">sync</span>.<span style="color:#a6e22e">WaitGroup</span>
-	<span style="color:#a6e22e">buffer</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Buffer</span>
-	<span style="color:#a6e22e">alphas</span> []<span style="color:#66d9ef">string</span>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#6ab825;font-weight:bold">var</span> (
+	safe   <span style="color:#6ab825;font-weight:bold">bool</span>
+	start  time.Time
+	group  *sync.WaitGroup
+	buffer *Buffer
+	alphas []<span style="color:#6ab825;font-weight:bold">string</span>
 )
 
-<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">write</span>(<span style="color:#a6e22e">idx</span> <span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">safe</span> <span style="color:#66d9ef">bool</span>) {
-	<span style="color:#66d9ef">defer</span> <span style="color:#a6e22e">group</span>.<span style="color:#a6e22e">Done</span>()
+<span style="color:#6ab825;font-weight:bold">func</span> <span style="color:#447fcf">write</span>(idx <span style="color:#6ab825;font-weight:bold">int</span>, safe <span style="color:#6ab825;font-weight:bold">bool</span>) {
+	<span style="color:#6ab825;font-weight:bold">defer</span> group.<span style="color:#447fcf">Done</span>()
 
-	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">idx</span> <span style="color:#f92672">&gt;=</span> len(<span style="color:#a6e22e">alphas</span>) {
-		<span style="color:#66d9ef">return</span>
+	<span style="color:#6ab825;font-weight:bold">if</span> idx &gt;= <span style="color:#24909d">len</span>(alphas) {
+		<span style="color:#6ab825;font-weight:bold">return</span>
 	}
 
-	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">safe</span> {
-		<span style="color:#a6e22e">buffer</span>.<span style="color:#a6e22e">SafeConcat</span>(<span style="color:#a6e22e">alphas</span>[<span style="color:#a6e22e">idx</span>])
-	} <span style="color:#66d9ef">else</span> {
-		<span style="color:#a6e22e">buffer</span>.<span style="color:#a6e22e">Concat</span>(<span style="color:#a6e22e">alphas</span>[<span style="color:#a6e22e">idx</span>])
+	<span style="color:#6ab825;font-weight:bold">if</span> safe {
+		buffer.<span style="color:#447fcf">SafeConcat</span>(alphas[idx])
+	} <span style="color:#6ab825;font-weight:bold">else</span> {
+		buffer.<span style="color:#447fcf">Concat</span>(alphas[idx])
 	}
 
 }
 
-<span style="color:#a6e22e">group</span> = new(<span style="color:#a6e22e">sync</span>.<span style="color:#a6e22e">WaitGroup</span>)
-<span style="color:#a6e22e">alphas</span> = []<span style="color:#66d9ef">string</span>{<span style="color:#e6db74">&#34;a&#34;</span>, <span style="color:#e6db74">&#34;b&#34;</span>, <span style="color:#e6db74">&#34;c&#34;</span>, <span style="color:#e6db74">&#34;d&#34;</span>, <span style="color:#e6db74">&#34;e&#34;</span>, <span style="color:#e6db74">&#34;f&#34;</span>, <span style="color:#e6db74">&#34;g&#34;</span>, <span style="color:#e6db74">&#34;h&#34;</span>, <span style="color:#e6db74">&#34;i&#34;</span>,}
-<span style="color:#a6e22e">buffer</span> = new(<span style="color:#a6e22e">Buffer</span>)
-<span style="color:#a6e22e">start</span> = <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Now</span>()
+group = <span style="color:#24909d">new</span>(sync.WaitGroup)
+alphas = []<span style="color:#6ab825;font-weight:bold">string</span>{<span style="color:#ed9d13">&#34;a&#34;</span>, <span style="color:#ed9d13">&#34;b&#34;</span>, <span style="color:#ed9d13">&#34;c&#34;</span>, <span style="color:#ed9d13">&#34;d&#34;</span>, <span style="color:#ed9d13">&#34;e&#34;</span>, <span style="color:#ed9d13">&#34;f&#34;</span>, <span style="color:#ed9d13">&#34;g&#34;</span>, <span style="color:#ed9d13">&#34;h&#34;</span>, <span style="color:#ed9d13">&#34;i&#34;</span>,}
+buffer = <span style="color:#24909d">new</span>(Buffer)
+start = time.<span style="color:#447fcf">Now</span>()
 
-<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> &lt; len(<span style="color:#a6e22e">alphas</span>); <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
-    <span style="color:#a6e22e">group</span>.<span style="color:#a6e22e">Add</span>(<span style="color:#ae81ff">1</span>)
-    <span style="color:#66d9ef">go</span> <span style="color:#a6e22e">write</span>(<span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">safe</span>)
+<span style="color:#6ab825;font-weight:bold">for</span> i := <span style="color:#3677a9">0</span>; i &lt; <span style="color:#24909d">len</span>(alphas); i++ {
+    group.<span style="color:#447fcf">Add</span>(<span style="color:#3677a9">1</span>)
+    <span style="color:#6ab825;font-weight:bold">go</span> <span style="color:#447fcf">write</span>(i, safe)
 }
 
-<span style="color:#a6e22e">group</span>.<span style="color:#a6e22e">Wait</span>()
-<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;\nresult: %s in %s (safe=%t)\n&#34;</span>, <span style="color:#a6e22e">buffer</span>, <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Since</span>(<span style="color:#a6e22e">start</span>), <span style="color:#a6e22e">safe</span>)
+group.<span style="color:#447fcf">Wait</span>()
+fmt.<span style="color:#447fcf">Printf</span>(<span style="color:#ed9d13">&#34;\nresult: %s in %s (safe=%t)\n&#34;</span>, buffer, time.<span style="color:#447fcf">Since</span>(start), safe)
 </code></pre></div><p>Here, we&rsquo;re using a <code>sync.WaitGroup</code> to determine when all the go routines are complete (e.g. join on the collection of routines) and have them write the letter of their index to the buffer. The output is as follows:</p>
 <pre><code>result: fiedhcjgab in 1.004835942s (safe=false)
 result: kbahgifjced in 11.020241668s (safe=true)

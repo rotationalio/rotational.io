@@ -160,35 +160,35 @@
 <p>In order to reduce confusion between network messages and actor messages, I prefer to use the term &ldquo;event&rdquo; when referring to messages sent between actors. This also allows us to reason about actors as implementing an event loop, another common distributed systems design paradigm. It is important to note that <a href="https://www.quora.com/What-are-the-relative-tradeoffs-between-the-actors-model-and-an-event-driven-architecture">“actors are a specialized, opinionated implementation of an event driven architecture”</a>, which means the actor model is a subset of event architectures, such as the <a href="https://bbengfort.github.io/2017/07/event-dispatcher/">dispatcher model</a>.</p>
 <p>I realize this does cause a bit of cognitive overhead, but this pays off when complex systems with many event types can be traced, showing a serial order of events handled by an actor. So for now, we&rsquo;ll consider an event a message that can be &ldquo;dispatched&rdquo; (sent) to other actors, and &ldquo;handled&rdquo; (received) by an actor, one at a time.</p>
 <p>Events are described by their type, which determines what data the event contains and how it should be handled by the actor. In Go, event types can be implemented as an enumeration by extending the <code>uint16</code> type as follows:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// Event types represented in Ipseity
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> (
-    <span style="color:#a6e22e">UnknownEvent</span> <span style="color:#a6e22e">EventType</span> = <span style="color:#66d9ef">iota</span>
-    <span style="color:#a6e22e">IdentityRequest</span>
-    <span style="color:#a6e22e">SyncTimeout</span>
-    <span style="color:#a6e22e">SyncRequest</span>
-    <span style="color:#a6e22e">SyncReply</span>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#999;font-style:italic">// Event types represented in Ipseity
+</span><span style="color:#999;font-style:italic"></span><span style="color:#6ab825;font-weight:bold">const</span> (
+    UnknownEvent EventType = <span style="color:#6ab825;font-weight:bold">iota</span>
+    IdentityRequest
+    SyncTimeout
+    SyncRequest
+    SyncReply
 )
 
-<span style="color:#75715e">// String names of event types
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">eventTypeStrings</span> = [<span style="color:#f92672">...</span>]<span style="color:#66d9ef">string</span>{
-    <span style="color:#e6db74">&#34;unknown&#34;</span>, <span style="color:#e6db74">&#34;identityRequest&#34;</span>, <span style="color:#e6db74">&#34;syncTimeout&#34;</span>, <span style="color:#e6db74">&#34;syncRequest&#34;</span>, <span style="color:#e6db74">&#34;syncReply&#34;</span>,
+<span style="color:#999;font-style:italic">// String names of event types
+</span><span style="color:#999;font-style:italic"></span><span style="color:#6ab825;font-weight:bold">var</span> eventTypeStrings = [...]<span style="color:#6ab825;font-weight:bold">string</span>{
+    <span style="color:#ed9d13">&#34;unknown&#34;</span>, <span style="color:#ed9d13">&#34;identityRequest&#34;</span>, <span style="color:#ed9d13">&#34;syncTimeout&#34;</span>, <span style="color:#ed9d13">&#34;syncRequest&#34;</span>, <span style="color:#ed9d13">&#34;syncReply&#34;</span>,
 }
 
-<span style="color:#75715e">// EventType is an enumeration of the kind of events that actors handle
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">EventType</span> <span style="color:#66d9ef">uint16</span>
+<span style="color:#999;font-style:italic">// EventType is an enumeration of the kind of events that actors handle
+</span><span style="color:#999;font-style:italic"></span><span style="color:#6ab825;font-weight:bold">type</span> EventType <span style="color:#6ab825;font-weight:bold">uint16</span>
 
-<span style="color:#75715e">// String returns the human readable name of the event type
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">t</span> <span style="color:#a6e22e">EventType</span>) <span style="color:#a6e22e">String</span>() <span style="color:#66d9ef">string</span> {
-    <span style="color:#66d9ef">if</span> int(<span style="color:#a6e22e">t</span>) &lt; len(<span style="color:#a6e22e">eventTypeStrings</span>) {
-        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">eventTypeStrings</span>[<span style="color:#a6e22e">t</span>]
+<span style="color:#999;font-style:italic">// String returns the human readable name of the event type
+</span><span style="color:#999;font-style:italic"></span><span style="color:#6ab825;font-weight:bold">func</span> (t EventType) <span style="color:#447fcf">String</span>() <span style="color:#6ab825;font-weight:bold">string</span> {
+    <span style="color:#6ab825;font-weight:bold">if</span> <span style="color:#24909d">int</span>(t) &lt; <span style="color:#24909d">len</span>(eventTypeStrings) {
+        <span style="color:#6ab825;font-weight:bold">return</span> eventTypeStrings[t]
     }
-    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">eventTypeStrings</span>[<span style="color:#ae81ff">0</span>]
+    <span style="color:#6ab825;font-weight:bold">return</span> eventTypeStrings[<span style="color:#3677a9">0</span>]
 }
 </code></pre></div><p>Events themselves are usually represented by an interface to allow for multiple event types with specialized functionality to be created in code. For simplicity here, however, I&rsquo;ll simply define a single event <code>struct</code> and we&rsquo;ll use type casting later in the code:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Event</span> <span style="color:#66d9ef">struct</span> {
-    <span style="color:#a6e22e">Type</span> <span style="color:#a6e22e">EventType</span>
-    <span style="color:#a6e22e">Source</span> <span style="color:#66d9ef">interface</span>{}
-    <span style="color:#a6e22e">Value</span> <span style="color:#66d9ef">interface</span>{}
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#6ab825;font-weight:bold">type</span> Event <span style="color:#6ab825;font-weight:bold">struct</span> {
+    Type EventType
+    Source <span style="color:#6ab825;font-weight:bold">interface</span>{}
+    Value <span style="color:#6ab825;font-weight:bold">interface</span>{}
 }
 </code></pre></div><p>The <code>Source</code> of the event is the actor that is dispatching the event, and we&rsquo;ll primarily use this to store channels so that we can send messages (events) back to the actor. The <code>Value</code> of the event is any associated data that needs to be used by the actor processing the event.</p>
 <h3 id="actor-interface">Actor Interface</h3>
@@ -199,50 +199,50 @@
 <li>Actors that exist ephemerally to handle one or few events</li>
 </ul>
 <p>As a result it is difficult to describe an interface that handles all of these types generically. Instead we&rsquo;ll focus on the central actor of our application (called the &ldquo;Local Actor&rdquo; in the diagram above), which fulfills the first role (runs the duration of the program) and most completely describes the actor design.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Actor</span> <span style="color:#66d9ef">interface</span> {
-    <span style="color:#a6e22e">Listen</span>(<span style="color:#a6e22e">addr</span> <span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">error</span> <span style="color:#75715e">// Run the actor to listen for messages
-</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">Dispatch</span>(<span style="color:#a6e22e">Event</span>) <span style="color:#66d9ef">error</span>     <span style="color:#75715e">// Outside callers dispatch events to actor
-</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">Handle</span>(<span style="color:#a6e22e">Event</span>) <span style="color:#66d9ef">error</span>       <span style="color:#75715e">// Handle each event sequentially
-</span><span style="color:#75715e"></span>}
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#6ab825;font-weight:bold">type</span> Actor <span style="color:#6ab825;font-weight:bold">interface</span> {
+    <span style="color:#447fcf">Listen</span>(addr <span style="color:#6ab825;font-weight:bold">string</span>) <span style="color:#6ab825;font-weight:bold">error</span> <span style="color:#999;font-style:italic">// Run the actor to listen for messages
+</span><span style="color:#999;font-style:italic"></span>    <span style="color:#447fcf">Dispatch</span>(Event) <span style="color:#6ab825;font-weight:bold">error</span>     <span style="color:#999;font-style:italic">// Outside callers dispatch events to actor
+</span><span style="color:#999;font-style:italic"></span>    <span style="color:#447fcf">Handle</span>(Event) <span style="color:#6ab825;font-weight:bold">error</span>       <span style="color:#999;font-style:italic">// Handle each event sequentially
+</span><span style="color:#999;font-style:italic"></span>}
 </code></pre></div><p>As noted in the introduction and throughput appendix below, there are a number of ways to implement the actor interface that ensure events received by the <code>Dispatch</code> method are handled one at a time, in sequential order. Here, we&rsquo;ll use a a <a href="https://gobyexample.com/channel-buffering">buffered channel</a> as a mailbox of a fixed size, so that other actors that are dispatching events to this actor aren&rsquo;t blocked while the actor is handling other messages.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">ActorServer</span> <span style="color:#66d9ef">struct</span> {
-    <span style="color:#a6e22e">pid</span>      <span style="color:#66d9ef">int64</span>      <span style="color:#75715e">// unique identity of the actor
-</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">events</span>   <span style="color:#66d9ef">chan</span> <span style="color:#a6e22e">Event</span> <span style="color:#75715e">// mailbox to receive event dispatches
-</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">sequence</span> <span style="color:#66d9ef">int64</span>      <span style="color:#75715e">// internal state, monotonically increasing identity
-</span><span style="color:#75715e"></span>}
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#6ab825;font-weight:bold">type</span> ActorServer <span style="color:#6ab825;font-weight:bold">struct</span> {
+    pid      <span style="color:#6ab825;font-weight:bold">int64</span>      <span style="color:#999;font-style:italic">// unique identity of the actor
+</span><span style="color:#999;font-style:italic"></span>    events   <span style="color:#6ab825;font-weight:bold">chan</span> Event <span style="color:#999;font-style:italic">// mailbox to receive event dispatches
+</span><span style="color:#999;font-style:italic"></span>    sequence <span style="color:#6ab825;font-weight:bold">int64</span>      <span style="color:#999;font-style:italic">// internal state, monotonically increasing identity
+</span><span style="color:#999;font-style:italic"></span>}
 </code></pre></div><p>The <code>Listen</code> method starts the actor, (as well as a gRPC server on the specified <code>addr</code>, which we&rsquo;ll discuss later) and reads messages off the channel one at a time, executing the <code>Handle</code> method for each message before moving to the next message. <code>Listen</code> runs forever until the events channel is closed, e.g. when the program exits.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">a</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">ActorServer</span>) <span style="color:#a6e22e">Listen</span>(<span style="color:#a6e22e">addr</span> <span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">error</span> {
-    <span style="color:#75715e">// Initialize the events channel able to buffer 1024 messages
-</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">events</span> = make(<span style="color:#66d9ef">chan</span> <span style="color:#a6e22e">Event</span>, <span style="color:#ae81ff">1024</span>)
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#6ab825;font-weight:bold">func</span> (a *ActorServer) <span style="color:#447fcf">Listen</span>(addr <span style="color:#6ab825;font-weight:bold">string</span>) <span style="color:#6ab825;font-weight:bold">error</span> {
+    <span style="color:#999;font-style:italic">// Initialize the events channel able to buffer 1024 messages
+</span><span style="color:#999;font-style:italic"></span>    a.events = <span style="color:#24909d">make</span>(<span style="color:#6ab825;font-weight:bold">chan</span> Event, <span style="color:#3677a9">1024</span>)
 
-    <span style="color:#75715e">// Read events off of the channel sequentially
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">event</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">events</span> {
-        <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">Handle</span>(<span style="color:#a6e22e">event</span>); <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
-            <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">err</span>
+    <span style="color:#999;font-style:italic">// Read events off of the channel sequentially
+</span><span style="color:#999;font-style:italic"></span>    <span style="color:#6ab825;font-weight:bold">for</span> event := <span style="color:#6ab825;font-weight:bold">range</span> a.events {
+        <span style="color:#6ab825;font-weight:bold">if</span> err := a.<span style="color:#447fcf">Handle</span>(event); err != <span style="color:#6ab825;font-weight:bold">nil</span> {
+            <span style="color:#6ab825;font-weight:bold">return</span> err
         }
     }
 
-    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">nil</span>
+    <span style="color:#6ab825;font-weight:bold">return</span> <span style="color:#6ab825;font-weight:bold">nil</span>
 }
 </code></pre></div><p>The <code>Handle</code> method can create new actors, send messages, and determine how to respond to the next event. Generally it is just a jump table, passing the event to the correct event handling method:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">a</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">ActorServer</span>) <span style="color:#a6e22e">Handle</span>(<span style="color:#a6e22e">e</span> <span style="color:#a6e22e">Event</span>) <span style="color:#66d9ef">error</span> {
-    <span style="color:#66d9ef">switch</span> <span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">Type</span>() {
-    <span style="color:#66d9ef">case</span> <span style="color:#a6e22e">IdentityRequest</span>:
-        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">onIdentityRequest</span>(<span style="color:#a6e22e">e</span>)
-    <span style="color:#66d9ef">case</span> <span style="color:#a6e22e">SyncTimeout</span>:
-        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">onSyncTimeout</span>(<span style="color:#a6e22e">e</span>)
-    <span style="color:#66d9ef">case</span> <span style="color:#a6e22e">SyncRequest</span>:
-        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">onSyncRequest</span>(<span style="color:#a6e22e">e</span>)
-    <span style="color:#66d9ef">case</span> <span style="color:#a6e22e">SyncReply</span>:
-        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">onSyncReply</span>(<span style="color:#a6e22e">e</span>)
-    <span style="color:#66d9ef">default</span>:
-        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Errorf</span>(<span style="color:#e6db74">&#34;no handler identified for event %s&#34;</span>, <span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">Type</span>())
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#6ab825;font-weight:bold">func</span> (a *ActorServer) <span style="color:#447fcf">Handle</span>(e Event) <span style="color:#6ab825;font-weight:bold">error</span> {
+    <span style="color:#6ab825;font-weight:bold">switch</span> e.<span style="color:#447fcf">Type</span>() {
+    <span style="color:#6ab825;font-weight:bold">case</span> IdentityRequest:
+        <span style="color:#6ab825;font-weight:bold">return</span> a.<span style="color:#447fcf">onIdentityRequest</span>(e)
+    <span style="color:#6ab825;font-weight:bold">case</span> SyncTimeout:
+        <span style="color:#6ab825;font-weight:bold">return</span> a.<span style="color:#447fcf">onSyncTimeout</span>(e)
+    <span style="color:#6ab825;font-weight:bold">case</span> SyncRequest:
+        <span style="color:#6ab825;font-weight:bold">return</span> a.<span style="color:#447fcf">onSyncRequest</span>(e)
+    <span style="color:#6ab825;font-weight:bold">case</span> SyncReply:
+        <span style="color:#6ab825;font-weight:bold">return</span> a.<span style="color:#447fcf">onSyncReply</span>(e)
+    <span style="color:#6ab825;font-weight:bold">default</span>:
+        <span style="color:#6ab825;font-weight:bold">return</span> fmt.<span style="color:#447fcf">Errorf</span>(<span style="color:#ed9d13">&#34;no handler identified for event %s&#34;</span>, e.<span style="color:#447fcf">Type</span>())
     }
 }
 </code></pre></div><p>The <code>Dispatch</code> method allows other actors to send events to the actor, by simply putting the event on the channel. When other go routines call <code>Dispatch</code> they won&rsquo;t be blocked, waiting for the actor to handle the event because of the buffer … unless the actor has been backed up so the buffer is full.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">a</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">ActorServer</span>) <span style="color:#a6e22e">Dispatch</span>(<span style="color:#a6e22e">e</span> <span style="color:#a6e22e">Event</span>) <span style="color:#66d9ef">error</span> {
-    <span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">events</span> <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">e</span>
-    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">nil</span>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#6ab825;font-weight:bold">func</span> (a *ActorServer) <span style="color:#447fcf">Dispatch</span>(e Event) <span style="color:#6ab825;font-weight:bold">error</span> {
+    a.events &lt;- e
+    <span style="color:#6ab825;font-weight:bold">return</span> <span style="color:#6ab825;font-weight:bold">nil</span>
 }
 </code></pre></div><h2 id="next-steps">Next Steps</h2>
 <p>In the next post (or two) we&rsquo;ll hook up a gRPC server to the actor so that it can serve identity requests to clients as well as send and respond to synchronization requests for remote actors. We&rsquo;ll also create a second go routine next to the actor process that issues synchronization timeouts on a periodic interval. Together, the complete system will be able to issue monotonically increasing identities in an eventually consistent fashion.</p>

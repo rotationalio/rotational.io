@@ -158,19 +158,19 @@
 </ul>
 <h2 id="basics">Basics</h2>
 <p>Just a quick reminder of how to write tests, benchmarks, and examples. A test is written as follows:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">TestThing</span>(<span style="color:#a6e22e">t</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">testing</span>.<span style="color:#a6e22e">T</span>) {}
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#6ab825;font-weight:bold">func</span> <span style="color:#447fcf">TestThing</span>(t *testing.T) {}
 </code></pre></div><p>Benchmarks are written as follows:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">BenchmarkThing</span>(<span style="color:#a6e22e">b</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">testing</span>.<span style="color:#a6e22e">B</span>) {
-    <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> &lt; <span style="color:#a6e22e">b</span>.<span style="color:#a6e22e">N</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
-        <span style="color:#75715e">// Do Thing
-</span><span style="color:#75715e"></span>    }
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#6ab825;font-weight:bold">func</span> <span style="color:#447fcf">BenchmarkThing</span>(b *testing.B) {
+    <span style="color:#6ab825;font-weight:bold">for</span> i := <span style="color:#3677a9">0</span>; i &lt; b.N; i++ {
+        <span style="color:#999;font-style:italic">// Do Thing
+</span><span style="color:#999;font-style:italic"></span>    }
 }
 </code></pre></div><p>To run benchmarks, ensure you use the bench flag: <code>go test -bench=.</code> with the directory that contains the benchmarks specified. Examples are written as follows:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">Examplething</span>() {
-    <span style="color:#a6e22e">Thing</span>()
-    <span style="color:#75715e">// Output:
-</span><span style="color:#75715e"></span>    <span style="color:#75715e">// thing happened
-</span><span style="color:#75715e"></span>}
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#6ab825;font-weight:bold">func</span> <span style="color:#447fcf">Examplething</span>() {
+    <span style="color:#447fcf">Thing</span>()
+    <span style="color:#999;font-style:italic">// Output:
+</span><span style="color:#999;font-style:italic"></span>    <span style="color:#999;font-style:italic">// thing happened
+</span><span style="color:#999;font-style:italic"></span>}
 </code></pre></div><p>Test assertions and descriptions are as follows (most commonly used):</p>
 <ul>
 <li><code>t.Error</code>/<code>t.Errorf</code>: equivalent to <code>t.Log</code> followed by <code>t.Fail</code>, which means that the failure message is printed out, but the test continues running.</li>
@@ -181,62 +181,62 @@
 <p>Ref: <a href="https://golang.org/pkg/testing/">Package testing</a></p>
 <h2 id="table-driven-tests">Table Driven Tests</h2>
 <p>Table driven tests use several language features including composite literals and anonymous structs to write related tests in a compact form. The most compact form of the tests looks like this:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">fibTests</span> = []<span style="color:#66d9ef">struct</span>{
-    <span style="color:#a6e22e">n</span> <span style="color:#66d9ef">int</span>        <span style="color:#75715e">//input
-</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">expected</span> <span style="color:#66d9ef">int</span> <span style="color:#75715e">// expected result
-</span><span style="color:#75715e"></span>}{
-    {<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>}, {<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">1</span>}, {<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">2</span>}, {<span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">3</span>}, {<span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">5</span>}, {<span style="color:#ae81ff">6</span>, <span style="color:#ae81ff">8</span>}, {<span style="color:#ae81ff">7</span>, <span style="color:#ae81ff">13</span>},
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#6ab825;font-weight:bold">var</span> fibTests = []<span style="color:#6ab825;font-weight:bold">struct</span>{
+    n <span style="color:#6ab825;font-weight:bold">int</span>        <span style="color:#999;font-style:italic">//input
+</span><span style="color:#999;font-style:italic"></span>    expected <span style="color:#6ab825;font-weight:bold">int</span> <span style="color:#999;font-style:italic">// expected result
+</span><span style="color:#999;font-style:italic"></span>}{
+    {<span style="color:#3677a9">1</span>, <span style="color:#3677a9">1</span>}, {<span style="color:#3677a9">2</span>, <span style="color:#3677a9">1</span>}, {<span style="color:#3677a9">3</span>, <span style="color:#3677a9">2</span>}, {<span style="color:#3677a9">4</span>, <span style="color:#3677a9">3</span>}, {<span style="color:#3677a9">5</span>, <span style="color:#3677a9">5</span>}, {<span style="color:#3677a9">6</span>, <span style="color:#3677a9">8</span>}, {<span style="color:#3677a9">7</span>, <span style="color:#3677a9">13</span>},
 }
 </code></pre></div><p>Of course it is also possible to define an internal struct in the test package (if using <code>pkg_test</code>) for reusable test construction. Hooking it up is as simple as:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">TestFig</span>(<span style="color:#a6e22e">t</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">testing</span>.<span style="color:#a6e22e">T</span>) {
-    <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">tt</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">fibTests</span> {
-        <span style="color:#a6e22e">actual</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">Fib</span>(<span style="color:#a6e22e">tt</span>.<span style="color:#a6e22e">n</span>)
-        <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">actual</span> <span style="color:#f92672">!=</span> <span style="color:#a6e22e">expected</span> {
-            <span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">Errorf</span>(<span style="color:#e6db74">&#34;Fig(%d): expected %d, actual %d&#34;</span>, <span style="color:#a6e22e">tt</span>.<span style="color:#a6e22e">n</span>, <span style="color:#a6e22e">tt</span>.<span style="color:#a6e22e">expected</span>, <span style="color:#a6e22e">actual</span>)
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#6ab825;font-weight:bold">func</span> <span style="color:#447fcf">TestFig</span>(t *testing.T) {
+    <span style="color:#6ab825;font-weight:bold">for</span> _, tt := <span style="color:#6ab825;font-weight:bold">range</span> fibTests {
+        actual := <span style="color:#447fcf">Fib</span>(tt.n)
+        <span style="color:#6ab825;font-weight:bold">if</span> actual != expected {
+            t.<span style="color:#447fcf">Errorf</span>(<span style="color:#ed9d13">&#34;Fig(%d): expected %d, actual %d&#34;</span>, tt.n, tt.expected, actual)
         }
     }
 }
 </code></pre></div><p>Ref: <a href="https://dave.cheney.net/2013/06/09/writing-table-driven-tests-in-go">Dave Cheney — Writing table driven tests in Go</a></p>
 <h2 id="fixtures">Fixtures</h2>
 <p>When using the Go testing package, the test binary will be executed with its working directory set to the source directory of the package being tested. Additionally, the Go tool will ignore directories that start with a period, an underscore, or matches the word <code>testdata</code>. This means that you can create a directory called <code>testdata</code> and store fixtures there. You can then load data as follows:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">loadFixture</span>(<span style="color:#a6e22e">t</span>  <span style="color:#f92672">*</span><span style="color:#a6e22e">testing</span>.<span style="color:#a6e22e">T</span>, <span style="color:#a6e22e">name</span> <span style="color:#66d9ef">string</span>) []<span style="color:#66d9ef">byte</span> {
-    <span style="color:#a6e22e">path</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">filepath</span>.<span style="color:#a6e22e">Join</span>(<span style="color:#e6db74">&#34;testdata&#34;</span>, <span style="color:#a6e22e">name</span>)
-    <span style="color:#a6e22e">bytes</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">ioutil</span>.<span style="color:#a6e22e">Readfile</span>(<span style="color:#a6e22e">path</span>)
-    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
-        <span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">Fatalf</span>(<span style="color:#e6db74">&#34;could not open test fixture %s: %s&#34;</span>, <span style="color:#a6e22e">name</span>, <span style="color:#a6e22e">err</span>)
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#6ab825;font-weight:bold">func</span> <span style="color:#447fcf">loadFixture</span>(t  *testing.T, name <span style="color:#6ab825;font-weight:bold">string</span>) []<span style="color:#6ab825;font-weight:bold">byte</span> {
+    path := filepath.<span style="color:#447fcf">Join</span>(<span style="color:#ed9d13">&#34;testdata&#34;</span>, name)
+    bytes, err := ioutil.<span style="color:#447fcf">Readfile</span>(path)
+    <span style="color:#6ab825;font-weight:bold">if</span> err != <span style="color:#6ab825;font-weight:bold">nil</span> {
+        t.<span style="color:#447fcf">Fatalf</span>(<span style="color:#ed9d13">&#34;could not open test fixture %s: %s&#34;</span>, name, err)
     }
-    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">bytes</span>
+    <span style="color:#6ab825;font-weight:bold">return</span> bytes
 }
 </code></pre></div><p>Ref: <a href="https://dave.cheney.net/2016/05/10/test-fixtures-in-go">Dave Cheney — Test fixtures in Go</a></p>
 <h3 id="golden-files">Golden Files</h3>
 <p>When testing complicated or large output, you can save the data as an output file named <code>.golden</code> and provide a flag for updating it:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">update</span> = <span style="color:#a6e22e">flag</span>.<span style="color:#a6e22e">Bool</span>(<span style="color:#e6db74">&#34;update&#34;</span>, <span style="color:#66d9ef">false</span>, <span style="color:#e6db74">&#34;update .golden files&#34;</span>)
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#6ab825;font-weight:bold">var</span> update = flag.<span style="color:#447fcf">Bool</span>(<span style="color:#ed9d13">&#34;update&#34;</span>, <span style="color:#6ab825;font-weight:bold">false</span>, <span style="color:#ed9d13">&#34;update .golden files&#34;</span>)
 
-<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">TestSomething</span>(<span style="color:#a6e22e">t</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">testing</span>.<span style="color:#a6e22e">T</span>) {
-    <span style="color:#a6e22e">actual</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">doSomething</span>()
+<span style="color:#6ab825;font-weight:bold">func</span> <span style="color:#447fcf">TestSomething</span>(t *testing.T) {
+    actual := <span style="color:#447fcf">doSomething</span>()
 
-    <span style="color:#a6e22e">golden</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">filepath</span>.<span style="color:#a6e22e">Join</span>(<span style="color:#e6db74">&#34;testdata&#34;</span>, <span style="color:#a6e22e">tc</span>.<span style="color:#a6e22e">Name</span><span style="color:#f92672">+</span><span style="color:#e6db74">&#34;.golden&#34;</span>)
-    <span style="color:#66d9ef">if</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">update</span> {
-        <span style="color:#a6e22e">ioutil</span>.<span style="color:#a6e22e">WriteFile</span>(<span style="color:#a6e22e">golden</span>, <span style="color:#a6e22e">actual</span>, <span style="color:#ae81ff">0644</span>)
+    golden := filepath.<span style="color:#447fcf">Join</span>(<span style="color:#ed9d13">&#34;testdata&#34;</span>, tc.Name+<span style="color:#ed9d13">&#34;.golden&#34;</span>)
+    <span style="color:#6ab825;font-weight:bold">if</span> *update {
+        ioutil.<span style="color:#447fcf">WriteFile</span>(golden, actual, <span style="color:#3677a9">0644</span>)
     }
 
-    <span style="color:#a6e22e">expected</span>, <span style="color:#a6e22e">_</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">ioutil</span>.<span style="color:#a6e22e">ReadFile</span>(<span style="color:#a6e22e">golden</span>)
-    <span style="color:#66d9ef">if</span> !<span style="color:#a6e22e">bytes</span>.<span style="color:#a6e22e">Equal</span>(<span style="color:#a6e22e">actual</span>, <span style="color:#a6e22e">expected</span>) {
-        <span style="color:#75715e">// Fail!
-</span><span style="color:#75715e"></span>    }
+    expected, _ := ioutil.<span style="color:#447fcf">ReadFile</span>(golden)
+    <span style="color:#6ab825;font-weight:bold">if</span> !bytes.<span style="color:#447fcf">Equal</span>(actual, expected) {
+        <span style="color:#999;font-style:italic">// Fail!
+</span><span style="color:#999;font-style:italic"></span>    }
 }
 </code></pre></div><p>Ref: <a href="https://medium.com/@povilasve/go-advanced-tips-tricks-a872503ac859">Povilas Versockas — Go advanced testing tips &amp; tricks</a></p>
 <h2 id="frameworks">Frameworks</h2>
 <h3 id="no-framework">No Framework</h3>
 <p>Ben Johnson makes a good argument for not using a testing framework. Go has a simple yet powerful testing framework. Frameworks are a barrier to entry for contributors to code. Frameworks require more dependencies to be fetched and managed. To reduce the verbosity, you can include simple test assertions as follows:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">assert</span>(<span style="color:#a6e22e">tb</span> <span style="color:#a6e22e">testing</span>.<span style="color:#a6e22e">TB</span>, <span style="color:#a6e22e">condition</span> <span style="color:#66d9ef">bool</span>, <span style="color:#a6e22e">msg</span> <span style="color:#66d9ef">string</span>)
-<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">ok</span>(<span style="color:#a6e22e">tb</span> <span style="color:#a6e22e">testing</span>.<span style="color:#a6e22e">TB</span>, <span style="color:#a6e22e">err</span> <span style="color:#66d9ef">error</span>)
-<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">equals</span>(<span style="color:#a6e22e">tb</span> <span style="color:#a6e22e">testing</span>.<span style="color:#a6e22e">TB</span>, <span style="color:#a6e22e">exp</span>, <span style="color:#a6e22e">act</span> <span style="color:#66d9ef">interface</span>{})
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#6ab825;font-weight:bold">func</span> <span style="color:#447fcf">assert</span>(tb testing.TB, condition <span style="color:#6ab825;font-weight:bold">bool</span>, msg <span style="color:#6ab825;font-weight:bold">string</span>)
+<span style="color:#6ab825;font-weight:bold">func</span> <span style="color:#447fcf">ok</span>(tb testing.TB, err <span style="color:#6ab825;font-weight:bold">error</span>)
+<span style="color:#6ab825;font-weight:bold">func</span> <span style="color:#447fcf">equals</span>(tb testing.TB, exp, act <span style="color:#6ab825;font-weight:bold">interface</span>{})
 </code></pre></div><p>This way you can write tests as:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">TestSomething</span>(<span style="color:#a6e22e">t</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">testing</span>.<span style="color:#a6e22e">T</span>) {
-    <span style="color:#a6e22e">value</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">DoSomething</span>()
-    <span style="color:#a6e22e">ok</span>(<span style="color:#a6e22e">t</span>, <span style="color:#a6e22e">err</span>)
-    <span style="color:#a6e22e">equals</span>(<span style="color:#a6e22e">t</span>, <span style="color:#ae81ff">100</span>, <span style="color:#a6e22e">value</span>)
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#6ab825;font-weight:bold">func</span> <span style="color:#447fcf">TestSomething</span>(t *testing.T) {
+    value, err := <span style="color:#447fcf">DoSomething</span>()
+    <span style="color:#447fcf">ok</span>(t, err)
+    <span style="color:#447fcf">equals</span>(t, <span style="color:#3677a9">100</span>, value)
 }
 </code></pre></div><p>I certainly like the simplicity of this idea and on many of my small packages I simply write tests like this. However, in larger projects, it feels like test organization can quickly get out of control and I don&rsquo;t know what I&rsquo;ve tested and where.</p>
 <p>Ref: <a href="https://medium.com/@benbjohnson/structuring-tests-in-go-46ddee7a25c">Ben Johnson — Structuring Tests in Go</a>
@@ -244,24 +244,24 @@ Ref: <a href="https://github.com/benbjohnson/testing">Testing Functions for Go</
 <h3 id="ginkgo--gomega">Ginkgo &amp; Gomega</h3>
 <p>Many of my projects have started off using <a href="http://onsi.github.io/ginkgo/">Ginkgo</a> and <a href="http://onsi.github.io/gomega/">Gomega</a> for testing. Ginkgo provides BDD style testing to write expressive and well organized tests. Gomega provides a matching library for performing test-related assertions.</p>
 <p>To bootstrap a test suite (after installing the libraries with <code>go get</code>) you would run <code>ginkgo bootstrap</code>. This creates the test suite which runs the tests. You can then generate tests by running <code>ginkgo generate thing</code> to create <code>thing_test.go</code> with the test stub already inside it:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">thing_test</span>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#6ab825;font-weight:bold">package</span> thing_test
 
-<span style="color:#f92672">import</span> (
-    . <span style="color:#e6db74">&#34;/path/to/thing&#34;</span>
-    . <span style="color:#e6db74">&#34;github.com/onsi/ginkgo&#34;</span>
-    . <span style="color:#e6db74">&#34;github.com/onsi/gomega&#34;</span>
+<span style="color:#6ab825;font-weight:bold">import</span> (
+    . <span style="color:#ed9d13">&#34;/path/to/thing&#34;</span>
+    . <span style="color:#ed9d13">&#34;github.com/onsi/ginkgo&#34;</span>
+    . <span style="color:#ed9d13">&#34;github.com/onsi/gomega&#34;</span>
 )
 
-<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">_</span> = <span style="color:#a6e22e">Describe</span>(<span style="color:#e6db74">&#34;Thing&#34;</span>, <span style="color:#66d9ef">func</span>() {
+<span style="color:#6ab825;font-weight:bold">var</span> _ = <span style="color:#447fcf">Describe</span>(<span style="color:#ed9d13">&#34;Thing&#34;</span>, <span style="color:#6ab825;font-weight:bold">func</span>() {
 
-    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">thing</span> <span style="color:#a6e22e">Thing</span>
+    <span style="color:#6ab825;font-weight:bold">var</span> thing Thing
 
-    <span style="color:#a6e22e">BeforeEach</span>(<span style="color:#66d9ef">func</span>() {
-        <span style="color:#a6e22e">thing</span> = new(<span style="color:#a6e22e">Thing</span>)
+    <span style="color:#447fcf">BeforeEach</span>(<span style="color:#6ab825;font-weight:bold">func</span>() {
+        thing = <span style="color:#24909d">new</span>(Thing)
     })
 
-    <span style="color:#a6e22e">It</span>(<span style="color:#e6db74">&#34;should do something&#34;</span>, <span style="color:#66d9ef">func</span>() {
-        <span style="color:#a6e22e">Ω</span>(<span style="color:#a6e22e">thing</span>.<span style="color:#a6e22e">Something</span>()).<span style="color:#a6e22e">Should</span>(<span style="color:#a6e22e">Succeed</span>())
+    <span style="color:#447fcf">It</span>(<span style="color:#ed9d13">&#34;should do something&#34;</span>, <span style="color:#6ab825;font-weight:bold">func</span>() {
+        Ω(thing.<span style="color:#447fcf">Something</span>()).<span style="color:#447fcf">Should</span>(<span style="color:#447fcf">Succeed</span>())
     })
 
 })
@@ -270,29 +270,29 @@ Ref: <a href="https://github.com/benbjohnson/testing">Testing Functions for Go</
 <p>Helper functions can be marked with <code>t.Helper()</code>, which excludes their line and signature information from the test error traceback. They can be used to do setup for the test case, unrelated error checks, and can even clean up after themselves!</p>
 <h3 id="temporary-directories">Temporary Directories</h3>
 <p>Often, I need a temporary directory to store a database in or write files to. I can create the temporary directory with this helper function, which also returns a function to cleanup the temporary directories.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">tmpDirPrefix</span> = <span style="color:#e6db74">&#34;mytests&#34;</span>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#6ab825;font-weight:bold">const</span> tmpDirPrefix = <span style="color:#ed9d13">&#34;mytests&#34;</span>
 
-<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">tempDir</span>(<span style="color:#a6e22e">t</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">testing</span>.<span style="color:#a6e22e">T</span>, <span style="color:#a6e22e">name</span> <span style="color:#66d9ef">string</span>) (<span style="color:#a6e22e">path</span> <span style="color:#66d9ef">string</span>, <span style="color:#a6e22e">cleanup</span> <span style="color:#66d9ef">func</span>()) {
-    <span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">Helper</span>()
+<span style="color:#6ab825;font-weight:bold">func</span> <span style="color:#447fcf">tempDir</span>(t *testing.T, name <span style="color:#6ab825;font-weight:bold">string</span>) (path <span style="color:#6ab825;font-weight:bold">string</span>, cleanup <span style="color:#6ab825;font-weight:bold">func</span>()) {
+    t.<span style="color:#447fcf">Helper</span>()
 
-    <span style="color:#a6e22e">tmpDir</span>, <span style="color:#a6e22e">err</span> = <span style="color:#a6e22e">ioutil</span>.<span style="color:#a6e22e">TempDir</span>(<span style="color:#e6db74">&#34;&#34;</span>, <span style="color:#a6e22e">tmpDirPrefix</span>)
-    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
-        <span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">Fatalf</span>(<span style="color:#e6db74">&#34;could not create temporary directory: %s&#34;</span>, <span style="color:#a6e22e">err</span>)
+    tmpDir, err = ioutil.<span style="color:#447fcf">TempDir</span>(<span style="color:#ed9d13">&#34;&#34;</span>, tmpDirPrefix)
+    <span style="color:#6ab825;font-weight:bold">if</span> err != <span style="color:#6ab825;font-weight:bold">nil</span> {
+        t.<span style="color:#447fcf">Fatalf</span>(<span style="color:#ed9d13">&#34;could not create temporary directory: %s&#34;</span>, err)
     }
 
-    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">filepath</span>.<span style="color:#a6e22e">Join</span>(<span style="color:#a6e22e">tmpDir</span>, <span style="color:#a6e22e">name</span>), <span style="color:#66d9ef">func</span>() {
-        <span style="color:#a6e22e">err</span> = <span style="color:#a6e22e">os</span>.<span style="color:#a6e22e">RemoveAll</span>(<span style="color:#a6e22e">tmpDir</span>)
-        <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
-            <span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">Errorf</span>(<span style="color:#e6db74">&#34;could not remove temporary directory: %s&#34;</span>, <span style="color:#a6e22e">err</span>)
+    <span style="color:#6ab825;font-weight:bold">return</span> filepath.<span style="color:#447fcf">Join</span>(tmpDir, name), <span style="color:#6ab825;font-weight:bold">func</span>() {
+        err = os.<span style="color:#447fcf">RemoveAll</span>(tmpDir)
+        <span style="color:#6ab825;font-weight:bold">if</span> err != <span style="color:#6ab825;font-weight:bold">nil</span> {
+            t.<span style="color:#447fcf">Errorf</span>(<span style="color:#ed9d13">&#34;could not remove temporary directory: %s&#34;</span>, err)
         }
     }
 }
 </code></pre></div><p>This can be used with the cleanup function pretty simply:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">TestThing</span>(<span style="color:#a6e22e">t</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">testing</span>.<span style="color:#a6e22e">T</span>) {
-    <span style="color:#a6e22e">dir</span>, <span style="color:#a6e22e">cleanup</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">tempDir</span>(<span style="color:#a6e22e">t</span>, <span style="color:#e6db74">&#34;db&#34;</span>)
-    <span style="color:#66d9ef">defer</span> <span style="color:#a6e22e">cleanup</span>()
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#6ab825;font-weight:bold">func</span> <span style="color:#447fcf">TestThing</span>(t *testing.T) {
+    dir, cleanup := <span style="color:#447fcf">tempDir</span>(t, <span style="color:#ed9d13">&#34;db&#34;</span>)
+    <span style="color:#6ab825;font-weight:bold">defer</span> <span style="color:#447fcf">cleanup</span>()
 
-    <span style="color:#f92672">...</span>
+    ...
 }
 </code></pre></div><p>Another version that I have in some of my tests creates a temporary directory for all of the tests, stored in a variable at the top level, any caller asking for a directory can create it, but it won&rsquo;t be overridden if if already exists; then any test that cleans up will clean up that directory.</p>
 <h2 id="sources-and-references">Sources and References</h2>
