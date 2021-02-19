@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="fr-fr">
+<head>
+	<meta charset="utf-8">
+	<title>Go Testing Notes</title>
+
+	<!-- mobile responsive meta -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="description" content="Go Testing Notes">
+	
+	<meta name="author" content="Themefisher">
+	<meta name="generator" content="Hugo 0.79.1" />
+
+	<!-- plugins -->
+	
+	<link rel="stylesheet" href="https://rotationalio.github.io/plugins/bootstrap/bootstrap.min.css">
+	
+	<link rel="stylesheet" href="https://rotationalio.github.io/plugins/themify-icons/themify-icons.css">
+	
+	<link rel="stylesheet" href="https://rotationalio.github.io/plugins/magnific-popup/magnific-popup.css">
+	
+	<link rel="stylesheet" href="https://rotationalio.github.io/plugins/slick/slick.css">
+	
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Anaheim%7cQuattrocento&#43;Sans:400,700&amp;display=swap">
+	
+
+	<!-- Main Stylesheet -->
+	
+	<link rel="stylesheet" href="https://rotationalio.github.io/css/style.min.css" media="screen">
+
+	<!-- Custom stylesheet - for your changes -->
+	
+  <link rel="stylesheet" href="https://rotationalio.github.io/css/custom.min.css" media="screen">
+
+	<!--Favicon-->
+	<link rel="shortcut icon" href="https://rotationalio.github.io/images/favicon.png" type="image/x-icon">
+	<link rel="icon" href="https://rotationalio.github.io/images/favicon.png" type="image/x-icon">
+
+	
+
+</head>
+
+
+<body id="body" data-spy="scroll" data-target=".navbar" data-offset="55">
+  <div id="content">
+    
+
+
+<section class="sticky-top navigation">
+	<div class="container">
+		<nav class="navbar navbar-expand-lg navbar-dark">
+			<a class="navbar-brand p-0" href="/fr">
+				
+				<img class="lozad" data-src="https://rotationalio.github.io/images/logo.png" alt="Rotational" height="42">
+				
+			</a>
+
+			<button class="navbar-toggler rounded-0" type="button" data-toggle="collapse" data-target="#navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navigation">
+				<ul class="navbar-nav ml-auto">
+					
+					<li class="nav-item">
+            <a class="nav-link" href="https://rotationalio.github.io/#about">sur</a>
+					</li>
+					
+					<li class="nav-item">
+            <a class="nav-link" href="https://rotationalio.github.io/#services">un service</a>
+					</li>
+					
+					<li class="nav-item">
+            <a class="nav-link" href="https://rotationalio.github.io/#team">équipe</a>
+					</li>
+					
+					<li class="nav-item">
+            <a class="nav-link" href="https://rotationalio.github.io/#blog">blog</a>
+					</li>
+					
+					<li class="nav-item">
+            <a class="nav-link" href="https://rotationalio.github.io/#contact">contact</a>
+					</li>
+					
+				</ul>
+				
+				<select id="select-language" onchange="location = this.value;">
+					
+					
+					
+					
+					
+					
+					
+					
+					<option id="en" value="https://rotationalio.github.io/blog/2018-09-22-go-testing-notes/">En</option>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					<option id="fr" value="https://rotationalio.github.io/fr/blog/2018-09-22-go-testing-notes/" selected>Fr
+					</option>
+					
+					
+					
+					
+				</select>
+				
+			</div>
+		</nav>
+	</div>
+</section>
+
+
+<section class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 offset-lg-2 text-center">
+        <h1>Go Testing Notes</h1>
+        <ul class="list-inline mb-50">
+          <li class="list-inline-item"><a href="/fr/author/benjamin-bengfort/">Benjamin Bengfort</a></li>
+          <li class="list-inline-item">Saturday, Sep 22, 2018</li>
+        </ul>
+        <img class="img-fluid mb-50 lozad" data-src="https://rotationalio.github.io/images/blog/lake2_c.jpg" alt="blog-image">
+      </div>
+      <div class="col-lg-8 offset-lg-2">
+        <div class="post-single-content">
+          <p>In this post I&rsquo;m just going to maintain a list of notes for Go testing that I seem to commonly need to reference. It will also serve as an index for the posts related to testing that I have to commonly look up as well. Here is a quick listing of the table of contents:</p>
+<ul>
+<li><a href="#basics">Basics</a></li>
+<li><a href="#table-driven-tests">Table Driven Tests</a></li>
+<li><a href="#fixtures">Fixtures</a>
+<ul>
+<li><a href="#golden-files">Golden Files</a></li>
+</ul>
+</li>
+<li><a href="#frameworks">Frameworks</a>
+<ul>
+<li><a href="#no-framework">No Framework</a></li>
+<li><a href="#ginkgo--gomega">Ginkgo &amp; Gomega</a></li>
+</ul>
+</li>
+<li><a href="#helpers">Helpers</a>
+<ul>
+<li><a href="#temporary-directories">Temporary Directories</a></li>
+</ul>
+</li>
+<li><a href="#sources-and-references">Sources and References</a></li>
+</ul>
+<h2 id="basics">Basics</h2>
+<p>Just a quick reminder of how to write tests, benchmarks, and examples. A test is written as follows:</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#6ab825;font-weight:bold">func</span> <span style="color:#447fcf">TestThing</span>(t *testing.T) {}
+</code></pre></div><p>Benchmarks are written as follows:</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#6ab825;font-weight:bold">func</span> <span style="color:#447fcf">BenchmarkThing</span>(b *testing.B) {
+    <span style="color:#6ab825;font-weight:bold">for</span> i := <span style="color:#3677a9">0</span>; i &lt; b.N; i++ {
+        <span style="color:#999;font-style:italic">// Do Thing
+</span><span style="color:#999;font-style:italic"></span>    }
+}
+</code></pre></div><p>To run benchmarks, ensure you use the bench flag: <code>go test -bench=.</code> with the directory that contains the benchmarks specified. Examples are written as follows:</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#6ab825;font-weight:bold">func</span> <span style="color:#447fcf">Examplething</span>() {
+    <span style="color:#447fcf">Thing</span>()
+    <span style="color:#999;font-style:italic">// Output:
+</span><span style="color:#999;font-style:italic"></span>    <span style="color:#999;font-style:italic">// thing happened
+</span><span style="color:#999;font-style:italic"></span>}
+</code></pre></div><p>Test assertions and descriptions are as follows (most commonly used):</p>
+<ul>
+<li><code>t.Error</code>/<code>t.Errorf</code>: equivalent to <code>t.Log</code> followed by <code>t.Fail</code>, which means that the failure message is printed out, but the test continues running.</li>
+<li><code>t.Fatal</code>/<code>t.Fatalf</code>: equivalent to <code>t.Log</code> followed by <code>t.FailNow</code>, which means the failure message is printed but the test is canceled at that point (all deferred calls will be executed after this step).</li>
+<li><code>t.Helper</code>: marks the test is a helper, when printing file and line info, the function will be skipped. Usually used to make common assertions or perform setup or tear down.</li>
+<li><code>t.Skip</code>/<code>t.Skipif</code>: marks the test as skipped, though the test will still fail if any <code>Error</code> was called before the skip.</li>
+</ul>
+<p>Ref: <a href="https://golang.org/pkg/testing/">Package testing</a></p>
+<h2 id="table-driven-tests">Table Driven Tests</h2>
+<p>Table driven tests use several language features including composite literals and anonymous structs to write related tests in a compact form. The most compact form of the tests looks like this:</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#6ab825;font-weight:bold">var</span> fibTests = []<span style="color:#6ab825;font-weight:bold">struct</span>{
+    n <span style="color:#6ab825;font-weight:bold">int</span>        <span style="color:#999;font-style:italic">//input
+</span><span style="color:#999;font-style:italic"></span>    expected <span style="color:#6ab825;font-weight:bold">int</span> <span style="color:#999;font-style:italic">// expected result
+</span><span style="color:#999;font-style:italic"></span>}{
+    {<span style="color:#3677a9">1</span>, <span style="color:#3677a9">1</span>}, {<span style="color:#3677a9">2</span>, <span style="color:#3677a9">1</span>}, {<span style="color:#3677a9">3</span>, <span style="color:#3677a9">2</span>}, {<span style="color:#3677a9">4</span>, <span style="color:#3677a9">3</span>}, {<span style="color:#3677a9">5</span>, <span style="color:#3677a9">5</span>}, {<span style="color:#3677a9">6</span>, <span style="color:#3677a9">8</span>}, {<span style="color:#3677a9">7</span>, <span style="color:#3677a9">13</span>},
+}
+</code></pre></div><p>Of course it is also possible to define an internal struct in the test package (if using <code>pkg_test</code>) for reusable test construction. Hooking it up is as simple as:</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#6ab825;font-weight:bold">func</span> <span style="color:#447fcf">TestFig</span>(t *testing.T) {
+    <span style="color:#6ab825;font-weight:bold">for</span> _, tt := <span style="color:#6ab825;font-weight:bold">range</span> fibTests {
+        actual := <span style="color:#447fcf">Fib</span>(tt.n)
+        <span style="color:#6ab825;font-weight:bold">if</span> actual != expected {
+            t.<span style="color:#447fcf">Errorf</span>(<span style="color:#ed9d13">&#34;Fig(%d): expected %d, actual %d&#34;</span>, tt.n, tt.expected, actual)
+        }
+    }
+}
+</code></pre></div><p>Ref: <a href="https://dave.cheney.net/2013/06/09/writing-table-driven-tests-in-go">Dave Cheney — Writing table driven tests in Go</a></p>
+<h2 id="fixtures">Fixtures</h2>
+<p>When using the Go testing package, the test binary will be executed with its working directory set to the source directory of the package being tested. Additionally, the Go tool will ignore directories that start with a period, an underscore, or matches the word <code>testdata</code>. This means that you can create a directory called <code>testdata</code> and store fixtures there. You can then load data as follows:</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#6ab825;font-weight:bold">func</span> <span style="color:#447fcf">loadFixture</span>(t  *testing.T, name <span style="color:#6ab825;font-weight:bold">string</span>) []<span style="color:#6ab825;font-weight:bold">byte</span> {
+    path := filepath.<span style="color:#447fcf">Join</span>(<span style="color:#ed9d13">&#34;testdata&#34;</span>, name)
+    bytes, err := ioutil.<span style="color:#447fcf">Readfile</span>(path)
+    <span style="color:#6ab825;font-weight:bold">if</span> err != <span style="color:#6ab825;font-weight:bold">nil</span> {
+        t.<span style="color:#447fcf">Fatalf</span>(<span style="color:#ed9d13">&#34;could not open test fixture %s: %s&#34;</span>, name, err)
+    }
+    <span style="color:#6ab825;font-weight:bold">return</span> bytes
+}
+</code></pre></div><p>Ref: <a href="https://dave.cheney.net/2016/05/10/test-fixtures-in-go">Dave Cheney — Test fixtures in Go</a></p>
+<h3 id="golden-files">Golden Files</h3>
+<p>When testing complicated or large output, you can save the data as an output file named <code>.golden</code> and provide a flag for updating it:</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#6ab825;font-weight:bold">var</span> update = flag.<span style="color:#447fcf">Bool</span>(<span style="color:#ed9d13">&#34;update&#34;</span>, <span style="color:#6ab825;font-weight:bold">false</span>, <span style="color:#ed9d13">&#34;update .golden files&#34;</span>)
+
+<span style="color:#6ab825;font-weight:bold">func</span> <span style="color:#447fcf">TestSomething</span>(t *testing.T) {
+    actual := <span style="color:#447fcf">doSomething</span>()
+
+    golden := filepath.<span style="color:#447fcf">Join</span>(<span style="color:#ed9d13">&#34;testdata&#34;</span>, tc.Name+<span style="color:#ed9d13">&#34;.golden&#34;</span>)
+    <span style="color:#6ab825;font-weight:bold">if</span> *update {
+        ioutil.<span style="color:#447fcf">WriteFile</span>(golden, actual, <span style="color:#3677a9">0644</span>)
+    }
+
+    expected, _ := ioutil.<span style="color:#447fcf">ReadFile</span>(golden)
+    <span style="color:#6ab825;font-weight:bold">if</span> !bytes.<span style="color:#447fcf">Equal</span>(actual, expected) {
+        <span style="color:#999;font-style:italic">// Fail!
+</span><span style="color:#999;font-style:italic"></span>    }
+}
+</code></pre></div><p>Ref: <a href="https://medium.com/@povilasve/go-advanced-tips-tricks-a872503ac859">Povilas Versockas — Go advanced testing tips &amp; tricks</a></p>
+<h2 id="frameworks">Frameworks</h2>
+<h3 id="no-framework">No Framework</h3>
+<p>Ben Johnson makes a good argument for not using a testing framework. Go has a simple yet powerful testing framework. Frameworks are a barrier to entry for contributors to code. Frameworks require more dependencies to be fetched and managed. To reduce the verbosity, you can include simple test assertions as follows:</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#6ab825;font-weight:bold">func</span> <span style="color:#447fcf">assert</span>(tb testing.TB, condition <span style="color:#6ab825;font-weight:bold">bool</span>, msg <span style="color:#6ab825;font-weight:bold">string</span>)
+<span style="color:#6ab825;font-weight:bold">func</span> <span style="color:#447fcf">ok</span>(tb testing.TB, err <span style="color:#6ab825;font-weight:bold">error</span>)
+<span style="color:#6ab825;font-weight:bold">func</span> <span style="color:#447fcf">equals</span>(tb testing.TB, exp, act <span style="color:#6ab825;font-weight:bold">interface</span>{})
+</code></pre></div><p>This way you can write tests as:</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#6ab825;font-weight:bold">func</span> <span style="color:#447fcf">TestSomething</span>(t *testing.T) {
+    value, err := <span style="color:#447fcf">DoSomething</span>()
+    <span style="color:#447fcf">ok</span>(t, err)
+    <span style="color:#447fcf">equals</span>(t, <span style="color:#3677a9">100</span>, value)
+}
+</code></pre></div><p>I certainly like the simplicity of this idea and on many of my small packages I simply write tests like this. However, in larger projects, it feels like test organization can quickly get out of control and I don&rsquo;t know what I&rsquo;ve tested and where.</p>
+<p>Ref: <a href="https://medium.com/@benbjohnson/structuring-tests-in-go-46ddee7a25c">Ben Johnson — Structuring Tests in Go</a>
+Ref: <a href="https://github.com/benbjohnson/testing">Testing Functions for Go</a></p>
+<h3 id="ginkgo--gomega">Ginkgo &amp; Gomega</h3>
+<p>Many of my projects have started off using <a href="http://onsi.github.io/ginkgo/">Ginkgo</a> and <a href="http://onsi.github.io/gomega/">Gomega</a> for testing. Ginkgo provides BDD style testing to write expressive and well organized tests. Gomega provides a matching library for performing test-related assertions.</p>
+<p>To bootstrap a test suite (after installing the libraries with <code>go get</code>) you would run <code>ginkgo bootstrap</code>. This creates the test suite which runs the tests. You can then generate tests by running <code>ginkgo generate thing</code> to create <code>thing_test.go</code> with the test stub already inside it:</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#6ab825;font-weight:bold">package</span> thing_test
+
+<span style="color:#6ab825;font-weight:bold">import</span> (
+    . <span style="color:#ed9d13">&#34;/path/to/thing&#34;</span>
+    . <span style="color:#ed9d13">&#34;github.com/onsi/ginkgo&#34;</span>
+    . <span style="color:#ed9d13">&#34;github.com/onsi/gomega&#34;</span>
+)
+
+<span style="color:#6ab825;font-weight:bold">var</span> _ = <span style="color:#447fcf">Describe</span>(<span style="color:#ed9d13">&#34;Thing&#34;</span>, <span style="color:#6ab825;font-weight:bold">func</span>() {
+
+    <span style="color:#6ab825;font-weight:bold">var</span> thing Thing
+
+    <span style="color:#447fcf">BeforeEach</span>(<span style="color:#6ab825;font-weight:bold">func</span>() {
+        thing = <span style="color:#24909d">new</span>(Thing)
+    })
+
+    <span style="color:#447fcf">It</span>(<span style="color:#ed9d13">&#34;should do something&#34;</span>, <span style="color:#6ab825;font-weight:bold">func</span>() {
+        Ω(thing.<span style="color:#447fcf">Something</span>()).<span style="color:#447fcf">Should</span>(<span style="color:#447fcf">Succeed</span>())
+    })
+
+})
+</code></pre></div><p>While I do like the use of this test framework, it&rsquo;s primarily for the organization of the tests and the runner.</p>
+<h2 id="helpers">Helpers</h2>
+<p>Helper functions can be marked with <code>t.Helper()</code>, which excludes their line and signature information from the test error traceback. They can be used to do setup for the test case, unrelated error checks, and can even clean up after themselves!</p>
+<h3 id="temporary-directories">Temporary Directories</h3>
+<p>Often, I need a temporary directory to store a database in or write files to. I can create the temporary directory with this helper function, which also returns a function to cleanup the temporary directories.</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#6ab825;font-weight:bold">const</span> tmpDirPrefix = <span style="color:#ed9d13">&#34;mytests&#34;</span>
+
+<span style="color:#6ab825;font-weight:bold">func</span> <span style="color:#447fcf">tempDir</span>(t *testing.T, name <span style="color:#6ab825;font-weight:bold">string</span>) (path <span style="color:#6ab825;font-weight:bold">string</span>, cleanup <span style="color:#6ab825;font-weight:bold">func</span>()) {
+    t.<span style="color:#447fcf">Helper</span>()
+
+    tmpDir, err = ioutil.<span style="color:#447fcf">TempDir</span>(<span style="color:#ed9d13">&#34;&#34;</span>, tmpDirPrefix)
+    <span style="color:#6ab825;font-weight:bold">if</span> err != <span style="color:#6ab825;font-weight:bold">nil</span> {
+        t.<span style="color:#447fcf">Fatalf</span>(<span style="color:#ed9d13">&#34;could not create temporary directory: %s&#34;</span>, err)
+    }
+
+    <span style="color:#6ab825;font-weight:bold">return</span> filepath.<span style="color:#447fcf">Join</span>(tmpDir, name), <span style="color:#6ab825;font-weight:bold">func</span>() {
+        err = os.<span style="color:#447fcf">RemoveAll</span>(tmpDir)
+        <span style="color:#6ab825;font-weight:bold">if</span> err != <span style="color:#6ab825;font-weight:bold">nil</span> {
+            t.<span style="color:#447fcf">Errorf</span>(<span style="color:#ed9d13">&#34;could not remove temporary directory: %s&#34;</span>, err)
+        }
+    }
+}
+</code></pre></div><p>This can be used with the cleanup function pretty simply:</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#6ab825;font-weight:bold">func</span> <span style="color:#447fcf">TestThing</span>(t *testing.T) {
+    dir, cleanup := <span style="color:#447fcf">tempDir</span>(t, <span style="color:#ed9d13">&#34;db&#34;</span>)
+    <span style="color:#6ab825;font-weight:bold">defer</span> <span style="color:#447fcf">cleanup</span>()
+
+    ...
+}
+</code></pre></div><p>Another version that I have in some of my tests creates a temporary directory for all of the tests, stored in a variable at the top level, any caller asking for a directory can create it, but it won&rsquo;t be overridden if if already exists; then any test that cleans up will clean up that directory.</p>
+<h2 id="sources-and-references">Sources and References</h2>
+<ul>
+<li><a href="https://golang.org/pkg/testing/">Package testing</a></li>
+<li><a href="https://dave.cheney.net/2013/06/09/writing-table-driven-tests-in-go">Dave Cheney — Writing table driven tests in Go</a></li>
+<li><a href="https://dave.cheney.net/2016/05/10/test-fixtures-in-go">Dave Cheney — Test fixtures in Go</a></li>
+<li><a href="https://medium.com/@benbjohnson/structuring-tests-in-go-46ddee7a25c">Ben Johnson — Structuring Tests in Go</a></li>
+<li><a href="https://medium.com/@povilasve/go-advanced-tips-tricks-a872503ac859">Povilas Versockas — Go advanced testing tips &amp; tricks</a></li>
+</ul>
+<p>Not related to testing, but saved for reference for a later godoc notes post:</p>
+<ul>
+<li><a href="http://elliot.land/post/godoc-tips-tricks">Elliot Chance — Godoc: Tips &amp; Tricks</a></li>
+<li><a href="https://blog.golang.org/godoc-documenting-go-code">Andrew Gerrand — Godoc: documenting Go code</a></li>
+</ul>
+
+        </div>
+        
+        <div class="mt-5">
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  </div><!-- end Contact Area -->
+<footer id="footer" class="section-bg">
+	<div class="container">
+		<div class="row wow fadeInUp" data-wow-duration="500ms">
+			<div class="col-xl-12">
+
+				<!-- Footer Social Links -->
+				<div class="social-icon">
+					<ul class="list-inline">
+						
+					</ul>
+				</div>
+
+				<!-- copyright -->
+				<div class="copyright text-center">
+					<a href="https://rotationalio.github.io/fr/">
+						<img src="https://rotationalio.github.io/images/logo.png" alt="Rotational" height="42" />
+					</a>
+					<br>
+					<p>Copyright © 2021 Rotational Labs, LLC · Powered by <a href="https://gethugothemes.com">Hugo</a> · Theme by <a href="https://themefisher.com">Themefisher</a></p>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+<!-- /footer -->
+
+<!-- Google Map API -->
+
+
+<!-- JS Plugins -->
+
+<script src="https://rotationalio.github.io/plugins/jquery/jquery.min.js"></script>
+
+<script src="https://rotationalio.github.io/plugins/bootstrap/bootstrap.min.js"></script>
+
+<script src="https://rotationalio.github.io/plugins/slick/slick.min.js"></script>
+
+<script src="https://rotationalio.github.io/plugins/shuffle/shuffle.min.js"></script>
+
+<script src="https://rotationalio.github.io/plugins/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+<script src="https://rotationalio.github.io/plugins/lazy-load/lozad.min.js"></script>
+
+<script src="https://rotationalio.github.io/plugins/google-map/map.js"></script>
+
+
+<!-- Main Script -->
+
+<script src="https://rotationalio.github.io/js/script.min.a04247499d1b47349e9b15e536b4303bff63b1b6b8b5b74605302e956ed68179703fe8d52b0c3b0d9022d056576c679f.js" integrity="sha384-oEJHSZ0bRzSemxXlNrQwO/9jsba4tbdGBTAulW7WgXlwP&#43;jVKww7DZAi0FZXbGef"></script>
+
+
+</body>
+
+</html>

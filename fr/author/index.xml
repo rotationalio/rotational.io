@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Authors on Rotational</title>
+    <link>https://rotationalio.github.io/fr/author/</link>
+    <description>Recent content in Authors on Rotational</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr-fr</language>
+    <copyright>Copyright &amp;copy; 2021 Rotational Labs, LLC · Powered by [Hugo](https://gethugothemes.com) · Theme by [Themefisher](https://themefisher.com)</copyright><atom:link href="https://rotationalio.github.io/fr/author/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Benjamin Bengfort</title>
+      <link>https://rotationalio.github.io/fr/author/benjamin-bengfort/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://rotationalio.github.io/fr/author/benjamin-bengfort/</guid>
+      <description>Founder and CEO, Rotational Labs, LLC.
+Creator of Yellowbrick, machine learning practitioner, distributed systems developer, data science educator, O’Reilly author, Guyanese-American, BBQ enthusiast</description>
+    </item>
+    
+    <item>
+      <title>Rebecca Bilbro</title>
+      <link>https://rotationalio.github.io/fr/author/rebecca-bilbro/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://rotationalio.github.io/fr/author/rebecca-bilbro/</guid>
+      <description>Founder and CTO, Rotational Labs, LLC.
+Creator of Yellowbrick, applied NLP developer, Python &amp;amp; Go programmer, data science educator, O’Reilly author, bad ukulelist.</description>
+    </item>
+    
+  </channel>
+</rss>
