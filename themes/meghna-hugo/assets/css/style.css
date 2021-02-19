@@ -8,14 +8,14 @@ Tags: one-page, single-page, portfolio, custom-colors, post-formats, responsive,
 */
 /*=== MEDIA QUERY ===*/
 html {
-  background-color: #353b43;
+  background-color: #354337;
   color: #737f8a;
 }
 
 body {
   background-color: #353b43;
   font-family: "Anaheim", sans-serif;
-  color: #737f8a;
+  color: #E4ECE7;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -27,7 +27,7 @@ h5,
 h6 {
   font-weight: 400;
   font-family: "Quattrocento Sans", sans-serif;
-  color: #afbac4;
+  color: #c3c7c5ee;
 }
 
 p {
@@ -39,7 +39,19 @@ p {
 }
 
 pre {
-  color: #afbac4;
+  color: #cae1ffd6;
+}
+
+code {
+  color: #CAE1FF;
+}
+
+.highlight {
+  margin:0 0 25px;
+  overflow:hidden;
+  padding:20px;
+  background-color:#202020;
+  border-radius: 16px;
 }
 
 /*=================================================================
@@ -213,23 +225,30 @@ a:hover {
   outline: 0;
 }
 
-a:focus,
+a:link {
+  color: #99f7f8;
+}
+
 a:hover {
   color: #57cbcc;
 }
 
+a:visited {
+  color: #99f7f8;
+}
+
 .btn-main {
-  background: #57cbcc;
+  background: #2c9091;
   color: #fff;
   display: inline-block;
   font-size: 14px;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
   padding: 10px 35px;
   text-transform: uppercase;
 }
 
 .btn-main:hover {
-  background: #2c9091;
+  background: #197678;
   color: #fff;
 }
 
@@ -340,18 +359,18 @@ a:hover {
   left: 0;
 }
 
-.header-bradcrumb {
+.header-breadcrumb {
   background: transparent;
 }
 
-.header-bradcrumb a,
-.header-bradcrumb .active {
+.header-breadcrumb a,
+.header-breadcrumb .active {
   color: #cfcfcf;
   font-weight: 200;
   font-family: "Quattrocento Sans", sans-serif;
 }
 
-.header-bradcrumb a:hover {
+.header-breadcrumb a:hover {
   color: #57cbcc;
 }
 
@@ -474,7 +493,7 @@ a:hover {
 }
 
 .hero-area .block h1 {
-  font-size: 90px;
+  font-size: 120px;
   color: #fff;
   text-transform: capitalize;
   font-weight: 700;
@@ -489,7 +508,7 @@ a:hover {
 
 .hero-area .block p {
   color: #fff;
-  font-size: 20px;
+  font-size: 30px;
   width: 70%;
   margin: 0 auto;
 }
@@ -607,7 +626,7 @@ a:hover {
 }
 
 .about .block .icon-box h3 {
-  color: #afbac4;
+  color: #afc4b1;
 }
 
 /*=================================================================
@@ -644,12 +663,12 @@ a:hover {
 
 .call-to-action h2 {
   font-weight: 700;
-  color: #444;
+  color: #131111;
 }
 
 .call-to-action p {
-  font-size: 16px;
-  color: #666;
+  font-size: 20px;
+  color: #070404;
 }
 
 .call-to-action .btn-main {
@@ -1182,13 +1201,13 @@ a:hover {
   margin: 30px 0 0;
 }
 
-#our-clietns .item img {
+#our-clients .item img {
   max-width: 150px;
   width: 100%;
 }
 
-#our-clietns .owl-next,
-#our-clietns .owl-prev {
+#our-clients .owl-next,
+#our-clients .owl-prev {
   border: 1px solid #ddd;
   border-radius: 50px;
   display: inline-block;
@@ -1198,12 +1217,12 @@ a:hover {
   text-align: center;
 }
 
-#our-clietns .owl-next i,
-#our-clietns .owl-prev i {
+#our-clients .owl-next i,
+#our-clients .owl-prev i {
   line-height: 34px;
 }
 
-#our-clietns .owl-prev {
+#our-clients .owl-prev {
   margin-right: 15px;
 }
 
@@ -1215,7 +1234,7 @@ a:hover {
   Latest Posts
 ==================================================================*/
 .note {
-  background-color: #292F36;
+  background-color: #29362b;
   border: 1px solid #4e595f;
 }
 
@@ -1236,7 +1255,7 @@ a:hover {
 }
 
 .note .media-wrapper {
-  border-bottom: 1px solid #4e595f;
+  border-bottom: 1px solid #4e5f50;
 }
 
 .note .excerpt h3 {
@@ -1272,7 +1291,7 @@ a:hover {
 }
 
 .post-meta>span {
-  color: #666;
+  color: rgb(102, 102, 102);
   border-right: 1px solid #dedede;
   display: inline-block;
   font-size: 13px;
@@ -1490,7 +1509,7 @@ a:hover {
 }
 
 .post-comment-name {
-  color: #afbac4;
+  color: #afc4b4;
   font-weight: 500;
   font-size: 18px;
 }
@@ -1627,7 +1646,7 @@ input#e-mail,
 }
 
 .post-item .entry {
-  border: 1px solid #4e595f;
+  border: 1px solid #534e5f;
   margin-bottom: 30px;
 }
 
@@ -1675,15 +1694,15 @@ input#e-mail,
 }
 
 .post-meta {
-  background-color: #3d444a;
-  border-top: 1px solid #4e595f;
+  background-color: #3d4a40;
+  border-top: 1px solid #4f5f4e;
   font-size: 13px;
   margin: 20px 0 0;
   padding: 0 20px 10px;
 }
 
 .post-meta>span {
-  border-right: 1px solid #4e595f;
+  border-right: 1px solid #5d4e5f;
   display: inline-block;
   font-size: 12px;
   margin: 10px 10px 0 0;
@@ -1869,7 +1888,7 @@ aside.widget {
   padding: 20px;
 }
 
-blockquote {
+.blockquote {
   border-left: 5px solid #6cb670;
   font-style: italic;
   line-height: 22px;
@@ -1878,7 +1897,7 @@ blockquote {
 }
 
 .next-prev {
-  border-bottom: 1px solid #4e595f;
+  border-bottom: 1px solid #4f4e5f;
   border-top: 1px solid #4e595f;
   margin: 20px 0;
   padding: 15px 0 10px;
