@@ -1,19 +1,48 @@
-################################# Default configuration ###################
+## Base Configuration
 baseURL = "https://rotational.io/"
-title = "Rotational"
+title = "Rotational Labs"
 theme = "meghna-hugo"
-# themesDir = "../.."
-# post pagination
-paginate = "6"
-# post excerpt
-summaryLength = "15"
-# disqus short name
-disqusShortname = "" # get your shortname form here : https://disqus.com
-# disable language
+themesDir = "themes/"
+
+paginate = "12"          # Number of posts per page in blog listing
+summaryLength = "15"     # Length of excerpt for post descriptions
+
+# Use Disqus for comments on blogs
+disqusShortname = ""    # get your shortname form here : https://disqus.com
+
+# Disable any languages from build process
 disableLanguages = []
 
-############################# Plugins ##########################
-# css plugins
+## Default Parameters
+[params]
+# Metadata
+logo = "images/logo.png"
+description = "We see planet-wide possibilities."
+author = "Rotational Labs, LLC"
+
+# Google Analytics
+google_analytics_id = "G-2FKX6CWJHW"
+
+# Share button on individual posts
+post_share = true
+
+[params.preloader]
+enable = false
+preloader = "images/logo.png"
+
+[params.cookies]
+enable = false
+expire_days = 2
+
+# Google Maps Integration
+[params.map]
+enable = false
+gmap_api = "https://maps.googleapis.com/maps/api/js?key=AIzaSyBu5nZKbeK-WHQ70oqOWo-_4VmwOwKP9YQ"
+map_latitude = "51.5223477"
+map_longitude = "-0.1622023"
+map_marker = "images/marker.png"
+
+## CSS Plugins
 [[params.plugins.css]]
 link = "plugins/bootstrap/bootstrap.min.css"
 [[params.plugins.css]]
@@ -25,7 +54,7 @@ link = "plugins/slick/slick.css"
 [[params.plugins.css]]
 link = "https://fonts.googleapis.com/css?family=Anaheim|Quattrocento+Sans:400,700&display=swap"
 
-# js plugins
+## Javascript plugins
 [[params.plugins.js]]
 link = "plugins/jquery/jquery.min.js"
 [[params.plugins.js]]
@@ -41,7 +70,7 @@ link = "plugins/lazy-load/lozad.min.js"
 [[params.plugins.js]]
 link = "plugins/google-map/map.js"
 
-################### English Navigation ########################
+## English Navigation
 [[Languages.en.menu.main]]
 name = "about"
 pre = "#"
@@ -62,8 +91,7 @@ weight = 3
 
 [[Languages.en.menu.main]]
 name = "blog"
-pre = "#"
-url = "blog"
+url = "/blog"
 weight = 4
 
 [[Languages.en.menu.main]]
@@ -72,68 +100,71 @@ pre = "#"
 url = "contact"
 weight = 5
 
+## English Langauge
+[Languages.en]
+languageName = "En"
+languageCode = "en-us"
+contentDir = "content/english"
+weight = 1
+home = "Home"
+copyright = "Copyright &copy; 2021 Rotational Labs, LLC · Powered by [Hugo](https://gethugothemes.com) · Theme by [Themefisher](https://themefisher.com)"
 
-################### French Navigation ########################
+
+## French Navigation
 [[Languages.fr.menu.main]]
 name = "sur"
-pre = "#"
+pre = "fr/#"
 url = "about"
 weight = 1
 
 [[Languages.fr.menu.main]]
 name = "un service"
-pre = "#"
+pre = "fr/#"
 url = "services"
 weight = 2
 
 [[Languages.fr.menu.main]]
 name = "équipe"
-pre = "#"
+pre = "fr/#"
 url = "team"
 weight = 3
 
 [[Languages.fr.menu.main]]
 name = "blog"
-pre = "#"
-url = "blog"
+url = "/fr/blog"
 weight = 4
 
 [[Languages.fr.menu.main]]
 name = "contact"
-pre = "#"
+pre = "fr/#"
 url = "contact"
 weight = 5
 
-############################# Default Parameters ##########################
-[params]
-logo = "images/logo.png"
-# Meta data
-description = "Data that turns with the world"
-author = "Themefisher"
-# Google Analytics
-google_analytics_id = "" # Your ID
-# post share
-post_share = true
+## French Language
+[Languages.fr]
+languageName = "Fr"
+languageCode = "fr-fr"
+contentDir = "content/french"
+weight = 2
+home = "Accueil"
+copyright = "Copyright &copy; 2021 Rotational Labs, LLC · Powered by [Hugo](https://gethugothemes.com) · Theme by [Themefisher](https://themefisher.com)"
 
-# preloader
-[params.preloader]
-enable = false
-preloader = "images/logo.png"
+## Social Icons
+# See icons from themify icon pack : https://themify.me/themify-icons
+[[params.social]]
+icon = "ti-twitter-alt"
+link = "https://twitter.com/rotationalio"
 
-# cookies
-[params.cookies]
-enable = false
-expire_days = 2
+[[params.social]]
+icon = "ti-github"
+link = "https://github.com/rotational.io"
 
-# google map
-[params.map]
-enable = false
-gmap_api = "https://maps.googleapis.com/maps/api/js?key=AIzaSyBu5nZKbeK-WHQ70oqOWo-_4VmwOwKP9YQ"
-map_latitude = "51.5223477"
-map_longitude = "-0.1622023"
-map_marker = "images/marker.png"
+[[params.social]]
+icon = "ti-linkedin"
+link = "https://www.linkedin.com/company/71689585/admin/"
 
-# syntax highlighting
+
+## Syntax Highlighting
 [markup]
   defaultMarkdownHandler = "goldmark"
   [markup.asciidocExt]
@@ -200,47 +231,3 @@ map_marker = "images/marker.png"
 # Code Block
 pygmentsCodeFences = true
 pygmentsStyle = "monokai"
-
-############################# social icons ##########################
-# [[params.social]]
-# icon = "ti-facebook" # themify icon pack : https://themify.me/themify-icons
-# link = "#"
-#
-# [[params.social]]
-# icon = "ti-twitter-alt" # themify icon pack : https://themify.me/themify-icons
-# link = "#"
-#
-# [[params.social]]
-# icon = "ti-youtube" # themify icon pack : https://themify.me/themify-icons
-# link = "#"
-#
-# [[params.social]]
-# icon = "ti-linkedin" # themify icon pack : https://themify.me/themify-icons
-# link = "#"
-#
-# [[params.social]]
-# icon = "ti-dribbble" # themify icon pack : https://themify.me/themify-icons
-# link = "#"
-#
-# [[params.social]]
-# icon = "ti-pinterest" # themify icon pack : https://themify.me/themify-icons
-# link = "#"
-#
-
-################################ English Language ########################
-[Languages.en]
-languageName = "En"
-languageCode = "en-us"
-contentDir = "content/english"
-weight = 1
-home = "Home"
-copyright = "Copyright &copy; 2021 Rotational Labs, LLC · Powered by [Hugo](https://gethugothemes.com) · Theme by [Themefisher](https://themefisher.com)"
-
-################################ France Language ########################
-[Languages.fr]
-languageName = "Fr"
-languageCode = "fr-fr"
-contentDir = "content/french"
-weight = 2
-home = "Accueil"
-copyright = "Copyright &copy; 2021 Rotational Labs, LLC · Powered by [Hugo](https://gethugothemes.com) · Theme by [Themefisher](https://themefisher.com)"
