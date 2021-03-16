@@ -9,4 +9,4 @@ banner:
   button:
     enable : true
     label : "Explorer"
-    link : "#services"
+    link : "#blog"
