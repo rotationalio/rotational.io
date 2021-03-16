@@ -91,8 +91,7 @@ weight = 3
 
 [[Languages.en.menu.main]]
 name = "blog"
-pre = "#"
-url = "blog"
+url = "/blog"
 weight = 4
 
 [[Languages.en.menu.main]]
@@ -114,31 +113,30 @@ copyright = "Copyright &copy; 2021 Rotational Labs, LLC · Powered by [Hugo](htt
 ## French Navigation
 [[Languages.fr.menu.main]]
 name = "sur"
-pre = "#"
+pre = "fr/#"
 url = "about"
 weight = 1
 
 [[Languages.fr.menu.main]]
 name = "un service"
-pre = "#"
+pre = "fr/#"
 url = "services"
 weight = 2
 
 [[Languages.fr.menu.main]]
 name = "équipe"
-pre = "#"
+pre = "fr/#"
 url = "team"
 weight = 3
 
 [[Languages.fr.menu.main]]
 name = "blog"
-pre = "#"
-url = "blog"
+url = "/fr/blog"
 weight = 4
 
 [[Languages.fr.menu.main]]
 name = "contact"
-pre = "#"
+pre = "fr/#"
 url = "contact"
 weight = 5
 
