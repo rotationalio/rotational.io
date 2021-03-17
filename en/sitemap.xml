@@ -269,6 +269,20 @@
   </url>
   
   <url>
+    <loc>https://rotational.io/starstreak/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="https://rotational.io/fr/starstreak/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://rotational.io/starstreak/"
+                />
+  </url>
+  
+  <url>
     <loc>https://rotational.io/tags/</loc>
     <xhtml:link
                 rel="alternate"

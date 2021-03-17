@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Rotational</title>
+    <title>Rotational Labs</title>
     <link>https://rotational.io/</link>
-    <description>Recent content on Rotational</description>
+    <description>Recent content on Rotational Labs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright &amp;copy; 2021 Rotational Labs, LLC · Powered by [Hugo](https://gethugothemes.com) · Theme by [Themefisher](https://themefisher.com)</copyright>
@@ -134,6 +134,15 @@ Creator of Yellowbrick, machine learning practitioner, distributed systems devel
       <guid>https://rotational.io/author/rebecca-bilbro/</guid>
       <description>Founder and CTO, Rotational Labs, LLC.
 Creator of Yellowbrick, applied NLP developer, Python &amp;amp; Go programmer, data science educator, O’Reilly author, bad ukulelist.</description>
+    </item>
+    
+    <item>
+      <title>Star Streaks</title>
+      <link>https://rotational.io/starstreak/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://rotational.io/starstreak/</guid>
+      <description></description>
     </item>
     
   </channel>

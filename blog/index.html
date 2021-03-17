@@ -6,9 +6,9 @@
 
 	<!-- mobile responsive meta -->
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<meta name="description" content="Data that turns with the world">
+	<meta name="description" content="We see planet-wide possibilities.">
 	
-	<meta name="author" content="Themefisher">
+	<meta name="author" content="Rotational Labs, LLC">
 	<meta name="generator" content="Hugo 0.79.1" />
 
 	<!-- plugins -->
@@ -37,6 +37,16 @@
 	<link rel="icon" href="https://rotational.io/images/favicon.png" type="image/x-icon">
 
 	
+	<!-- Global Site Tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-2FKX6CWJHW"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'G-2FKX6CWJHW');
+	</script>
+	
 
 </head>
 
@@ -51,7 +61,7 @@
 		<nav class="navbar navbar-expand-lg navbar-dark">
 			<a class="navbar-brand p-0" href="/">
 				
-				<img class="lozad" data-src="https://rotational.io/images/logo.png" alt="Rotational" height="42">
+				<img class="lozad" data-src="https://rotational.io/images/logo.png" alt="Rotational Labs" height="42">
 				
 			</a>
 
@@ -75,7 +85,7 @@
 					</li>
 					
 					<li class="nav-item">
-            <a class="nav-link" href="https://rotational.io/#blog">blog</a>
+            <a class="nav-link" href="https://rotational.io/blog">blog</a>
 					</li>
 					
 					<li class="nav-item">
@@ -226,28 +236,98 @@
 </article>
 
       
+      <article class="col-lg-4 col-md-6 col-12 clearfix wow fadeInUp mb-4" data-wow-duration="500ms">
+  <div class="post-block">
+    <div class="media-wrapper">
+      <img class="img-fluid lozad" data-src="https://rotational.io/images/blog/lake2_c.webp" onerror="this.onerror=null;this.src='https:\/\/rotational.io\/images\/blog\/lake2_c.jpg'">
+    </div>
+
+    <div class="content">
+      <h3><a href="https://rotational.io/blog/2018-09-22-go-testing-notes/">Go Testing Notes</a></h3>
+      <p>In this post I&rsquo;m just going to maintain a list of notes for Go testing that I seem to commonly need to reference.</p>
+      <a class="btn btn-transparent" href="https://rotational.io/blog/2018-09-22-go-testing-notes/">Read more</a>
+    </div>
+  </div>
+</article>
+
+      
+      <article class="col-lg-4 col-md-6 col-12 clearfix wow fadeInUp mb-4" data-wow-duration="500ms">
+  <div class="post-block">
+    <div class="media-wrapper">
+      <img class="img-fluid lozad" data-src="https://rotational.io/images/blog/mountain_c.webp" onerror="this.onerror=null;this.src='https:\/\/rotational.io\/images\/blog\/mountain_c.jpg'">
+    </div>
+
+    <div class="content">
+      <h3><a href="https://rotational.io/blog/2018-09-11-streaming-remote-throughput/">Streaming Remote Throughput</a></h3>
+      <p>In order to improve the performance of asynchronous message passing in Alia, I&rsquo;m using gRPC bidirectional streaming to create the peer to peer connections.</p>
+      <a class="btn btn-transparent" href="https://rotational.io/blog/2018-09-11-streaming-remote-throughput/">Read more</a>
+    </div>
+  </div>
+</article>
+
+      
+      <article class="col-lg-4 col-md-6 col-12 clearfix wow fadeInUp mb-4" data-wow-duration="500ms">
+  <div class="post-block">
+    <div class="media-wrapper">
+      <img class="img-fluid lozad" data-src="https://rotational.io/images/blog/leaf.webp" onerror="this.onerror=null;this.src='https:\/\/rotational.io\/images\/blog\/leaf.jpg'">
+    </div>
+
+    <div class="content">
+      <h3><a href="https://rotational.io/blog/2018-08-03-actor-model/">The Actor Model</a></h3>
+      <p>Building correct concurrent programs in a distributed system with multiple threads and processes can quickly become very complex to reason about.</p>
+      <a class="btn btn-transparent" href="https://rotational.io/blog/2018-08-03-actor-model/">Read more</a>
+    </div>
+  </div>
+</article>
+
+      
+      <article class="col-lg-4 col-md-6 col-12 clearfix wow fadeInUp mb-4" data-wow-duration="500ms">
+  <div class="post-block">
+    <div class="media-wrapper">
+      <img class="img-fluid lozad" data-src="https://rotational.io/images/blog/jungle_c.webp" onerror="this.onerror=null;this.src='https:\/\/rotational.io\/images\/blog\/jungle_c.jpg'">
+    </div>
+
+    <div class="content">
+      <h3><a href="https://rotational.io/blog/2017-09-04-message-throughput/">Messaging Throughput gRPC vs. ZMQ</a></h3>
+      <p>Building distributed systems in Go requires an RPC or message framework of some sort. In the systems I build I prefer to pass messages serialized with protocol buffers therefore a natural choice for me is grpc.</p>
+      <a class="btn btn-transparent" href="https://rotational.io/blog/2017-09-04-message-throughput/">Read more</a>
+    </div>
+  </div>
+</article>
+
+      
+      <article class="col-lg-4 col-md-6 col-12 clearfix wow fadeInUp mb-4" data-wow-duration="500ms">
+  <div class="post-block">
+    <div class="media-wrapper">
+      <img class="img-fluid lozad" data-src="https://rotational.io/images/blog/lake_c.webp" onerror="this.onerror=null;this.src='https:\/\/rotational.io\/images\/blog\/lake_c.jpg'">
+    </div>
+
+    <div class="content">
+      <h3><a href="https://rotational.io/blog/2017-02-21-synchronizing-structs/">Synchronizing Structs for Safe Concurrency in Go</a></h3>
+      <p>Go is built for concurrency by providing language features that allow developers to embed complex concurrency patterns into their applications.</p>
+      <a class="btn btn-transparent" href="https://rotational.io/blog/2017-02-21-synchronizing-structs/">Read more</a>
+    </div>
+  </div>
+</article>
+
+      
+      <article class="col-lg-4 col-md-6 col-12 clearfix wow fadeInUp mb-4" data-wow-duration="500ms">
+  <div class="post-block">
+    <div class="media-wrapper">
+      <img class="img-fluid lozad" data-src="https://rotational.io/images/blog/savanah_c.webp" onerror="this.onerror=null;this.src='https:\/\/rotational.io\/images\/blog\/savanah_c.jpg'">
+    </div>
+
+    <div class="content">
+      <h3><a href="https://rotational.io/blog/2016-04-26-visualizing-distributed-systems/">Visualizing Distributed Systems</a></h3>
+      <p>As I&rsquo;ve dug into my distributed systems research, one question keeps coming up: “How do you visualize distributed systems?</p>
+      <a class="btn btn-transparent" href="https://rotational.io/blog/2016-04-26-visualizing-distributed-systems/">Read more</a>
+    </div>
+  </div>
+</article>
+
+      
       <div class="col-12">
         
-<ul class="pagination">
-  <li class="page-item">
-    <a href="/blog/" class="page-link" aria-label="First"><span aria-hidden="true">&laquo;&laquo;</span></a>
-  </li>
-  <li class="page-item disabled">
-    <a  class="page-link" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
-  </li>
-  <li class="page-item active">
-    <a class="page-link" href="/blog/">1</a>
-  </li>
-  <li class="page-item">
-    <a class="page-link" href="/blog/page/2/">2</a>
-  </li>
-  <li class="page-item">
-    <a href="/blog/page/2/" class="page-link" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
-  </li>
-  <li class="page-item">
-    <a href="/blog/page/2/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
-  </li>
-</ul>
 
 
       </div>
@@ -267,13 +347,19 @@
 				<div class="social-icon">
 					<ul class="list-inline">
 						
+						<li class="list-inline-item"><a href="https://twitter.com/rotationalio"><i class="ti-twitter-alt"></i></a></li>
+						
+						<li class="list-inline-item"><a href="https://github.com/rotational.io"><i class="ti-github"></i></a></li>
+						
+						<li class="list-inline-item"><a href="https://www.linkedin.com/company/71689585/admin/"><i class="ti-linkedin"></i></a></li>
+						
 					</ul>
 				</div>
 
 				<!-- copyright -->
 				<div class="copyright text-center">
 					<a href="https://rotational.io/">
-						<img src="https://rotational.io/images/logo.png" alt="Rotational" height="42" />
+						<img src="https://rotational.io/images/logo.png" alt="Rotational Labs" height="42" />
 					</a>
 					<br>
 					<p>Copyright © 2021 Rotational Labs, LLC · Powered by <a href="https://gethugothemes.com">Hugo</a> · Theme by <a href="https://themefisher.com">Themefisher</a></p>
