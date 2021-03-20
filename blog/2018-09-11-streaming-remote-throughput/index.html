@@ -1,292 +1,61 @@
-<!DOCTYPE html>
-<html lang="en-us">
-<head>
-	<meta charset="utf-8">
-	<title>Streaming Remote Throughput</title>
-
-	<!-- mobile responsive meta -->
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<meta name="description" content="Streaming Remote Throughput">
-	
-	<meta name="author" content="Rotational Labs, LLC">
-	<meta name="generator" content="Hugo 0.81.0" />
-
-	<!-- plugins -->
-	
-	<link rel="stylesheet" href="https://rotational.io/plugins/bootstrap/bootstrap.min.css">
-	
-	<link rel="stylesheet" href="https://rotational.io/plugins/themify-icons/themify-icons.css">
-	
-	<link rel="stylesheet" href="https://rotational.io/plugins/magnific-popup/magnific-popup.css">
-	
-	<link rel="stylesheet" href="https://rotational.io/plugins/slick/slick.css">
-	
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Anaheim%7cQuattrocento&#43;Sans:400,700&amp;display=swap">
-	
-
-	<!-- Main Stylesheet -->
-	
-	<link rel="stylesheet" href="https://rotational.io/css/style.min.css" media="screen">
-
-	<!-- Custom stylesheet - for your changes -->
-	
-  <link rel="stylesheet" href="https://rotational.io/css/custom.min.css" media="screen">
-
-	<!--Favicon-->
-	<link rel="shortcut icon" href="https://rotational.io/images/favicon.png" type="image/x-icon">
-	<link rel="icon" href="https://rotational.io/images/favicon.png" type="image/x-icon">
-
-	
-	<!-- Global Site Tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-2FKX6CWJHW"></script>
-	<script>
-	  window.dataLayer = window.dataLayer || [];
-	  function gtag(){dataLayer.push(arguments);}
-	  gtag('js', new Date());
-
-	  gtag('config', 'G-2FKX6CWJHW');
-	</script>
-	
-
-</head>
-
-
-<body id="body" data-spy="scroll" data-target=".navbar" data-offset="55">
-  <div id="content">
-    
-
-
-<section class="sticky-top navigation">
-	<div class="container">
-		<nav class="navbar navbar-expand-lg navbar-dark">
-			<a class="navbar-brand p-0" href="/">
-				
-				<img class="lozad" data-src="https://rotational.io/images/logo.png" alt="Rotational Labs" height="42">
-				
-			</a>
-
-			<button class="navbar-toggler rounded-0" type="button" data-toggle="collapse" data-target="#navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-
-			<div class="collapse navbar-collapse" id="navigation">
-				<ul class="navbar-nav ml-auto">
-					
-					<li class="nav-item">
-            <a class="nav-link" href="https://rotational.io/#about">about</a>
-					</li>
-					
-					<li class="nav-item">
-            <a class="nav-link" href="https://rotational.io/#services">services</a>
-					</li>
-					
-					<li class="nav-item">
-            <a class="nav-link" href="https://rotational.io/#team">team</a>
-					</li>
-					
-					<li class="nav-item">
-            <a class="nav-link" href="https://rotational.io/blog">blog</a>
-					</li>
-					
-					<li class="nav-item">
-            <a class="nav-link" href="https://rotational.io/#contact">contact</a>
-					</li>
-					
-				</ul>
-				
-				<select id="select-language" onchange="location = this.value;">
-					
-					
-					
-					
-					
-					
-					
-					
-					<option id="en" value="https://rotational.io/blog/2018-09-11-streaming-remote-throughput/" selected>En
-					</option>
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					<option id="fr" value="https://rotational.io/fr/blog/2018-09-11-streaming-remote-throughput/">Fr</option>
-					
-					
-					
-					
-				</select>
-				
-			</div>
-		</nav>
-	</div>
-</section>
-
-
-<section class="section">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 offset-lg-2 text-center">
-        <h1>Streaming Remote Throughput</h1>
-        <ul class="list-inline mb-50">
-          <li class="list-inline-item"><a href="/author/benjamin-bengfort/">Benjamin Bengfort</a></li>
-          <li class="list-inline-item">Tuesday, Sep 11, 2018</li>
-        </ul>
-        <img class="img-fluid mb-50 lozad" data-src="https://rotational.io/images/blog/mountain_c.jpg" alt="blog-image">
-      </div>
-      <div class="col-lg-8 offset-lg-2">
-        <div class="post-single-content">
-          <p>In order to improve the performance of asynchronous message passing in Alia, I&rsquo;m using gRPC bidirectional streaming to create the peer to peer connections. When the replica is initialized it creates a remote connection to each of its peers that lives in its own go routine; any other thread can send messages by passing them to that go routine through a channel, replies are then dispatched via another channel, directed to the thread via an actor dispatching model.</p>
-<p>This post is about the performance of the remote sending go routine, particularly with respect to how many threads that routine is. Here is some basic stub code for the <code>messenger</code> go routine that listens for incoming messages on a buffered channel, and sends them to the remote via the stream:</p>
-<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#6ab825;font-weight:bold">func</span> (r *Remote) <span style="color:#447fcf">messenger</span>() {
-    <span style="color:#999;font-style:italic">// Attempt to establish a connection to the remote peer
-</span><span style="color:#999;font-style:italic"></span>    <span style="color:#6ab825;font-weight:bold">var</span> err <span style="color:#6ab825;font-weight:bold">error</span>
-    <span style="color:#6ab825;font-weight:bold">if</span> err = r.<span style="color:#447fcf">connect</span>(); err != <span style="color:#6ab825;font-weight:bold">nil</span> {
-        out.<span style="color:#447fcf">Warn</span>(err.<span style="color:#447fcf">Error</span>())
+<!doctype html><html lang=en-us><head><meta charset=utf-8><title>Streaming Remote Throughput</title><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><meta name=description content="Streaming Remote Throughput"><meta name=author content="Rotational Labs, LLC"><meta name=generator content="Hugo 0.81.0"><link rel=stylesheet href=https://rotational.io/plugins/bootstrap/bootstrap.min.css><link rel=stylesheet href=https://rotational.io/plugins/themify-icons/themify-icons.css><link rel=stylesheet href=https://rotational.io/plugins/magnific-popup/magnific-popup.css><link rel=stylesheet href=https://rotational.io/plugins/slick/slick.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Anaheim%7cQuattrocento+Sans:400,700&display=swap"><link rel=stylesheet href=https://rotational.io/css/style.min.css media=screen><link rel=stylesheet href=https://rotational.io/css/custom.min.css media=screen><link rel="shortcut icon" href=https://rotational.io/images/favicon.png type=image/x-icon><link rel=icon href=https://rotational.io/images/favicon.png type=image/x-icon><script async src="https://www.googletagmanager.com/gtag/js?id=G-2FKX6CWJHW"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-2FKX6CWJHW')</script></head><body id=body data-spy=scroll data-target=.navbar data-offset=55><div id=content><section class="sticky-top navigation"><div class=container><nav class="navbar navbar-expand-lg navbar-dark"><a class="navbar-brand p-0" href=/><img class=lozad data-src=https://rotational.io/images/logo.png alt="Rotational Labs" height=42></a>
+<button class="navbar-toggler rounded-0" type=button data-toggle=collapse data-target=#navigation>
+<span class=navbar-toggler-icon></span></button><div class="collapse navbar-collapse" id=navigation><ul class="navbar-nav ml-auto"><li class=nav-item><a class=nav-link href=https://rotational.io/#about>about</a></li><li class=nav-item><a class=nav-link href=https://rotational.io/#services>services</a></li><li class=nav-item><a class=nav-link href=https://rotational.io/#team>team</a></li><li class=nav-item><a class=nav-link href=https://rotational.io/blog>blog</a></li><li class=nav-item><a class=nav-link href=https://rotational.io/#contact>contact</a></li></ul><select id=select-language onchange="location=this.value"><option id=en value=https://rotational.io/blog/2018-09-11-streaming-remote-throughput/ selected>En</option><option id=fr value=https://rotational.io/fr/blog/2018-09-11-streaming-remote-throughput/>Fr</option></select></div></nav></div></section><section class=section><div class=container><div class=row><div class="col-lg-8 offset-lg-2 text-center"><h1>Streaming Remote Throughput</h1><ul class="list-inline mb-50"><li class=list-inline-item><a href=/author/benjamin-bengfort/>Benjamin Bengfort</a></li><li class=list-inline-item>Tuesday, Sep 11, 2018</li></ul><img class="img-fluid mb-50 lozad" data-src=https://rotational.io/images/blog/mountain_c.jpg alt=blog-image></div><div class="col-lg-8 offset-lg-2"><div class=post-single-content><p>In order to improve the performance of asynchronous message passing in Alia, I&rsquo;m using gRPC bidirectional streaming to create the peer to peer connections. When the replica is initialized it creates a remote connection to each of its peers that lives in its own go routine; any other thread can send messages by passing them to that go routine through a channel, replies are then dispatched via another channel, directed to the thread via an actor dispatching model.</p><p>This post is about the performance of the remote sending go routine, particularly with respect to how many threads that routine is. Here is some basic stub code for the <code>messenger</code> go routine that listens for incoming messages on a buffered channel, and sends them to the remote via the stream:</p><div class=highlight><pre style=color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-go data-lang=go><span style=color:#6ab825;font-weight:700>func</span> (r *Remote) <span style=color:#447fcf>messenger</span>() {
+    <span style=color:#999;font-style:italic>// Attempt to establish a connection to the remote peer
+</span><span style=color:#999;font-style:italic></span>    <span style=color:#6ab825;font-weight:700>var</span> err <span style=color:#6ab825;font-weight:700>error</span>
+    <span style=color:#6ab825;font-weight:700>if</span> err = r.<span style=color:#447fcf>connect</span>(); err != <span style=color:#6ab825;font-weight:700>nil</span> {
+        out.<span style=color:#447fcf>Warn</span>(err.<span style=color:#447fcf>Error</span>())
     }
 
-    <span style="color:#999;font-style:italic">// Send all messages in the order they arrive on the channel
-</span><span style="color:#999;font-style:italic"></span>    <span style="color:#6ab825;font-weight:bold">for</span> msg := <span style="color:#6ab825;font-weight:bold">range</span> r.messages {
-        <span style="color:#999;font-style:italic">// If we&#39;re not online try to re-establish the connection
-</span><span style="color:#999;font-style:italic"></span>        <span style="color:#6ab825;font-weight:bold">if</span> !r.online {
-            <span style="color:#6ab825;font-weight:bold">if</span> err = r.<span style="color:#447fcf">connect</span>(); err != <span style="color:#6ab825;font-weight:bold">nil</span> {
-                out.<span style="color:#447fcf">Warn</span>(
-                    <span style="color:#ed9d13">&#34;dropped %s message to %s (%s): could not connect&#34;</span>,
-                    msg.Type, r.Name, r.<span style="color:#447fcf">Endpoint</span>()
+    <span style=color:#999;font-style:italic>// Send all messages in the order they arrive on the channel
+</span><span style=color:#999;font-style:italic></span>    <span style=color:#6ab825;font-weight:700>for</span> msg := <span style=color:#6ab825;font-weight:700>range</span> r.messages {
+        <span style=color:#999;font-style:italic>// If we&#39;re not online try to re-establish the connection
+</span><span style=color:#999;font-style:italic></span>        <span style=color:#6ab825;font-weight:700>if</span> !r.online {
+            <span style=color:#6ab825;font-weight:700>if</span> err = r.<span style=color:#447fcf>connect</span>(); err != <span style=color:#6ab825;font-weight:700>nil</span> {
+                out.<span style=color:#447fcf>Warn</span>(
+                    <span style=color:#ed9d13>&#34;dropped %s message to %s (%s): could not connect&#34;</span>,
+                    msg.Type, r.Name, r.<span style=color:#447fcf>Endpoint</span>()
                 )
 
-                <span style="color:#999;font-style:italic">// close the connection and go to the next message
-</span><span style="color:#999;font-style:italic"></span>                r.<span style="color:#24909d">close</span>()
-                <span style="color:#6ab825;font-weight:bold">continue</span>
+                <span style=color:#999;font-style:italic>// close the connection and go to the next message
+</span><span style=color:#999;font-style:italic></span>                r.<span style=color:#24909d>close</span>()
+                <span style=color:#6ab825;font-weight:700>continue</span>
             }
         }
 
-        <span style="color:#999;font-style:italic">// Send the message on the remote stream
-</span><span style="color:#999;font-style:italic"></span>        <span style="color:#6ab825;font-weight:bold">if</span> err = r.stream.<span style="color:#447fcf">Send</span>(msg); err != <span style="color:#6ab825;font-weight:bold">nil</span> {
-            out.<span style="color:#447fcf">Warn</span>(
-                <span style="color:#ed9d13">&#34;dropped %s message to %s (%s): could not send: %s&#34;</span>,
-                msg.Type, r.Name, r.<span style="color:#447fcf">Endpoint</span>(), err.<span style="color:#447fcf">Error</span>()
+        <span style=color:#999;font-style:italic>// Send the message on the remote stream
+</span><span style=color:#999;font-style:italic></span>        <span style=color:#6ab825;font-weight:700>if</span> err = r.stream.<span style=color:#447fcf>Send</span>(msg); err != <span style=color:#6ab825;font-weight:700>nil</span> {
+            out.<span style=color:#447fcf>Warn</span>(
+                <span style=color:#ed9d13>&#34;dropped %s message to %s (%s): could not send: %s&#34;</span>,
+                msg.Type, r.Name, r.<span style=color:#447fcf>Endpoint</span>(), err.<span style=color:#447fcf>Error</span>()
             )
 
-            <span style="color:#999;font-style:italic">// go offline if there was an error sending a message
-</span><span style="color:#999;font-style:italic"></span>            r.<span style="color:#24909d">close</span>()
-            <span style="color:#6ab825;font-weight:bold">continue</span>
+            <span style=color:#999;font-style:italic>// go offline if there was an error sending a message
+</span><span style=color:#999;font-style:italic></span>            r.<span style=color:#24909d>close</span>()
+            <span style=color:#6ab825;font-weight:700>continue</span>
         }
 
-        <span style="color:#999;font-style:italic">// But now how do we receive the reply?
-</span><span style="color:#999;font-style:italic"></span>    }
+        <span style=color:#999;font-style:italic>// But now how do we receive the reply?
+</span><span style=color:#999;font-style:italic></span>    }
 }
-</code></pre></div><p>The question is, how do we receive the reply from the remote?</p>
-<p>In <strong>sync</strong> mode, we can simply receive the reply before we send the next message. This has the benefit of ensuring that there is no further synchronization required on connect and close, however as shown in the graph below, it does not perform well at all.</p>
-<p>In <strong>async</strong> mode, we can launch another go routine to handle all the incoming requests and dispatch them:</p>
-<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#6ab825;font-weight:bold">func</span> (r *Remote) <span style="color:#447fcf">listener</span>() {
-    <span style="color:#6ab825;font-weight:bold">for</span> {
-        <span style="color:#6ab825;font-weight:bold">if</span> r.online {
-            <span style="color:#6ab825;font-weight:bold">var</span> (
-                err <span style="color:#6ab825;font-weight:bold">error</span>
+</code></pre></div><p>The question is, how do we receive the reply from the remote?</p><p>In <strong>sync</strong> mode, we can simply receive the reply before we send the next message. This has the benefit of ensuring that there is no further synchronization required on connect and close, however as shown in the graph below, it does not perform well at all.</p><p>In <strong>async</strong> mode, we can launch another go routine to handle all the incoming requests and dispatch them:</p><div class=highlight><pre style=color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-go data-lang=go><span style=color:#6ab825;font-weight:700>func</span> (r *Remote) <span style=color:#447fcf>listener</span>() {
+    <span style=color:#6ab825;font-weight:700>for</span> {
+        <span style=color:#6ab825;font-weight:700>if</span> r.online {
+            <span style=color:#6ab825;font-weight:700>var</span> (
+                err <span style=color:#6ab825;font-weight:700>error</span>
                 rep *pb.PeerReply
             )
 
-            <span style="color:#6ab825;font-weight:bold">if</span> rep, err = r.stream.<span style="color:#447fcf">Recv</span>(); err != <span style="color:#6ab825;font-weight:bold">nil</span> {
-                out.<span style="color:#447fcf">Warn</span>(
-                    <span style="color:#ed9d13">&#34;no response from %s (%s): %s&#34;</span>,
-                    r.Name, r.<span style="color:#447fcf">Endpoint</span>(), err
+            <span style=color:#6ab825;font-weight:700>if</span> rep, err = r.stream.<span style=color:#447fcf>Recv</span>(); err != <span style=color:#6ab825;font-weight:700>nil</span> {
+                out.<span style=color:#447fcf>Warn</span>(
+                    <span style=color:#ed9d13>&#34;no response from %s (%s): %s&#34;</span>,
+                    r.Name, r.<span style=color:#447fcf>Endpoint</span>(), err
                 )
-                <span style="color:#6ab825;font-weight:bold">return</span>
+                <span style=color:#6ab825;font-weight:700>return</span>
             }
 
-            r.Dispatcher.<span style="color:#447fcf">Dispatch</span>(events.<span style="color:#447fcf">New</span>(rep.<span style="color:#447fcf">EventType</span>(), r, rep))
+            r.Dispatcher.<span style=color:#447fcf>Dispatch</span>(events.<span style=color:#447fcf>New</span>(rep.<span style=color:#447fcf>EventType</span>(), r, rep))
         }
     }
 }
-</code></pre></div><p>This does much better in terms of performance, however there is a race condition on the access to <code>r.online</code> before the access to <code>r.stream</code> which may be made nil by <code>messenger</code> routine closing.</p>
-<p>To test this, I ran a benchmark, sending 5000 messages each in their own go routine and waiting until all responses were dispatched before computing the throughput. The <em>iorder</em> mode is to prove that even when in <code>async</code> if the messages are sent one at a time (e.g. not in a go routine) the order is preserved.</p>
-<p><img src="/images/blog/2018-09-11-streaming-remote-throughput.png" alt="Throughput"></p>
-<p>At first, I thought the size of the message buffer might be causing the bottleneck (hence the x-axis). The buffer prevents back-pressure from the message sender, and it does appear to have some influence on sync and async mode (but less of an impact in iorder mode). From these numbers, however, it&rsquo;s clear that we need to run the listener in its own routine.</p>
-<p>Notes:</p>
-<ul>
-<li>With sender and receiver go routines, the message order is preserved</li>
-<li>There is a race condition between sender and receiver</li>
-<li>Buffer size only has a small impact</li>
-</ul>
-
-        </div>
-        
-        <div class="mt-5">
-          
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-  </div><!-- end Contact Area -->
-<footer id="footer" class="section-bg">
-	<div class="container">
-		<div class="row wow fadeInUp" data-wow-duration="500ms">
-			<div class="col-xl-12">
-
-				<!-- Footer Social Links -->
-				<div class="social-icon">
-					<ul class="list-inline">
-						
-						<li class="list-inline-item"><a href="https://twitter.com/rotationalio"><i class="ti-twitter-alt"></i></a></li>
-						
-						<li class="list-inline-item"><a href="https://github.com/rotational.io"><i class="ti-github"></i></a></li>
-						
-						<li class="list-inline-item"><a href="https://www.linkedin.com/company/71689585/admin/"><i class="ti-linkedin"></i></a></li>
-						
-					</ul>
-				</div>
-
-				<!-- copyright -->
-				<div class="copyright text-center">
-					<a href="https://rotational.io/">
-						<img src="https://rotational.io/images/logo.png" alt="Rotational Labs" height="42" />
-					</a>
-					<br>
-					<p>Copyright © 2021 Rotational Labs, LLC · Powered by <a href="https://gethugothemes.com">Hugo</a> · Theme by <a href="https://themefisher.com">Themefisher</a></p>
-				</div>
-			</div>
-		</div>
-	</div>
-</footer>
-<!-- /footer -->
-
-<!-- Google Map API -->
-
-
-<!-- JS Plugins -->
-
-<script src="https://rotational.io/plugins/jquery/jquery.min.js"></script>
-
-<script src="https://rotational.io/plugins/bootstrap/bootstrap.min.js"></script>
-
-<script src="https://rotational.io/plugins/slick/slick.min.js"></script>
-
-<script src="https://rotational.io/plugins/shuffle/shuffle.min.js"></script>
-
-<script src="https://rotational.io/plugins/magnific-popup/jquery.magnific-popup.min.js"></script>
-
-<script src="https://rotational.io/plugins/lazy-load/lozad.min.js"></script>
-
-<script src="https://rotational.io/plugins/google-map/map.js"></script>
-
-
-<!-- Main Script -->
-
-<script src="https://rotational.io/js/script.min.5db5ae6f88052715e823d7c52f3fa7a832565352b0f76c1d2cee2a3b564a0716fa9d51878a9965389c3d856f2d7c6330.js" integrity="sha384-XbWub4gFJxXoI9fFLz&#43;nqDJWU1Kw92wdLO4qO1ZKBxb6nVGHipllOJw9hW8tfGMw"></script>
-
-
-</body>
-
-</html>
+</code></pre></div><p>This does much better in terms of performance, however there is a race condition on the access to <code>r.online</code> before the access to <code>r.stream</code> which may be made nil by <code>messenger</code> routine closing.</p><p>To test this, I ran a benchmark, sending 5000 messages each in their own go routine and waiting until all responses were dispatched before computing the throughput. The <em>iorder</em> mode is to prove that even when in <code>async</code> if the messages are sent one at a time (e.g. not in a go routine) the order is preserved.</p><p><img src=/images/blog/2018-09-11-streaming-remote-throughput.png alt=Throughput></p><p>At first, I thought the size of the message buffer might be causing the bottleneck (hence the x-axis). The buffer prevents back-pressure from the message sender, and it does appear to have some influence on sync and async mode (but less of an impact in iorder mode). From these numbers, however, it&rsquo;s clear that we need to run the listener in its own routine.</p><p>Notes:</p><ul><li>With sender and receiver go routines, the message order is preserved</li><li>There is a race condition between sender and receiver</li><li>Buffer size only has a small impact</li></ul></div><div class=mt-5></div></div></div></div></section></div><footer id=footer class=section-bg><div class=container><div class="row wow fadeInUp" data-wow-duration=500ms><div class=col-xl-12><div class=social-icon><ul class=list-inline><li class=list-inline-item><a href=https://twitter.com/rotationalio><i class=ti-twitter-alt></i></a></li><li class=list-inline-item><a href=https://github.com/rotational.io><i class=ti-github></i></a></li><li class=list-inline-item><a href=https://www.linkedin.com/company/71689585/admin/><i class=ti-linkedin></i></a></li></ul></div><div class="copyright text-center"><a href=https://rotational.io/><img src=https://rotational.io/images/logo.png alt="Rotational Labs" height=42></a><br><p>Copyright © 2021 Rotational Labs, LLC · Powered by <a href=https://gethugothemes.com>Hugo</a> · Theme by <a href=https://themefisher.com>Themefisher</a></p></div></div></div></div></footer><script src=https://rotational.io/plugins/jquery/jquery.min.js></script><script src=https://rotational.io/plugins/bootstrap/bootstrap.min.js></script><script src=https://rotational.io/plugins/slick/slick.min.js></script><script src=https://rotational.io/plugins/shuffle/shuffle.min.js></script><script src=https://rotational.io/plugins/magnific-popup/jquery.magnific-popup.min.js></script><script src=https://rotational.io/plugins/lazy-load/lozad.min.js></script><script src=https://rotational.io/plugins/google-map/map.js></script><script src=https://rotational.io/js/script.min.5db5ae6f88052715e823d7c52f3fa7a832565352b0f76c1d2cee2a3b564a0716fa9d51878a9965389c3d856f2d7c6330.js integrity=sha384-XbWub4gFJxXoI9fFLz+nqDJWU1Kw92wdLO4qO1ZKBxb6nVGHipllOJw9hW8tfGMw></script></body></html>
