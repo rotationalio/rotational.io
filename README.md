@@ -46,7 +46,7 @@ $ ./bin/new-blog.sh "Title of My Awesome Blog Post"
 
 > **NOTE**: ensure that these commands are run in the root of the project.
 
-This will create a new file in the `content/english/blog` directory (English is the default language for our site) that you can open and begin to edit. When creating new blog content, Hugo uses the `archetypes/blog.md` template file and generates the following [frontmatter](https://gohugo.io/content-management/front-matter#readout):
+This will create a new file in the `content/en/blog` directory (English is the default language for our site) that you can open and begin to edit. When creating new blog content, Hugo uses the `archetypes/blog.md` template file and generates the following [frontmatter](https://gohugo.io/content-management/front-matter#readout):
 
 ```
 ---
