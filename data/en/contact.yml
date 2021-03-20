@@ -1,4 +1,3 @@
-############################## Contact #############################
 contact:
   enable : true
   title : Contact Us
@@ -6,24 +5,16 @@ contact:
   content : We love to talk through complex scaling and performance issues. What’s slowing you down? Drop us a line for a friendly chat. We’ll make it worth your while.
 
   # Contact details
+  # Themify icon pack : https://themify.me/themify-icons
   contact_list:
-    # - icon : ti-location-pin # themify icon pack : https://themify.me/themify-icons
-    #   info : "Khaja Road, Bayzid, Chittagong, Bangladesh"
-
-    # - icon : ti-mobile # themify icon pack : https://themify.me/themify-icons
-    #   info : "Phone: +880-31-000-000"
-
-    # - icon : ti-printer # themify icon pack : https://themify.me/themify-icons
-    #   info : "Fax: +880-31-000-000"
-
-    - icon : ti-email # themify icon pack : https://themify.me/themify-icons
-      info : "Email: contact@rotational.io"
-
+    - icon : ti-email
+      info : "Email: info@rotational.io"
 
   # Contact form
+  # Works with https://formspree.io
   contact_form:
     enable : true
-    form_action : "https://formspree.io/f/xknpawwn" #contact form works with https://formspree.io
+    form_action : "https://formspree.io/f/xknpawwn"
     name : "Your Name"
     email : "Your Email"
     subject : "Subject"

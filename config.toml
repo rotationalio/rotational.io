@@ -107,7 +107,7 @@ languageCode = "en-us"
 contentDir = "content/english"
 weight = 1
 home = "Home"
-copyright = "Copyright &copy; 2021 Rotational Labs, LLC · Powered by [Hugo](https://gethugothemes.com) · Theme by [Themefisher](https://themefisher.com)"
+copyright = "Copyright &copy; 2021 Rotational Labs, LLC, All Rights Reserved"
 
 
 ## French Navigation
@@ -147,7 +147,7 @@ languageCode = "fr-fr"
 contentDir = "content/french"
 weight = 2
 home = "Accueil"
-copyright = "Copyright &copy; 2021 Rotational Labs, LLC · Powered by [Hugo](https://gethugothemes.com) · Theme by [Themefisher](https://themefisher.com)"
+copyright = "Copyright &copy; 2021 Rotational Labs, LLC, All Rights Reserved"
 
 ## Social Icons
 # See icons from themify icon pack : https://themify.me/themify-icons
