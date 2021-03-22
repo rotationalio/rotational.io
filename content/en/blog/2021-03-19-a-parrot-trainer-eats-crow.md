@@ -13,7 +13,12 @@ In this post, we'll consider how it is that models trained on massive datasets u
 
 ## Birds on a Wire
 
-In the machine learning community, we are trained to think of size as inversely proportional to bias. We associate small datasets with the problem of underfit, which is to say high bias. We learn that in the face of unfamiliar data, underfit models make poor assumptions that lead to inaccuracies. Likewise, we call models with smaller sets of hyperparameters "weak learners" because their limited complexity limits our ability to reduce bias even as our dataset size grows.
+In the machine learning community, we are trained to think of [size as inversely proportional to bias](http://scott.fortmann-roe.com/docs/BiasVariance.html). We associate small datasets with the problem of underfit, which is to say high bias. We learn that in the face of unfamiliar data, underfit models make poor assumptions that lead to inaccuracies. Likewise, we call models with smaller sets of hyperparameters "weak learners" because their limited complexity limits our ability to reduce bias even as our dataset size grows.
+
+---
+_In machine learning, bias is an error from erroneous assumptions in the learning algorithm._
+
+---
 
 This intuition has driven the ML community towards ever larger datasets and increasingly complex model architectures, and to be sure, towards ever better accuracy scores. Unfortunately (and not unironically), this progression has driven a wedge between the ML definition of "bias" and the more colloquial sense of the word.
 
