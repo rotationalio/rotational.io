@@ -104,10 +104,10 @@ weight = 5
 [Languages.en]
 languageName = "En"
 languageCode = "en-us"
-contentDir = "content/english"
+contentDir = "content/en"
 weight = 1
 home = "Home"
-copyright = "Copyright &copy; 2021 Rotational Labs, LLC · Powered by [Hugo](https://gethugothemes.com) · Theme by [Themefisher](https://themefisher.com)"
+copyright = "Copyright &copy; 2021 Rotational Labs, LLC, All Rights Reserved"
 
 
 ## French Navigation
@@ -144,10 +144,10 @@ weight = 5
 [Languages.fr]
 languageName = "Fr"
 languageCode = "fr-fr"
-contentDir = "content/french"
+contentDir = "content/fr"
 weight = 2
 home = "Accueil"
-copyright = "Copyright &copy; 2021 Rotational Labs, LLC · Powered by [Hugo](https://gethugothemes.com) · Theme by [Themefisher](https://themefisher.com)"
+copyright = "Copyright &copy; 2021 Rotational Labs, LLC, All Rights Reserved"
 
 ## Social Icons
 # See icons from themify icon pack : https://themify.me/themify-icons
