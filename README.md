@@ -83,7 +83,7 @@ The `-q` flag is a "quality flag" which should be a number between 0 (worst qual
 
 ## I18n and L10n
 
-[TODO: add details]
+Coming Soon!
 
 ## Publication
 
