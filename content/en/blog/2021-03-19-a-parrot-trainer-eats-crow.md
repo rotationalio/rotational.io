@@ -24,14 +24,15 @@ To understand our situation, it may help to trace back through the pattern of ou
 
 > "Is deep learning really necessary to solve most machine learning problems?"
 
-This question has come to me more times than I can count over the years, both at work and with my students. It often comes laced with some underlying anxiety. Sometimes it means "These deep learning hyperparameters are really tedious to tune, are you sure it's worth my time to learn them?". Sometimes it means "does your solution actually use neural models, or is this just a marketing layer on top of a Logistic Regression?".
+This question has come to me more times than I can count over the years, both at work and with my students. It often comes laced with some underlying anxiety. Sometimes it means "These deep learning hyperparameters are really tedious to tune, are you sure it's worth my time to learn them?". Sometimes it means "does your solution actually use neural networks, or is this just a marketing layer on top of a Logistic Regression?".
 
 To be fair, I find this kind of skepticism totally healthy. We even gave the skeptics a little shout-out in [our book's](https://learning.oreilly.com/library/view/applied-text-analysis/9781491963036/) chapter on deep learning, writing,
+
 > As application developers, we tend to be cautiously optimistic about the kinds of bleeding-edge technologies that sound good on paper but can lead to headaches when it comes to operationalization.
 
-My own views about the value and practicality of deep learning are always changing, and my answers to askers of this question have shifted over time. While I almost always bring up what I see as the two main tradeoffs between traditional models and deep learning, namely model complexity (neural models are more complicated, harder to tune, easier to mess up) and speed (neural models tend to take longer to train and can impede rapid prototyping and iteration), I am much more encouraging about the use cases for deep learning these days than I used to be.
+My own views about the value and practicality of deep learning are always changing, and my answers to askers of this question have shifted over time. While I almost always bring up what I see as the two main tradeoffs between traditional models and deep learning, namely model complexity (multi-layer neural models are more complicated, harder to tune, easier to mess up) and speed (multi-layer neural models tend to take longer to train and can impede rapid prototyping and iteration), I am much more encouraging about the use cases for deep learning these days than I used to be.
 
-The reality is that neural models are getting more practical to use all the time, and even if they require us to grapple with more complexity, the rewards of being able to scale complexity are hard to ignore. Given enough data, neural models are likely to always outperform more traditional machine learning algorithms, simply because they don't ever have to stop learning.
+The reality is that deep neural models are getting more practical to use all the time, and even if they require us to grapple with more complexity, the rewards of being able to scale complexity are hard to ignore. Given enough data, deep neural models are likely to always outperform more traditional machine learning algorithms, simply because they don't ever have to stop learning.
 
 ## Training Parrots
 
@@ -41,7 +42,7 @@ The progression over the last few years has been amazing to watch. There have ne
 
 This problem is at the heart of the recent paper [On the Dangers of Stochastic Parrots: Can Language Models Be Too Big?](https://dl.acm.org/doi/pdf/10.1145/3442188.3445922) The paper itself is at the heart of a controversy about Google's [abrupt dismissal](https://www.bbc.com/news/technology-56135817) of two of the authors, Dr. Timnit Gibru and Dr. Margaret Mitchell, who helped found and lead Google's AI Ethics team.
 
-The Parrots paper discusses a range of concerns with large language models (like the ones Google makes), including the dangers of "ersatz fluency" and the environmental costs of training such models. Indeed, we seem to be entering a new phase in which machine models are only distinguishable from humans by their absence of legal and ethical responsibilities for the ramifications of their words and actions. Moreover, as with cryptocurrencies and [cryptoart like NFTs](https://everestpipkin.medium.com/but-the-environmental-issues-with-cryptoart-1128ef72e6a3), it is becoming clear that the costs are disproportionately paid by people unlikely to realize much of their benefits.
+The Parrots paper discusses a range of concerns with large language models (like the ones Google makes), including the dangers of "ersatz fluency" and the environmental costs of training such models. Indeed, we seem to be entering a new phase in which machine models are only distinguishable from humans by the absence of legal and ethical responsibilities for their words and actions. Moreover, as with cryptocurrencies and [cryptoart like NFTs](https://everestpipkin.medium.com/but-the-environmental-issues-with-cryptoart-1128ef72e6a3), it is becoming clear that the costs are disproportionately paid by people unlikely to realize much of their benefits.
 
 The paper is, however, primarily a warning about the challenge of responsibly building deep learning models that require a volume of data that exceeds human capacity to effectively curate. And as an NLP developer, this was the part of the paper that triggered that uneasy feeling in the pit of my stomach. This is something that ~~we~~ I need to take responsibility for and help fix. But how?
 
@@ -53,6 +54,7 @@ Presumably the first step is admitting you have a problem. OpenAI [has acknowled
 
 
 In his article, "For Some Reason I’m Covered in Blood", [Dave Gershgorn](https://onezero.medium.com/for-some-reason-im-covered-in-blood-gpt-3-contains-disturbing-bias-against-muslims-693d275552bf) writes about GPT-3's problem with Islam:
+
 > This bias is most evident when GPT-3 is given a phrase containing the word “Muslim” and asked to complete a sentence with the words that it thinks should come next. In more than 60% of cases documented by researchers, GPT-3 created sentences associating Muslims with shooting, bombs, murder, and violence.
 
 So, yes, as an NLP developer, I *am* concerned that leveraging pretrained LMs in my consumer-facing products could manifest in bias that might alienate my Muslim, my women, my LGBTQ+ users. However, I am *also* concerned about how my commercialization of such LMs could serve to further normalize and entrench racist, sexist, anti-Islamic, homophobic, transphobic, and white supremist beliefs for everyone else.
@@ -60,11 +62,12 @@ So, yes, as an NLP developer, I *am* concerned that leveraging pretrained LMs in
 As developers, when we build data products, we help produce the training data that will be used for the next generations of machine learning models. When we build atop models like GPT-3, that has the effect of ensuring that bias and hate speech remain in the collective conversation online, indefinitely.
 
 How can we do a better job of dataset curation for large language models to avoid the problem of poisonous training data? In the Parrots paper, Dr. Gibru et al. discuss some of the approaches that were used to filter the training data for models like GPT-3 and BERT:
+
 > The Colossal Clean Crawled Corpus...is cleaned, *inter alia*, by discarding any page containing one of a list of about 400 “Dirty, Naughty, Obscene or Otherwise Bad Words". This list is overwhelmingly words related to sex, with a handful of racial slurs and words related to white supremacy (e.g. swastika, white power) included. While possibly effective at removing documents containing pornography (and the associated problematic stereotypes encoded in the language of such sites) and certain kinds of hate speech, this approach will also undoubtedly attenuate, by suppressing such words as *twink*, the influence of online spaces built by and for LGBTQ people. If we filter out the discourse of marginalized populations, we fail to provide training data that reclaims slurs and otherwise describes marginalized identities in a positive light.
 
 In other words, the data cleaning mechanisms in place are crude at best, and perhaps overly aggressive in filtering out marginalized conversations that may be punctuated by reclaimed "bad" words. And yet...any solution I can think of that would manage to include marginalized conversations might also produce language models prone to using those reclaimed words.
 
-This leads us to the question of whether it would *ever* be ok for a LM to use a word like "twink". Knowing who can use and who should refrain from using such reclaimed words is something that humans &mdash; despite our access to education, historical context about oppression, and discussions about systemic racism, sexism, and homophobia &mdash; [still routinely screw up](https://www.yahoo.com/lifestyle/papa-johns-founder-says-hes-211500691.html?guccounter=1&guce_referrer=aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS8&guce_referrer_sig=AQAAAJKwRjOsKJ2Ob0xoccP5Ck2jNFa2Oss-dVj11oSHLODckm7Yi_S-TCkt-8eKFrB8ghQzscpnl9bqLe4wUCgu2cn75e6AqZ0zpSVWH0GYYKfTWHICUk-jCSu6cnixkdFF5tX1K0U6aNmJWyom-2WDt3HMvT5_DI5PGb_F-gytgYkQ).
+This leads us to the question of whether it would *ever* be ok for a LM to use a word like "twink". Knowing who can use and who should refrain from using such reclaimed words is something that humans &mdash; despite our access to education, historical context about oppression, and discussions about systemic racism, sexism, and homophobia &mdash; [still routinely screw up](https://www.yahoo.com/lifestyle/papa-johns-founder-says-hes-211500691.html).
 
 
 ## Beyond the Gilded Cage
