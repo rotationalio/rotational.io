@@ -67,6 +67,20 @@ The next steps are as follows:
 2. Find a blog image from [Unsplash](https://unsplash.com/collections/63030615/rotational-website) and add to `image_webp` and `image` fields.
 3. Write the blog post!
 
+## WebP
+
+Our current theme makes use of [WebP](https://developers.google.com/speed/webp) - an image format created by Google that is supposed to be smaller and richer to power web and mobile applications. However, because WebP is not fully supported by all browsers, the theme requires both a JPEG/PNG version of an image and the WebP version.
+
+Likely most of the images we'll use will come in a JPEG/PNG format. To convert them to WebP on the command line, [download the `cwebp`](https://developers.google.com/speed/webp/download) encoder tool. The download will be an archive file containing the entire codec for the webp protocol, extract the `bin/cwebp` utility from it and place it somewhere in your `$PATH`, e.g. in `~/bin`. When you run the utility the first time, your system will probably block it since it was downloaded from the web and not installed with a digital signature. Open System Preferences > Security and Privacy and allow the program to be executed (it will probably prompt you again when you do this, select the Open button when it does).
+
+To convert a JPEG to WebP, run the following command:
+
+```
+$ cwebp -q 80 static/images/test.jpg -o static/images/test.webp
+```
+
+The `-q` flag is a "quality flag" which should be a number between 0 (worst quality) and 100 (best quality). This flag controls the lossiness of the compression algorithm. Alternatively, you can use the `-lossless` flag to maximize the quality of the conversion. The `-o` flag is the output path to save the file to.
+
 ## I18n and L10n
 
 [TODO: add details]
