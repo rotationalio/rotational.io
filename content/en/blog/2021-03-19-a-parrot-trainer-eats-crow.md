@@ -15,12 +15,7 @@ In this post, we'll consider how it is that models trained on massive datasets u
 
 In the machine learning community, we are trained to think of [size as inversely proportional to bias](http://scott.fortmann-roe.com/docs/BiasVariance.html). We associate small datasets with the problem of underfit, which is to say high bias. We learn that in the face of unfamiliar data, underfit models make poor assumptions that lead to inaccuracies. Likewise, we call models with smaller sets of hyperparameters "weak learners" because their limited complexity limits our ability to reduce bias even as our dataset size grows.
 
----
-_In machine learning, bias is an error from erroneous assumptions in the learning algorithm._
-
----
-
-This intuition has driven the ML community towards ever larger datasets and increasingly complex model architectures, and to be sure, towards ever better accuracy scores. Unfortunately (and not unironically), this progression has driven a wedge between the ML definition of "bias" and the more colloquial sense of the word.
+This intuition has driven the ML community towards ever larger datasets and increasingly complex model architectures, and to be sure, towards ever better accuracy scores. Unfortunately (and not unironically), this progression has driven a wedge between the ML definition[^1] of "bias" and the more colloquial sense of the word.
 
 
 ## Migration Patterns
@@ -106,3 +101,7 @@ Perhaps the time has come to move away from monolith language models that reduce
 - Jonathan Vanian. 2020. [Your favorite A.I. language tool is toxic](https://fortune.com/2020/09/29/artificial-intelligence-openai-gpt3-toxic/)
 - Eliza Strickland. 2021. [OpenAI's GPT-3 Speaks! (Kindly Disregard Toxic Language)](https://spectrum.ieee.org/tech-talk/artificial-intelligence/machine-learning/open-ais-powerful-text-generating-tool-is-ready-for-business)
 - Benjamin Bengfort, Rebecca Bilbro, Tony Ojeda. 2018. [Applied Text Analysis with Python: Building Language-Aware Data Products](https://learning.oreilly.com/library/view/applied-text-analysis/9781491963036/)
+
+## Footnotes
+
+[^1]: In machine learning, bias is an error from erroneous assumptions in the learning algorithm.
