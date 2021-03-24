@@ -1,5 +1,6 @@
 ---
 title: "Pop Distributed Systems"
+slug: "pop-distributed-systems"
 date: 2019-02-08T10:07:00Z
 image_webp: images/blog/beach_c.webp
 image: images/blog/beach_c.jpg

@@ -1,5 +1,6 @@
 ---
 title: "Streaming Remote Throughput"
+slug: "streaming-remote-throughput"
 date: 2018-09-11T15:19:17Z
 image_webp: images/blog/mountain_c.webp
 image: images/blog/mountain_c.jpg

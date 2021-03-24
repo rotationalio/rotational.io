@@ -1,5 +1,6 @@
 ---
 title: "The Georeplication Bakeoff"
+slug: "georeplication-bakeoff"
 date: 2019-03-02T14:59:00Z
 image_webp: images/blog/outback_c.webp
 image: images/blog/outback_c.jpg
