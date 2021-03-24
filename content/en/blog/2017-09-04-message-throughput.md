@@ -1,5 +1,6 @@
 ---
 title: "Messaging Throughput gRPC vs. ZMQ"
+slug: "message-throughput-grpc-vs-zmq"
 date: 2017-09-04T17:20:06Z
 image_webp: images/blog/jungle_c.webp
 image: images/blog/jungle_c.jpg

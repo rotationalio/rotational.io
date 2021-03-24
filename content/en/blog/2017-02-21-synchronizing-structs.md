@@ -1,5 +1,6 @@
 ---
 title: "Synchronizing Structs for Safe Concurrency in Go"
+slug: "synchronizing-structs"
 date: 2017-02-21T10:48:24Z
 image_webp: images/blog/lake_c.webp
 image: images/blog/lake_c.jpg

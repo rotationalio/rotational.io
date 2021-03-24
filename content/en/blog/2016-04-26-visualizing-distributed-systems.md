@@ -1,5 +1,6 @@
 ---
 title: "Visualizing Distributed Systems"
+slug: "visualizing-distributed-systems"
 date: 2016-04-26T11:34:42Z
 image_webp: images/blog/savanah_c.webp
 image: images/blog/savanah_c.jpg

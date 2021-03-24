@@ -1,5 +1,6 @@
 ---
 title: "Laissez-Faire in Distributed Systems"
+slug: "laissez-faire-distributed-systems"
 date: 2018-12-02T16:42:00Z
 image_webp: images/blog/forest_c.webp
 image: images/blog/forest_c.jpg

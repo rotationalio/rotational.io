@@ -1,5 +1,6 @@
 ---
 title: "Basic Python Profiling"
+slug: "basic-python-profiling"
 date: 2020-07-14T18:01:08Z
 image_webp: images/blog/sunrise_c.webp
 image: images/blog/sunrise_c.jpg

@@ -1,5 +1,6 @@
 ---
 title: "The Actor Model"
+slug: "actor-model"
 date: 2018-08-03T07:27:36Z
 image_webp: images/blog/leaf.webp
 image: images/blog/leaf.jpg
