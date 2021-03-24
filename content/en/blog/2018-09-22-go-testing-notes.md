@@ -1,5 +1,6 @@
 ---
 title: "Go Testing Notes"
+slug: "go-testing-notes"
 date: 2018-09-22T09:58:12Z
 image_webp: images/blog/lake2_c.webp
 image: images/blog/lake2_c.jpg

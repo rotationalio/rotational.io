@@ -1,5 +1,6 @@
 ---
 title: "Documenting a gRPC API with OpenAPI"
+slug: "documenting-grpc-with-openapi"
 date: 2021-01-21T17:45:35Z
 image_webp: images/blog/gateway.webp
 image: images/blog/gateway.jpg

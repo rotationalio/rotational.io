@@ -1,6 +1,6 @@
 ---
 title: "A Parrot Trainer Eats Crow"
-slug: "2021-03-19-a-parrot-trainer-eats-crow"
+slug: "a-parrot-trainer-eats-crow"
 date: "2021-03-19T08:42:21-04:00"
 draft: false
 image_webp: images/blog/parrots.webp
