@@ -13,6 +13,10 @@ disqusShortname = ""    # get your shortname form here : https://disqus.com
 # Disable any languages from build process
 disableLanguages = []
 
+# Set canonical URLs
+[permalinks]
+  blog = "/blog/:slug/"
+
 ## Default Parameters
 [params]
 # Metadata
