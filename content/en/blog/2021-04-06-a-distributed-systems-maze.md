@@ -13,7 +13,7 @@ The most exciting applications coming out these days are the ones that aim big &
 
 Of course, it's easy to get lost in the maze of algorithms, protocols, and terminology related to distributed systems. It's a complex topic and there are a lot of good approaches, most of which leverage strategic optimizations that further confuse the underlying principles.
 
-Most of the talented engineers and technical executives I know get lost in the details of two fundamental concepts: **coordination** and **consistency**. In the post, we'll take a look at distributed systems through the metaphor &mdash; a robot stuck in a maze &mdash; to illustrate why coordination is necessary (and difficult!), and what exactly creates consistency issues. A bit fanciful? Sure, but hard to forget!
+Most of the talented engineers and technical executives I know get lost in the details of two fundamental concepts: **coordination** and **consistency**. In the post, we'll take a look at distributed systems through a metaphor &mdash; a robot stuck in a maze &mdash; to illustrate why coordination is necessary (and difficult!), and what exactly creates consistency issues. A bit fanciful? Sure, but hard to forget!
 
 ## Coordination
 
