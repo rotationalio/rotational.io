@@ -1,4 +1,4 @@
 ---
-title: Star Streaks
-layout: starstreak
+title: OurShinyPET
+layout: OurShinyPET
 ---
