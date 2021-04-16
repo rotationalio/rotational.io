@@ -1,6 +1,6 @@
 ##################################### pricing ##############################
 pricing:
-  enable : true
+  enable : false
   title : Our Plans
   pricing_table :
     # pricing table loop
@@ -17,7 +17,7 @@ pricing:
       button:
         label : "Signup"
         link : "#"
-
+      
     # pricing table loop
     - name : Silver
       price : $149
@@ -32,7 +32,7 @@ pricing:
       button:
         label : "Signup"
         link : "#"
-
+        
     # pricing table loop
     - name : Gold
       price : $199
@@ -47,7 +47,7 @@ pricing:
       button:
         label : "Signup"
         link : "#"
-
+        
     # pricing table loop
     - name : Platinum
       price : $299

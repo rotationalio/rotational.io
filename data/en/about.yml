@@ -1,16 +1,16 @@
 ############################# About ###################################
 about:
   enable : true
-  title : About Us
+  title : Application feature
   about_item :
-  - icon : ti-world # themify icon pack : https://themify.me/themify-icons
-    title : Providing Distributed Data
-    content : We specialize in building and maintaining planetary-scale distributed data services.
+  - icon : ti-text # themify icon pack : https://themify.me/themify-icons
+    title : Text Mining
+    content : Explore textual data through word clouds and sentiment analysis.
 
-  - icon : ti-link # themify icon pack : https://themify.me/themify-icons
-    title : Connecting Global Communities
-    content : We respect the legal rights, privacy, and cultural norms of our users around the world.
+  - icon : ti-bar-chart # themify icon pack : https://themify.me/themify-icons
+    title : Exploratory and Confirmatory
+    content : Explore, identify and augment findings using automated statistical methods.
 
-  - icon : ti-github # themify icon pack : https://themify.me/themify-icons
-    title : Engaging with Open Source
-    content : We believe in the power of open source to inspire, democratize, and bolster our software.
+  - icon : ti-stats-up # themify icon pack : https://themify.me/themify-icons
+    title : Predictive Analytics
+    content : Perform prediction on target input using a collection of models.

@@ -1,6 +1,6 @@
 ## Base Configuration
-baseURL = "https://rotational.io/"
-title = "Rotational Labs"
+baseURL = "https://ourshinypet.netlify.app"
+title = "Our Shiny PET"
 theme = "meghna-hugo"
 themesDir = "themes/"
 
@@ -21,18 +21,18 @@ disableLanguages = []
 [params]
 # Metadata
 logo = "images/logo.png"
-description = "We see planet-wide possibilities."
-author = "Rotational Labs, LLC"
+description = "Our Shiny PET"
+author = ""
 
 # Google Analytics
-google_analytics_id = "G-2FKX6CWJHW"
+google_analytics_id = "UA-189162512-2""
 
 # Share button on individual posts
 post_share = true
 
 [params.preloader]
 enable = false
-preloader = "images/logo.png"
+preloader = ""
 
 [params.cookies]
 enable = false
@@ -76,16 +76,16 @@ link = "plugins/google-map/map.js"
 
 ## English Navigation
 [[Languages.en.menu.main]]
-name = "about"
+name = "feature"
 pre = "#"
 url = "about"
-weight = 1
+weight = 2
 
 [[Languages.en.menu.main]]
-name = "services"
+name = "about"
 pre = "#"
-url = "services"
-weight = 2
+url = "feature"
+weight = 1
 
 [[Languages.en.menu.main]]
 name = "team"
@@ -95,77 +95,26 @@ weight = 3
 
 [[Languages.en.menu.main]]
 name = "blog"
-url = "/blog"
+pre = "#"
+url = "blog"
 weight = 4
 
-[[Languages.en.menu.main]]
-name = "contact"
-pre = "#"
-url = "contact"
-weight = 5
-
-## English Langauge
+################################ English Language ########################
 [Languages.en]
 languageName = "En"
 languageCode = "en-us"
-contentDir = "content/en"
+contentDir = "content/english"
 weight = 1
 home = "Home"
-copyright = "Copyright &copy; 2021 Rotational Labs, LLC, All Rights Reserved"
+copyright = "Copyright &copy; 2020 Designed by [Themefisher](https://themefisher.com) & Developed by [Gethugothemes](https://gethugothemes.com)"
 
-
-## French Navigation
-[[Languages.fr.menu.main]]
-name = "sur"
-pre = "fr/#"
-url = "about"
-weight = 1
-
-[[Languages.fr.menu.main]]
-name = "un service"
-pre = "fr/#"
-url = "services"
-weight = 2
-
-[[Languages.fr.menu.main]]
-name = "équipe"
-pre = "fr/#"
-url = "team"
-weight = 3
-
-[[Languages.fr.menu.main]]
-name = "blog"
-url = "/fr/blog"
-weight = 4
-
-[[Languages.fr.menu.main]]
-name = "contact"
-pre = "fr/#"
-url = "contact"
-weight = 5
-
-## French Language
-[Languages.fr]
-languageName = "Fr"
-languageCode = "fr-fr"
-contentDir = "content/fr"
-weight = 2
-home = "Accueil"
-copyright = "Copyright &copy; 2021 Rotational Labs, LLC, All Rights Reserved"
 
 ## Social Icons
 # See icons from themify icon pack : https://themify.me/themify-icons
 [[params.social]]
-icon = "ti-twitter-alt"
-link = "https://twitter.com/rotationalio"
+icon = "ti-github" # themify icon pack : https://themify.me/themify-icons
+link = "https://github.com/suyiinang/ourshinypet"
 
-[[params.social]]
-icon = "ti-github"
-link = "https://github.com/rotational.io"
-
-[[params.social]]
-icon = "ti-linkedin"
-link = "https://www.linkedin.com/company/rotational/"
 
 
 ## Syntax Highlighting

@@ -1,12 +1,12 @@
 ############################### Banner ################################
 banner:
   enable : true
-  bg_image_webp : "images/backgrounds/NASA_GulfofMex.webp"
-  bg_image : "images/backgrounds/NASA_GulfofMex.jpg"
+  bg_image_webp : "images/backgrounds/background.webp"
+  bg_image : "images/backgrounds/background.jpg"
   icon : "" # themify icon pack : https://themify.me/themify-icons
-  title : "Rotational Labs"
-  content : "Redefine what’s possible with your app"
+  title : "Our Shiny PET"
+  content : "A Predictive, Exploratory and Text application for Airbnb Data"
   button:
     enable : true
     label : "Explore"
-    link : "#blog"
+    link : "#feature"

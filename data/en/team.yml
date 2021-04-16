@@ -4,43 +4,46 @@ team:
   title : Our Team
   team_member :
     # team member loop
-    - name : Benjamin Bengfort
-      image_webp : images/team/benjamin.webp
-      image : images/team/benjamin.jpg
-      designation : Founder/CEO
-      content : The Vision
+    - name : Su Yiin Ang
+      image_webp : images/team/team-1.webp
+      image : images/team/team-1.jpg
+      designation : Master of IT in Business (Analytics) @ SMU
+      content : Enhancing strategic data business decisions using analytics and domain knowledge.
       social :
-        - icon : "ti-linkedin" # themify icon pack : https://themify.me/themify-icons
-          link : "https://www.linkedin.com/in/bbengfort/"
-        - icon : "ti-twitter-alt" # themify icon pack : https://themify.me/themify-icons
-          link : "https://twitter.com/bbengfort"
-        - icon : "ti-github" # themify icon pack : https://themify.me/themify-icons
-          link : "https://github.com/bbengfort"
-
+        - icon : ti-user # themify icon pack : https://themify.me/themify-icons
+          link : "https://suyiinang.netlify.app/"
+        - icon : ti-linkedin # themify icon pack : https://themify.me/themify-icons
+          link : "https://www.linkedin.com/in/suyiinang/"
+        - icon : ti-github # themify icon pack : https://themify.me/themify-icons
+          link : "https://github.com/suyiinang"
+        - icon : ti-bar-chart-alt # themify icon pack : https://themify.me/themify-icons
+          link : "https://public.tableau.com/profile/suyiinang#!/"
+        
     # team member loop
-    - name : Rebecca Bilbro
-      image_webp : images/team/rebecca.webp
-      image : images/team/rebecca.jpg
-      designation : Founder/CTO
-      content : The Product
+    - name : Joey Chua
+      image_webp : images/team/team-2.webp
+      image : images/team/team-2.jpg
+      designation : Master of IT in Business (Analytics) & MBA @ SMU
+      content : Working with SMEs to make data-driven decisions.
       social :
-        - icon : "ti-linkedin" # themify icon pack : https://themify.me/themify-icons
-          link : "https://www.linkedin.com/in/rebeccabilbro/"
-        - icon : "ti-twitter-alt" # themify icon pack : https://themify.me/themify-icons
-          link : "https://twitter.com/rebeccabilbro"
-        - icon : "ti-github" # themify icon pack : https://themify.me/themify-icons
-          link : "https://github.com/rebeccabilbro"
-
+        - icon : ti-user # themify icon pack : https://themify.me/themify-icons
+          link : "https://joeychua.netlify.app/"
+        - icon : ti-linkedin # themify icon pack : https://themify.me/themify-icons
+          link : "https://www.linkedin.com/in/joeychuasm/"
+        - icon : ti-bar-chart-alt # themify icon pack : https://themify.me/themify-icons
+          link : "https://public.tableau.com/profile/joey.chua2685#!/"
+        
     # team member loop
-    - name : Edwin Schmierer
-      image_webp : images/team/edwin.webp
-      image : images/team/edwin.jpg
-      designation : Advisor
-      content : The Business
+    - name : Kevin Gunawan Albindo
+      image_webp : images/team/team-3.webp
+      image : images/team/team-3.jpg
+      designation : Engineer in Asset and System Reliability @ SMRT
+      content : Engineer with passion for data-based decision making and continuous improvement of business process.
       social :
-        - icon : "ti-linkedin" # themify icon pack : https://themify.me/themify-icons
-          link : "https://www.linkedin.com/in/edwinschmierer/"
-        - icon : "ti-twitter-alt" # themify icon pack : https://themify.me/themify-icons
-          link : "https://twitter.com/eschmierer"
-        - icon : "ti-github" # themify icon pack : https://themify.me/themify-icons
-          link : "https://github.com/eschmier"
+        - icon : ti-user # themify icon pack : https://themify.me/themify-icons
+          link : "https://kgalbindo.netlify.app/"
+        - icon : ti-linkedin # themify icon pack : https://themify.me/themify-icons
+          link : "https://www.linkedin.com/in/kgalbindo/"
+        - icon : ti-bar-chart-alt # themify icon pack : https://themify.me/themify-icons
+          link : "https://public.tableau.com/profile/kevin.gunawan.albindo#!/"
+        

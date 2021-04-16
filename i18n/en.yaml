@@ -1,9 +1,9 @@
 - id: blogTitle
-  translation: Recent Rotations
+  translation: Latest Post
 - id: readMore
   translation: Read more
 - id: viewAllPost
-  translation: All Posts
+  translation: View All Post
 - id: share
   translation: Share
 - id: aboutAuthor
@@ -14,8 +14,8 @@
   translation: All
 - id: about
   translation: About Us
-- id: services
-  translation: Service
+- id: application
+  translation: Application
 - id: portfolio
   translation: Portfolio
 - id: team
