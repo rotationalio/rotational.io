@@ -401,9 +401,9 @@ htmlwidgets::saveWidget(n, file = "n.html", selfcontained = TRUE)
 htmlwidgets::saveWidget(f, file = "f.html", selfcontained = TRUE)
 ```
 
-<iframe seamless src="../all/index.html" width="100%" height="500"></iframe>
-<iframe seamless src="../n/index.html" width="100%" height="500"></iframe>
-<iframe seamless src="../f/index.html" width="100%" height="500"></iframe>
+<iframe seamless src="all.html" width="100%" height="500"></iframe>
+<iframe seamless src="n.html" width="100%" height="500"></iframe>
+<iframe seamless src="f.html" width="100%" height="500"></iframe>
 
 ### 4.2 Plotting univariate charts
 
@@ -455,7 +455,7 @@ histly <- ggplotly(g_hist)
 htmlwidgets::saveWidget(histly, file = "histly.html", selfcontained = TRUE)
 ```
 
-<iframe seamless src="../histly/index.html" width="100%" height="500"></iframe>
+<iframe seamless src="histly.html" width="100%" height="500"></iframe>
 
 **4.2.1.2 With [`ggplot2`](https://ggplot2.tidyverse.org/reference/index.html)**
 
@@ -505,7 +505,7 @@ histly2 <- ggplotly(hist)
 htmlwidgets::saveWidget(histly2, file = "histly2.html", selfcontained = TRUE)
 ```
 
-<iframe seamless src="../histly2/index.html" width="100%" height="500"></iframe>
+<iframe seamless src="histly2.html" width="100%" height="500"></iframe>
 
 
 ```r
@@ -551,7 +551,7 @@ boxly <- ggplotly(boxchart)
 htmlwidgets::saveWidget(boxly, file = "boxly.html", selfcontained = TRUE)
 ```
 
-<iframe seamless src="../boxly/index.html" width="100%" height="500"></iframe>
+<iframe seamless src="boxly.html" width="100%" height="500"></iframe>
 
 ### 4.3 Bivariate exploratory and confirmatory analysis
 
@@ -648,7 +648,7 @@ scatterly <- ggplotly(scatter)
 htmlwidgets::saveWidget(scatterly, file = "scatterly.html", selfcontained = TRUE)
 ```
 
-<iframe seamless src="../scatterly/index.html" width="100%" height="500"></iframe>
+<iframe seamless src="scatterly.html" width="100%" height="500"></iframe>
 
 
 ```r
@@ -715,7 +715,7 @@ mly <- ggplotly(m)
 htmlwidgets::saveWidget(mly, file = "mly.html", selfcontained = TRUE)
 ```
 
-<iframe seamless src="../mly/index.html" width="100%" height="500"></iframe>
+<iframe seamless src="mly.html" width="100%" height="500"></iframe>
 
 
 ```r
@@ -783,7 +783,7 @@ boxly <- ggplotly(box)
 htmlwidgets::saveWidget(boxly, file = "boxly.html", selfcontained = TRUE)
 ```
 
-<iframe seamless src="../boxly/index.html" width="100%" height="500"></iframe>
+<iframe seamless src="boxly.html" width="100%" height="500"></iframe>
 
 
 
@@ -867,7 +867,7 @@ p_map
 
 <img src="index_files/figure-html/unnamed-chunk-28-1.png" width="672" />
 
-![](images/p_map.PNG)
+![:scale 60%](images/p_map.PNG)
  
 
 **4.4.4.2 With `leaflet`**
@@ -887,7 +887,7 @@ leaf_map <- leaflet(data = final_listing) %>%
 htmlwidgets::saveWidget(leaf_map, file = "leaf_map.html", selfcontained = TRUE)
 ```
 
-<iframe seamless src="../leaf_map/index.html" width="100%" height="500"></iframe>
+<iframe seamless src="leaf_map.html" width="100%" height="500"></iframe>
 
 #### 4.4.2 Chloropleth Map
 
@@ -932,7 +932,7 @@ c_map <- tmap_leaflet(map) #blogdown unable to render interactive tmap
 htmlwidgets::saveWidget(c_map, file = "leaf_map.html", selfcontained = TRUE)
 ```
 
-<iframe seamless src="../c_map/index.html" width="100%" height="500"></iframe>
+<iframe seamless src="c_map.html" width="100%" height="500"></iframe>
 
 
 **With `leaflet`**
@@ -972,7 +972,7 @@ l_m <- leaflet(hood) %>%
 htmlwidgets::saveWidget(l_m, file = "l_m.html", selfcontained = TRUE)
 ```
 
-<iframe seamless src="../l_m/index.html" width="100%" height="500"></iframe>
+<iframe seamless src="l_m.html" width="100%" height="500"></iframe>
 
 ## 5. Testing Shiny interface
 
