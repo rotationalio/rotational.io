@@ -2,8 +2,8 @@
 title: Exploratory - prototype test
 author: Su Yiin Ang
 date: '2021-04-10'
-slug: exploratry
-categories: exploratry
+slug: exploratory
+categories: exploratory
 tags: exploratry
 image_webp: images/blog/exploratory/exploratory.webp
 image: images/blog/exploratory/exploratory.jpg
@@ -62,7 +62,7 @@ always_allow_html: true
 <script src="{{< blogdown/postref >}}index_files/pymjs/pym.v1.js"></script>
 <script src="{{< blogdown/postref >}}index_files/widgetframe-binding/widgetframe.js"></script>
 
-# Prototype testing for the Exploratory module for [OurShinyPET](https://ourshinypet.netlify.app/)
+# Prototype testing for the Exploratory module for OurShinyPET
 
 This was written as part of the requirements for the Visual Analytics module for MITB.
 
@@ -79,8 +79,6 @@ The `Shiny` package of R provides an interface to build interactive web applicat
 Here, we aim to develop an application that is **user-friendly and interactive** [R Shiny](https://shiny.rstudio.com/) that would enable everyone to make data based decisions **without** needing programming, statistical backgrounds or expensive subscriptions.
 
 We have selected Airbnb data as a base case given its extensive data (i.e location, pricing, host status, etc.). With this application, users (host, visitors) can analyse their needs to compare across other listings. There are three parts to this shiny application - Text Mining, Exploratory and Confirmatory, and Predictive Analytics.
-
-Please visit our website at https://ourshinypet.netlify.app/ for more details.
 
 #### 1.2 Objective of this report
 
@@ -233,7 +231,7 @@ glimpse(listings)
     ## $ calculated_host_listings_count_shared_rooms  <dbl> 0, 0, 0, 0, 0, 0, 0, 0, 0~
     ## $ reviews_per_month                            <dbl> 0.01, 0.22, 0.17, 0.18, 0~
 
-**3.3 Remove unnecessary variables **
+**3.3 Remove unnecessary variables**
 
 To avoid having too many variables that would overwhelm the user, we have dropped variables that are not useful for analysis.
 
