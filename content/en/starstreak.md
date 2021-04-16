@@ -1,4 +1,0 @@
----
-title: OurShinyPET
-layout: OurShinyPET
----
