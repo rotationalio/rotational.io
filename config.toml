@@ -15,7 +15,7 @@ disableLanguages = []
 
 # Set canonical URLs
 [permalinks]
-  blog = "/blog/:slug/"
+  blog = ""
 
 ## Default Parameters
 [params]
