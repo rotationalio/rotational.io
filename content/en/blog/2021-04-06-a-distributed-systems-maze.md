@@ -2,7 +2,7 @@
 title: "A Distributed Systems Maze"
 slug: "a-distributed-systems-maze"
 date: "2021-04-06T13:49:57-04:00"
-draft: true
+draft: false
 image_webp: images/blog/maze.webp
 image: images/blog/maze.jpg
 author: Benjamin Bengfort
