@@ -25,7 +25,7 @@ description = "Our Shiny PET"
 author = ""
 
 # Google Analytics
-google_analytics_id = "UA-189162512-2""
+google_analytics_id = "UA-189162512-2"
 
 # Share button on individual posts
 post_share = true
