@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://ourshinypet.netlify.app/blog/</loc>
+    <lastmod>2021-04-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ourshinypet.netlify.app/categories/</loc>
+    <lastmod>2021-04-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ourshinypet.netlify.app/categories/exploratory/</loc>
+    <lastmod>2021-04-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ourshinypet.netlify.app/blog/exploratory/</loc>
+    <lastmod>2021-04-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ourshinypet.netlify.app/tags/exploratry/</loc>
+    <lastmod>2021-04-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ourshinypet.netlify.app/</loc>
+    <lastmod>2021-04-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ourshinypet.netlify.app/tags/</loc>
+    <lastmod>2021-04-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ourshinypet.netlify.app/tags/proposal/</loc>
+    <lastmod>2021-02-26T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ourshinypet.netlify.app/categories/proposal/</loc>
+    <lastmod>2021-02-26T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ourshinypet.netlify.app/blog/proposal/</loc>
+    <lastmod>2021-02-26T00:00:00+00:00</lastmod>
+  </url>
+</urlset>

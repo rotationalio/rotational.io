@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+	<meta charset="utf-8">
+	<title>Exploratory - prototype test</title>
+
+	<!-- mobile responsive meta -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="description" content="Our Shiny PET">
+	
+	<meta name="generator" content="Hugo 0.82.0" />
+
+	<!-- plugins -->
+	
+	<link rel="stylesheet" href="https://ourshinypet.netlify.app/plugins/bootstrap/bootstrap.min.css">
+	
+	<link rel="stylesheet" href="https://ourshinypet.netlify.app/plugins/themify-icons/themify-icons.css">
+	
+	<link rel="stylesheet" href="https://ourshinypet.netlify.app/plugins/magnific-popup/magnific-popup.css">
+	
+	<link rel="stylesheet" href="https://ourshinypet.netlify.app/plugins/slick/slick.css">
+	
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Anaheim%7cQuattrocento&#43;Sans:400,700&amp;display=swap">
+	
+
+	<!-- Main Stylesheet -->
+	
+	<link rel="stylesheet" href="https://ourshinypet.netlify.app/css/style.min.css" media="screen">
+
+	<!-- Custom stylesheet - for your changes -->
+	
+  <link rel="stylesheet" href="https://ourshinypet.netlify.app/css/custom.min.css" media="screen">
+
+	<!--Favicon-->
+	<link rel="shortcut icon" href="https://ourshinypet.netlify.app/images/favicon.png" type="image/x-icon">
+	<link rel="icon" href="https://ourshinypet.netlify.app/images/favicon.png" type="image/x-icon">
+
+	
+	<!-- Global Site Tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-189162512-2"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-189162512-2');
+	</script>
+	
+
+</head>
+
+
+<body id="body" data-spy="scroll" data-target=".navbar" data-offset="55">
+  <div id="content">
+    
+
+
+<section class="sticky-top navigation">
+	<div class="container">
+		<nav class="navbar navbar-expand-lg navbar-dark">
+			<a class="navbar-brand p-0" href="/">
+				
+				<img class="lozad" data-src="https://ourshinypet.netlify.app/images/logo.png" alt="Our Shiny PET" height="42">
+				
+			</a>
+
+			<button class="navbar-toggler rounded-0" type="button" data-toggle="collapse" data-target="#navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navigation">
+				<ul class="navbar-nav ml-auto">
+					
+					<li class="nav-item">
+            <a class="nav-link" href="https://ourshinypet.netlify.app#feature">about</a>
+					</li>
+					
+					<li class="nav-item">
+            <a class="nav-link" href="https://ourshinypet.netlify.app#about">feature</a>
+					</li>
+					
+					<li class="nav-item">
+            <a class="nav-link" href="https://ourshinypet.netlify.app#team">team</a>
+					</li>
+					
+					<li class="nav-item">
+            <a class="nav-link" href="https://ourshinypet.netlify.app#blog">blog</a>
+					</li>
+					
+				</ul>
+				
+			</div>
+		</nav>
+	</div>
+</section>
+
+
+<section class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 offset-lg-2 text-center">
+        <h1>Exploratory - prototype test</h1>
+        <ul class="list-inline mb-50">
+          <li class="list-inline-item"><a href="/author/su-yiin-ang/">Su Yiin Ang</a></li>
+          <li class="list-inline-item">Saturday, Apr 10, 2021</li>
+        </ul>
+        <img class="img-fluid mb-50 lozad" data-src="https://ourshinypet.netlify.app/images/blog/exploratory/exploratory.jpg" alt="blog-image">
+      </div>
+      <div class="col-lg-8 offset-lg-2">
+        <div class="post-single-content">
+          <!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h1 id="prototype-testing-for-the-exploratory-module-for-ourshinypethttpsourshinypetnetlifyapp">Prototype testing for the Exploratory module for <a href="https://ourshinypet.netlify.app/">OurShinyPET</a></h1>
+<p>This was written as part of the requirements for the Visual Analytics module for MITB.</p>
+<hr>
+<h2 id="1-introduction">1. Introduction</h2>
+<h4 id="11-overview-of-application">1.1 Overview of application</h4>
+<p>The increasing availability of data has resulted in increased demand for data driven decisions. Although there is an extensive range of commercial statistical tools, they are often subscription-based and demand good technical knowledge to mine and draw insights from. Therefore, it may not appeal to the average user.</p>
+<p>The <code>Shiny</code> package of R provides an interface to build interactive web applications using R language. Furthermore, Shiny provides for fully interactive visualisation with its reactive functions, while retaining the statistical framework of R.</p>
+<p>Here, we aim to develop an application that is <strong>user-friendly and interactive</strong> <a href="https://shiny.rstudio.com/">R Shiny</a> that would enable everyone to make data based decisions <strong>without</strong> needing programming, statistical backgrounds or expensive subscriptions.</p>
+<p>We have selected Airbnb data as a base case given its extensive data (i.e location, pricing, host status, etc.). With this application, users (host, visitors) can analyse their needs to compare across other listings. There are three parts to this shiny application - Text Mining, Exploratory and Confirmatory, and Predictive Analytics.</p>
+<p>Please visit our website at <a href="https://ourshinypet.netlify.app/">https://ourshinypet.netlify.app/</a> for more details.</p>
+<h4 id="12-objective-of-this-report">1.2 Objective of this report</h4>
+<p>This report covers the <strong>Exploratory and Confirmatory Analysis module</strong>.</p>
+<p>The objectives of this report are to</p>
+<ol>
+<li>identify and select the appropriate R packages for the final R shiny application,</li>
+<li>develop prototypes of the module, and</li>
+<li>prepare storyboard sketch for the sub-module design.</li>
+</ol>
+<p>During prototype testing, 3 aspects were taken into consideration:</p>
+<ol>
+<li>interactivity</li>
+<li>statistical testing</li>
+<li>compatibility with R Shiny</li>
+</ol>
+<h2 id="2-literature-review">2. Literature review</h2>
+<p>Prior to building our prototype, we examined two applications as part of our literature review. We examined how the analyses were performed in relation to interactive web approach and visual analytics techniques and gaps both in the applications.</p>
+<p>The <a href="https://vnijs.shinyapps.io/radiant/?_ga=2.97157535.1465001607.1617910198-1515208298.1617518733&amp;SSUID=71147ad3f8">Radiant</a> Shiny application developed by <a href="https://rady.ucsd.edu/people/faculty/nijs/">Vincent Nijs</a> is a powerful interface for business analytics using R. The two modules - <em>radiant.data</em> and <em>radiant.basic</em> offerss tools to visualise and perform statistical analysis. Radiant utilises the <code>ggplot2</code> package for visualisation and R’s stats package for statistical testing. For <em>radiant.data</em> pivot tab, users are able to create a wide range of <strong>static</strong> charts with the given selections. While for the <em>radiant.basics</em> module, users are expected to have a <strong>basic understanding of statistical testing methods</strong> as they are first required to select their testing method before proceeding. Furthermore, the statistical testing and visualisation are done separately, hence users are not able to visualise and perform inferential statistics on one page.</p>
+<p>Meanwhile, the <a href="https://alain003.phs.osaka-u.ac.jp/mephas/#">MEPHAS</a> Shiny application by Zhou, Y., Leung, Sw., Mizutani, S. et al. (2020) is an integrated web application for statistical analysis to support medical and pharmaceutical analysis. To overcome the statistical knowledge hurdle, the MEPHAS application has an interactive user friendly flow chart that helps user find the right statistical method. The list of statistical test and visualisations covered are extensive, and the process flow is logical and easy to understand to an average user. Furthermore, MEPHAS has seamlessly integrated interactivity for both the visual plots and statistical outputs. However, different statistical test methods are located on web server, i.e parametric t test on <a href="https://alain003.phs.osaka-u.ac.jp/mephas_web/2MFSttest/">this webpage</a> and non-parametric t-test on <a href="https://alain003.phs.osaka-u.ac.jp/mephas_web/3MFSnptest/">this webpage</a>. Hence, the <strong>transition</strong> from one testing method to another is relatively more <strong>tedious with regards to user experience</strong>.</p>
+<p>Taking the two applications into consideration, our application intends to enhance user experience by incorporating interactivity to the graph, automating statistical testing that caters to the average user with a minimal statistical background, and presenting statistical test and interactive graph in a single tab that would enhance visual experience.</p>
+<h2 id="3-extracting-wrangling-and-preparing-the-input-data">3 Extracting, wrangling and preparing the input data</h2>
+<p>Listings of Airbnbs in Singapore were extracted from <a href="http://insideairbnb.com/get-the-data.html">InsideAirbnb.com</a></p>
+<p><strong>3.1 Load packages</strong></p>
+<p>We will focus on utilising packages from the <a href="https://www.tidyverse.org/"><code>Tidyverse</code></a> family.</p>
+<p>The following packages were mainly used in exploring and developing our prototype.</p>
+<ul>
+<li><a href="https://readr.tidyverse.org/"><code>readr</code></a>, <a href="https://tibble.tidyverse.org/"><code>tibble</code></a>, <a href="https://dplyr.tidyverse.org/"><code>dplyr</code></a>, <a href="https://tidyr.tidyverse.org/"><code>tidyr</code></a> to load, process and prepare data for final exploration.</li>
+<li><a href="https://ggplot2.tidyverse.org/index.html"><code>ggplot2</code></a> to create exploratory plots.</li>
+<li><a href="https://plotly.com/r/"><code>plotly</code></a> to create interactive plots for exploratory analysis.</li>
+<li><a href="https://indrajeetpatil.github.io/ggstatsplot/index.html"><code>ggstatsplot</code></a> to create plots with statistical tests included within plot.</li>
+</ul>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">packages = <span style="color:#447fcf">c</span>(<span style="color:#ed9d13">&#39;tidyverse&#39;</span>, <span style="color:#ed9d13">&#39;ggplot2&#39;</span>, <span style="color:#ed9d13">&#39;skimr&#39;</span>, <span style="color:#ed9d13">&#39;naniar&#39;</span>, <span style="color:#ed9d13">&#39;kableExtra&#39;</span>,<span style="color:#ed9d13">&#39;dplyr&#39;</span>, <span style="color:#ed9d13">&#39;ggstatsplot&#39;</span>,<span style="color:#ed9d13">&#39;plotly&#39;</span>,
+             <span style="color:#ed9d13">&#39;readr&#39;</span>,<span style="color:#ed9d13">&#39;haven&#39;</span>,<span style="color:#ed9d13">&#39;funModeling&#39;</span>,<span style="color:#ed9d13">&#39;crosstalk&#39;</span>,<span style="color:#ed9d13">&#39;data.table&#39;</span>, <span style="color:#ed9d13">&#39;skimr&#39;</span>, <span style="color:#ed9d13">&#39;ggmosaic&#39;</span>,<span style="color:#ed9d13">&#39;ggExtra&#39;</span>,<span style="color:#ed9d13">&#39;ggpubr&#39;</span>,
+             <span style="color:#ed9d13">&#39;sf&#39;</span>,<span style="color:#ed9d13">&#39;tmap&#39;</span>,<span style="color:#ed9d13">&#39;sp&#39;</span>, <span style="color:#ed9d13">&#39;leaflet&#39;</span>,<span style="color:#ed9d13">&#39;widgetframe&#39;</span>)
+
+<span style="color:#447fcf">for</span>(p in packages){
+  <span style="color:#447fcf">if</span>(!<span style="color:#447fcf">require</span>(p, character.only = T)){
+    <span style="color:#447fcf">install.packages</span>(p)
+  }
+  <span style="color:#447fcf">library</span>(p, character.only = T)
+}
+</code></pre></div><p><strong>3.2 Load data</strong></p>
+<p>The data was loaded using <code>read_csv()</code> of the readr package, which reads delimited files into a <code>tibble</code>.</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">listings &lt;- <span style="color:#447fcf">read_csv</span>(<span style="color:#ed9d13">&#34;./data/raw/listings.csv&#34;</span>)
+</code></pre></div><p><strong>View data</strong></p>
+<p>The dataset has 4,255 observations and 74 variables.<br>
+At the intial glimpse, we noticed a number of redundant variables such as <em>id</em>, <em>listing_url</em>, etc. These should be removed as they do not add value to any analysis.</p>
+<p>Further, textual variables such as <em>description</em>, <em>name</em> etc, were removed these will be done in the Text Mining module. To the extent useful, textual data was converted to structured data through feature engineering (length of text).</p>
+<p>Additionally, we noticed that some variables are in the wrong data type - <em>price</em>, <em>host_response_rate</em>, <em>host_acceptance_rate</em> are in character format, when they should be numerical.</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#447fcf">glimpse</span>(listings)
+</code></pre></div><pre><code>## Rows: 4,255
+## Columns: 74
+## $ id                                           &lt;dbl&gt; 49091, 50646, 56334, 7160~
+## $ listing_url                                  &lt;chr&gt; &quot;https://www.airbnb.com/r~
+## $ scrape_id                                    &lt;dbl&gt; 2.021013e+13, 2.021013e+1~
+## $ last_scraped                                 &lt;date&gt; 2021-01-27, 2021-01-28, ~
+## $ name                                         &lt;chr&gt; &quot;COZICOMFORT LONG TERM ST~
+## $ description                                  &lt;chr&gt; &quot;&lt;b&gt;The space&lt;/b&gt;&lt;br /&gt;Th~
+## $ neighborhood_overview                        &lt;chr&gt; NA, &quot;The serenity &amp; quiet~
+## $ picture_url                                  &lt;chr&gt; &quot;https://a0.muscache.com/~
+## $ host_id                                      &lt;dbl&gt; 266763, 227796, 266763, 3~
+## $ host_url                                     &lt;chr&gt; &quot;https://www.airbnb.com/u~
+## $ host_name                                    &lt;chr&gt; &quot;Francesca&quot;, &quot;Sujatha&quot;, &quot;~
+## $ host_since                                   &lt;date&gt; 2010-10-20, 2010-09-08, ~
+## $ host_location                                &lt;chr&gt; &quot;Singapore&quot;, &quot;Singapore, ~
+## $ host_about                                   &lt;chr&gt; &quot;I am a private tutor by ~
+## $ host_response_time                           &lt;chr&gt; &quot;within a few hours&quot;, &quot;a ~
+## $ host_response_rate                           &lt;chr&gt; &quot;100%&quot;, &quot;0%&quot;, &quot;100%&quot;, &quot;10~
+## $ host_acceptance_rate                         &lt;chr&gt; &quot;N/A&quot;, &quot;N/A&quot;, &quot;N/A&quot;, &quot;100~
+## $ host_is_superhost                            &lt;lgl&gt; FALSE, FALSE, FALSE, FALS~
+## $ host_thumbnail_url                           &lt;chr&gt; &quot;https://a0.muscache.com/~
+## $ host_picture_url                             &lt;chr&gt; &quot;https://a0.muscache.com/~
+## $ host_neighbourhood                           &lt;chr&gt; &quot;Woodlands&quot;, &quot;Bukit Timah~
+## $ host_listings_count                          &lt;dbl&gt; 2, 1, 2, 8, 8, 8, 8, 6, 1~
+## $ host_total_listings_count                    &lt;dbl&gt; 2, 1, 2, 8, 8, 8, 8, 6, 1~
+## $ host_verifications                           &lt;chr&gt; &quot;['email', 'phone', 'face~
+## $ host_has_profile_pic                         &lt;lgl&gt; TRUE, TRUE, TRUE, TRUE, T~
+## $ host_identity_verified                       &lt;lgl&gt; TRUE, TRUE, TRUE, TRUE, T~
+## $ neighbourhood                                &lt;chr&gt; NA, &quot;Singapore, Singapore~
+## $ neighbourhood_cleansed                       &lt;chr&gt; &quot;Woodlands&quot;, &quot;Bukit Timah~
+## $ neighbourhood_group_cleansed                 &lt;chr&gt; &quot;North Region&quot;, &quot;Central ~
+## $ latitude                                     &lt;dbl&gt; 1.44255, 1.33235, 1.44246~
+## $ longitude                                    &lt;dbl&gt; 103.7958, 103.7852, 103.7~
+## $ property_type                                &lt;chr&gt; &quot;Private room in apartmen~
+## $ room_type                                    &lt;chr&gt; &quot;Private room&quot;, &quot;Private ~
+## $ accommodates                                 &lt;dbl&gt; 1, 2, 1, 6, 3, 3, 6, 2, 1~
+## $ bathrooms                                    &lt;lgl&gt; NA, NA, NA, NA, NA, NA, N~
+## $ bathrooms_text                               &lt;chr&gt; &quot;1 bath&quot;, &quot;1 bath&quot;, &quot;1 ba~
+## $ bedrooms                                     &lt;dbl&gt; 1, 1, 1, 2, 1, 1, 1, 1, 1~
+## $ beds                                         &lt;dbl&gt; 1, 1, 1, 3, 1, 2, 7, 1, 1~
+## $ amenities                                    &lt;chr&gt; &quot;[\&quot;Washer\&quot;, \&quot;Elevator\~
+## $ price                                        &lt;chr&gt; &quot;$80.00&quot;, &quot;$80.00&quot;, &quot;$66.~
+## $ minimum_nights                               &lt;dbl&gt; 180, 90, 6, 90, 90, 90, 1~
+## $ maximum_nights                               &lt;dbl&gt; 360, 730, 14, 1125, 1125,~
+## $ minimum_minimum_nights                       &lt;dbl&gt; 180, 90, 6, 90, 90, 90, 1~
+## $ maximum_minimum_nights                       &lt;dbl&gt; 180, 90, 6, 90, 90, 90, 1~
+## $ minimum_maximum_nights                       &lt;dbl&gt; 360, 730, 14, 1125, 1125,~
+## $ maximum_maximum_nights                       &lt;dbl&gt; 360, 730, 14, 1125, 1125,~
+## $ minimum_nights_avg_ntm                       &lt;dbl&gt; 180.0, 90.0, 6.0, 90.0, 9~
+## $ maximum_nights_avg_ntm                       &lt;dbl&gt; 360, 730, 14, 1125, 1125,~
+## $ calendar_updated                             &lt;lgl&gt; NA, NA, NA, NA, NA, NA, N~
+## $ has_availability                             &lt;lgl&gt; TRUE, TRUE, TRUE, TRUE, T~
+## $ availability_30                              &lt;dbl&gt; 30, 30, 30, 30, 30, 30, 3~
+## $ availability_60                              &lt;dbl&gt; 60, 60, 60, 60, 60, 60, 6~
+## $ availability_90                              &lt;dbl&gt; 90, 90, 90, 90, 90, 90, 9~
+## $ availability_365                             &lt;dbl&gt; 365, 365, 365, 365, 365, ~
+## $ calendar_last_scraped                        &lt;date&gt; 2021-01-27, 2021-01-28, ~
+## $ number_of_reviews                            &lt;dbl&gt; 1, 18, 20, 20, 24, 48, 29~
+## $ number_of_reviews_ltm                        &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 2~
+## $ number_of_reviews_l30d                       &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0~
+## $ first_review                                 &lt;date&gt; 2013-10-21, 2014-04-18, ~
+## $ last_review                                  &lt;date&gt; 2013-10-21, 2014-12-26, ~
+## $ review_scores_rating                         &lt;dbl&gt; 94, 91, 98, 89, 83, 88, 8~
+## $ review_scores_accuracy                       &lt;dbl&gt; 10, 9, 10, 9, 8, 9, 9, 9,~
+## $ review_scores_cleanliness                    &lt;dbl&gt; 10, 10, 10, 8, 8, 9, 8, 9~
+## $ review_scores_checkin                        &lt;dbl&gt; 10, 10, 10, 9, 9, 9, 9, 9~
+## $ review_scores_communication                  &lt;dbl&gt; 10, 10, 10, 10, 9, 9, 9, ~
+## $ review_scores_location                       &lt;dbl&gt; 8, 9, 8, 9, 8, 9, 9, 9, 1~
+## $ review_scores_value                          &lt;dbl&gt; 8, 9, 9, 9, 8, 9, 8, 9, 9~
+## $ license                                      &lt;lgl&gt; NA, NA, NA, NA, NA, NA, N~
+## $ instant_bookable                             &lt;lgl&gt; FALSE, FALSE, FALSE, TRUE~
+## $ calculated_host_listings_count               &lt;dbl&gt; 2, 1, 2, 8, 8, 8, 8, 7, 1~
+## $ calculated_host_listings_count_entire_homes  &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 1, 0~
+## $ calculated_host_listings_count_private_rooms &lt;dbl&gt; 2, 1, 2, 8, 8, 8, 8, 6, 1~
+## $ calculated_host_listings_count_shared_rooms  &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0~
+## $ reviews_per_month                            &lt;dbl&gt; 0.01, 0.22, 0.17, 0.18, 0~
+</code></pre>
+<p>**3.3 Remove unnecessary variables **</p>
+<p>To avoid having too many variables that would overwhelm the user, we have dropped variables that are not useful for analysis.</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">listings2 &lt;- listings %&gt;%
+  <span style="color:#447fcf">select</span>(-id, -listing_url, -scrape_id, -neighborhood_overview, -picture_url, -host_id, -host_url, -host_name, -host_location,
+         -host_thumbnail_url, -host_picture_url, -first_review, -last_review, -last_scraped, -calendar_last_scraped,
+         -has_availability, -host_has_profile_pic, -calendar_updated, -license, -bathrooms, -neighbourhood, -host_neighbourhood)
+</code></pre></div><p><strong>3.4 Create new variables</strong></p>
+<p><strong>i) Feature engineering - Convert unstructured variables to structured variables</strong></p>
+<p>Textual variables such as <em>name</em>, <em>description</em>, <em>host_about</em>, <em>bathroom_text</em> , <em>bathrooms_text</em>, <em>host_verifications_count</em> were converted into structured variables by counting the length of the text.</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#999;font-style:italic"># convert textual data to structured data</span>
+listings3 &lt;- listings2 %&gt;%
+  <span style="color:#447fcf">mutate_at</span>(<span style="color:#447fcf">vars</span>(name,description,host_about),str_squish) %&gt;% <span style="color:#999;font-style:italic">#remove all whitespaces</span>
+  <span style="color:#447fcf">mutate</span>(name_length = <span style="color:#447fcf">str_count</span>(name, <span style="color:#ed9d13">&#34;.&#34;</span>)) %&gt;% <span style="color:#999;font-style:italic">#count characters</span>
+  <span style="color:#447fcf">mutate</span>(description_length = <span style="color:#447fcf">str_count</span>(description, <span style="color:#ed9d13">&#34;.&#34;</span>)) %&gt;%
+  <span style="color:#447fcf">mutate</span>(host_about_length = <span style="color:#447fcf">str_count</span>(host_about, <span style="color:#ed9d13">&#34;.&#34;</span>)) %&gt;%
+  <span style="color:#447fcf">select</span>(-name, -description, -host_about)
+
+<span style="color:#999;font-style:italic"># convert textual data to structured data</span>
+listings3 &lt;- listings3 %&gt;%
+  <span style="color:#447fcf">mutate</span>(bathrooms_text = <span style="color:#447fcf">tolower</span>(bathrooms_text)) %&gt;%
+  <span style="color:#447fcf">mutate</span>(bathrooms_text = <span style="color:#447fcf">str_replace</span>(bathrooms_text, <span style="color:#ed9d13">&#34;half&#34;</span>, <span style="color:#ed9d13">&#34;0.5&#34;</span>)) %&gt;%
+  <span style="color:#447fcf">mutate</span>(bathroom = <span style="color:#447fcf">parse_number</span>(bathrooms_text)) %&gt;%
+  <span style="color:#447fcf">mutate</span>(bathroom_type = <span style="color:#447fcf">case_when</span>(
+    <span style="color:#447fcf">str_detect</span>(bathrooms_text, <span style="color:#ed9d13">&#34;private&#34;</span>) ~ <span style="color:#ed9d13">&#34;Private&#34;</span>,
+    <span style="color:#447fcf">str_detect</span>(bathrooms_text, <span style="color:#ed9d13">&#34;share&#34;</span>) ~ <span style="color:#ed9d13">&#34;Shared&#34;</span>,
+    <span style="color:#6ab825;font-weight:bold">TRUE</span> ~ <span style="color:#ed9d13">&#34;Other&#34;</span>)
+  ) %&gt;%
+  <span style="color:#447fcf">select</span>(-bathrooms_text)
+
+<span style="color:#999;font-style:italic"># replace amenities with count of amenities</span>
+listings3 &lt;- listings3 %&gt;%
+  <span style="color:#447fcf">mutate</span>(amenities_count = <span style="color:#447fcf">sapply</span>(<span style="color:#447fcf">str_split</span>(amenities, <span style="color:#ed9d13">&#34;,&#34;</span>), length)) %&gt;%
+  <span style="color:#447fcf">select</span>(-amenities) 
+
+<span style="color:#999;font-style:italic"># replace host_verification with count of verification</span>
+listings3 &lt;- listings3 %&gt;%
+  <span style="color:#447fcf">mutate</span>(host_verifications_count = <span style="color:#447fcf">sapply</span>(<span style="color:#447fcf">str_split</span>(host_verifications, <span style="color:#ed9d13">&#34;,&#34;</span>), length)) %&gt;%
+  <span style="color:#447fcf">select</span>(-host_verifications)
+</code></pre></div><p><strong>ii) Derive the number of days since a host joined Airbnb platform - <em>days_joined</em></strong></p>
+<p>Using the variable <em>host_since</em>, which is in date format, we have calculated the number of days since the host started hosting Airbnb guests.</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">listings4 &lt;- listings3 %&gt;%
+  <span style="color:#447fcf">mutate</span>(days_joined = <span style="color:#447fcf">as.numeric</span>(<span style="color:#447fcf">as.Date</span>(<span style="color:#ed9d13">&#34;2021/01/01&#34;</span>,
+                                           <span style="color:#ed9d13">&#34;%Y/%m/%d&#34;</span>)-host_since)) %&gt;% 
+  <span style="color:#447fcf">select</span>(-host_since)
+</code></pre></div><p><strong>iii) Derive property type</strong></p>
+<p>The <em>property_type</em> variable comprises both room and property type (e.g. Private room in apartment). We extracted the property type from <em>property_type</em> variable.</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#999;font-style:italic"># get actual property type (remove room type component) from property_type</span>
+listings5 &lt;- listings4 %&gt;%
+  <span style="color:#447fcf">mutate</span>(property_type = <span style="color:#447fcf">tolower</span>(property_type)) %&gt;%
+  <span style="color:#447fcf">mutate</span>(property_type = <span style="color:#447fcf">case_when</span>(
+    <span style="color:#447fcf">grepl</span>(<span style="color:#ed9d13">&#34; in &#34;</span>, property_type, fixed = <span style="color:#6ab825;font-weight:bold">TRUE</span>) == <span style="color:#6ab825;font-weight:bold">TRUE</span> ~ <span style="color:#447fcf">gsub</span>(<span style="color:#ed9d13">&#34;^.*in &#34;</span>, <span style="color:#ed9d13">&#34;&#34;</span>, property_type),
+    <span style="color:#6ab825;font-weight:bold">TRUE</span> ~ <span style="color:#447fcf">gsub</span>(<span style="color:#ed9d13">&#34;entire &#34;</span>, <span style="color:#ed9d13">&#34;&#34;</span>, property_type)
+  ))
+</code></pre></div><p><strong>3.5 Change data type</strong></p>
+<ul>
+<li>Change price-related attribute from <em>character</em> format to <em>numeric</em>.</li>
+<li>Convert character and logical variables to factor data type.</li>
+</ul>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">listings5 &lt;- listings5 %&gt;%
+  <span style="color:#447fcf">mutate_at</span>(<span style="color:#447fcf">vars</span>(<span style="color:#447fcf">c</span>(<span style="color:#447fcf">contains</span>(<span style="color:#ed9d13">&#34;price&#34;</span>))), ~<span style="color:#447fcf">as.numeric</span>(<span style="color:#447fcf">str_replace</span>(., <span style="color:#ed9d13">&#34;\\$&#34;</span>, <span style="color:#ed9d13">&#34;&#34;</span>))) %&gt;% <span style="color:#999;font-style:italic">#price to numeric</span>
+  <span style="color:#447fcf">mutate_at</span>(<span style="color:#447fcf">vars</span>(<span style="color:#447fcf">c</span>(<span style="color:#447fcf">contains</span>(<span style="color:#ed9d13">&#34;rate&#34;</span>))), ~<span style="color:#447fcf">as.numeric</span>(<span style="color:#447fcf">str_replace</span>(., <span style="color:#ed9d13">&#34;\\%&#34;</span>, <span style="color:#ed9d13">&#34;&#34;</span>))) <span style="color:#999;font-style:italic">#rate to numeric</span>
+  
+<span style="color:#999;font-style:italic">#remove listing with $0 price</span>
+listings6 &lt;- listings5 %&gt;%
+  <span style="color:#447fcf">filter</span>(price!=<span style="color:#3677a9">0</span>)
+
+listings6 &lt;- listings6 %&gt;%
+  <span style="color:#447fcf">mutate</span>(<span style="color:#447fcf">across</span>(<span style="color:#447fcf">where</span>(is.character), as.factor)) %&gt;% <span style="color:#999;font-style:italic">#convert character to factor</span>
+  <span style="color:#447fcf">mutate</span>(<span style="color:#447fcf">across</span>(<span style="color:#447fcf">where</span>(is.logical), as.factor)) <span style="color:#999;font-style:italic">#convert logical to factor</span>
+</code></pre></div><p><strong>3.6 Consolidate similar levels</strong></p>
+<p>For the <em>host_response_time</em> variable, there are 6 levels of which 2 are <em>N/A</em> and <em>NA</em>.<br>
+As such, we have renamed <em>NA</em> to <em>N/A</em> as one level.</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">listings6$host_response_time<span style="color:#447fcf">[is.na</span>(listings6$host_response_time)] &lt;- <span style="color:#ed9d13">&#34;N/A&#34;</span>
+final_listing &lt;- <span style="color:#447fcf">subset</span>(listings6, !<span style="color:#447fcf">is.na</span>(host_is_superhost))
+</code></pre></div><p><strong>3.7 View final listing</strong></p>
+<p>Review the final output after wrangling.</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#447fcf">glimpse</span>(final_listing)
+</code></pre></div><pre><code>## Rows: 4,203
+## Columns: 53
+## $ host_response_time                           &lt;fct&gt; within a few hours, a few~
+## $ host_response_rate                           &lt;dbl&gt; 100, 0, 100, 100, 100, 10~
+## $ host_acceptance_rate                         &lt;dbl&gt; NA, NA, NA, 100, 100, 100~
+## $ host_is_superhost                            &lt;fct&gt; FALSE, FALSE, FALSE, FALS~
+## $ host_listings_count                          &lt;dbl&gt; 2, 1, 2, 8, 8, 8, 8, 6, 1~
+## $ host_total_listings_count                    &lt;dbl&gt; 2, 1, 2, 8, 8, 8, 8, 6, 1~
+## $ host_identity_verified                       &lt;fct&gt; TRUE, TRUE, TRUE, TRUE, T~
+## $ neighbourhood_cleansed                       &lt;fct&gt; Woodlands, Bukit Timah, W~
+## $ neighbourhood_group_cleansed                 &lt;fct&gt; North Region, Central Reg~
+## $ latitude                                     &lt;dbl&gt; 1.44255, 1.33235, 1.44246~
+## $ longitude                                    &lt;dbl&gt; 103.7958, 103.7852, 103.7~
+## $ property_type                                &lt;fct&gt; apartment, apartment, apa~
+## $ room_type                                    &lt;fct&gt; Private room, Private roo~
+## $ accommodates                                 &lt;dbl&gt; 1, 2, 1, 6, 3, 3, 6, 2, 1~
+## $ bedrooms                                     &lt;dbl&gt; 1, 1, 1, 2, 1, 1, 1, 1, 1~
+## $ beds                                         &lt;dbl&gt; 1, 1, 1, 3, 1, 2, 7, 1, 1~
+## $ price                                        &lt;dbl&gt; 80, 80, 66, 174, 80, 80, ~
+## $ minimum_nights                               &lt;dbl&gt; 180, 90, 6, 90, 90, 90, 1~
+## $ maximum_nights                               &lt;dbl&gt; 360, 730, 14, 1125, 1125,~
+## $ minimum_minimum_nights                       &lt;dbl&gt; 180, 90, 6, 90, 90, 90, 1~
+## $ maximum_minimum_nights                       &lt;dbl&gt; 180, 90, 6, 90, 90, 90, 1~
+## $ minimum_maximum_nights                       &lt;dbl&gt; 360, 730, 14, 1125, 1125,~
+## $ maximum_maximum_nights                       &lt;dbl&gt; 360, 730, 14, 1125, 1125,~
+## $ minimum_nights_avg_ntm                       &lt;dbl&gt; 180.0, 90.0, 6.0, 90.0, 9~
+## $ maximum_nights_avg_ntm                       &lt;dbl&gt; 360, 730, 14, 1125, 1125,~
+## $ availability_30                              &lt;dbl&gt; 30, 30, 30, 30, 30, 30, 3~
+## $ availability_60                              &lt;dbl&gt; 60, 60, 60, 60, 60, 60, 6~
+## $ availability_90                              &lt;dbl&gt; 90, 90, 90, 90, 90, 90, 9~
+## $ availability_365                             &lt;dbl&gt; 365, 365, 365, 365, 365, ~
+## $ number_of_reviews                            &lt;dbl&gt; 1, 18, 20, 20, 24, 48, 29~
+## $ number_of_reviews_ltm                        &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 2~
+## $ number_of_reviews_l30d                       &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0~
+## $ review_scores_rating                         &lt;dbl&gt; 94, 91, 98, 89, 83, 88, 8~
+## $ review_scores_accuracy                       &lt;dbl&gt; 10, 9, 10, 9, 8, 9, 9, 9,~
+## $ review_scores_cleanliness                    &lt;dbl&gt; 10, 10, 10, 8, 8, 9, 8, 9~
+## $ review_scores_checkin                        &lt;dbl&gt; 10, 10, 10, 9, 9, 9, 9, 9~
+## $ review_scores_communication                  &lt;dbl&gt; 10, 10, 10, 10, 9, 9, 9, ~
+## $ review_scores_location                       &lt;dbl&gt; 8, 9, 8, 9, 8, 9, 9, 9, 1~
+## $ review_scores_value                          &lt;dbl&gt; 8, 9, 9, 9, 8, 9, 8, 9, 9~
+## $ instant_bookable                             &lt;fct&gt; FALSE, FALSE, FALSE, TRUE~
+## $ calculated_host_listings_count               &lt;dbl&gt; 2, 1, 2, 8, 8, 8, 8, 7, 1~
+## $ calculated_host_listings_count_entire_homes  &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 1, 0~
+## $ calculated_host_listings_count_private_rooms &lt;dbl&gt; 2, 1, 2, 8, 8, 8, 8, 6, 1~
+## $ calculated_host_listings_count_shared_rooms  &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0~
+## $ reviews_per_month                            &lt;dbl&gt; 0.01, 0.22, 0.17, 0.18, 0~
+## $ name_length                                  &lt;int&gt; 33, 31, 11, 35, 30, 26, 3~
+## $ description_length                           &lt;int&gt; 1000, 589, 880, 1000, 990~
+## $ host_about_length                            &lt;int&gt; 326, 79, 326, 772, 772, 7~
+## $ bathroom                                     &lt;dbl&gt; 1.0, 1.0, 1.0, 1.0, 0.5, ~
+## $ bathroom_type                                &lt;fct&gt; Other, Other, Other, Priv~
+## $ amenities_count                              &lt;int&gt; 7, 12, 8, 25, 21, 16, 22,~
+## $ host_verifications_count                     &lt;int&gt; 9, 8, 9, 5, 5, 5, 5, 7, 5~
+## $ days_joined                                  &lt;dbl&gt; 3726, 3768, 3726, 3625, 3~
+</code></pre>
+<h2 id="4-testing-protypes-for-submodule">4. Testing protypes for submodule</h2>
+<h3 id="41-observe-variables">4.1 Observe variables</h3>
+<p>This allows users to understand variables available for exploration.</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">skimDf &lt;- final_listing %&gt;%
+  <span style="color:#447fcf">skim_without_charts</span>()
+
+sum_data &lt;- <span style="color:#447fcf">skim</span>(final_listing) %&gt;% <span style="color:#447fcf">summary</span>()
+
+sum_n &lt;-<span style="color:#447fcf">if </span>(<span style="color:#ed9d13">&#34;numeric&#34;</span> %in% skimDf$skim_type){
+      skimDf %&gt;%
+        <span style="color:#447fcf">yank</span>(<span style="color:#ed9d13">&#39;numeric&#39;</span>) %&gt;%
+        <span style="color:#447fcf">select</span>(<span style="color:#ed9d13">&#39;skim_variable&#39;</span>,<span style="color:#ed9d13">&#39;n_missing&#39;</span>,<span style="color:#ed9d13">&#39;complete_rate&#39;</span>,
+               <span style="color:#ed9d13">&#39;mean&#39;</span>,<span style="color:#ed9d13">&#39;sd&#39;</span>,<span style="color:#ed9d13">&#39;p0&#39;</span>,<span style="color:#ed9d13">&#39;p50&#39;</span>,<span style="color:#ed9d13">&#39;p100&#39;</span>) %&gt;%
+        <span style="color:#447fcf">arrange</span>(-n_missing)
+    }
+  
+sum_f &lt;-<span style="color:#447fcf">if </span>(<span style="color:#ed9d13">&#34;factor&#34;</span> %in% skimDf$skim_type){skimDf %&gt;% <span style="color:#447fcf">yank</span>(<span style="color:#ed9d13">&#34;factor&#34;</span>)}
+
+all &lt;- DT::<span style="color:#447fcf">datatable</span>(sum_data)
+n &lt;- DT::<span style="color:#447fcf">datatable</span>(sum_n)
+f &lt;- DT::<span style="color:#447fcf">datatable</span>(sum_f)
+
+widgetframe::<span style="color:#447fcf">frameWidget</span>(all)
+</code></pre></div><!-- raw HTML omitted -->
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">widgetframe::<span style="color:#447fcf">frameWidget</span>(n)
+</code></pre></div><!-- raw HTML omitted -->
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">widgetframe::<span style="color:#447fcf">frameWidget</span>(f)
+</code></pre></div><!-- raw HTML omitted -->
+<h3 id="42-plotting-univariate-charts">4.2 Plotting univariate charts</h3>
+<p>For univariate exploratory analysis, we would like to be able to plot :</p>
+<ol>
+<li>Distribution - through <strong>histogram</strong> for numerical variables and <strong>barplot</strong> for categorical variables,</li>
+<li>Outlier of selected variable - through <strong>boxplot</strong>.</li>
+</ol>
+<p><strong>4.2.1 Plotting distribution with histogram and bar plots</strong></p>
+<p><strong>4.2.1.1 With <a href="https://indrajeetpatil.github.io/ggstatsplot/index.html"><code>ggstatsplot</code></a></strong></p>
+<p>Upon reading <code>ggstatsplot</code> documentation, we realised that <code>ggbarstats()</code>, which plots barplots, currently only supports two variable barplots</p>
+<p>See extract from the <a href="https://indrajeetpatil.github.io/ggstatsplot/reference/ggbarstats.html">documentation</a> of the <code>y</code> argument.</p>
+<blockquote>
+<p>The variable to use as the columns in the contingency table. Please note that if there are empty factor levels in your variable, they will be dropped. Default is <code>NULL.</code> If <code>NULL</code>, one-sample proportion test (a goodness of fit test) will be run for the <code>x</code> variable. Otherwise an appropriate association test will be run. This argument can not be <code>NULL</code> for <code>ggbarstats</code> function.</p>
+</blockquote>
+<p>Hence the visual below only applicable to numerical variables using <code>gghistostats</code>.</p>
+<p><code>gghistostats</code> automates the testing methodology based on inputs. Furthermore, <code>gghistostats</code> allows adjustments to the confident level and to the statistical approach with 4 options <code>parametric</code>, <code>nonparametric</code>, <code>robust</code> and <code>bayes</code>.</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#447fcf">set.seed</span>(<span style="color:#3677a9">123</span>) <span style="color:#999;font-style:italic"># for reproducibility</span>
+g_hist &lt;- <span style="color:#447fcf">gghistostats</span>(
+    data = final_listing,
+    x = review_scores_rating, 
+    title = <span style="color:#447fcf">paste</span>(<span style="color:#ed9d13">&#39;Distribution of review_scores_rating&#39;</span>),
+    normal.curve = <span style="color:#6ab825;font-weight:bold">TRUE</span>,
+    normal.curve.args = <span style="color:#447fcf">list</span>(color = <span style="color:#ed9d13">&#34;#00A699&#34;</span>, size = <span style="color:#3677a9">1</span>),
+    bar.fill = <span style="color:#ed9d13">&#39;#FF5A5F&#39;</span>, <span style="color:#999;font-style:italic">#use airbnb colour</span>
+    ggtheme = ggplot2::<span style="color:#447fcf">theme_classic</span>(),
+    type = <span style="color:#ed9d13">&#39;parametric&#39;</span>,
+    conf.level = <span style="color:#3677a9">0.95</span>,
+    )
+g_hist
+</code></pre></div><p><!-- raw HTML omitted --></p>
+<p><strong>Attempt to add interactivity to <a href="https://indrajeetpatil.github.io/ggstatsplot/index.html"><code>ggstatsplot</code></a> chart using <a href="https://plotly.com/ggplot2/"><code>ggplotly</code></a></strong></p>
+<p>We tried to wrap the <code>ggstatsplot</code> chart with <code>ggplotly()</code>. However by doing so, we would lose key metrics such as the fitted normal curve and statistical test results. As clarified by the author <a href="https://github.com/IndrajeetPatil/ggstatsplot/issues/403">here</a>, this is a <a href="https://ggplot2.tidyverse.org/reference/index.html"><code>ggplot2</code></a> issue.</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">histly &lt;- <span style="color:#447fcf">ggplotly</span>(g_hist)
+widgetframe::<span style="color:#447fcf">frameWidget</span>(histly)
+</code></pre></div><!-- raw HTML omitted -->
+<p><strong>4.2.1.2 With <a href="https://ggplot2.tidyverse.org/reference/index.html"><code>ggplot2</code></a></strong></p>
+<p>To work around <code>ggstatsplot</code> limitation while retaining interactivity, we have used <code>ggplot2</code> to visualise the variables and included computed statistical test below. However, we are unable to retain the fitted normal curve. We will remove the fit normal curve code from our final shiny application.</p>
+<p>For the statistical tests, we have assumed normality as our dataset has 4000+ observations. Hence, we will use the</p>
+<ul>
+<li>Single mean <code>t.test()</code> for numerical variables to compare a single mean to the mean value of the population.</li>
+<li>Single proportion <code>prop.test()</code> for categorical variables to compare a single proportion to the population proportion.</li>
+</ul>
+<p>From the histogram and test results, <em>review_scores_rating</em> are left-skewed with mean of 91.4 and median 95.</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">hist &lt;- <span style="color:#447fcf">ggplot</span>(final_listing, <span style="color:#447fcf">aes</span>(x = review_scores_rating)) + 
+  <span style="color:#447fcf">ggtitle</span>(<span style="color:#ed9d13">&#34;Distribution of review_scores_rating&#34;</span>) +
+  <span style="color:#447fcf">xlab</span>(<span style="color:#ed9d13">&#39;review_scores_rating&#39;</span>) + 
+  <span style="color:#447fcf">theme_bw</span>() +
+  <span style="color:#447fcf">geom_histogram</span>(bins = <span style="color:#3677a9">10</span>,
+                 color = <span style="color:#ed9d13">&#39;#767676&#39;</span>,
+                 fill = <span style="color:#ed9d13">&#39;#FF5A5F&#39;</span>, 
+                 <span style="color:#447fcf">aes</span>(y=..density.., 
+                     fill=..count..), 
+                    alpha=<span style="color:#3677a9">0.5</span>) +
+  <span style="color:#447fcf">stat_function</span>(fun = dnorm, 
+                args = <span style="color:#447fcf">list</span>(mean = <span style="color:#447fcf">mean</span>(final_listing$review_scores_rating), 
+                            sd = <span style="color:#447fcf">sd</span>(final_listing$review_scores_rating))) + <span style="color:#999;font-style:italic">#normal curve doesn&#39;t appear</span>
+  <span style="color:#447fcf">geom_vline</span>(<span style="color:#447fcf">aes</span>(xintercept=<span style="color:#447fcf">mean</span>(final_listing$review_scores_rating,na.rm=T)),
+             color=<span style="color:#ed9d13">&#34;#00A699&#34;</span>, 
+             linetype=<span style="color:#ed9d13">&#34;dashed&#34;</span>, 
+             size=<span style="color:#3677a9">1</span>)+ 
+  <span style="color:#447fcf">geom_vline</span>(<span style="color:#447fcf">aes</span>(xintercept=<span style="color:#447fcf">median</span>(final_listing$review_scores_rating,na.rm=T)),
+             color=<span style="color:#ed9d13">&#34;#484848&#34;</span>, 
+             linetype=<span style="color:#ed9d13">&#34;dashed&#34;</span>, 
+             size=<span style="color:#3677a9">1</span>)
+
+
+bar &lt;- <span style="color:#447fcf">ggplot</span>(final_listing, <span style="color:#447fcf">aes</span>(x = room_type)) + 
+  <span style="color:#447fcf">ggtitle</span>(<span style="color:#ed9d13">&#34;Distribution of room_type&#34;</span>) +
+  <span style="color:#447fcf">xlab</span>(<span style="color:#ed9d13">&#39;room_type&#39;</span>) + 
+  <span style="color:#447fcf">theme_bw</span>() + 
+  <span style="color:#447fcf">geom_histogram</span>(stat = <span style="color:#ed9d13">&#39;count&#39;</span>,
+                       color = <span style="color:#ed9d13">&#39;#767676&#39;</span>,
+                          fill = <span style="color:#ed9d13">&#39;#FF5A5F&#39;</span>)
+   
+
+histly2 &lt;- <span style="color:#447fcf">ggplotly</span>(hist)
+widgetframe::<span style="color:#447fcf">frameWidget</span>(histly2)
+</code></pre></div><!-- raw HTML omitted -->
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#447fcf">t.test</span>(final_listing$review_scores_rating,mu = <span style="color:#3677a9">100</span>, alternative = <span style="color:#ed9d13">&#39;two.sided&#39;</span>,conf.level = <span style="color:#3677a9">0.95</span>)
+</code></pre></div><pre><code>## 
+##  One Sample t-test
+## 
+## data:  final_listing$review_scores_rating
+## t = -37.452, df = 2468, p-value &lt; 2.2e-16
+## alternative hypothesis: true mean is not equal to 100
+## 95 percent confidence interval:
+##  91.01510 91.90916
+## sample estimates:
+## mean of x 
+##  91.46213
+</code></pre>
+<p><strong>4.2.2 Plotting outliers with boxplot</strong></p>
+<p><a href="https://indrajeetpatil.github.io/ggstatsplot/index.html"><code>ggstatsplot</code></a> currently doesn’t not have any graph to plot a single variable boxplot for outlier observations. As such, I have used <a href="https://plotly.com/ggplot2/"><code>ggplotly()</code></a> and <a href="https://ggplot2.tidyverse.org/reference/index.html"><code>ggplot2</code></a> to create and interactive chart.</p>
+<p>Here we observe that the outliers are those less than 70.</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">boxchart &lt;- <span style="color:#447fcf">ggplot</span>(final_listing, 
+                   <span style="color:#447fcf">aes</span>(x = <span style="color:#ed9d13">&#39;&#39;</span>, 
+                       y = review_scores_rating, 
+                       colour = <span style="color:#ed9d13">&#39;#FF5A5F&#39;</span>)) +
+  <span style="color:#447fcf">geom_boxplot</span>() +
+  <span style="color:#447fcf">coord_flip</span>() +
+  <span style="color:#447fcf">stat_boxplot</span>(geom =<span style="color:#ed9d13">&#39;errorbar&#39;</span>) +
+  <span style="color:#447fcf">stat_summary</span>(fun.y=mean, geom=<span style="color:#ed9d13">&#34;point&#34;</span>, shape=<span style="color:#3677a9">5</span>, size=<span style="color:#3677a9">4</span>)+ 
+  <span style="color:#447fcf">labs</span>(title = <span style="color:#ed9d13">&#34;Outlier boxplot using ggplot and ggplotly&#34;</span>) +
+  <span style="color:#447fcf">xlab</span>(<span style="color:#ed9d13">&#39;review_scores_rating&#39;</span>) +
+  <span style="color:#447fcf">theme_classic</span>() +
+  <span style="color:#447fcf">theme</span>(legend.position = <span style="color:#ed9d13">&#39;none&#39;</span>)
+  
+boxly &lt;- <span style="color:#447fcf">ggplotly</span>(boxchart)
+widgetframe::<span style="color:#447fcf">frameWidget</span>(boxly)
+</code></pre></div><!-- raw HTML omitted -->
+<h3 id="43-bivariate-exploratory-and-confirmatory-analysis">4.3 Bivariate exploratory and confirmatory analysis</h3>
+<p>For bivariate analysis, we would like to be able to plot 3 main types of interactions between variables -</p>
+<ul>
+<li>
+<p>2 numerical variables - Scatterplot</p>
+</li>
+<li>
+<p>2 categorical variables - mosaic plot</p>
+</li>
+<li>
+<p>1 numerical and 1 categorical - box/violin plot</p>
+</li>
+</ul>
+<p><strong>4.3.1 Plotting numerical variables with scatterplot</strong></p>
+<p><strong>4.3.1.1 With <code>ggMarginal()</code></strong></p>
+<p><code>ggMarginal()</code> of the <code>ggExtra</code> package adds marginal plots to <code>ggplot2</code> by wrapping over the existing <code>ggplot2</code> chart. It is very quick and easy way of plotting marginal plots of existing <code>ggplot2</code> charts. However we noted that the chart does not with plotly.</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">p1 &lt;- <span style="color:#447fcf">ggplot</span>(final_listing, 
+             <span style="color:#447fcf">aes</span>(host_listings_count, review_scores_rating, colour = host_is_superhost)) +
+               <span style="color:#447fcf">geom_point</span>()
+
+p2&lt;-<span style="color:#447fcf">ggMarginal</span>(p1, groupColour = <span style="color:#6ab825;font-weight:bold">TRUE</span>, groupFill = <span style="color:#6ab825;font-weight:bold">TRUE</span>)
+p2
+</code></pre></div><p><!-- raw HTML omitted --></p>
+<p><strong>4.3.1.2 With <a href="https://indrajeetpatil.github.io/ggstatsplot/index.html"><code>ggstatsplot</code></a></strong></p>
+<p><code>ggscatterstats</code> is able to replicate <code>ggMarginal()</code> chart overlayed with statistical test.</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#447fcf">ggscatterstats</span>(
+  data = final_listing,
+  x = review_scores_rating, 
+  y = amenities_count, 
+  conf.level = <span style="color:#3677a9">0.95</span>,
+  xlab = <span style="color:#ed9d13">&#34;Review_scores_rating&#34;</span>,
+  ylab = <span style="color:#ed9d13">&#34;amenities_count&#34;</span>,
+  marginal.type = <span style="color:#ed9d13">&#39;density&#39;</span>,
+  title = <span style="color:#ed9d13">&#39;Scatterplot of using ggstatsplot&#39;</span>)
+</code></pre></div><p><!-- raw HTML omitted --></p>
+<p>Furthermore, <code>ggsctterstats</code> allows for group visualisation and testing of selected factor, simply by changing a few lines to the existing code above. This package also allows for different marginal charts by changing the <em>marginal.type</em>.</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#447fcf">grouped_ggscatterstats</span>( <span style="color:#999;font-style:italic">#changed this</span>
+  data = final_listing,
+  x = review_scores_rating, 
+  y = amenities_count, 
+  grouping.var = host_is_superhost, <span style="color:#999;font-style:italic">#added this</span>
+  conf.level = <span style="color:#3677a9">0.95</span>,
+  type = <span style="color:#ed9d13">&#39;pearson&#39;</span>,
+  xlab = <span style="color:#ed9d13">&#34;Review_scores_rating&#34;</span>,
+  ylab = <span style="color:#ed9d13">&#34;amenities_count&#34;</span>,
+  marginal.type = <span style="color:#ed9d13">&#39;boxplot&#39;</span>, <span style="color:#999;font-style:italic">#boxplot instead of density</span>
+plot.grid.args = <span style="color:#447fcf">list</span>(nrows =<span style="color:#3677a9">1</span>, ncol = <span style="color:#3677a9">2</span>)) <span style="color:#999;font-style:italic">#to view in one row</span>
+</code></pre></div><p><!-- raw HTML omitted --></p>
+<p><strong>4.3.1.3 using <a href="https://ggplot2.tidyverse.org/reference/index.html"><code>ggplot2</code></a> and <a href="https://plotly.com/ggplot2/"><code>ggplotly()</code></a></strong></p>
+<p>By using <code>facet_wrap()</code> and <code>ggplotly()</code>, we can plot an interactive chart grouped by selected factor (i.e <em>host_is_superhost</em>). However correlation test must be done separately for these two groups (superhost and non-superhost), which may be difficult to implement in shiny given that different variables have different number of factor levels.</p>
+<p>The correlation results below is a combined test of superhost and non-superhost. We observed that the p-value generated by <code>cor.test</code> is the same as the p-value generated by <code>ggscatterstats</code>.</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">scatter &lt;- <span style="color:#447fcf">ggplot</span>(final_listing, <span style="color:#447fcf">aes</span>(x = review_scores_rating, y= amenities_count)) +
+  <span style="color:#447fcf">geom_point</span>(<span style="color:#447fcf">aes</span>(fill = host_is_superhost)) +
+  <span style="color:#447fcf">geom_smooth</span>(method = <span style="color:#ed9d13">&#39;lm&#39;</span>, se = <span style="color:#6ab825;font-weight:bold">FALSE</span>) + 
+  <span style="color:#447fcf">facet_wrap</span>(<span style="color:#447fcf">vars</span>(host_is_superhost)) + 
+  <span style="color:#447fcf">ggtitle</span>(<span style="color:#ed9d13">&#39;Scatterplot using ggplot2&#39;</span>)
+
+scatterly &lt;- <span style="color:#447fcf">ggplotly</span>(scatter)
+widgetframe::<span style="color:#447fcf">frameWidget</span>(scatterly)
+</code></pre></div><!-- raw HTML omitted -->
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#447fcf">cor.test</span>(final_listing$review_scores_rating, final_listing$amenities_count, conf.level = <span style="color:#3677a9">0.95</span>)
+</code></pre></div><pre><code>## 
+##  Pearson's product-moment correlation
+## 
+## data:  final_listing$review_scores_rating and final_listing$amenities_count
+## t = 6.9507, df = 2467, p-value = 4.636e-12
+## alternative hypothesis: true correlation is not equal to 0
+## 95 percent confidence interval:
+##  0.09968637 0.17706953
+## sample estimates:
+##       cor 
+## 0.1385895
+</code></pre>
+<p><strong>4.3.2 Plotting categorical variables - Mosaic plot</strong></p>
+<p><strong>4.3.2.1 With <a href="https://indrajeetpatil.github.io/ggstatsplot/index.html"><code>ggstatsplot</code></a></strong></p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#447fcf">ggbarstats</span>(data = final_listing,
+           x = host_is_superhost, 
+           y = room_type, 
+           title = <span style="color:#447fcf">paste</span>(<span style="color:#ed9d13">&#39;Mosaic plot using ggstatsplot&#39;</span>),
+           type = <span style="color:#ed9d13">&#39;parametric&#39;</span>,
+           conf.level = <span style="color:#3677a9">0.95</span>,
+           proportion.test = <span style="color:#6ab825;font-weight:bold">TRUE</span>,
+           ggtheme = ggplot2::<span style="color:#447fcf">theme_classic</span>())
+</code></pre></div><p><!-- raw HTML omitted --></p>
+<p><strong>4.3.2.2 Using <a href="https://haleyjeppson.github.io/ggmosaic/"><code>ggmosaic</code></a>, <a href="https://ggplot2.tidyverse.org/reference/index.html"><code>ggplot2</code></a> and <a href="https://plotly.com/ggplot2/"><code>ggplotly()</code></a></strong></p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">m &lt;- <span style="color:#447fcf">ggplot</span>(final_listing) + 
+  <span style="color:#447fcf">geom_mosaic</span>(<span style="color:#447fcf">aes</span>(x=  <span style="color:#447fcf">product</span>(host_is_superhost, room_type), 
+              fill = host_is_superhost)) + 
+    <span style="color:#447fcf">labs</span>(
+      title = <span style="color:#447fcf">paste</span>(<span style="color:#ed9d13">&#34;Mosaic plot using ggmosaic and plotly&#34;</span>),
+      x = <span style="color:#ed9d13">&#39;room_type&#39;</span>,
+      y = <span style="color:#ed9d13">&#39;host_is_superhost&#39;</span>) +
+    <span style="color:#447fcf">theme</span>(axis.text.y=<span style="color:#447fcf">element_blank</span>(),
+        axis.ticks.y=<span style="color:#447fcf">element_blank</span>(),
+        axis.text.x = <span style="color:#447fcf">element_text</span>(angle = <span style="color:#3677a9">90</span>))
+
+<span style="color:#999;font-style:italic">## chisq test</span>
+chisq &lt;- <span style="color:#447fcf">chisq.test</span>(x = final_listing$host_is_superhost,y = final_listing$room_type)
+
+<span style="color:#999;font-style:italic">#output</span>
+mly &lt;- <span style="color:#447fcf">ggplotly</span>(m)
+widgetframe::<span style="color:#447fcf">frameWidget</span>(mly)
+</code></pre></div><!-- raw HTML omitted -->
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">chisq
+</code></pre></div><pre><code>## 
+##  Pearson's Chi-squared test
+## 
+## data:  final_listing$host_is_superhost and final_listing$room_type
+## X-squared = 49.379, df = 3, p-value = 1.083e-10
+</code></pre>
+<p><strong>4.3.3 Plotting numerical and categorical variabes - Box and violin plot</strong></p>
+<p><strong>4.3.3.1 Using <a href="https://indrajeetpatil.github.io/ggstatsplot/index.html"><code>ggstatsplot</code></a></strong></p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#447fcf">ggbetweenstats</span>(
+  data = final_listing,
+  x = <span style="color:#ed9d13">&#39;host_is_superhost&#39;</span>, 
+  y = <span style="color:#ed9d13">&#39;price&#39;</span>, 
+  title = <span style="color:#ed9d13">&#39;Violin plot using ggstatsplot&#39;</span>,
+  type = <span style="color:#ed9d13">&#39;parametric&#39;</span>,
+  conf.level = <span style="color:#3677a9">0.95</span>,
+  pairwise.comparisons = <span style="color:#6ab825;font-weight:bold">TRUE</span>,
+  pairwise.display = <span style="color:#ed9d13">&#39;significant&#39;</span>, 
+  p.adjust.method = <span style="color:#ed9d13">&#39;holm&#39;</span>, 
+  ggtheme = ggplot2::<span style="color:#447fcf">theme_classic</span>()
+)
+</code></pre></div><p><!-- raw HTML omitted --></p>
+<p><strong>4.3.3.2 Using <a href="https://ggplot2.tidyverse.org/reference/index.html"><code>ggplot2</code></a> and <a href="https://plotly.com/ggplot2/"><code>ggplotly()</code></a></strong></p>
+<p>Here we used <code>ggpubr</code> function of <code>stat_compare_means()</code> to include the p-value into the interactively chart. Similarly, we have cross checked the p-value to the <code>t.test</code> and <code>ggbetweenstats</code> to ensure that all the results are consistent. Here, the p-value is &gt; 0.05, this means that the average price difference between host and superhost is significant.</p>
+<p>In our example below, the categorical variable has 2 levels, hence the <code>t.test</code> was used.</p>
+<p>For categorical variables with more than 2 levels, the anova test will be used using <code>anova_test()</code>. Should the <code>anova_test()</code> be significant, the <code>tukey_hsd()</code> will be perform to show where the differences lie.</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">base &lt;- <span style="color:#447fcf">ggplot</span>(final_listing, <span style="color:#447fcf">aes</span>(host_is_superhost, y = price)) + 
+    <span style="color:#447fcf">labs</span>(
+      title = <span style="color:#ed9d13">&#39;Boxplot and violin plot using ggplot2&#39;</span>,
+      x = <span style="color:#ed9d13">&#39;host_is_superhost&#39;</span>,
+      y = <span style="color:#ed9d13">&#39;price&#39;</span>)
+
+bbox &lt;- <span style="color:#447fcf">geom_boxplot</span>(<span style="color:#447fcf">aes</span>(fill = host_is_superhost),outlier.shape = <span style="color:#6ab825;font-weight:bold">NA</span>)
+
+box &lt;- base + bbox + <span style="color:#447fcf">stat_compare_means</span>(method = <span style="color:#ed9d13">&#39;t.test&#39;</span>)
+
+boxly &lt;- <span style="color:#447fcf">ggplotly</span>(box)
+
+widgetframe::<span style="color:#447fcf">frameWidget</span>(boxly)
+</code></pre></div><!-- raw HTML omitted -->
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#447fcf">t.test</span>(price ~ host_is_superhost, final_listing, var.equal = <span style="color:#6ab825;font-weight:bold">FALSE</span>)
+</code></pre></div><pre><code>## 
+##  Welch Two Sample t-test
+## 
+## data:  price by host_is_superhost
+## t = -0.59367, df = 1100.4, p-value = 0.5529
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  -11.557634   6.188317
+## sample estimates:
+## mean in group FALSE  mean in group TRUE 
+##            135.7682            138.4529
+</code></pre>
+<h3 id="44-mapping-airbnb">4.4 Mapping Airbnb</h3>
+<h4 id="441-point-symbol-map">4.4.1 Point symbol map</h4>
+<p>Point symbol maps displays each listing as a point. We have used the <code>tmap</code> and <code>leaflet</code> during our prototype testing.</p>
+<p><strong>4.4.1.1 With <code>tmap</code></strong></p>
+<p>Subzone boundaries were extract from <a href="https://data.gov.sg/dataset/master-plan-2014-subzone-boundary-web">data.gov.sg</a>, which were used to draw the boundaries within Singapore.</p>
+<p><code>tmap</code> allows for customisation (i.e title, facet by select factor, etc.). <code>tmap</code> can be made interactive by calling the <code>tmap_mode('view')</code> function, which we have shown in the chloropleth map below. Furthermore, <code>tmap</code> can be used with <a href="https://rdrr.io/cran/tmap/man/renderTmap.html">shiny</a> through the <code>renderTmap</code> wrapper.</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#999;font-style:italic">#load subzone data</span>
+mpsz &lt;- <span style="color:#447fcf">st_read</span>(dsn = <span style="color:#ed9d13">&#39;data/spatial&#39;</span>,
+                layer = <span style="color:#ed9d13">&#39;MP14_SUBZONE_WEB_PL&#39;</span>,
+                crs = <span style="color:#3677a9">3414</span>) 
+</code></pre></div><pre><code>## Reading layer `MP14_SUBZONE_WEB_PL' from data source `E:\suyiinang\shinyPET\content\english\blog\exploratory\data\spatial' using driver `ESRI Shapefile'
+## Simple feature collection with 323 features and 15 fields
+## Geometry type: MULTIPOLYGON
+## Dimension:     XY
+## Bounding box:  xmin: 2667.538 ymin: 15748.72 xmax: 56396.44 ymax: 50256.33
+## Projected CRS: SVY21 / Singapore TM
+</code></pre>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#999;font-style:italic">#transform</span>
+singapore &lt;- <span style="color:#447fcf">st_transform</span>(mpsz, <span style="color:#3677a9">4326</span>)
+
+<span style="color:#999;font-style:italic">#convert long lat to sf object</span>
+final_listing_exN &lt;- <span style="color:#447fcf">subset</span>(final_listing, !<span style="color:#447fcf">is.na</span>(host_is_superhost))
+listings_sf &lt;- <span style="color:#447fcf">st_as_sf</span>(final_listing_exN,
+                        coords = <span style="color:#447fcf">c</span>(<span style="color:#ed9d13">&#39;longitude&#39;</span>, <span style="color:#ed9d13">&#39;latitude&#39;</span>),
+                        crs = <span style="color:#3677a9">4326</span>) %&gt;%
+  <span style="color:#447fcf">st_transform</span>(crs = <span style="color:#3677a9">3414</span>)
+
+<span style="color:#999;font-style:italic">#plot map</span>
+p_map &lt;-<span style="color:#447fcf">tm_shape</span>(mpsz) + 
+  <span style="color:#447fcf">tm_polygons</span>() + 
+  <span style="color:#447fcf">tm_shape</span>(listings_sf) +
+  <span style="color:#447fcf">tm_bubbles</span>(col = <span style="color:#ed9d13">&#39;host_is_superhost&#39;</span>, 
+             size = <span style="color:#ed9d13">&#39;price&#39;</span>,
+             border.col = <span style="color:#ed9d13">&#39;black&#39;</span>,
+             border.lwd = <span style="color:#3677a9">1</span>,
+             alpha = <span style="color:#3677a9">0.8</span>)+
+  <span style="color:#447fcf">tm_facets</span>(by=<span style="color:#ed9d13">&#39;host_is_superhost&#39;</span>,
+            nrow = <span style="color:#3677a9">1</span> ,
+            sync = <span style="color:#6ab825;font-weight:bold">TRUE</span>)+
+  <span style="color:#447fcf">tm_layout</span>(main.title = <span style="color:#ed9d13">&#39;Point Symbol map by price and host_is_superhost&#39;</span>,
+            legend.outside.position = <span style="color:#ed9d13">&#39;bottom&#39;</span>,
+            legend.stack = <span style="color:#ed9d13">&#39;horizontal&#39;</span>) 
+p_map
+</code></pre></div><p><!-- raw HTML omitted --></p>
+<p><strong>4.4.4.2 With <code>leaflet</code></strong></p>
+<p>Plotting a point symbol map using <code>leaflet</code> is relatively easy and straight forward as it uses longitude and latitude.</p>
+<p>We need not do a point in polygon mapping, as done for <code>tmap</code> above, which maps longitude &amp; latitude/neighbourhood to subzones. Such mapping may not be available for certain countries/areas.</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">leaf_map &lt;- <span style="color:#447fcf">leaflet</span>(data = final_listing) %&gt;% 
+  <span style="color:#447fcf">addTiles</span>() %&gt;% 
+  <span style="color:#447fcf">addCircleMarkers</span>(lng = ~longitude,
+                   lat = ~latitude,
+                   label = ~<span style="color:#447fcf">as.character</span>(final_listing$host_is_superhost),
+                   clusterOptions = <span style="color:#447fcf">markerClusterOptions</span>()) 
+leaf_map
+</code></pre></div><!-- raw HTML omitted -->
+<h4 id="442-chloropleth-map">4.4.2 Chloropleth Map</h4>
+<p><strong>With <code>tmap</code></strong></p>
+<p>When using <code>tmap</code> for chloropleth mapping, the dataset had to be summarised prior to joining with the subzone data. This may be tricky to implement using the reactive function of Shiny to summarise the dataset for mapping. We also experienced some trouble adding <em>avg_price</em> to the tooltip.</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#999;font-style:italic"># load subzone map</span>
+mpsz2 &lt;- <span style="color:#447fcf">st_read</span>(dsn = <span style="color:#ed9d13">&#39;data/spatial&#39;</span>,
+                layer = <span style="color:#ed9d13">&#39;MP14_SUBZONE_WEB_PL&#39;</span>, 
+                quiet = <span style="color:#6ab825;font-weight:bold">TRUE</span>) %&gt;%
+  <span style="color:#447fcf">group_by</span>(PLN_AREA_N) %&gt;%
+  <span style="color:#447fcf">summarise</span>(geometry = sf::<span style="color:#447fcf">st_union</span>(geometry))
+
+<span style="color:#999;font-style:italic"># collapse dataframe and summarise price by neighbourhood</span>
+listing_summary &lt;- final_listing %&gt;% 
+  <span style="color:#447fcf">group_by</span>(neighbourhood_cleansed) %&gt;%
+  <span style="color:#447fcf">summarise</span>(count = <span style="color:#447fcf">n</span>(),
+            avg_price = <span style="color:#447fcf">mean</span>(price),
+            min_price = <span style="color:#447fcf">min</span>(price),
+            max_price = <span style="color:#447fcf">max</span>(price)) %&gt;%
+  <span style="color:#447fcf">mutate_at</span>(.vars = <span style="color:#447fcf">vars</span>(neighbourhood_cleansed), .funs= <span style="color:#447fcf">funs</span>(toupper))
+
+<span style="color:#999;font-style:italic"># join by neighbourhood and planning area</span>
+airbnb_map &lt;- <span style="color:#447fcf">right_join</span>(mpsz2,listing_summary, <span style="color:#447fcf">c</span>(<span style="color:#ed9d13">&#34;PLN_AREA_N&#34;</span> = <span style="color:#ed9d13">&#39;neighbourhood_cleansed&#39;</span>))
+
+<span style="color:#999;font-style:italic"># create map</span>
+map &lt;- <span style="color:#447fcf">tm_shape</span>(mpsz2)+
+  <span style="color:#447fcf">tm_polygons</span>()+
+  <span style="color:#447fcf">tm_shape</span>(airbnb_map) +
+    <span style="color:#447fcf">tm_fill</span>(<span style="color:#ed9d13">&#39;avg_price&#39;</span>,
+            n = <span style="color:#3677a9">6</span>,
+            style = <span style="color:#ed9d13">&#39;quantile&#39;</span>,
+            palette = <span style="color:#ed9d13">&#39;Blues&#39;</span>)+
+    <span style="color:#447fcf">tm_borders</span>(alpha = <span style="color:#3677a9">0.5</span>) 
+
+<span style="color:#999;font-style:italic"># make map interactive</span>
+<span style="color:#447fcf">tmap_mode</span>(<span style="color:#ed9d13">&#39;view&#39;</span>)
+c_map &lt;- <span style="color:#447fcf">tmap_leaflet</span>(map) <span style="color:#999;font-style:italic">#blogdown unable to render interactive tmap</span>
+<span style="color:#447fcf">frameWidget</span>(c_map)
+</code></pre></div><!-- raw HTML omitted -->
+<p><strong>With <code>leaflet</code></strong></p>
+<p>Plotting the chloropleth map using <em>geojson</em> data extracted from <a href="http://insideairbnb.com/get-the-data.html">InsideAirbnb</a>. We felt that <code>leaflet</code> was relatively straight forward and easy to customise compared to using the subzone file and <code>tmap</code>.</p>
+<p>However, we noted that the mapping of the neighbourhoods is not accurate. We are investigating this issue.</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#999;font-style:italic"># load geojson file</span>
+hood &lt;- geojsonio::<span style="color:#447fcf">geojson_read</span>(<span style="color:#ed9d13">&#39;data/neighbourhoods.geojson&#39;</span>, what = <span style="color:#ed9d13">&#39;sp&#39;</span>)
+
+<span style="color:#999;font-style:italic"># assign palette based on numeric factors</span>
+mypalette &lt;- <span style="color:#447fcf">colorNumeric</span>(<span style="color:#ed9d13">&#34;viridis&#34;</span>, <span style="color:#6ab825;font-weight:bold">NULL</span> , reverse = <span style="color:#6ab825;font-weight:bold">TRUE</span>)
+labels &lt;- <span style="color:#447fcf">sprintf</span>(
+  <span style="color:#ed9d13">&#34;&lt;strong&gt;%s&lt;/strong&gt;&lt;br/&gt; Avg price: $%g&#34;</span>,
+  listing_summary$neighbourhood_cleansed, <span style="color:#447fcf">round</span>(listing_summary$avg_price,<span style="color:#3677a9">1</span>)
+) %&gt;% <span style="color:#447fcf">lapply</span>(htmltools::HTML)
+
+<span style="color:#999;font-style:italic"># create map</span>
+l_m &lt;- <span style="color:#447fcf">leaflet</span>(hood) %&gt;%
+  <span style="color:#447fcf">addTiles</span>() %&gt;%
+  <span style="color:#447fcf">addProviderTiles</span>(<span style="color:#ed9d13">&#39;Esri.WorldGrayCanvas&#39;</span>) %&gt;% <span style="color:#999;font-style:italic">#grey background</span>
+  <span style="color:#447fcf">addPolygons</span>(stroke = <span style="color:#6ab825;font-weight:bold">TRUE</span>,
+              color = <span style="color:#ed9d13">&#39;white&#39;</span>,
+              weight = <span style="color:#3677a9">1</span>,
+              smoothFactor = <span style="color:#3677a9">0.3</span>,
+              fillOpacity = <span style="color:#3677a9">1</span>,
+              fillColor = ~<span style="color:#447fcf">mypalette</span>(<span style="color:#447fcf">log10</span>(listing_summary$avg_price)), <span style="color:#999;font-style:italic">#log for better differentiation </span>
+              label = labels) %&gt;%
+  <span style="color:#447fcf">addLegend</span>(<span style="color:#ed9d13">&#34;bottomright&#34;</span>, pal = mypalette, values = ~listing_summary$avg_price,
+    title = <span style="color:#ed9d13">&#34;Avg Price&#34;</span>,
+    labFormat = <span style="color:#447fcf">labelFormat</span>(prefix = <span style="color:#ed9d13">&#34;$&#34;</span>),
+    opacity = <span style="color:#3677a9">1</span>
+  )
+<span style="color:#447fcf">frameWidget</span>(l_m)
+</code></pre></div><!-- raw HTML omitted -->
+<h2 id="5-testing-shiny-interface">5. Testing Shiny interface</h2>
+<p>Given that our main deliverable is a R Shiny application, we tested the compatibility of both <code>ggstatsplot</code> and <code>ggplot2</code> with R Shiny, taking ease of scripting and transitioning into consideration.</p>
+<h3 id="51-r-shiny-with-ggstatsplot">5.1 R Shiny with <code>ggstatsplot</code></h3>
+<p>During our experiment, we noticed that <code>ggstatsplot</code> tends to take a little longer to transition from one plot to another, especially when toggling the statistical approach. Furthermore, we were unable to implement toggling the adjustment method and pairwise display using the typical Shiny input.</p>
+<p><img src="images/ggstatsplot.gif" alt=""></p>
+<p>Code below</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#447fcf">bscols</span>(widths = <span style="color:#447fcf">c</span>(<span style="color:#3677a9">3</span>,<span style="color:#3677a9">9</span>),
+  <span style="color:#447fcf">list</span>(<span style="color:#447fcf">selectInput</span>(inputId = <span style="color:#ed9d13">&#39;x_cda&#39;</span>,
+                   label = <span style="color:#ed9d13">&#39;Select x-variable&#39;</span>,
+                   choices = <span style="color:#447fcf">sort</span>(<span style="color:#447fcf">colnames</span>(listing_cat)),
+                   selected = <span style="color:#ed9d13">&#39;host_is_superhost&#39;</span>),
+       
+       <span style="color:#447fcf">selectInput</span>(inputId = <span style="color:#ed9d13">&#39;y_cda&#39;</span>,
+                   label = <span style="color:#ed9d13">&#39;Select y-variable&#39;</span>,
+                   choices = <span style="color:#447fcf">sort</span>(<span style="color:#447fcf">colnames</span>(listing_num)),
+                   selected = <span style="color:#ed9d13">&#39;price_per_pax&#39;</span>),
+       
+       <span style="color:#447fcf">selectInput</span>(inputId = <span style="color:#ed9d13">&#39;type&#39;</span>,
+                   label = <span style="color:#ed9d13">&#39;Select statistical approach &#39;</span>,
+                   choices = <span style="color:#447fcf">c</span>(<span style="color:#ed9d13">&#34;parametric&#34;</span>, <span style="color:#ed9d13">&#39;nonparametric&#39;</span>,<span style="color:#ed9d13">&#39;robust&#39;</span>,<span style="color:#ed9d13">&#39;bayes&#39;</span>),
+                   selected = <span style="color:#ed9d13">&#39;parametric&#39;</span>),
+       
+       <span style="color:#447fcf">selectInput</span>(inputId = <span style="color:#ed9d13">&#39;pairwise&#39;</span>,
+                   label = <span style="color:#ed9d13">&#39;Select pairwise option &#39;</span>,
+                   choices = <span style="color:#447fcf">c</span>(<span style="color:#ed9d13">&#34;significant&#34;</span>, <span style="color:#ed9d13">&#39;non-significant&#39;</span>,<span style="color:#ed9d13">&#39;all&#39;</span>),
+                   selected = <span style="color:#ed9d13">&#39;significant&#39;</span>),
+       
+       <span style="color:#447fcf">selectInput</span>(inputId = <span style="color:#ed9d13">&#39;p_adj&#39;</span>,
+                   label = <span style="color:#ed9d13">&#39;Select adjustment method of p-values &#39;</span>,
+                   choices = <span style="color:#447fcf">c</span>(<span style="color:#ed9d13">&#34;holm&#34;</span>, <span style="color:#ed9d13">&#39;hochberg&#39;</span>,<span style="color:#ed9d13">&#39;hommel&#39;</span>,<span style="color:#ed9d13">&#39;bonferroni&#39;</span>, <span style="color:#ed9d13">&#39;BH&#39;</span>, <span style="color:#ed9d13">&#39;BY&#39;</span>, <span style="color:#ed9d13">&#39;fdr&#39;</span>, <span style="color:#ed9d13">&#39;none&#39;</span>),
+                   selected = <span style="color:#ed9d13">&#39;holm&#39;</span>),
+       
+       <span style="color:#447fcf">sliderInput</span>(inputId = <span style="color:#ed9d13">&#39;conf_lev2&#39;</span>,
+                   label = <span style="color:#ed9d13">&#34;Confidence Interval&#34;</span>,
+                   min = <span style="color:#3677a9">0</span>,
+                   max = <span style="color:#3677a9">1</span>,
+                   value = <span style="color:#3677a9">0.95</span>)),
+       
+      <span style="color:#447fcf">renderPlot</span>({<span style="color:#447fcf">ggbetweenstats</span>(
+        data = listing_prep,
+        x = !!<span style="color:#447fcf">colnames</span>(listing_prep[input$x_cda]), 
+        y = !!<span style="color:#447fcf">colnames</span>(listing_prep[input$y_cda]), 
+        title = <span style="color:#447fcf">paste</span>(<span style="color:#ed9d13">&#39;Comparison of &#39;</span>, input$y_cda, <span style="color:#ed9d13">&#39; by &#39;</span>, input$x_cda),
+        type = input$type,
+        conf.level = input$conf_lev2,
+        pairwise.comparisons = <span style="color:#6ab825;font-weight:bold">TRUE</span>,
+        pairwise.display = input$pairwise, <span style="color:#999;font-style:italic">#not working</span>
+        p.adjust.method = input$p_adj, <span style="color:#999;font-style:italic">#not working</span>
+        ggtheme = ggplot2::<span style="color:#447fcf">theme_classic</span>())
+        })
+)
+</code></pre></div><h3 id="52-r-shiny-with-ggplot2">5.2 R Shiny with <code>ggplot2</code></h3>
+<p>Syncing <code>ggplot2</code> charts with Shiny was relatively straight forward, we did not encounter any issues during our testing.</p>
+<p><img src="images/ggplot.gif" alt=""></p>
+<p>Code below.</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">output$bbox &lt;- <span style="color:#447fcf">renderPlotly</span>({
+  x_b_cat &lt;- <span style="color:#447fcf">unlist</span>(listing_prep[,input$x_b_cat])
+  
+  y_num &lt;- <span style="color:#447fcf">unlist</span>(listing_prep[,input$y_b_num])
+  
+  ccat &lt;- <span style="color:#447fcf">if</span>(input$box_colour == <span style="color:#ed9d13">&#39;None&#39;</span>){<span style="color:#ed9d13">&#39;None&#39;</span>} 
+          else {<span style="color:#447fcf">unlist</span>(listing_prep[,input$box_colour]) }
+
+  base &lt;- <span style="color:#447fcf">ggplot</span>(listing_prep, <span style="color:#447fcf">aes</span>(x = x_b_cat, y = y_num)) + 
+    <span style="color:#447fcf">labs</span>(
+      title = <span style="color:#447fcf">paste</span>(input$chart_type, <span style="color:#ed9d13">&#39;plot of &#39;</span>, input$x_b_cat, <span style="color:#ed9d13">&#39; and &#39;</span>, input$y_b_num),
+      x = <span style="color:#447fcf">paste</span>(input$x_b_cat),
+      y = <span style="color:#447fcf">paste</span>(input$y_b_num),
+      colour = <span style="color:#447fcf">paste</span>(input$box_colour))
+  
+  add_box_c &lt;- <span style="color:#447fcf">geom_boxplot</span>(<span style="color:#447fcf">aes</span>(fill = ccat), outlier.shape = <span style="color:#6ab825;font-weight:bold">NA</span>)
+  add_box &lt;- <span style="color:#447fcf">geom_boxplot</span>(outlier.shape = <span style="color:#6ab825;font-weight:bold">NA</span>)
+  add_vio &lt;- <span style="color:#447fcf">geom_violin</span>()
+  add_vio_c &lt;- <span style="color:#447fcf">geom_violin</span>(<span style="color:#447fcf">aes</span>(fill = ccat))
+  
+  bbox &lt;- <span style="color:#447fcf">if </span>(input$box_colour != <span style="color:#ed9d13">&#39;None&#39;</span> &amp; input$chart_type == <span style="color:#ed9d13">&#39;Box&#39;</span>){base + add_box_c}
+          else <span style="color:#447fcf">if</span>(input$box_colour == <span style="color:#ed9d13">&#39;None&#39;</span> &amp; input$chart_type == <span style="color:#ed9d13">&#39;Box&#39;</span>){ base + add_box }
+          else <span style="color:#447fcf">if</span>(input$box_colour != <span style="color:#ed9d13">&#39;None&#39;</span> &amp; input$chart_type == <span style="color:#ed9d13">&#39;Violin&#39;</span>){ base + add_vio_c }
+          else { base + add_vio}
+  
+  
+  flip_chart &lt;- <span style="color:#447fcf">if</span>(input$flipxy){
+     bbox + <span style="color:#447fcf">coord_flip</span>()
+   } else {
+     bbox
+   }  
+  
+  boxly &lt;- <span style="color:#447fcf">ggplotly</span>(flip_chart) %&gt;% <span style="color:#447fcf">layout</span>(boxmode = <span style="color:#ed9d13">&#34;group&#34;</span>)
+  
+  boxly
+})
+
+
+<span style="color:#447fcf">bscols</span>(widths = <span style="color:#447fcf">c</span>(<span style="color:#3677a9">3</span>,<span style="color:#3677a9">9</span>),
+       <span style="color:#447fcf">list</span>(
+        
+        <span style="color:#447fcf">selectInput</span>(inputId = <span style="color:#ed9d13">&#39;x_b_cat&#39;</span>,
+          label = <span style="color:#ed9d13">&#39;Select x-variable&#39;</span>,
+          choices = <span style="color:#447fcf">sort</span>(<span style="color:#447fcf">colnames</span>(listing_cat)),
+          selected = <span style="color:#ed9d13">&#39;review_scores_rating&#39;</span>),
+        
+        <span style="color:#447fcf">selectInput</span>(inputId = <span style="color:#ed9d13">&#39;y_b_num&#39;</span>,
+          label = <span style="color:#ed9d13">&#39;Select y-variable&#39;</span>,
+          choices = <span style="color:#447fcf">sort</span>(<span style="color:#447fcf">colnames</span>(listing_num)),
+          selected = <span style="color:#ed9d13">&#39;price_per_pax&#39;</span>),
+        
+        <span style="color:#447fcf">selectInput</span>(inputId = <span style="color:#ed9d13">&#39;box_colour&#39;</span>,
+                   label = <span style="color:#ed9d13">&#39;Colour chart by:&#39;</span>,
+                   choices = <span style="color:#447fcf">c</span>(<span style="color:#ed9d13">&#39;None&#39;</span>,<span style="color:#447fcf">sort</span>(<span style="color:#447fcf">colnames</span>(listing_cat))),
+                   selected = <span style="color:#ed9d13">&#39;host_is_superhost&#39;</span>),
+        
+        <span style="color:#447fcf">selectInput</span>(inputId = <span style="color:#ed9d13">&#39;chart_type&#39;</span>,
+                    label = <span style="color:#ed9d13">&#39;Select chart type:&#39;</span>,
+                    choices = <span style="color:#447fcf">c</span>(<span style="color:#ed9d13">&#39;Box&#39;</span>, <span style="color:#ed9d13">&#39;Violin&#39;</span>),
+                    selected = <span style="color:#ed9d13">&#39;box&#39;</span>),
+        
+        <span style="color:#447fcf">checkboxInput</span>(inputId = <span style="color:#ed9d13">&#39;flipxy&#39;</span>,
+              label = <span style="color:#ed9d13">&#39;Flip axis&#39;</span>,
+              value = <span style="color:#6ab825;font-weight:bold">FALSE</span>)
+        
+       ),
+       <span style="color:#447fcf">plotlyOutput</span>(<span style="color:#ed9d13">&#39;bbox&#39;</span>))
+</code></pre></div><h2 id="6-assessment-of-prototype">6. Assessment of prototype</h2>
+<p>In deciding on the final prototype of our Shiny application, we assessed prototypes based on 3 main factors - interactivity, availability of statistical tests and compatibility with Shiny.</p>
+<p><strong>i) Interactivity - <code>ggplot2</code> with <code>plotly</code></strong></p>
+<p>Given that the focus of our application is to be user friendly and interactive, <code>ggplot2</code> charts overlayed with <code>ggplotly()</code> triumphs over <code>ggstatsplot</code>.</p>
+<p><strong>ii) Statistical test - <code>ggstatsplot</code></strong></p>
+<p><code>ggstatsplot</code> is an amazing package, one stop shop for visual plots and extensive statistical background.</p>
+<p><strong>iii) Compatability with Shiny - <code>ggplot2</code></strong></p>
+<p><code>ggstatsplot</code> has some outstanding comparability issues with Shiny as raised in <a href="https://github.com/IndrajeetPatil/ggstatsplot/issues/475">Github</a> as of the date of this report. Furthermore, during our prototype testing, we experienced some issues when attempting to sync shinywidgets to charts.</p>
+<p>Meanwhile, <code>ggplot</code> syncs very well with Shiny. During our testing, we noticed that it is relatively easy and efficient to toggle between different chart types given that the base script, ie <em>ggplot(data, aes(x,y))</em> is constant throughout all the charts required. While different functions are required for <code>ggstatsplot</code> i.e <code>gghistostat()</code> for histogram and <code>ggbarstats</code> for bar charts, toggle between charts is more challenging to script.</p>
+<p><strong>v) Map - <code>leaflet</code></strong></p>
+<p>Although <code>tmap</code> fitted our requirements of being interactive and compatible with Shiny, however we found that <code>leaflet</code> was easier to script and customise. Nonetheless, this may just be our personal preference. (this assumes that we are able to rectify the chloropleth map issue)</p>
+<p><strong>v) Other matters</strong></p>
+<p>We also noticed that <code>ggstatsplot</code> automatically drops NAs, while <code>ggplot2</code> displays NA values if they are present in the dataset.</p>
+<h2 id="7-conclusion">7. Conclusion</h2>
+<p>Based on the above assessment, we found that <code>ggplot2</code> and <code>leaflet</code> suited our needs better at this juncture.</p>
+<p>Although <code>ggplot2</code> lacks the automation of statistical insights, it has an extensive list of charts available, is interactive with <code>ggplotly()</code> and, more importantly, compatible with R Shiny. The lack of statistical automation can be worked around by performing the statistical test at the server backend.</p>
+<h2 id="8-storyboard---design-of-the-submodule">8. Storyboard - design of the submodule</h2>
+<p>The exploratory and confirmatory module will consist of 3 parts</p>
+<ol>
+<li>Summary of variables using <code>skimr</code>,</li>
+<li>Explore tab will consist of univariate, bivariate and confirmatory results using <code>ggplot2</code>, <code>ggplotly()</code> and statistical tests functions,</li>
+<li>Point symbol and chloropleth map using <code>leaflet</code>.</li>
+</ol>
+<p>See sketch below for submodule design:</p>
+<p><img src="images/sketch.jpg" alt=""></p>
+<h2 id="9-references">9. References</h2>
+<p>Zhou, Y., Leung, Sw., Mizutani, S. et al. (2020) MEPHAS: an interactive graphical user interface for medical and pharmaceutical statistical analysis with R and Shiny. <em>BMC Bioinformatics 21, 183</em>. <a href="https://doi.org/10.1186/s12859-020-3494-x">https://doi.org/10.1186/s12859-020-3494-x</a></p>
+<hr>
+<p>Infographic vector created by stories - <a href="http://www.freepik.com">www.freepik.com</a><!-- raw HTML omitted --></p>
+
+        </div>
+        
+        <div class="mt-5">
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  </div><!-- end Contact Area -->
+<footer id="footer" class="section-bg">
+	<div class="container">
+		<div class="row wow fadeInUp" data-wow-duration="500ms">
+			<div class="col-xl-12">
+
+				<!-- Footer Social Links -->
+				<div class="social-icon">
+					<ul class="list-inline">
+						
+						<li class="list-inline-item"><a href="https://github.com/suyiinang/ourshinypet"><i class="ti-github"></i></a></li>
+						
+					</ul>
+				</div>
+
+				<!-- copyright -->
+				<div class="copyright text-center">
+					<a href="https://ourshinypet.netlify.app/">
+						<img src="https://ourshinypet.netlify.app/images/logo.png" alt="Our Shiny PET" height="42" />
+					</a>
+					<br>
+					<p>Copyright © 2020 Designed by <a href="https://themefisher.com">Themefisher</a> &amp; Developed by <a href="https://gethugothemes.com">Gethugothemes</a></p>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+<!-- /footer -->
+
+<!-- Google Map API -->
+
+
+<!-- JS Plugins -->
+
+<script src="https://ourshinypet.netlify.app/plugins/jquery/jquery.min.js"></script>
+
+<script src="https://ourshinypet.netlify.app/plugins/bootstrap/bootstrap.min.js"></script>
+
+<script src="https://ourshinypet.netlify.app/plugins/slick/slick.min.js"></script>
+
+<script src="https://ourshinypet.netlify.app/plugins/shuffle/shuffle.min.js"></script>
+
+<script src="https://ourshinypet.netlify.app/plugins/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+<script src="https://ourshinypet.netlify.app/plugins/lazy-load/lozad.min.js"></script>
+
+<script src="https://ourshinypet.netlify.app/plugins/google-map/map.js"></script>
+
+
+<!-- Main Script -->
+
+<script src="https://ourshinypet.netlify.app/js/script.min.5db5ae6f88052715e823d7c52f3fa7a832565352b0f76c1d2cee2a3b564a0716fa9d51878a9965389c3d856f2d7c6330.js" integrity="sha384-XbWub4gFJxXoI9fFLz&#43;nqDJWU1Kw92wdLO4qO1ZKBxb6nVGHipllOJw9hW8tfGMw"></script>
+
+
+</body>
+
+</html>

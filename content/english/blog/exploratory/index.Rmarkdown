@@ -253,14 +253,16 @@ all <- DT::datatable(sum_data)
 n <- DT::datatable(sum_n)
 f <- DT::datatable(sum_f)
 
-htmlwidgets::saveWidget(all, file = "all.html", selfcontained = TRUE)
-htmlwidgets::saveWidget(n, file = "n.html", selfcontained = TRUE)
-htmlwidgets::saveWidget(f, file = "f.html", selfcontained = TRUE)
+
+widgetframe::frameWidget(all)
+widgetframe::frameWidget(n)
+widgetframe::frameWidget(f)
+
 ```
 
-<iframe seamless src="all.html" width="100%" height="500"></iframe>
-<iframe seamless src="n.html" width="100%" height="500"></iframe>
-<iframe seamless src="f.html" width="100%" height="500"></iframe>
+<iframe seamless src="html/all.html" width="100%" height="500"></iframe>
+<iframe seamless src="html/n.html" width="100%" height="500"></iframe>
+<iframe seamless src="html/f.html" width="100%" height="500"></iframe>
 
 ### 4.2 Plotting univariate charts
 
@@ -298,6 +300,7 @@ g_hist <- gghistostats(
     )
 g_hist
 ```
+![](images/g_hist.png)
 
 **Attempt to add interactivity to [`ggstatsplot`](https://indrajeetpatil.github.io/ggstatsplot/index.html) chart using [`ggplotly`](https://plotly.com/ggplot2/)**
 
@@ -305,10 +308,10 @@ We tried to wrap the `ggstatsplot` chart with `ggplotly()`. However by doing so,
 
 ```{r}
 histly <- ggplotly(g_hist)
-htmlwidgets::saveWidget(histly, file = "histly.html", selfcontained = TRUE)
+widgetframe::frameWidget(histly)
 ```
 
-<iframe seamless src="histly.html" width="100%" height="500"></iframe>
+<iframe seamless src="html/histly.html" width="100%" height="500"></iframe>
 
 **4.2.1.2 With [`ggplot2`](https://ggplot2.tidyverse.org/reference/index.html)**
 
@@ -354,10 +357,10 @@ bar <- ggplot(final_listing, aes(x = room_type)) +
    
 
 histly2 <- ggplotly(hist)
-htmlwidgets::saveWidget(histly2, file = "histly2.html", selfcontained = TRUE)
+widgetframe::frameWidget(histly2)
 ```
 
-<iframe seamless src="histly2.html" width="100%" height="500"></iframe>
+<iframe seamless src="html/histly2.html" width="100%" height="500"></iframe>
 
 ```{r}
 t.test(final_listing$review_scores_rating,mu = 100, alternative = 'two.sided',conf.level = 0.95)
@@ -384,10 +387,10 @@ boxchart <- ggplot(final_listing,
   theme(legend.position = 'none')
   
 boxly <- ggplotly(boxchart)
-htmlwidgets::saveWidget(boxly, file = "boxly.html", selfcontained = TRUE)
+widgetframe::frameWidget(boxly)
 ```
 
-<iframe seamless src="boxly.html" width="100%" height="500"></iframe>
+<iframe seamless src="html/boxly.html" width="100%" height="500"></iframe>
 
 ### 4.3 Bivariate exploratory and confirmatory analysis
 
@@ -471,10 +474,10 @@ scatter <- ggplot(final_listing, aes(x = review_scores_rating, y= amenities_coun
   ggtitle('Scatterplot using ggplot2')
 
 scatterly <- ggplotly(scatter)
-htmlwidgets::saveWidget(scatterly, file = "scatterly.html", selfcontained = TRUE)
+widgetframe::frameWidget(scatterly)
 ```
 
-<iframe seamless src="scatterly.html" width="100%" height="500"></iframe>
+<iframe seamless src="html/scatterly.html" width="100%" height="500"></iframe>
 
 ```{r}
 cor.test(final_listing$review_scores_rating, final_listing$amenities_count, conf.level = 0.95)
@@ -519,10 +522,10 @@ chisq <- chisq.test(x = final_listing$host_is_superhost,y = final_listing$room_t
 
 #output
 mly <- ggplotly(m)
-htmlwidgets::saveWidget(mly, file = "mly.html", selfcontained = TRUE)
+widgetframe::frameWidget(mly)
 ```
 
-<iframe seamless src="mly.html" width="100%" height="500"></iframe>
+<iframe seamless src="html/mly.html" width="100%" height="500"></iframe>
 
 ```{r}
 chisq
@@ -574,10 +577,10 @@ box <- base + bbox + stat_compare_means(method = 't.test')
 
 boxly <- ggplotly(box)
 
-htmlwidgets::saveWidget(boxly, file = "boxly.html", selfcontained = TRUE)
+widgetframe::frameWidget(boxly)
 ```
 
-<iframe seamless src="boxly.html" width="100%" height="500"></iframe>
+<iframe seamless src="html/boxly.html" width="100%" height="500"></iframe>
 
 
 ```{r}
@@ -648,10 +651,10 @@ leaf_map <- leaflet(data = final_listing) %>%
                    lat = ~latitude,
                    label = ~as.character(final_listing$host_is_superhost),
                    clusterOptions = markerClusterOptions()) 
-htmlwidgets::saveWidget(leaf_map, file = "leaf_map.html", selfcontained = TRUE)
+leaf_map
 ```
 
-<iframe seamless src="leaf_map.html" width="100%" height="500"></iframe>
+<iframe seamless src="html/leaf_map.html" width="100%" height="500"></iframe>
 
 #### 4.4.2 Chloropleth Map
 
@@ -692,10 +695,10 @@ map <- tm_shape(mpsz2)+
 # make map interactive
 tmap_mode('view')
 c_map <- tmap_leaflet(map) #blogdown unable to render interactive tmap
-htmlwidgets::saveWidget(c_map, file = "leaf_map.html", selfcontained = TRUE)
+frameWidget(c_map)
 ```
 
-<iframe seamless src="c_map.html" width="100%" height="500"></iframe>
+<iframe seamless src="html/c_map.html" width="100%" height="500"></iframe>
 
 
 **With `leaflet`**
@@ -731,10 +734,10 @@ l_m <- leaflet(hood) %>%
     labFormat = labelFormat(prefix = "$"),
     opacity = 1
   )
-htmlwidgets::saveWidget(l_m, file = "l_m.html", selfcontained = TRUE)
+frameWidget(l_m)
 ```
 
-<iframe seamless src="l_m.html" width="100%" height="500"></iframe>
+<iframe seamless src="html/l_m.html" width="100%" height="500"></iframe>
 
 ## 5. Testing Shiny interface
 

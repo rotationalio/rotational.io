@@ -162,7 +162,7 @@ link = "https://github.com/suyiinang/ourshinypet"
       autoHeadingIDType = "github"
     [markup.goldmark.renderer]
       hardWraps = false
-      unsafe = false
+      unsafe = true
       xhtml = false
   [markup.highlight]
     anchorLineNos = false
@@ -181,6 +181,4 @@ link = "https://github.com/suyiinang/ourshinypet"
     ordered = false
     startLevel = 2
 
-# Code Block
-pygmentsCodeFences = true
-pygmentsStyle = "monokai"
+

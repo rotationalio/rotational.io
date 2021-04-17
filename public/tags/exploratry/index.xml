@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>exploratry on Our Shiny PET</title>
+    <link>https://ourshinypet.netlify.app/tags/exploratry/</link>
+    <description>Recent content in exploratry on Our Shiny PET</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Copyright &amp;copy; 2020 Designed by [Themefisher](https://themefisher.com) &amp; Developed by [Gethugothemes](https://gethugothemes.com)</copyright>
+    <lastBuildDate>Sat, 10 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://ourshinypet.netlify.app/tags/exploratry/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Exploratory - prototype test</title>
+      <link>https://ourshinypet.netlify.app/blog/exploratory/</link>
+      <pubDate>Sat, 10 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://ourshinypet.netlify.app/blog/exploratory/</guid>
+      <description>Prototype testing for the Exploratory module for OurShinyPET This was written as part of the requirements for the Visual Analytics module for MITB.</description>
+    </item>
+    
+  </channel>
+</rss>

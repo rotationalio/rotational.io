@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Proposal on Our Shiny PET</title>
+    <link>https://ourshinypet.netlify.app/categories/proposal/</link>
+    <description>Recent content in Proposal on Our Shiny PET</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Copyright &amp;copy; 2020 Designed by [Themefisher](https://themefisher.com) &amp; Developed by [Gethugothemes](https://gethugothemes.com)</copyright>
+    <lastBuildDate>Fri, 26 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://ourshinypet.netlify.app/categories/proposal/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Proposal</title>
+      <link>https://ourshinypet.netlify.app/blog/proposal/</link>
+      <pubDate>Fri, 26 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://ourshinypet.netlify.app/blog/proposal/</guid>
+      <description>Motivation Airbnb is an online vacation rental marketplace servicing a community of hosts and travellers. Hosts are able to list their space for rental to travellers anywhere in the world.</description>
+    </item>
+    
+  </channel>
+</rss>
