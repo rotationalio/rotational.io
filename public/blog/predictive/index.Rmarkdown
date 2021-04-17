@@ -547,7 +547,7 @@ trainTest_p <- trainTest_grp %>%
 trainTest_ply <- ggplotly(trainTest_p)
 ```
 
-<iframe seamless src="html/trainTest_ply.html" width="100%" height="500"></iframe>
+<iframe seamless src="html/trainTest_ply.html" width="100%" height="700"></iframe>
 
 Whereas for categorical variable, we will use bar chart.
 
@@ -563,7 +563,7 @@ trainTest_p2 <- trainTest_grp %>%
 p2ly <- ggplotly(trainTest_p2)
 ```
 
-<iframe seamless src="html/p2ply.html" width="100%" height="500"></iframe>
+<iframe seamless src="html/p2ly.html" width="100%" height="500"></iframe>
 
 ## 5.4 Feature importance
 First method of feature importance is using random forest. Here, we fit our data into random forest model using `ranger` package and the feature importance is calculated. The resulting importance value is extracted and plotted using `ggplot` and wrapped with `plotly` for interactivity.
