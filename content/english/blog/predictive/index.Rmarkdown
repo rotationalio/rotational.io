@@ -14,16 +14,16 @@ always_allow_html: true
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE)
 library(knitr)
 ```
 
 
 # Prototype testing for the Predictive module for OurShinyPET
 
-How visual analytics technique can be used to complement predictive analytics.
-
 by [Kevin Gunawan Albindo](https://www.linkedin.com/in/kgalbindo/)
+
+How visual analytics technique can be used to complement predictive analytics.
 
 ----
 
@@ -545,8 +545,9 @@ trainTest_p <- trainTest_grp %>%
     facet_wrap(~ key, scales = "free", ncol = 3) +
     geom_density(alpha=0.5)
 trainTest_ply <- ggplotly(trainTest_p)
-widgetframe::frameWidget(trainTest_ply)
 ```
+
+<iframe seamless src="html/trainTest_ply.html" width="100%" height="500"></iframe>
 
 Whereas for categorical variable, we will use bar chart.
 
@@ -560,8 +561,9 @@ trainTest_p2 <- trainTest_grp %>%
   geom_bar() +
   theme(axis.text.x = element_blank())
 p2ly <- ggplotly(trainTest_p2)
-widgetframe::frameWidget(p2ly)
 ```
+
+<iframe seamless src="html/p2ply.html" width="100%" height="500"></iframe>
 
 ## 5.4 Feature importance
 First method of feature importance is using random forest. Here, we fit our data into random forest model using `ranger` package and the feature importance is calculated. The resulting importance value is extracted and plotted using `ggplot` and wrapped with `plotly` for interactivity.
@@ -845,9 +847,10 @@ pred_erly <- ggplotly(ggplot(NULL, aes(x = value)) +
     facet_wrap(~ key, scales = "free_x") +
     theme(panel.spacing.y = unit(2, "lines")),
 tooltip = c('text'))
-widgetframe::frameWidget(pred_erly)
-
 ```
+
+<iframe seamless src="html/pred_erly.html" width="100%" height="500"></iframe>
+
 
 This plot helps us to understand that high prediction error may be a result of the listing being outliers e.g. large number of _bedrooms/accommodates_ and belong to small distribution of property/room type (hotel/service apartment).
 
@@ -1147,8 +1150,12 @@ xgb_p <- xgboost_result %>%
   scale_x_log10(labels = scales::label_number()) +
   theme_light()
 xgb_ply <- ggplotly(xgb_p)
-widgetframe::frameWidget(xgb_ply)
+```
 
+<iframe seamless src="html/xgb_ply.html" width="100%" height="500"></iframe>
+
+
+```{r}
 xgboost_result %>%
   show_best("rmse")
 
@@ -1204,8 +1211,9 @@ metric_p <- final_metric_lm %>%
   theme(axis.title.x = element_blank(),
         panel.spacing.y = unit(2, "lines"))
 metric_ply <- ggplotly(metric_p, tooltip = c("text"))
-widgetframe::frameWidget(metric_ply)
 ```
+
+<iframe seamless src="html/metric_ply.html" width="100%" height="500"></iframe>
 
 # 6. Summary
 

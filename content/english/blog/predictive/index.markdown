@@ -32,15 +32,6 @@ always_allow_html: true
 <script src="{{< blogdown/postref >}}index_files/pymjs/pym.v1.js"></script>
 <script src="{{< blogdown/postref >}}index_files/widgetframe-binding/widgetframe.js"></script>
 <script src="{{< blogdown/postref >}}index_files/htmlwidgets/htmlwidgets.js"></script>
-<script src="{{< blogdown/postref >}}index_files/pymjs/pym.v1.js"></script>
-<script src="{{< blogdown/postref >}}index_files/widgetframe-binding/widgetframe.js"></script>
-<script src="{{< blogdown/postref >}}index_files/htmlwidgets/htmlwidgets.js"></script>
-<script src="{{< blogdown/postref >}}index_files/pymjs/pym.v1.js"></script>
-<script src="{{< blogdown/postref >}}index_files/widgetframe-binding/widgetframe.js"></script>
-<script src="{{< blogdown/postref >}}index_files/htmlwidgets/htmlwidgets.js"></script>
-<script src="{{< blogdown/postref >}}index_files/pymjs/pym.v1.js"></script>
-<script src="{{< blogdown/postref >}}index_files/widgetframe-binding/widgetframe.js"></script>
-<script src="{{< blogdown/postref >}}index_files/htmlwidgets/htmlwidgets.js"></script>
 <script src="{{< blogdown/postref >}}index_files/plotly-binding/plotly.js"></script>
 <script src="{{< blogdown/postref >}}index_files/typedarray/typedarray.min.js"></script>
 <script src="{{< blogdown/postref >}}index_files/jquery/jquery.min.js"></script>
@@ -57,18 +48,12 @@ always_allow_html: true
 <script src="{{< blogdown/postref >}}index_files/htmlwidgets/htmlwidgets.js"></script>
 <script src="{{< blogdown/postref >}}index_files/pymjs/pym.v1.js"></script>
 <script src="{{< blogdown/postref >}}index_files/widgetframe-binding/widgetframe.js"></script>
-<script src="{{< blogdown/postref >}}index_files/htmlwidgets/htmlwidgets.js"></script>
-<script src="{{< blogdown/postref >}}index_files/pymjs/pym.v1.js"></script>
-<script src="{{< blogdown/postref >}}index_files/widgetframe-binding/widgetframe.js"></script>
-<script src="{{< blogdown/postref >}}index_files/htmlwidgets/htmlwidgets.js"></script>
-<script src="{{< blogdown/postref >}}index_files/pymjs/pym.v1.js"></script>
-<script src="{{< blogdown/postref >}}index_files/widgetframe-binding/widgetframe.js"></script>
 
 # Prototype testing for the Predictive module for OurShinyPET
 
-How visual analytics technique can be used to complement predictive analytics.
-
 by [Kevin Gunawan Albindo](https://www.linkedin.com/in/kgalbindo/)
+
+How visual analytics technique can be used to complement predictive analytics.
 
 ------------------------------------------------------------------------
 
@@ -482,15 +467,7 @@ listings5 <- listings4 %>%
 listings6 <- listings5 %>%
   mutate_at(vars(c(contains("price"))), ~as.numeric(str_replace(., "\\$", ""))) %>% #price to numeric
   mutate_at(vars(c(contains("rate"))), ~as.numeric(str_replace(., "\\%", ""))) #rate to numeric
-```
-
-    ## Warning in ~as.numeric(str_replace(., "\\$", "")): NAs introduced by coercion
-
-    ## Warning in ~as.numeric(str_replace(., "\\%", "")): NAs introduced by coercion
-
-    ## Warning in ~as.numeric(str_replace(., "\\%", "")): NAs introduced by coercion
-
-``` r
+  
 #remove listing with $0 price
 listings6 <- listings6 %>%
   filter(price!=0)
@@ -802,7 +779,7 @@ corrplot(corM, type = "lower", method = "color", order = "hclust",
 toc()
 ```
 
-    ## corrplot timing: 0.42 sec elapsed
+    ## corrplot timing: 0.37 sec elapsed
 
 Another package like `GGally` provides additional information such as scatter plot and variable distribution on top of the correlation coefficient. This method is good for less than 10 variables at once, beyond which the display become cluttered. However, as we are more interested in the correlation coefficient, `GGally` is less suitable in this case. Below `ggpairs` plot is provided for example using the first 8 variables.
 
@@ -812,141 +789,6 @@ listing_prep2_num %>%
   ggpairs(title = "Correlogram with ggpairs",
         upper = list(continuous = wrap("cor", size=3, method="pearson")))
 ```
-
-    ## Warning: Removed 555 rows containing non-finite values (stat_density).
-
-    ## Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
-    ## Removed 845 rows containing missing values
-
-    ## Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
-    ## Removed 555 rows containing missing values
-
-    ## Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
-    ## Removed 555 rows containing missing values
-
-    ## Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
-    ## Removed 555 rows containing missing values
-
-    ## Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
-    ## Removed 555 rows containing missing values
-
-    ## Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
-    ## Removed 880 rows containing missing values
-
-    ## Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
-    ## Removed 600 rows containing missing values
-
-    ## Warning: Removed 845 rows containing missing values (geom_point).
-
-    ## Warning: Removed 753 rows containing non-finite values (stat_density).
-
-    ## Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
-    ## Removed 753 rows containing missing values
-
-    ## Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
-    ## Removed 753 rows containing missing values
-
-    ## Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
-    ## Removed 753 rows containing missing values
-
-    ## Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
-    ## Removed 753 rows containing missing values
-
-    ## Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
-    ## Removed 1057 rows containing missing values
-
-    ## Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
-    ## Removed 792 rows containing missing values
-
-    ## Warning: Removed 555 rows containing missing values (geom_point).
-
-    ## Warning: Removed 753 rows containing missing values (geom_point).
-
-    ## Warning: Removed 9 rows containing non-finite values (stat_density).
-
-    ## Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
-    ## Removed 9 rows containing missing values
-
-    ## Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
-    ## Removed 9 rows containing missing values
-
-    ## Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
-    ## Removed 9 rows containing missing values
-
-    ## Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
-    ## Removed 380 rows containing missing values
-
-    ## Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
-    ## Removed 66 rows containing missing values
-
-    ## Warning: Removed 555 rows containing missing values (geom_point).
-
-    ## Warning: Removed 753 rows containing missing values (geom_point).
-
-    ## Warning: Removed 9 rows containing missing values (geom_point).
-
-    ## Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
-    ## Removed 373 rows containing missing values
-
-    ## Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
-    ## Removed 57 rows containing missing values
-
-    ## Warning: Removed 555 rows containing missing values (geom_point).
-
-    ## Warning: Removed 753 rows containing missing values (geom_point).
-
-    ## Warning: Removed 9 rows containing missing values (geom_point).
-
-    ## Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
-    ## Removed 373 rows containing missing values
-
-    ## Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
-    ## Removed 57 rows containing missing values
-
-    ## Warning: Removed 555 rows containing missing values (geom_point).
-
-    ## Warning: Removed 753 rows containing missing values (geom_point).
-
-    ## Warning: Removed 9 rows containing missing values (geom_point).
-
-    ## Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
-    ## Removed 373 rows containing missing values
-
-    ## Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
-    ## Removed 57 rows containing missing values
-
-    ## Warning: Removed 880 rows containing missing values (geom_point).
-
-    ## Warning: Removed 1057 rows containing missing values (geom_point).
-
-    ## Warning: Removed 380 rows containing missing values (geom_point).
-
-    ## Warning: Removed 373 rows containing missing values (geom_point).
-
-    ## Warning: Removed 373 rows containing missing values (geom_point).
-
-    ## Warning: Removed 373 rows containing missing values (geom_point).
-
-    ## Warning: Removed 373 rows containing non-finite values (stat_density).
-
-    ## Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
-    ## Removed 422 rows containing missing values
-
-    ## Warning: Removed 600 rows containing missing values (geom_point).
-
-    ## Warning: Removed 792 rows containing missing values (geom_point).
-
-    ## Warning: Removed 66 rows containing missing values (geom_point).
-
-    ## Warning: Removed 57 rows containing missing values (geom_point).
-
-    ## Warning: Removed 57 rows containing missing values (geom_point).
-
-    ## Warning: Removed 57 rows containing missing values (geom_point).
-
-    ## Warning: Removed 422 rows containing missing values (geom_point).
-
-    ## Warning: Removed 57 rows containing non-finite values (stat_density).
 
 <img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-30-1.png" width="960" />
 
@@ -969,7 +811,7 @@ listing_prep2_num %>%
 toc()
 ```
 
-    ## ggcorrmat timing: 5.92 sec elapsed
+    ## ggcorrmat timing: 6.62 sec elapsed
 
 If the above plots are all static, we can use `ggcorrplot` with `plotly` wrapper to create an interactive correlation matrix.
 
@@ -985,12 +827,6 @@ corr.plot <- ggcorrplot(corM, hc.order = TRUE,
                         p.mat = p_mat,
                         pch.cex = 1, tl.cex = 7, lab_size = 5)
 gg_cor <- ggplotly(corr.plot)
-```
-
-    ## Warning in L$marker$color[idx] <- aes2plotly(data, params, "fill")[idx]: number
-    ## of items to replace is not a multiple of replacement length
-
-``` r
 widgetframe::frameWidget(gg_cor)
 ```
 
@@ -1058,7 +894,7 @@ widgetframe::frameWidget(gxly)
 toc()
 ```
 
-    ## ggplot timing: 4.32 sec elapsed
+    ## ggplot timing: 4.66 sec elapsed
 
 Based on the result above, we can remove some variables that are known to be highly correlated with others. We will remove *reviews\_per\_month, availability\_60, availability\_90, and availability\_365* as they have relatively high correlation score (above 0.6). This will also help in the feature selection process as `Boruta` algorithm does not treat collinearity when selecting important variables.
 
@@ -1112,14 +948,8 @@ trainTest_p <- trainTest_grp %>%
 trainTest_ply <- ggplotly(trainTest_p)
 ```
 
-    ## Warning: Removed 4947 rows containing non-finite values (stat_density).
-
-``` r
-widgetframe::frameWidget(trainTest_ply)
-```
-
-<div id="htmlwidget-3" style="width:100%;height:960px;" class="widgetframe html-widget"></div>
-<script type="application/json" data-for="htmlwidget-3">{"x":{"url":"index_files/figure-html//widgets/widget_unnamed-chunk-36.html","options":{"xdomain":"*","allowfullscreen":false,"lazyload":false}},"evals":[],"jsHooks":[]}</script>
+<iframe seamless src="html/trainTest_ply.html" width="100%" height="500">
+</iframe>
 
 Whereas for categorical variable, we will use bar chart.
 
@@ -1132,18 +962,11 @@ trainTest_p2 <- trainTest_grp %>%
   facet_wrap(~ key, scales = "free", ncol = 3) +
   geom_bar() +
   theme(axis.text.x = element_blank())
-```
-
-    ## Warning: attributes are not identical across measure variables;
-    ## they will be dropped
-
-``` r
 p2ly <- ggplotly(trainTest_p2)
-widgetframe::frameWidget(p2ly)
 ```
 
-<div id="htmlwidget-4" style="width:100%;height:768px;" class="widgetframe html-widget"></div>
-<script type="application/json" data-for="htmlwidget-4">{"x":{"url":"index_files/figure-html//widgets/widget_unnamed-chunk-37.html","options":{"xdomain":"*","allowfullscreen":false,"lazyload":false}},"evals":[],"jsHooks":[]}</script>
+<iframe seamless src="html/p2ply.html" width="100%" height="500">
+</iframe>
 
 ## 5.4 Feature importance
 
@@ -1168,8 +991,8 @@ rf_ply <- ggplotly(rf_p, tooltip = c('text'))
 widgetframe::frameWidget(rf_ply)
 ```
 
-<div id="htmlwidget-5" style="width:100%;height:480px;" class="widgetframe html-widget"></div>
-<script type="application/json" data-for="htmlwidget-5">{"x":{"url":"index_files/figure-html//widgets/widget_unnamed-chunk-38.html","options":{"xdomain":"*","allowfullscreen":false,"lazyload":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-3" style="width:100%;height:480px;" class="widgetframe html-widget"></div>
+<script type="application/json" data-for="htmlwidget-3">{"x":{"url":"index_files/figure-html//widgets/widget_unnamed-chunk-38.html","options":{"xdomain":"*","allowfullscreen":false,"lazyload":false}},"evals":[],"jsHooks":[]}</script>
 
 Feature importance using *boruta* algorithm to be compared with *random forest*.
 
@@ -1195,8 +1018,8 @@ boruta_ply <- ggplotly(boruta_p)
 widgetframe::frameWidget(boruta_ply)
 ```
 
-<div id="htmlwidget-6" style="width:100%;height:480px;" class="widgetframe html-widget"></div>
-<script type="application/json" data-for="htmlwidget-6">{"x":{"url":"index_files/figure-html//widgets/widget_unnamed-chunk-39.html","options":{"xdomain":"*","allowfullscreen":false,"lazyload":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-4" style="width:100%;height:480px;" class="widgetframe html-widget"></div>
+<script type="application/json" data-for="htmlwidget-4">{"x":{"url":"index_files/figure-html//widgets/widget_unnamed-chunk-39.html","options":{"xdomain":"*","allowfullscreen":false,"lazyload":false}},"evals":[],"jsHooks":[]}</script>
 
 In fact, feature selection using feature importance score can be done as a step in the pre-processing `recipe`. However, this require [`recipeselectors`](https://github.com/stevenpawley/recipeselectors) package which is still under development and not available in CRAN yet at the time of writing this post. Therefore, we will select our variables using `select` manually
 
@@ -1368,8 +1191,8 @@ regly <- ggplotly(
 widgetframe::frameWidget(regly)
 ```
 
-<div id="htmlwidget-7" style="width:100%;height:480px;" class="widgetframe html-widget"></div>
-<script type="application/json" data-for="htmlwidget-7">{"x":{"url":"index_files/figure-html//widgets/widget_unnamed-chunk-44.html","options":{"xdomain":"*","allowfullscreen":false,"lazyload":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-5" style="width:100%;height:480px;" class="widgetframe html-widget"></div>
+<script type="application/json" data-for="htmlwidget-5">{"x":{"url":"index_files/figure-html//widgets/widget_unnamed-chunk-44.html","options":{"xdomain":"*","allowfullscreen":false,"lazyload":false}},"evals":[],"jsHooks":[]}</script>
 
 The trained model is then used to predict listing price in the test set (*listing\_test*). The test set is pre-processed using the recipe with `prep()` and `bake()` steps, which are then added with the prediction result from `predict`. This is so that we get a tibble dataframe with both predicted and actual value. The performance metric such as RMSE, MAPE, MAE, and Rsquared can be collected using `metric_set` function from `yardstick` package. Finally, we plot both predicted vs actual value in an Rsquared plot.
 
@@ -1395,8 +1218,8 @@ pred_ply <- ggplotly(pred_p)
 widgetframe::frameWidget(pred_ply)
 ```
 
-<div id="htmlwidget-8" style="width:100%;height:480px;" class="widgetframe html-widget"></div>
-<script type="application/json" data-for="htmlwidget-8">{"x":{"url":"index_files/figure-html//widgets/widget_unnamed-chunk-45.html","options":{"xdomain":"*","allowfullscreen":false,"lazyload":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-6" style="width:100%;height:480px;" class="widgetframe html-widget"></div>
+<script type="application/json" data-for="htmlwidget-6">{"x":{"url":"index_files/figure-html//widgets/widget_unnamed-chunk-45.html","options":{"xdomain":"*","allowfullscreen":false,"lazyload":false}},"evals":[],"jsHooks":[]}</script>
 
 ``` r
 final_metric_lm
@@ -1430,9 +1253,6 @@ slp_train <- listingTrain_T %>%
   gather()
 ```
 
-    ## Warning: attributes are not identical across measure variables;
-    ## they will be dropped
-
 Next, we get the *id* of the top N predicted result with highest error and prepare the filtered data set.
 
 ``` r
@@ -1455,9 +1275,6 @@ top_err <- listing_pred %>%
   mutate(id = as.factor(id))
 ```
 
-    ## Warning: attributes are not identical across measure variables;
-    ## they will be dropped
-
 We can then plot the two data set with selected 9 predictors by:  
 - plotting the training set distribution as histogram  
 - plotting the test set data points as point with jitter
@@ -1479,16 +1296,10 @@ pred_erly <- ggplotly(ggplot(NULL, aes(x = value)) +
 tooltip = c('text'))
 ```
 
-    ## Warning: Ignoring unknown aesthetics: text
-
     ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
 
-``` r
-widgetframe::frameWidget(pred_erly)
-```
-
-<div id="htmlwidget-9" style="width:100%;height:1152px;" class="widgetframe html-widget"></div>
-<script type="application/json" data-for="htmlwidget-9">{"x":{"url":"index_files/figure-html//widgets/widget_unnamed-chunk-48.html","options":{"xdomain":"*","allowfullscreen":false,"lazyload":false}},"evals":[],"jsHooks":[]}</script>
+<iframe seamless src="html/pred_erly.html" width="100%" height="500">
+</iframe>
 
 This plot helps us to understand that high prediction error may be a result of the listing being outliers e.g. large number of *bedrooms/accommodates* and belong to small distribution of property/room type (hotel/service apartment).
 
@@ -1553,8 +1364,8 @@ glm_p <- glm_result %>%
 ggplotly(glm_p)
 ```
 
-<div id="htmlwidget-10" style="width:672px;height:480px;" class="plotly html-widget"></div>
-<script type="application/json" data-for="htmlwidget-10">{"x":{"data":[{"x":[-8.01016299519688,-0.211572973057628,-5.81118678441271,-9.67155081918463,-5.02131110057235,-7.40551540395245,-9.88523631589487,-6.73895750660449,-0.491607449948788,-3.9891752274707,-3.2210855348967,-0.469370170030743,-2.61183278867975,-2.05140436068177,-4.35527180321515,-6.1153273191303,-9.26323365420103,-9.41022143932059,-7.0818750676699,-1.38840439496562],"y":[57.931134853137,57.7924214917281,57.9158936685986,57.9185637025895,57.9293367318371,57.9142265364485,57.9161996085523,57.9167220547325,57.924285798738,57.913389540907,57.9163898201519,57.9111568944868,57.9171936013485,57.9135818292922,57.9145233865571,57.9138393571598,57.914550517768,57.9138887316118,57.9145764771546,57.9144906162053],"text":["mean - std_err: 56.1374084<br />mean + std_err:  59.7248613<br />penalty: 9.768705e-09<br />mean:  57.9311349<br />.metric: mae","mean - std_err: 55.9896352<br />mean + std_err:  59.5952077<br />penalty: 6.143658e-01<br />mean:  57.7924215<br />.metric: mae","mean - std_err: 56.1163737<br />mean + std_err:  59.7154136<br />penalty: 1.544590e-06<br />mean:  57.9158937<br />.metric: mae","mean - std_err: 56.1215478<br />mean + std_err:  59.7155796<br />penalty: 2.130341e-10<br />mean:  57.9185637<br />.metric: mae","mean - std_err: 56.1351491<br />mean + std_err:  59.7235244<br />penalty: 9.521139e-06<br />mean:  57.9293367<br />.metric: mae","mean - std_err: 56.1142688<br />mean + std_err:  59.7141843<br />penalty: 3.930833e-08<br />mean:  57.9142265<br />.metric: mae","mean - std_err: 56.1167381<br />mean + std_err:  59.7156611<br />penalty: 1.302458e-10<br />mean:  57.9161996<br />.metric: mae","mean - std_err: 56.1192916<br />mean + std_err:  59.7141525<br />penalty: 1.824074e-07<br />mean:  57.9167221<br />.metric: mae","mean - std_err: 56.1296569<br />mean + std_err:  59.7189147<br />penalty: 3.223982e-01<br />mean:  57.9242858<br />.metric: mae","mean - std_err: 56.1135187<br />mean + std_err:  59.7132603<br />penalty: 1.025238e-04<br />mean:  57.9133895<br />.metric: mae","mean - std_err: 56.1169247<br />mean + std_err:  59.7158549<br />penalty: 6.010553e-04<br />mean:  57.9163898<br />.metric: mae","mean - std_err: 56.1162563<br />mean + std_err:  59.7060575<br />penalty: 3.393359e-01<br />mean:  57.9111569<br />.metric: mae","mean - std_err: 56.1200604<br />mean + std_err:  59.7143268<br />penalty: 2.444371e-03<br />mean:  57.9171936<br />.metric: mae","mean - std_err: 56.1137066<br />mean + std_err:  59.7134570<br />penalty: 8.883736e-03<br />mean:  57.9135818<br />.metric: mae","mean - std_err: 56.1146491<br />mean + std_err:  59.7143977<br />penalty: 4.412942e-05<br />mean:  57.9145234<br />.metric: mae","mean - std_err: 56.1139558<br />mean + std_err:  59.7137229<br />penalty: 7.667834e-07<br />mean:  57.9138394<br />.metric: mae","mean - std_err: 56.1146757<br />mean + std_err:  59.7144253<br />penalty: 5.454643e-10<br />mean:  57.9145505<br />.metric: mae","mean - std_err: 56.1140041<br />mean + std_err:  59.7137734<br />penalty: 3.888468e-10<br />mean:  57.9138887<br />.metric: mae","mean - std_err: 56.1147011<br />mean + std_err:  59.7144519<br />penalty: 8.281804e-08<br />mean:  57.9145765<br />.metric: mae","mean - std_err: 56.1146171<br />mean + std_err:  59.7143641<br />penalty: 4.088798e-02<br />mean:  57.9144906<br />.metric: mae"],"type":"scatter","mode":"lines","opacity":0.5,"line":{"color":"transparent"},"error_y":{"array":[1.79372645364356,1.80278624695909,1.79951996149031,1.79701593149053,1.79418765879574,1.79995771362541,1.7994615273055,1.79743047772759,1.79462885192054,1.79987080058125,1.79946512680792,1.79490062480296,1.79713318998266,1.7998751912945,1.79987433149994,1.79988352085689,1.79987479214321,1.79988462900381,1.7998753822412,1.79987349338516],"arrayminus":[1.79372645364356,1.80278624695909,1.79951996149031,1.79701593149053,1.79418765879574,1.79995771362541,1.7994615273055,1.79743047772759,1.79462885192054,1.79987080058125,1.79946512680792,1.79490062480296,1.79713318998266,1.7998751912945,1.79987433149994,1.79988352085689,1.79987479214321,1.79988462900381,1.7998753822412,1.79987349338516],"type":"data","width":0.840854710127319,"symmetric":false,"color":"rgba(248,118,109,1)"},"name":"mae","legendgroup":"mae","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[-8.01016299519688,-0.211572973057628,-5.02131110057235,-7.40551540395245,-0.491607449948788,-3.9891752274707,-2.61183278867975,-2.05140436068177,-5.81118678441271,-9.67155081918463,-6.1153273191303,-9.88523631589487,-6.73895750660449,-9.41022143932059,-3.2210855348967,-0.469370170030743,-1.38840439496562,-4.35527180321515,-9.26323365420103,-7.0818750676699],"y":[58.2464757540462,58.1982481179774,58.2410909591875,58.2076582842504,58.2334463249039,58.2084928752812,58.2219280837904,58.2083247284416,58.2135074270857,58.2204727669072,58.2081176796068,58.2134254306548,58.2181748007839,58.2080746302426,58.2132436782657,58.212333639918,58.2074426505616,58.2074146801766,58.2073895810424,58.2073671453486],"text":["mean - std_err: 56.5955086<br />mean + std_err:  59.8974429<br />penalty: 9.768705e-09<br />mean:  58.2464758<br />.metric: mape","mean - std_err: 56.4914678<br />mean + std_err:  59.9050284<br />penalty: 6.143658e-01<br />mean:  58.1982481<br />.metric: mape","mean - std_err: 56.5891257<br />mean + std_err:  59.8930562<br />penalty: 9.521139e-06<br />mean:  58.2410910<br />.metric: mape","mean - std_err: 56.5485560<br />mean + std_err:  59.8667606<br />penalty: 3.930833e-08<br />mean:  58.2076583<br />.metric: mape","mean - std_err: 56.5788185<br />mean + std_err:  59.8880742<br />penalty: 3.223982e-01<br />mean:  58.2334463<br />.metric: mape","mean - std_err: 56.5487895<br />mean + std_err:  59.8681963<br />penalty: 1.025238e-04<br />mean:  58.2084929<br />.metric: mape","mean - std_err: 56.5631836<br />mean + std_err:  59.8806726<br />penalty: 2.444371e-03<br />mean:  58.2219281<br />.metric: mape","mean - std_err: 56.5486831<br />mean + std_err:  59.8679663<br />penalty: 8.883736e-03<br />mean:  58.2083247<br />.metric: mape","mean - std_err: 56.5542681<br />mean + std_err:  59.8727468<br />penalty: 1.544590e-06<br />mean:  58.2135074<br />.metric: mape","mean - std_err: 56.5617209<br />mean + std_err:  59.8792246<br />penalty: 2.130341e-10<br />mean:  58.2204728<br />.metric: mape","mean - std_err: 56.5485740<br />mean + std_err:  59.8676614<br />penalty: 7.667834e-07<br />mean:  58.2081177<br />.metric: mape","mean - std_err: 56.5539063<br />mean + std_err:  59.8729446<br />penalty: 1.302458e-10<br />mean:  58.2134254<br />.metric: mape","mean - std_err: 56.5587832<br />mean + std_err:  59.8775664<br />penalty: 1.824074e-07<br />mean:  58.2181748<br />.metric: mape","mean - std_err: 56.5485467<br />mean + std_err:  59.8676025<br />penalty: 3.888468e-10<br />mean:  58.2080746<br />.metric: mape","mean - std_err: 56.5537996<br />mean + std_err:  59.8726877<br />penalty: 6.010553e-04<br />mean:  58.2132437<br />.metric: mape","mean - std_err: 56.5485546<br />mean + std_err:  59.8761127<br />penalty: 3.393359e-01<br />mean:  58.2123336<br />.metric: mape","mean - std_err: 56.5480459<br />mean + std_err:  59.8668394<br />penalty: 4.088798e-02<br />mean:  58.2074427<br />.metric: mape","mean - std_err: 56.5480287<br />mean + std_err:  59.8668007<br />penalty: 4.412942e-05<br />mean:  58.2074147<br />.metric: mape","mean - std_err: 56.5480109<br />mean + std_err:  59.8667683<br />penalty: 5.454643e-10<br />mean:  58.2073896<br />.metric: mape","mean - std_err: 56.5479967<br />mean + std_err:  59.8667376<br />penalty: 8.281804e-08<br />mean:  58.2073671<br />.metric: mape"],"type":"scatter","mode":"lines","opacity":0.5,"line":{"color":"transparent"},"error_y":{"array":[1.6509671857028,1.70678027275849,1.65196526081827,1.65910230207925,1.65462784189872,1.65970338604497,1.65874451128169,1.65964158666289,1.65923934609766,1.65875186196567,1.65954370376983,1.65951915017907,1.65939161764368,1.65952790861702,1.65944407026826,1.6637790489696,1.65939672575353,1.65938601354318,1.65937872395843,1.65937042158051],"arrayminus":[1.6509671857028,1.70678027275849,1.65196526081827,1.65910230207925,1.65462784189872,1.65970338604497,1.65874451128169,1.65964158666289,1.65923934609766,1.65875186196567,1.65954370376983,1.65951915017907,1.65939161764368,1.65952790861702,1.65944407026826,1.6637790489696,1.65939672575353,1.65938601354318,1.65937872395843,1.65937042158051],"type":"data","width":0.840854710127319,"symmetric":false,"color":"rgba(124,174,0,1)"},"name":"mape","legendgroup":"mape","showlegend":true,"xaxis":"x2","yaxis":"y2","hoverinfo":"text","frame":null},{"x":[-8.01016299519688,-5.02131110057235,-0.491607449948788,-2.61183278867975,-2.05140436068177,-0.211572973057628,-9.67155081918463,-6.1153273191303,-7.40551540395245,-6.73895750660449,-9.41022143932059,-3.9891752274707,-0.469370170030743,-1.38840439496562,-5.81118678441271,-4.35527180321515,-9.88523631589487,-9.26323365420103,-3.2210855348967,-7.0818750676699],"y":[100.38679953557,100.388087013916,100.388807759695,100.391864582442,100.396698887382,100.391940998547,100.393561588344,100.396851414722,100.395904065993,100.393145582647,100.396880338242,100.396586486826,100.391716461754,100.397252276719,100.395033685257,100.397271410494,100.396292260526,100.397286316101,100.396399823602,100.397301577167],"text":["mean - std_err: 95.6785311<br />mean + std_err: 105.0950680<br />penalty: 9.768705e-09<br />mean: 100.3867995<br />.metric: rmse","mean - std_err: 95.6797360<br />mean + std_err: 105.0964380<br />penalty: 9.521139e-06<br />mean: 100.3880870<br />.metric: rmse","mean - std_err: 95.6804108<br />mean + std_err: 105.0972048<br />penalty: 3.223982e-01<br />mean: 100.3888078<br />.metric: rmse","mean - std_err: 95.6826423<br />mean + std_err: 105.1010869<br />penalty: 2.444371e-03<br />mean: 100.3918646<br />.metric: rmse","mean - std_err: 95.6869258<br />mean + std_err: 105.1064720<br />penalty: 8.883736e-03<br />mean: 100.3966989<br />.metric: rmse","mean - std_err: 95.6788367<br />mean + std_err: 105.1050452<br />penalty: 6.143658e-01<br />mean: 100.3919410<br />.metric: rmse","mean - std_err: 95.6844415<br />mean + std_err: 105.1026816<br />penalty: 2.130341e-10<br />mean: 100.3935616<br />.metric: rmse","mean - std_err: 95.6870915<br />mean + std_err: 105.1066114<br />penalty: 7.667834e-07<br />mean: 100.3968514<br />.metric: rmse","mean - std_err: 95.6862173<br />mean + std_err: 105.1055908<br />penalty: 3.930833e-08<br />mean: 100.3959041<br />.metric: rmse","mean - std_err: 95.6839496<br />mean + std_err: 105.1023416<br />penalty: 1.824074e-07<br />mean: 100.3931456<br />.metric: rmse","mean - std_err: 95.6871235<br />mean + std_err: 105.1066372<br />penalty: 3.888468e-10<br />mean: 100.3968803<br />.metric: rmse","mean - std_err: 95.6868016<br />mean + std_err: 105.1063714<br />penalty: 1.025238e-04<br />mean: 100.3965865<br />.metric: rmse","mean - std_err: 95.6835810<br />mean + std_err: 105.0998519<br />penalty: 3.393359e-01<br />mean: 100.3917165<br />.metric: rmse","mean - std_err: 95.6875325<br />mean + std_err: 105.1069721<br />penalty: 4.088798e-02<br />mean: 100.3972523<br />.metric: rmse","mean - std_err: 95.6853804<br />mean + std_err: 105.1046870<br />penalty: 1.544590e-06<br />mean: 100.3950337<br />.metric: rmse","mean - std_err: 95.6875537<br />mean + std_err: 105.1069891<br />penalty: 4.412942e-05<br />mean: 100.3972714<br />.metric: rmse","mean - std_err: 95.6866096<br />mean + std_err: 105.1059749<br />penalty: 1.302458e-10<br />mean: 100.3962923<br />.metric: rmse","mean - std_err: 95.6875712<br />mean + std_err: 105.1070014<br />penalty: 5.454643e-10<br />mean: 100.3972863<br />.metric: rmse","mean - std_err: 95.6867297<br />mean + std_err: 105.1060699<br />penalty: 6.010553e-04<br />mean: 100.3963998<br />.metric: rmse","mean - std_err: 95.6875881<br />mean + std_err: 105.1070150<br />penalty: 8.281804e-08<br />mean: 100.3973016<br />.metric: rmse"],"type":"scatter","mode":"lines","opacity":0.5,"line":{"color":"transparent"},"error_y":{"array":[4.70826846467851,4.7083510163564,4.70839700419947,4.70922227333482,4.70977309806065,4.71310425104221,4.70912005638296,4.70975994922388,4.70968677635153,4.70919596846306,4.70975687166664,4.70978489246686,4.70813544011487,4.70971977875499,4.70965328837855,4.70971766815656,4.70968264337201,4.70971508108295,4.7096700757811,4.70971343337298],"arrayminus":[4.70826846467851,4.7083510163564,4.70839700419947,4.70922227333482,4.70977309806065,4.71310425104221,4.70912005638296,4.70975994922388,4.70968677635153,4.70919596846306,4.70975687166664,4.70978489246686,4.70813544011487,4.70971977875499,4.70965328837855,4.70971766815656,4.70968264337201,4.70971508108295,4.7096700757811,4.70971343337298],"type":"data","width":0.840854710127319,"symmetric":false,"color":"rgba(0,191,196,1)"},"name":"rmse","legendgroup":"rmse","showlegend":true,"xaxis":"x3","yaxis":"y3","hoverinfo":"text","frame":null},{"x":[-2.61183278867975,-8.01016299519688,-9.67155081918463,-5.02131110057235,-6.73895750660449,-0.491607449948788,-0.469370170030743,-1.38840439496562,-2.05140436068177,-0.211572973057628,-5.81118678441271,-4.35527180321515,-6.1153273191303,-7.40551540395245,-9.88523631589487,-9.26323365420103,-9.41022143932059,-3.9891752274707,-3.2210855348967,-7.0818750676699],"y":[0.333615817711152,0.333675626439165,0.333594197479931,0.333660808965267,0.333601473183167,0.333653911501748,0.333619340452359,0.33355300670974,0.333557931462515,0.333498394468377,0.333582126679614,0.333552837008746,0.333556547962977,0.333572264490051,0.333563634705436,0.333552709086324,0.333556291242481,0.333558929251638,0.333562705385924,0.33355257363346],"text":["mean - std_err:  0.3112114<br />mean + std_err:   0.3560203<br />penalty: 2.444371e-03<br />mean:   0.3336158<br />.metric: rsq","mean - std_err:  0.3112748<br />mean + std_err:   0.3560765<br />penalty: 9.768705e-09<br />mean:   0.3336756<br />.metric: rsq","mean - std_err:  0.3111945<br />mean + std_err:   0.3559939<br />penalty: 2.130341e-10<br />mean:   0.3335942<br />.metric: rsq","mean - std_err:  0.3112626<br />mean + std_err:   0.3560590<br />penalty: 9.521139e-06<br />mean:   0.3336608<br />.metric: rsq","mean - std_err:  0.3112019<br />mean + std_err:   0.3560010<br />penalty: 1.824074e-07<br />mean:   0.3336015<br />.metric: rsq","mean - std_err:  0.3112549<br />mean + std_err:   0.3560529<br />penalty: 3.223982e-01<br />mean:   0.3336539<br />.metric: rsq","mean - std_err:  0.3112284<br />mean + std_err:   0.3560103<br />penalty: 3.393359e-01<br />mean:   0.3336193<br />.metric: rsq","mean - std_err:  0.3111587<br />mean + std_err:   0.3559474<br />penalty: 4.088798e-02<br />mean:   0.3335530<br />.metric: rsq","mean - std_err:  0.3111598<br />mean + std_err:   0.3559561<br />penalty: 8.883736e-03<br />mean:   0.3335579<br />.metric: rsq","mean - std_err:  0.3108663<br />mean + std_err:   0.3561305<br />penalty: 6.143658e-01<br />mean:   0.3334984<br />.metric: rsq","mean - std_err:  0.3111853<br />mean + std_err:   0.3559789<br />penalty: 1.544590e-06<br />mean:   0.3335821<br />.metric: rsq","mean - std_err:  0.3111586<br />mean + std_err:   0.3559471<br />penalty: 4.412942e-05<br />mean:   0.3335528<br />.metric: rsq","mean - std_err:  0.3111594<br />mean + std_err:   0.3559537<br />penalty: 7.667834e-07<br />mean:   0.3335565<br />.metric: rsq","mean - std_err:  0.3111786<br />mean + std_err:   0.3559659<br />penalty: 3.930833e-08<br />mean:   0.3335723<br />.metric: rsq","mean - std_err:  0.3111660<br />mean + std_err:   0.3559612<br />penalty: 1.302458e-10<br />mean:   0.3335636<br />.metric: rsq","mean - std_err:  0.3111586<br />mean + std_err:   0.3559468<br />penalty: 5.454643e-10<br />mean:   0.3335527<br />.metric: rsq","mean - std_err:  0.3111594<br />mean + std_err:   0.3559532<br />penalty: 3.888468e-10<br />mean:   0.3335563<br />.metric: rsq","mean - std_err:  0.3111600<br />mean + std_err:   0.3559578<br />penalty: 1.025238e-04<br />mean:   0.3335589<br />.metric: rsq","mean - std_err:  0.3111659<br />mean + std_err:   0.3559595<br />penalty: 6.010553e-04<br />mean:   0.3335627<br />.metric: rsq","mean - std_err:  0.3111586<br />mean + std_err:   0.3559466<br />penalty: 8.281804e-08<br />mean:   0.3335526<br />.metric: rsq"],"type":"scatter","mode":"lines","opacity":0.5,"line":{"color":"transparent"},"error_y":{"array":[0.0224044513081535,0.0224008348550097,0.0223997033278586,0.0223981948931455,0.0223995715287189,0.0223989835575236,0.0223909807862237,0.0223943544982826,0.022398127662636,0.0226320931232349,0.0223967929149255,0.022394220758502,0.0223971192763658,0.0223936273052682,0.022397613897751,0.0223941021853889,0.0223969179010508,0.0223989097665495,0.0223968161499105,0.0223939960667245],"arrayminus":[0.0224044513081535,0.0224008348550097,0.0223997033278586,0.0223981948931455,0.0223995715287189,0.0223989835575236,0.0223909807862237,0.0223943544982826,0.022398127662636,0.0226320931232349,0.0223967929149255,0.022394220758502,0.0223971192763658,0.0223936273052682,0.022397613897751,0.0223941021853889,0.0223969179010508,0.0223989097665495,0.0223968161499105,0.0223939960667245],"type":"data","width":0.840854710127319,"symmetric":false,"color":"rgba(199,124,255,1)"},"name":"rsq","legendgroup":"rsq","showlegend":true,"xaxis":"x4","yaxis":"y4","hoverinfo":"text","frame":null},{"x":[-9.88523631589487,-9.67155081918463,-9.41022143932059,-9.26323365420103,-8.01016299519688,-7.40551540395245,-7.0818750676699,-6.73895750660449,-6.1153273191303,-5.81118678441271,-5.02131110057235,-4.35527180321515,-3.9891752274707,-3.2210855348967,-2.61183278867975,-2.05140436068177,-1.38840439496562,-0.491607449948788,-0.469370170030743,-0.211572973057628],"y":[57.9161996085523,57.9185637025895,57.9138887316118,57.914550517768,57.931134853137,57.9142265364485,57.9145764771546,57.9167220547325,57.9138393571598,57.9158936685986,57.9293367318371,57.9145233865571,57.913389540907,57.9163898201519,57.9171936013485,57.9135818292922,57.9144906162053,57.924285798738,57.9111568944868,57.7924214917281],"text":["penalty: 1.302458e-10<br />mean:  57.9161996<br />.metric: mae","penalty: 2.130341e-10<br />mean:  57.9185637<br />.metric: mae","penalty: 3.888468e-10<br />mean:  57.9138887<br />.metric: mae","penalty: 5.454643e-10<br />mean:  57.9145505<br />.metric: mae","penalty: 9.768705e-09<br />mean:  57.9311349<br />.metric: mae","penalty: 3.930833e-08<br />mean:  57.9142265<br />.metric: mae","penalty: 8.281804e-08<br />mean:  57.9145765<br />.metric: mae","penalty: 1.824074e-07<br />mean:  57.9167221<br />.metric: mae","penalty: 7.667834e-07<br />mean:  57.9138394<br />.metric: mae","penalty: 1.544590e-06<br />mean:  57.9158937<br />.metric: mae","penalty: 9.521139e-06<br />mean:  57.9293367<br />.metric: mae","penalty: 4.412942e-05<br />mean:  57.9145234<br />.metric: mae","penalty: 1.025238e-04<br />mean:  57.9133895<br />.metric: mae","penalty: 6.010553e-04<br />mean:  57.9163898<br />.metric: mae","penalty: 2.444371e-03<br />mean:  57.9171936<br />.metric: mae","penalty: 8.883736e-03<br />mean:  57.9135818<br />.metric: mae","penalty: 4.088798e-02<br />mean:  57.9144906<br />.metric: mae","penalty: 3.223982e-01<br />mean:  57.9242858<br />.metric: mae","penalty: 3.393359e-01<br />mean:  57.9111569<br />.metric: mae","penalty: 6.143658e-01<br />mean:  57.7924215<br />.metric: mae"],"type":"scatter","mode":"lines","line":{"width":5.66929133858268,"color":"rgba(248,118,109,1)","dash":"solid"},"hoveron":"points","name":"mae","legendgroup":"mae","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[-9.88523631589487,-9.67155081918463,-9.41022143932059,-9.26323365420103,-8.01016299519688,-7.40551540395245,-7.0818750676699,-6.73895750660449,-6.1153273191303,-5.81118678441271,-5.02131110057235,-4.35527180321515,-3.9891752274707,-3.2210855348967,-2.61183278867975,-2.05140436068177,-1.38840439496562,-0.491607449948788,-0.469370170030743,-0.211572973057628],"y":[58.2134254306548,58.2204727669072,58.2080746302426,58.2073895810424,58.2464757540462,58.2076582842504,58.2073671453486,58.2181748007839,58.2081176796068,58.2135074270857,58.2410909591875,58.2074146801766,58.2084928752812,58.2132436782657,58.2219280837904,58.2083247284416,58.2074426505616,58.2334463249039,58.212333639918,58.1982481179774],"text":["penalty: 1.302458e-10<br />mean:  58.2134254<br />.metric: mape","penalty: 2.130341e-10<br />mean:  58.2204728<br />.metric: mape","penalty: 3.888468e-10<br />mean:  58.2080746<br />.metric: mape","penalty: 5.454643e-10<br />mean:  58.2073896<br />.metric: mape","penalty: 9.768705e-09<br />mean:  58.2464758<br />.metric: mape","penalty: 3.930833e-08<br />mean:  58.2076583<br />.metric: mape","penalty: 8.281804e-08<br />mean:  58.2073671<br />.metric: mape","penalty: 1.824074e-07<br />mean:  58.2181748<br />.metric: mape","penalty: 7.667834e-07<br />mean:  58.2081177<br />.metric: mape","penalty: 1.544590e-06<br />mean:  58.2135074<br />.metric: mape","penalty: 9.521139e-06<br />mean:  58.2410910<br />.metric: mape","penalty: 4.412942e-05<br />mean:  58.2074147<br />.metric: mape","penalty: 1.025238e-04<br />mean:  58.2084929<br />.metric: mape","penalty: 6.010553e-04<br />mean:  58.2132437<br />.metric: mape","penalty: 2.444371e-03<br />mean:  58.2219281<br />.metric: mape","penalty: 8.883736e-03<br />mean:  58.2083247<br />.metric: mape","penalty: 4.088798e-02<br />mean:  58.2074427<br />.metric: mape","penalty: 3.223982e-01<br />mean:  58.2334463<br />.metric: mape","penalty: 3.393359e-01<br />mean:  58.2123336<br />.metric: mape","penalty: 6.143658e-01<br />mean:  58.1982481<br />.metric: mape"],"type":"scatter","mode":"lines","line":{"width":5.66929133858268,"color":"rgba(124,174,0,1)","dash":"solid"},"hoveron":"points","name":"mape","legendgroup":"mape","showlegend":false,"xaxis":"x2","yaxis":"y2","hoverinfo":"text","frame":null},{"x":[-9.88523631589487,-9.67155081918463,-9.41022143932059,-9.26323365420103,-8.01016299519688,-7.40551540395245,-7.0818750676699,-6.73895750660449,-6.1153273191303,-5.81118678441271,-5.02131110057235,-4.35527180321515,-3.9891752274707,-3.2210855348967,-2.61183278867975,-2.05140436068177,-1.38840439496562,-0.491607449948788,-0.469370170030743,-0.211572973057628],"y":[100.396292260526,100.393561588344,100.396880338242,100.397286316101,100.38679953557,100.395904065993,100.397301577167,100.393145582647,100.396851414722,100.395033685257,100.388087013916,100.397271410494,100.396586486826,100.396399823602,100.391864582442,100.396698887382,100.397252276719,100.388807759695,100.391716461754,100.391940998547],"text":["penalty: 1.302458e-10<br />mean: 100.3962923<br />.metric: rmse","penalty: 2.130341e-10<br />mean: 100.3935616<br />.metric: rmse","penalty: 3.888468e-10<br />mean: 100.3968803<br />.metric: rmse","penalty: 5.454643e-10<br />mean: 100.3972863<br />.metric: rmse","penalty: 9.768705e-09<br />mean: 100.3867995<br />.metric: rmse","penalty: 3.930833e-08<br />mean: 100.3959041<br />.metric: rmse","penalty: 8.281804e-08<br />mean: 100.3973016<br />.metric: rmse","penalty: 1.824074e-07<br />mean: 100.3931456<br />.metric: rmse","penalty: 7.667834e-07<br />mean: 100.3968514<br />.metric: rmse","penalty: 1.544590e-06<br />mean: 100.3950337<br />.metric: rmse","penalty: 9.521139e-06<br />mean: 100.3880870<br />.metric: rmse","penalty: 4.412942e-05<br />mean: 100.3972714<br />.metric: rmse","penalty: 1.025238e-04<br />mean: 100.3965865<br />.metric: rmse","penalty: 6.010553e-04<br />mean: 100.3963998<br />.metric: rmse","penalty: 2.444371e-03<br />mean: 100.3918646<br />.metric: rmse","penalty: 8.883736e-03<br />mean: 100.3966989<br />.metric: rmse","penalty: 4.088798e-02<br />mean: 100.3972523<br />.metric: rmse","penalty: 3.223982e-01<br />mean: 100.3888078<br />.metric: rmse","penalty: 3.393359e-01<br />mean: 100.3917165<br />.metric: rmse","penalty: 6.143658e-01<br />mean: 100.3919410<br />.metric: rmse"],"type":"scatter","mode":"lines","line":{"width":5.66929133858268,"color":"rgba(0,191,196,1)","dash":"solid"},"hoveron":"points","name":"rmse","legendgroup":"rmse","showlegend":false,"xaxis":"x3","yaxis":"y3","hoverinfo":"text","frame":null},{"x":[-9.88523631589487,-9.67155081918463,-9.41022143932059,-9.26323365420103,-8.01016299519688,-7.40551540395245,-7.0818750676699,-6.73895750660449,-6.1153273191303,-5.81118678441271,-5.02131110057235,-4.35527180321515,-3.9891752274707,-3.2210855348967,-2.61183278867975,-2.05140436068177,-1.38840439496562,-0.491607449948788,-0.469370170030743,-0.211572973057628],"y":[0.333563634705436,0.333594197479931,0.333556291242481,0.333552709086324,0.333675626439165,0.333572264490051,0.33355257363346,0.333601473183167,0.333556547962977,0.333582126679614,0.333660808965267,0.333552837008746,0.333558929251638,0.333562705385924,0.333615817711152,0.333557931462515,0.33355300670974,0.333653911501748,0.333619340452359,0.333498394468377],"text":["penalty: 1.302458e-10<br />mean:   0.3335636<br />.metric: rsq","penalty: 2.130341e-10<br />mean:   0.3335942<br />.metric: rsq","penalty: 3.888468e-10<br />mean:   0.3335563<br />.metric: rsq","penalty: 5.454643e-10<br />mean:   0.3335527<br />.metric: rsq","penalty: 9.768705e-09<br />mean:   0.3336756<br />.metric: rsq","penalty: 3.930833e-08<br />mean:   0.3335723<br />.metric: rsq","penalty: 8.281804e-08<br />mean:   0.3335526<br />.metric: rsq","penalty: 1.824074e-07<br />mean:   0.3336015<br />.metric: rsq","penalty: 7.667834e-07<br />mean:   0.3335565<br />.metric: rsq","penalty: 1.544590e-06<br />mean:   0.3335821<br />.metric: rsq","penalty: 9.521139e-06<br />mean:   0.3336608<br />.metric: rsq","penalty: 4.412942e-05<br />mean:   0.3335528<br />.metric: rsq","penalty: 1.025238e-04<br />mean:   0.3335589<br />.metric: rsq","penalty: 6.010553e-04<br />mean:   0.3335627<br />.metric: rsq","penalty: 2.444371e-03<br />mean:   0.3336158<br />.metric: rsq","penalty: 8.883736e-03<br />mean:   0.3335579<br />.metric: rsq","penalty: 4.088798e-02<br />mean:   0.3335530<br />.metric: rsq","penalty: 3.223982e-01<br />mean:   0.3336539<br />.metric: rsq","penalty: 3.393359e-01<br />mean:   0.3336193<br />.metric: rsq","penalty: 6.143658e-01<br />mean:   0.3334984<br />.metric: rsq"],"type":"scatter","mode":"lines","line":{"width":5.66929133858268,"color":"rgba(199,124,255,1)","dash":"solid"},"hoveron":"points","name":"rsq","legendgroup":"rsq","showlegend":false,"xaxis":"x4","yaxis":"y4","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":37.9178082191781,"r":7.30593607305936,"b":40.1826484018265,"l":37.2602739726027},"plot_bgcolor":"rgba(235,235,235,1)","paper_bgcolor":"rgba(255,255,255,1)","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"xaxis":{"domain":[0,0.479244499792445],"automargin":true,"type":"linear","autorange":false,"range":[-10.3799269365962,0.283117647643667],"tickmode":"array","ticktext":["1e-08","1e-05","1e-02"],"tickvals":[-8,-5,-2],"categoryorder":"array","categoryarray":["1e-08","1e-05","1e-02"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.65296803652968,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(255,255,255,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y","title":"","hoverformat":".2f"},"annotations":[{"text":"penalty","x":0.5,"y":-0.0176940639269406,"showarrow":false,"ax":0,"ay":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"xref":"paper","yref":"paper","textangle":-0,"xanchor":"center","yanchor":"top","annotationType":"axis"},{"text":"mean","x":-0.0126386170906719,"y":0.5,"showarrow":false,"ax":0,"ay":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"xref":"paper","yref":"paper","textangle":-90,"xanchor":"right","yanchor":"center","annotationType":"axis"},{"text":"mae","x":0.239622249896222,"y":1,"showarrow":false,"ax":0,"ay":0,"font":{"color":"rgba(26,26,26,1)","family":"","size":11.689497716895},"xref":"paper","yref":"paper","textangle":-0,"xanchor":"center","yanchor":"bottom"},{"text":"mape","x":0.760377750103778,"y":1,"showarrow":false,"ax":0,"ay":0,"font":{"color":"rgba(26,26,26,1)","family":"","size":11.689497716895},"xref":"paper","yref":"paper","textangle":-0,"xanchor":"center","yanchor":"bottom"},{"text":"rmse","x":0.239622249896222,"y":0.475508509755085,"showarrow":false,"ax":0,"ay":0,"font":{"color":"rgba(26,26,26,1)","family":"","size":11.689497716895},"xref":"paper","yref":"paper","textangle":-0,"xanchor":"center","yanchor":"bottom"},{"text":"rsq","x":0.760377750103778,"y":0.475508509755085,"showarrow":false,"ax":0,"ay":0,"font":{"color":"rgba(26,26,26,1)","family":"","size":11.689497716895},"xref":"paper","yref":"paper","textangle":-0,"xanchor":"center","yanchor":"bottom"}],"yaxis":{"domain":[0.524491490244915,1],"automargin":true,"type":"linear","autorange":false,"range":[55.8028739416684,59.9116226098812],"tickmode":"array","ticktext":["56","57","58","59"],"tickvals":[56,57,58,59],"categoryorder":"array","categoryarray":["56","57","58","59"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.65296803652968,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(255,255,255,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"x","title":"","hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":0.479244499792445,"y0":0.524491490244915,"y1":1},{"type":"rect","fillcolor":"rgba(217,217,217,1)","line":{"color":"transparent","width":0.66417600664176,"linetype":"solid"},"yref":"paper","xref":"paper","x0":0,"x1":0.479244499792445,"y0":0,"y1":23.37899543379,"yanchor":1,"ysizemode":"pixel"},{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0.520755500207555,"x1":1,"y0":0.524491490244915,"y1":1},{"type":"rect","fillcolor":"rgba(217,217,217,1)","line":{"color":"transparent","width":0.66417600664176,"linetype":"solid"},"yref":"paper","xref":"paper","x0":0.520755500207555,"x1":1,"y0":0,"y1":23.37899543379,"yanchor":1,"ysizemode":"pixel"},{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":0.479244499792445,"y0":0,"y1":0.475508509755085},{"type":"rect","fillcolor":"rgba(217,217,217,1)","line":{"color":"transparent","width":0.66417600664176,"linetype":"solid"},"yref":"paper","xref":"paper","x0":0,"x1":0.479244499792445,"y0":0,"y1":23.37899543379,"yanchor":0.475508509755085,"ysizemode":"pixel"},{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0.520755500207555,"x1":1,"y0":0,"y1":0.475508509755085},{"type":"rect","fillcolor":"rgba(217,217,217,1)","line":{"color":"transparent","width":0.66417600664176,"linetype":"solid"},"yref":"paper","xref":"paper","x0":0.520755500207555,"x1":1,"y0":0,"y1":23.37899543379,"yanchor":0.475508509755085,"ysizemode":"pixel"}],"xaxis2":{"type":"linear","autorange":false,"range":[-10.3799269365962,0.283117647643667],"tickmode":"array","ticktext":["1e-08","1e-05","1e-02"],"tickvals":[-8,-5,-2],"categoryorder":"array","categoryarray":["1e-08","1e-05","1e-02"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.65296803652968,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"domain":[0.520755500207555,1],"gridcolor":"rgba(255,255,255,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y2","title":"","hoverformat":".2f"},"yaxis2":{"type":"linear","autorange":false,"range":[56.3207898179431,60.0757064180118],"tickmode":"array","ticktext":["57","58","59","60"],"tickvals":[57,58,59,60],"categoryorder":"array","categoryarray":["57","58","59","60"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.65296803652968,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"domain":[0.524491490244915,1],"gridcolor":"rgba(255,255,255,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"x2","title":"","hoverformat":".2f"},"xaxis3":{"type":"linear","autorange":false,"range":[-10.3799269365962,0.283117647643667],"tickmode":"array","ticktext":["1e-08","1e-05","1e-02"],"tickvals":[-8,-5,-2],"categoryorder":"array","categoryarray":["1e-08","1e-05","1e-02"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.65296803652968,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"domain":[0,0.479244499792445],"gridcolor":"rgba(255,255,255,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y3","title":"","hoverformat":".2f"},"yaxis3":{"type":"linear","autorange":false,"range":[95.207106873909,105.578439207522],"tickmode":"array","ticktext":["97.5","100.0","102.5","105.0"],"tickvals":[97.5,100,102.5,105],"categoryorder":"array","categoryarray":["97.5","100.0","102.5","105.0"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.65296803652968,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"domain":[0,0.475508509755085],"gridcolor":"rgba(255,255,255,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"x3","title":"","hoverformat":".2f"},"xaxis4":{"type":"linear","autorange":false,"range":[-10.3799269365962,0.283117647643667],"tickmode":"array","ticktext":["1e-08","1e-05","1e-02"],"tickvals":[-8,-5,-2],"categoryorder":"array","categoryarray":["1e-08","1e-05","1e-02"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.65296803652968,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"domain":[0.520755500207555,1],"gridcolor":"rgba(255,255,255,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y4","title":"","hoverformat":".2f"},"yaxis4":{"type":"linear","autorange":false,"range":[0.308603092032818,0.358393696903935],"tickmode":"array","ticktext":["0.31","0.32","0.33","0.34","0.35"],"tickvals":[0.31,0.32,0.33,0.34,0.35],"categoryorder":"array","categoryarray":["0.31","0.32","0.33","0.34","0.35"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.65296803652968,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"domain":[0,0.475508509755085],"gridcolor":"rgba(255,255,255,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"x4","title":"","hoverformat":".2f"},"showlegend":false,"legend":{"bgcolor":"rgba(255,255,255,1)","bordercolor":"transparent","borderwidth":1.88976377952756,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.689497716895}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","showSendToCloud":false},"source":"A","attrs":{"19af830e11f7e":{"ymin":{},"ymax":{},"x":{},"y":{},"colour":{},"type":"scatter"},"19af83553654":{"x":{},"y":{},"colour":{}}},"cur_data":"19af830e11f7e","visdat":{"19af830e11f7e":["function (y) ","x"],"19af83553654":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-7" style="width:672px;height:480px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-7">{"x":{"data":[{"x":[-8.01016299519688,-0.211572973057628,-5.81118678441271,-9.67155081918463,-5.02131110057235,-7.40551540395245,-9.88523631589487,-6.73895750660449,-0.491607449948788,-3.9891752274707,-3.2210855348967,-0.469370170030743,-2.61183278867975,-2.05140436068177,-4.35527180321515,-6.1153273191303,-9.26323365420103,-9.41022143932059,-7.0818750676699,-1.38840439496562],"y":[57.931134853137,57.7924214917281,57.9158936685986,57.9185637025895,57.9293367318371,57.9142265364485,57.9161996085523,57.9167220547325,57.924285798738,57.913389540907,57.9163898201519,57.9111568944868,57.9171936013485,57.9135818292922,57.9145233865571,57.9138393571598,57.914550517768,57.9138887316118,57.9145764771546,57.9144906162053],"text":["mean - std_err: 56.1374084<br />mean + std_err:  59.7248613<br />penalty: 9.768705e-09<br />mean:  57.9311349<br />.metric: mae","mean - std_err: 55.9896352<br />mean + std_err:  59.5952077<br />penalty: 6.143658e-01<br />mean:  57.7924215<br />.metric: mae","mean - std_err: 56.1163737<br />mean + std_err:  59.7154136<br />penalty: 1.544590e-06<br />mean:  57.9158937<br />.metric: mae","mean - std_err: 56.1215478<br />mean + std_err:  59.7155796<br />penalty: 2.130341e-10<br />mean:  57.9185637<br />.metric: mae","mean - std_err: 56.1351491<br />mean + std_err:  59.7235244<br />penalty: 9.521139e-06<br />mean:  57.9293367<br />.metric: mae","mean - std_err: 56.1142688<br />mean + std_err:  59.7141843<br />penalty: 3.930833e-08<br />mean:  57.9142265<br />.metric: mae","mean - std_err: 56.1167381<br />mean + std_err:  59.7156611<br />penalty: 1.302458e-10<br />mean:  57.9161996<br />.metric: mae","mean - std_err: 56.1192916<br />mean + std_err:  59.7141525<br />penalty: 1.824074e-07<br />mean:  57.9167221<br />.metric: mae","mean - std_err: 56.1296569<br />mean + std_err:  59.7189147<br />penalty: 3.223982e-01<br />mean:  57.9242858<br />.metric: mae","mean - std_err: 56.1135187<br />mean + std_err:  59.7132603<br />penalty: 1.025238e-04<br />mean:  57.9133895<br />.metric: mae","mean - std_err: 56.1169247<br />mean + std_err:  59.7158549<br />penalty: 6.010553e-04<br />mean:  57.9163898<br />.metric: mae","mean - std_err: 56.1162563<br />mean + std_err:  59.7060575<br />penalty: 3.393359e-01<br />mean:  57.9111569<br />.metric: mae","mean - std_err: 56.1200604<br />mean + std_err:  59.7143268<br />penalty: 2.444371e-03<br />mean:  57.9171936<br />.metric: mae","mean - std_err: 56.1137066<br />mean + std_err:  59.7134570<br />penalty: 8.883736e-03<br />mean:  57.9135818<br />.metric: mae","mean - std_err: 56.1146491<br />mean + std_err:  59.7143977<br />penalty: 4.412942e-05<br />mean:  57.9145234<br />.metric: mae","mean - std_err: 56.1139558<br />mean + std_err:  59.7137229<br />penalty: 7.667834e-07<br />mean:  57.9138394<br />.metric: mae","mean - std_err: 56.1146757<br />mean + std_err:  59.7144253<br />penalty: 5.454643e-10<br />mean:  57.9145505<br />.metric: mae","mean - std_err: 56.1140041<br />mean + std_err:  59.7137734<br />penalty: 3.888468e-10<br />mean:  57.9138887<br />.metric: mae","mean - std_err: 56.1147011<br />mean + std_err:  59.7144519<br />penalty: 8.281804e-08<br />mean:  57.9145765<br />.metric: mae","mean - std_err: 56.1146171<br />mean + std_err:  59.7143641<br />penalty: 4.088798e-02<br />mean:  57.9144906<br />.metric: mae"],"type":"scatter","mode":"lines","opacity":0.5,"line":{"color":"transparent"},"error_y":{"array":[1.79372645364356,1.80278624695909,1.79951996149031,1.79701593149053,1.79418765879574,1.79995771362541,1.7994615273055,1.79743047772759,1.79462885192054,1.79987080058125,1.79946512680792,1.79490062480296,1.79713318998266,1.7998751912945,1.79987433149994,1.79988352085689,1.79987479214321,1.79988462900381,1.7998753822412,1.79987349338516],"arrayminus":[1.79372645364356,1.80278624695909,1.79951996149031,1.79701593149053,1.79418765879574,1.79995771362541,1.7994615273055,1.79743047772759,1.79462885192054,1.79987080058125,1.79946512680792,1.79490062480296,1.79713318998266,1.7998751912945,1.79987433149994,1.79988352085689,1.79987479214321,1.79988462900381,1.7998753822412,1.79987349338516],"type":"data","width":0.840854710127319,"symmetric":false,"color":"rgba(248,118,109,1)"},"name":"mae","legendgroup":"mae","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[-8.01016299519688,-0.211572973057628,-5.02131110057235,-7.40551540395245,-0.491607449948788,-3.9891752274707,-2.61183278867975,-2.05140436068177,-5.81118678441271,-9.67155081918463,-6.1153273191303,-9.88523631589487,-6.73895750660449,-9.41022143932059,-3.2210855348967,-0.469370170030743,-1.38840439496562,-4.35527180321515,-9.26323365420103,-7.0818750676699],"y":[58.2464757540462,58.1982481179774,58.2410909591875,58.2076582842504,58.2334463249039,58.2084928752812,58.2219280837904,58.2083247284416,58.2135074270857,58.2204727669072,58.2081176796068,58.2134254306548,58.2181748007839,58.2080746302426,58.2132436782657,58.212333639918,58.2074426505616,58.2074146801766,58.2073895810424,58.2073671453486],"text":["mean - std_err: 56.5955086<br />mean + std_err:  59.8974429<br />penalty: 9.768705e-09<br />mean:  58.2464758<br />.metric: mape","mean - std_err: 56.4914678<br />mean + std_err:  59.9050284<br />penalty: 6.143658e-01<br />mean:  58.1982481<br />.metric: mape","mean - std_err: 56.5891257<br />mean + std_err:  59.8930562<br />penalty: 9.521139e-06<br />mean:  58.2410910<br />.metric: mape","mean - std_err: 56.5485560<br />mean + std_err:  59.8667606<br />penalty: 3.930833e-08<br />mean:  58.2076583<br />.metric: mape","mean - std_err: 56.5788185<br />mean + std_err:  59.8880742<br />penalty: 3.223982e-01<br />mean:  58.2334463<br />.metric: mape","mean - std_err: 56.5487895<br />mean + std_err:  59.8681963<br />penalty: 1.025238e-04<br />mean:  58.2084929<br />.metric: mape","mean - std_err: 56.5631836<br />mean + std_err:  59.8806726<br />penalty: 2.444371e-03<br />mean:  58.2219281<br />.metric: mape","mean - std_err: 56.5486831<br />mean + std_err:  59.8679663<br />penalty: 8.883736e-03<br />mean:  58.2083247<br />.metric: mape","mean - std_err: 56.5542681<br />mean + std_err:  59.8727468<br />penalty: 1.544590e-06<br />mean:  58.2135074<br />.metric: mape","mean - std_err: 56.5617209<br />mean + std_err:  59.8792246<br />penalty: 2.130341e-10<br />mean:  58.2204728<br />.metric: mape","mean - std_err: 56.5485740<br />mean + std_err:  59.8676614<br />penalty: 7.667834e-07<br />mean:  58.2081177<br />.metric: mape","mean - std_err: 56.5539063<br />mean + std_err:  59.8729446<br />penalty: 1.302458e-10<br />mean:  58.2134254<br />.metric: mape","mean - std_err: 56.5587832<br />mean + std_err:  59.8775664<br />penalty: 1.824074e-07<br />mean:  58.2181748<br />.metric: mape","mean - std_err: 56.5485467<br />mean + std_err:  59.8676025<br />penalty: 3.888468e-10<br />mean:  58.2080746<br />.metric: mape","mean - std_err: 56.5537996<br />mean + std_err:  59.8726877<br />penalty: 6.010553e-04<br />mean:  58.2132437<br />.metric: mape","mean - std_err: 56.5485546<br />mean + std_err:  59.8761127<br />penalty: 3.393359e-01<br />mean:  58.2123336<br />.metric: mape","mean - std_err: 56.5480459<br />mean + std_err:  59.8668394<br />penalty: 4.088798e-02<br />mean:  58.2074427<br />.metric: mape","mean - std_err: 56.5480287<br />mean + std_err:  59.8668007<br />penalty: 4.412942e-05<br />mean:  58.2074147<br />.metric: mape","mean - std_err: 56.5480109<br />mean + std_err:  59.8667683<br />penalty: 5.454643e-10<br />mean:  58.2073896<br />.metric: mape","mean - std_err: 56.5479967<br />mean + std_err:  59.8667376<br />penalty: 8.281804e-08<br />mean:  58.2073671<br />.metric: mape"],"type":"scatter","mode":"lines","opacity":0.5,"line":{"color":"transparent"},"error_y":{"array":[1.6509671857028,1.70678027275849,1.65196526081827,1.65910230207925,1.65462784189872,1.65970338604497,1.65874451128169,1.65964158666289,1.65923934609766,1.65875186196567,1.65954370376983,1.65951915017907,1.65939161764368,1.65952790861702,1.65944407026826,1.6637790489696,1.65939672575353,1.65938601354318,1.65937872395843,1.65937042158051],"arrayminus":[1.6509671857028,1.70678027275849,1.65196526081827,1.65910230207925,1.65462784189872,1.65970338604497,1.65874451128169,1.65964158666289,1.65923934609766,1.65875186196567,1.65954370376983,1.65951915017907,1.65939161764368,1.65952790861702,1.65944407026826,1.6637790489696,1.65939672575353,1.65938601354318,1.65937872395843,1.65937042158051],"type":"data","width":0.840854710127319,"symmetric":false,"color":"rgba(124,174,0,1)"},"name":"mape","legendgroup":"mape","showlegend":true,"xaxis":"x2","yaxis":"y2","hoverinfo":"text","frame":null},{"x":[-8.01016299519688,-5.02131110057235,-0.491607449948788,-2.61183278867975,-2.05140436068177,-0.211572973057628,-9.67155081918463,-6.1153273191303,-7.40551540395245,-6.73895750660449,-9.41022143932059,-3.9891752274707,-0.469370170030743,-1.38840439496562,-5.81118678441271,-4.35527180321515,-9.88523631589487,-9.26323365420103,-3.2210855348967,-7.0818750676699],"y":[100.38679953557,100.388087013916,100.388807759695,100.391864582442,100.396698887382,100.391940998547,100.393561588344,100.396851414722,100.395904065993,100.393145582647,100.396880338242,100.396586486826,100.391716461754,100.397252276719,100.395033685257,100.397271410494,100.396292260526,100.397286316101,100.396399823602,100.397301577167],"text":["mean - std_err: 95.6785311<br />mean + std_err: 105.0950680<br />penalty: 9.768705e-09<br />mean: 100.3867995<br />.metric: rmse","mean - std_err: 95.6797360<br />mean + std_err: 105.0964380<br />penalty: 9.521139e-06<br />mean: 100.3880870<br />.metric: rmse","mean - std_err: 95.6804108<br />mean + std_err: 105.0972048<br />penalty: 3.223982e-01<br />mean: 100.3888078<br />.metric: rmse","mean - std_err: 95.6826423<br />mean + std_err: 105.1010869<br />penalty: 2.444371e-03<br />mean: 100.3918646<br />.metric: rmse","mean - std_err: 95.6869258<br />mean + std_err: 105.1064720<br />penalty: 8.883736e-03<br />mean: 100.3966989<br />.metric: rmse","mean - std_err: 95.6788367<br />mean + std_err: 105.1050452<br />penalty: 6.143658e-01<br />mean: 100.3919410<br />.metric: rmse","mean - std_err: 95.6844415<br />mean + std_err: 105.1026816<br />penalty: 2.130341e-10<br />mean: 100.3935616<br />.metric: rmse","mean - std_err: 95.6870915<br />mean + std_err: 105.1066114<br />penalty: 7.667834e-07<br />mean: 100.3968514<br />.metric: rmse","mean - std_err: 95.6862173<br />mean + std_err: 105.1055908<br />penalty: 3.930833e-08<br />mean: 100.3959041<br />.metric: rmse","mean - std_err: 95.6839496<br />mean + std_err: 105.1023416<br />penalty: 1.824074e-07<br />mean: 100.3931456<br />.metric: rmse","mean - std_err: 95.6871235<br />mean + std_err: 105.1066372<br />penalty: 3.888468e-10<br />mean: 100.3968803<br />.metric: rmse","mean - std_err: 95.6868016<br />mean + std_err: 105.1063714<br />penalty: 1.025238e-04<br />mean: 100.3965865<br />.metric: rmse","mean - std_err: 95.6835810<br />mean + std_err: 105.0998519<br />penalty: 3.393359e-01<br />mean: 100.3917165<br />.metric: rmse","mean - std_err: 95.6875325<br />mean + std_err: 105.1069721<br />penalty: 4.088798e-02<br />mean: 100.3972523<br />.metric: rmse","mean - std_err: 95.6853804<br />mean + std_err: 105.1046870<br />penalty: 1.544590e-06<br />mean: 100.3950337<br />.metric: rmse","mean - std_err: 95.6875537<br />mean + std_err: 105.1069891<br />penalty: 4.412942e-05<br />mean: 100.3972714<br />.metric: rmse","mean - std_err: 95.6866096<br />mean + std_err: 105.1059749<br />penalty: 1.302458e-10<br />mean: 100.3962923<br />.metric: rmse","mean - std_err: 95.6875712<br />mean + std_err: 105.1070014<br />penalty: 5.454643e-10<br />mean: 100.3972863<br />.metric: rmse","mean - std_err: 95.6867297<br />mean + std_err: 105.1060699<br />penalty: 6.010553e-04<br />mean: 100.3963998<br />.metric: rmse","mean - std_err: 95.6875881<br />mean + std_err: 105.1070150<br />penalty: 8.281804e-08<br />mean: 100.3973016<br />.metric: rmse"],"type":"scatter","mode":"lines","opacity":0.5,"line":{"color":"transparent"},"error_y":{"array":[4.70826846467851,4.7083510163564,4.70839700419947,4.70922227333482,4.70977309806065,4.71310425104221,4.70912005638296,4.70975994922388,4.70968677635153,4.70919596846306,4.70975687166664,4.70978489246686,4.70813544011487,4.70971977875499,4.70965328837855,4.70971766815656,4.70968264337201,4.70971508108295,4.7096700757811,4.70971343337298],"arrayminus":[4.70826846467851,4.7083510163564,4.70839700419947,4.70922227333482,4.70977309806065,4.71310425104221,4.70912005638296,4.70975994922388,4.70968677635153,4.70919596846306,4.70975687166664,4.70978489246686,4.70813544011487,4.70971977875499,4.70965328837855,4.70971766815656,4.70968264337201,4.70971508108295,4.7096700757811,4.70971343337298],"type":"data","width":0.840854710127319,"symmetric":false,"color":"rgba(0,191,196,1)"},"name":"rmse","legendgroup":"rmse","showlegend":true,"xaxis":"x3","yaxis":"y3","hoverinfo":"text","frame":null},{"x":[-2.61183278867975,-8.01016299519688,-9.67155081918463,-5.02131110057235,-6.73895750660449,-0.491607449948788,-0.469370170030743,-1.38840439496562,-2.05140436068177,-0.211572973057628,-5.81118678441271,-4.35527180321515,-6.1153273191303,-7.40551540395245,-9.88523631589487,-9.26323365420103,-9.41022143932059,-3.9891752274707,-3.2210855348967,-7.0818750676699],"y":[0.333615817711152,0.333675626439165,0.333594197479931,0.333660808965267,0.333601473183167,0.333653911501748,0.333619340452359,0.33355300670974,0.333557931462515,0.333498394468377,0.333582126679614,0.333552837008746,0.333556547962977,0.333572264490051,0.333563634705436,0.333552709086324,0.333556291242481,0.333558929251638,0.333562705385924,0.33355257363346],"text":["mean - std_err:  0.3112114<br />mean + std_err:   0.3560203<br />penalty: 2.444371e-03<br />mean:   0.3336158<br />.metric: rsq","mean - std_err:  0.3112748<br />mean + std_err:   0.3560765<br />penalty: 9.768705e-09<br />mean:   0.3336756<br />.metric: rsq","mean - std_err:  0.3111945<br />mean + std_err:   0.3559939<br />penalty: 2.130341e-10<br />mean:   0.3335942<br />.metric: rsq","mean - std_err:  0.3112626<br />mean + std_err:   0.3560590<br />penalty: 9.521139e-06<br />mean:   0.3336608<br />.metric: rsq","mean - std_err:  0.3112019<br />mean + std_err:   0.3560010<br />penalty: 1.824074e-07<br />mean:   0.3336015<br />.metric: rsq","mean - std_err:  0.3112549<br />mean + std_err:   0.3560529<br />penalty: 3.223982e-01<br />mean:   0.3336539<br />.metric: rsq","mean - std_err:  0.3112284<br />mean + std_err:   0.3560103<br />penalty: 3.393359e-01<br />mean:   0.3336193<br />.metric: rsq","mean - std_err:  0.3111587<br />mean + std_err:   0.3559474<br />penalty: 4.088798e-02<br />mean:   0.3335530<br />.metric: rsq","mean - std_err:  0.3111598<br />mean + std_err:   0.3559561<br />penalty: 8.883736e-03<br />mean:   0.3335579<br />.metric: rsq","mean - std_err:  0.3108663<br />mean + std_err:   0.3561305<br />penalty: 6.143658e-01<br />mean:   0.3334984<br />.metric: rsq","mean - std_err:  0.3111853<br />mean + std_err:   0.3559789<br />penalty: 1.544590e-06<br />mean:   0.3335821<br />.metric: rsq","mean - std_err:  0.3111586<br />mean + std_err:   0.3559471<br />penalty: 4.412942e-05<br />mean:   0.3335528<br />.metric: rsq","mean - std_err:  0.3111594<br />mean + std_err:   0.3559537<br />penalty: 7.667834e-07<br />mean:   0.3335565<br />.metric: rsq","mean - std_err:  0.3111786<br />mean + std_err:   0.3559659<br />penalty: 3.930833e-08<br />mean:   0.3335723<br />.metric: rsq","mean - std_err:  0.3111660<br />mean + std_err:   0.3559612<br />penalty: 1.302458e-10<br />mean:   0.3335636<br />.metric: rsq","mean - std_err:  0.3111586<br />mean + std_err:   0.3559468<br />penalty: 5.454643e-10<br />mean:   0.3335527<br />.metric: rsq","mean - std_err:  0.3111594<br />mean + std_err:   0.3559532<br />penalty: 3.888468e-10<br />mean:   0.3335563<br />.metric: rsq","mean - std_err:  0.3111600<br />mean + std_err:   0.3559578<br />penalty: 1.025238e-04<br />mean:   0.3335589<br />.metric: rsq","mean - std_err:  0.3111659<br />mean + std_err:   0.3559595<br />penalty: 6.010553e-04<br />mean:   0.3335627<br />.metric: rsq","mean - std_err:  0.3111586<br />mean + std_err:   0.3559466<br />penalty: 8.281804e-08<br />mean:   0.3335526<br />.metric: rsq"],"type":"scatter","mode":"lines","opacity":0.5,"line":{"color":"transparent"},"error_y":{"array":[0.0224044513081535,0.0224008348550097,0.0223997033278586,0.0223981948931455,0.0223995715287189,0.0223989835575236,0.0223909807862237,0.0223943544982826,0.022398127662636,0.0226320931232349,0.0223967929149255,0.022394220758502,0.0223971192763658,0.0223936273052682,0.022397613897751,0.0223941021853889,0.0223969179010508,0.0223989097665495,0.0223968161499105,0.0223939960667245],"arrayminus":[0.0224044513081535,0.0224008348550097,0.0223997033278586,0.0223981948931455,0.0223995715287189,0.0223989835575236,0.0223909807862237,0.0223943544982826,0.022398127662636,0.0226320931232349,0.0223967929149255,0.022394220758502,0.0223971192763658,0.0223936273052682,0.022397613897751,0.0223941021853889,0.0223969179010508,0.0223989097665495,0.0223968161499105,0.0223939960667245],"type":"data","width":0.840854710127319,"symmetric":false,"color":"rgba(199,124,255,1)"},"name":"rsq","legendgroup":"rsq","showlegend":true,"xaxis":"x4","yaxis":"y4","hoverinfo":"text","frame":null},{"x":[-9.88523631589487,-9.67155081918463,-9.41022143932059,-9.26323365420103,-8.01016299519688,-7.40551540395245,-7.0818750676699,-6.73895750660449,-6.1153273191303,-5.81118678441271,-5.02131110057235,-4.35527180321515,-3.9891752274707,-3.2210855348967,-2.61183278867975,-2.05140436068177,-1.38840439496562,-0.491607449948788,-0.469370170030743,-0.211572973057628],"y":[57.9161996085523,57.9185637025895,57.9138887316118,57.914550517768,57.931134853137,57.9142265364485,57.9145764771546,57.9167220547325,57.9138393571598,57.9158936685986,57.9293367318371,57.9145233865571,57.913389540907,57.9163898201519,57.9171936013485,57.9135818292922,57.9144906162053,57.924285798738,57.9111568944868,57.7924214917281],"text":["penalty: 1.302458e-10<br />mean:  57.9161996<br />.metric: mae","penalty: 2.130341e-10<br />mean:  57.9185637<br />.metric: mae","penalty: 3.888468e-10<br />mean:  57.9138887<br />.metric: mae","penalty: 5.454643e-10<br />mean:  57.9145505<br />.metric: mae","penalty: 9.768705e-09<br />mean:  57.9311349<br />.metric: mae","penalty: 3.930833e-08<br />mean:  57.9142265<br />.metric: mae","penalty: 8.281804e-08<br />mean:  57.9145765<br />.metric: mae","penalty: 1.824074e-07<br />mean:  57.9167221<br />.metric: mae","penalty: 7.667834e-07<br />mean:  57.9138394<br />.metric: mae","penalty: 1.544590e-06<br />mean:  57.9158937<br />.metric: mae","penalty: 9.521139e-06<br />mean:  57.9293367<br />.metric: mae","penalty: 4.412942e-05<br />mean:  57.9145234<br />.metric: mae","penalty: 1.025238e-04<br />mean:  57.9133895<br />.metric: mae","penalty: 6.010553e-04<br />mean:  57.9163898<br />.metric: mae","penalty: 2.444371e-03<br />mean:  57.9171936<br />.metric: mae","penalty: 8.883736e-03<br />mean:  57.9135818<br />.metric: mae","penalty: 4.088798e-02<br />mean:  57.9144906<br />.metric: mae","penalty: 3.223982e-01<br />mean:  57.9242858<br />.metric: mae","penalty: 3.393359e-01<br />mean:  57.9111569<br />.metric: mae","penalty: 6.143658e-01<br />mean:  57.7924215<br />.metric: mae"],"type":"scatter","mode":"lines","line":{"width":5.66929133858268,"color":"rgba(248,118,109,1)","dash":"solid"},"hoveron":"points","name":"mae","legendgroup":"mae","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[-9.88523631589487,-9.67155081918463,-9.41022143932059,-9.26323365420103,-8.01016299519688,-7.40551540395245,-7.0818750676699,-6.73895750660449,-6.1153273191303,-5.81118678441271,-5.02131110057235,-4.35527180321515,-3.9891752274707,-3.2210855348967,-2.61183278867975,-2.05140436068177,-1.38840439496562,-0.491607449948788,-0.469370170030743,-0.211572973057628],"y":[58.2134254306548,58.2204727669072,58.2080746302426,58.2073895810424,58.2464757540462,58.2076582842504,58.2073671453486,58.2181748007839,58.2081176796068,58.2135074270857,58.2410909591875,58.2074146801766,58.2084928752812,58.2132436782657,58.2219280837904,58.2083247284416,58.2074426505616,58.2334463249039,58.212333639918,58.1982481179774],"text":["penalty: 1.302458e-10<br />mean:  58.2134254<br />.metric: mape","penalty: 2.130341e-10<br />mean:  58.2204728<br />.metric: mape","penalty: 3.888468e-10<br />mean:  58.2080746<br />.metric: mape","penalty: 5.454643e-10<br />mean:  58.2073896<br />.metric: mape","penalty: 9.768705e-09<br />mean:  58.2464758<br />.metric: mape","penalty: 3.930833e-08<br />mean:  58.2076583<br />.metric: mape","penalty: 8.281804e-08<br />mean:  58.2073671<br />.metric: mape","penalty: 1.824074e-07<br />mean:  58.2181748<br />.metric: mape","penalty: 7.667834e-07<br />mean:  58.2081177<br />.metric: mape","penalty: 1.544590e-06<br />mean:  58.2135074<br />.metric: mape","penalty: 9.521139e-06<br />mean:  58.2410910<br />.metric: mape","penalty: 4.412942e-05<br />mean:  58.2074147<br />.metric: mape","penalty: 1.025238e-04<br />mean:  58.2084929<br />.metric: mape","penalty: 6.010553e-04<br />mean:  58.2132437<br />.metric: mape","penalty: 2.444371e-03<br />mean:  58.2219281<br />.metric: mape","penalty: 8.883736e-03<br />mean:  58.2083247<br />.metric: mape","penalty: 4.088798e-02<br />mean:  58.2074427<br />.metric: mape","penalty: 3.223982e-01<br />mean:  58.2334463<br />.metric: mape","penalty: 3.393359e-01<br />mean:  58.2123336<br />.metric: mape","penalty: 6.143658e-01<br />mean:  58.1982481<br />.metric: mape"],"type":"scatter","mode":"lines","line":{"width":5.66929133858268,"color":"rgba(124,174,0,1)","dash":"solid"},"hoveron":"points","name":"mape","legendgroup":"mape","showlegend":false,"xaxis":"x2","yaxis":"y2","hoverinfo":"text","frame":null},{"x":[-9.88523631589487,-9.67155081918463,-9.41022143932059,-9.26323365420103,-8.01016299519688,-7.40551540395245,-7.0818750676699,-6.73895750660449,-6.1153273191303,-5.81118678441271,-5.02131110057235,-4.35527180321515,-3.9891752274707,-3.2210855348967,-2.61183278867975,-2.05140436068177,-1.38840439496562,-0.491607449948788,-0.469370170030743,-0.211572973057628],"y":[100.396292260526,100.393561588344,100.396880338242,100.397286316101,100.38679953557,100.395904065993,100.397301577167,100.393145582647,100.396851414722,100.395033685257,100.388087013916,100.397271410494,100.396586486826,100.396399823602,100.391864582442,100.396698887382,100.397252276719,100.388807759695,100.391716461754,100.391940998547],"text":["penalty: 1.302458e-10<br />mean: 100.3962923<br />.metric: rmse","penalty: 2.130341e-10<br />mean: 100.3935616<br />.metric: rmse","penalty: 3.888468e-10<br />mean: 100.3968803<br />.metric: rmse","penalty: 5.454643e-10<br />mean: 100.3972863<br />.metric: rmse","penalty: 9.768705e-09<br />mean: 100.3867995<br />.metric: rmse","penalty: 3.930833e-08<br />mean: 100.3959041<br />.metric: rmse","penalty: 8.281804e-08<br />mean: 100.3973016<br />.metric: rmse","penalty: 1.824074e-07<br />mean: 100.3931456<br />.metric: rmse","penalty: 7.667834e-07<br />mean: 100.3968514<br />.metric: rmse","penalty: 1.544590e-06<br />mean: 100.3950337<br />.metric: rmse","penalty: 9.521139e-06<br />mean: 100.3880870<br />.metric: rmse","penalty: 4.412942e-05<br />mean: 100.3972714<br />.metric: rmse","penalty: 1.025238e-04<br />mean: 100.3965865<br />.metric: rmse","penalty: 6.010553e-04<br />mean: 100.3963998<br />.metric: rmse","penalty: 2.444371e-03<br />mean: 100.3918646<br />.metric: rmse","penalty: 8.883736e-03<br />mean: 100.3966989<br />.metric: rmse","penalty: 4.088798e-02<br />mean: 100.3972523<br />.metric: rmse","penalty: 3.223982e-01<br />mean: 100.3888078<br />.metric: rmse","penalty: 3.393359e-01<br />mean: 100.3917165<br />.metric: rmse","penalty: 6.143658e-01<br />mean: 100.3919410<br />.metric: rmse"],"type":"scatter","mode":"lines","line":{"width":5.66929133858268,"color":"rgba(0,191,196,1)","dash":"solid"},"hoveron":"points","name":"rmse","legendgroup":"rmse","showlegend":false,"xaxis":"x3","yaxis":"y3","hoverinfo":"text","frame":null},{"x":[-9.88523631589487,-9.67155081918463,-9.41022143932059,-9.26323365420103,-8.01016299519688,-7.40551540395245,-7.0818750676699,-6.73895750660449,-6.1153273191303,-5.81118678441271,-5.02131110057235,-4.35527180321515,-3.9891752274707,-3.2210855348967,-2.61183278867975,-2.05140436068177,-1.38840439496562,-0.491607449948788,-0.469370170030743,-0.211572973057628],"y":[0.333563634705436,0.333594197479931,0.333556291242481,0.333552709086324,0.333675626439165,0.333572264490051,0.33355257363346,0.333601473183167,0.333556547962977,0.333582126679614,0.333660808965267,0.333552837008746,0.333558929251638,0.333562705385924,0.333615817711152,0.333557931462515,0.33355300670974,0.333653911501748,0.333619340452359,0.333498394468377],"text":["penalty: 1.302458e-10<br />mean:   0.3335636<br />.metric: rsq","penalty: 2.130341e-10<br />mean:   0.3335942<br />.metric: rsq","penalty: 3.888468e-10<br />mean:   0.3335563<br />.metric: rsq","penalty: 5.454643e-10<br />mean:   0.3335527<br />.metric: rsq","penalty: 9.768705e-09<br />mean:   0.3336756<br />.metric: rsq","penalty: 3.930833e-08<br />mean:   0.3335723<br />.metric: rsq","penalty: 8.281804e-08<br />mean:   0.3335526<br />.metric: rsq","penalty: 1.824074e-07<br />mean:   0.3336015<br />.metric: rsq","penalty: 7.667834e-07<br />mean:   0.3335565<br />.metric: rsq","penalty: 1.544590e-06<br />mean:   0.3335821<br />.metric: rsq","penalty: 9.521139e-06<br />mean:   0.3336608<br />.metric: rsq","penalty: 4.412942e-05<br />mean:   0.3335528<br />.metric: rsq","penalty: 1.025238e-04<br />mean:   0.3335589<br />.metric: rsq","penalty: 6.010553e-04<br />mean:   0.3335627<br />.metric: rsq","penalty: 2.444371e-03<br />mean:   0.3336158<br />.metric: rsq","penalty: 8.883736e-03<br />mean:   0.3335579<br />.metric: rsq","penalty: 4.088798e-02<br />mean:   0.3335530<br />.metric: rsq","penalty: 3.223982e-01<br />mean:   0.3336539<br />.metric: rsq","penalty: 3.393359e-01<br />mean:   0.3336193<br />.metric: rsq","penalty: 6.143658e-01<br />mean:   0.3334984<br />.metric: rsq"],"type":"scatter","mode":"lines","line":{"width":5.66929133858268,"color":"rgba(199,124,255,1)","dash":"solid"},"hoveron":"points","name":"rsq","legendgroup":"rsq","showlegend":false,"xaxis":"x4","yaxis":"y4","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":37.9178082191781,"r":7.30593607305936,"b":40.1826484018265,"l":37.2602739726027},"plot_bgcolor":"rgba(235,235,235,1)","paper_bgcolor":"rgba(255,255,255,1)","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"xaxis":{"domain":[0,0.479244499792445],"automargin":true,"type":"linear","autorange":false,"range":[-10.3799269365962,0.283117647643667],"tickmode":"array","ticktext":["1e-08","1e-05","1e-02"],"tickvals":[-8,-5,-2],"categoryorder":"array","categoryarray":["1e-08","1e-05","1e-02"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.65296803652968,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(255,255,255,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y","title":"","hoverformat":".2f"},"annotations":[{"text":"penalty","x":0.5,"y":-0.0176940639269406,"showarrow":false,"ax":0,"ay":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"xref":"paper","yref":"paper","textangle":-0,"xanchor":"center","yanchor":"top","annotationType":"axis"},{"text":"mean","x":-0.0126386170906719,"y":0.5,"showarrow":false,"ax":0,"ay":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"xref":"paper","yref":"paper","textangle":-90,"xanchor":"right","yanchor":"center","annotationType":"axis"},{"text":"mae","x":0.239622249896222,"y":1,"showarrow":false,"ax":0,"ay":0,"font":{"color":"rgba(26,26,26,1)","family":"","size":11.689497716895},"xref":"paper","yref":"paper","textangle":-0,"xanchor":"center","yanchor":"bottom"},{"text":"mape","x":0.760377750103778,"y":1,"showarrow":false,"ax":0,"ay":0,"font":{"color":"rgba(26,26,26,1)","family":"","size":11.689497716895},"xref":"paper","yref":"paper","textangle":-0,"xanchor":"center","yanchor":"bottom"},{"text":"rmse","x":0.239622249896222,"y":0.475508509755085,"showarrow":false,"ax":0,"ay":0,"font":{"color":"rgba(26,26,26,1)","family":"","size":11.689497716895},"xref":"paper","yref":"paper","textangle":-0,"xanchor":"center","yanchor":"bottom"},{"text":"rsq","x":0.760377750103778,"y":0.475508509755085,"showarrow":false,"ax":0,"ay":0,"font":{"color":"rgba(26,26,26,1)","family":"","size":11.689497716895},"xref":"paper","yref":"paper","textangle":-0,"xanchor":"center","yanchor":"bottom"}],"yaxis":{"domain":[0.524491490244915,1],"automargin":true,"type":"linear","autorange":false,"range":[55.8028739416684,59.9116226098812],"tickmode":"array","ticktext":["56","57","58","59"],"tickvals":[56,57,58,59],"categoryorder":"array","categoryarray":["56","57","58","59"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.65296803652968,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(255,255,255,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"x","title":"","hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":0.479244499792445,"y0":0.524491490244915,"y1":1},{"type":"rect","fillcolor":"rgba(217,217,217,1)","line":{"color":"transparent","width":0.66417600664176,"linetype":"solid"},"yref":"paper","xref":"paper","x0":0,"x1":0.479244499792445,"y0":0,"y1":23.37899543379,"yanchor":1,"ysizemode":"pixel"},{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0.520755500207555,"x1":1,"y0":0.524491490244915,"y1":1},{"type":"rect","fillcolor":"rgba(217,217,217,1)","line":{"color":"transparent","width":0.66417600664176,"linetype":"solid"},"yref":"paper","xref":"paper","x0":0.520755500207555,"x1":1,"y0":0,"y1":23.37899543379,"yanchor":1,"ysizemode":"pixel"},{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":0.479244499792445,"y0":0,"y1":0.475508509755085},{"type":"rect","fillcolor":"rgba(217,217,217,1)","line":{"color":"transparent","width":0.66417600664176,"linetype":"solid"},"yref":"paper","xref":"paper","x0":0,"x1":0.479244499792445,"y0":0,"y1":23.37899543379,"yanchor":0.475508509755085,"ysizemode":"pixel"},{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0.520755500207555,"x1":1,"y0":0,"y1":0.475508509755085},{"type":"rect","fillcolor":"rgba(217,217,217,1)","line":{"color":"transparent","width":0.66417600664176,"linetype":"solid"},"yref":"paper","xref":"paper","x0":0.520755500207555,"x1":1,"y0":0,"y1":23.37899543379,"yanchor":0.475508509755085,"ysizemode":"pixel"}],"xaxis2":{"type":"linear","autorange":false,"range":[-10.3799269365962,0.283117647643667],"tickmode":"array","ticktext":["1e-08","1e-05","1e-02"],"tickvals":[-8,-5,-2],"categoryorder":"array","categoryarray":["1e-08","1e-05","1e-02"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.65296803652968,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"domain":[0.520755500207555,1],"gridcolor":"rgba(255,255,255,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y2","title":"","hoverformat":".2f"},"yaxis2":{"type":"linear","autorange":false,"range":[56.3207898179431,60.0757064180118],"tickmode":"array","ticktext":["57","58","59","60"],"tickvals":[57,58,59,60],"categoryorder":"array","categoryarray":["57","58","59","60"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.65296803652968,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"domain":[0.524491490244915,1],"gridcolor":"rgba(255,255,255,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"x2","title":"","hoverformat":".2f"},"xaxis3":{"type":"linear","autorange":false,"range":[-10.3799269365962,0.283117647643667],"tickmode":"array","ticktext":["1e-08","1e-05","1e-02"],"tickvals":[-8,-5,-2],"categoryorder":"array","categoryarray":["1e-08","1e-05","1e-02"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.65296803652968,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"domain":[0,0.479244499792445],"gridcolor":"rgba(255,255,255,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y3","title":"","hoverformat":".2f"},"yaxis3":{"type":"linear","autorange":false,"range":[95.207106873909,105.578439207522],"tickmode":"array","ticktext":["97.5","100.0","102.5","105.0"],"tickvals":[97.5,100,102.5,105],"categoryorder":"array","categoryarray":["97.5","100.0","102.5","105.0"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.65296803652968,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"domain":[0,0.475508509755085],"gridcolor":"rgba(255,255,255,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"x3","title":"","hoverformat":".2f"},"xaxis4":{"type":"linear","autorange":false,"range":[-10.3799269365962,0.283117647643667],"tickmode":"array","ticktext":["1e-08","1e-05","1e-02"],"tickvals":[-8,-5,-2],"categoryorder":"array","categoryarray":["1e-08","1e-05","1e-02"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.65296803652968,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"domain":[0.520755500207555,1],"gridcolor":"rgba(255,255,255,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y4","title":"","hoverformat":".2f"},"yaxis4":{"type":"linear","autorange":false,"range":[0.308603092032818,0.358393696903935],"tickmode":"array","ticktext":["0.31","0.32","0.33","0.34","0.35"],"tickvals":[0.31,0.32,0.33,0.34,0.35],"categoryorder":"array","categoryarray":["0.31","0.32","0.33","0.34","0.35"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.65296803652968,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"domain":[0,0.475508509755085],"gridcolor":"rgba(255,255,255,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"x4","title":"","hoverformat":".2f"},"showlegend":false,"legend":{"bgcolor":"rgba(255,255,255,1)","bordercolor":"transparent","borderwidth":1.88976377952756,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.689497716895}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","showSendToCloud":false},"source":"A","attrs":{"1e6c0ffc39d8":{"ymin":{},"ymax":{},"x":{},"y":{},"colour":{},"type":"scatter"},"1e6c011875db7":{"x":{},"y":{},"colour":{}}},"cur_data":"1e6c0ffc39d8","visdat":{"1e6c0ffc39d8":["function (y) ","x"],"1e6c011875db7":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
 
 ``` r
 glm_result %>%
@@ -1598,8 +1409,8 @@ glm_ply <- ggplotly(glm_p, tooltip = c('text'))
 widgetframe::frameWidget(glm_ply)
 ```
 
-<div id="htmlwidget-11" style="width:100%;height:480px;" class="widgetframe html-widget"></div>
-<script type="application/json" data-for="htmlwidget-11">{"x":{"url":"index_files/figure-html//widgets/widget_unnamed-chunk-51.html","options":{"xdomain":"*","allowfullscreen":false,"lazyload":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-8" style="width:100%;height:480px;" class="widgetframe html-widget"></div>
+<script type="application/json" data-for="htmlwidget-8">{"x":{"url":"index_files/figure-html//widgets/widget_unnamed-chunk-51.html","options":{"xdomain":"*","allowfullscreen":false,"lazyload":false}},"evals":[],"jsHooks":[]}</script>
 
 Finally we use the trained model to predict the test set and plot the Rsquared plot.
 
@@ -1621,8 +1432,8 @@ pred_ply2 <- ggplotly(pred_p)
 widgetframe::frameWidget(pred_ply2)
 ```
 
-<div id="htmlwidget-12" style="width:100%;height:480px;" class="widgetframe html-widget"></div>
-<script type="application/json" data-for="htmlwidget-12">{"x":{"url":"index_files/figure-html//widgets/widget_unnamed-chunk-52.html","options":{"xdomain":"*","allowfullscreen":false,"lazyload":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-9" style="width:100%;height:480px;" class="widgetframe html-widget"></div>
+<script type="application/json" data-for="htmlwidget-9">{"x":{"url":"index_files/figure-html//widgets/widget_unnamed-chunk-52.html","options":{"xdomain":"*","allowfullscreen":false,"lazyload":false}},"evals":[],"jsHooks":[]}</script>
 
 ``` r
 final_metric_glm <- collect_metrics(final_fit_glm)
@@ -1740,8 +1551,8 @@ viz_tree <- visNetwork::visTree(final_tree_fit$fit)
 widgetframe::frameWidget(viz_tree)
 ```
 
-<div id="htmlwidget-13" style="width:100%;height:600px;" class="widgetframe html-widget"></div>
-<script type="application/json" data-for="htmlwidget-13">{"x":{"url":"index_files/figure-html//widgets/widget_unnamed-chunk-54.html","options":{"xdomain":"*","allowfullscreen":false,"lazyload":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-10" style="width:100%;height:600px;" class="widgetframe html-widget"></div>
+<script type="application/json" data-for="htmlwidget-10">{"x":{"url":"index_files/figure-html//widgets/widget_unnamed-chunk-54.html","options":{"xdomain":"*","allowfullscreen":false,"lazyload":false}},"evals":[],"jsHooks":[]}</script>
 
 ``` r
 final_fit_tree <- last_fit(final_tree_wf,
@@ -1925,7 +1736,7 @@ final_metric_rf <- final_fit_rf %>%
 toc()
 ```
 
-    ## RF timing: 159.82 sec elapsed
+    ## RF timing: 96.84 sec elapsed
 
 ## 5.11 Boosted tree
 
@@ -1964,11 +1775,10 @@ xgb_p <- xgboost_result %>%
   scale_x_log10(labels = scales::label_number()) +
   theme_light()
 xgb_ply <- ggplotly(xgb_p)
-widgetframe::frameWidget(xgb_ply)
 ```
 
-<div id="htmlwidget-14" style="width:100%;height:480px;" class="widgetframe html-widget"></div>
-<script type="application/json" data-for="htmlwidget-14">{"x":{"url":"index_files/figure-html//widgets/widget_unnamed-chunk-56.html","options":{"xdomain":"*","allowfullscreen":false,"lazyload":false}},"evals":[],"jsHooks":[]}</script>
+<iframe seamless src="html/xgb_ply.html" width="100%" height="500">
+</iframe>
 
 ``` r
 xgboost_result %>%
@@ -2001,7 +1811,7 @@ final_xgboost %>%
   vip()
 ```
 
-<img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-56-2.png" width="672" />
+<img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-57-1.png" width="672" />
 
 ``` r
 final_fit_xgboost <- last_fit(final_xgboost_wf,
@@ -2019,14 +1829,14 @@ final_fit_xgboost %>%
        y = paste0("Predicted ", targetVar))
 ```
 
-<img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-56-3.png" width="672" />
+<img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-57-2.png" width="672" />
 
 ``` r
 final_metric_xgb <- collect_metrics(final_fit_xgboost)
 toc()
 ```
 
-    ## xgboost timing: 331.42 sec elapsed
+    ## xgboost timing: 299.22 sec elapsed
 
 ## 5.12 Collect all metric
 
@@ -2049,11 +1859,10 @@ metric_p <- final_metric_lm %>%
   theme(axis.title.x = element_blank(),
         panel.spacing.y = unit(2, "lines"))
 metric_ply <- ggplotly(metric_p, tooltip = c("text"))
-widgetframe::frameWidget(metric_ply)
 ```
 
-<div id="htmlwidget-15" style="width:100%;height:1152px;" class="widgetframe html-widget"></div>
-<script type="application/json" data-for="htmlwidget-15">{"x":{"url":"index_files/figure-html//widgets/widget_unnamed-chunk-57.html","options":{"xdomain":"*","allowfullscreen":false,"lazyload":false}},"evals":[],"jsHooks":[]}</script>
+<iframe seamless src="html/metric_ply.html" width="100%" height="500">
+</iframe>
 
 # 6. Summary
 
@@ -2061,7 +1870,7 @@ The proposed dashboard will cover the predictive analytics steps described above
 
 <div class="figure" style="text-align: center">
 
-<img src="images/sketch1.jpg" alt="Data splitting and feature selection" width="1048" />
+<img src="images/sketch1.jpg" alt="Data splitting and feature selection" width="200" />
 <p class="caption">
 Figure 14: Data splitting and feature selection
 </p>
@@ -2070,7 +1879,7 @@ Figure 14: Data splitting and feature selection
 
 <div class="figure" style="text-align: center">
 
-<img src="images/sketch2.jpg" alt="Data transformation and model training" width="1408" />
+<img src="images/sketch2.jpg" alt="Data transformation and model training" width="220" />
 <p class="caption">
 Figure 15: Data transformation and model training
 </p>
@@ -2079,7 +1888,7 @@ Figure 15: Data transformation and model training
 
 <div class="figure" style="text-align: center">
 
-<img src="images/sketch3.jpg" alt="Model comparison" width="1458" />
+<img src="images/sketch3.jpg" alt="Model comparison" width="250" />
 <p class="caption">
 Figure 16: Model comparison
 </p>
