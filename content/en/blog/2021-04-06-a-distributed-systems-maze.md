@@ -13,11 +13,11 @@ The most exciting applications coming out these days are the ones that aim big &
 
 Of course, it's easy to get lost in the maze of algorithms, protocols, and terminology related to distributed systems. It's a complex topic and there are a lot of good approaches, most of which leverage strategic optimizations that further confuse the underlying principles.
 
-Most of the talented engineers and technical executives I know get lost in the details of two fundamental concepts: **coordination** and **consistency**. In the post, we'll take a look at distributed systems through a metaphor &mdash; a robot stuck in a maze &mdash; to illustrate why coordination is necessary (and difficult!), and what exactly creates consistency issues. A bit fanciful? Sure, but hard to forget!
+Most of the talented engineers and technical executives I know get lost in the details of two fundamental concepts: **coordination** and **consistency**. In this post, we'll take a look at distributed systems through a metaphor &mdash; a robot stuck in a maze &mdash; to illustrate why coordination is necessary (and difficult!), and what exactly creates consistency issues. A bit fanciful? Sure, but hard to forget!
 
 ## Coordination
 
-Imagine there are two robots trying to find their way through the same exact maze in two different buildings. Successfully completing the task requires both robots to leave the maze as quickly as possible and there is only one path that leads to the exit. The robots can communicate with each other and with human controllers that give that give commands to the robot remotely.
+Imagine there are two robots trying to find their way through the same exact maze in two different buildings. Successfully completing the task requires both robots to leave the maze as quickly as possible and there is only one path that leads to the exit. The robots can communicate with each other and with human controllers that give commands to the robot remotely.
 
 Let's make the commands purposefully simple - the human controllers can tell their robots to turn left or right, move forward or backward, or to take and send a picture from the forward facing camera. Robots can only execute one command at a time and by default, they execute the commands in the order they receive them.
 
