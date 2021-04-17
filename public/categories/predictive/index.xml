@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>predictive on Our Shiny PET</title>
+    <link>https://ourshinypet.netlify.app/categories/predictive/</link>
+    <description>Recent content in predictive on Our Shiny PET</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Copyright &amp;copy; 2020 Designed by [Themefisher](https://themefisher.com) &amp; Developed by [Gethugothemes](https://gethugothemes.com)</copyright>
+    <lastBuildDate>Sat, 10 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://ourshinypet.netlify.app/categories/predictive/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Predictive - prototype test</title>
+      <link>https://ourshinypet.netlify.app/blog/predictive/</link>
+      <pubDate>Sat, 10 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://ourshinypet.netlify.app/blog/predictive/</guid>
+      <description>Prototype testing for the Predictive module for OurShinyPET How visual analytics technique can be used to complement predictive analytics.</description>
+    </item>
+    
+  </channel>
+</rss>

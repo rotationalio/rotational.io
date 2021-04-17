@@ -21,7 +21,6 @@ knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = TRUE)
 
 # Prototype testing for the Exploratory module for OurShinyPET
 
-This was written as part of the requirements for the Visual Analytics module for MITB.
 
 by [Su Yiin Ang](https://suyiinang.netlify.app/)
 
@@ -35,7 +34,7 @@ The increasing availability of data has resulted in increased demand for data dr
 
 The `Shiny` package of R provides an interface to build interactive web applications using R language. Furthermore, Shiny provides for fully interactive visualisation with its reactive functions, while retaining the statistical framework of R.
 
-Here, we aim to develop an application that is **user-friendly and interactive** [R Shiny](https://shiny.rstudio.com/) that would enable everyone to make data based decisions **without** needing programming, statistical backgrounds or expensive subscriptions.  
+Here, we aim to develop an application that is **user-friendly and interactive** [R Shiny](https://shiny.rstudio.com/) that would enable everyone to make data based decisions **without** needing programming, statistical backgrounds or expensive subscriptions.
 
 We have selected Airbnb data as a base case given its extensive data (i.e location, pricing, host status, etc.). With this application, users (host, visitors) can analyse their needs to compare across other listings. There are three parts to this shiny application - Text Mining, Exploratory and Confirmatory, and Predictive Analytics. 
 
@@ -254,12 +253,15 @@ all <- DT::datatable(sum_data)
 n <- DT::datatable(sum_n)
 f <- DT::datatable(sum_f)
 
-
-widgetframe::frameWidget(all)
-widgetframe::frameWidget(n)
-widgetframe::frameWidget(f)
-
 ```
+
+<iframe seamless src="html/all.html" width="100%" height="500"></iframe>
+
+
+<iframe seamless src="html/n.html" width="100%" height="500"></iframe>
+
+
+<iframe seamless src="html/f.html" width="100%" height="500"></iframe>
 
 
 ### 4.2 Plotting univariate charts

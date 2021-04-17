@@ -1,0 +1,1871 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+	<meta charset="utf-8">
+	<title>Predictive - prototype test</title>
+
+	<!-- mobile responsive meta -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="description" content="Our Shiny PET">
+	
+	<meta name="generator" content="Hugo 0.82.0" />
+
+	<!-- plugins -->
+	
+	<link rel="stylesheet" href="https://ourshinypet.netlify.app/plugins/bootstrap/bootstrap.min.css">
+	
+	<link rel="stylesheet" href="https://ourshinypet.netlify.app/plugins/themify-icons/themify-icons.css">
+	
+	<link rel="stylesheet" href="https://ourshinypet.netlify.app/plugins/magnific-popup/magnific-popup.css">
+	
+	<link rel="stylesheet" href="https://ourshinypet.netlify.app/plugins/slick/slick.css">
+	
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Anaheim%7cQuattrocento&#43;Sans:400,700&amp;display=swap">
+	
+
+	<!-- Main Stylesheet -->
+	
+	<link rel="stylesheet" href="https://ourshinypet.netlify.app/css/style.min.css" media="screen">
+
+	<!-- Custom stylesheet - for your changes -->
+	
+  <link rel="stylesheet" href="https://ourshinypet.netlify.app/css/custom.min.css" media="screen">
+
+	<!--Favicon-->
+	<link rel="shortcut icon" href="https://ourshinypet.netlify.app/images/favicon.png" type="image/x-icon">
+	<link rel="icon" href="https://ourshinypet.netlify.app/images/favicon.png" type="image/x-icon">
+
+	
+	<!-- Global Site Tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-189162512-2"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-189162512-2');
+	</script>
+	
+    	<script src="/lib/htmlwidgets-1.0/htmlwidgets.js"></script>
+    <script src="/lib/jquery-1.12.4/jquery.min.js"></script>
+    <script src="/lib/datatables-binding-0.4/datatables.js"></script>
+    <script src="/lib/dt-core-1.10.16/js/jquery.dataTables.min.js"></script> 
+    <script src="/lib/crosstalk-1.0.0/js/crosstalk.min.js"></script> 
+
+	
+
+</head>
+
+
+<body id="body" data-spy="scroll" data-target=".navbar" data-offset="55">
+  <div id="content">
+    
+
+
+<section class="sticky-top navigation">
+	<div class="container">
+		<nav class="navbar navbar-expand-lg navbar-dark">
+			<a class="navbar-brand p-0" href="/">
+				
+				<img class="lozad" data-src="https://ourshinypet.netlify.app/images/logo.png" alt="Our Shiny PET" height="42">
+				
+			</a>
+
+			<button class="navbar-toggler rounded-0" type="button" data-toggle="collapse" data-target="#navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navigation">
+				<ul class="navbar-nav ml-auto">
+					
+					<li class="nav-item">
+            <a class="nav-link" href="https://ourshinypet.netlify.app#feature">about</a>
+					</li>
+					
+					<li class="nav-item">
+            <a class="nav-link" href="https://ourshinypet.netlify.app#about">feature</a>
+					</li>
+					
+					<li class="nav-item">
+            <a class="nav-link" href="https://ourshinypet.netlify.app#team">team</a>
+					</li>
+					
+					<li class="nav-item">
+            <a class="nav-link" href="https://ourshinypet.netlify.app#blog">blog</a>
+					</li>
+					
+				</ul>
+				
+			</div>
+		</nav>
+	</div>
+</section>
+
+
+<section class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 offset-lg-2 text-center">
+        <h1>Predictive - prototype test</h1>
+        <ul class="list-inline mb-50">
+          <li class="list-inline-item"><a href="/author//"></a></li>
+          <li class="list-inline-item">Saturday, Apr 10, 2021</li>
+        </ul>
+        <img class="img-fluid mb-50 lozad" data-src="https://ourshinypet.netlify.app/images/blog/predictive/predictive.jpg" alt="blog-image">
+      </div>
+      <div class="col-lg-8 offset-lg-2">
+        <div class="post-single-content">
+          <script src="https://ourshinypet.netlify.app/blog/predictive/index_files/htmlwidgets/htmlwidgets.js"></script>
+<script src="https://ourshinypet.netlify.app/blog/predictive/index_files/pymjs/pym.v1.js"></script>
+<script src="https://ourshinypet.netlify.app/blog/predictive/index_files/widgetframe-binding/widgetframe.js"></script>
+<script src="https://ourshinypet.netlify.app/blog/predictive/index_files/htmlwidgets/htmlwidgets.js"></script>
+<script src="https://ourshinypet.netlify.app/blog/predictive/index_files/pymjs/pym.v1.js"></script>
+<script src="https://ourshinypet.netlify.app/blog/predictive/index_files/widgetframe-binding/widgetframe.js"></script>
+<script src="https://ourshinypet.netlify.app/blog/predictive/index_files/htmlwidgets/htmlwidgets.js"></script>
+<script src="https://ourshinypet.netlify.app/blog/predictive/index_files/pymjs/pym.v1.js"></script>
+<script src="https://ourshinypet.netlify.app/blog/predictive/index_files/widgetframe-binding/widgetframe.js"></script>
+<script src="https://ourshinypet.netlify.app/blog/predictive/index_files/htmlwidgets/htmlwidgets.js"></script>
+<script src="https://ourshinypet.netlify.app/blog/predictive/index_files/pymjs/pym.v1.js"></script>
+<script src="https://ourshinypet.netlify.app/blog/predictive/index_files/widgetframe-binding/widgetframe.js"></script>
+<script src="https://ourshinypet.netlify.app/blog/predictive/index_files/htmlwidgets/htmlwidgets.js"></script>
+<script src="https://ourshinypet.netlify.app/blog/predictive/index_files/pymjs/pym.v1.js"></script>
+<script src="https://ourshinypet.netlify.app/blog/predictive/index_files/widgetframe-binding/widgetframe.js"></script>
+<script src="https://ourshinypet.netlify.app/blog/predictive/index_files/htmlwidgets/htmlwidgets.js"></script>
+<script src="https://ourshinypet.netlify.app/blog/predictive/index_files/pymjs/pym.v1.js"></script>
+<script src="https://ourshinypet.netlify.app/blog/predictive/index_files/widgetframe-binding/widgetframe.js"></script>
+<script src="https://ourshinypet.netlify.app/blog/predictive/index_files/htmlwidgets/htmlwidgets.js"></script>
+<script src="https://ourshinypet.netlify.app/blog/predictive/index_files/pymjs/pym.v1.js"></script>
+<script src="https://ourshinypet.netlify.app/blog/predictive/index_files/widgetframe-binding/widgetframe.js"></script>
+<script src="https://ourshinypet.netlify.app/blog/predictive/index_files/htmlwidgets/htmlwidgets.js"></script>
+<script src="https://ourshinypet.netlify.app/blog/predictive/index_files/pymjs/pym.v1.js"></script>
+<script src="https://ourshinypet.netlify.app/blog/predictive/index_files/widgetframe-binding/widgetframe.js"></script>
+<script src="https://ourshinypet.netlify.app/blog/predictive/index_files/htmlwidgets/htmlwidgets.js"></script>
+<script src="https://ourshinypet.netlify.app/blog/predictive/index_files/pymjs/pym.v1.js"></script>
+<script src="https://ourshinypet.netlify.app/blog/predictive/index_files/widgetframe-binding/widgetframe.js"></script>
+<script src="https://ourshinypet.netlify.app/blog/predictive/index_files/htmlwidgets/htmlwidgets.js"></script>
+<script src="https://ourshinypet.netlify.app/blog/predictive/index_files/plotly-binding/plotly.js"></script>
+<script src="https://ourshinypet.netlify.app/blog/predictive/index_files/typedarray/typedarray.min.js"></script>
+<script src="https://ourshinypet.netlify.app/blog/predictive/index_files/jquery/jquery.min.js"></script>
+<link href="https://ourshinypet.netlify.app/blog/predictive/index_files/crosstalk/css/crosstalk.css" rel="stylesheet" />
+<script src="https://ourshinypet.netlify.app/blog/predictive/index_files/crosstalk/js/crosstalk.min.js"></script>
+<link href="https://ourshinypet.netlify.app/blog/predictive/index_files/plotly-htmlwidgets-css/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="https://ourshinypet.netlify.app/blog/predictive/index_files/plotly-main/plotly-latest.min.js"></script>
+<script src="https://ourshinypet.netlify.app/blog/predictive/index_files/htmlwidgets/htmlwidgets.js"></script>
+<script src="https://ourshinypet.netlify.app/blog/predictive/index_files/pymjs/pym.v1.js"></script>
+<script src="https://ourshinypet.netlify.app/blog/predictive/index_files/widgetframe-binding/widgetframe.js"></script>
+<script src="https://ourshinypet.netlify.app/blog/predictive/index_files/htmlwidgets/htmlwidgets.js"></script>
+<script src="https://ourshinypet.netlify.app/blog/predictive/index_files/pymjs/pym.v1.js"></script>
+<script src="https://ourshinypet.netlify.app/blog/predictive/index_files/widgetframe-binding/widgetframe.js"></script>
+<script src="https://ourshinypet.netlify.app/blog/predictive/index_files/htmlwidgets/htmlwidgets.js"></script>
+<script src="https://ourshinypet.netlify.app/blog/predictive/index_files/pymjs/pym.v1.js"></script>
+<script src="https://ourshinypet.netlify.app/blog/predictive/index_files/widgetframe-binding/widgetframe.js"></script>
+<script src="https://ourshinypet.netlify.app/blog/predictive/index_files/htmlwidgets/htmlwidgets.js"></script>
+<script src="https://ourshinypet.netlify.app/blog/predictive/index_files/pymjs/pym.v1.js"></script>
+<script src="https://ourshinypet.netlify.app/blog/predictive/index_files/widgetframe-binding/widgetframe.js"></script>
+<script src="https://ourshinypet.netlify.app/blog/predictive/index_files/htmlwidgets/htmlwidgets.js"></script>
+<script src="https://ourshinypet.netlify.app/blog/predictive/index_files/pymjs/pym.v1.js"></script>
+<script src="https://ourshinypet.netlify.app/blog/predictive/index_files/widgetframe-binding/widgetframe.js"></script>
+<h1 id="prototype-testing-for-the-predictive-module-for-ourshinypet">Prototype testing for the Predictive module for OurShinyPET</h1>
+<p>How visual analytics technique can be used to complement predictive analytics.</p>
+<p>by <a href="https://www.linkedin.com/in/kgalbindo/">Kevin Gunawan Albindo</a></p>
+<hr>
+<h1 id="1-introduction">1. Introduction</h1>
+<p>This assignment will introduce the predictive analytics module from the main Visual Analytics Application (VAA) project on various analysis tools for Airbnb data. We will explore how visual analytics can be used to complement the existing practice of doing predictive analytics in R. There have been examples of different predictive analytics performed on Airbnb data, such as regression and classification. In this assignment, we will use regression and tree-based model to predict listing price as the use case.</p>
+<h1 id="2-predictive-analytics-in-r">2. Predictive analytics in R</h1>
+<p>Predictive analytics attempts to make prediction about a specific outcome based on historical data. It is done by understanding the relationship between variables/predictors to develop a prediction model. In general, predictive analytics comprises several steps:<br>
+a. Data pre-processing<br>
+b. Feature selection<br>
+c. Model training<br>
+d. Model tuning<br>
+e. Validation and model selection<br>
+Once the model is validated, it will deployed to serve the use case and its performance monitored as new data starts to be collected for prediction. However, these 2 last steps are out of the scope and we will focus on the earlier steps.</p>
+<p>Built with the intent to help data scientists to run complex data science algorithms, R is equipped with comprehensive packages which makes it a choice for predictive analytics.</p>
+<h2 id="21-data-pre-processing">2.1 Data pre-processing</h2>
+<p>The availability of framework like <a href="https://www.tidyverse.org/"><code>Tidyverse</code></a> makes data pre-processing activity more tidy and organised, owing to the fact that all packages inside Tidyverse have the same underlying grammar and data structures. In this first step, we explore the data set through exploratory data analysis (EDA) where it is generally supported by statistical summary functions like <code>glimpse</code>, <code>skimr</code>, and <code>summary</code>. To visualise the distribution and characteristics of our variables, <code>ggplot</code> package is used for plotting. Missing data handling and format/type adjustment are also performed to ensure appropriate variables for predictive analysis. Confirmatory data analysis (CDA) is also performed through hypothetical testing, whether a variable has statistically significant relationship related to the response variable. EDA and CDA are covered separately in the exploratory module of our VAA project.</p>
+<h2 id="22-feature-selection">2.2 Feature selection</h2>
+<p>From EDA and CDA, we would have a better understanding of the variables’ distribution and hence their potential to be considered in the prediction model. However, among all the available features in the data set, not all of them are important for prediction task. There are also issue with redundant variables which are not apparent from EDA/CDA alone. There are several methods of feature selection and they are grouped into these 3 methods:</p>
+<ol>
+<li>
+<p>Filter methods<br>
+In this method, statistical test for correlation of features with outcome variable as well as other features are performed as the basis of selection. This helps to avoid multicolinearity which may cause misleading prediction model. Common filter methods are correlation metrics, Anova, and Chi-Squared test. Among other methods, filter method process is independent of any machine learning algorithm.</p>
+</li>
+<li>
+<p>Embedded Methods<br>
+This method refers to model algorithms which have their own built-in feature selection methods such as LASSO regression and random forest.</p>
+</li>
+<li>
+<p>Wrapper Methods<br>
+Wrapper method takes a subset of features and use it to train a model. Based on the training result, we assess which features are important to the model. One of the example of this method is Forward/Backward/Stepwise regression. However, the inherent bias and the availability of alternative method like Recursive Feature Elimination (RFE) and Boruta have made stepwise regression used less for feature selection.</p>
+</li>
+</ol>
+<p>In this module, we will compare <em>Random Forest</em> (embedded method) and <em>Boruta</em> (wrapper method) as 2 ways to perform feature selection, on top of correlation matrix.</p>
+<h2 id="23-model-training-tuning-and-validation">2.3 Model training, tuning, and validation</h2>
+<p>Quite recently, Max Kuhn introduces <a href="https://www.tidymodels.org/"><code>tidymodels</code></a> as a framework with collection of packages for modeling and machine learning. This framework is aligned with the tidyverse principles which means we can expect a tidier and consistent grammar in our predictive analytics process. We will use <code>tidymodels</code> framework for our predictive module.</p>
+<div class="figure" style="text-align: center">
+<p><img src="images/tidymodels_components.jpg" alt="Components of tidymodels" width="390" /></p>
+<p class="caption">
+Figure 1: Components of tidymodels
+</p>
+</div>
+<p><code>tidymodels</code> employ several components in each stage of predictive analytics and the diagram from <a href="https://jhudatascience.org/tidyversecourse/model.html">Johns Hopkins Data Science Lab</a> clearly describe how each component fits into the modeling process: <code>rsample</code> for data splitting, <code>recipe</code> for pre-processing, <code>parsnip</code> for model specification, <code>tune</code> for hyper-parameters tuning, and <code>yardstick</code> for model evaluation.</p>
+<div class="figure" style="text-align: center">
+<p><img src="images/tidymodels_process.jpg" alt="Predictive analytics process using tidymodels" width="150%" /></p>
+<p class="caption">
+Figure 2: Predictive analytics process using tidymodels
+</p>
+</div>
+<h1 id="3-visualisation-in-predictive-analytics">3. Visualisation in predictive analytics</h1>
+<p><a href="https://rlnsanz.github.io/dat/star-pva.pdf"><em>Lu, Y., Garcia, R., Hansen, B., Gleicher, M., &amp; Maciejewski, R. (2017)</em></a> provides a comprehensive summary in Predictive Visual Analytics. The paper discusses how visual analytics systems are implemented as an effort to support predictive analytics process such as feature selection, incremental learning, model comparison and result exploration.</p>
+<p>In this section, more details are provided regarding the steps in predictive analytics and how visualisation can support the decision making in developing a predictive model.</p>
+<h2 id="31-feature-selection">3.1 Feature selection</h2>
+<p>In multivariate analysis, several R packages are available for creating correlation plot such as <code>ggstatsplot, corrplot, GGally, ggcorrplot</code>. For application, the function’s ability to take user argument will provide more flexibility and hence it is preferred. Some arguments that are adjustable for correlation plots are:<br>
+a. display types (shape, value)<br>
+b. display format (full, upper, lower)<br>
+c. clustering method (hierarchical clustering, angular order, principal component)<br>
+d. p-value method (Pearson, Spearman, Kendall)</p>
+<p>For the purpose of verifying the statistical significance of the correlation, the selection of variables, p-value method, and threshold will be made available for customisation by user. Below is an example of interactivity for correlation matrix.</p>
+<div class="figure" style="text-align: center">
+<p><img src="images/correlation_matrix.jpg" alt="Interactivity for creation of correlation matrix" width="150%" /></p>
+<p class="caption">
+Figure 3: Interactivity for creation of correlation matrix
+</p>
+</div>
+<p>For feature importance, we use random forest method from <code>ranger</code> package and <code>Boruta</code> method as comparison for feature importance analysis. The feature will be plotted and sorted according to the importance score.</p>
+<div class="figure" style="text-align: center">
+<p><img src="images/feature_importance.jpg" alt="Feature importance comparison" width="150%" /></p>
+<p class="caption">
+Figure 4: Feature importance comparison
+</p>
+</div>
+<h2 id="32-data-splitting">3.2 Data splitting</h2>
+<p>Before model training, we divide our data into 2 sets, one for training and one for validation/test.</p>
+<div class="figure" style="text-align: center">
+<p><img src="images/train-test_split.jpg" alt="Train-test data splitting proportion" width="150%" /></p>
+<p class="caption">
+Figure 5: Train-test data splitting proportion
+</p>
+</div>
+<p>Apart from setting the proportion of train-test split (e.g. 80-20 ratio), visualisation can show the difference in distribution (if any) between training and test set. This will help in highlighting potential bias in the training data set.</p>
+<div class="figure" style="text-align: center">
+<p><img src="images/train-test_distribution.jpg" alt="Train-test data distribution (numeric)" width="150%" /></p>
+<p class="caption">
+Figure 6: Train-test data distribution (numeric)
+</p>
+</div>
+<div class="figure" style="text-align: center">
+<p><img src="images/train-test_distribution2.jpg" alt="Train-test data distribution (categorical)" width="150%" /></p>
+<p class="caption">
+Figure 7: Train-test data distribution (categorical)
+</p>
+</div>
+<p>Instead of using the training set as it is, we also perform k-fold cross-validation to estimate the performance of our model on unseen data. In this procedure, the training set is shuffled randomly and splitted into <em>k</em> groups. For each unique group, it will be taken as the hold-out/test data set <em>(Note: this hold-out set is part of our training set and not the test set that was created during the initial train-test split)</em> while the rest of the groups are used to train the model. The performance scores are then calculated using <em>k</em> groups as the hold-out set before they are then averaged to get the final score. This method generally helps reducing the model’s bias and over-optimistic estimate.</p>
+<h2 id="33-data-transformation">3.3 Data transformation</h2>
+<p>A series of data transformation such as normalisation, log transform, and one-hot encoding are common steps that are performed before modeling.
+To help user understand the transformation steps performed on the data set, <code>recipe</code> in <code>Tidymodel</code> package allows the steps to be piped like <code>tidyverse</code> syntax, which makes it more organised and clear. A description on what transformation is performed and on what variables will be helpful for the user.</p>
+<div class="figure" style="text-align: center">
+<p><img src="images/recipe_preprocess.jpg" alt="Pre-processing steps applied to the data set" width="150%" /></p>
+<p class="caption">
+Figure 8: Pre-processing steps applied to the data set
+</p>
+</div>
+<p>The transformed variables are also plotted to help user understand the distribution of the variables that will be used for modeling.</p>
+<div class="figure" style="text-align: center">
+<p><img src="images/transformed_var.jpg" alt="Transformed variables" width="150%" /></p>
+<p class="caption">
+Figure 9: Transformed variables
+</p>
+</div>
+<h2 id="34-model-setup">3.4 Model setup</h2>
+<p><code>Tidymodel</code> comes with a selection of models available for performing regression such as <code>glm</code>, <code>decision tree</code>, <code>random forest</code>, and <code>xgboost</code>. We will apply all of these models to find the best performing model that we can use for predicting response variable. This process involves mainly writing the model specification in <code>parsnip</code> syntax and deciding hyper-parameter setting.</p>
+<h2 id="35-model-training">3.5 Model training</h2>
+<p>Once our model is trained, the coefficient of parameters for linear regression can be visualised using <code>ggcoefstats</code> function from <code>ggstatsplot</code> package. However, as will be explained in the later section, <code>ggplot</code>is used instead to provide more flexibility in interaction using <code>plotly</code> wrapper.</p>
+<div class="figure" style="text-align: center">
+<p><img src="images/coeff_regression.jpg" alt="Coefficient of regression plot using _ggplot_" width="150%" /></p>
+<p class="caption">
+Figure 10: Coefficient of regression plot using *ggplot*
+</p>
+</div>
+<p>For tree-based model, we will extract the feature importance using <code>vip</code> package which conveniently plot the features and their importance as a bar chart. This provides a quick summary of which predictors have strong influence in our model.</p>
+<div class="figure" style="text-align: center">
+<p><img src="images/tree_importance.jpg" alt="Feature importance plot using _vip_" width="150%" /></p>
+<p class="caption">
+Figure 11: Feature importance plot using *vip*
+</p>
+</div>
+<h2 id="36-model-tuning-and-selection">3.6 Model tuning and selection</h2>
+<p>Apart from doing cross validation, we want to adjust model hyper-parameters to avoid overfitting of training data. Hyper-parameter like <em>penalty/lambda</em> in regularised linear regression or <em>tree depth</em> and <em>minimum points in a node</em> in decision tree will be automatically tuned using the <code>tune</code> package which is part of the <code>tidymodels</code> universe.</p>
+<p>The tuning process begin with creation of grid which represents the permutation of all hyper-parameters that are to be tuned. Subsequently the model performance will be assessed using different hyper-parameter values which are specified by the grid. Finally, metrics such as <em>R-squared</em>, <em>MAE (Mean Absolute Error)</em>, and <em>RMSE (Root Mean Squared Error)</em> will be calculated for each of the tuned model. The metrics result can be collected from <code>tune</code> in tibble format which can then be piped to <code>ggplot</code> for visualisation. The best model is then selected accordingly, based on user selection on the metrics of choice.</p>
+<div class="figure" style="text-align: center">
+<p><img src="images/model_tuning.jpg" alt="Model tuning assessment plot" width="150%" /></p>
+<p class="caption">
+Figure 12: Model tuning assessment plot
+</p>
+</div>
+<p>To assess our prediction result in more detail, we will also plot those points with high prediction error with regards to the distribution of training data set. This will help us to detect if certain characteristic of listing may have led to the high error. This is done by <code>ggplot</code> with <code>geom_histogram</code> for training set distribution and <code>geom_jitter</code> for points with high prediction error.</p>
+<div class="figure" style="text-align: center">
+<p><img src="images/prediction_error.jpg" alt="Checking of prediction error" width="150%" /></p>
+<p class="caption">
+Figure 13: Checking of prediction error
+</p>
+</div>
+<h1 id="4-data-preparation">4. Data preparation</h1>
+<p>Listings of Airbnbs in Singapore are extracted from <a href="http://insideairbnb.com/get-the-data.html">InsideAirbnb.com</a> and the processing steps mainly rely on functions from <a href="https://www.tidyverse.org/"><code>Tidyverse</code></a> package.</p>
+<h2 id="41-load-packages">4.1 Load packages</h2>
+<p>Besides <code>Tidyverse</code>, we will use <code>ggplot2</code>, <code>skimr</code> and <code>naniar</code> and for data preparation.</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">packages = <span style="color:#447fcf">c</span>(<span style="color:#ed9d13">&#39;tidyverse&#39;</span>, <span style="color:#ed9d13">&#39;ggplot2&#39;</span>, <span style="color:#ed9d13">&#39;skimr&#39;</span>, <span style="color:#ed9d13">&#39;naniar&#39;</span>, <span style="color:#ed9d13">&#39;plotly&#39;</span>)
+
+<span style="color:#447fcf">for</span>(p in packages){
+  <span style="color:#447fcf">if</span>(!<span style="color:#447fcf">require</span>(p, character.only = T)){
+    <span style="color:#447fcf">install.packages</span>(p)
+  }
+  <span style="color:#447fcf">library</span>(p, character.only = T)
+}
+</code></pre></div><h2 id="42-load-data">4.2 Load data</h2>
+<p>The data was loaded using <code>read_csv()</code> of the readr package, which reads delimited files into a <code>tibble</code>.</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">listings &lt;- <span style="color:#447fcf">read_csv</span>(<span style="color:#ed9d13">&#34;./data/raw/listings.csv&#34;</span>)
+</code></pre></div><p>The dataset has 4,255 observations and 74 variables.<br>
+A number of redundant variables such as <em>id</em>, <em>listing_url</em>, etc. should be removed as they do not add value to any analysis.</p>
+<p>Further, textual variables such as <em>description</em>, <em>name</em>, etc, were removed as these will be the scope for the Text Mining module. To the extent useful, textual data was converted to structured data through feature engineering (length of text).</p>
+<p>Additionally, some variables e.g. <em>price</em>, <em>host_response_rate</em>, <em>host_acceptance_rate</em> are in character format and should be converted into numerical form.</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#447fcf">glimpse</span>(listings)
+</code></pre></div><pre><code>## Rows: 4,255
+## Columns: 74
+## $ id                                           &lt;dbl&gt; 49091, 50646, 56334, 7160~
+## $ listing_url                                  &lt;chr&gt; &quot;https://www.airbnb.com/r~
+## $ scrape_id                                    &lt;dbl&gt; 2.021013e+13, 2.021013e+1~
+## $ last_scraped                                 &lt;date&gt; 2021-01-27, 2021-01-28, ~
+## $ name                                         &lt;chr&gt; &quot;COZICOMFORT LONG TERM ST~
+## $ description                                  &lt;chr&gt; &quot;&lt;b&gt;The space&lt;/b&gt;&lt;br /&gt;Th~
+## $ neighborhood_overview                        &lt;chr&gt; NA, &quot;The serenity &amp; quiet~
+## $ picture_url                                  &lt;chr&gt; &quot;https://a0.muscache.com/~
+## $ host_id                                      &lt;dbl&gt; 266763, 227796, 266763, 3~
+## $ host_url                                     &lt;chr&gt; &quot;https://www.airbnb.com/u~
+## $ host_name                                    &lt;chr&gt; &quot;Francesca&quot;, &quot;Sujatha&quot;, &quot;~
+## $ host_since                                   &lt;date&gt; 2010-10-20, 2010-09-08, ~
+## $ host_location                                &lt;chr&gt; &quot;Singapore&quot;, &quot;Singapore, ~
+## $ host_about                                   &lt;chr&gt; &quot;I am a private tutor by ~
+## $ host_response_time                           &lt;chr&gt; &quot;within a few hours&quot;, &quot;a ~
+## $ host_response_rate                           &lt;chr&gt; &quot;100%&quot;, &quot;0%&quot;, &quot;100%&quot;, &quot;10~
+## $ host_acceptance_rate                         &lt;chr&gt; &quot;N/A&quot;, &quot;N/A&quot;, &quot;N/A&quot;, &quot;100~
+## $ host_is_superhost                            &lt;lgl&gt; FALSE, FALSE, FALSE, FALS~
+## $ host_thumbnail_url                           &lt;chr&gt; &quot;https://a0.muscache.com/~
+## $ host_picture_url                             &lt;chr&gt; &quot;https://a0.muscache.com/~
+## $ host_neighbourhood                           &lt;chr&gt; &quot;Woodlands&quot;, &quot;Bukit Timah~
+## $ host_listings_count                          &lt;dbl&gt; 2, 1, 2, 8, 8, 8, 8, 6, 1~
+## $ host_total_listings_count                    &lt;dbl&gt; 2, 1, 2, 8, 8, 8, 8, 6, 1~
+## $ host_verifications                           &lt;chr&gt; &quot;['email', 'phone', 'face~
+## $ host_has_profile_pic                         &lt;lgl&gt; TRUE, TRUE, TRUE, TRUE, T~
+## $ host_identity_verified                       &lt;lgl&gt; TRUE, TRUE, TRUE, TRUE, T~
+## $ neighbourhood                                &lt;chr&gt; NA, &quot;Singapore, Singapore~
+## $ neighbourhood_cleansed                       &lt;chr&gt; &quot;Woodlands&quot;, &quot;Bukit Timah~
+## $ neighbourhood_group_cleansed                 &lt;chr&gt; &quot;North Region&quot;, &quot;Central ~
+## $ latitude                                     &lt;dbl&gt; 1.44255, 1.33235, 1.44246~
+## $ longitude                                    &lt;dbl&gt; 103.7958, 103.7852, 103.7~
+## $ property_type                                &lt;chr&gt; &quot;Private room in apartmen~
+## $ room_type                                    &lt;chr&gt; &quot;Private room&quot;, &quot;Private ~
+## $ accommodates                                 &lt;dbl&gt; 1, 2, 1, 6, 3, 3, 6, 2, 1~
+## $ bathrooms                                    &lt;lgl&gt; NA, NA, NA, NA, NA, NA, N~
+## $ bathrooms_text                               &lt;chr&gt; &quot;1 bath&quot;, &quot;1 bath&quot;, &quot;1 ba~
+## $ bedrooms                                     &lt;dbl&gt; 1, 1, 1, 2, 1, 1, 1, 1, 1~
+## $ beds                                         &lt;dbl&gt; 1, 1, 1, 3, 1, 2, 7, 1, 1~
+## $ amenities                                    &lt;chr&gt; &quot;[\&quot;Washer\&quot;, \&quot;Elevator\~
+## $ price                                        &lt;chr&gt; &quot;$80.00&quot;, &quot;$80.00&quot;, &quot;$66.~
+## $ minimum_nights                               &lt;dbl&gt; 180, 90, 6, 90, 90, 90, 1~
+## $ maximum_nights                               &lt;dbl&gt; 360, 730, 14, 1125, 1125,~
+## $ minimum_minimum_nights                       &lt;dbl&gt; 180, 90, 6, 90, 90, 90, 1~
+## $ maximum_minimum_nights                       &lt;dbl&gt; 180, 90, 6, 90, 90, 90, 1~
+## $ minimum_maximum_nights                       &lt;dbl&gt; 360, 730, 14, 1125, 1125,~
+## $ maximum_maximum_nights                       &lt;dbl&gt; 360, 730, 14, 1125, 1125,~
+## $ minimum_nights_avg_ntm                       &lt;dbl&gt; 180.0, 90.0, 6.0, 90.0, 9~
+## $ maximum_nights_avg_ntm                       &lt;dbl&gt; 360, 730, 14, 1125, 1125,~
+## $ calendar_updated                             &lt;lgl&gt; NA, NA, NA, NA, NA, NA, N~
+## $ has_availability                             &lt;lgl&gt; TRUE, TRUE, TRUE, TRUE, T~
+## $ availability_30                              &lt;dbl&gt; 30, 30, 30, 30, 30, 30, 3~
+## $ availability_60                              &lt;dbl&gt; 60, 60, 60, 60, 60, 60, 6~
+## $ availability_90                              &lt;dbl&gt; 90, 90, 90, 90, 90, 90, 9~
+## $ availability_365                             &lt;dbl&gt; 365, 365, 365, 365, 365, ~
+## $ calendar_last_scraped                        &lt;date&gt; 2021-01-27, 2021-01-28, ~
+## $ number_of_reviews                            &lt;dbl&gt; 1, 18, 20, 20, 24, 48, 29~
+## $ number_of_reviews_ltm                        &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 2~
+## $ number_of_reviews_l30d                       &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0~
+## $ first_review                                 &lt;date&gt; 2013-10-21, 2014-04-18, ~
+## $ last_review                                  &lt;date&gt; 2013-10-21, 2014-12-26, ~
+## $ review_scores_rating                         &lt;dbl&gt; 94, 91, 98, 89, 83, 88, 8~
+## $ review_scores_accuracy                       &lt;dbl&gt; 10, 9, 10, 9, 8, 9, 9, 9,~
+## $ review_scores_cleanliness                    &lt;dbl&gt; 10, 10, 10, 8, 8, 9, 8, 9~
+## $ review_scores_checkin                        &lt;dbl&gt; 10, 10, 10, 9, 9, 9, 9, 9~
+## $ review_scores_communication                  &lt;dbl&gt; 10, 10, 10, 10, 9, 9, 9, ~
+## $ review_scores_location                       &lt;dbl&gt; 8, 9, 8, 9, 8, 9, 9, 9, 1~
+## $ review_scores_value                          &lt;dbl&gt; 8, 9, 9, 9, 8, 9, 8, 9, 9~
+## $ license                                      &lt;lgl&gt; NA, NA, NA, NA, NA, NA, N~
+## $ instant_bookable                             &lt;lgl&gt; FALSE, FALSE, FALSE, TRUE~
+## $ calculated_host_listings_count               &lt;dbl&gt; 2, 1, 2, 8, 8, 8, 8, 7, 1~
+## $ calculated_host_listings_count_entire_homes  &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 1, 0~
+## $ calculated_host_listings_count_private_rooms &lt;dbl&gt; 2, 1, 2, 8, 8, 8, 8, 6, 1~
+## $ calculated_host_listings_count_shared_rooms  &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0~
+## $ reviews_per_month                            &lt;dbl&gt; 0.01, 0.22, 0.17, 0.18, 0~
+</code></pre>
+<h2 id="43-remove-unnecessary-variables">4.3 Remove unnecessary variables</h2>
+<p>To avoid having too many variables that would overwhelm the user, we have dropped variables that are not useful for analysis.</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">listings2 &lt;- listings %&gt;%
+  <span style="color:#447fcf">select</span>(-id, -listing_url, -scrape_id, -neighborhood_overview, -picture_url,
+         -host_id, -host_url, -host_name, -host_location, -host_thumbnail_url,
+         -host_picture_url, -first_review, -last_review, -last_scraped,
+         -calendar_last_scraped, -has_availability, -host_has_profile_pic,
+         -calendar_updated, -license, -bathrooms, -neighbourhood,
+         -host_neighbourhood)
+</code></pre></div><h2 id="44-create-new-variables">4.4 Create new variables</h2>
+<h4 id="i-feature-engineering---convert-unstructured-variables-to-structured-variables">i) Feature engineering - Convert unstructured variables to structured variables</h4>
+<p>Textual variables such as <em>name</em>, <em>description</em>, <em>host_about</em>, <em>bathroom_text</em> , <em>bathrooms_text</em>, <em>host_verifications_count</em> were converted into structured variables by counting the length of the text.</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#999;font-style:italic"># convert textual data to structured data</span>
+listings3 &lt;- listings2 %&gt;%
+  <span style="color:#447fcf">mutate_at</span>(<span style="color:#447fcf">vars</span>(name,description,host_about),str_squish) %&gt;% <span style="color:#999;font-style:italic">#remove all whitespaces</span>
+  <span style="color:#447fcf">mutate</span>(name_length = <span style="color:#447fcf">str_count</span>(name, <span style="color:#ed9d13">&#34;.&#34;</span>)) %&gt;% <span style="color:#999;font-style:italic">#count characters</span>
+  <span style="color:#447fcf">mutate</span>(description_length = <span style="color:#447fcf">str_count</span>(description, <span style="color:#ed9d13">&#34;.&#34;</span>)) %&gt;%
+  <span style="color:#447fcf">mutate</span>(host_about_length = <span style="color:#447fcf">str_count</span>(host_about, <span style="color:#ed9d13">&#34;.&#34;</span>)) %&gt;%
+  <span style="color:#447fcf">select</span>(-name, -description, -host_about)
+
+<span style="color:#999;font-style:italic"># convert textual data to structured data</span>
+listings3 &lt;- listings3 %&gt;%
+  <span style="color:#447fcf">mutate</span>(bathrooms_text = <span style="color:#447fcf">tolower</span>(bathrooms_text)) %&gt;%
+  <span style="color:#447fcf">mutate</span>(bathrooms_text = <span style="color:#447fcf">str_replace</span>(bathrooms_text, <span style="color:#ed9d13">&#34;half&#34;</span>, <span style="color:#ed9d13">&#34;0.5&#34;</span>)) %&gt;%
+  <span style="color:#447fcf">mutate</span>(bathroom = <span style="color:#447fcf">parse_number</span>(bathrooms_text)) %&gt;%
+  <span style="color:#447fcf">mutate</span>(bathroom_type = <span style="color:#447fcf">case_when</span>(
+    <span style="color:#447fcf">str_detect</span>(bathrooms_text, <span style="color:#ed9d13">&#34;private&#34;</span>) ~ <span style="color:#ed9d13">&#34;Private&#34;</span>,
+    <span style="color:#447fcf">str_detect</span>(bathrooms_text, <span style="color:#ed9d13">&#34;share&#34;</span>) ~ <span style="color:#ed9d13">&#34;Shared&#34;</span>,
+    <span style="color:#6ab825;font-weight:bold">TRUE</span> ~ <span style="color:#ed9d13">&#34;Other&#34;</span>)
+  ) %&gt;%
+  <span style="color:#447fcf">select</span>(-bathrooms_text)
+
+<span style="color:#999;font-style:italic"># replace amenities with count of amenities</span>
+listings3 &lt;- listings3 %&gt;%
+  <span style="color:#447fcf">mutate</span>(amenities_count = <span style="color:#447fcf">sapply</span>(<span style="color:#447fcf">str_split</span>(amenities, <span style="color:#ed9d13">&#34;,&#34;</span>), length)) %&gt;%
+  <span style="color:#447fcf">select</span>(-amenities) 
+
+<span style="color:#999;font-style:italic"># replace host_verification with count of verification</span>
+listings3 &lt;- listings3 %&gt;%
+  <span style="color:#447fcf">mutate</span>(host_verifications_count = <span style="color:#447fcf">sapply</span>(<span style="color:#447fcf">str_split</span>(host_verifications, <span style="color:#ed9d13">&#34;,&#34;</span>), length)) %&gt;%
+  <span style="color:#447fcf">select</span>(-host_verifications)
+</code></pre></div><h4 id="ii-derive-the-number-of-days-since-a-host-joined-airbnb-platform---days_joined">ii) Derive the number of days since a host joined Airbnb platform - <em>days_joined</em></h4>
+<p>Using the variable <em>host_since</em>, which is in date format, we have calculated the number of days since the host started hosting Airbnb guests.</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">listings4 &lt;- listings3 %&gt;%
+  <span style="color:#447fcf">mutate</span>(days_joined = <span style="color:#447fcf">as.numeric</span>(<span style="color:#447fcf">as.Date</span>(<span style="color:#ed9d13">&#34;2021/01/01&#34;</span>,
+                                           <span style="color:#ed9d13">&#34;%Y/%m/%d&#34;</span>)-host_since)) %&gt;% 
+  <span style="color:#447fcf">select</span>(-host_since)
+</code></pre></div><h4 id="iii-derive-property-type">iii) Derive property type</h4>
+<p>The <em>property_type</em> variable comprises both room and property type (e.g. Private room in apartment). We will extract just the property type from <em>property_type</em> variable.</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#999;font-style:italic"># get actual property type (remove room type component) from property_type</span>
+listings5 &lt;- listings4 %&gt;%
+  <span style="color:#447fcf">mutate</span>(property_type = <span style="color:#447fcf">tolower</span>(property_type)) %&gt;%
+  <span style="color:#447fcf">mutate</span>(property_type = <span style="color:#447fcf">case_when</span>(
+    <span style="color:#447fcf">grepl</span>(<span style="color:#ed9d13">&#34; in &#34;</span>, property_type, fixed = <span style="color:#6ab825;font-weight:bold">TRUE</span>) == <span style="color:#6ab825;font-weight:bold">TRUE</span> ~ <span style="color:#447fcf">gsub</span>(<span style="color:#ed9d13">&#34;^.*in &#34;</span>, <span style="color:#ed9d13">&#34;&#34;</span>, property_type),
+    <span style="color:#6ab825;font-weight:bold">TRUE</span> ~ <span style="color:#447fcf">gsub</span>(<span style="color:#ed9d13">&#34;entire &#34;</span>, <span style="color:#ed9d13">&#34;&#34;</span>, property_type)
+  ))
+</code></pre></div><h2 id="45-change-data-type">4.5 Change data type</h2>
+<ul>
+<li>Change price-related attribute from <em>character</em> format to <em>numeric</em>.</li>
+<li>Convert character and logical variables to factor data type.</li>
+</ul>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">listings6 &lt;- listings5 %&gt;%
+  <span style="color:#447fcf">mutate_at</span>(<span style="color:#447fcf">vars</span>(<span style="color:#447fcf">c</span>(<span style="color:#447fcf">contains</span>(<span style="color:#ed9d13">&#34;price&#34;</span>))), ~<span style="color:#447fcf">as.numeric</span>(<span style="color:#447fcf">str_replace</span>(., <span style="color:#ed9d13">&#34;\\$&#34;</span>, <span style="color:#ed9d13">&#34;&#34;</span>))) %&gt;% <span style="color:#999;font-style:italic">#price to numeric</span>
+  <span style="color:#447fcf">mutate_at</span>(<span style="color:#447fcf">vars</span>(<span style="color:#447fcf">c</span>(<span style="color:#447fcf">contains</span>(<span style="color:#ed9d13">&#34;rate&#34;</span>))), ~<span style="color:#447fcf">as.numeric</span>(<span style="color:#447fcf">str_replace</span>(., <span style="color:#ed9d13">&#34;\\%&#34;</span>, <span style="color:#ed9d13">&#34;&#34;</span>))) <span style="color:#999;font-style:italic">#rate to numeric</span>
+</code></pre></div><pre><code>## Warning in ~as.numeric(str_replace(., &quot;\\$&quot;, &quot;&quot;)): NAs introduced by coercion
+
+## Warning in ~as.numeric(str_replace(., &quot;\\%&quot;, &quot;&quot;)): NAs introduced by coercion
+
+## Warning in ~as.numeric(str_replace(., &quot;\\%&quot;, &quot;&quot;)): NAs introduced by coercion
+</code></pre>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#999;font-style:italic">#remove listing with $0 price</span>
+listings6 &lt;- listings6 %&gt;%
+  <span style="color:#447fcf">filter</span>(price!=<span style="color:#3677a9">0</span>)
+
+listings6 &lt;- listings6 %&gt;%
+  <span style="color:#447fcf">mutate</span>(<span style="color:#447fcf">across</span>(<span style="color:#447fcf">where</span>(is.character), as.factor)) %&gt;% <span style="color:#999;font-style:italic">#convert character to factor</span>
+  <span style="color:#447fcf">mutate</span>(<span style="color:#447fcf">across</span>(<span style="color:#447fcf">where</span>(is.logical), as.factor)) <span style="color:#999;font-style:italic">#convert logical to factor</span>
+</code></pre></div><h2 id="46-consolidate-similar-levels-within-a-variable">4.6 Consolidate similar levels within a variable</h2>
+<p>For the <em>host_response_time</em> variable, there are 6 levels of which 2 are <em>N/A</em> and <em>NA</em>.<br>
+As such, we have renamed <em>NA</em> to <em>N/A</em> as one level.</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#447fcf">levels</span>(listings6$host_response_time)
+</code></pre></div><pre><code>## [1] &quot;a few days or more&quot; &quot;N/A&quot;                &quot;within a day&quot;      
+## [4] &quot;within a few hours&quot; &quot;within an hour&quot;
+</code></pre>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">listings6$host_response_time<span style="color:#447fcf">[is.na</span>(listings6$host_response_time)] &lt;- <span style="color:#ed9d13">&#34;N/A&#34;</span>
+</code></pre></div><h2 id="47-view-final-listing">4.7 View final listing</h2>
+<p>Review the final output after data wrangling.</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">final_listing &lt;- listings6
+<span style="color:#447fcf">glimpse</span>(final_listing)
+</code></pre></div><pre><code>## Rows: 4,212
+## Columns: 53
+## $ host_response_time                           &lt;fct&gt; within a few hours, a few~
+## $ host_response_rate                           &lt;dbl&gt; 100, 0, 100, 100, 100, 10~
+## $ host_acceptance_rate                         &lt;dbl&gt; NA, NA, NA, 100, 100, 100~
+## $ host_is_superhost                            &lt;fct&gt; FALSE, FALSE, FALSE, FALS~
+## $ host_listings_count                          &lt;dbl&gt; 2, 1, 2, 8, 8, 8, 8, 6, 1~
+## $ host_total_listings_count                    &lt;dbl&gt; 2, 1, 2, 8, 8, 8, 8, 6, 1~
+## $ host_identity_verified                       &lt;fct&gt; TRUE, TRUE, TRUE, TRUE, T~
+## $ neighbourhood_cleansed                       &lt;fct&gt; Woodlands, Bukit Timah, W~
+## $ neighbourhood_group_cleansed                 &lt;fct&gt; North Region, Central Reg~
+## $ latitude                                     &lt;dbl&gt; 1.44255, 1.33235, 1.44246~
+## $ longitude                                    &lt;dbl&gt; 103.7958, 103.7852, 103.7~
+## $ property_type                                &lt;fct&gt; apartment, apartment, apa~
+## $ room_type                                    &lt;fct&gt; Private room, Private roo~
+## $ accommodates                                 &lt;dbl&gt; 1, 2, 1, 6, 3, 3, 6, 2, 1~
+## $ bedrooms                                     &lt;dbl&gt; 1, 1, 1, 2, 1, 1, 1, 1, 1~
+## $ beds                                         &lt;dbl&gt; 1, 1, 1, 3, 1, 2, 7, 1, 1~
+## $ price                                        &lt;dbl&gt; 80, 80, 66, 174, 80, 80, ~
+## $ minimum_nights                               &lt;dbl&gt; 180, 90, 6, 90, 90, 90, 1~
+## $ maximum_nights                               &lt;dbl&gt; 360, 730, 14, 1125, 1125,~
+## $ minimum_minimum_nights                       &lt;dbl&gt; 180, 90, 6, 90, 90, 90, 1~
+## $ maximum_minimum_nights                       &lt;dbl&gt; 180, 90, 6, 90, 90, 90, 1~
+## $ minimum_maximum_nights                       &lt;dbl&gt; 360, 730, 14, 1125, 1125,~
+## $ maximum_maximum_nights                       &lt;dbl&gt; 360, 730, 14, 1125, 1125,~
+## $ minimum_nights_avg_ntm                       &lt;dbl&gt; 180.0, 90.0, 6.0, 90.0, 9~
+## $ maximum_nights_avg_ntm                       &lt;dbl&gt; 360, 730, 14, 1125, 1125,~
+## $ availability_30                              &lt;dbl&gt; 30, 30, 30, 30, 30, 30, 3~
+## $ availability_60                              &lt;dbl&gt; 60, 60, 60, 60, 60, 60, 6~
+## $ availability_90                              &lt;dbl&gt; 90, 90, 90, 90, 90, 90, 9~
+## $ availability_365                             &lt;dbl&gt; 365, 365, 365, 365, 365, ~
+## $ number_of_reviews                            &lt;dbl&gt; 1, 18, 20, 20, 24, 48, 29~
+## $ number_of_reviews_ltm                        &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 2~
+## $ number_of_reviews_l30d                       &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0~
+## $ review_scores_rating                         &lt;dbl&gt; 94, 91, 98, 89, 83, 88, 8~
+## $ review_scores_accuracy                       &lt;dbl&gt; 10, 9, 10, 9, 8, 9, 9, 9,~
+## $ review_scores_cleanliness                    &lt;dbl&gt; 10, 10, 10, 8, 8, 9, 8, 9~
+## $ review_scores_checkin                        &lt;dbl&gt; 10, 10, 10, 9, 9, 9, 9, 9~
+## $ review_scores_communication                  &lt;dbl&gt; 10, 10, 10, 10, 9, 9, 9, ~
+## $ review_scores_location                       &lt;dbl&gt; 8, 9, 8, 9, 8, 9, 9, 9, 1~
+## $ review_scores_value                          &lt;dbl&gt; 8, 9, 9, 9, 8, 9, 8, 9, 9~
+## $ instant_bookable                             &lt;fct&gt; FALSE, FALSE, FALSE, TRUE~
+## $ calculated_host_listings_count               &lt;dbl&gt; 2, 1, 2, 8, 8, 8, 8, 7, 1~
+## $ calculated_host_listings_count_entire_homes  &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 1, 0~
+## $ calculated_host_listings_count_private_rooms &lt;dbl&gt; 2, 1, 2, 8, 8, 8, 8, 6, 1~
+## $ calculated_host_listings_count_shared_rooms  &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0~
+## $ reviews_per_month                            &lt;dbl&gt; 0.01, 0.22, 0.17, 0.18, 0~
+## $ name_length                                  &lt;int&gt; 33, 31, 11, 35, 30, 26, 3~
+## $ description_length                           &lt;int&gt; 1000, 589, 880, 1000, 990~
+## $ host_about_length                            &lt;int&gt; 326, 79, 326, 772, 772, 7~
+## $ bathroom                                     &lt;dbl&gt; 1.0, 1.0, 1.0, 1.0, 0.5, ~
+## $ bathroom_type                                &lt;fct&gt; Other, Other, Other, Priv~
+## $ amenities_count                              &lt;int&gt; 7, 12, 8, 25, 21, 16, 22,~
+## $ host_verifications_count                     &lt;int&gt; 9, 8, 9, 5, 5, 5, 5, 7, 5~
+## $ days_joined                                  &lt;dbl&gt; 3726, 3768, 3726, 3625, 3~
+</code></pre>
+<h1 id="5-proposed-predictive-analysis-module">5. Proposed predictive analysis module</h1>
+<p>This section provides the code and proposed visualisation in each predictive analytics steps described in section 3.</p>
+<h2 id="51-load-r-packages-and-pre-processed-airbnb-data-set">5.1 Load R packages and pre-processed AirBnb data set</h2>
+<p>First, we are going to load the required packages.</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">packages = <span style="color:#447fcf">c</span>(<span style="color:#ed9d13">&#39;tidyverse&#39;</span>, <span style="color:#ed9d13">&#39;tidymodels&#39;</span>, <span style="color:#ed9d13">&#39;ggstatsplot&#39;</span>, <span style="color:#ed9d13">&#39;ggplot2&#39;</span>, <span style="color:#ed9d13">&#39;plotly&#39;</span>,
+             <span style="color:#ed9d13">&#39;skimr&#39;</span>, <span style="color:#ed9d13">&#39;Boruta&#39;</span>, <span style="color:#ed9d13">&#39;vip&#39;</span>, <span style="color:#ed9d13">&#39;corrplot&#39;</span>, <span style="color:#ed9d13">&#39;GGally&#39;</span>, <span style="color:#ed9d13">&#39;ggcorrplot&#39;</span>,
+             <span style="color:#ed9d13">&#39;reshape2&#39;</span>, <span style="color:#ed9d13">&#39;tictoc&#39;</span>, <span style="color:#ed9d13">&#39;tidytext&#39;</span>, <span style="color:#ed9d13">&#39;visNetwork&#39;</span>, <span style="color:#ed9d13">&#39;rattle&#39;</span>, <span style="color:#ed9d13">&#39;sparkline&#39;</span>,<span style="color:#ed9d13">&#39;widgetframe&#39;</span>, <span style="color:#ed9d13">&#39;glmnet&#39;</span>, <span style="color:#ed9d13">&#39;xgboost&#39;</span>)
+
+<span style="color:#447fcf">for</span>(p in packages){
+  <span style="color:#447fcf">if</span>(!<span style="color:#447fcf">require</span>(p, character.only = T)){
+    <span style="color:#447fcf">install.packages</span>(p)
+  }
+  <span style="color:#447fcf">library</span>(p, character.only = T)
+}
+</code></pre></div><pre><code>## Loading required package: tidymodels
+
+## -- Attaching packages -------------------------------------- tidymodels 0.1.2 --
+
+## v broom     0.7.6      v recipes   0.1.16
+## v dials     0.0.9      v rsample   0.0.9 
+## v infer     0.5.4      v tune      0.1.3 
+## v modeldata 0.1.0      v workflows 0.2.2 
+## v parsnip   0.1.5      v yardstick 0.0.8
+
+## -- Conflicts ----------------------------------------- tidymodels_conflicts() --
+## x scales::discard() masks purrr::discard()
+## x plotly::filter()  masks dplyr::filter(), stats::filter()
+## x recipes::fixed()  masks stringr::fixed()
+## x dplyr::lag()      masks stats::lag()
+## x yardstick::spec() masks readr::spec()
+## x recipes::step()   masks stats::step()
+
+## Loading required package: ggstatsplot
+
+## In case you would like cite this package, cite it as:
+##      Patil, I. (2018). ggstatsplot: &quot;ggplot2&quot; Based Plots with Statistical Details. CRAN.
+##      Retrieved from https://cran.r-project.org/web/packages/ggstatsplot/index.html
+
+## Loading required package: Boruta
+
+## Loading required package: vip
+
+## 
+## Attaching package: 'vip'
+
+## The following object is masked from 'package:utils':
+## 
+##     vi
+
+## Loading required package: corrplot
+
+## corrplot 0.84 loaded
+
+## Loading required package: GGally
+
+## Registered S3 method overwritten by 'GGally':
+##   method from   
+##   +.gg   ggplot2
+
+## Loading required package: ggcorrplot
+
+## Loading required package: reshape2
+
+## 
+## Attaching package: 'reshape2'
+
+## The following object is masked from 'package:tidyr':
+## 
+##     smiths
+
+## Loading required package: tictoc
+
+## Loading required package: tidytext
+
+## Loading required package: visNetwork
+
+## Loading required package: rattle
+
+## Loading required package: bitops
+
+## Registered S3 method overwritten by 'rattle':
+##   method         from      
+##   predict.kmeans parameters
+
+## Rattle: A free graphical interface for data science with R.
+## Version 5.4.0 Copyright (c) 2006-2020 Togaware Pty Ltd.
+## Type 'rattle()' to shake, rattle, and roll your data.
+
+## Loading required package: sparkline
+
+## Loading required package: widgetframe
+
+## Loading required package: htmlwidgets
+
+## Loading required package: glmnet
+
+## Loading required package: Matrix
+
+## 
+## Attaching package: 'Matrix'
+
+## The following objects are masked from 'package:tidyr':
+## 
+##     expand, pack, unpack
+
+## Loaded glmnet 4.1-1
+
+## Loading required package: xgboost
+
+## 
+## Attaching package: 'xgboost'
+
+## The following object is masked from 'package:rattle':
+## 
+##     xgboost
+
+## The following object is masked from 'package:plotly':
+## 
+##     slice
+
+## The following object is masked from 'package:dplyr':
+## 
+##     slice
+</code></pre>
+<p>Next, processed data is loaded into <em>listing_prep</em> variable.</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">listing_prep &lt;- listings6
+</code></pre></div><p>In this example, we will set listing price (<em>price</em>) as the response/target variable. The predictor variables are also filtered to simplify the example.</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">predVar &lt;- <span style="color:#447fcf">c</span>(<span style="color:#ed9d13">&#34;host_response_time&#34;</span>, <span style="color:#ed9d13">&#34;host_response_rate&#34;</span> , <span style="color:#ed9d13">&#34;host_acceptance_rate&#34;</span>,
+             <span style="color:#ed9d13">&#34;host_is_superhost&#34;</span>, <span style="color:#ed9d13">&#34;host_listings_count&#34;</span>, <span style="color:#ed9d13">&#34;host_identity_verified&#34;</span>,
+             <span style="color:#ed9d13">&#34;neighbourhood_cleansed&#34;</span>, <span style="color:#ed9d13">&#34;neighbourhood_group_cleansed&#34;</span>, <span style="color:#ed9d13">&#34;latitude&#34;</span>,
+             <span style="color:#ed9d13">&#34;longitude&#34;</span>, <span style="color:#ed9d13">&#34;property_type&#34;</span>, <span style="color:#ed9d13">&#34;room_type&#34;</span>, <span style="color:#ed9d13">&#34;accommodates&#34;</span>, <span style="color:#ed9d13">&#34;bedrooms&#34;</span>,
+             <span style="color:#ed9d13">&#34;beds&#34;</span>, <span style="color:#ed9d13">&#34;minimum_nights&#34;</span>, <span style="color:#ed9d13">&#34;maximum_nights&#34;</span>, <span style="color:#ed9d13">&#34;availability_30&#34;</span>,
+             <span style="color:#ed9d13">&#34;availability_60&#34;</span>, <span style="color:#ed9d13">&#34;availability_90&#34;</span>, <span style="color:#ed9d13">&#34;availability_365&#34;</span>,
+             <span style="color:#ed9d13">&#34;number_of_reviews&#34;</span>, <span style="color:#ed9d13">&#34;review_scores_rating&#34;</span>, <span style="color:#ed9d13">&#34;instant_bookable&#34;</span>,
+             <span style="color:#ed9d13">&#34;reviews_per_month&#34;</span>, <span style="color:#ed9d13">&#34;name_length&#34;</span>, <span style="color:#ed9d13">&#34;description_length&#34;</span>,
+             <span style="color:#ed9d13">&#34;host_about_length&#34;</span>, <span style="color:#ed9d13">&#34;bathroom&#34;</span>, <span style="color:#ed9d13">&#34;bathroom_type&#34;</span>,
+             <span style="color:#ed9d13">&#34;host_verifications_count&#34;</span>, <span style="color:#ed9d13">&#34;amenities_count&#34;</span>, <span style="color:#ed9d13">&#34;days_joined&#34;</span>)
+targetVar &lt;- <span style="color:#447fcf">sym</span>(<span style="color:#ed9d13">&#34;price&#34;</span>)
+</code></pre></div><p>Character and logical variables are converted into factor variable.</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">listing_prep2 &lt;- listing_prep %&gt;%
+  <span style="color:#447fcf">select</span>(<span style="color:#447fcf">all_of</span>(predVar), targetVar) %&gt;%
+  <span style="color:#447fcf">mutate</span>(<span style="color:#447fcf">across</span>(<span style="color:#447fcf">where</span>(is.character), as.factor)) %&gt;%
+  <span style="color:#447fcf">mutate</span>(<span style="color:#447fcf">across</span>(<span style="color:#447fcf">where</span>(is.logical), as.factor))
+</code></pre></div><pre><code>## Note: Using an external vector in selections is ambiguous.
+## i Use `all_of(targetVar)` instead of `targetVar` to silence this message.
+## i See &lt;https://tidyselect.r-lib.org/reference/faq-external-vector.html&gt;.
+## This message is displayed once per session.
+</code></pre>
+<h2 id="52-correlation-plot">5.2 Correlation plot</h2>
+<p>First, we will separate numeric variables into <em>listing_prep2_num</em> for corrrelation analysis.</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">listing_prep2_num &lt;- listing_prep2 %&gt;%
+  <span style="color:#447fcf">keep</span>(is.numeric)
+<span style="color:#447fcf">dim</span>(listing_prep2_num)
+</code></pre></div><pre><code>## [1] 4212   25
+</code></pre>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#447fcf">names</span>(listing_prep2_num)
+</code></pre></div><pre><code>##  [1] &quot;host_response_rate&quot;       &quot;host_acceptance_rate&quot;    
+##  [3] &quot;host_listings_count&quot;      &quot;latitude&quot;                
+##  [5] &quot;longitude&quot;                &quot;accommodates&quot;            
+##  [7] &quot;bedrooms&quot;                 &quot;beds&quot;                    
+##  [9] &quot;minimum_nights&quot;           &quot;maximum_nights&quot;          
+## [11] &quot;availability_30&quot;          &quot;availability_60&quot;         
+## [13] &quot;availability_90&quot;          &quot;availability_365&quot;        
+## [15] &quot;number_of_reviews&quot;        &quot;review_scores_rating&quot;    
+## [17] &quot;reviews_per_month&quot;        &quot;name_length&quot;             
+## [19] &quot;description_length&quot;       &quot;host_about_length&quot;       
+## [21] &quot;bathroom&quot;                 &quot;host_verifications_count&quot;
+## [23] &quot;amenities_count&quot;          &quot;days_joined&quot;             
+## [25] &quot;price&quot;
+</code></pre>
+<p>Next, correlation matrix is used to evaluate correlation between target variable and the predictors, as well as correlation among the predictors (test for multicolinearity). We will use <code>cor</code> to create the correlation matrix and <code>corrplot</code> to visualise the matrix.</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#447fcf">tic</span>(<span style="color:#ed9d13">&#34;corrplot timing&#34;</span>)
+corM &lt;- listing_prep2_num %&gt;%
+  <span style="color:#447fcf">cor</span>(use = <span style="color:#ed9d13">&#34;pairwise.complete.obs&#34;</span>, method = <span style="color:#ed9d13">&#34;pearson&#34;</span>)
+res1 &lt;- listing_prep2_num %&gt;%
+  <span style="color:#447fcf">cor.mtest</span>(conf.level = <span style="color:#3677a9">.95</span>)
+
+col3 &lt;- <span style="color:#447fcf">colorRampPalette</span>(<span style="color:#447fcf">c</span>(<span style="color:#ed9d13">&#34;red&#34;</span>, <span style="color:#ed9d13">&#34;white&#34;</span>, <span style="color:#ed9d13">&#34;blue&#34;</span>))
+
+<span style="color:#447fcf">corrplot</span>(corM, type = <span style="color:#ed9d13">&#34;lower&#34;</span>, method = <span style="color:#ed9d13">&#34;color&#34;</span>, order = <span style="color:#ed9d13">&#34;hclust&#34;</span>,
+                 diag = <span style="color:#6ab825;font-weight:bold">FALSE</span>, hclust.method = <span style="color:#ed9d13">&#34;ward.D&#34;</span>,
+                 addgrid.col = <span style="color:#ed9d13">&#34;black&#34;</span>, addCoef.col = <span style="color:#ed9d13">&#34;black&#34;</span>, col = <span style="color:#447fcf">col3</span>(<span style="color:#3677a9">100</span>), 
+                 p.mat = res1$p, sig.level = <span style="color:#3677a9">0.05</span>, insig = <span style="color:#ed9d13">&#34;pch&#34;</span>, pch.cex = <span style="color:#3677a9">0.8</span>,
+                 tl.cex = <span style="color:#3677a9">0.7</span>, number.cex = <span style="color:#3677a9">0.7</span>)
+</code></pre></div><p><img src="https://ourshinypet.netlify.app/blog/predictive/index_files/figure-html/unnamed-chunk-29-1.png" width="960" /></p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#447fcf">toc</span>()
+</code></pre></div><pre><code>## corrplot timing: 0.42 sec elapsed
+</code></pre>
+<p>Another package like <code>GGally</code> provides additional information such as scatter plot and variable distribution on top of the correlation coefficient. This method is good for less than 10 variables at once, beyond which the display become cluttered. However, as we are more interested in the correlation coefficient, <code>GGally</code> is less suitable in this case. Below <code>ggpairs</code> plot is provided for example using the first 8 variables.</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">listing_prep2_num %&gt;%
+  <span style="color:#447fcf">select</span>(<span style="color:#447fcf">c</span>(<span style="color:#3677a9">1</span>:<span style="color:#3677a9">8</span>)) %&gt;%
+  <span style="color:#447fcf">ggpairs</span>(title = <span style="color:#ed9d13">&#34;Correlogram with ggpairs&#34;</span>,
+        upper = <span style="color:#447fcf">list</span>(continuous = <span style="color:#447fcf">wrap</span>(<span style="color:#ed9d13">&#34;cor&#34;</span>, size=<span style="color:#3677a9">3</span>, method=<span style="color:#ed9d13">&#34;pearson&#34;</span>)))
+</code></pre></div><pre><code>## Warning: Removed 555 rows containing non-finite values (stat_density).
+
+## Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
+## Removed 845 rows containing missing values
+
+## Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
+## Removed 555 rows containing missing values
+
+## Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
+## Removed 555 rows containing missing values
+
+## Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
+## Removed 555 rows containing missing values
+
+## Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
+## Removed 555 rows containing missing values
+
+## Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
+## Removed 880 rows containing missing values
+
+## Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
+## Removed 600 rows containing missing values
+
+## Warning: Removed 845 rows containing missing values (geom_point).
+
+## Warning: Removed 753 rows containing non-finite values (stat_density).
+
+## Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
+## Removed 753 rows containing missing values
+
+## Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
+## Removed 753 rows containing missing values
+
+## Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
+## Removed 753 rows containing missing values
+
+## Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
+## Removed 753 rows containing missing values
+
+## Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
+## Removed 1057 rows containing missing values
+
+## Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
+## Removed 792 rows containing missing values
+
+## Warning: Removed 555 rows containing missing values (geom_point).
+
+## Warning: Removed 753 rows containing missing values (geom_point).
+
+## Warning: Removed 9 rows containing non-finite values (stat_density).
+
+## Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
+## Removed 9 rows containing missing values
+
+## Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
+## Removed 9 rows containing missing values
+
+## Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
+## Removed 9 rows containing missing values
+
+## Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
+## Removed 380 rows containing missing values
+
+## Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
+## Removed 66 rows containing missing values
+
+## Warning: Removed 555 rows containing missing values (geom_point).
+
+## Warning: Removed 753 rows containing missing values (geom_point).
+
+## Warning: Removed 9 rows containing missing values (geom_point).
+
+## Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
+## Removed 373 rows containing missing values
+
+## Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
+## Removed 57 rows containing missing values
+
+## Warning: Removed 555 rows containing missing values (geom_point).
+
+## Warning: Removed 753 rows containing missing values (geom_point).
+
+## Warning: Removed 9 rows containing missing values (geom_point).
+
+## Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
+## Removed 373 rows containing missing values
+
+## Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
+## Removed 57 rows containing missing values
+
+## Warning: Removed 555 rows containing missing values (geom_point).
+
+## Warning: Removed 753 rows containing missing values (geom_point).
+
+## Warning: Removed 9 rows containing missing values (geom_point).
+
+## Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
+## Removed 373 rows containing missing values
+
+## Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
+## Removed 57 rows containing missing values
+
+## Warning: Removed 880 rows containing missing values (geom_point).
+
+## Warning: Removed 1057 rows containing missing values (geom_point).
+
+## Warning: Removed 380 rows containing missing values (geom_point).
+
+## Warning: Removed 373 rows containing missing values (geom_point).
+
+## Warning: Removed 373 rows containing missing values (geom_point).
+
+## Warning: Removed 373 rows containing missing values (geom_point).
+
+## Warning: Removed 373 rows containing non-finite values (stat_density).
+
+## Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
+## Removed 422 rows containing missing values
+
+## Warning: Removed 600 rows containing missing values (geom_point).
+
+## Warning: Removed 792 rows containing missing values (geom_point).
+
+## Warning: Removed 66 rows containing missing values (geom_point).
+
+## Warning: Removed 57 rows containing missing values (geom_point).
+
+## Warning: Removed 57 rows containing missing values (geom_point).
+
+## Warning: Removed 57 rows containing missing values (geom_point).
+
+## Warning: Removed 422 rows containing missing values (geom_point).
+
+## Warning: Removed 57 rows containing non-finite values (stat_density).
+</code></pre>
+<p><img src="https://ourshinypet.netlify.app/blog/predictive/index_files/figure-html/unnamed-chunk-30-1.png" width="960" /></p>
+<p>Another alternative is <a href="https://indrajeetpatil.github.io/ggstatsplot/articles/web_only/ggcorrmat.html"><code>ggcorrmat</code></a> from <code>ggstatsplot</code> package, which is a wrapper of <code>ggcorrplot</code>. However, the time taken to churn the plot is longer as compared to using <code>corrplot</code>. For the sake of minimising user waiting time, we will have to look for other alternative although the statistics information display is better in <code>ggcorrmat</code>.</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#447fcf">tic</span>(<span style="color:#ed9d13">&#34;ggcorrmat timing&#34;</span>)
+listing_prep2_num %&gt;%
+  <span style="color:#447fcf">ggcorrmat</span>(type=<span style="color:#ed9d13">&#34;pearson&#34;</span>,
+            ggcorrplot.args = <span style="color:#447fcf">list</span>(outline.color = <span style="color:#ed9d13">&#34;black&#34;</span>,
+                                   hc.order = <span style="color:#6ab825;font-weight:bold">TRUE</span>,
+                                   pch.cex = <span style="color:#3677a9">0.5</span>,
+                                   tl.cex = <span style="color:#3677a9">10</span>,
+                                   lab_size = <span style="color:#3677a9">4</span>))
+</code></pre></div><p><img src="https://ourshinypet.netlify.app/blog/predictive/index_files/figure-html/unnamed-chunk-31-1.png" width="960" /></p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#447fcf">toc</span>()
+</code></pre></div><pre><code>## ggcorrmat timing: 5.92 sec elapsed
+</code></pre>
+<p>If the above plots are all static, we can use <code>ggcorrplot</code> with <code>plotly</code> wrapper to create an interactive correlation matrix.</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">corM &lt;- <span style="color:#447fcf">cor</span>(listing_prep2_num,
+            use = <span style="color:#ed9d13">&#34;pairwise.complete.obs&#34;</span>,
+            method = <span style="color:#ed9d13">&#34;pearson&#34;</span>)
+
+p_mat &lt;- <span style="color:#447fcf">cor_pmat</span>(listing_prep2_num)
+  
+corr.plot &lt;- <span style="color:#447fcf">ggcorrplot</span>(corM, hc.order = <span style="color:#6ab825;font-weight:bold">TRUE</span>,
+                        type = <span style="color:#ed9d13">&#34;lower&#34;</span>,
+                        p.mat = p_mat,
+                        pch.cex = <span style="color:#3677a9">1</span>, tl.cex = <span style="color:#3677a9">7</span>, lab_size = <span style="color:#3677a9">5</span>)
+gg_cor &lt;- <span style="color:#447fcf">ggplotly</span>(corr.plot)
+</code></pre></div><pre><code>## Warning in L$marker$color[idx] &lt;- aes2plotly(data, params, &quot;fill&quot;)[idx]: number
+## of items to replace is not a multiple of replacement length
+</code></pre>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">widgetframe::<span style="color:#447fcf">frameWidget</span>(gg_cor)
+</code></pre></div><div id="htmlwidget-1" style="width:100%;height:480px;" class="widgetframe html-widget"></div>
+<script type="application/json" data-for="htmlwidget-1">{"x":{"url":"index_files/figure-html//widgets/widget_unnamed-chunk-32.html","options":{"xdomain":"*","allowfullscreen":false,"lazyload":false}},"evals":[],"jsHooks":[]}</script>
+<p>However, the tooltip label in the above plot does not provide much information as the value can be ambiguous (either p-value or correlation coefficient). And as we are wrapping <code>plotly</code> over <code>corrplot</code>, there is less flexibility as compared to creating our own plot using <code>ggplot</code>.</p>
+<p>So, the following code chunk is an attempt to create customised correlation matrix using <code>ggplot</code> and <code>plotly</code>. The guideline in this <a href="http://www.sthda.com/english/wiki/ggplot2-quick-correlation-matrix-heatmap-r-software-and-data-visualization">link</a> provides a good reference on creating correlation matrix heat map.</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#447fcf">tic</span>(<span style="color:#ed9d13">&#34;ggplot timing&#34;</span>)
+<span style="color:#999;font-style:italic">#user input (correlation method and p-value)</span>
+corr_method &lt;- <span style="color:#ed9d13">&#34;Pearson&#34;</span>
+p_val &lt;- <span style="color:#3677a9">0.05</span>
+
+corM &lt;- <span style="color:#447fcf">cor</span>(listing_prep2_num,
+            use = <span style="color:#ed9d13">&#34;pairwise.complete.obs&#34;</span>,
+            method = <span style="color:#447fcf">tolower</span>(corr_method))
+p_mat &lt;- <span style="color:#447fcf">cor_pmat</span>(listing_prep2_num)
+
+corM<span style="color:#447fcf">[upper.tri</span>(corM)] &lt;- <span style="color:#6ab825;font-weight:bold">NA</span>
+p_mat<span style="color:#447fcf">[upper.tri</span>(p_mat)] &lt;- <span style="color:#6ab825;font-weight:bold">NA</span>
+
+mlt_cor &lt;- <span style="color:#447fcf">melt</span>(corM, value.name = <span style="color:#ed9d13">&#34;Correlation&#34;</span>)
+mlt_p &lt;- <span style="color:#447fcf">melt</span>(p_mat, value.name = <span style="color:#ed9d13">&#34;pValue&#34;</span>)
+mlt_df &lt;- <span style="color:#447fcf">merge</span>(mlt_cor, mlt_p)
+
+mlt_df_x &lt;- mlt_df %&gt;%
+  <span style="color:#447fcf">na.omit</span>() %&gt;%
+  <span style="color:#447fcf">filter</span>(pValue &gt; p_val)
+  
+gheat &lt;- <span style="color:#447fcf">ggplot</span>(<span style="color:#6ab825;font-weight:bold">NULL</span>, <span style="color:#447fcf">aes</span>(Var1, Var2, fill = Correlation,
+                         text = <span style="color:#447fcf">paste0</span>(Var1,<span style="color:#ed9d13">&#34; - &#34;</span>, Var2, <span style="color:#ed9d13">&#34;\n&#34;</span>,
+                                      <span style="color:#ed9d13">&#34;Correlation: &#34;</span>, <span style="color:#447fcf">round</span>(Correlation, <span style="color:#3677a9">3</span>),
+                                      <span style="color:#ed9d13">&#34;\nP-val: &#34;</span>, <span style="color:#447fcf">round</span>(pValue, <span style="color:#3677a9">3</span>)))) +
+  <span style="color:#447fcf">geom_tile</span>(data=mlt_df) + 
+  <span style="color:#447fcf">scale_fill_gradient2</span>(low = <span style="color:#ed9d13">&#34;blue&#34;</span>, high = <span style="color:#ed9d13">&#34;red&#34;</span>, mid = <span style="color:#ed9d13">&#34;white&#34;</span>,
+                       midpoint = <span style="color:#3677a9">0</span>, limit = <span style="color:#447fcf">c</span>(<span style="color:#3677a9">-1</span>,<span style="color:#3677a9">1</span>),
+                       name=<span style="color:#447fcf">paste0</span>(corr_method,<span style="color:#ed9d13">&#34;\nCorrelation&#34;</span>))
+<span style="color:#999;font-style:italic"># gheat &lt;- gheat +</span>
+<span style="color:#999;font-style:italic">#   geom_text(data=mlt_df, aes(Var1, Var2, label = round(Correlation, 2)), size = 2)</span>
+gx &lt;- gheat + 
+  <span style="color:#447fcf">geom_point</span>(data=mlt_df_x, shape=<span style="color:#3677a9">4</span>, size=<span style="color:#3677a9">1</span>, stroke=<span style="color:#3677a9">0.5</span>, fill=<span style="color:#6ab825;font-weight:bold">NA</span>, color=<span style="color:#ed9d13">&#34;black&#34;</span>) +
+  <span style="color:#447fcf">scale_shape_identity</span>() +
+  <span style="color:#447fcf">theme</span>(axis.text.x = <span style="color:#447fcf">element_text</span>(angle = <span style="color:#3677a9">45</span>, vjust = <span style="color:#3677a9">0.5</span>, hjust=<span style="color:#3677a9">1</span>, size = <span style="color:#3677a9">7</span>),
+      axis.text.y = <span style="color:#447fcf">element_text</span>(size = <span style="color:#3677a9">7</span>),
+      axis.title.x = <span style="color:#447fcf">element_blank</span>(),
+      axis.title.y = <span style="color:#447fcf">element_blank</span>(),
+      panel.grid.major = <span style="color:#447fcf">element_blank</span>(),
+      panel.border = <span style="color:#447fcf">element_blank</span>(),
+      panel.background = <span style="color:#447fcf">element_blank</span>(),
+      axis.ticks = <span style="color:#447fcf">element_blank</span>(),
+      legend.title = <span style="color:#447fcf">element_text</span>(size = <span style="color:#3677a9">7</span>),
+      legend.text = <span style="color:#447fcf">element_text</span>(size = <span style="color:#3677a9">6</span>))
+
+gxly &lt;- <span style="color:#447fcf">ggplotly</span>(gx, tooltip=<span style="color:#447fcf">c</span>(<span style="color:#ed9d13">&#39;text&#39;</span>))
+widgetframe::<span style="color:#447fcf">frameWidget</span>(gxly)
+</code></pre></div><div id="htmlwidget-2" style="width:100%;height:480px;" class="widgetframe html-widget"></div>
+<script type="application/json" data-for="htmlwidget-2">{"x":{"url":"index_files/figure-html//widgets/widget_unnamed-chunk-33.html","options":{"xdomain":"*","allowfullscreen":false,"lazyload":false}},"evals":[],"jsHooks":[]}</script>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#447fcf">toc</span>()
+</code></pre></div><pre><code>## ggplot timing: 4.32 sec elapsed
+</code></pre>
+<p>Based on the result above, we can remove some variables that are known to be highly correlated with others. We will remove <em>reviews_per_month, availability_60, availability_90, and availability_365</em> as they have relatively high correlation score (above 0.6). This will also help in the feature selection process as <code>Boruta</code> algorithm does not treat collinearity when selecting important variables.</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">var_to_remove &lt;- <span style="color:#447fcf">c</span>(<span style="color:#ed9d13">&#34;reviews_per_month&#34;</span>, <span style="color:#ed9d13">&#34;availability_60&#34;</span>, <span style="color:#ed9d13">&#34;availability_90&#34;</span>,
+                   <span style="color:#ed9d13">&#34;availability_365&#34;</span>)
+listing_prep2 &lt;- listing_prep2 %&gt;%
+  <span style="color:#447fcf">select</span>(-<span style="color:#447fcf">all_of</span>(var_to_remove))
+</code></pre></div><p>In addition to correlation matrix, we want to perform feature importance analysis using <em>random forest</em> and <em>Boruta</em> algorithm. However, as it requires model training, we need to perform this analysis on the training data set only to avoid bias in the model. Therefore, we will first proceed with splitting of data set into train and test set in the next section, before returning to our feature importance evaluation later.</p>
+<h2 id="53-train-test-data-split">5.3 Train-test data split</h2>
+<p>Splitting data into training and test set is done by calling <code>initial_split</code> function from <code>rsample</code> package (part of <code>tidymodels</code>). The proportion of training set can be set in the <em>training_prop</em> argument which is then supplied to <code>initial_split</code>. We use stratified sampling (<code>strata</code> argument) based on the target variable in order to ensure balance representation of target variable in both training and test set.
+Although stratified sampling is often used for classification, it is also appropriate for regression with small sample size and for target variable which does not follow normal distribution. <a href="http://uc-r.github.io/regression_preparation#reg_perf_split">Stratified sampling</a> will break target variable into quantiles and randomly sample from each quantile.</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#447fcf">set.seed</span>(<span style="color:#3677a9">1234</span>)
+training_prop &lt;- <span style="color:#3677a9">0.8</span>
+
+listing_split &lt;- listing_prep2 %&gt;%
+  <span style="color:#447fcf">rename</span>(target_var = targetVar) %&gt;%
+  <span style="color:#447fcf">drop_na</span>(target_var) %&gt;% <span style="color:#999;font-style:italic">#remove rows where target variable is missing</span>
+  <span style="color:#447fcf">mutate</span>(id = <span style="color:#447fcf">row_number</span>()) %&gt;%
+  <span style="color:#447fcf">initial_split</span>(prop = training_prop, strata = target_var)
+
+listing_train &lt;- <span style="color:#447fcf">training</span>(listing_split)
+listing_test &lt;- <span style="color:#447fcf">testing</span>(listing_split)
+</code></pre></div><p>Next, we would like to visualise how our data set are divided into the training and test set. This is to understand the possibility of different distribution between the two data sets which may affect the model performance. For numeric variable, we will use density plot to do so.</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">train_grp &lt;- listing_train %&gt;%
+  <span style="color:#447fcf">mutate</span>(split = <span style="color:#ed9d13">&#34;training&#34;</span>)
+
+test_grp &lt;- listing_test %&gt;%
+  <span style="color:#447fcf">mutate</span>(split = <span style="color:#ed9d13">&#34;test&#34;</span>)
+
+trainTest_grp &lt;- <span style="color:#447fcf">rbind</span>(train_grp, test_grp)
+
+trainTest_p &lt;- trainTest_grp %&gt;%
+  <span style="color:#447fcf">rename</span>(!!targetVar := target_var) %&gt;%
+  <span style="color:#447fcf">select</span>(<span style="color:#447fcf">where</span>(is.numeric) | split) %&gt;%
+  <span style="color:#447fcf">select</span>(-id) %&gt;%
+  <span style="color:#447fcf">gather</span>(key, value, -split) %&gt;%
+  <span style="color:#447fcf">ggplot</span>(<span style="color:#447fcf">aes</span>(x = value, fill = split)) +
+    <span style="color:#447fcf">facet_wrap</span>(~ key, scales = <span style="color:#ed9d13">&#34;free&#34;</span>, ncol = <span style="color:#3677a9">3</span>) +
+    <span style="color:#447fcf">geom_density</span>(alpha=<span style="color:#3677a9">0.5</span>)
+trainTest_ply &lt;- <span style="color:#447fcf">ggplotly</span>(trainTest_p)
+</code></pre></div><pre><code>## Warning: Removed 4947 rows containing non-finite values (stat_density).
+</code></pre>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">widgetframe::<span style="color:#447fcf">frameWidget</span>(trainTest_ply)
+</code></pre></div><div id="htmlwidget-3" style="width:100%;height:960px;" class="widgetframe html-widget"></div>
+<script type="application/json" data-for="htmlwidget-3">{"x":{"url":"index_files/figure-html//widgets/widget_unnamed-chunk-36.html","options":{"xdomain":"*","allowfullscreen":false,"lazyload":false}},"evals":[],"jsHooks":[]}</script>
+<p>Whereas for categorical variable, we will use bar chart.</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">trainTest_p2 &lt;- trainTest_grp %&gt;%
+  <span style="color:#447fcf">select</span>(<span style="color:#447fcf">where</span>(<span style="color:#447fcf">negate</span>(is.numeric)) | split) %&gt;%
+  <span style="color:#447fcf">gather</span>(key, value, -split) %&gt;%
+  <span style="color:#447fcf">filter</span>(!<span style="color:#447fcf">is.na</span>(value)) %&gt;%
+  <span style="color:#447fcf">ggplot</span>(<span style="color:#447fcf">aes</span>(x = value, fill = split)) +
+  <span style="color:#447fcf">facet_wrap</span>(~ key, scales = <span style="color:#ed9d13">&#34;free&#34;</span>, ncol = <span style="color:#3677a9">3</span>) +
+  <span style="color:#447fcf">geom_bar</span>() +
+  <span style="color:#447fcf">theme</span>(axis.text.x = <span style="color:#447fcf">element_blank</span>())
+</code></pre></div><pre><code>## Warning: attributes are not identical across measure variables;
+## they will be dropped
+</code></pre>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">p2ly &lt;- <span style="color:#447fcf">ggplotly</span>(trainTest_p2)
+widgetframe::<span style="color:#447fcf">frameWidget</span>(p2ly)
+</code></pre></div><div id="htmlwidget-4" style="width:100%;height:768px;" class="widgetframe html-widget"></div>
+<script type="application/json" data-for="htmlwidget-4">{"x":{"url":"index_files/figure-html//widgets/widget_unnamed-chunk-37.html","options":{"xdomain":"*","allowfullscreen":false,"lazyload":false}},"evals":[],"jsHooks":[]}</script>
+<h2 id="54-feature-importance">5.4 Feature importance</h2>
+<p>First method of feature importance is using random forest. Here, we fit our data into random forest model using <code>ranger</code> package and the feature importance is calculated. The resulting importance value is extracted and plotted using <code>ggplot</code> and wrapped with <code>plotly</code> for interactivity.</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">rf_res1 &lt;- ranger::<span style="color:#447fcf">ranger</span>(target_var ~ ., data = listing_train %&gt;% <span style="color:#447fcf">na.omit</span>(),
+                          importance = <span style="color:#ed9d13">&#34;permutation&#34;</span>)
+
+rf_p &lt;- ranger::<span style="color:#447fcf">importance</span>(rf_res1) %&gt;%
+    <span style="color:#447fcf">enframe</span>(<span style="color:#ed9d13">&#34;Variable&#34;</span>, <span style="color:#ed9d13">&#34;Importance&#34;</span>) %&gt;%
+    <span style="color:#447fcf">mutate</span>(Variable = <span style="color:#447fcf">fct_reorder</span>(Variable, Importance)) %&gt;%
+    <span style="color:#447fcf">arrange</span>(<span style="color:#447fcf">desc</span>(Importance)) %&gt;%
+    <span style="color:#447fcf">ggplot</span>(<span style="color:#447fcf">aes</span>(x = Variable, y = Importance,
+               text = <span style="color:#447fcf">paste0</span>(Variable, <span style="color:#ed9d13">&#34;\nImportance:&#34;</span>, <span style="color:#447fcf">round</span>(Importance,<span style="color:#3677a9">3</span>)))) +
+    <span style="color:#447fcf">geom_col</span>() +
+    <span style="color:#447fcf">coord_flip</span>() +
+    <span style="color:#447fcf">scale_fill_viridis_d</span>(end = <span style="color:#3677a9">.7</span>) +
+    <span style="color:#447fcf">labs</span>(title = <span style="color:#ed9d13">&#34;Feature Importance&#34;</span>)
+
+rf_ply &lt;- <span style="color:#447fcf">ggplotly</span>(rf_p, tooltip = <span style="color:#447fcf">c</span>(<span style="color:#ed9d13">&#39;text&#39;</span>))
+widgetframe::<span style="color:#447fcf">frameWidget</span>(rf_ply)
+</code></pre></div><div id="htmlwidget-5" style="width:100%;height:480px;" class="widgetframe html-widget"></div>
+<script type="application/json" data-for="htmlwidget-5">{"x":{"url":"index_files/figure-html//widgets/widget_unnamed-chunk-38.html","options":{"xdomain":"*","allowfullscreen":false,"lazyload":false}},"evals":[],"jsHooks":[]}</script>
+<p>Feature importance using <em>boruta</em> algorithm to be compared with <em>random forest</em>.</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">boruta_output &lt;- <span style="color:#447fcf">Boruta</span>(target_var ~ .,
+                        data = listing_train %&gt;% <span style="color:#447fcf">na.omit</span>(),
+                        maxRuns = <span style="color:#3677a9">50</span>,
+                        doTrace = <span style="color:#3677a9">0</span>)
+boruta_output_tbl &lt;- <span style="color:#447fcf">as.data.frame</span>(boruta_output$ImpHistory) %&gt;%
+  <span style="color:#447fcf">gather</span>()
+
+fac &lt;- <span style="color:#447fcf">with</span>(boruta_output_tbl, <span style="color:#447fcf">reorder</span>(key, value, median, order = <span style="color:#6ab825;font-weight:bold">TRUE</span>))
+boruta_output_tbl$key &lt;- <span style="color:#447fcf">factor</span>(boruta_output_tbl$key, levels = <span style="color:#447fcf">levels</span>(fac))
+
+boruta_p &lt;- boruta_output_tbl %&gt;%
+  <span style="color:#447fcf">ggplot</span>(<span style="color:#447fcf">aes</span>(x = key, y = value)) +
+  <span style="color:#447fcf">geom_boxplot</span>() +
+  <span style="color:#447fcf">ggtitle</span>(<span style="color:#ed9d13">&#34;Feature Importance&#34;</span>) +
+  <span style="color:#447fcf">xlab</span>(<span style="color:#ed9d13">&#34;Variable&#34;</span>) +
+  <span style="color:#447fcf">ylab</span>(<span style="color:#ed9d13">&#34;Importance&#34;</span>) +
+  <span style="color:#447fcf">coord_flip</span>()
+boruta_ply &lt;- <span style="color:#447fcf">ggplotly</span>(boruta_p)
+widgetframe::<span style="color:#447fcf">frameWidget</span>(boruta_ply)
+</code></pre></div><div id="htmlwidget-6" style="width:100%;height:480px;" class="widgetframe html-widget"></div>
+<script type="application/json" data-for="htmlwidget-6">{"x":{"url":"index_files/figure-html//widgets/widget_unnamed-chunk-39.html","options":{"xdomain":"*","allowfullscreen":false,"lazyload":false}},"evals":[],"jsHooks":[]}</script>
+<p>In fact, feature selection using feature importance score can be done as a step in the pre-processing <code>recipe</code>. However, this require <a href="https://github.com/stevenpawley/recipeselectors"><code>recipeselectors</code></a> package which is still under development and not available in CRAN yet at the time of writing this post. Therefore, we will select our variables using <code>select</code> manually</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">selected_var &lt;- <span style="color:#447fcf">c</span>(<span style="color:#ed9d13">&#34;accommodates&#34;</span>, <span style="color:#ed9d13">&#34;room_type&#34;</span>, <span style="color:#ed9d13">&#34;bedrooms&#34;</span>, <span style="color:#ed9d13">&#34;bathroom_type&#34;</span>,
+                  <span style="color:#ed9d13">&#34;days_joined&#34;</span>, <span style="color:#ed9d13">&#34;beds&#34;</span>, <span style="color:#ed9d13">&#34;amenities_count&#34;</span>,
+                  <span style="color:#ed9d13">&#34;property_type&#34;</span>, <span style="color:#ed9d13">&#34;latitude&#34;</span>, <span style="color:#ed9d13">&#34;longitude&#34;</span>, <span style="color:#ed9d13">&#34;bathroom&#34;</span>,
+                  <span style="color:#ed9d13">&#34;price&#34;</span>)
+
+<span style="color:#447fcf">set.seed</span>(<span style="color:#3677a9">1234</span>)
+training_prop &lt;- <span style="color:#3677a9">0.8</span>
+
+listing_split &lt;- listing_prep2 %&gt;%
+  <span style="color:#447fcf">select</span>(<span style="color:#447fcf">all_of</span>(selected_var)) %&gt;%
+  <span style="color:#447fcf">rename</span>(target_var = targetVar) %&gt;%
+  <span style="color:#447fcf">na.omit</span>() %&gt;% <span style="color:#999;font-style:italic">#remove all rows with missing values</span>
+  <span style="color:#447fcf">mutate</span>(id = <span style="color:#447fcf">row_number</span>()) %&gt;%
+  <span style="color:#447fcf">initial_split</span>(prop = training_prop, strata = target_var)
+
+listing_train &lt;- <span style="color:#447fcf">training</span>(listing_split)
+listing_test &lt;- <span style="color:#447fcf">testing</span>(listing_split)
+</code></pre></div><h2 id="55-build-transformation-recipe">5.5 Build transformation recipe</h2>
+<p>After we assess the correlation and feature importance, we also need to perform several processing steps as follows:</p>
+<ul>
+<li>removal of rows with NA (missing data) [<code>step_naomit</code>]</li>
+<li>removal of highly correlated variables [<code>step_corr</code>] with a specified threshold</li>
+<li>normalise variable to get similar range of values among variables [<code>step_normalize</code>]</li>
+<li>pool infrequently occurring values into “other” category [<code>step_other</code>]</li>
+<li>one hot encoding for categorical variables [<code>step_dummy</code>]<br>
+<em>Other available steps in <code>recipe</code> can be found <a href="https://recipes.tidymodels.org/reference/index.html">here</a></em></li>
+</ul>
+<p>We will create 3 different recipes for linear regression, decision tree, and random forest model as they have different requirement of data transformation. For tree-based model, we can skip normalisation and one-hot encoding steps.</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#999;font-style:italic">#recipe for linear regression</span>
+rcpTransform1 &lt;- <span style="color:#447fcf">recipe</span>(target_var ~ ., data = listing_train) %&gt;%
+  <span style="color:#447fcf">update_role</span>(id, new_role = <span style="color:#ed9d13">&#34;id variable&#34;</span>) %&gt;%
+  <span style="color:#447fcf">step_naomit</span>(<span style="color:#447fcf">all_predictors</span>(), skip = <span style="color:#6ab825;font-weight:bold">TRUE</span>) %&gt;% <span style="color:#999;font-style:italic">#remove rows with NA</span>
+  <span style="color:#447fcf">step_corr</span>(<span style="color:#447fcf">all_numeric</span>(), -<span style="color:#447fcf">all_outcomes</span>(), -id, threshold = <span style="color:#3677a9">0.7</span>,
+            method = <span style="color:#ed9d13">&#34;pearson&#34;</span>) %&gt;% <span style="color:#999;font-style:italic">#remove correlated variables at 0.7 threshold</span>
+  <span style="color:#447fcf">step_normalize</span>(<span style="color:#447fcf">all_numeric</span>(), -<span style="color:#447fcf">all_outcomes</span>(), -id) %&gt;%
+  <span style="color:#447fcf">step_other</span>(<span style="color:#447fcf">all_predictors</span>(), -<span style="color:#447fcf">all_numeric</span>(),
+             threshold = <span style="color:#3677a9">0.05</span>, other = <span style="color:#ed9d13">&#34;Others&#34;</span>) %&gt;%
+  <span style="color:#447fcf">step_dummy</span>(<span style="color:#447fcf">all_nominal</span>(), -<span style="color:#447fcf">all_outcomes</span>())
+
+<span style="color:#999;font-style:italic">#recipe for decision tree</span>
+rcpTransform2 &lt;- <span style="color:#447fcf">recipe</span>(target_var ~ ., data = listing_train) %&gt;%
+  <span style="color:#447fcf">update_role</span>(id, new_role = <span style="color:#ed9d13">&#34;id variable&#34;</span>) %&gt;%
+  <span style="color:#447fcf">step_other</span>(<span style="color:#447fcf">all_predictors</span>(), -<span style="color:#447fcf">all_numeric</span>(),
+             threshold = <span style="color:#3677a9">0.05</span>, other = <span style="color:#ed9d13">&#34;Others&#34;</span>)
+
+<span style="color:#999;font-style:italic">#recipe for random forest</span>
+rcpTransform3 &lt;- <span style="color:#447fcf">recipe</span>(target_var ~ ., data = listing_train) %&gt;%
+  <span style="color:#447fcf">update_role</span>(id, new_role = <span style="color:#ed9d13">&#34;id variable&#34;</span>) %&gt;%
+  <span style="color:#447fcf">step_other</span>(<span style="color:#447fcf">all_predictors</span>(), -<span style="color:#447fcf">all_numeric</span>(),
+             threshold = <span style="color:#3677a9">0.05</span>, other = <span style="color:#ed9d13">&#34;Others&#34;</span>)
+</code></pre></div><p>To understand what the pre-processing recipe does to our data set, we will apply the recipe and plot them side by side.</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#999;font-style:italic">#apply recipe to training data</span>
+listingTrain_T &lt;- rcpTransform1 %&gt;% <span style="color:#447fcf">prep</span>() %&gt;% <span style="color:#447fcf">juice</span>()
+
+<span style="color:#999;font-style:italic">#get numeric variables only</span>
+intersect_vars &lt;- <span style="color:#447fcf">intersect</span>(<span style="color:#447fcf">names</span>(listing_train), <span style="color:#447fcf">names</span>(listingTrain_T))
+
+<span style="color:#999;font-style:italic">#assign label for original and processed data</span>
+train_proc &lt;- listing_train %&gt;%
+  <span style="color:#447fcf">select</span>(<span style="color:#447fcf">all_of</span>(intersect_vars)) %&gt;%
+  <span style="color:#447fcf">mutate</span>(processed = <span style="color:#ed9d13">&#34;original&#34;</span>)
+
+train_T_proc &lt;- listingTrain_T %&gt;%
+  <span style="color:#447fcf">select</span>(<span style="color:#447fcf">all_of</span>(intersect_vars)) %&gt;%
+  <span style="color:#447fcf">mutate</span>(processed = <span style="color:#ed9d13">&#34;processed&#34;</span>)
+
+trainTProcessed &lt;- <span style="color:#447fcf">rbind</span>(train_proc, train_T_proc)
+
+<span style="color:#999;font-style:italic">#plot</span>
+trainTProcessed %&gt;%
+  <span style="color:#447fcf">select</span>(<span style="color:#447fcf">where</span>(is.numeric) | processed) %&gt;%
+  <span style="color:#447fcf">select</span>(<span style="color:#447fcf">c</span>(<span style="color:#3677a9">1</span>,<span style="color:#447fcf">ncol</span>(.))) %&gt;%
+  <span style="color:#447fcf">gather</span>(key, value, -processed) %&gt;%
+  <span style="color:#447fcf">ggplot</span>(<span style="color:#447fcf">aes</span>(x = value, fill = processed)) +
+    <span style="color:#447fcf">facet_wrap</span>(~ processed, scales = <span style="color:#ed9d13">&#34;free&#34;</span>) +
+    <span style="color:#447fcf">geom_histogram</span>(alpha=<span style="color:#3677a9">0.5</span>)
+</code></pre></div><pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+</code></pre>
+<p><img src="https://ourshinypet.netlify.app/blog/predictive/index_files/figure-html/unnamed-chunk-42-1.png" width="672" /></p>
+<h2 id="56-linear-regression-model">5.6 Linear regression model</h2>
+<p>First, we will build a linear regression model using parsnip. The first step is to specify the model specification. Model specification is then fed in to a <code>workflow</code> object which acts as a container that aggregates information required to fit and predict a model. This leads to a more readable code (<code>workflow</code> is part of <code>tidymodels</code> framework).</p>
+<p>Next, the model is fitted using our training set (<em>listing_train</em>). The statistics such as Rsquared and p-value of the model can be extracted using <code>glance</code> while the parameter coefficient is plotted using <code>ggcoefstats</code> from <code>ggstatsplot</code> package. In the code chunk below, only coefficient with p-value of less than 0.05 is displayed.</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#999;font-style:italic">#Linear regression</span>
+lm_mod &lt;- <span style="color:#447fcf">linear_reg</span>() %&gt;%
+  <span style="color:#447fcf">set_engine</span>(<span style="color:#ed9d13">&#34;lm&#34;</span>) %&gt;%
+  <span style="color:#447fcf">set_mode</span>(<span style="color:#ed9d13">&#34;regression&#34;</span>)
+
+listing_wflow &lt;-  <span style="color:#447fcf">workflow</span>() %&gt;%
+  <span style="color:#447fcf">add_model</span>(lm_mod) %&gt;%
+  <span style="color:#447fcf">add_recipe</span>(rcpTransform1)
+
+listing_fit &lt;- listing_wflow %&gt;%
+  <span style="color:#447fcf">fit</span>(data = listing_train)
+
+<span style="color:#447fcf">glance</span>(listing_fit)
+</code></pre></div><pre><code>## # A tibble: 1 x 12
+##   r.squared adj.r.squared sigma statistic   p.value    df  logLik    AIC    BIC
+##       &lt;dbl&gt;         &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;
+## 1     0.345         0.342  99.8      87.9 1.51e-259    18 -18158. 36356. 36476.
+## # ... with 3 more variables: deviance &lt;dbl&gt;, df.residual &lt;int&gt;, nobs &lt;int&gt;
+</code></pre>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">fitResult &lt;- listing_fit %&gt;%
+  <span style="color:#447fcf">pull_workflow_fit</span>() %&gt;%
+  <span style="color:#447fcf">tidy</span>()
+
+<span style="color:#447fcf">ggcoefstats</span>(listing_fit$fit$fit$fit,
+            sort = <span style="color:#ed9d13">&#34;ascending&#34;</span>,
+            exclude.intercept = <span style="color:#6ab825;font-weight:bold">TRUE</span>,
+            only.significant = <span style="color:#6ab825;font-weight:bold">TRUE</span>)
+</code></pre></div><pre><code>## Warning: Number of labels is greater than default palette color count.
+##  Try using another color `palette` (and/or `package`).
+
+## 
+</code></pre>
+<p><img src="https://ourshinypet.netlify.app/blog/predictive/index_files/figure-html/unnamed-chunk-43-1.png" width="672" /></p>
+<p><code>ggcoefstats</code> is a good wrapper for plotting the regression coefficient. However, it is limited towards customisation such as sorting by p-value/coefficient, p-value information on-demand (rather than plotting all the labels) and tooltip information when we use <code>plotly</code> for interactivity. Therefore, the following code chunk is provided to create similar plot using <code>ggplot</code> and <code>plotly</code>.</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#999;font-style:italic">#select p-value threshold</span>
+pval &lt;- <span style="color:#3677a9">0.05</span>
+
+<span style="color:#999;font-style:italic">#choose sorting by p.value or estimate</span>
+sort_by &lt;- <span style="color:#ed9d13">&#34;p.value_neg&#34;</span>
+<span style="color:#999;font-style:italic"># sort_by &lt;- &#34;estimate&#34;</span>
+
+<span style="color:#999;font-style:italic">#get significant features</span>
+sig_lm_predictors &lt;- fitResult %&gt;%
+  <span style="color:#447fcf">filter</span>(p.value &lt;= pval) %&gt;%
+  <span style="color:#447fcf">mutate</span>(p.value_neg = -p.value)
+
+<span style="color:#999;font-style:italic">#plot</span>
+regly &lt;- <span style="color:#447fcf">ggplotly</span>(
+  sig_lm_predictors %&gt;%
+    <span style="color:#447fcf">ggplot</span>(<span style="color:#447fcf">aes</span>(x = estimate, y = <span style="color:#447fcf">reorder</span>(term, !!<span style="color:#447fcf">as.symbol</span>(sort_by)),
+               text = <span style="color:#447fcf">paste0</span>(term, <span style="color:#ed9d13">&#34;\nestimate: &#34;</span>, <span style="color:#447fcf">round</span>(estimate,<span style="color:#3677a9">3</span>),
+                             <span style="color:#ed9d13">&#34;\n95% CI: &#34;</span>, <span style="color:#447fcf">round</span>(estimate-std.error,<span style="color:#3677a9">2</span>),
+                             <span style="color:#ed9d13">&#34;-&#34;</span>, <span style="color:#447fcf">round</span>(estimate+std.error,<span style="color:#3677a9">2</span>),
+                             <span style="color:#ed9d13">&#34;\np-value: &#34;</span>, <span style="color:#447fcf">round</span>(p.value,<span style="color:#3677a9">5</span>)))) +
+    <span style="color:#447fcf">geom_pointrange</span>(<span style="color:#447fcf">aes</span>(xmin = estimate-std.error, xmax = estimate+std.error)) +
+    <span style="color:#447fcf">geom_vline</span>(xintercept = <span style="color:#3677a9">0</span>, linetype = <span style="color:#ed9d13">&#34;dashed&#34;</span>) +
+    <span style="color:#447fcf">theme</span>(axis.title.y = <span style="color:#447fcf">element_blank</span>()),
+  tooltip = <span style="color:#447fcf">c</span>(<span style="color:#ed9d13">&#39;text&#39;</span>)
+)
+widgetframe::<span style="color:#447fcf">frameWidget</span>(regly)
+</code></pre></div><div id="htmlwidget-7" style="width:100%;height:480px;" class="widgetframe html-widget"></div>
+<script type="application/json" data-for="htmlwidget-7">{"x":{"url":"index_files/figure-html//widgets/widget_unnamed-chunk-44.html","options":{"xdomain":"*","allowfullscreen":false,"lazyload":false}},"evals":[],"jsHooks":[]}</script>
+<p>The trained model is then used to predict listing price in the test set (<em>listing_test</em>). The test set is pre-processed using the recipe with <code>prep()</code> and <code>bake()</code> steps, which are then added with the prediction result from <code>predict</code>. This is so that we get a tibble dataframe with both predicted and actual value. The performance metric such as RMSE, MAPE, MAE, and Rsquared can be collected using <code>metric_set</code> function from <code>yardstick</code> package. Finally, we plot both predicted vs actual value in an Rsquared plot.</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">listing_test_T &lt;- rcpTransform1 %&gt;% <span style="color:#447fcf">prep</span>() %&gt;% <span style="color:#447fcf">bake</span>(listing_test)
+  
+listing_pred &lt;- <span style="color:#447fcf">predict</span>(listing_fit, new_data = listing_test) %&gt;%
+  <span style="color:#447fcf">bind_cols</span>(listing_test_T)
+
+multi_metric &lt;- <span style="color:#447fcf">metric_set</span>(mae, mape, rmse, rsq)
+
+final_metric_lm &lt;- listing_pred %&gt;%
+  <span style="color:#447fcf">multi_metric</span>(truth = target_var, estimate = .pred)
+
+pred_p &lt;- <span style="color:#447fcf">ggplot</span>(listing_pred, <span style="color:#447fcf">aes</span>(x = target_var, y = .pred)) +
+  <span style="color:#447fcf">geom_point</span>() +
+  <span style="color:#447fcf">geom_abline</span>() +
+  <span style="color:#447fcf">coord_obs_pred</span>() +
+  <span style="color:#447fcf">labs</span>(title = <span style="color:#ed9d13">&#34;R-squared plot&#34;</span>,
+       x = <span style="color:#447fcf">paste0</span>(<span style="color:#ed9d13">&#34;Actual &#34;</span>, targetVar),
+       y = <span style="color:#447fcf">paste0</span>(<span style="color:#ed9d13">&#34;Predicted &#34;</span>, targetVar))
+pred_ply &lt;- <span style="color:#447fcf">ggplotly</span>(pred_p)
+widgetframe::<span style="color:#447fcf">frameWidget</span>(pred_ply)
+</code></pre></div><div id="htmlwidget-8" style="width:100%;height:480px;" class="widgetframe html-widget"></div>
+<script type="application/json" data-for="htmlwidget-8">{"x":{"url":"index_files/figure-html//widgets/widget_unnamed-chunk-45.html","options":{"xdomain":"*","allowfullscreen":false,"lazyload":false}},"evals":[],"jsHooks":[]}</script>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">final_metric_lm
+</code></pre></div><pre><code>## # A tibble: 4 x 3
+##   .metric .estimator .estimate
+##   &lt;chr&gt;   &lt;chr&gt;          &lt;dbl&gt;
+## 1 mae     standard      56.0  
+## 2 mape    standard      59.2  
+## 3 rmse    standard      93.3  
+## 4 rsq     standard       0.414
+</code></pre>
+<p>From the plot, the predicted value below $250 shows relatively good agreement with the actual value. On the other hand, the model underestimates the predicted price for listing price above $250.</p>
+<p>We can further evaluate those predicted values which deviate greatly from the actual values. First, we get the top 9 predictors from training model (based on p.value) and prepare the filtered training set.</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">slp &lt;- sig_lm_predictors %&gt;%
+  <span style="color:#447fcf">filter</span>(term != <span style="color:#ed9d13">&#34;(Intercept)&#34;</span>) %&gt;%
+  <span style="color:#447fcf">arrange</span>(p.value) %&gt;%
+  <span style="color:#447fcf">top_n</span>(<span style="color:#3677a9">9</span>) %&gt;%
+  <span style="color:#447fcf">pull</span>(term)
+</code></pre></div><pre><code>## Selecting by p.value_neg
+</code></pre>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">slp_train &lt;- listingTrain_T %&gt;%
+  <span style="color:#447fcf">select</span>(<span style="color:#447fcf">all_of</span>(slp)) %&gt;%
+  <span style="color:#447fcf">gather</span>()
+</code></pre></div><pre><code>## Warning: attributes are not identical across measure variables;
+## they will be dropped
+</code></pre>
+<p>Next, we get the <em>id</em> of the top N predicted result with highest error and prepare the filtered data set.</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">topn_val &lt;- <span style="color:#3677a9">10</span>
+top_err_id &lt;- listing_pred %&gt;%
+  <span style="color:#447fcf">mutate</span>(pred_error = <span style="color:#447fcf">abs</span>(target_var<span style="color:#3677a9">-.</span>pred)) %&gt;%
+  <span style="color:#447fcf">arrange</span>(-pred_error) %&gt;%
+  <span style="color:#447fcf">top_n</span>(topn_val) %&gt;%
+  <span style="color:#447fcf">pull</span>(id)
+</code></pre></div><pre><code>## Selecting by pred_error
+</code></pre>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">top_err &lt;- listing_pred %&gt;%
+  <span style="color:#447fcf">filter</span>(id %in% top_err_id) %&gt;%
+  <span style="color:#447fcf">mutate</span>(pred_error = <span style="color:#447fcf">abs</span>(target_var<span style="color:#3677a9">-.</span>pred)) %&gt;%
+  <span style="color:#447fcf">select</span>(<span style="color:#447fcf">all_of</span>(slp), id, pred_error) %&gt;%
+  <span style="color:#447fcf">gather</span>(key, value, -id, -pred_error) %&gt;%
+  <span style="color:#447fcf">mutate</span>(id = <span style="color:#447fcf">as.factor</span>(id))
+</code></pre></div><pre><code>## Warning: attributes are not identical across measure variables;
+## they will be dropped
+</code></pre>
+<p>We can then plot the two data set with selected 9 predictors by:</p>
+<ul>
+<li>plotting the training set distribution as histogram</li>
+<li>plotting the test set data points as point with jitter</li>
+</ul>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">color_vec &lt;- <span style="color:#447fcf">rep</span>(<span style="color:#447fcf">c</span>(<span style="color:#ed9d13">&#34;red&#34;</span>), times = <span style="color:#447fcf">length</span>(<span style="color:#447fcf">unique</span>(top_err$id)))
+
+pred_erly &lt;- <span style="color:#447fcf">ggplotly</span>(<span style="color:#447fcf">ggplot</span>(<span style="color:#6ab825;font-weight:bold">NULL</span>, <span style="color:#447fcf">aes</span>(x = value)) +
+  <span style="color:#447fcf">geom_histogram</span>(data = slp_train, color = <span style="color:#ed9d13">&#34;grey70&#34;</span>,
+               fill = <span style="color:#ed9d13">&#34;grey60&#34;</span>, alpha = <span style="color:#3677a9">0.5</span>) +
+  <span style="color:#447fcf">geom_jitter</span>(data = top_err, <span style="color:#447fcf">aes</span>(y = <span style="color:#3677a9">0</span>, color = id,
+                                  text = <span style="color:#447fcf">paste0</span>(<span style="color:#ed9d13">&#34;id: &#34;</span>, id,
+                                                <span style="color:#ed9d13">&#34;\n&#34;</span>, key, <span style="color:#ed9d13">&#34;:&#34;</span>, <span style="color:#447fcf">round</span>(value,<span style="color:#3677a9">2</span>),
+                                                <span style="color:#ed9d13">&#34;\nerror: &#34;</span>, <span style="color:#447fcf">round</span>(pred_error,<span style="color:#3677a9">2</span>))),
+              alpha = <span style="color:#3677a9">0.5</span>, width = <span style="color:#3677a9">0.01</span>, height = <span style="color:#3677a9">50</span>) +
+    <span style="color:#447fcf">scale_color_manual</span>(values = color_vec) +
+    <span style="color:#447fcf">facet_wrap</span>(~ key, scales = <span style="color:#ed9d13">&#34;free_x&#34;</span>) +
+    <span style="color:#447fcf">theme</span>(panel.spacing.y = <span style="color:#447fcf">unit</span>(<span style="color:#3677a9">2</span>, <span style="color:#ed9d13">&#34;lines&#34;</span>)),
+tooltip = <span style="color:#447fcf">c</span>(<span style="color:#ed9d13">&#39;text&#39;</span>))
+</code></pre></div><pre><code>## Warning: Ignoring unknown aesthetics: text
+
+## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+</code></pre>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">widgetframe::<span style="color:#447fcf">frameWidget</span>(pred_erly)
+</code></pre></div><div id="htmlwidget-9" style="width:100%;height:1152px;" class="widgetframe html-widget"></div>
+<script type="application/json" data-for="htmlwidget-9">{"x":{"url":"index_files/figure-html//widgets/widget_unnamed-chunk-48.html","options":{"xdomain":"*","allowfullscreen":false,"lazyload":false}},"evals":[],"jsHooks":[]}</script>
+<p>This plot helps us to understand that high prediction error may be a result of the listing being outliers e.g. large number of <em>bedrooms/accommodates</em> and belong to small distribution of property/room type (hotel/service apartment).</p>
+<h2 id="57-cross-validation">5.7 Cross validation</h2>
+<p>K-fold cross validation is also performed to divide training data into <em>k</em> groups (folds). This will be used to find model with the best performance which is more likely to balance the bias-variance tradeoff. In this example, we use 3-folds instead of the commonly used 5/10 folds to speed up the process. Before creating the folds, we will apply pre-processing steps (using <code>step_naomit</code> in <code>recipe</code>) to our train set to eliminate missing values.</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#447fcf">set.seed</span>(<span style="color:#3677a9">1234</span>)
+kfold &lt;- <span style="color:#3677a9">3</span>
+
+rcpKFold &lt;- <span style="color:#447fcf">recipe</span>(target_var ~ ., data = listing_train) %&gt;%
+  <span style="color:#447fcf">step_naomit</span>(<span style="color:#447fcf">all_predictors</span>(), -<span style="color:#447fcf">all_nominal</span>(), skip = <span style="color:#6ab825;font-weight:bold">TRUE</span>) <span style="color:#999;font-style:italic">#remove rows with NA</span>
+
+listing_kfolds &lt;- rcpKFold %&gt;%
+  <span style="color:#447fcf">prep</span>() %&gt;%
+  <span style="color:#447fcf">juice</span>() %&gt;%
+  <span style="color:#447fcf">vfold_cv</span>(v = kfold, strata = target_var)
+</code></pre></div><h2 id="58-glm-models">5.8 GLM models</h2>
+<p>Next, we would like to apply regularisation to our linear model to see if it helps in reducing the issue of model overfitting. We are going to use <code>tune</code> package from <code>tidymodels</code> framework to try out several combination of hyper-parameters such as <code>penalty</code> and <code>mixture</code>. Here, <em>penalty</em> refers to the amount of regularisation or <em>lambda</em> in regularised linear model and <em>mixture</em> is the amount of different types of regularisation where 0 refers to ridge regression and 1 refers to lasso regression. More info can be found <a href="https://parsnip.tidymodels.org/reference/linear_reg.html">here</a></p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#999;font-style:italic">#GLM model</span>
+<span style="color:#447fcf">set.seed</span>(<span style="color:#3677a9">1234</span>)
+glmnet_model &lt;- <span style="color:#447fcf">linear_reg</span>(mode = <span style="color:#ed9d13">&#34;regression&#34;</span>,
+             penalty = <span style="color:#447fcf">tune</span>(),
+             mixture = <span style="color:#447fcf">tune</span>()) %&gt;%
+  <span style="color:#447fcf">set_engine</span>(<span style="color:#ed9d13">&#34;glmnet&#34;</span>)
+
+<span style="color:#999;font-style:italic">#set tune specification</span>
+glmnet_params &lt;- <span style="color:#447fcf">parameters</span>(<span style="color:#447fcf">penalty</span>(), <span style="color:#447fcf">mixture</span>())
+
+glmnet_grid &lt;- <span style="color:#447fcf">grid_max_entropy</span>(glmnet_params, size = <span style="color:#3677a9">20</span>)
+
+<span style="color:#999;font-style:italic">#workflow</span>
+glm_wf &lt;- <span style="color:#447fcf">workflow</span>() %&gt;%
+  <span style="color:#447fcf">add_model</span>(glmnet_model) %&gt;%
+  <span style="color:#447fcf">add_recipe</span>(rcpTransform1)
+
+glm_result &lt;- glm_wf %&gt;%
+  <span style="color:#447fcf">tune_grid</span>(resamples = listing_kfolds,
+            grid = glmnet_grid,
+            metrics = <span style="color:#447fcf">metric_set</span>(mae, mape, rmse, rsq))
+</code></pre></div><p>Once cross validation is done, we can plot the metrics evaluation with respect to the hyper-parameters value. The best model is then chosen based on the metrics selection e.g. “RMSE.” We then proceed to fit the best model to our training set and plot the parameter coefficients.</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">glm_p &lt;- glm_result %&gt;%
+  <span style="color:#447fcf">collect_metrics</span>() %&gt;%
+  <span style="color:#447fcf">ggplot</span>(<span style="color:#447fcf">aes</span>(penalty, mean, color = .metric)) +
+  <span style="color:#447fcf">geom_errorbar</span>(<span style="color:#447fcf">aes</span>(ymin = mean - std_err,
+                    ymax = mean + std_err),
+                alpha = <span style="color:#3677a9">0.5</span>) +
+  <span style="color:#447fcf">geom_line</span>(size = <span style="color:#3677a9">1.5</span>) +
+  <span style="color:#447fcf">facet_wrap</span>(~.metric, scales = <span style="color:#ed9d13">&#34;free&#34;</span>, nrow = <span style="color:#3677a9">2</span>) +
+  <span style="color:#447fcf">scale_x_log10</span>() +
+  <span style="color:#447fcf">theme</span>(legend.position = <span style="color:#ed9d13">&#34;none&#34;</span>)
+<span style="color:#447fcf">ggplotly</span>(glm_p)
+</code></pre></div><div id="htmlwidget-10" style="width:672px;height:480px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-10">{"x":{"data":[{"x":[-8.01016299519688,-0.211572973057628,-5.81118678441271,-9.67155081918463,-5.02131110057235,-7.40551540395245,-9.88523631589487,-6.73895750660449,-0.491607449948788,-3.9891752274707,-3.2210855348967,-0.469370170030743,-2.61183278867975,-2.05140436068177,-4.35527180321515,-6.1153273191303,-9.26323365420103,-9.41022143932059,-7.0818750676699,-1.38840439496562],"y":[57.931134853137,57.7924214917281,57.9158936685986,57.9185637025895,57.9293367318371,57.9142265364485,57.9161996085523,57.9167220547325,57.924285798738,57.913389540907,57.9163898201519,57.9111568944868,57.9171936013485,57.9135818292922,57.9145233865571,57.9138393571598,57.914550517768,57.9138887316118,57.9145764771546,57.9144906162053],"text":["mean - std_err: 56.1374084<br />mean + std_err:  59.7248613<br />penalty: 9.768705e-09<br />mean:  57.9311349<br />.metric: mae","mean - std_err: 55.9896352<br />mean + std_err:  59.5952077<br />penalty: 6.143658e-01<br />mean:  57.7924215<br />.metric: mae","mean - std_err: 56.1163737<br />mean + std_err:  59.7154136<br />penalty: 1.544590e-06<br />mean:  57.9158937<br />.metric: mae","mean - std_err: 56.1215478<br />mean + std_err:  59.7155796<br />penalty: 2.130341e-10<br />mean:  57.9185637<br />.metric: mae","mean - std_err: 56.1351491<br />mean + std_err:  59.7235244<br />penalty: 9.521139e-06<br />mean:  57.9293367<br />.metric: mae","mean - std_err: 56.1142688<br />mean + std_err:  59.7141843<br />penalty: 3.930833e-08<br />mean:  57.9142265<br />.metric: mae","mean - std_err: 56.1167381<br />mean + std_err:  59.7156611<br />penalty: 1.302458e-10<br />mean:  57.9161996<br />.metric: mae","mean - std_err: 56.1192916<br />mean + std_err:  59.7141525<br />penalty: 1.824074e-07<br />mean:  57.9167221<br />.metric: mae","mean - std_err: 56.1296569<br />mean + std_err:  59.7189147<br />penalty: 3.223982e-01<br />mean:  57.9242858<br />.metric: mae","mean - std_err: 56.1135187<br />mean + std_err:  59.7132603<br />penalty: 1.025238e-04<br />mean:  57.9133895<br />.metric: mae","mean - std_err: 56.1169247<br />mean + std_err:  59.7158549<br />penalty: 6.010553e-04<br />mean:  57.9163898<br />.metric: mae","mean - std_err: 56.1162563<br />mean + std_err:  59.7060575<br />penalty: 3.393359e-01<br />mean:  57.9111569<br />.metric: mae","mean - std_err: 56.1200604<br />mean + std_err:  59.7143268<br />penalty: 2.444371e-03<br />mean:  57.9171936<br />.metric: mae","mean - std_err: 56.1137066<br />mean + std_err:  59.7134570<br />penalty: 8.883736e-03<br />mean:  57.9135818<br />.metric: mae","mean - std_err: 56.1146491<br />mean + std_err:  59.7143977<br />penalty: 4.412942e-05<br />mean:  57.9145234<br />.metric: mae","mean - std_err: 56.1139558<br />mean + std_err:  59.7137229<br />penalty: 7.667834e-07<br />mean:  57.9138394<br />.metric: mae","mean - std_err: 56.1146757<br />mean + std_err:  59.7144253<br />penalty: 5.454643e-10<br />mean:  57.9145505<br />.metric: mae","mean - std_err: 56.1140041<br />mean + std_err:  59.7137734<br />penalty: 3.888468e-10<br />mean:  57.9138887<br />.metric: mae","mean - std_err: 56.1147011<br />mean + std_err:  59.7144519<br />penalty: 8.281804e-08<br />mean:  57.9145765<br />.metric: mae","mean - std_err: 56.1146171<br />mean + std_err:  59.7143641<br />penalty: 4.088798e-02<br />mean:  57.9144906<br />.metric: mae"],"type":"scatter","mode":"lines","opacity":0.5,"line":{"color":"transparent"},"error_y":{"array":[1.79372645364356,1.80278624695909,1.79951996149031,1.79701593149053,1.79418765879574,1.79995771362541,1.7994615273055,1.79743047772759,1.79462885192054,1.79987080058125,1.79946512680792,1.79490062480296,1.79713318998266,1.7998751912945,1.79987433149994,1.79988352085689,1.79987479214321,1.79988462900381,1.7998753822412,1.79987349338516],"arrayminus":[1.79372645364356,1.80278624695909,1.79951996149031,1.79701593149053,1.79418765879574,1.79995771362541,1.7994615273055,1.79743047772759,1.79462885192054,1.79987080058125,1.79946512680792,1.79490062480296,1.79713318998266,1.7998751912945,1.79987433149994,1.79988352085689,1.79987479214321,1.79988462900381,1.7998753822412,1.79987349338516],"type":"data","width":0.840854710127319,"symmetric":false,"color":"rgba(248,118,109,1)"},"name":"mae","legendgroup":"mae","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[-8.01016299519688,-0.211572973057628,-5.02131110057235,-7.40551540395245,-0.491607449948788,-3.9891752274707,-2.61183278867975,-2.05140436068177,-5.81118678441271,-9.67155081918463,-6.1153273191303,-9.88523631589487,-6.73895750660449,-9.41022143932059,-3.2210855348967,-0.469370170030743,-1.38840439496562,-4.35527180321515,-9.26323365420103,-7.0818750676699],"y":[58.2464757540462,58.1982481179774,58.2410909591875,58.2076582842504,58.2334463249039,58.2084928752812,58.2219280837904,58.2083247284416,58.2135074270857,58.2204727669072,58.2081176796068,58.2134254306548,58.2181748007839,58.2080746302426,58.2132436782657,58.212333639918,58.2074426505616,58.2074146801766,58.2073895810424,58.2073671453486],"text":["mean - std_err: 56.5955086<br />mean + std_err:  59.8974429<br />penalty: 9.768705e-09<br />mean:  58.2464758<br />.metric: mape","mean - std_err: 56.4914678<br />mean + std_err:  59.9050284<br />penalty: 6.143658e-01<br />mean:  58.1982481<br />.metric: mape","mean - std_err: 56.5891257<br />mean + std_err:  59.8930562<br />penalty: 9.521139e-06<br />mean:  58.2410910<br />.metric: mape","mean - std_err: 56.5485560<br />mean + std_err:  59.8667606<br />penalty: 3.930833e-08<br />mean:  58.2076583<br />.metric: mape","mean - std_err: 56.5788185<br />mean + std_err:  59.8880742<br />penalty: 3.223982e-01<br />mean:  58.2334463<br />.metric: mape","mean - std_err: 56.5487895<br />mean + std_err:  59.8681963<br />penalty: 1.025238e-04<br />mean:  58.2084929<br />.metric: mape","mean - std_err: 56.5631836<br />mean + std_err:  59.8806726<br />penalty: 2.444371e-03<br />mean:  58.2219281<br />.metric: mape","mean - std_err: 56.5486831<br />mean + std_err:  59.8679663<br />penalty: 8.883736e-03<br />mean:  58.2083247<br />.metric: mape","mean - std_err: 56.5542681<br />mean + std_err:  59.8727468<br />penalty: 1.544590e-06<br />mean:  58.2135074<br />.metric: mape","mean - std_err: 56.5617209<br />mean + std_err:  59.8792246<br />penalty: 2.130341e-10<br />mean:  58.2204728<br />.metric: mape","mean - std_err: 56.5485740<br />mean + std_err:  59.8676614<br />penalty: 7.667834e-07<br />mean:  58.2081177<br />.metric: mape","mean - std_err: 56.5539063<br />mean + std_err:  59.8729446<br />penalty: 1.302458e-10<br />mean:  58.2134254<br />.metric: mape","mean - std_err: 56.5587832<br />mean + std_err:  59.8775664<br />penalty: 1.824074e-07<br />mean:  58.2181748<br />.metric: mape","mean - std_err: 56.5485467<br />mean + std_err:  59.8676025<br />penalty: 3.888468e-10<br />mean:  58.2080746<br />.metric: mape","mean - std_err: 56.5537996<br />mean + std_err:  59.8726877<br />penalty: 6.010553e-04<br />mean:  58.2132437<br />.metric: mape","mean - std_err: 56.5485546<br />mean + std_err:  59.8761127<br />penalty: 3.393359e-01<br />mean:  58.2123336<br />.metric: mape","mean - std_err: 56.5480459<br />mean + std_err:  59.8668394<br />penalty: 4.088798e-02<br />mean:  58.2074427<br />.metric: mape","mean - std_err: 56.5480287<br />mean + std_err:  59.8668007<br />penalty: 4.412942e-05<br />mean:  58.2074147<br />.metric: mape","mean - std_err: 56.5480109<br />mean + std_err:  59.8667683<br />penalty: 5.454643e-10<br />mean:  58.2073896<br />.metric: mape","mean - std_err: 56.5479967<br />mean + std_err:  59.8667376<br />penalty: 8.281804e-08<br />mean:  58.2073671<br />.metric: mape"],"type":"scatter","mode":"lines","opacity":0.5,"line":{"color":"transparent"},"error_y":{"array":[1.6509671857028,1.70678027275849,1.65196526081827,1.65910230207925,1.65462784189872,1.65970338604497,1.65874451128169,1.65964158666289,1.65923934609766,1.65875186196567,1.65954370376983,1.65951915017907,1.65939161764368,1.65952790861702,1.65944407026826,1.6637790489696,1.65939672575353,1.65938601354318,1.65937872395843,1.65937042158051],"arrayminus":[1.6509671857028,1.70678027275849,1.65196526081827,1.65910230207925,1.65462784189872,1.65970338604497,1.65874451128169,1.65964158666289,1.65923934609766,1.65875186196567,1.65954370376983,1.65951915017907,1.65939161764368,1.65952790861702,1.65944407026826,1.6637790489696,1.65939672575353,1.65938601354318,1.65937872395843,1.65937042158051],"type":"data","width":0.840854710127319,"symmetric":false,"color":"rgba(124,174,0,1)"},"name":"mape","legendgroup":"mape","showlegend":true,"xaxis":"x2","yaxis":"y2","hoverinfo":"text","frame":null},{"x":[-8.01016299519688,-5.02131110057235,-0.491607449948788,-2.61183278867975,-2.05140436068177,-0.211572973057628,-9.67155081918463,-6.1153273191303,-7.40551540395245,-6.73895750660449,-9.41022143932059,-3.9891752274707,-0.469370170030743,-1.38840439496562,-5.81118678441271,-4.35527180321515,-9.88523631589487,-9.26323365420103,-3.2210855348967,-7.0818750676699],"y":[100.38679953557,100.388087013916,100.388807759695,100.391864582442,100.396698887382,100.391940998547,100.393561588344,100.396851414722,100.395904065993,100.393145582647,100.396880338242,100.396586486826,100.391716461754,100.397252276719,100.395033685257,100.397271410494,100.396292260526,100.397286316101,100.396399823602,100.397301577167],"text":["mean - std_err: 95.6785311<br />mean + std_err: 105.0950680<br />penalty: 9.768705e-09<br />mean: 100.3867995<br />.metric: rmse","mean - std_err: 95.6797360<br />mean + std_err: 105.0964380<br />penalty: 9.521139e-06<br />mean: 100.3880870<br />.metric: rmse","mean - std_err: 95.6804108<br />mean + std_err: 105.0972048<br />penalty: 3.223982e-01<br />mean: 100.3888078<br />.metric: rmse","mean - std_err: 95.6826423<br />mean + std_err: 105.1010869<br />penalty: 2.444371e-03<br />mean: 100.3918646<br />.metric: rmse","mean - std_err: 95.6869258<br />mean + std_err: 105.1064720<br />penalty: 8.883736e-03<br />mean: 100.3966989<br />.metric: rmse","mean - std_err: 95.6788367<br />mean + std_err: 105.1050452<br />penalty: 6.143658e-01<br />mean: 100.3919410<br />.metric: rmse","mean - std_err: 95.6844415<br />mean + std_err: 105.1026816<br />penalty: 2.130341e-10<br />mean: 100.3935616<br />.metric: rmse","mean - std_err: 95.6870915<br />mean + std_err: 105.1066114<br />penalty: 7.667834e-07<br />mean: 100.3968514<br />.metric: rmse","mean - std_err: 95.6862173<br />mean + std_err: 105.1055908<br />penalty: 3.930833e-08<br />mean: 100.3959041<br />.metric: rmse","mean - std_err: 95.6839496<br />mean + std_err: 105.1023416<br />penalty: 1.824074e-07<br />mean: 100.3931456<br />.metric: rmse","mean - std_err: 95.6871235<br />mean + std_err: 105.1066372<br />penalty: 3.888468e-10<br />mean: 100.3968803<br />.metric: rmse","mean - std_err: 95.6868016<br />mean + std_err: 105.1063714<br />penalty: 1.025238e-04<br />mean: 100.3965865<br />.metric: rmse","mean - std_err: 95.6835810<br />mean + std_err: 105.0998519<br />penalty: 3.393359e-01<br />mean: 100.3917165<br />.metric: rmse","mean - std_err: 95.6875325<br />mean + std_err: 105.1069721<br />penalty: 4.088798e-02<br />mean: 100.3972523<br />.metric: rmse","mean - std_err: 95.6853804<br />mean + std_err: 105.1046870<br />penalty: 1.544590e-06<br />mean: 100.3950337<br />.metric: rmse","mean - std_err: 95.6875537<br />mean + std_err: 105.1069891<br />penalty: 4.412942e-05<br />mean: 100.3972714<br />.metric: rmse","mean - std_err: 95.6866096<br />mean + std_err: 105.1059749<br />penalty: 1.302458e-10<br />mean: 100.3962923<br />.metric: rmse","mean - std_err: 95.6875712<br />mean + std_err: 105.1070014<br />penalty: 5.454643e-10<br />mean: 100.3972863<br />.metric: rmse","mean - std_err: 95.6867297<br />mean + std_err: 105.1060699<br />penalty: 6.010553e-04<br />mean: 100.3963998<br />.metric: rmse","mean - std_err: 95.6875881<br />mean + std_err: 105.1070150<br />penalty: 8.281804e-08<br />mean: 100.3973016<br />.metric: rmse"],"type":"scatter","mode":"lines","opacity":0.5,"line":{"color":"transparent"},"error_y":{"array":[4.70826846467851,4.7083510163564,4.70839700419947,4.70922227333482,4.70977309806065,4.71310425104221,4.70912005638296,4.70975994922388,4.70968677635153,4.70919596846306,4.70975687166664,4.70978489246686,4.70813544011487,4.70971977875499,4.70965328837855,4.70971766815656,4.70968264337201,4.70971508108295,4.7096700757811,4.70971343337298],"arrayminus":[4.70826846467851,4.7083510163564,4.70839700419947,4.70922227333482,4.70977309806065,4.71310425104221,4.70912005638296,4.70975994922388,4.70968677635153,4.70919596846306,4.70975687166664,4.70978489246686,4.70813544011487,4.70971977875499,4.70965328837855,4.70971766815656,4.70968264337201,4.70971508108295,4.7096700757811,4.70971343337298],"type":"data","width":0.840854710127319,"symmetric":false,"color":"rgba(0,191,196,1)"},"name":"rmse","legendgroup":"rmse","showlegend":true,"xaxis":"x3","yaxis":"y3","hoverinfo":"text","frame":null},{"x":[-2.61183278867975,-8.01016299519688,-9.67155081918463,-5.02131110057235,-6.73895750660449,-0.491607449948788,-0.469370170030743,-1.38840439496562,-2.05140436068177,-0.211572973057628,-5.81118678441271,-4.35527180321515,-6.1153273191303,-7.40551540395245,-9.88523631589487,-9.26323365420103,-9.41022143932059,-3.9891752274707,-3.2210855348967,-7.0818750676699],"y":[0.333615817711152,0.333675626439165,0.333594197479931,0.333660808965267,0.333601473183167,0.333653911501748,0.333619340452359,0.33355300670974,0.333557931462515,0.333498394468377,0.333582126679614,0.333552837008746,0.333556547962977,0.333572264490051,0.333563634705436,0.333552709086324,0.333556291242481,0.333558929251638,0.333562705385924,0.33355257363346],"text":["mean - std_err:  0.3112114<br />mean + std_err:   0.3560203<br />penalty: 2.444371e-03<br />mean:   0.3336158<br />.metric: rsq","mean - std_err:  0.3112748<br />mean + std_err:   0.3560765<br />penalty: 9.768705e-09<br />mean:   0.3336756<br />.metric: rsq","mean - std_err:  0.3111945<br />mean + std_err:   0.3559939<br />penalty: 2.130341e-10<br />mean:   0.3335942<br />.metric: rsq","mean - std_err:  0.3112626<br />mean + std_err:   0.3560590<br />penalty: 9.521139e-06<br />mean:   0.3336608<br />.metric: rsq","mean - std_err:  0.3112019<br />mean + std_err:   0.3560010<br />penalty: 1.824074e-07<br />mean:   0.3336015<br />.metric: rsq","mean - std_err:  0.3112549<br />mean + std_err:   0.3560529<br />penalty: 3.223982e-01<br />mean:   0.3336539<br />.metric: rsq","mean - std_err:  0.3112284<br />mean + std_err:   0.3560103<br />penalty: 3.393359e-01<br />mean:   0.3336193<br />.metric: rsq","mean - std_err:  0.3111587<br />mean + std_err:   0.3559474<br />penalty: 4.088798e-02<br />mean:   0.3335530<br />.metric: rsq","mean - std_err:  0.3111598<br />mean + std_err:   0.3559561<br />penalty: 8.883736e-03<br />mean:   0.3335579<br />.metric: rsq","mean - std_err:  0.3108663<br />mean + std_err:   0.3561305<br />penalty: 6.143658e-01<br />mean:   0.3334984<br />.metric: rsq","mean - std_err:  0.3111853<br />mean + std_err:   0.3559789<br />penalty: 1.544590e-06<br />mean:   0.3335821<br />.metric: rsq","mean - std_err:  0.3111586<br />mean + std_err:   0.3559471<br />penalty: 4.412942e-05<br />mean:   0.3335528<br />.metric: rsq","mean - std_err:  0.3111594<br />mean + std_err:   0.3559537<br />penalty: 7.667834e-07<br />mean:   0.3335565<br />.metric: rsq","mean - std_err:  0.3111786<br />mean + std_err:   0.3559659<br />penalty: 3.930833e-08<br />mean:   0.3335723<br />.metric: rsq","mean - std_err:  0.3111660<br />mean + std_err:   0.3559612<br />penalty: 1.302458e-10<br />mean:   0.3335636<br />.metric: rsq","mean - std_err:  0.3111586<br />mean + std_err:   0.3559468<br />penalty: 5.454643e-10<br />mean:   0.3335527<br />.metric: rsq","mean - std_err:  0.3111594<br />mean + std_err:   0.3559532<br />penalty: 3.888468e-10<br />mean:   0.3335563<br />.metric: rsq","mean - std_err:  0.3111600<br />mean + std_err:   0.3559578<br />penalty: 1.025238e-04<br />mean:   0.3335589<br />.metric: rsq","mean - std_err:  0.3111659<br />mean + std_err:   0.3559595<br />penalty: 6.010553e-04<br />mean:   0.3335627<br />.metric: rsq","mean - std_err:  0.3111586<br />mean + std_err:   0.3559466<br />penalty: 8.281804e-08<br />mean:   0.3335526<br />.metric: rsq"],"type":"scatter","mode":"lines","opacity":0.5,"line":{"color":"transparent"},"error_y":{"array":[0.0224044513081535,0.0224008348550097,0.0223997033278586,0.0223981948931455,0.0223995715287189,0.0223989835575236,0.0223909807862237,0.0223943544982826,0.022398127662636,0.0226320931232349,0.0223967929149255,0.022394220758502,0.0223971192763658,0.0223936273052682,0.022397613897751,0.0223941021853889,0.0223969179010508,0.0223989097665495,0.0223968161499105,0.0223939960667245],"arrayminus":[0.0224044513081535,0.0224008348550097,0.0223997033278586,0.0223981948931455,0.0223995715287189,0.0223989835575236,0.0223909807862237,0.0223943544982826,0.022398127662636,0.0226320931232349,0.0223967929149255,0.022394220758502,0.0223971192763658,0.0223936273052682,0.022397613897751,0.0223941021853889,0.0223969179010508,0.0223989097665495,0.0223968161499105,0.0223939960667245],"type":"data","width":0.840854710127319,"symmetric":false,"color":"rgba(199,124,255,1)"},"name":"rsq","legendgroup":"rsq","showlegend":true,"xaxis":"x4","yaxis":"y4","hoverinfo":"text","frame":null},{"x":[-9.88523631589487,-9.67155081918463,-9.41022143932059,-9.26323365420103,-8.01016299519688,-7.40551540395245,-7.0818750676699,-6.73895750660449,-6.1153273191303,-5.81118678441271,-5.02131110057235,-4.35527180321515,-3.9891752274707,-3.2210855348967,-2.61183278867975,-2.05140436068177,-1.38840439496562,-0.491607449948788,-0.469370170030743,-0.211572973057628],"y":[57.9161996085523,57.9185637025895,57.9138887316118,57.914550517768,57.931134853137,57.9142265364485,57.9145764771546,57.9167220547325,57.9138393571598,57.9158936685986,57.9293367318371,57.9145233865571,57.913389540907,57.9163898201519,57.9171936013485,57.9135818292922,57.9144906162053,57.924285798738,57.9111568944868,57.7924214917281],"text":["penalty: 1.302458e-10<br />mean:  57.9161996<br />.metric: mae","penalty: 2.130341e-10<br />mean:  57.9185637<br />.metric: mae","penalty: 3.888468e-10<br />mean:  57.9138887<br />.metric: mae","penalty: 5.454643e-10<br />mean:  57.9145505<br />.metric: mae","penalty: 9.768705e-09<br />mean:  57.9311349<br />.metric: mae","penalty: 3.930833e-08<br />mean:  57.9142265<br />.metric: mae","penalty: 8.281804e-08<br />mean:  57.9145765<br />.metric: mae","penalty: 1.824074e-07<br />mean:  57.9167221<br />.metric: mae","penalty: 7.667834e-07<br />mean:  57.9138394<br />.metric: mae","penalty: 1.544590e-06<br />mean:  57.9158937<br />.metric: mae","penalty: 9.521139e-06<br />mean:  57.9293367<br />.metric: mae","penalty: 4.412942e-05<br />mean:  57.9145234<br />.metric: mae","penalty: 1.025238e-04<br />mean:  57.9133895<br />.metric: mae","penalty: 6.010553e-04<br />mean:  57.9163898<br />.metric: mae","penalty: 2.444371e-03<br />mean:  57.9171936<br />.metric: mae","penalty: 8.883736e-03<br />mean:  57.9135818<br />.metric: mae","penalty: 4.088798e-02<br />mean:  57.9144906<br />.metric: mae","penalty: 3.223982e-01<br />mean:  57.9242858<br />.metric: mae","penalty: 3.393359e-01<br />mean:  57.9111569<br />.metric: mae","penalty: 6.143658e-01<br />mean:  57.7924215<br />.metric: mae"],"type":"scatter","mode":"lines","line":{"width":5.66929133858268,"color":"rgba(248,118,109,1)","dash":"solid"},"hoveron":"points","name":"mae","legendgroup":"mae","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[-9.88523631589487,-9.67155081918463,-9.41022143932059,-9.26323365420103,-8.01016299519688,-7.40551540395245,-7.0818750676699,-6.73895750660449,-6.1153273191303,-5.81118678441271,-5.02131110057235,-4.35527180321515,-3.9891752274707,-3.2210855348967,-2.61183278867975,-2.05140436068177,-1.38840439496562,-0.491607449948788,-0.469370170030743,-0.211572973057628],"y":[58.2134254306548,58.2204727669072,58.2080746302426,58.2073895810424,58.2464757540462,58.2076582842504,58.2073671453486,58.2181748007839,58.2081176796068,58.2135074270857,58.2410909591875,58.2074146801766,58.2084928752812,58.2132436782657,58.2219280837904,58.2083247284416,58.2074426505616,58.2334463249039,58.212333639918,58.1982481179774],"text":["penalty: 1.302458e-10<br />mean:  58.2134254<br />.metric: mape","penalty: 2.130341e-10<br />mean:  58.2204728<br />.metric: mape","penalty: 3.888468e-10<br />mean:  58.2080746<br />.metric: mape","penalty: 5.454643e-10<br />mean:  58.2073896<br />.metric: mape","penalty: 9.768705e-09<br />mean:  58.2464758<br />.metric: mape","penalty: 3.930833e-08<br />mean:  58.2076583<br />.metric: mape","penalty: 8.281804e-08<br />mean:  58.2073671<br />.metric: mape","penalty: 1.824074e-07<br />mean:  58.2181748<br />.metric: mape","penalty: 7.667834e-07<br />mean:  58.2081177<br />.metric: mape","penalty: 1.544590e-06<br />mean:  58.2135074<br />.metric: mape","penalty: 9.521139e-06<br />mean:  58.2410910<br />.metric: mape","penalty: 4.412942e-05<br />mean:  58.2074147<br />.metric: mape","penalty: 1.025238e-04<br />mean:  58.2084929<br />.metric: mape","penalty: 6.010553e-04<br />mean:  58.2132437<br />.metric: mape","penalty: 2.444371e-03<br />mean:  58.2219281<br />.metric: mape","penalty: 8.883736e-03<br />mean:  58.2083247<br />.metric: mape","penalty: 4.088798e-02<br />mean:  58.2074427<br />.metric: mape","penalty: 3.223982e-01<br />mean:  58.2334463<br />.metric: mape","penalty: 3.393359e-01<br />mean:  58.2123336<br />.metric: mape","penalty: 6.143658e-01<br />mean:  58.1982481<br />.metric: mape"],"type":"scatter","mode":"lines","line":{"width":5.66929133858268,"color":"rgba(124,174,0,1)","dash":"solid"},"hoveron":"points","name":"mape","legendgroup":"mape","showlegend":false,"xaxis":"x2","yaxis":"y2","hoverinfo":"text","frame":null},{"x":[-9.88523631589487,-9.67155081918463,-9.41022143932059,-9.26323365420103,-8.01016299519688,-7.40551540395245,-7.0818750676699,-6.73895750660449,-6.1153273191303,-5.81118678441271,-5.02131110057235,-4.35527180321515,-3.9891752274707,-3.2210855348967,-2.61183278867975,-2.05140436068177,-1.38840439496562,-0.491607449948788,-0.469370170030743,-0.211572973057628],"y":[100.396292260526,100.393561588344,100.396880338242,100.397286316101,100.38679953557,100.395904065993,100.397301577167,100.393145582647,100.396851414722,100.395033685257,100.388087013916,100.397271410494,100.396586486826,100.396399823602,100.391864582442,100.396698887382,100.397252276719,100.388807759695,100.391716461754,100.391940998547],"text":["penalty: 1.302458e-10<br />mean: 100.3962923<br />.metric: rmse","penalty: 2.130341e-10<br />mean: 100.3935616<br />.metric: rmse","penalty: 3.888468e-10<br />mean: 100.3968803<br />.metric: rmse","penalty: 5.454643e-10<br />mean: 100.3972863<br />.metric: rmse","penalty: 9.768705e-09<br />mean: 100.3867995<br />.metric: rmse","penalty: 3.930833e-08<br />mean: 100.3959041<br />.metric: rmse","penalty: 8.281804e-08<br />mean: 100.3973016<br />.metric: rmse","penalty: 1.824074e-07<br />mean: 100.3931456<br />.metric: rmse","penalty: 7.667834e-07<br />mean: 100.3968514<br />.metric: rmse","penalty: 1.544590e-06<br />mean: 100.3950337<br />.metric: rmse","penalty: 9.521139e-06<br />mean: 100.3880870<br />.metric: rmse","penalty: 4.412942e-05<br />mean: 100.3972714<br />.metric: rmse","penalty: 1.025238e-04<br />mean: 100.3965865<br />.metric: rmse","penalty: 6.010553e-04<br />mean: 100.3963998<br />.metric: rmse","penalty: 2.444371e-03<br />mean: 100.3918646<br />.metric: rmse","penalty: 8.883736e-03<br />mean: 100.3966989<br />.metric: rmse","penalty: 4.088798e-02<br />mean: 100.3972523<br />.metric: rmse","penalty: 3.223982e-01<br />mean: 100.3888078<br />.metric: rmse","penalty: 3.393359e-01<br />mean: 100.3917165<br />.metric: rmse","penalty: 6.143658e-01<br />mean: 100.3919410<br />.metric: rmse"],"type":"scatter","mode":"lines","line":{"width":5.66929133858268,"color":"rgba(0,191,196,1)","dash":"solid"},"hoveron":"points","name":"rmse","legendgroup":"rmse","showlegend":false,"xaxis":"x3","yaxis":"y3","hoverinfo":"text","frame":null},{"x":[-9.88523631589487,-9.67155081918463,-9.41022143932059,-9.26323365420103,-8.01016299519688,-7.40551540395245,-7.0818750676699,-6.73895750660449,-6.1153273191303,-5.81118678441271,-5.02131110057235,-4.35527180321515,-3.9891752274707,-3.2210855348967,-2.61183278867975,-2.05140436068177,-1.38840439496562,-0.491607449948788,-0.469370170030743,-0.211572973057628],"y":[0.333563634705436,0.333594197479931,0.333556291242481,0.333552709086324,0.333675626439165,0.333572264490051,0.33355257363346,0.333601473183167,0.333556547962977,0.333582126679614,0.333660808965267,0.333552837008746,0.333558929251638,0.333562705385924,0.333615817711152,0.333557931462515,0.33355300670974,0.333653911501748,0.333619340452359,0.333498394468377],"text":["penalty: 1.302458e-10<br />mean:   0.3335636<br />.metric: rsq","penalty: 2.130341e-10<br />mean:   0.3335942<br />.metric: rsq","penalty: 3.888468e-10<br />mean:   0.3335563<br />.metric: rsq","penalty: 5.454643e-10<br />mean:   0.3335527<br />.metric: rsq","penalty: 9.768705e-09<br />mean:   0.3336756<br />.metric: rsq","penalty: 3.930833e-08<br />mean:   0.3335723<br />.metric: rsq","penalty: 8.281804e-08<br />mean:   0.3335526<br />.metric: rsq","penalty: 1.824074e-07<br />mean:   0.3336015<br />.metric: rsq","penalty: 7.667834e-07<br />mean:   0.3335565<br />.metric: rsq","penalty: 1.544590e-06<br />mean:   0.3335821<br />.metric: rsq","penalty: 9.521139e-06<br />mean:   0.3336608<br />.metric: rsq","penalty: 4.412942e-05<br />mean:   0.3335528<br />.metric: rsq","penalty: 1.025238e-04<br />mean:   0.3335589<br />.metric: rsq","penalty: 6.010553e-04<br />mean:   0.3335627<br />.metric: rsq","penalty: 2.444371e-03<br />mean:   0.3336158<br />.metric: rsq","penalty: 8.883736e-03<br />mean:   0.3335579<br />.metric: rsq","penalty: 4.088798e-02<br />mean:   0.3335530<br />.metric: rsq","penalty: 3.223982e-01<br />mean:   0.3336539<br />.metric: rsq","penalty: 3.393359e-01<br />mean:   0.3336193<br />.metric: rsq","penalty: 6.143658e-01<br />mean:   0.3334984<br />.metric: rsq"],"type":"scatter","mode":"lines","line":{"width":5.66929133858268,"color":"rgba(199,124,255,1)","dash":"solid"},"hoveron":"points","name":"rsq","legendgroup":"rsq","showlegend":false,"xaxis":"x4","yaxis":"y4","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":37.9178082191781,"r":7.30593607305936,"b":40.1826484018265,"l":37.2602739726027},"plot_bgcolor":"rgba(235,235,235,1)","paper_bgcolor":"rgba(255,255,255,1)","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"xaxis":{"domain":[0,0.479244499792445],"automargin":true,"type":"linear","autorange":false,"range":[-10.3799269365962,0.283117647643667],"tickmode":"array","ticktext":["1e-08","1e-05","1e-02"],"tickvals":[-8,-5,-2],"categoryorder":"array","categoryarray":["1e-08","1e-05","1e-02"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.65296803652968,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(255,255,255,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y","title":"","hoverformat":".2f"},"annotations":[{"text":"penalty","x":0.5,"y":-0.0176940639269406,"showarrow":false,"ax":0,"ay":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"xref":"paper","yref":"paper","textangle":-0,"xanchor":"center","yanchor":"top","annotationType":"axis"},{"text":"mean","x":-0.0126386170906719,"y":0.5,"showarrow":false,"ax":0,"ay":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"xref":"paper","yref":"paper","textangle":-90,"xanchor":"right","yanchor":"center","annotationType":"axis"},{"text":"mae","x":0.239622249896222,"y":1,"showarrow":false,"ax":0,"ay":0,"font":{"color":"rgba(26,26,26,1)","family":"","size":11.689497716895},"xref":"paper","yref":"paper","textangle":-0,"xanchor":"center","yanchor":"bottom"},{"text":"mape","x":0.760377750103778,"y":1,"showarrow":false,"ax":0,"ay":0,"font":{"color":"rgba(26,26,26,1)","family":"","size":11.689497716895},"xref":"paper","yref":"paper","textangle":-0,"xanchor":"center","yanchor":"bottom"},{"text":"rmse","x":0.239622249896222,"y":0.475508509755085,"showarrow":false,"ax":0,"ay":0,"font":{"color":"rgba(26,26,26,1)","family":"","size":11.689497716895},"xref":"paper","yref":"paper","textangle":-0,"xanchor":"center","yanchor":"bottom"},{"text":"rsq","x":0.760377750103778,"y":0.475508509755085,"showarrow":false,"ax":0,"ay":0,"font":{"color":"rgba(26,26,26,1)","family":"","size":11.689497716895},"xref":"paper","yref":"paper","textangle":-0,"xanchor":"center","yanchor":"bottom"}],"yaxis":{"domain":[0.524491490244915,1],"automargin":true,"type":"linear","autorange":false,"range":[55.8028739416684,59.9116226098812],"tickmode":"array","ticktext":["56","57","58","59"],"tickvals":[56,57,58,59],"categoryorder":"array","categoryarray":["56","57","58","59"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.65296803652968,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(255,255,255,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"x","title":"","hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":0.479244499792445,"y0":0.524491490244915,"y1":1},{"type":"rect","fillcolor":"rgba(217,217,217,1)","line":{"color":"transparent","width":0.66417600664176,"linetype":"solid"},"yref":"paper","xref":"paper","x0":0,"x1":0.479244499792445,"y0":0,"y1":23.37899543379,"yanchor":1,"ysizemode":"pixel"},{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0.520755500207555,"x1":1,"y0":0.524491490244915,"y1":1},{"type":"rect","fillcolor":"rgba(217,217,217,1)","line":{"color":"transparent","width":0.66417600664176,"linetype":"solid"},"yref":"paper","xref":"paper","x0":0.520755500207555,"x1":1,"y0":0,"y1":23.37899543379,"yanchor":1,"ysizemode":"pixel"},{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":0.479244499792445,"y0":0,"y1":0.475508509755085},{"type":"rect","fillcolor":"rgba(217,217,217,1)","line":{"color":"transparent","width":0.66417600664176,"linetype":"solid"},"yref":"paper","xref":"paper","x0":0,"x1":0.479244499792445,"y0":0,"y1":23.37899543379,"yanchor":0.475508509755085,"ysizemode":"pixel"},{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0.520755500207555,"x1":1,"y0":0,"y1":0.475508509755085},{"type":"rect","fillcolor":"rgba(217,217,217,1)","line":{"color":"transparent","width":0.66417600664176,"linetype":"solid"},"yref":"paper","xref":"paper","x0":0.520755500207555,"x1":1,"y0":0,"y1":23.37899543379,"yanchor":0.475508509755085,"ysizemode":"pixel"}],"xaxis2":{"type":"linear","autorange":false,"range":[-10.3799269365962,0.283117647643667],"tickmode":"array","ticktext":["1e-08","1e-05","1e-02"],"tickvals":[-8,-5,-2],"categoryorder":"array","categoryarray":["1e-08","1e-05","1e-02"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.65296803652968,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"domain":[0.520755500207555,1],"gridcolor":"rgba(255,255,255,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y2","title":"","hoverformat":".2f"},"yaxis2":{"type":"linear","autorange":false,"range":[56.3207898179431,60.0757064180118],"tickmode":"array","ticktext":["57","58","59","60"],"tickvals":[57,58,59,60],"categoryorder":"array","categoryarray":["57","58","59","60"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.65296803652968,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"domain":[0.524491490244915,1],"gridcolor":"rgba(255,255,255,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"x2","title":"","hoverformat":".2f"},"xaxis3":{"type":"linear","autorange":false,"range":[-10.3799269365962,0.283117647643667],"tickmode":"array","ticktext":["1e-08","1e-05","1e-02"],"tickvals":[-8,-5,-2],"categoryorder":"array","categoryarray":["1e-08","1e-05","1e-02"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.65296803652968,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"domain":[0,0.479244499792445],"gridcolor":"rgba(255,255,255,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y3","title":"","hoverformat":".2f"},"yaxis3":{"type":"linear","autorange":false,"range":[95.207106873909,105.578439207522],"tickmode":"array","ticktext":["97.5","100.0","102.5","105.0"],"tickvals":[97.5,100,102.5,105],"categoryorder":"array","categoryarray":["97.5","100.0","102.5","105.0"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.65296803652968,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"domain":[0,0.475508509755085],"gridcolor":"rgba(255,255,255,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"x3","title":"","hoverformat":".2f"},"xaxis4":{"type":"linear","autorange":false,"range":[-10.3799269365962,0.283117647643667],"tickmode":"array","ticktext":["1e-08","1e-05","1e-02"],"tickvals":[-8,-5,-2],"categoryorder":"array","categoryarray":["1e-08","1e-05","1e-02"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.65296803652968,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"domain":[0.520755500207555,1],"gridcolor":"rgba(255,255,255,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y4","title":"","hoverformat":".2f"},"yaxis4":{"type":"linear","autorange":false,"range":[0.308603092032818,0.358393696903935],"tickmode":"array","ticktext":["0.31","0.32","0.33","0.34","0.35"],"tickvals":[0.31,0.32,0.33,0.34,0.35],"categoryorder":"array","categoryarray":["0.31","0.32","0.33","0.34","0.35"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.65296803652968,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"domain":[0,0.475508509755085],"gridcolor":"rgba(255,255,255,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"x4","title":"","hoverformat":".2f"},"showlegend":false,"legend":{"bgcolor":"rgba(255,255,255,1)","bordercolor":"transparent","borderwidth":1.88976377952756,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.689497716895}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","showSendToCloud":false},"source":"A","attrs":{"19af830e11f7e":{"ymin":{},"ymax":{},"x":{},"y":{},"colour":{},"type":"scatter"},"19af83553654":{"x":{},"y":{},"colour":{}}},"cur_data":"19af830e11f7e","visdat":{"19af830e11f7e":["function (y) ","x"],"19af83553654":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">glm_result %&gt;%
+  <span style="color:#447fcf">show_best</span>(<span style="color:#ed9d13">&#34;rmse&#34;</span>)
+</code></pre></div><pre><code>## # A tibble: 5 x 8
+##        penalty mixture .metric .estimator  mean     n std_err .config           
+##          &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;      &lt;dbl&gt; &lt;int&gt;   &lt;dbl&gt; &lt;chr&gt;             
+## 1      9.77e-9  0.0112 rmse    standard    100.     3    4.71 Preprocessor1_Mod~
+## 2      9.52e-6  0.0267 rmse    standard    100.     3    4.71 Preprocessor1_Mod~
+## 3      3.22e-1  0.0581 rmse    standard    100.     3    4.71 Preprocessor1_Mod~
+## 4      3.39e-1  0.258  rmse    standard    100.     3    4.71 Preprocessor1_Mod~
+## 5      2.44e-3  0.159  rmse    standard    100.     3    4.71 Preprocessor1_Mod~
+</code></pre>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">best_glm_model &lt;- glm_result %&gt;%
+  <span style="color:#447fcf">select_best</span>(<span style="color:#ed9d13">&#34;rmse&#34;</span>)
+
+<span style="color:#999;font-style:italic">#finalise glm model</span>
+final_glm_wf &lt;-
+  glm_wf %&gt;%
+  <span style="color:#447fcf">finalize_workflow</span>(best_glm_model)
+
+final_glm &lt;- final_glm_wf %&gt;%
+  <span style="color:#447fcf">fit</span>(data = listing_train)
+
+glm_p &lt;- final_glm %&gt;%
+  <span style="color:#447fcf">pull_workflow_fit</span>() %&gt;%
+  <span style="color:#447fcf">tidy</span>() %&gt;%
+  <span style="color:#447fcf">filter</span>(estimate!=<span style="color:#3677a9">0</span>) %&gt;%
+  <span style="color:#447fcf">arrange</span>(estimate) %&gt;%
+  <span style="color:#447fcf">ggplot</span>(<span style="color:#447fcf">aes</span>(x = estimate, y = <span style="color:#447fcf">reorder</span>(term, estimate),
+               text = <span style="color:#447fcf">paste0</span>(term, <span style="color:#ed9d13">&#34;\nestimate: &#34;</span>, <span style="color:#447fcf">round</span>(estimate,<span style="color:#3677a9">3</span>)))) +
+             <span style="color:#447fcf">geom_point</span>() +
+             <span style="color:#447fcf">geom_vline</span>(xintercept = <span style="color:#3677a9">0</span>, linetype = <span style="color:#ed9d13">&#34;dashed&#34;</span>) +
+             <span style="color:#447fcf">theme</span>(axis.title.y = <span style="color:#447fcf">element_blank</span>()) +
+  <span style="color:#447fcf">ggtitle</span>(<span style="color:#ed9d13">&#34;GLM model&#34;</span>)
+
+glm_ply &lt;- <span style="color:#447fcf">ggplotly</span>(glm_p, tooltip = <span style="color:#447fcf">c</span>(<span style="color:#ed9d13">&#39;text&#39;</span>))
+widgetframe::<span style="color:#447fcf">frameWidget</span>(glm_ply)
+</code></pre></div><div id="htmlwidget-11" style="width:100%;height:480px;" class="widgetframe html-widget"></div>
+<script type="application/json" data-for="htmlwidget-11">{"x":{"url":"index_files/figure-html//widgets/widget_unnamed-chunk-51.html","options":{"xdomain":"*","allowfullscreen":false,"lazyload":false}},"evals":[],"jsHooks":[]}</script>
+<p>Finally we use the trained model to predict the test set and plot the Rsquared plot.</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">final_fit_glm &lt;- <span style="color:#447fcf">last_fit</span>(final_glm_wf,
+                          split = listing_split,
+                          metrics = <span style="color:#447fcf">metric_set</span>(mae, mape, rmse, rsq))
+
+pred_p &lt;- final_fit_glm %&gt;%
+  <span style="color:#447fcf">collect_predictions</span>() %&gt;%
+  <span style="color:#447fcf">ggplot</span>(<span style="color:#447fcf">aes</span>(target_var, .pred)) +
+  <span style="color:#447fcf">geom_point</span>() +
+  <span style="color:#447fcf">geom_abline</span>() +
+  <span style="color:#447fcf">coord_obs_pred</span>() +
+  <span style="color:#447fcf">labs</span>(title = <span style="color:#ed9d13">&#34;R-squared plot&#34;</span>,
+       x = <span style="color:#447fcf">paste0</span>(<span style="color:#ed9d13">&#34;Actual &#34;</span>, targetVar),
+       y = <span style="color:#447fcf">paste0</span>(<span style="color:#ed9d13">&#34;Predicted &#34;</span>, targetVar))
+pred_ply2 &lt;- <span style="color:#447fcf">ggplotly</span>(pred_p)
+widgetframe::<span style="color:#447fcf">frameWidget</span>(pred_ply2)
+</code></pre></div><div id="htmlwidget-12" style="width:100%;height:480px;" class="widgetframe html-widget"></div>
+<script type="application/json" data-for="htmlwidget-12">{"x":{"url":"index_files/figure-html//widgets/widget_unnamed-chunk-52.html","options":{"xdomain":"*","allowfullscreen":false,"lazyload":false}},"evals":[],"jsHooks":[]}</script>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">final_metric_glm &lt;- <span style="color:#447fcf">collect_metrics</span>(final_fit_glm)
+final_metric_glm
+</code></pre></div><pre><code>## # A tibble: 4 x 4
+##   .metric .estimator .estimate .config             
+##   &lt;chr&gt;   &lt;chr&gt;          &lt;dbl&gt; &lt;chr&gt;               
+## 1 mae     standard      56.0   Preprocessor1_Model1
+## 2 mape    standard      59.3   Preprocessor1_Model1
+## 3 rmse    standard      93.3   Preprocessor1_Model1
+## 4 rsq     standard       0.415 Preprocessor1_Model1
+</code></pre>
+<p>With regularised linear regression, we observe no significant improvement in RMSE score and we still see the same behaviour where the model underestimates the predicted price for listing price above $250.</p>
+<h2 id="59-decision-tree">5.9 Decision tree</h2>
+<p>For decision tree, we are using <code>rpart</code> package with <code>cost_complexity</code>, <code>tree_depth</code> (maximum tree depth), and <code>min_n</code> (minimum number of data points in a node that are required for the node to be split further) as hyper-parameters to be tuned.</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#447fcf">set.seed</span>(<span style="color:#3677a9">1234</span>)
+tree_model &lt;- <span style="color:#447fcf">decision_tree</span>(cost_complexity = <span style="color:#447fcf">tune</span>(),
+                           tree_depth = <span style="color:#447fcf">tune</span>(),
+                           min_n = <span style="color:#447fcf">tune</span>()) %&gt;%
+  <span style="color:#447fcf">set_engine</span>(<span style="color:#ed9d13">&#34;rpart&#34;</span>) %&gt;%
+  <span style="color:#447fcf">set_mode</span>(<span style="color:#ed9d13">&#34;regression&#34;</span>)
+
+tree_grid &lt;- <span style="color:#447fcf">grid_regular</span>(<span style="color:#447fcf">cost_complexity</span>(),
+                          <span style="color:#447fcf">tree_depth</span>(range = <span style="color:#447fcf">c</span>(<span style="color:#3677a9">3</span>,<span style="color:#3677a9">7</span>)),
+                          <span style="color:#447fcf">min_n</span>(),
+                          levels = <span style="color:#3677a9">3</span>)
+
+tree_wf &lt;- <span style="color:#447fcf">workflow</span>() %&gt;%
+  <span style="color:#447fcf">add_model</span>(tree_model) %&gt;%
+  <span style="color:#447fcf">add_recipe</span>(rcpTransform2)
+
+tree_result &lt;- tree_wf %&gt;%
+  <span style="color:#447fcf">tune_grid</span>(resamples = listing_kfolds,
+            grid = tree_grid,
+            metrics = <span style="color:#447fcf">metric_set</span>(mae, mape, rmse, rsq),
+            control = <span style="color:#447fcf">control_resamples</span>(save_pred = <span style="color:#6ab825;font-weight:bold">TRUE</span>))
+</code></pre></div><p>The subsequent steps are similar to that of GLM model. For the tree plotting, there is not many options for the package that support interactivity. Here, we are comparing <code>fancyRpartPlot</code> function from <code>rattle</code> package and <code>visTree</code> from <code>visNetwork</code> package. Clearly with deep tree, interactivity provided by <code>visTree</code> is superior to that of static <code>fancyRpartPlot</code>.</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#447fcf">collect_metrics</span>(tree_result)
+</code></pre></div><pre><code>## # A tibble: 108 x 9
+##    cost_complexity tree_depth min_n .metric .estimator    mean     n std_err
+##              &lt;dbl&gt;      &lt;int&gt; &lt;int&gt; &lt;chr&gt;   &lt;chr&gt;        &lt;dbl&gt; &lt;int&gt;   &lt;dbl&gt;
+##  1    0.0000000001          3     2 mae     standard    58.1       3  1.68  
+##  2    0.0000000001          3     2 mape    standard    61.3       3  0.892 
+##  3    0.0000000001          3     2 rmse    standard   100.        3  2.93  
+##  4    0.0000000001          3     2 rsq     standard     0.343     3  0.0273
+##  5    0.00000316            3     2 mae     standard    58.1       3  1.68  
+##  6    0.00000316            3     2 mape    standard    61.3       3  0.892 
+##  7    0.00000316            3     2 rmse    standard   100.        3  2.93  
+##  8    0.00000316            3     2 rsq     standard     0.343     3  0.0273
+##  9    0.1                   3     2 mae     standard    69.3       3  1.98  
+## 10    0.1                   3     2 mape    standard    81.0       3  0.0520
+## # ... with 98 more rows, and 1 more variable: .config &lt;chr&gt;
+</code></pre>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#447fcf">autoplot</span>(tree_result) + <span style="color:#447fcf">theme_light</span>()
+</code></pre></div><p><img src="https://ourshinypet.netlify.app/blog/predictive/index_files/figure-html/unnamed-chunk-54-1.png" width="672" /></p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">best_tree &lt;- tree_result %&gt;%
+  <span style="color:#447fcf">select_best</span>(<span style="color:#ed9d13">&#34;rmse&#34;</span>)
+
+tree_result %&gt;%
+  <span style="color:#447fcf">show_best</span>(<span style="color:#ed9d13">&#34;rmse&#34;</span>)
+</code></pre></div><pre><code>## # A tibble: 5 x 9
+##   cost_complexity tree_depth min_n .metric .estimator  mean     n std_err
+##             &lt;dbl&gt;      &lt;int&gt; &lt;int&gt; &lt;chr&gt;   &lt;chr&gt;      &lt;dbl&gt; &lt;int&gt;   &lt;dbl&gt;
+## 1    0.0000000001          5    21 rmse    standard    96.2     3    2.51
+## 2    0.00000316            5    21 rmse    standard    96.2     3    2.51
+## 3    0.0000000001          5    40 rmse    standard    96.8     3    2.92
+## 4    0.00000316            5    40 rmse    standard    96.8     3    2.92
+## 5    0.0000000001          7    21 rmse    standard    97.0     3    1.90
+## # ... with 1 more variable: .config &lt;chr&gt;
+</code></pre>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">final_tree_wf &lt;- tree_wf %&gt;%
+  <span style="color:#447fcf">finalize_workflow</span>(best_tree)
+
+final_tree &lt;- final_tree_wf %&gt;%
+  <span style="color:#447fcf">fit</span>(data = listing_train)
+
+final_tree %&gt;%
+  <span style="color:#447fcf">pull_workflow_fit</span>() %&gt;%
+  <span style="color:#447fcf">vip</span>()
+</code></pre></div><p><img src="https://ourshinypet.netlify.app/blog/predictive/index_files/figure-html/unnamed-chunk-54-2.png" width="672" /></p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">final_tree_fit &lt;- final_tree %&gt;%
+  <span style="color:#447fcf">pull_workflow_fit</span>()
+
+<span style="color:#447fcf">fancyRpartPlot</span>(final_tree_fit$fit, sub = <span style="color:#ed9d13">&#34;Decision Tree model&#34;</span>)
+</code></pre></div><p><img src="https://ourshinypet.netlify.app/blog/predictive/index_files/figure-html/unnamed-chunk-54-3.png" width="672" /></p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">viz_tree &lt;- visNetwork::<span style="color:#447fcf">visTree</span>(final_tree_fit$fit)
+widgetframe::<span style="color:#447fcf">frameWidget</span>(viz_tree)
+</code></pre></div><div id="htmlwidget-13" style="width:100%;height:600px;" class="widgetframe html-widget"></div>
+<script type="application/json" data-for="htmlwidget-13">{"x":{"url":"index_files/figure-html//widgets/widget_unnamed-chunk-54.html","options":{"xdomain":"*","allowfullscreen":false,"lazyload":false}},"evals":[],"jsHooks":[]}</script>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">final_fit_tree &lt;- <span style="color:#447fcf">last_fit</span>(final_tree_wf,
+                           split = listing_split,
+                           metrics = <span style="color:#447fcf">metric_set</span>(mae, mape, rmse, rsq))
+
+final_fit_tree %&gt;%
+  <span style="color:#447fcf">collect_predictions</span>() %&gt;%
+  <span style="color:#447fcf">ggplot</span>(<span style="color:#447fcf">aes</span>(target_var, .pred)) +
+  <span style="color:#447fcf">geom_point</span>() +
+  <span style="color:#447fcf">geom_abline</span>() +
+  <span style="color:#447fcf">coord_obs_pred</span>() +
+  <span style="color:#447fcf">labs</span>(title = <span style="color:#ed9d13">&#34;R-squared plot&#34;</span>,
+       x = <span style="color:#447fcf">paste0</span>(<span style="color:#ed9d13">&#34;Actual &#34;</span>, targetVar),
+       y = <span style="color:#447fcf">paste0</span>(<span style="color:#ed9d13">&#34;Predicted &#34;</span>, targetVar))
+</code></pre></div><p><img src="https://ourshinypet.netlify.app/blog/predictive/index_files/figure-html/unnamed-chunk-54-5.png" width="672" /></p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">multi_metric &lt;- <span style="color:#447fcf">metric_set</span>(mae, mape, rmse, rsq)
+final_metric_dtree &lt;- <span style="color:#447fcf">collect_metrics</span>(final_fit_tree)
+final_metric_dtree
+</code></pre></div><pre><code>## # A tibble: 4 x 4
+##   .metric .estimator .estimate .config             
+##   &lt;chr&gt;   &lt;chr&gt;          &lt;dbl&gt; &lt;chr&gt;               
+## 1 mae     standard      51.5   Preprocessor1_Model1
+## 2 mape    standard      54.1   Preprocessor1_Model1
+## 3 rmse    standard      87.7   Preprocessor1_Model1
+## 4 rsq     standard       0.481 Preprocessor1_Model1
+</code></pre>
+<p>With decision tree, we get better RMSE score as compared to the GLM model.</p>
+<h2 id="510-random-forest">5.10 Random forest</h2>
+<p>We perform similar steps using random forest, with <code>mtry</code> (number of variables randomly sampled as candidates at each split) and <code>min_n</code> as the hyper-parameters to be tuned.</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#447fcf">tic</span>(<span style="color:#ed9d13">&#34;RF timing&#34;</span>)
+<span style="color:#447fcf">set.seed</span>(<span style="color:#3677a9">1234</span>)
+<span style="color:#999;font-style:italic">#Random forest</span>
+randomf_model &lt;-<span style="color:#447fcf">rand_forest</span>(trees = <span style="color:#3677a9">500</span>,
+                            mtry = <span style="color:#447fcf">tune</span>(),
+                            min_n = <span style="color:#447fcf">tune</span>()) %&gt;%
+  <span style="color:#447fcf">set_engine</span>(<span style="color:#ed9d13">&#34;ranger&#34;</span>,
+             importance = <span style="color:#ed9d13">&#34;permutation&#34;</span>) %&gt;%
+  <span style="color:#447fcf">set_mode</span>(<span style="color:#ed9d13">&#34;regression&#34;</span>)
+
+randomf_wf &lt;- <span style="color:#447fcf">workflow</span>() %&gt;%
+  <span style="color:#447fcf">add_model</span>(randomf_model) %&gt;%
+  <span style="color:#447fcf">add_recipe</span>(rcpTransform3)
+
+randomf_grid &lt;- <span style="color:#447fcf">grid_regular</span>(<span style="color:#447fcf">mtry</span>(range = <span style="color:#447fcf">c</span>(<span style="color:#3677a9">10</span>, <span style="color:#3677a9">20</span>)),
+                             <span style="color:#447fcf">min_n</span>(),
+                             levels = <span style="color:#3677a9">3</span>)
+
+randomf_result &lt;- randomf_wf %&gt;%
+  <span style="color:#447fcf">tune_grid</span>(resamples = listing_kfolds,
+            grid = randomf_grid,
+            control = <span style="color:#447fcf">control_resamples</span>(save_pred = <span style="color:#6ab825;font-weight:bold">TRUE</span>),
+            metrics = <span style="color:#447fcf">metric_set</span>(mae, mape, rmse, rsq))
+</code></pre></div><pre><code>## ! Fold1: preprocessor 1/1, model 2/9: 15 columns were requested but there were 11...
+
+## ! Fold1: preprocessor 1/1, model 3/9: 20 columns were requested but there were 11...
+
+## ! Fold1: preprocessor 1/1, model 5/9: 15 columns were requested but there were 11...
+
+## ! Fold1: preprocessor 1/1, model 6/9: 20 columns were requested but there were 11...
+
+## ! Fold1: preprocessor 1/1, model 8/9: 15 columns were requested but there were 11...
+
+## ! Fold1: preprocessor 1/1, model 9/9: 20 columns were requested but there were 11...
+
+## ! Fold2: preprocessor 1/1, model 2/9: 15 columns were requested but there were 11...
+
+## ! Fold2: preprocessor 1/1, model 3/9: 20 columns were requested but there were 11...
+
+## ! Fold2: preprocessor 1/1, model 5/9: 15 columns were requested but there were 11...
+
+## ! Fold2: preprocessor 1/1, model 6/9: 20 columns were requested but there were 11...
+
+## ! Fold2: preprocessor 1/1, model 8/9: 15 columns were requested but there were 11...
+
+## ! Fold2: preprocessor 1/1, model 9/9: 20 columns were requested but there were 11...
+
+## ! Fold3: preprocessor 1/1, model 2/9: 15 columns were requested but there were 11...
+
+## ! Fold3: preprocessor 1/1, model 3/9: 20 columns were requested but there were 11...
+
+## ! Fold3: preprocessor 1/1, model 5/9: 15 columns were requested but there were 11...
+
+## ! Fold3: preprocessor 1/1, model 6/9: 20 columns were requested but there were 11...
+
+## ! Fold3: preprocessor 1/1, model 8/9: 15 columns were requested but there were 11...
+
+## ! Fold3: preprocessor 1/1, model 9/9: 20 columns were requested but there were 11...
+</code></pre>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#447fcf">collect_metrics</span>(randomf_result)
+</code></pre></div><pre><code>## # A tibble: 36 x 8
+##     mtry min_n .metric .estimator   mean     n std_err .config             
+##    &lt;int&gt; &lt;int&gt; &lt;chr&gt;   &lt;chr&gt;       &lt;dbl&gt; &lt;int&gt;   &lt;dbl&gt; &lt;chr&gt;               
+##  1    10     2 mae     standard   43.3       3  0.856  Preprocessor1_Model1
+##  2    10     2 mape    standard   40.9       3  1.11   Preprocessor1_Model1
+##  3    10     2 rmse    standard   85.7       3  2.46   Preprocessor1_Model1
+##  4    10     2 rsq     standard    0.515     3  0.0165 Preprocessor1_Model1
+##  5    15     2 mae     standard   43.5       3  0.886  Preprocessor1_Model2
+##  6    15     2 mape    standard   40.8       3  1.19   Preprocessor1_Model2
+##  7    15     2 rmse    standard   85.8       3  2.64   Preprocessor1_Model2
+##  8    15     2 rsq     standard    0.514     3  0.0171 Preprocessor1_Model2
+##  9    20     2 mae     standard   43.4       3  0.922  Preprocessor1_Model3
+## 10    20     2 mape    standard   40.7       3  1.05   Preprocessor1_Model3
+## # ... with 26 more rows
+</code></pre>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#447fcf">autoplot</span>(randomf_result) + <span style="color:#447fcf">theme_light</span>()
+</code></pre></div><p><img src="https://ourshinypet.netlify.app/blog/predictive/index_files/figure-html/unnamed-chunk-55-1.png" width="672" /></p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">best_rf &lt;- randomf_result %&gt;%
+  <span style="color:#447fcf">select_best</span>(<span style="color:#ed9d13">&#34;rmse&#34;</span>)
+
+randomf_result %&gt;%
+  <span style="color:#447fcf">show_best</span>(<span style="color:#ed9d13">&#34;rmse&#34;</span>)
+</code></pre></div><pre><code>## # A tibble: 5 x 8
+##    mtry min_n .metric .estimator  mean     n std_err .config             
+##   &lt;int&gt; &lt;int&gt; &lt;chr&gt;   &lt;chr&gt;      &lt;dbl&gt; &lt;int&gt;   &lt;dbl&gt; &lt;chr&gt;               
+## 1    10     2 rmse    standard    85.7     3    2.46 Preprocessor1_Model1
+## 2    15     2 rmse    standard    85.8     3    2.64 Preprocessor1_Model2
+## 3    20     2 rmse    standard    85.9     3    2.56 Preprocessor1_Model3
+## 4    20    21 rmse    standard    87.2     3    2.25 Preprocessor1_Model6
+## 5    15    21 rmse    standard    87.3     3    2.43 Preprocessor1_Model5
+</code></pre>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">final_rf_wf &lt;- randomf_wf %&gt;%
+  <span style="color:#447fcf">finalize_workflow</span>(best_rf)
+
+final_rf &lt;- final_rf_wf %&gt;%
+  <span style="color:#447fcf">fit</span>(data = listing_train)
+
+final_rf %&gt;%
+  <span style="color:#447fcf">pull_workflow_fit</span>() %&gt;%
+  <span style="color:#447fcf">vip</span>()
+</code></pre></div><p><img src="https://ourshinypet.netlify.app/blog/predictive/index_files/figure-html/unnamed-chunk-55-2.png" width="672" /></p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">listing_test_T &lt;- rcpTransform3 %&gt;% <span style="color:#447fcf">prep</span>() %&gt;% <span style="color:#447fcf">bake</span>(new_data = listing_test)
+
+final_fit_rf &lt;- <span style="color:#447fcf">predict</span>(final_rf, new_data = listing_test) %&gt;%
+  <span style="color:#447fcf">bind_cols</span>(listing_test_T)
+
+final_fit_rf %&gt;%
+  <span style="color:#999;font-style:italic"># collect_predictions() %&gt;%</span>
+  <span style="color:#447fcf">ggplot</span>(<span style="color:#447fcf">aes</span>(target_var, .pred)) +
+  <span style="color:#447fcf">geom_point</span>() +
+  <span style="color:#447fcf">geom_abline</span>() +
+  <span style="color:#447fcf">coord_obs_pred</span>() +
+  <span style="color:#447fcf">labs</span>(title = <span style="color:#ed9d13">&#34;R-squared plot&#34;</span>,
+       x = <span style="color:#447fcf">paste0</span>(<span style="color:#ed9d13">&#34;Actual &#34;</span>, targetVar),
+       y = <span style="color:#447fcf">paste0</span>(<span style="color:#ed9d13">&#34;Predicted &#34;</span>, targetVar))
+</code></pre></div><p><img src="https://ourshinypet.netlify.app/blog/predictive/index_files/figure-html/unnamed-chunk-55-3.png" width="672" /></p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">final_metric_rf &lt;- final_fit_rf %&gt;%
+  <span style="color:#447fcf">multi_metric</span>(truth = target_var, estimate = .pred)
+
+<span style="color:#447fcf">toc</span>()
+</code></pre></div><pre><code>## RF timing: 159.82 sec elapsed
+</code></pre>
+<h2 id="511-boosted-tree">5.11 Boosted tree</h2>
+<p>For boosted tree, we use <code>xgboost</code> package with <code>trees</code>, <code>min_n</code>, <code>tree_depth</code>, and <code>learn_rate</code> as hyper-parameters to be tuned.</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#447fcf">tic</span>(<span style="color:#ed9d13">&#34;xgboost timing&#34;</span>)
+<span style="color:#447fcf">set.seed</span>(<span style="color:#3677a9">1234</span>)
+xgboost_model &lt;- <span style="color:#447fcf">boost_tree</span>(mode = <span style="color:#ed9d13">&#34;regression&#34;</span>,
+                            trees = <span style="color:#447fcf">tune</span>(),
+                            min_n = <span style="color:#447fcf">tune</span>(),
+                            tree_depth = <span style="color:#447fcf">tune</span>(),
+                            learn_rate = <span style="color:#447fcf">tune</span>()) %&gt;%
+    <span style="color:#447fcf">set_engine</span>(<span style="color:#ed9d13">&#34;xgboost&#34;</span>, objective = <span style="color:#ed9d13">&#34;reg:squarederror&#34;</span>)
+
+xgboost_params &lt;- <span style="color:#447fcf">parameters</span>(<span style="color:#447fcf">trees</span>(), <span style="color:#447fcf">min_n</span>(), <span style="color:#447fcf">tree_depth</span>(), <span style="color:#447fcf">learn_rate</span>())
+
+xgboost_grid &lt;- <span style="color:#447fcf">grid_max_entropy</span>(xgboost_params, size = <span style="color:#3677a9">20</span>)
+
+xgboost_wf &lt;- <span style="color:#447fcf">workflow</span>() %&gt;%
+  <span style="color:#447fcf">add_model</span>(xgboost_model) %&gt;%
+  <span style="color:#447fcf">add_recipe</span>(rcpTransform1)
+
+xgboost_result &lt;- xgboost_wf %&gt;%
+  <span style="color:#447fcf">tune_grid</span>(resamples = listing_kfolds,
+            grid = xgboost_grid,
+            metrics = <span style="color:#447fcf">metric_set</span>(mae, mape, rmse, rsq))
+
+xgb_p &lt;- xgboost_result %&gt;%
+  <span style="color:#447fcf">collect_metrics</span>() %&gt;%
+  <span style="color:#447fcf">mutate</span>(tree_depth = <span style="color:#447fcf">factor</span>(tree_depth)) %&gt;%
+  <span style="color:#447fcf">ggplot</span>(<span style="color:#447fcf">aes</span>(learn_rate, mean, color = tree_depth)) +
+  <span style="color:#447fcf">geom_line</span>(size = <span style="color:#3677a9">1</span>, alpha = <span style="color:#3677a9">0.6</span>) +
+  <span style="color:#447fcf">geom_point</span>(size = <span style="color:#3677a9">1.5</span>) +
+  <span style="color:#447fcf">facet_wrap</span>(~ .metric, scales = <span style="color:#ed9d13">&#34;free&#34;</span>, nrow = <span style="color:#3677a9">2</span>) +
+  <span style="color:#447fcf">scale_x_log10</span>(labels = scales::<span style="color:#447fcf">label_number</span>()) +
+  <span style="color:#447fcf">theme_light</span>()
+xgb_ply &lt;- <span style="color:#447fcf">ggplotly</span>(xgb_p)
+widgetframe::<span style="color:#447fcf">frameWidget</span>(xgb_ply)
+</code></pre></div><div id="htmlwidget-14" style="width:100%;height:480px;" class="widgetframe html-widget"></div>
+<script type="application/json" data-for="htmlwidget-14">{"x":{"url":"index_files/figure-html//widgets/widget_unnamed-chunk-56.html","options":{"xdomain":"*","allowfullscreen":false,"lazyload":false}},"evals":[],"jsHooks":[]}</script>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">xgboost_result %&gt;%
+  <span style="color:#447fcf">show_best</span>(<span style="color:#ed9d13">&#34;rmse&#34;</span>)
+</code></pre></div><pre><code>## # A tibble: 5 x 10
+##   trees min_n tree_depth learn_rate .metric .estimator  mean     n std_err
+##   &lt;int&gt; &lt;int&gt;      &lt;int&gt;      &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;      &lt;dbl&gt; &lt;int&gt;   &lt;dbl&gt;
+## 1  1697    38          8     0.0277 rmse    standard    85.0     3    3.04
+## 2   187    20          4     0.0506 rmse    standard    87.6     3    3.59
+## 3  1596     3          8     0.0129 rmse    standard    88.0     3    2.19
+## 4   304    39          3     0.0282 rmse    standard    88.7     3    3.33
+## 5   648     4         15     0.0406 rmse    standard    89.5     3    2.88
+## # ... with 1 more variable: .config &lt;chr&gt;
+</code></pre>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">best_xgboost_model &lt;- xgboost_result %&gt;%
+  <span style="color:#447fcf">select_best</span>(<span style="color:#ed9d13">&#34;rmse&#34;</span>)
+
+final_xgboost_wf &lt;-
+  xgboost_wf %&gt;%
+  <span style="color:#447fcf">finalize_workflow</span>(best_xgboost_model)
+
+final_xgboost &lt;- final_xgboost_wf %&gt;%
+  <span style="color:#447fcf">fit</span>(data = listing_train)
+
+final_xgboost %&gt;%
+  <span style="color:#447fcf">pull_workflow_fit</span>() %&gt;%
+  <span style="color:#447fcf">vip</span>()
+</code></pre></div><p><img src="https://ourshinypet.netlify.app/blog/predictive/index_files/figure-html/unnamed-chunk-56-2.png" width="672" /></p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">final_fit_xgboost &lt;- <span style="color:#447fcf">last_fit</span>(final_xgboost_wf,
+                              split = listing_split,
+                              metrics = <span style="color:#447fcf">metric_set</span>(mae, mape, rmse, rsq))
+
+final_fit_xgboost %&gt;%
+  <span style="color:#447fcf">collect_predictions</span>() %&gt;%
+  <span style="color:#447fcf">ggplot</span>(<span style="color:#447fcf">aes</span>(target_var, .pred)) +
+  <span style="color:#447fcf">geom_point</span>() +
+  <span style="color:#447fcf">geom_abline</span>() +
+  <span style="color:#447fcf">coord_obs_pred</span>() +
+  <span style="color:#447fcf">labs</span>(title = <span style="color:#ed9d13">&#34;R-squared plot&#34;</span>,
+       x = <span style="color:#447fcf">paste0</span>(<span style="color:#ed9d13">&#34;Actual &#34;</span>, targetVar),
+       y = <span style="color:#447fcf">paste0</span>(<span style="color:#ed9d13">&#34;Predicted &#34;</span>, targetVar))
+</code></pre></div><p><img src="https://ourshinypet.netlify.app/blog/predictive/index_files/figure-html/unnamed-chunk-56-3.png" width="672" /></p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">final_metric_xgb &lt;- <span style="color:#447fcf">collect_metrics</span>(final_fit_xgboost)
+<span style="color:#447fcf">toc</span>()
+</code></pre></div><pre><code>## xgboost timing: 331.42 sec elapsed
+</code></pre>
+<h2 id="512-collect-all-metric">5.12 Collect all metric</h2>
+<p>Best model from each algorithm is summarised into one table and plotted using <code>ggplot</code> wrapped by <code>plotly</code>.</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">metric_p &lt;- final_metric_lm %&gt;%
+  <span style="color:#447fcf">mutate</span>(model = <span style="color:#ed9d13">&#34;LM&#34;</span>) %&gt;%
+  <span style="color:#447fcf">bind_rows</span>(final_metric_glm %&gt;% <span style="color:#447fcf">mutate</span>(model = <span style="color:#ed9d13">&#34;GLM&#34;</span>)) %&gt;%
+  <span style="color:#447fcf">bind_rows</span>(final_metric_dtree %&gt;% <span style="color:#447fcf">mutate</span>(model = <span style="color:#ed9d13">&#34;DTree&#34;</span>)) %&gt;%
+  <span style="color:#447fcf">bind_rows</span>(final_metric_rf %&gt;% <span style="color:#447fcf">mutate</span>(model = <span style="color:#ed9d13">&#34;RdmForest&#34;</span>)) %&gt;%
+  <span style="color:#447fcf">bind_rows</span>(final_metric_xgb %&gt;% <span style="color:#447fcf">mutate</span>(model = <span style="color:#ed9d13">&#34;XGBoost&#34;</span>)) %&gt;%
+  <span style="color:#447fcf">ggplot</span>(<span style="color:#447fcf">aes</span>(<span style="color:#447fcf">reorder_within</span>(model, <span style="color:#3677a9">-.</span>estimate, .metric), .estimate,
+             text = <span style="color:#447fcf">paste0</span>(<span style="color:#ed9d13">&#34;Model: &#34;</span>, model, <span style="color:#ed9d13">&#34;\n&#34;</span>,
+                           .metric, <span style="color:#ed9d13">&#34;: &#34;</span>, <span style="color:#447fcf">round</span>(.estimate, <span style="color:#3677a9">3</span>)))) +
+  <span style="color:#447fcf">geom_bar</span>(stat = <span style="color:#ed9d13">&#39;identity&#39;</span>) +
+  <span style="color:#447fcf">scale_x_reordered</span>() +
+  <span style="color:#447fcf">facet_wrap</span>(~ .metric, scales = <span style="color:#ed9d13">&#34;free&#34;</span>) +
+  <span style="color:#447fcf">ylab</span>(<span style="color:#ed9d13">&#34;Estimate&#34;</span>) +
+  <span style="color:#447fcf">theme</span>(axis.title.x = <span style="color:#447fcf">element_blank</span>(),
+        panel.spacing.y = <span style="color:#447fcf">unit</span>(<span style="color:#3677a9">2</span>, <span style="color:#ed9d13">&#34;lines&#34;</span>))
+metric_ply &lt;- <span style="color:#447fcf">ggplotly</span>(metric_p, tooltip = <span style="color:#447fcf">c</span>(<span style="color:#ed9d13">&#34;text&#34;</span>))
+widgetframe::<span style="color:#447fcf">frameWidget</span>(metric_ply)
+</code></pre></div><div id="htmlwidget-15" style="width:100%;height:1152px;" class="widgetframe html-widget"></div>
+<script type="application/json" data-for="htmlwidget-15">{"x":{"url":"index_files/figure-html//widgets/widget_unnamed-chunk-57.html","options":{"xdomain":"*","allowfullscreen":false,"lazyload":false}},"evals":[],"jsHooks":[]}</script>
+<h1 id="6-summary">6. Summary</h1>
+<p>The proposed dashboard will cover the predictive analytics steps described above and the sketches are shown below.</p>
+<div class="figure" style="text-align: center">
+<p><img src="images/sketch1.jpg" alt="Data splitting and feature selection" width="1048" /></p>
+<p class="caption">
+Figure 14: Data splitting and feature selection
+</p>
+</div>
+<div class="figure" style="text-align: center">
+<p><img src="images/sketch2.jpg" alt="Data transformation and model training" width="1408" /></p>
+<p class="caption">
+Figure 15: Data transformation and model training
+</p>
+</div>
+<div class="figure" style="text-align: center">
+<p><img src="images/sketch3.jpg" alt="Model comparison" width="1458" /></p>
+<p class="caption">
+Figure 16: Model comparison
+</p>
+</div>
+<p>In summary, visualisation and interactivity are explored to support the following predictive analytics steps:</p>
+<ul>
+<li>
+<p>correlation matrix<br>
+By allowing user input on variable selection and p-value setting, user has more flexibility in assessing the correlation among variables. Interaction provided by <code>plotly</code> also allows tooltip function to help user in reading the correlation coefficient and p-value which static plot is unable to provide.</p>
+</li>
+<li>
+<p>feature selection<br>
+On top of correlation matrix, comparison of feature importance from different methods allow user to visually assess the important features to be included in the subsequent modeling steps.</p>
+</li>
+<li>
+<p>data splitting<br>
+Flexibility in allocating train-test data set allows user to decide how he/she wants to spend their data budget on the model development process. The distribution plot between training and test set also help user to be aware on the potential bias in the training data set.</p>
+</li>
+<li>
+<p>data transformation<br>
+As most predictive analytics process involve data transformation, visual aid in the form of distribution plot between pre and post processing step increase user awareness on what transformation steps are performed and on which variables.</p>
+</li>
+<li>
+<p>assessment of high prediction error<br>
+Besides assessment from metric such as RMSE and Rsquare, training set distribution plot overlapped with predicted values allow user to investigate further on the prediction error and understand which variables may contribute to the error.</p>
+</li>
+<li>
+<p>hyper-parameter evaluation<br>
+Cross validation is an iterative process of applying different hyper-parameters setting and a visualisation helps user to understand the performance improvement/degradation.</p>
+</li>
+<li>
+<p>model evaluation<br>
+Finally, all model performance metrics are plotted together to ease the model evaluation process.</p>
+</li>
+</ul>
+<h1 id="7-reference">7. Reference</h1>
+<p>Lu, Y., Garcia, R., Hansen, B., Gleicher, M., &amp; Maciejewski, R. (2017). The State‐of‐the‐Art in Predictive visual analytics. <em>Computer Graphics Forum, 36</em>(3), 539-562. doi:10.1111/cgf.13210</p>
+<hr>
+<p>Infographic vector created by vectorjuice - <a href="http://www.freepik.com">www.freepik.com</a></a></p>
+
+        </div>
+        
+        <div class="mt-5">
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  </div><!-- end Contact Area -->
+<footer id="footer" class="section-bg">
+	<div class="container">
+		<div class="row wow fadeInUp" data-wow-duration="500ms">
+			<div class="col-xl-12">
+
+				<!-- Footer Social Links -->
+				<div class="social-icon">
+					<ul class="list-inline">
+						
+						<li class="list-inline-item"><a href="https://github.com/suyiinang/ourshinypet"><i class="ti-github"></i></a></li>
+						
+					</ul>
+				</div>
+
+				<!-- copyright -->
+				<div class="copyright text-center">
+					<a href="https://ourshinypet.netlify.app/">
+						<img src="https://ourshinypet.netlify.app/images/logo.png" alt="Our Shiny PET" height="42" />
+					</a>
+					<br>
+					<p>Copyright © 2020 Designed by <a href="https://themefisher.com">Themefisher</a> &amp; Developed by <a href="https://gethugothemes.com">Gethugothemes</a></p>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+<!-- /footer -->
+
+<!-- Google Map API -->
+
+
+<!-- JS Plugins -->
+
+<script src="https://ourshinypet.netlify.app/plugins/jquery/jquery.min.js"></script>
+
+<script src="https://ourshinypet.netlify.app/plugins/bootstrap/bootstrap.min.js"></script>
+
+<script src="https://ourshinypet.netlify.app/plugins/slick/slick.min.js"></script>
+
+<script src="https://ourshinypet.netlify.app/plugins/shuffle/shuffle.min.js"></script>
+
+<script src="https://ourshinypet.netlify.app/plugins/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+<script src="https://ourshinypet.netlify.app/plugins/lazy-load/lozad.min.js"></script>
+
+<script src="https://ourshinypet.netlify.app/plugins/google-map/map.js"></script>
+
+
+<!-- Main Script -->
+
+<script src="https://ourshinypet.netlify.app/js/script.min.5db5ae6f88052715e823d7c52f3fa7a832565352b0f76c1d2cee2a3b564a0716fa9d51878a9965389c3d856f2d7c6330.js" integrity="sha384-XbWub4gFJxXoI9fFLz&#43;nqDJWU1Kw92wdLO4qO1ZKBxb6nVGHipllOJw9hW8tfGMw"></script>
+
+
+</body>
+
+</html>

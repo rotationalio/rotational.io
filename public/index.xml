@@ -14,7 +14,16 @@
       <pubDate>Sat, 10 Apr 2021 00:00:00 +0000</pubDate>
       
       <guid>https://ourshinypet.netlify.app/blog/exploratory/</guid>
-      <description>Prototype testing for the Exploratory module for OurShinyPET This was written as part of the requirements for the Visual Analytics module for MITB.</description>
+      <description>Prototype testing for the Exploratory module for OurShinyPET by Su Yiin Ang</description>
+    </item>
+    
+    <item>
+      <title>Predictive - prototype test</title>
+      <link>https://ourshinypet.netlify.app/blog/predictive/</link>
+      <pubDate>Sat, 10 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://ourshinypet.netlify.app/blog/predictive/</guid>
+      <description>Prototype testing for the Predictive module for OurShinyPET How visual analytics technique can be used to complement predictive analytics.</description>
     </item>
     
     <item>
