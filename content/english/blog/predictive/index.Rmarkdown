@@ -72,7 +72,7 @@ include_graphics("images/tidymodels_components.jpg")
 
 `tidymodels` employ several components in each stage of predictive analytics and the diagram from [Johns Hopkins Data Science Lab](https://jhudatascience.org/tidyversecourse/model.html) clearly describe how each component fits into the modeling process: `rsample` for data splitting, `recipe` for pre-processing, `parsnip` for model specification, `tune` for hyper-parameters tuning, and `yardstick` for model evaluation. 
 
-```{r, echo=FALSE, out.width="150%", fig.align='center', fig.cap='Predictive analytics process using tidymodels'}
+```{r, echo=FALSE, fig.align='center', fig.cap='Predictive analytics process using tidymodels'}
 include_graphics("images/tidymodels_process.jpg")
 ```
 
@@ -92,30 +92,30 @@ In multivariate analysis, several R packages are available for creating correlat
 
 For the purpose of verifying the statistical significance of the correlation, the selection of variables, p-value method, and threshold will be made available for customisation by user. Below is an example of interactivity for correlation matrix.
 
-```{r, echo=FALSE, out.width="150%", fig.align='center', fig.cap='Interactivity for creation of correlation matrix'}
+```{r, echo=FALSE, fig.align='center', fig.cap='Interactivity for creation of correlation matrix'}
 include_graphics("images/correlation_matrix.jpg")
 ```
 
 For feature importance, we use random forest method from `ranger` package and `Boruta` method as comparison for feature importance analysis. The feature will be plotted and sorted according to the importance score.
 
-```{r, echo=FALSE, out.width="150%", fig.align='center', fig.cap='Feature importance comparison'}
+```{r, echo=FALSE, fig.align='center', fig.cap='Feature importance comparison'}
 include_graphics("images/feature_importance.jpg")
 ```
 
 ## 3.2 Data splitting  
 Before model training, we divide our data into 2 sets, one for training and one for validation/test.
 
-```{r, echo=FALSE, out.width="150%", fig.align='center', fig.cap='Train-test data splitting proportion'}
+```{r, echo=FALSE, fig.align='center', fig.cap='Train-test data splitting proportion'}
 include_graphics("images/train-test_split.jpg")
 ```
 
 Apart from setting the proportion of train-test split (e.g. 80-20 ratio), visualisation can show the difference in distribution (if any) between training and test set. This will help in highlighting potential bias in the training data set.
 
-```{r, echo=FALSE, out.width="150%", fig.align='center', fig.cap='Train-test data distribution (numeric)'}
+```{r, echo=FALSE, fig.align='center', fig.cap='Train-test data distribution (numeric)'}
 include_graphics("images/train-test_distribution.jpg")
 ```
 
-```{r, echo=FALSE, out.width="150%", fig.align='center', fig.cap='Train-test data distribution (categorical)'}
+```{r, echo=FALSE, fig.align='center', fig.cap='Train-test data distribution (categorical)'}
 include_graphics("images/train-test_distribution2.jpg")
 ```
 
@@ -125,13 +125,13 @@ Instead of using the training set as it is, we also perform k-fold cross-validat
 A series of data transformation such as normalisation, log transform, and one-hot encoding are common steps that are performed before modeling.
 To help user understand the transformation steps performed on the data set, `recipe` in `Tidymodel` package allows the steps to be piped like `tidyverse` syntax, which makes it more organised and clear. A description on what transformation is performed and on what variables will be helpful for the user.
 
-```{r, echo=FALSE, out.width="150%", fig.align='center', fig.cap='Pre-processing steps applied to the data set'}
+```{r, echo=FALSE, fig.align='center', fig.cap='Pre-processing steps applied to the data set'}
 include_graphics("images/recipe_preprocess.jpg")
 ```
 
 The transformed variables are also plotted to help user understand the distribution of the variables that will be used for modeling.
 
-```{r, echo=FALSE, out.width="150%", fig.align='center', fig.cap='Transformed variables'}
+```{r, echo=FALSE, fig.align='center', fig.cap='Transformed variables'}
 include_graphics("images/transformed_var.jpg")
 ```
 
@@ -141,13 +141,13 @@ include_graphics("images/transformed_var.jpg")
 ## 3.5 Model training    
 Once our model is trained, the coefficient of parameters for linear regression can be visualised using `ggcoefstats` function from `ggstatsplot` package. However, as will be explained in the later section, `ggplot`is used instead to provide more flexibility in interaction using `plotly` wrapper.
 
-```{r, echo=FALSE, out.width="150%", fig.align='center', fig.cap='Coefficient of regression plot using _ggplot_'}
+```{r, echo=FALSE, fig.align='center', fig.cap='Coefficient of regression plot using _ggplot_'}
 include_graphics("images/coeff_regression.jpg")
 ```
 
 For tree-based model, we will extract the feature importance using `vip` package which conveniently plot the features and their importance as a bar chart. This provides a quick summary of which predictors have strong influence in our model.
 
-```{r, echo=FALSE, out.width="150%", fig.align='center', fig.cap='Feature importance plot using _vip_'}
+```{r, echo=FALSE, fig.align='center', fig.cap='Feature importance plot using _vip_'}
 include_graphics("images/tree_importance.jpg")
 ```
 
@@ -156,13 +156,13 @@ Apart from doing cross validation, we want to adjust model hyper-parameters to a
 
 The tuning process begin with creation of grid which represents the permutation of all hyper-parameters that are to be tuned. Subsequently the model performance will be assessed using different hyper-parameter values which are specified by the grid. Finally, metrics such as _R-squared_, _MAE (Mean Absolute Error)_, and _RMSE (Root Mean Squared Error)_ will be calculated for each of the tuned model. The metrics result can be collected from `tune` in tibble format which can then be piped to `ggplot` for visualisation. The best model is then selected accordingly, based on user selection on the metrics of choice.
 
-```{r, echo=FALSE, out.width="150%", fig.align='center', fig.cap='Model tuning assessment plot'}
+```{r, echo=FALSE, fig.align='center', fig.cap='Model tuning assessment plot'}
 include_graphics("images/model_tuning.jpg")
 ```
 
 To assess our prediction result in more detail, we will also plot those points with high prediction error with regards to the distribution of training data set. This will help us to detect if certain characteristic of listing may have led to the high error. This is done by `ggplot` with `geom_histogram` for training set distribution and `geom_jitter` for points with high prediction error.
 
-```{r, echo=FALSE, out.width="150%", fig.align='center', fig.cap='Checking of prediction error'}
+```{r, echo=FALSE, fig.align='center', fig.cap='Checking of prediction error'}
 include_graphics("images/prediction_error.jpg")
 ```
 
