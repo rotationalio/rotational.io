@@ -19,6 +19,7 @@ library(vip)
 library(Boruta)
 library(reshape2)
 library(shinycssloaders)
+library(ranger)
 
 #########
 var_remove <- c("minimum_minimum_nights", "maximum_minimum_nights",
@@ -26,7 +27,10 @@ var_remove <- c("minimum_minimum_nights", "maximum_minimum_nights",
                 "minimum_nights_avg_ntm", "maximum_nights_avg_ntm")
 
 final_listings <- read_csv("./data/listing_processed.csv") %>%
-    select(-all_of(var_remove))
+    select(-all_of(var_remove)) %>%
+    mutate(across(where(is.character), as.factor)) %>%
+    mutate(across(where(is.logical), as.factor))
+    
 ########
 
 
@@ -96,10 +100,11 @@ ui <- dashboardPage(
                         tabPanel("Data splitting",
                                  data_splittingUI("ds")
                                  ),
-                        tabPanel("Feature importance",
+                        tabPanel("Feature selection",
                                  feat_selectUI("fs")
                                  ),
                         tabPanel("Data transformation",
+                                 data_transformUI("dtf")
                                  ),
                         tabPanel("Model training",
                                  ),
@@ -113,23 +118,31 @@ ui <- dashboardPage(
 # Define server logic required to draw a histogram
 server <- function(input, output) {
     
-    listing_split <- data_splittingServer("ds", final_listings)
-    feat_selectServer("fs", final_listings, listing_split)
-    
-   # Return the requested dataset
+    # Return the requested dataset
     variableInput <- reactive({
         final_listings %>% select(all_of(input$variables))
     })
-
-
      output$summary <- renderPrint({
         dataset <- variableInput()
         summary(dataset)
     })
-
      output$view <- renderTable({
          head(variableInput(), n = input$obs)
      })
+     
+     
+     
+     
+     
+     
+     
+     
+     ########### predictive server file ###########
+     return_val1 <- data_splittingServer("ds", final_listings)
+     feat_selectServer("fs", final_listings, return_val1)
+     data_transformServer("dtf", final_listings, return_val1)
+     ############################################
+     
 }
 
 # Run the application 

@@ -12,8 +12,10 @@ data_splittingUI <- function(id){
     sidebarLayout(
       sidebarPanel(
         pickerInput(
-          inputId = NS(id, "Itarget_var"), label = "Choose response variable:",
-          choices = c("price", "review_scores_rating"), selected = "price"),
+          inputId = NS(id, "Itarget_var"),
+          label = "Choose response variable:",
+          choices = c("price", "review_scores_rating"),
+          selected = "price"),
         sliderInput(NS(id, "Itrain_prop"), "Training set proportion (%)",
                     value = 80, min = 50, max = 100, step = 5),
         actionButton(NS(id, "btn_split_data"), "Split data")
@@ -21,10 +23,10 @@ data_splittingUI <- function(id){
       mainPanel(
         (div(style='height: 500px; overflow-x: scroll',
                        plotlyOutput(NS(id, "Oplot_traintest_dense"))%>%
-               withSpinner(color="#0dc5c1")
+               withSpinner(color="#5b7d7c")
                        )),
         
-        plotlyOutput(NS(id, "Oplot_traintest_bar")) %>% withSpinner(color="#0dc5c1")
+        plotlyOutput(NS(id, "Oplot_traintest_bar")) %>% withSpinner(color="#5b7d7c")
       , width = 9)
     )
   )
@@ -41,14 +43,18 @@ data_splittingServer <- function(id, final_listings){
     # })
     output$Oplot_traintest_dense <- renderPlotly(NULL)
     output$Oplot_traintest_bar <- renderPlotly(NULL)
-
+    
+    Rlisting_split <- reactiveVal(NULL)
+    
     observeEvent(input$btn_split_data, {
       
       listing_split <- final_listings %>%
         drop_na(input$Itarget_var) %>% #remove rows where target variable is missing
         mutate(id = row_number()) %>%
         initial_split(prop = input$Itrain_prop/100, strata = input$Itarget_var)
-    
+      
+      Rlisting_split(listing_split)
+      
       listing_train <- training(listing_split)
       listing_test <- testing(listing_split)
       
@@ -73,7 +79,7 @@ data_splittingServer <- function(id, final_listings){
                 plot.margin = margin(1, 5, 0, 5))
         ggplotly(trainTest_p,
                  width = 6000, height = 470) %>%
-          layout(legend = list(orientation = "h", x=0, y=1.3))
+          layout(legend = list(orientation = "h", x=0.03, y=1.15))
         })
       
       output$Oplot_traintest_bar <- renderPlotly({
@@ -88,8 +94,14 @@ data_splittingServer <- function(id, final_listings){
           theme(axis.text.x = element_blank())
         ggplotly(trainTest_p2)
         })
-      return(Rlisting_split = reactive(listing_split))
+      
       })
-    
+    # return(Rlisting_split)
+    return(list(
+      datasplit = Rlisting_split,
+      targetvar = reactive({input$Itarget_var}),
+      Iprop = reactive({input$Itrain_prop})
+      )
+    )
     })
 }
