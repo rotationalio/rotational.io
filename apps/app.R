@@ -20,6 +20,7 @@ library(Boruta)
 library(reshape2)
 library(shinycssloaders)
 library(ranger)
+library(skimr)
 
 #########
 var_remove <- c("minimum_minimum_nights", "maximum_minimum_nights",
@@ -34,18 +35,18 @@ final_listings <- read_csv("./data/listing_processed.csv") %>%
 ########
 
 
-# Define UI for application that draws a histogram
 ui <- dashboardPage(
+    skin = 'black',
     dashboardHeader(title = "Airbnb ShinyPET"),         
     
     dashboardSidebar(
         sidebarMenu(
-            menuItem("Introduction", tabName = "Intro"),
-            menuItem("EDA module", tabName = "EDA"),
-            menuItem("Text module", tabName = "TA"),
-            menuItem("Predictive module", tabName = "PA")
+            menuItem("Introduction", tabName = "Intro", icon = icon('airbnb')),
+            menuItem("EDA module", tabName = "EDA", icon = icon('chart-bar')),
+            menuItem("Text module", tabName = "TA", icon = icon('text-height')),
+            menuItem("Predictive module", tabName = "PA", icon = icon('chart-line'))
         )
-    ),
+),
     
     dashboardBody(
         tabItems(
@@ -56,21 +57,19 @@ ui <- dashboardPage(
                     tabsetPanel(
                         tabPanel("Summary of variables",
                                  titlePanel("Observe variables"),
-                                 sidebarLayout(
-                                     sidebarPanel(
-                                         checkboxGroupInput('variables',
-                                                            'Select variables for observation',
-                                                            choices = names(final_listings), 
-                                                            selected = c('price','room_type','review_scores_rating','host_is_superhost'), 
-                                                            width = 3),
-                                         numericInput("obs", "Number of observations to view", 10)
-                                         ),
-                                     mainPanel(
-                                         verbatimTextOutput('summary'),
-                                         tableOutput('view')
-                                         )
-                                     )
+                                 fluidRow(
+                                     infoBoxOutput('variableBox', width = 3),
+                                     infoBoxOutput('obBox', width = 3),
+                                     infoBoxOutput('factorsBox',width = 3),
+                                     infoBoxOutput('numericBox', width = 3)
                                  ),
+                                 fluidRow(
+                                     box(title = 'Summary of factor variables',
+                                         DT::dataTableOutput('categorical')),
+                                     box(title = 'Summary of numerical variables',
+                                         DT::dataTableOutput('numeric'))
+                                 ),
+                        ),
                         tabPanel("Explore variables",
                                  #put ui here
                                  ),
@@ -118,19 +117,88 @@ ui <- dashboardPage(
 # Define server logic required to draw a histogram
 server <- function(input, output) {
     
-    # Return the requested dataset
-    variableInput <- reactive({
-        final_listings %>% select(all_of(input$variables))
+    ##############
+    # EDA
+    ##############
+    
+    ##### observe variables tab#####
+    output$variableBox <- renderInfoBox({
+        infoBox(
+            'Variables',
+            value = tags$p(paste0(length(final_listings)),style = "font-size: 200%;"),
+            icon = icon('info'),
+            color = 'orange',
+            fill = TRUE
+        )
     })
-     output$summary <- renderPrint({
-        dataset <- variableInput()
-        summary(dataset)
+    
+    output$obBox <- renderInfoBox({
+        infoBox(
+            'Observations',
+            value = tags$p(paste0(nrow(final_listings)), style = "font-size: 200%;"),
+            icon = icon('list'),
+            color = 'orange',
+            fill = TRUE
+        )
+    })    
+    
+    output$factorsBox <- renderInfoBox({
+        infoBox(
+            'Factor variables',
+            value = tags$p(paste0(length(which(sapply(final_listings, is.factor)==TRUE))),style = "font-size: 200%;"),
+            icon = icon('chart-pie'),
+            color = 'orange',
+            fill = TRUE
+        )
     })
-     output$view <- renderTable({
-         head(variableInput(), n = input$obs)
-     })
-     
-     
+    
+    
+    output$numericBox <- renderInfoBox({
+        infoBox(
+            'Numerical variables',
+            value = tags$p(paste0(length(which(sapply(final_listings, is.numeric)==TRUE))),style = "font-size: 200%;"),
+            icon = icon('chart-line'),
+            color = 'orange',
+            fill = TRUE
+        )
+    })
+    
+    output$numeric <- DT::renderDataTable({
+        
+        skimDf <- final_listings %>%
+            skim_without_charts()
+        
+        sum_n <-if ("numeric" %in% skimDf$skim_type){
+            skimDf %>%
+                yank('numeric') %>%
+                select('skim_variable','n_missing','complete_rate',
+                       'mean','sd','p0','p50','p100') %>%
+                arrange(-n_missing) %>%
+                mutate_if(is.numeric, round, digit = 2)}
+        
+        sum_n
+    })
+    
+    output$categorical <- DT::renderDataTable({
+        
+        skimDf <- final_listings %>%
+            skim_without_charts()
+        
+        sum_f <-if ("factor" %in% skimDf$skim_type){
+            skimDf %>% 
+                yank("factor") %>% 
+                arrange(-n_missing) %>%
+                mutate_if(is.numeric, round, digit = 2)}
+        
+        sum_f
+    })
+    ##### explore tab#####
+    
+    
+    
+    ##############
+    # END EDA
+    ##############
      
      
      
