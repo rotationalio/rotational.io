@@ -21,6 +21,9 @@ library(reshape2)
 library(shinycssloaders)
 library(ranger)
 library(skimr)
+library(shinythemes)
+library(rgdal)
+library(sf)
 
 #########
 var_remove <- c("minimum_minimum_nights", "maximum_minimum_nights",
@@ -30,7 +33,8 @@ var_remove <- c("minimum_minimum_nights", "maximum_minimum_nights",
 final_listings <- read_csv("./data/listing_processed.csv") %>%
     select(-all_of(var_remove)) %>%
     mutate(across(where(is.character), as.factor)) %>%
-    mutate(across(where(is.logical), as.factor))
+    mutate(across(where(is.logical), as.factor)) %>%
+    mutate(price_per_pax = price/accommodates)
 
 ########
 
@@ -51,18 +55,19 @@ ui <- dashboardPage(
     dashboardBody(
         tabItems(
             tabItem("Intro",
+                    fluidPage(theme = shinytheme('journal')) #https://rstudio.github.io/shinythemes/
                     #for intro page
             ),
             tabItem("EDA",
                     tabsetPanel(
-                        tabPanel("Summary of variables",
-                                 observeUI('observe'),
+                        tabPanel("Observe variables",
+                                 observeUI('observe')
                         ),
                         tabPanel("Explore variables",
                                  #put ui here
                         ),
                         tabPanel("Map",
-                                 #put ui here
+                                 mapUI('map')
                         )
                     ),
             ),
@@ -106,11 +111,14 @@ ui <- dashboardPage(
 server <- function(input, output) {
     
     
-    ##### observe variables tab#####
+    ##### observe tab#####
     observeServer('observe', final_listings)
     
-    ##### explore tab#####
+    #### Explore tab ######
     
+    
+    ##### map ta b#####
+    mapServer('map', final_listings)
     
     
     

@@ -9,7 +9,11 @@
 
 observeUI <- function(id){
   fluidPage(
-    titlePanel("Observe variables"),
+    tags$style(
+      type = 'text/css', 
+      '.bg-orange {background-color: #FF5A5F!important; }'
+    ),
+    titlePanel("Variables overview"),
     fluidRow(
       infoBoxOutput(NS(id,'variableBox'), width = 3),
       infoBoxOutput(NS(id,'obBox'), width = 3),
