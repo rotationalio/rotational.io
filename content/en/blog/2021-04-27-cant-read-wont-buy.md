@@ -2,7 +2,7 @@
 title: "Can't Read, Won't Buy"
 slug: "cant-read-wont-buy"
 date: "2021-04-27T11:24:40-04:00"
-draft: true
+draft: false
 image_webp: images/blog/streetblur.webp
 image: images/blog/streetblur.jpg
 author: Rebecca Bilbro
@@ -97,8 +97,3 @@ What does all mean for app developers who are hoping to release software to geog
 - Inlingo (2019) [An Interview with Global Localization Manager at King, Miguel Sepulveda](https://blog.inlingogames.com/en/2019/10/29/the-game-has-to-be-super-amazing-for-you-to-forget-about-the-language-barrier-an-interview-with-global-localization-manager-at-king-miguel-sepulveda/)
 - Inlingo (2021) [What is Localization Testing and Why is it Important?](https://blog.inlingogames.com/en/2021/01/13/what-is-localization-testing-and-why-is-it-important/)
 - Matilda Battersby (2015) [Inside Out: Pixar makes crucial change for Japanese audiences by editing out broccoli](https://www.independent.co.uk/arts-entertainment/films/news/inside-out-pixar-makes-crucial-change-japanese-tastes-editing-out-broccoli-10413794.html)
-<!---
-Image by Matthias Ripp
-Retrieved from Flickr Creative Commons
-https://flic.kr/p/FfHTT9
--->

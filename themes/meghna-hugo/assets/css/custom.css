@@ -10,3 +10,7 @@ blockquote {
 blockquote p {
   display: inline;
 }
+
+.post-single-content img {
+  width: 100%;
+}
