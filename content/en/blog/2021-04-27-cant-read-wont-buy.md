@@ -19,7 +19,7 @@ In David Sedaris' (2000) ["Me Talk Pretty One Day"](https://en.wikipedia.org/wik
 
 The administrative context is enough to transform what would otherwise be a low-stakes situation into a stressful one &mdash; it's one thing to miss every few words of a menu or a movie in a different language, and quite another to not fully understand a legal, political, or financial choice due to unfluency.
 
-In [survey of international consumers and firms](https://insights.csa-research.com/reportaction/305013126/Marketing), Donald DePalma, Benjamin Sargent, and Renato Beninatto found that that language has a big impact on global consumer buying decisions;
+In a [survey of international consumers and firms](https://insights.csa-research.com/reportaction/305013126/Marketing), Donald DePalma, Benjamin Sargent, and Renato Beninatto found that language has a big impact on global consumer buying decisions;
 
 > ...more than half our sample (52.4%) buys only at websites where the information is presented in their language. More than 60 percent of consumers in France and Japan told us they buy only from [websites in their own language]. (CRWB 2006)
 
@@ -66,13 +66,13 @@ Indeed, even translation from English into other languages can be a slippery slo
 
 So if you're an app developer writing software in the US, how are you going to connect with potential customers in Asia, Africa, or Europe without falling into one of these linguistic traps?
 
-Online game developer King recently invited gamers to participate in a [live presentation](https://community.king.com/en/blog/discussion/329999/virtual-event-a-kingdom-exclusive-live-series-with-chen-and-miguel) by the company's Globalization team. Producer of popular games including Candy Crush and Bubble Witch,King has an enviable 240 million monthly active users across web, social and mobile platforms. Headquartered in London and Stockholm, and with studios and staff in both Europe and North America, King's strategy for building inclusive games involves creatively adapting them to draw from cultures around the world.
+Online game developer King recently invited gamers to participate in a [live presentation](https://community.king.com/en/blog/discussion/329999/virtual-event-a-kingdom-exclusive-live-series-with-chen-and-miguel) by the company's Globalization team. Producer of popular games including Candy Crush and Bubble Witch, King has an enviable 240 million monthly active users across web, social and mobile platforms. Headquartered in London and Stockholm, and with studios and staff in both Europe and North America, King's strategy for building inclusive games involves creatively adapting them to draw from cultures around the world.
 
 One example that came up during the discussion was from the 2015 animated movie Inside Out. As the [Independent reported:](https://www.independent.co.uk/arts-entertainment/films/news/inside-out-pixar-makes-crucial-change-japanese-tastes-editing-out-broccoli-10413794.html)
 
 > Kids in Japan love broccoli so much that Pixar had to change the cause of its child protagonist’s food hell from the tree-shaped vegetable to green peppers. In the UK and US version of the animation's main character Riley can be seen throwing tantrums in disgust at the idea of eating broccoli for dinner. But because the vegetable doesn’t have such a poor reputation among Japanese kids it was replaced with green peppers which are generally considered disgusting.
 
-![Riley won't eat broccoli - or what that green peppers?](/images/blog/2021-04-27-riley-wont-eat-broccoli.png)
+![Riley won't eat broccoli - or was that green peppers?](/images/blog/2021-04-27-riley-wont-eat-broccoli.png)
 
 One takeaway from the King presentation was the value of LQA &mdash; [Localization Quality Assurance](https://blog.inlingogames.com/en/2021/01/13/what-is-localization-testing-and-why-is-it-important/) &mdash; particularly when performed by people who are genuine participants in the local culture. In tech, we tend to think about QA (Quality Assurance), in terms of testing out the functionality of the software, catching bugs in the user interface, detecting sequences of actions that can cause the app to crash, etc. LQA is focused on testing out the linguistic and cultural features of an app &mdash; finding word connotations that feel unnatural, identifying names that may signal prejudice, and spotting imagery that could be seen as culturally insensitive.
 
