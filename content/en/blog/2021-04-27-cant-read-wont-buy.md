@@ -9,7 +9,7 @@ author: Rebecca Bilbro
 description : "In this post we'll explore some of the drawbacks of using only English as a sales medium, check out some creative solutions, identify some areas of caution, and consider what this all means to the future of global app development."
 ---
 
-To say we are not at our most empowered when trying to communicate in an unfamiliar language is a bit of an understatement. As if the limitations of one's own language weren't bad enough, trying to get along in a different language often makes you feel downright *helpless*. Research suggests these feelings also strongly inform consumers' buying decisions. What does this mean for companies who want to connect with users overseas? In this post we'll explore some of the drawbacks of using English-only as a sales medium, check out some creative solutions, and consider what this all means for global app development.
+To say we are not at our most empowered when trying to communicate in an unfamiliar language is a bit of an understatement. As if the limitations of one's own language weren't bad enough, trying to get along in a different language often makes you feel downright *helpless*. Research suggests these feelings also strongly inform consumers' buying decisions. What does this mean for companies who want to connect with users in other countries and cultures? In this post we'll explore some of the drawbacks of using English-only as a sales medium, check out some creative solutions, and consider what this all means for global app development.
 
 ## Why Not Just English?
 
@@ -19,11 +19,11 @@ In David Sedaris' (2000) ["Me Talk Pretty One Day"](https://en.wikipedia.org/wik
 
 The administrative context is enough to transform what would otherwise be a low-stakes situation into a stressful one &mdash; it's one thing to miss every few words of a menu or a movie in a different language, and quite another to not fully understand a legal, political, or financial choice due to unfluency.
 
-In a [survey of international consumers and firms](https://insights.csa-research.com/reportaction/305013126/Marketing), Donald DePalma, Benjamin Sargent, and Renato Beninatto found that language has a big impact on global consumer buying decisions;
+In a [survey of international consumers and firms](https://insights.csa-research.com/reportaction/305013126/Marketing), Donald DePalma, Benjamin Sargent, and Renato Beninatto found that language has a big impact on global consumer buying decisions:
 
 > ...more than half our sample (52.4%) buys only at websites where the information is presented in their language. More than 60 percent of consumers in France and Japan told us they buy only from [websites in their own language]. (CRWB 2006)
 
-In their 2006 report, "Can't Read, Won't Buy: Why Language Matters", DePalma et al highlight one theme in particular; unless you're already a wildly successful international brand, using English-only as a sales medium is a recipe for alienating people in other countries who either don't speak English at all, or don't use it as a primary language.
+In their 2006 report, "Can't Read, Won't Buy: Why Language Matters", DePalma et al highlight one theme in particular; unless you're already a wildly successful international brand, using English-only as a sales medium will alienate people in other countries who either don't speak English at all, or don't use it as a primary language.
 
 > The assumption that potential buyers 'probably speak English' drives inadequate localization, warring against the gut feeling that people are unlikely to buy products they cannot understand or that do not appeal to them. (CRWB 2006)
 
@@ -35,7 +35,7 @@ The relative cost of the good or service is also significant, and it's important
 
 > The more valuable an item, the more likely it is that someone will want to read about the product and buy it in their own language. (CRWB 2006)
 
-However, it does seem to be *language* that is the primary blocker to successful internationalization; while 67.4% of the non-native English speakers polled said they regularly visited English-language websites, 74.5% rarely or never go on to make purchases there.
+However, *language* is the primary blocker to successful internationalization; while 67.4% of the non-native English speakers polled said they regularly visited English-language websites, 74.5% rarely or never go on to make purchases there.
 
 ![Visiting English-Language Websites](/images/blog/2021-04-27-non-native-visits.png)
 
@@ -52,21 +52,21 @@ After all, language is just as much about identity as it is about words. As Greg
 
 > The process of remaking yourself in another language is about a lot more than grammar or pronunciation.
 
-Warner recently did a story called ["How to Speak Bad English"](https://www.npr.org/2021/04/21/989477444/how-to-speak-bad-english), about an English teacher, [Heather Hansen](https://www.ted.com/talks/heather_hansen_2_billion_voices_how_to_speak_bad_english_perfectly), who has spent the second half of her career trying to make up for the way she taught English for the first half.
+Warner recently produced a story called ["How to Speak Bad English"](https://www.npr.org/2021/04/21/989477444/how-to-speak-bad-english), about an English teacher, [Heather Hansen](https://www.ted.com/talks/heather_hansen_2_billion_voices_how_to_speak_bad_english_perfectly), who has spent the second half of her career trying to make up for the way she taught English in the first half.
 
-Hansen started her career giving her students what she thought they wanted &mdash; assistance in the perfection of their grammar, the eradication of non-standard pronunciations, essentially to speak just like her. Only later did she begin to see this work as a form of linguistic imperialism that might also be hindering effective communication:
+Hansen started her career giving her students what she thought they wanted &mdash; assistance in the perfection of their grammar, the eradication of non-standard pronunciations, essentially to speak just like her. Only later did she begin to see this work as a form of linguistic imperialism that hindered effective communication:
 
-> English is the most widely spoken language in the world, and the vast majority of English speakers learned the language in a classroom. Yet in conference rooms and language courses around the world, they are often told they speak "bad English." [When in fact] "bad English" — with its simplified vocabulary, fueled by the contributions of non-native speakers around the world — might be more universally understandable.
+> English is the most widely spoken language in the world, and the vast majority of English speakers learned the language in a classroom. Yet, in conference rooms and language courses around the world, they are often told they speak "bad English." [When in fact] "bad English" — with its simplified vocabulary, fueled by the contributions of non-native speakers around the world — might be more universally understandable.
 
-A striking detail discussed in the podcast is that groups of non-native speakers communicate more effectively in English when there is no native English speaker present; the introduction of a single native English speaker to a conversation begins to increase the number of conversational hiccups and misunderstandings. It's hard not to imagine that power dynamics might have something to do with this interference.
+A striking detail discussed in the podcast is that groups of non-native speakers communicate more effectively in English when there is no native English speaker present; the introduction of a single native English speaker to a conversation begins to increase the number of conversational hiccups and misunderstandings. It's hard not to imagine that power dynamics might have something to do with this interference. There are strong elements of psychological safety and trust at play. 
 
 Indeed, even translation from English into other languages can be a slippery slope. As we've discussed in a [prior post](https://rotational.io/blog/a-parrot-trainer-eats-crow/), many of the language models used to power commercial Machine Translation products are trained first with English text. This means that the model's initial and primary way of understanding the world &mdash; metaphors and idioms, sports references, even regionalized spellings &mdash; are strongly rooted in English language and Western ways of thinking. All subsequent training is necessarily constrained by these initial influences.
 
 ## Creative Localization
 
-So if you're an app developer writing software in the US, how are you going to connect with potential customers in Asia, Africa, or Europe without falling into one of these linguistic traps?
+So if you're an app developer writing software in the US, how are you going to connect with potential customers in Asia, Africa, South America or Europe without falling into one of these linguistic traps?
 
-Online game developer King recently invited gamers to participate in a [live presentation](https://community.king.com/en/blog/discussion/329999/virtual-event-a-kingdom-exclusive-live-series-with-chen-and-miguel) by the company's Globalization team. Producer of popular games including Candy Crush and Bubble Witch, King has an enviable 240 million monthly active users across web, social and mobile platforms. Headquartered in London and Stockholm, and with studios and staff in both Europe and North America, King's strategy for building inclusive games involves creatively adapting them to draw from cultures around the world.
+Online game developer King, a division of Activision Blizzard, recently invited gamers to participate in a [live presentation](https://community.king.com/en/blog/discussion/329999/virtual-event-a-kingdom-exclusive-live-series-with-chen-and-miguel) by the company's Globalization team. Producer of popular games including Candy Crush and Bubble Witch, King has an enviable 240 million monthly active users across web, social and mobile platforms. Headquartered in London and Stockholm, and with studios and staff in both Europe and North America, King's strategy for building inclusive games involves creatively adapting them to draw from cultures around the world.
 
 One example that came up during the discussion was from the 2015 animated movie Inside Out. As the [Independent reported:](https://www.independent.co.uk/arts-entertainment/films/news/inside-out-pixar-makes-crucial-change-japanese-tastes-editing-out-broccoli-10413794.html)
 
@@ -80,12 +80,11 @@ Miguel Sepulvida, Director of Globalization at King Games, believes that transla
 
 > We are going to start seeing some awareness about moving away from the words. Moving away from just putting the source into the target language and just pure translation to start having more questions about how the text might be perceived in China, in Russia, or in Korea.
 
-King seems to be rather ahead of the curve &mdash; during the live presentation, an audience member asked Sepulveda whether King had noticed any relationship between  investment in globalization and the company's bottom line. The answer was a resounding "Yes!" Clearly for King, creative localization has been good for business.
-
+King is ahead of the curve &mdash; during the live presentation, an audience member asked Sepulveda whether King had noticed any relationship between investment in globalization and the company's bottom line. The answer was a resounding "Yes!" Clearly for King, creative localization and LQA have been good for business.
 
 ## The Future of Localization
 
-What does all mean for app developers who are hoping to release software to geographically distributed audiences? It seems that there are several key challenges that such organizations will have to tackle; from the [technical challenges of distributed systems](https://rotational.io/blog/a-distributed-systems-maze/) to the recognition that English-only may not be a sufficient sales medium &mdash; and perhaps even more importantly, to learning how  rich historic contexts and cultural experiences can inform the buying preferences of potential customers around the globe.
+What does all mean for app developers who are hoping to release software to geographically distributed audiences? It seems that there are several key challenges that such organizations will have to tackle; from the [technical challenges of distributed systems](https://rotational.io/blog/a-distributed-systems-maze/) to the recognition that English-only may not be a sufficient sales medium &mdash; and perhaps even more importantly, to learning how rich historic contexts and cultural experiences can inform the buying preferences of potential customers around the globe. Afterall, app developers know that the key to growth and impact is trust and engagement with end users; localization is increasingly important to those objectives. King Games proves localization *is* the future. 
 
 ## References
 
