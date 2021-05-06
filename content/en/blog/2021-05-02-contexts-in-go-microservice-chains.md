@@ -9,13 +9,13 @@ author: Benjamin Bengfort
 description : "Contexts are a critical part of services implemented in Golang, but although we see them often in server interfaces they can be a bit mysterious to developers implementing request handlers. In this post we look at a specific example where contexts shine: handlers that have to call multiple internal microservices to serve their response."
 ---
 
-Contexts are a critical part of services implemented in Golang, but although we see them often in server interfaces they can be a bit mysterious to developers implementing request handlers. In this post we'll take a look at a specific example where contexts shine: services that are implemented as a series of microservice requests. We'll start with the tl;dr of contexts - the two rules that service handlers should implement. We'll then discuss what contexts are, and finally demonstrate a quick experiment using gRPC that shows how context deadlines are propagated to downstream microservices during request processing.
+Contexts are a critical part of services implemented in Golang, but although we see them often in server interfaces they can be a bit mysterious to developers implementing request handlers. In this post, we'll discuss what contexts are, and take a look at a specific example where contexts shine: services that are implemented as a series of microservice requests. Then we'll dive into the tl;dr of contexts &mdash; namely, the two crucial rules that all service handlers should implement. Finally, we'll demonstrate a quick experiment using gRPC to show how context deadlines are propagated to downstream microservices during request processing, enabling effective coordination.
 
-The code for experiment can be found at: [github.com/rotationalio/ctxms](https://github.com/rotationalio/ctxms).
+The code for the experiment can be found at: [github.com/rotationalio/ctxms](https://github.com/rotationalio/ctxms).
 
 ## Contexts in Service Handlers
 
-If you've implemented a gRPC API you'll know that the RPC interface for a request handler is implemented with a function signature that looks something like:
+If you've implemented a gRPC API you'll know that the RPC interface for a request handler has a function signature that looks something like:
 
 ```go
 func (s *Server) MyRPC(ctx context.Context in *Request) (out *Reply, err error) {}
@@ -23,16 +23,38 @@ func (s *Server) MyRPC(ctx context.Context in *Request) (out *Reply, err error) 
 
 The first argument is always a `context.Context`, which if you're like me, you think of as "the thing with the deadline for the client". However, if you're also like me, 90% of the time you simply ignore it and implement the request handler without using that argument at all.
 
-So what should you do with the context? There are two main rules:
+This leads us to a question &mdash; what are contexts?
+
+## What are Contexts?
+
+The [`context`](https://golang.org/pkg/context/) package in the Go standard library provides a type, `Context`, which facilitates communication across API boundaries and between processes.
+
+So what *should* you do with the context? Here's what the documentation suggests:
+
+> Incoming requests to a server should create a Context, and outgoing calls to servers should accept a Context. The chain of function calls between them must propagate the Context, optionally replacing it with a derived Context created using WithCancel, WithDeadline, WithTimeout, or WithValue. When a Context is canceled, all Contexts derived from it are also canceled.
+
+Two important rules follow from the above statement, which we'll explore more fully in the next few sections of this post. In summary:
 
 1. If you implement a long running computation, you should run it in a go routine and `select` from either `ctx.Done()` or the result channel.
 2. If you call a downstream contextual function, e.g. a database or a follow-on microservice, you should pass it the same context.
 
-Let's take the first instance first: say you have some work to do that may take a long time. What's a good threshold? I think of frontier API responses as needing to be returned in a second or less; that means you get approximately 500ms for processing, reserving 250ms in either direction for network traffic; therefore "a long time" here is anything that may take more than 450ms, but your needs may vary. As a rule of thumb, I also think of database requests as taking around 20-50ms, so if you're composing transactions programatically and not in SQL - this is another estimation point. Of course different systems will have different response times, so it's always good to measure and know!
+## Using Contexts in Long-Running Computations
 
-The client is likely going to set some kind of timeout on the request, e.g. it will wait 5 seconds before retrying or displaying a message to the user. What happens if the client timeout is exceeded while you're processing? Well the client is going to stop waiting for a response, but the server will continue handling the request - unless we can detect the deadline exceeded. This is where the context comes in.
+Say you have some work to do that may take a long time. What's a good threshold?
 
-Therefore we follow rule number one as follows: if you have a function `hardWork` - simply move it into a go routine and return the result in a channel:
+Frontier API responses need to be returned in a second or less. That means you get approximately:
+- 500ms for processing
+- 250ms in either direction for network traffic
+
+Therefore "a long time" is likely anything that takes more than 450ms, though your needs may vary.
+
+As for database requests, as a rule of thumb, these should take around 20-50ms. If you're composing transactions programatically and not in SQL, this is another estimation point. Different systems will also have different response times, so it's a best practice to measure and know for sure.
+
+In addition, the client is likely going to set some kind of timeout on the request, e.g. it will wait 5 seconds before retrying or displaying a message to the user. What happens if the client timeout is exceeded while you're processing? The client is going to stop waiting for a response, but the server will continue handling the request (most likely a wasted effort), *unless* we can detect the deadline exceeded. This is where the context comes in.
+
+Therefore, we follow Rule #1 as follows:
+
+If you have a function `hardWork`, simply move it into a go routine and return the result in a channel:
 
 ```go
 func asyncHardWork() <-chan result {
@@ -58,7 +80,7 @@ case result := <-asyncHardWork():
 }
 ```
 
-In this code, if the client deadline is exceeded, then the error will be returned immediately and the request handler routine will stop. The asyncHardWork routine will continue until its finished, however, but if you have steps after `hardWork` they won't continue because the request has terminated early. Alternatively, you could create a contextual hard work - for example if `hardWork` is iterative, you could check if the context is done on every pass, using a default to ensure the select is non-blocking:
+In this code, if the client deadline is exceeded, then the error will be returned immediately and the request handler routine will stop. While the `asyncHardWork` routine will continue until it's finished, any steps after `hardWork` won't continue, because the request has terminated early. Alternatively, you could create a contextual hard work; for example if `hardWork` is iterative, you could check if the context is done on every pass, using a default to ensure the select is non-blocking:
 
 ```go
 func hardWork(ctx context.Context) (result, error) {
@@ -78,35 +100,53 @@ func hardWork(ctx context.Context) (result, error) {
 }
 ```
 
-This brings us to rule 2: if the downstream function is contextual, e.g. accepts a context as a first argument; you should _always pass the same context to it_. This may seem a little unnatural; for example you may want to pass a shorter deadline to a database transaction, however you don't know how long the client context is - and it may have been passed to you from upstream processing that also took a long time; rely on the client to specify their context!
+## Using Contexts to Share Attention Span Across Microservices
+
+This brings us to Rule #2:
+
+If the downstream function is contextual, e.g. accepts a context as the first argument; you should _always pass the **same context** to it_.
+
+This may seem a little unnatural; for example, you may want to give a shorter deadline to a database transaction, but you don't know how long the client context is, which may have been passed to you from upstream processing that also took a long time. The key is to rely on the client to specify their context.
 
 We can see this especially with database transactions:
 
 ```go
 func (s *Server) MyRPC(ctx context.Context in *Request) (out *Reply, err error) {
-    // Begin a database transaction assuming we have a global variable conn that is a
+    // Begin a database transaction assuming we have a global variable, conn, that's a
     // database connection pool -- pass in the same context.
     var tx *sql.Tx
     if tx, err = conn.BeginTx(ctx, nil); err != nil {
         return nil, status.Errorf(codes.FailedPrecondition, "could not start tx: %s", err)
     }
-    defer tx.Rollback() // The rollback will be ignored if the tx has been committed later in the function.
+    defer tx.Rollback() // Ignore rollback if tx is committed later in function.
 
     // Do transaction work here.
 }
 ```
 
-If the context is done, then any `tx` calls (e.g. `tx.Query()` or `tx.Commit()`) will return the deadline exceeded error, allowing the transaction to stop processing and be rolled back to ensure that the database state is not left inconsistent.
-
-Using these two rules, your server implementations will be better behaved, take less processing time and memory, and your services will be more robust and effective. But this also leads us to a question - what are contexts?
-
-## What are Contexts?
-
-The [`context`](https://golang.org/pkg/context/) package in the Go standard library provides a type
+If the context is done, then any `tx` calls (e.g. `tx.Query()` or `tx.Commit()`) will return a "deadline exceeded" error, allowing the transaction to stop processing and be rolled back to ensure that the database state is not left inconsistent.
 
 ## Microservice Chains and Context Handling
 
+Let's imagine that we're building a recommender system that takes incoming data from clients, and engages a series of microservices (represented as different terminal windows below) to return a prediction.
 
 [![Microservice Context Terminals](/images/blog/2021-05-02-microservice-context-terminals.png)](/images/blog/2021-05-02-microservice-context-terminals.png)
+
+For instance, the first service (9000) is likely our API server, which might pass data to an authentication microservice (9001) to ensure the client is allowed to access the service. The authenticator then passes the data to a data preprocessor (9002) to properly encode the values, and the result is then passed to the global modeling service (9003) for the preliminary prediction. This prediction is then passed to a personalization microservice (9004), which filters the results, before finally passing them to the metrics logging microservice (9005).
+
+In this scenario, in order to respond to the client, each of the microservices must in turn perform some work before firing off a message to the next microservice in the loop, and triggering the next phase of work. Once the final message makes it all the way back to the API server, only then can we properly respond to the client:
+
+[![Microservice Chain Success](/images/blog/2021-05-02-microservice-chain-success.png)](/images/blog/2021-05-02-microservice-chain-success.png)
+
+If we engineer our chain of microservices to have independent contexts, they will have no way of sharing information, such as a timeout from the client. In this case, the subsequent microservices in the chain (9003, 9004, and 9005) go on to perform hard work that is no longer needed, since the client is no longer waiting for the response:
+
+[![Microservice Chain Timeout](/images/blog/2021-05-02-microservice-chain-timeout.png)](/images/blog/2021-05-02-microservice-chain-timeout.png)
+
+However, if our chain shares a single context, as soon as the active microservice  (9002) identifies the client timeout, it breaks the chain, saving the subsequent services the trouble of performing unneeded hard work:
+
+[![Microservice Chain Timeout with Shared Context](/images/blog/2021-05-02-microservice-chain-timeout-with-context.png)](/images/blog/2021-05-02-microservice-chain-timeout-with-context.png)
+
+The two rules of contexts provide the critical mechanism that allow your server implementations to be better behaved, take less processing time and memory, and allow your services to be more robust and effective. Through this modest experiment we see the value of shared context, especially as services become more complex and increasingly serve a more geographically dispersed customer base.
+
 
 The code for experiment can be found at: [github.com/rotationalio/ctxms](https://github.com/rotationalio/ctxms).
