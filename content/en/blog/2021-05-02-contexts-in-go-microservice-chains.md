@@ -29,7 +29,7 @@ If most of the time, ignoring the context is fine, then what _are_ contexts?
 
 ## What are Contexts?
 
-The [`context`](https://golang.org/pkg/context/) package in the Go standard library provides a type, `Context`, that contains request-scoped values and signals that are safe for simultanously use by multiple go routines and which facilitates communication across API boundaries and between processes.
+The [`context`](https://golang.org/pkg/context/) package in the Go standard library provides a type, `Context`, that contains request-scoped values and signals that are safe for simultanous use by multiple go routines and which facilitates communication across API boundaries and between processes.
 
 So what *should* you do with the context? Here's what the documentation suggests:
 
