@@ -2,14 +2,14 @@
 title: "Contexts in Go Microservice Chains"
 slug: "contexts-in-go-microservice-chains"
 date: "2021-05-02T14:24:33-04:00"
-draft: true
+draft: false
 image_webp: images/blog/arboreal.webp
 image: images/blog/arboreal.jpg
 author: Benjamin Bengfort
-description : "Contexts are a critical part of services implemented in Golang, but although we see them often in server interfaces they can be a bit mysterious to developers implementing request handlers. In this post we look at a specific example where contexts shine: handlers that have to call multiple internal microservices to serve their response."
+description: "Contexts are a critical part of services implemented in Golang, but although we see them often in server interfaces, they can be a bit mysterious to developers implementing request handlers. In this post, we look at a specific example where contexts shine: handlers that have to call multiple internal microservices to serve their response."
 ---
 
-Contexts are a critical part of services implemented in Golang, but although we see them often in server interfaces they can be a bit mysterious to developers implementing request handlers. In this post, we'll discuss what contexts are, and take a look at a specific example where contexts shine: services that are implemented as a series of microservice requests. Then we'll dive into the tl;dr of contexts &mdash; namely, the two crucial rules that all service handlers should implement. Finally, we'll demonstrate a quick experiment using gRPC to show how context deadlines are propagated to downstream microservices during request processing, enabling effective coordination.
+Contexts are a critical part of services implemented in Golang, but although we see them often in server interfaces, they can be a bit mysterious to developers implementing request handlers. In this post, we'll discuss what contexts are, and take a look at a specific example where contexts shine: services that are implemented as a series of microservice requests. Then we'll dive into the tl;dr of contexts &mdash; namely, the two crucial rules that all service handlers should implement. Finally, we'll demonstrate a quick experiment using gRPC to show how context deadlines are propagated to downstream microservices during request processing, enabling effective coordination.
 
 The code for the experiment can be found at: [github.com/rotationalio/ctxms](https://github.com/rotationalio/ctxms).
 
@@ -21,13 +21,15 @@ If you've implemented a gRPC API you'll know that the RPC interface for a reques
 func (s *Server) MyRPC(ctx context.Context in *Request) (out *Reply, err error) {}
 ```
 
+
+
 The first argument is always a `context.Context`, which if you're like me, you think of as "the thing with the deadline for the client". However, if you're also like me, 90% of the time you simply ignore it and implement the request handler without using that argument at all.
 
-This leads us to a question &mdash; what are contexts?
+If most of the time, ignoring the context is fine, then what _are_ contexts?
 
 ## What are Contexts?
 
-The [`context`](https://golang.org/pkg/context/) package in the Go standard library provides a type, `Context`, which facilitates communication across API boundaries and between processes.
+The [`context`](https://golang.org/pkg/context/) package in the Go standard library provides a type, `Context`, that contains request-scoped values and signals that are safe for simultanously use by multiple go routines and which facilitates communication across API boundaries and between processes.
 
 So what *should* you do with the context? Here's what the documentation suggests:
 

@@ -6,5 +6,5 @@ draft: true
 image_webp: images/blog/
 image: images/blog/
 author: Your Name
-description : "Add Description Here"
+description: "Add Description Here"
 ---
