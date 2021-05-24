@@ -10,13 +10,25 @@ description: "Protocol buffers are a method for serializing data to efficiently 
 ---
 
 
-Protocol buffers are a method for serializing data to efficiently send between programs. The structure is reminiscent of XML or JSON, but unlike these more commonly used serialization methods, protocol buffers are designed to produce extremely compact messages. The main tradeoff is that protocol buffers aren't human-readable, so when developing APIs, it's always important to consider the use case. In this post, we'll explore some of the use cases for protobufs and get to know the syntax.
+Protocol buffers are a method for serializing data to efficiently send between programs. The structure is reminiscent of XML or JSON, but unlike these more commonly used text-based serialization methods, protocol buffers are designed to produce extremely compact messages using a binary format. The main tradeoff is that protocol buffers aren't human-readable, so when developing APIs, it's always important to consider the use case. In this post, we'll explore some of the use cases for protobufs and get to know the syntax.
 
 ## From Data to Bytes
 
 Data serialization is fundamentally about translation &mdash; when we serialize, we're converting from a format that's optimized for analysis or computation into a form better for storage or transmittal.
 
-Serialization can be used to restore any kind of object that has been saved, stored, or relocated. For instance, when we [pickle](http://scikit-learn.org/stable/modules/model_persistence.html) a fitted scikit-learn pipeline or store a neural network model as an [HDF5](https://support.hdfgroup.org/HDF5/), we're serializing the data structures (matrices, graphs, etc.) of the models along with their hyperparameters, weights, and state. You can then load your model with something like:
+Serialization is used to send data between processes. For example, if you have fitted a scikit-learn pipeline or neural network model inside of a notebook, it can be serialized (or marshaled, or dumped) into a [pickle](http://scikit-learn.org/stable/modules/model_persistence.html) or [HDF5](https://support.hdfgroup.org/HDF5/) file. We're serializing the data structures (matrices, graphs, etc.) of the models along with their hyperparameters, weights, and state into a format that can be saved on disk.
+
+```python
+pickle.dump(open("clf.pkl", "wb"))
+
+# or
+joblib.dump("kmeans.pkl)
+
+# or
+save_model("rnn.h5")
+```
+
+The opposite process is deserializing (unmarshalling, loading) the data structure from the on-disk representation into memory.
 
 ```python
 pickle.load(open("clf.pkl", "rb"))
@@ -28,15 +40,15 @@ joblib.load("kmeans.pkl")
 load_model("rnn.h5")
 ```
 
-This process of extracting the data structure from the bytes is called deserialization, or unmarshalling.
+This is particularly useful if we're loading the model in a different process - e.g. a different notebook or even a server that is going to use the model in an API.
 
 ## Serialization Methods
 
-There is a tendency to falsely infer competition between different serialization standards. In truth, the choice is less about selecting the correct one-size-fits-all technique, and more about thoughtfully designing around the use case and the user.
+There is a tendency to falsely infer competition between different serialization standards. In truth, the choice is less about selecting a "correct" one-size-fits-all technique, and more about thoughtfully designing around the use case and the user.
 
-[XML](https://en.wikipedia.org/wiki/XML_Schema_(W3C)) (eXtensible Markup Language) is one standard for data serialization. It is good for representing complex, hierarchical data, and it is also human-readable (if not very pretty). Unlike HTML, XML was designed to transmit (not display) data. It is useful for data transmission because XML tags aren't predefined. You can come up with a schema that suits your data and your use case,and write programs to systematically serialize your data using that schema, or translate it back to data on the other end.
+[XML](https://en.wikipedia.org/wiki/XML_Schema_(W3C)) (eXtensible Markup Language) is one standard for data serialization. It is good for representing complex, hierarchical data, and it is also human-readable (if not very pretty). Unlike HTML, XML was designed to transmit (not display) data. It is useful for data transmission because XML tags aren't predefined. XML schemas help systematically define the data representation for both serialization and deserialization.
 
-[JSON](https://en.wikipedia.org/wiki/JSON) (JavaScript Object Notation) is another way to serialize complex data; objects can be encoded as attribute–value pairs. Like XML, JSON is flexible and human-readable, but less verbose. It is often the default storage tool of choice for Python programmers because Python `dicts` can be mapped directly to JSON, and vice versa.
+[JSON](https://en.wikipedia.org/wiki/JSON) (JavaScript Object Notation) also serializes complex, hierarchical data; objects can be encoded as attribute–value pairs. Like XML, JSON is flexible and human-readable, but less verbose. It is often the default storage tool of choice for Python programmers because Python `dicts` can be mapped directly to JSON, and vice versa.
 
 [YAML](https://yaml.org/) (YAML Ain't Markup Language) is a flexible file format used to write configuration files. They're easy to read and use whitespace to delineate fields for parsing.
 
@@ -48,7 +60,7 @@ There is a tendency to falsely infer competition between different serialization
 
 When we build public data APIs, we like to use JSON or XML. These standards don't require a robust contract between the data provider backend and the data consumers on the other end. For the data providers, that means you can change the schema by adding new fields without necessarily having to deprecate older versions of the API. Likewise, data consumers can get away with not having the schema (or not having the most recent version of it), because the schema can be inferred from the human-readable results that come back from their API calls. For analysts and data scientists who interact with public APIs, this is a key feature.
 
-YAML and TOML frequently get used in cloud configuration, deployment, and devops tools like Kubernetes and Heroku. They're convenient because they end up having a lot of boilerplate that can be reused across deployments, and support things like adding comments and notes that you can't do with JSON.
+YAML and TOML frequently get used in cloud configuration, deployment, and devops tools like Kubernetes and Heroku. They're convenient because they end up having a lot of boilerplate that can be reused across deployments, and support documentation features like adding comments and notes that you can't do with JSON.
 
 On the other hand, human-readability comes at a cost; XML, JSON, YAML, and TOML are not very compact. And if it's not going to be used for communication between people, that cost might not be worth paying, particularly if it slows down throughput or threatens data security.
 
