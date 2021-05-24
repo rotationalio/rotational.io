@@ -14,21 +14,21 @@ Protocol buffers are a method for serializing data to efficiently send between p
 
 ## From Data to Bytes
 
-Data serialization is fundamentally about translation &mdash; when we serialize, we're converting from a format that's optimized for analysis or computation into a form better for storage or transmittal.
+When we serialize, we're converting from an in-memory representation of data that's good for analysis and/or computation, into a form that's better for storage and/or transmission.
 
-Serialization is used to send data between processes. For example, if you have fitted a scikit-learn pipeline or neural network model inside of a notebook, it can be serialized (or marshaled, or dumped) into a [pickle](http://scikit-learn.org/stable/modules/model_persistence.html) or [HDF5](https://support.hdfgroup.org/HDF5/) file. We're serializing the data structures (matrices, graphs, etc.) of the models along with their hyperparameters, weights, and state into a format that can be saved on disk.
+Serialization is used to send data between processes. For example, if you've ever called `.fit()` (or `.train()`) on a scikit-learn pipeline or neural network model inside of a Jupyter notebook, you can save (aka marshal or dump) that model into a [pickle](http://scikit-learn.org/stable/modules/model_persistence.html) or [HDF5](https://support.hdfgroup.org/HDF5/) file. When you do that, you're serializing the data structures (matrices, graphs, etc.) of the models along with their hyperparameters, weights, and state into a format that can be saved on disk.
 
 ```python
 pickle.dump(open("clf.pkl", "wb"))
 
 # or
-joblib.dump("kmeans.pkl)
+joblib.dump("kmeans.pkl")
 
 # or
 save_model("rnn.h5")
 ```
 
-The opposite process is deserializing (unmarshalling, loading) the data structure from the on-disk representation into memory.
+The opposite process is deserializing (unmarshalling or loading) the data structure from the on-disk representation into memory.
 
 ```python
 pickle.load(open("clf.pkl", "rb"))
@@ -42,83 +42,174 @@ load_model("rnn.h5")
 
 This is particularly useful if we're loading the model in a different process - e.g. a different notebook or even a server that is going to use the model in an API.
 
-## Serialization Methods
+## Serialization Methods and Use Cases
 
-There is a tendency to falsely infer competition between different serialization standards. In truth, the choice is less about selecting a "correct" one-size-fits-all technique, and more about thoughtfully designing around the use case and the user.
+There are many ways to serialize data:
 
-[XML](https://en.wikipedia.org/wiki/XML_Schema_(W3C)) (eXtensible Markup Language) is one standard for data serialization. It is good for representing complex, hierarchical data, and it is also human-readable (if not very pretty). Unlike HTML, XML was designed to transmit (not display) data. It is useful for data transmission because XML tags aren't predefined. XML schemas help systematically define the data representation for both serialization and deserialization.
+- Semi-structured data ([XML](https://en.wikipedia.org/wiki/XML_Schema_(W3C)), [JSON](https://en.wikipedia.org/wiki/JSON)) are meant to balance human readability with machine readability. XML has schemas and can represent complex, hierarchical data, but is more verbose; JSON is often the default choice for Python programmers because Python `dicts` can be mapped directly to JSON, and vice versa.
+- Configuration formats ([YAML](https://yaml.org/), [TOML](https://toml.io/en/)) are geared towards human readability and are used to represent simple structures like strings, integers, boolean values, lists, maps, etc. While YAML uses whitespace to delineate fields for parsing, TOML trades some flexibility to offer unambiguous mapping from fields to dictionaries and hash tables.
+- Binary formats ([Avro](https://avro.apache.org/), [Parquet](https://parquet.apache.org/)) err on the side of machine readability and speed.
 
-[JSON](https://en.wikipedia.org/wiki/JSON) (JavaScript Object Notation) also serializes complex, hierarchical data; objects can be encoded as attribute–value pairs. Like XML, JSON is flexible and human-readable, but less verbose. It is often the default storage tool of choice for Python programmers because Python `dicts` can be mapped directly to JSON, and vice versa.
+There is a tendency to falsely infer competition between different serialization standards. In truth, the choice is less about selecting a "correct" one-size-fits-all technique, and more about thoughtfully designing around the use case and the user. For example:
 
-[YAML](https://yaml.org/) (YAML Ain't Markup Language) is a flexible file format used to write configuration files. They're easy to read and use whitespace to delineate fields for parsing.
+##### Use Case: Building a public data API
+*Preferred serialization technique: JSON or XML*
 
-[TOML](https://toml.io/en/) (Tom's Obvious Minimal Language) is another format for writing configuration files. Also easily human-readable, TOML trades some of the flexibility of YAML to offer unambiguous mapping from fields to dictionaries and hash tables.
+JSON and XML don't require a robust contract between the data provider backend and the data consumers on the other end. For the data providers, that means you can change the schema by adding new fields without necessarily having to deprecate older versions of the API. Likewise, data consumers can get away with not having the schema (or not having the most recent version of it), because the schema can be inferred from the human-readable results that come back from their API calls. For analysts and data scientists who interact with public APIs, this is a key feature.
 
-[Protobufs](https://developers.google.com/protocol-buffers) (Protocol Buffers) were originally developed for internal use at Google to serialize data into a dense binary format. Protobufs start with a strictly defined structure which is then compiled into code that can be used to write to and read from that structure. This compact method is ideal for sending data between programs.
-
-## Serialization Use Cases
-
-When we build public data APIs, we like to use JSON or XML. These standards don't require a robust contract between the data provider backend and the data consumers on the other end. For the data providers, that means you can change the schema by adding new fields without necessarily having to deprecate older versions of the API. Likewise, data consumers can get away with not having the schema (or not having the most recent version of it), because the schema can be inferred from the human-readable results that come back from their API calls. For analysts and data scientists who interact with public APIs, this is a key feature.
+##### Use Case: Cloud configuration
+*Preferred serialization technique: YAML or TOML*
 
 YAML and TOML frequently get used in cloud configuration, deployment, and devops tools like Kubernetes and Heroku. They're convenient because they end up having a lot of boilerplate that can be reused across deployments, and support documentation features like adding comments and notes that you can't do with JSON.
 
-On the other hand, human-readability comes at a cost; XML, JSON, YAML, and TOML are not very compact. And if it's not going to be used for communication between people, that cost might not be worth paying, particularly if it slows down throughput or threatens data security.
+##### Use Case: Computing on massive datasets
+*Preferred serialization technique: Avro or Parquet*
+
+Avro and Parquet are used for large datasets intended for distributed computing where the schema can be self-contained with the data.
+
+### Downsides of Human-Readability
+
+On the other hand, human-readability has costs. For one thing, the serialization techniques described above are not very compact. And how would you validate and verify that your data is in the correct form, or if a service or an API has changed enough to break your system? How long does it take to serialize and deserialize messages?
+
+Perhaps most importantly, if the messages are not going to be used for *communication between people*, these costs might not be worth paying, particularly if the serialization method is slowing down throughput or complicating data security.
+
+Here's where protocol buffers come in!
+
 
 ## Anatomy of a Protobuf
 
-Let's consider an example of how protocol buffers might play a role in an everyday microservice architecture:
+Of the serialization methods described earlier in this post, [protocol buffers](https://developers.google.com/protocol-buffers) ("protobufs") fall into the binary format category. They were originally developed for internal use at Google to serialize data into a dense binary format. Protobufs start with a strictly defined structure which is then compiled into code that can be used to write to and read from that structure. This compact method is ideal for sending data between programs.
 
-Imagine we have an application that performs transactions on behalf of customers. First, an API server passes user input credentials to an authentication microservice. If authentication is successful, the request is routed via an RPC that makes a call to a database to lookup the client's account data. A subsequent service then uses the account data to perform a transaction via another RPC, and after receiving confirmation returns a message to the client to let them know that the transaction succeeded, or that it failed with some error code.
+Let's consider an example of how protocol buffers might play a role in a machine learning application. Imagine that our application functions as a sort of "conductor" for the end-to-end ML application; it trains models, compares the results, and stores the best ones for downstream use. We need a protocol buffer file that defines a generic model message for the system to pass around internally.
 
-First, we need to define the schema for the data, which we'll do in a file called `transfer.proto`. This schema will map data types with field names represented as integers. We start by specifying the syntax. At the time of this writing, protocol buffers are in version 3 (released in [August of 2015](https://github.com/protocolbuffers/protobuf/releases?after=v3.0.0-beta-3.3)), so we'll write `syntax = "proto3";` at the top of our `.proto` file. We also specify the package where this schema will be used (in this case `transactor`).
+##### Define the Schema
 
-The primary components of a protocol buffer are `messages`. For our hypothetical microservice, we'll define a `Transaction` message that contains the fields that uniquely describe a complete transaction &mdash; information about the user, validated credentials, a risk classification, and the actual details of the transaction. We anticipate that the user might wish to perform batch-wise transactions, and we create an array (`repeated`) to hold one or many, together with a matching array field to hold error messages returned by any of the transactions, and finally a time stamp that documents the last successful transfer.
+First, we need to define the schema for the data, which we'll do in a file called `conductor.proto`. This schema will map data types with field names represented as integers. We start by specifying the syntax. At the time of this writing, protocol buffers are in version 3 (released in [August of 2015](https://github.com/protocolbuffers/protobuf/releases?after=v3.0.0-beta-3.3)), so we'll write `syntax = "proto3";` at the top of our `.proto` file. We also specify the package where this schema will be used (in this case `conductor`).
+
+The primary components of a protocol buffer are `messages`. For our ML Conductor, we'll define a `Model` message that contains fields that describe each of the key pieces of model metadata (the title, type of estimator, timestamp, etc.), together with the actual pickled `Estimator`.
 
 ```proto
 syntax = "proto3";
 
-package transactor;
+// The package specifies the version of the protocol buffers
+// and allows us to compare and validate changes in major
+// versions of the protobufs.
+package conductor.v1;
 
-message Transaction {
-  string username = 1;
-  int32 id = 2;
-  Credentials credentials = 3;
+// Imports allow you to include other protocol buffer
+// definitions. In this case, we're using a google definition
+// for a timestamp type that will be serialized into/from a
+// Python datetime object or a Go time.Time struct.
+import "google/protobuf/timestamp.proto";
 
-  enum RiskLevel {
-    LOW = 0;
-    MEDIUM = 1;
-    HIGH = 2;
-  }
+// Messages define data types for serialization -
+// they'll be classes in Python or Java and structs in Go or C++.
+// Messages are composed of fields in the following form:
+//
+//     type name = number;
+//
+// When a message is serialized into binary format,
+// the fields are ordered by their number and the type
+// describes the size and encoding of the binary data;
+// the field numbers are therefore extremely important for
+// ensuring a message is deserialized correctly!
+message Model {
+    uint64 id = 1;       // unsigned integer of 64 bits
+    string title = 2;    // inline comments describe fields ;)
+    string notes = 3;
+    bytes  pickle = 4;   // can hold arbitrary binary data
 
-  message Details {
-    int32 amount = 1;
-    int64 account = 2;
-    RiskLevel risk = 3;
-  }
+    // This is a nested message, meaning it is accessed
+    // via Model.Dataset. Nested messages are used when
+    // only referenced inside a specific kind of message.
+    message Dataset {
+        string snapshot = 1;      // field numbers are relative!
+        repeated uint64 rows = 2; // repeated means an array
+    }
 
-  repeated Details transfers = 4;
-  repeated Errors errors = 5;
+    // Enums allow you to encode categorical values in a
+    // schema-validatable way. This example is also nested
+    // with the Model message, but doesn't have to be.
+    enum PredictorType {
+        UNKNOWN = 0;
+        REGRESSOR = 1;
+        CLASSIFIER = 2;
+        CLUSTERER = 3;
+    }
 
-  google.protobuf.Timestamp last_transfer = 6;
+    Dataset dataset = 5;          // type is nested message above
+    PredictorType model_type = 6; // type is nested enum above
+
+    // Timestamp is defined by the package.MessageName
+    // from the imported proto file.
+    google.protobuf.Timestamp fitted_on = 7;
 }
 ```
 
-Note that with protocol buffer messages, fields are numbered to ensure the encoded data is unambiguously parseable. In other words, for the `Transaction` message, a field value of 1 means the `username` will always be in the first position in the series of bytes, the user `id` will be in the second position, the `credentials` in the third, etc.
+Note that with protocol buffer messages, fields are numbered to ensure the encoded data is unambiguously parseable. In other words, for the `Model` message, a field value of 1 means the `id` will always be in the first position in the series of bytes, the model's `title` will be in the second position, the training `notes` in the third, etc.
 
+##### Compile the File
 Once you have downloaded and installed the protobuf compiler (e.g. using `brew`), you can compile the above file into the language of your choice. For instance:
 
 ```bash
-protoc --go_out=. transfer.proto
+protoc --python_out=. conductor.proto
 ```
+... will generate `conductor_pb2.py`, containing Python code that can be used to write to and read from the schema we defined in `conductor.proto`.
 
-... will generate a new file, `transfer.pb.go` that contains Golang code that can be used to write to and read from the schema we defined in `transfer.proto`. If we wanted to compile the code to Python, we'd do:
+Protocol buffers are intended to be application language agnostic, and are available in a large number of programming languages, for example, to generate Go code, we'd do:
 
 ```bash
-protoc --python_out=. transfer.proto
+protoc --go_out=. conductor.proto
 ```
-... which would generate `transfer_pb2.py`.
+... which would generate `conductor.pb.go`.
+
+##### Using Generated Protobuf Code
+
+Now we can use the generated code inside our application, for instance to serialize and load a previously fitted baseline model to ensure subsequent models are showing improvement:
+
+```python
+# To generate the conductor_pb2.py file run the following:
+#       protoc --python_out=. conductor.proto
+#       pip install protobuf
+
+import pickle
+
+from google.protobuf.timestamp_pb2 import Timestamp
+from conductor_pb2 import Model
+
+clf = "CoinFlipClassifier"
+
+model = Model(
+    id=42,
+    title="CoinFlip Classifier",
+    notes="Flipped a coin to set an initial system baseline",
+    model_type=Model.PredictorType.CLASSIFIER,
+    fitted_on=Timestamp().GetCurrentTime(),
+    pickle=pickle.dumps(clf),
+)
+
+# Create and add the dataset to the model
+dataset = model.Dataset(
+    snapshot="2014-04-09",
+    rows=list(range(100))
+)
+
+# Protobuf objects are immutable, so copying and merging
+# is required to modify nested elements.
+model.dataset.MergeFrom(dataset)
+
+# Serialize the model
+data = model.SerializeToString()
+
+# Load the model
+loaded = Model()
+loaded.ParseFromString(data)
+print(loaded)
+```
 
 ## Final Thoughts
+
+Beyond thinking about use cases, the choice of how to serialize often comes down to the tradeoff between structure and flexibility. It's easier to get started with JSON than with protocol buffers, but harder to maintain in the long run. And while protocol buffers are harder to change than YAML, they're a lot faster to parse and validate.
 
 Using protocol buffers does mean more forethought is required to ensure backwards compatibility. Assigning the field numbers to a message in the `proto` file is tantamount to a commitment that these numbers will not change from version to version. Many seasoned gRPC developers even intentionally skip numbers in their message definitions, to allow for flexibility while also providing backward and forward compatibility as RPCs grow and evolve.
 
