@@ -14,7 +14,7 @@ Protocol buffers are a method for serializing data to efficiently send between p
 
 ## From Data to Bytes
 
-When we serialize, we're converting from an in-memory representation of data that's good for analysis and/or computation, into a form that's better for storage and/or transmission.
+When we serialize, we're converting from an in-memory representation of data that's good for analysis and/or computation into a form that's better for storage and/or transmission.
 
 Serialization is used to send data between processes. For example, if you've ever called `.fit()` (or `.train()`) on a scikit-learn pipeline or neural network model inside of a Jupyter notebook, you can save (aka marshal or dump) that model into a [pickle](http://scikit-learn.org/stable/modules/model_persistence.html) or [HDF5](https://support.hdfgroup.org/HDF5/) file. When you do that, you're serializing the data structures (matrices, graphs, etc.) of the models along with their hyperparameters, weights, and state into a format that can be saved on disk.
 
@@ -40,29 +40,29 @@ joblib.load("kmeans.pkl")
 load_model("rnn.h5")
 ```
 
-This is particularly useful if we're loading the model in a different process - e.g. a different notebook or even a server that is going to use the model in an API.
+This is particularly useful if we're loading the model in a different process e.g. a different notebook or even a server that is going to use the model in an API.
 
 ## Serialization Methods and Use Cases
 
 There are many ways to serialize data:
 
-- Semi-structured data ([XML](https://en.wikipedia.org/wiki/XML_Schema_(W3C)), [JSON](https://en.wikipedia.org/wiki/JSON)) are meant to balance human readability with machine readability. XML has schemas and can represent complex, hierarchical data, but is more verbose; JSON is often the default choice for Python programmers because Python `dicts` can be mapped directly to JSON, and vice versa.
-- Configuration formats ([YAML](https://yaml.org/), [TOML](https://toml.io/en/)) are geared towards human readability and are used to represent simple structures like strings, integers, boolean values, lists, maps, etc. While YAML uses whitespace to delineate fields for parsing, TOML trades some flexibility to offer unambiguous mapping from fields to dictionaries and hash tables.
-- Binary formats ([Avro](https://avro.apache.org/), [Parquet](https://parquet.apache.org/)) err on the side of machine readability and speed.
+- **Semi-structured data** ([XML](https://en.wikipedia.org/wiki/XML_Schema_(W3C)), [JSON](https://en.wikipedia.org/wiki/JSON)) are meant to balance human readability with machine readability. XML has schemas and can represent complex, hierarchical data, but is more verbose; JSON is often the default choice for Python programmers because Python `dicts` can be mapped directly to JSON, and vice versa.
+- **Configuration formats** ([YAML](https://yaml.org/), [TOML](https://toml.io/en/)) are geared towards human readability and are used to represent simple structures like strings, integers, boolean values, lists, maps, etc. While YAML uses whitespace to delineate fields for parsing, TOML trades some flexibility to offer unambiguous mapping from fields to dictionaries and hash tables.
+- **Binary formats** ([Avro](https://avro.apache.org/), [Parquet](https://parquet.apache.org/)) err on the side of machine readability and speed.
 
-There is a tendency to falsely infer competition between different serialization standards. In truth, the choice is less about selecting a "correct" one-size-fits-all technique, and more about thoughtfully designing around the use case and the user. For example:
+There is a tendency to falsely infer competition between different serialization standards. The choice is less about selecting a "correct" one-size-fits-all technique and more about thoughtfully designing around the use case and the user. For example:
 
-##### Use Case: Building a public data API
+##### Use Case 1: Building a Public Data API
 *Preferred serialization technique: JSON or XML*
 
 JSON and XML don't require a robust contract between the data provider backend and the data consumers on the other end. For the data providers, that means you can change the schema by adding new fields without necessarily having to deprecate older versions of the API. Likewise, data consumers can get away with not having the schema (or not having the most recent version of it), because the schema can be inferred from the human-readable results that come back from their API calls. For analysts and data scientists who interact with public APIs, this is a key feature.
 
-##### Use Case: Cloud configuration
+##### Use Case 2: Cloud Configuration
 *Preferred serialization technique: YAML or TOML*
 
 YAML and TOML frequently get used in cloud configuration, deployment, and devops tools like Kubernetes and Heroku. They're convenient because they end up having a lot of boilerplate that can be reused across deployments, and support documentation features like adding comments and notes that you can't do with JSON.
 
-##### Use Case: Computing on massive datasets
+##### Use Case 3: Computing on Massive Datasets
 *Preferred serialization technique: Avro or Parquet*
 
 Avro and Parquet are used for large datasets intended for distributed computing where the schema can be self-contained with the data.
@@ -75,14 +75,13 @@ Perhaps most importantly, if the messages are not going to be used for *communic
 
 Here's where protocol buffers come in!
 
-
 ## Anatomy of a Protobuf
 
-Of the serialization methods described earlier in this post, [protocol buffers](https://developers.google.com/protocol-buffers) ("protobufs") fall into the binary format category. They were originally developed for internal use at Google to serialize data into a dense binary format. Protobufs start with a strictly defined structure which is then compiled into code that can be used to write to and read from that structure. This compact method is ideal for sending data between programs.
+Of the serialization methods described earlier in this post, [protocol buffers](https://developers.google.com/protocol-buffers) ("protobufs") fall into the binary format category. They were originally developed for internal use at Google to serialize data into a dense binary format. Protobufs start with a strictly defined structure, which is then compiled into code that can be used to write to and read from that structure. This compact method is ideal for sending data between programs.
 
-Let's consider an example of how protocol buffers might play a role in a machine learning application. Imagine that our application functions as a sort of "conductor" for the end-to-end ML application; it trains models, compares the results, and stores the best ones for downstream use. We need a protocol buffer file that defines a generic model message for the system to pass around internally.
+Let's consider an example of how protocol buffers might play a role in a machine learning (ML) application. Imagine that our application functions as a sort of "conductor" for the end-to-end ML application: it trains models, compares the results, and stores the best ones for downstream use. We need a protocol buffer file that defines a generic model message for the system to pass around internally.
 
-##### Define the Schema
+##### 1. Define the Schema
 
 First, we need to define the schema for the data, which we'll do in a file called `conductor.proto`. This schema will map data types with field names represented as integers. We start by specifying the syntax. At the time of this writing, protocol buffers are in version 3 (released in [August of 2015](https://github.com/protocolbuffers/protobuf/releases?after=v3.0.0-beta-3.3)), so we'll write `syntax = "proto3";` at the top of our `.proto` file. We also specify the package where this schema will be used (in this case `conductor`).
 
@@ -97,7 +96,7 @@ syntax = "proto3";
 package conductor.v1;
 
 // Imports allow you to include other protocol buffer
-// definitions. In this case, we're using a google definition
+// definitions. In this case, we're using a Google definition
 // for a timestamp type that will be serialized into/from a
 // Python datetime object or a Go time.Time struct.
 import "google/protobuf/timestamp.proto";
@@ -148,7 +147,7 @@ message Model {
 
 Note that with protocol buffer messages, fields are numbered to ensure the encoded data is unambiguously parseable. In other words, for the `Model` message, a field value of 1 means the `id` will always be in the first position in the series of bytes, the model's `title` will be in the second position, the training `notes` in the third, etc.
 
-##### Compile the File
+##### 2. Compile the File
 Once you have downloaded and installed the protobuf compiler (e.g. using `brew`), you can compile the above file into the language of your choice. For instance:
 
 ```bash
@@ -156,14 +155,14 @@ protoc --python_out=. conductor.proto
 ```
 ... will generate `conductor_pb2.py`, containing Python code that can be used to write to and read from the schema we defined in `conductor.proto`.
 
-Protocol buffers are intended to be application language agnostic, and are available in a large number of programming languages, for example, to generate Go code, we'd do:
+Protocol buffers are intended to be application language agnostic and are available in a large number of programming languages. For example, to generate Go code, we'd do:
 
 ```bash
 protoc --go_out=. conductor.proto
 ```
 ... which would generate `conductor.pb.go`.
 
-##### Using Generated Protobuf Code
+##### 3. Apply Generated Protobuf Code
 
 Now we can use the generated code inside our application, for instance to serialize and load a previously fitted baseline model to ensure subsequent models are showing improvement:
 
@@ -211,10 +210,9 @@ print(loaded)
 
 Beyond thinking about use cases, the choice of how to serialize often comes down to the tradeoff between structure and flexibility. It's easier to get started with JSON than with protocol buffers, but harder to maintain in the long run. And while protocol buffers are harder to change than YAML, they're a lot faster to parse and validate.
 
-Using protocol buffers does mean more forethought is required to ensure backwards compatibility. Assigning the field numbers to a message in the `proto` file is tantamount to a commitment that these numbers will not change from version to version. Many seasoned gRPC developers even intentionally skip numbers in their message definitions, to allow for flexibility while also providing backward and forward compatibility as RPCs grow and evolve.
+Using protocol buffers means more forethought is required to ensure backwards compatibility. Assigning the field numbers to a message in the `proto` file is tantamount to a commitment that these numbers will not change from version to version. Many seasoned gRPC developers even intentionally skip numbers in their message definitions to allow for flexibility while also providing backward and forward compatibility as RPCs grow and evolve.
 
-If you're used to the RESTful API paradigm, protocol buffers might take some adjustment. However, they're definitely worth the effort of looking into, as the use cases are becoming more common all the time. Namely, as applications become more and more complex, data becomes more distributed, and user experience increasingly hinges on intermediate data transmission, protobufs will only become more useful!
-
+If you're used to the [RESTful API paradigm](https://restfulapi.net/), protocol buffers may take some adjustment. However, they're definitely worth looking into as the use cases are becoming more common. As applications become more complex, data is continuously more distributed, and user experience increasingly hinges on intermediate data transmission, protobufs will only become more useful!
 
 
 ## Further Reading/Watching
