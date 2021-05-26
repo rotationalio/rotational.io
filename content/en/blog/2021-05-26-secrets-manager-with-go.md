@@ -6,7 +6,7 @@ draft: false
 image_webp: images/blog/doorknocker.webp
 image: images/blog/doorknocker.jpg
 author: Rebecca Bilbro
-description: "Add Description Here"
+description: "In this post, we'll dive into Google's Secret Manager service, walk through the setup steps, and explore some Go code to interact with the API."
 ---
 
 Security is by definition an inconvenience. At the very least, it's about making access to data as challenging as possible for the baddies, which can be measured in computation time. But good security also requires us good folks to go above and beyond &mdash; adopting architectural and engineering practices that involve more forethought, more effort, and more testing than are strictly required to get a basic application running on the web. If you're here already, we don't need to convince you that the effort is well worth it; good security pays for itself in customer trust, not to mention helping to preclude the kinds of breaches that can (and should) bankrupt the careless. In this post, we'll dive into Google's Secret Manager service, walk through the setup steps, and explore some Go code to interact with the API.
@@ -266,6 +266,16 @@ func DeleteSecret(name string) error {
 	return nil
 }
 ```
+
+With the ability to create, list, and delete secrets, and to add and access versions we're getting close to a complete Golang implementation that will allow us to systematically interact with the Secret Manager API from our application!
+
+## Conclusion
+
+As the everyday systems with which we interact increasingly store our private data, the impetus to raise the bar on data encryption has never been stronger. The flexibility of `secrets` means that we can and should be securing all kinds of information; not just passwords and credentials, but other types of information such as personally identifiable information (PII), as well.
+
+When it comes to security in big data systems, it's not about _if_ there will be a breach, but _when_. Prevention methods become out-of-date as soon as new attack vectors are devised, and there are no silver bullets. That's why security is (and should be!) hard. Thankfully, as we've seen in this post, with tools like Secret Manager, and its IAM controls, default encryption, and developer API, building software with a security-first principle can become more straightforward and programmatic.
+
+
 
 ## Further Reading
 
