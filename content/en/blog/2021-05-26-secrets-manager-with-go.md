@@ -1,8 +1,8 @@
 ---
 title: "Using the Google Secrets API with Go"
 slug: "secrets-manager-with-go"
-date: "2021-05-21T08:26:38-04:00"
-draft: true
+date: "2021-05-26T08:26:38-04:00"
+draft: false
 image_webp: images/blog/doorknocker.webp
 image: images/blog/doorknocker.jpg
 author: Rebecca Bilbro
