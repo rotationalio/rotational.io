@@ -38,7 +38,7 @@ The setup requires you to navigate between the Google Console UI and the command
 - First, [download and install the SDK](https://cloud.google.com/sdk/docs/install) that matches your os, and make sure to add it to your `PATH`.
 - Next, navigate to the Console UI and [configure](https://cloud.google.com/secret-manager/docs/configuring-secret-manager) your Google Cloud project to use Secret Manager. You'll use the UI to do both of the following:
     - create a new project (e.g. in this example, we'll use "knock-knock")
-    - enable the Google Secrets API for that project
+    - enable the Google Secrets API (via the [API Console](https://console.cloud.google.com/apis/dashboard)) for that project
 - Now, return to the command line and run `gcloud init` to authenticate. This will open a browser window, where you'll select the correct gcloud account. Back on the command line, select the new project you just made.
 - Next we'll assign IAM privileges. Using the Google Console UI, navigate to the [IAM page](https://console.cloud.google.com/iam-admin/iam), select the correct project, and select your name from the members list. You'll need to add a role, e.g. "Secret Manager Secret Version Manager", that will allow you to create and manage secrets.
 - Now, back in the command line, we'll make a Service Account, which will generate a local JSON file containing the service account credentials:
