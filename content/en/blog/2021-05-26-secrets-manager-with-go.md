@@ -1,12 +1,12 @@
 ---
-title: "Using the Google Secrets API with Go"
+title: "Using the Google Secret Manager API with Go"
 slug: "secrets-manager-with-go"
-date: "2021-05-26T08:26:38-04:00"
+date: "2021-06-01T08:26:38-04:00"
 draft: false
 image_webp: images/blog/doorknocker.webp
 image: images/blog/doorknocker.jpg
 author: Rebecca Bilbro
-description: "In this post, we'll dive into Google's Secret Manager service, walk through the setup steps, and explore some Go code to interact with the API."
+description: "At Rotational, we build software with a security-first principle. Google's Secret Manager service is one solution we've used to build more secure applications. In this post, we'll use Go code to interact with the Secret Manager API."
 ---
 
 Security is by definition an inconvenience. At the very least, it's about making access to data as challenging as possible for the baddies, which can be measured in computation time. But good security also requires us good folks to go above and beyond &mdash; adopting architectural and engineering practices that involve more forethought, more effort, and more testing than are strictly required to get a basic application running on the web. If you're here already, we don't need to convince you that the effort is well worth it; good security pays for itself in customer trust, not to mention helping to preclude the kinds of breaches that can (and should) bankrupt the careless. In this post, we'll dive into Google's Secret Manager service, walk through the setup steps, and explore some Go code to interact with the API.
@@ -15,9 +15,9 @@ The example code can be found at: [github.com/rotationalio/knock](https://github
 
 ## What is Google Secret Manager?
 
-Google Secret Manager is a hosted service that allows users to store, manage, and access secure information. Information stored in Secret Manager is encrypted by default, and can only be accessed by an application if it has been granted valid credentials.
+[Google Secret Manager](https://cloud.google.com/secret-manager) is a hosted service that allows users to store, manage, and access sensitive data such as passwords, API keys, and certificates across Google Cloud. Information stored in Secret Manager is encrypted by default, and can only be accessed by an application if it has been granted valid credentials.
 
-One of the big advantages of the Secret Manager implementation is its flexibility in terms of what can be stored. These "secrets" can be text or arbitrary bytes (well, almost; there is a [64KiB limit](https://cloud.google.com/secret-manager/quotas)); meaning they can be passwords, API keys, or certificates.
+One big advantage of the Secret Manager implementation is its flexibility in what can be stored. "Secrets" can be text or arbitrary bytes (well, almost; there is a [64KiB limit](https://cloud.google.com/secret-manager/quotas)); so you can store passwords, API keys, or certificates.
 
 Secrets are stored using a namespace-like convention, where the key that references the payload value takes the form of a path, e.g.
 
@@ -25,7 +25,7 @@ Secrets are stored using a namespace-like convention, where the key that referen
 projects/projectID/secrets/exampleSecret
 ```
 
-Rather than storing encrypted payload data on the secret itself, Secret Manager exposes `versions` that store the actual secret data. When retrieving payloads, you retrieve them from the version, which is immutable. E.g.
+Rather than storing encrypted payload data on the secret itself, Secret Manager exposes `versions` that store the actual secret data. When retrieving payloads, you retrieve them from the version, which is immutable. e.g.
 
 ```bash
 projects/projectID/secrets/exampleSecret/versions/2
