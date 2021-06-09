@@ -1225,6 +1225,47 @@ input#e-mail,
 /*=================================================================
   Footer section
 ==================================================================*/
+
+.social-icon {
+  padding: 60px 0 35px;
+}
+
+.social-icon ul {
+  text-align: center;
+}
+
+.social-icon ul li {
+  margin-bottom: 4px;
+}
+
+.social-icon ul li a {
+  background-color: #26292e;
+  border: 1px solid transparent;
+  display: block;
+  height: 70px;
+  width: 70px;
+  transition: all 400ms ease-out 0s;
+}
+
+.social-icon ul li a:hover {
+  background: #57cbcc;
+}
+
+.social-icon ul li a:hover i {
+  color: #fff;
+  opacity: 1;
+}
+
+.social-icon ul li a i {
+  color: #55606a;
+  display: inline-block;
+  font-size: 32px;
+  line-height: 70px;
+  margin: 0;
+  opacity: 0.3;
+  transition: all 400ms ease-out 0s;
+}
+
 .copyright {
   padding: 20px 0;
   color: #fff;
