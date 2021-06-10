@@ -1,7 +1,6 @@
 ---
 title: "Why UX Will Get Worse Before it Gets Better"
-slug: "ux-whats-missing"
-date: 2020-07-19T15:46:00Z
+date: 2021-06-10T17:20:00Z
 image_webp: images/blog/window.webp
 image: images/blog/window.jpg
 author: Rebecca Bilbro
