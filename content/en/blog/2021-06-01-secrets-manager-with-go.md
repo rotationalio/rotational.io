@@ -1,8 +1,8 @@
 ---
-title: "Using the Google Secrets API with Go"
+title: "Using Google's Secret Manager API with Go"
 slug: "secrets-manager-with-go"
-date: "2021-05-26T08:26:38-04:00"
-draft: true
+date: "2021-06-01T08:26:38-04:00"
+draft: false
 image_webp: images/blog/doorknocker.webp
 image: images/blog/doorknocker.jpg
 author: Rebecca Bilbro
@@ -15,9 +15,9 @@ The example code can be found at: [github.com/rotationalio/knock](https://github
 
 ## What is Google Secret Manager?
 
-Google Secret Manager is a hosted service that allows users to store, manage, and access secure information. Information stored in Secret Manager is encrypted by default, and can only be accessed by an application if it has been granted valid credentials.
+[Google Secret Manager](https://cloud.google.com/secret-manager) is a hosted service that allows users to store, manage, and access secure information. Information stored in Secret Manager is encrypted by default, and can only be accessed by an application if it has been granted valid credentials.
 
-One of the big advantages of the Secret Manager implementation is its flexibility in terms of what can be stored. These "secrets" can be text or arbitrary bytes (well, almost; there is a [64KiB limit](https://cloud.google.com/secret-manager/quotas)); meaning they can be passwords, API keys, or certificates.
+One big advantage of the Secret Manager implementation is its flexibility in terms of what can be stored. "Secrets" can be text or arbitrary bytes (well, almost; there is a [64KiB limit](https://cloud.google.com/secret-manager/quotas)); meaning they can be passwords, API keys, or certificates.
 
 Secrets are stored using a namespace-like convention, where the key that references the payload value takes the form of a path, e.g.
 
@@ -25,7 +25,7 @@ Secrets are stored using a namespace-like convention, where the key that referen
 projects/projectID/secrets/exampleSecret
 ```
 
-Rather than storing encrypted payload data on the secret itself, Secret Manager exposes `versions` that store the actual secret data. When retrieving payloads, you retrieve them from the version, which is immutable. E.g.
+Rather than storing encrypted payload data on the secret itself, Secret Manager exposes `versions` that store the actual secret data. When retrieving payloads, you retrieve them from the version, which is immutable, e.g.
 
 ```bash
 projects/projectID/secrets/exampleSecret/versions/2
