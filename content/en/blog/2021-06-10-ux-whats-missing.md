@@ -7,9 +7,7 @@ image: images/blog/window.jpg
 author: Rebecca Bilbro
 ---
 
-
 The things we make are not user-friendly by accident; we have to *make* them that way. And that's hard. For most of the time people have been making things, we've been mainly concerned with making them user-friendly for just *us*. And, even if the last few decades of app development have brought more focus to the importance of empathy (especially if it helps you capture market share), the last few years have forced app developers to acknowledge the continued pervasiveness of white privilege, gender privilege, and class privilege in UI/UX. Unfortunately, as our efforts to become more intentional and empathetic as technologists continue in the coming years, there is another problem we have barely considered that will become a major threat to compassionate, egalitarian, and even subversive app development. Spoiler: it's our cloud infrastructure.
-
 
 # The Voice of the User
 
@@ -32,7 +30,7 @@ As a machine learning practitioner and data product developer, I strongly agree 
 If you're a techie working in app development, you probably identify as one of the following: "backend", "frontend" or "data science". Possibly this is one of our failings, that we have created these artificial silos for the problems that concern our data systems, the user-facing components of our applications, and the non-deterministic algorithms that stitch them together. This view isn't doing us any favors, and it certainly doesn't help our users. In fact, apps suffer greatly from the dissociation of these components. You can't build a backend if you don't understand how the data is going to be queried, just as you can't build machine learning models without considering how the users are going interact with them. The backend is everyone's problem.
 
 The recent failures of companies like [Trivia HQ](https://slidebean.com/blog/what-happened-to-hq-trivia) and of apps like [Niantic's Pokémon Go](https://medium.theuxblog.com/an-honest-ux-critique-of-pok%C3%A9mon-go-from-a-longtime-fan-and-mobile-designer-76156c9cdc0c) belie the strong interconnectedness of the backend and the user's experience. As Slidebean writes of Trivia HQ's spectacular crash-and-burn:
-> Livestreaming an interactive game through a mobile phone is hard. Very hard.Interactivity needed to be instant, especially if the questions are timed. But sometimes, as many users complained, clicking on an answer did nothing and time ran out. Which meant that users were kicked out. Other times, the quiz just didn’t work at all. So, when it crashed, which it did often, the hosts worked hard to keep the frustrated players from leaving before the problems were solved.
+> Livestreaming an interactive game through a mobile phone is hard. Very hard. Interactivity needed to be instant, especially if the questions are timed. But sometimes, as many users complained, clicking on an answer did nothing and time ran out. Which meant that users were kicked out. Other times, the quiz just didn’t work at all. So, when it crashed, which it did often, the hosts worked hard to keep the frustrated players from leaving before the problems were solved.
 
 Pokémon Go was plagued with similar UX challenges that were also caused by underlying problems with the app's distributed data storage. Akhil Dakinedi [wrote](https://medium.theuxblog.com/an-honest-ux-critique-of-pok%C3%A9mon-go-from-a-longtime-fan-and-mobile-designer-76156c9cdc0c):
 > It seems fine on paper, but once you see the extremely fast pace at which these battles take place, you start to notice the problems. The app, in its launch state, isn’t very responsive or fluid. It’s being plagued by constant server issues and unstable location tracking.
@@ -48,17 +46,17 @@ This isn't to say that the problem is inherent in GCC in particular; says Dr. Be
 
 The problem is that commercial cloud offerings, while technically available around the world, do not offer a consistent experiences to all of those users. In fact, your UX is *always* strongly coupled to geographic boundaries, whether it's hosted on Google, AWS, Azure, Alibaba, or any of the other cloud platforms. And that's the problem &mdash; what happens when we want our app to be truly international?
 
-> The original launch of the game was in 5 countries – Australia, New Zealand, the United States, the United Kingdom, and Germany. The success of the game meant worldwide demand, and it was subsequently expanded to over 200 countries starting with Japan. Unlike previous games that were restricted with region locks, Pokemon GO was a truly international phenomenon and Niantic was determined to allow international interactions in the game’s feature set, interaction which relies on Google’s unified international architecture and globally distributed databases. Stories such Niantic’s deployment are increasingly becoming common and medium to large applications now require developers to quickly reason about how data is distributed in the wide area, different political regions, and replicated for use around the world.
-
-What if, indeed, we consider not only global games, but things like global communications and policy?
-
+> The original launch of the game was in 5 countries – Australia, New Zealand, the United States, the United Kingdom, and Germany. The success of the game meant worldwide demand, and it was subsequently expanded to over 200 countries starting with Japan. Unlike previous games that were restricted with region locks, Pokemon GO was a truly international phenomenon and Niantic was determined to allow international interactions in the game’s feature set, interaction which relies on Google’s unified international architecture and globally distributed databases. Stories such Niantic’s deployment are increasingly becoming common and medium-to-large applications now require developers to quickly reason about how data is distributed in the wide area, different political regions, and replicated for use around the world.
 
 # Why UX will Get Worse Before it Gets Better
+
+Some may think that games are low stakes. So what if we raise the stakes and consider not only global games, but global communications and policy?
 
 In February 2020, something went wrong in Iowa. The Democratic caucuses leveraged a new voting app that was designed to enable voters to choose a presidential nominee. But the results were [delayed](https://www.vox.com/2020/2/3/21121883/iowa-caucus-results-delay-app-2020), and when they came in, they were inconsistent. Offically blamed on an unspecified ["coding error"](https://www.zdnet.com/article/how-the-iowa-caucus-app-went-wrong-and-how-open-source-could-have-helped/), the app developed by Shadow, Inc ([now BlueLink](https://www.vox.com/recode/2020/5/8/21251438/shadow-bluelink-iowa-caucus-app-rebranding)) almost certainly suffered from both eventual consistency and latency issues, classical distributed systems problems that were not afforded near sufficient attention in this case.
 
 In Iowa the result was mistrust, conspiracy theories, and a general lack of confidence in a voting system that is already [struggling to improve UX](https://medium.com/@TarenSK/progressives-need-a-ux-design-revolution-195aa2c12894). Imagine what the result of a voting failure like this would have been had it occurred on the global political stage, such as the UN or WHO, where trust is already beginning to dissolve. Indeed, international technology is only becoming more controversial, with [the Huawei ban in the UK](https://www.cnn.com/2020/07/14/tech/huawei-uk-ban/index.html) and the US's [love](https://www.datacenterdynamics.com/en/news/report-google-cloud-sold-800m-cloud-services-tiktok-2019/)/[hate](https://www.wired.com/story/could-trump-win-the-war-on-huawei-and-is-tiktok-next/) relationship with TikTok only the latest examples.
 
+Games and voting systems are just the tip of the iceberg. On a global scale, think of the apps and infrastructure we rely on from payments to logistics to communications.
 
 # Linux, but Make It Distributed
 
