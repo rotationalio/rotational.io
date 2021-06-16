@@ -15,7 +15,7 @@ The example code can be found at: [github.com/rotationalio/knock](https://github
 
 ## What is Google Secret Manager?
 
-[Google Secret Manager](https://cloud.google.com/secret-manager) is a hosted service that allows users to store, manage, and access secure information. Information stored in Secret Manager is encrypted by default, and can only be accessed by an application if it has been granted valid credentials. Access can be granted (and revoked) on a very granular level, meaning that you can give out [role-based permissions](https://cloud.google.com/secret-manager/docs/access-control) for individual secrets using the[principle of least privilege](https://cloud.google.com/secret-manager/docs/access-control#least-privilege).
+[Google Secret Manager](https://cloud.google.com/secret-manager) is a hosted service that allows users to store, manage, and access secure information. Information stored in Secret Manager is encrypted by default, and can only be accessed by an application if it has been granted valid credentials. Access can be granted (and revoked) on a very granular level, meaning that you can give out [role-based permissions](https://cloud.google.com/secret-manager/docs/access-control) for individual secrets using the [principle of least privilege](https://cloud.google.com/secret-manager/docs/access-control#least-privilege).
 
 One big advantage of the Secret Manager implementation is its flexibility in terms of what can be stored. "Secrets" can be text or arbitrary bytes (well, almost; there is a [64KiB limit](https://cloud.google.com/secret-manager/quotas)); meaning they can be passwords, API keys, or certificates.
 
