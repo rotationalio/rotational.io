@@ -1,92 +1,93 @@
 ---
-title: "Can't Read, Won't Buy"
+title: "S'ils ne peuvent pas le lire, ils ne l'achèteront pas non plus"
 slug: "cant-read-wont-buy"
 date: "2021-04-27T11:24:40-04:00"
 draft: false
 image_webp: images/blog/streetblur.webp
 image: images/blog/streetblur.jpg
 author: Rebecca Bilbro
-description : "In this post we'll explore some of the drawbacks of using only English as a sales medium, check out some creative solutions, identify some areas of caution, and consider what this all means to the future of global app development."
+description : "Dans cet article, nous allons explorer certains des inconvénients de l'utilisation de l'anglais comme moyen de vente, examiner certaines solutions créatives, identifier certaines zones de précautions et réfléchir à ce que tout cela signifie pour l'avenir du développement d'applications internationales."
 ---
 
-To say we are not at our most empowered when trying to communicate in an unfamiliar language is a bit of an understatement. As if the limitations of one's own language weren't bad enough, trying to get along in a different language often makes you feel downright *helpless*. Research suggests these feelings also strongly inform consumers' buying decisions. What does this mean for companies who want to connect with users in other countries and cultures? In this post we'll explore some of the drawbacks of using English-only as a sales medium, check out some creative solutions, and consider what this all means for global app development.
+Dire que nous ne sommes pas au mieux de nos capacités lorsque nous essayons de communiquer dans une langue inconnue est un euphémisme. Comme si les limites de notre propre langue n'étaient pas suffisantes, essayer de se débrouiller dans une autre langue nous fait souvent nous sentir carrément *impuissants*. Des études montrent que ces sentiments influencent fortement les décisions d'achat des consommateurs. Qu'est-ce que cela signifie pour les entreprises qui souhaitent se connecter avec des utilisateurs d'autres pays et cultures ? Dans cet article, nous allons explorer certains des inconvénients de l'utilisation de l'anglais uniquement comme moyen de vente, examiner quelques solutions créatives et réfléchir à ce que tout cela signifie pour le développement d'applications internationales.
 
-## Why Not Just English?
+## Pourquoi Pas Seulement l'Anglais?
 
-In David Sedaris' (2000) ["Me Talk Pretty One Day"](https://en.wikipedia.org/wiki/Me_Talk_Pretty_One_Day), the author recounts his time as a new student in a French language class for adults:
+Dans l'ouvrage de David Sedaris (2000) ["Me Talk Pretty One Day"](https://en.wikipedia.org/wiki/Me_Talk_Pretty_One_Day), l'auteur raconte son séjour en tant que nouvel étudiant dans un cours de français pour adultes:
 
-> The first day of class was nerve-racking because I knew I'd be expected to perform. [The teacher] proceeded to rattle off a series of administrative announcements: "If you have not *meimslsxp* or *lgpdmurct* by this time, then you should NOT be in this room. Has everyone *apzkiubjxow*? Everyone? Good, we shall begin."
+> Le premier jour de cours a été très éprouvant pour les nerfs car je savais qu'on attendait de moi une performance. [L’enseignant] a commencé à énumérer une série d'annonces administratives : "Si vous n'avez pas *meimslsxp* ou *lgpdmurct* jusqu'à présent, vous ne devez PAS être dans cette salle. Est-ce que tout le monde a *apzkiubjxow* ? Tout le monde ? Bien, nous allons commencer."
 
-The administrative context is enough to transform what would otherwise be a low-stakes situation into a stressful one &mdash; it's one thing to miss every few words of a menu or a movie in a different language, and quite another to not fully understand a legal, political, or financial choice due to unfluency.
+Le contexte administratif suffit à transformer ce qui serait autrement une situation à faible enjeu en une situation stressante &mdash; c'est une chose de rater quelques mots d'un menu ou d'un film dans une langue différente, et c'en est une autre de ne pas comprendre pleinement un choix juridique, politique ou financier en raison d'un manque de fluidité.
 
-In a [survey of international consumers and firms](https://insights.csa-research.com/reportaction/305013126/Marketing), Donald DePalma, Benjamin Sargent, and Renato Beninatto found that language has a big impact on global consumer buying decisions:
+Dans une [enquête sur les entreprises et les consommateurs internationaux](https://insights.csa-research.com/reportaction/305013126/Marketing), Donald DePalma, Benjamin Sargent et Renato Beninatto ont constaté que la langue avait un impact important sur les décisions d'achat des consommateurs internationaux :
 
-> ...more than half our sample (52.4%) buys only at websites where the information is presented in their language. More than 60 percent of consumers in France and Japan told us they buy only from [websites in their own language]. (CRWB 2006)
+> ...plus de la moitié de notre échantillon (52,4 %) n'achète que sur des sites Web où les informations sont présentées dans leur langue. Plus de 60 % des consommateurs français et japonais nous ont dit qu'ils n'achetaient que sur des [sites Web dans leur propre langue]. (CRWB 2006)
 
-In their 2006 report, "Can't Read, Won't Buy: Why Language Matters", DePalma et al highlight one theme in particular; unless you're already a wildly successful international brand, using English-only as a sales medium will alienate people in other countries who either don't speak English at all, or don't use it as a primary language.
+Dans leur rapport 2006 intitulé "Can't Read, Won't Buy : Why Language Matters", DePalma et al mettent l'accent sur un thème en particulier : à moins que vous ne soyez déjà une marque internationale très prospère, l'utilisation de l'anglais uniquement comme moyen de vente vous aliénera les habitants d'autres pays qui ne parlent pas du tout l'anglais ou qui ne l'utilisent pas comme langue principale.
 
-> The assumption that potential buyers 'probably speak English' drives inadequate localization, warring against the gut feeling that people are unlikely to buy products they cannot understand or that do not appeal to them. (CRWB 2006)
+> L'hypothèse selon laquelle les acheteurs potentiels "parlent probablement anglais" conduit à une localisation inadéquate, ce qui va à l'encontre de l'intuition selon laquelle il est peu probable que les gens achètent des produits qu'ils ne comprennent pas ou qui ne les attirent pas. (CRWB 2006)
 
-Is the problem just about language? No, it's also about meeting consumers where they are in terms of the ways in which they are used to spending:
+Le problème est-il uniquement lié à la langue ? Non, il s'agit également d'aller à la rencontre des consommateurs là où ils se trouvent, c'est-à-dire là où ils ont l'habitude de dépenser :
 
-> Even with information available in the local language, the inability to use their own credit cards or currency stymies many international buyers. (CRWB 2006)
+> Même si les informations sont disponibles dans la langue locale, l'impossibilité d'utiliser leurs propres cartes de crédit ou leur propre monnaie freine de nombreux acheteurs internationaux. (CRWB 2006)
 
-The relative cost of the good or service is also significant, and it's important to note that determining what cost should be &mdash; e.g taking into account the local economic circumstances &mdash; is also a crucial component of effective localization:
+Le coût relatif du bien ou du service est également significatif, et il est important de noter que la détermination de ce que devrait être ce coût, par exemple en tenant compte des circonstances économiques locales, est également un élément crucial d'une localisation efficace :
 
-> The more valuable an item, the more likely it is that someone will want to read about the product and buy it in their own language. (CRWB 2006)
+> Plus un article a de la valeur, plus il est probable que quelqu'un voudra lire des informations sur le produit et l'acheter dans sa propre langue. (CRWB 2006)
 
-However, *language* is the primary blocker to successful internationalization; while 67.4% of the non-native English speakers polled said they regularly visited English-language websites, 74.5% rarely or never go on to make purchases there.
+Cependant, la *langue* est le principal obstacle à une internationalisation réussie ; tandis que 67,4 % des personnes interrogées dont l'anglais n'est pas la langue natale, ont déclaré qu'elles visitaient régulièrement des sites Web en langue anglaise, 74,5 % d'entre elles n'y effectuent que rarement ou jamais d'achats.
 
-![Visiting English-Language Websites](/images/blog/2021-04-27-non-native-visits.png)
+![Visiter des sites Web anglophones](/images/blog/2021-04-27-non-native-visits.png)
 
-![Buying on English-Language Websites](/images/blog/2021-04-27-cant-read-wont-buy.png)
+![Achats sur les sites Web anglophones](/images/blog/2021-04-27-cant-read-wont-buy.png)
 
-## Why Not Just English, *Specifically*?
+## Pourquoi Pas Seulement l'Anglais, *Spécifiquement* ?
 
-In "Can't Read, Won't Buy", DePalma et al propose that the problem is not with English *specifically*, and that the same kinds of localization problems can take place anywhere:
-> we consider English to be a proxy for any language in which a company chooses to market to people who speak a different tongue. (CRWB 2006)
+Dans "Can't Read, Won't Buy", DePalma et al proposent que le problème ne concerne pas l'anglais *spécifiquement*, et que les mêmes types de problèmes de localisation peuvent se produire n'importe où :
 
-On the other hand, English is somewhat unique in that it has been the language of colonialism for so many cultures around the world. As such, English has played a not-exactly-neutral role in it's own proliferation. In many cases, English was forced upon indigenous communities, and understandably may still serve as a symbol of aggressive assimilation and the destruction of local languages and practices. Does that history of cultural and linguistic violence come to bear on modern consumer behavior?
+> nous considérons l'anglais comme un proxy pour toute langue dans laquelle une entreprise choisit de commercialiser ses produits auprès de personnes parlant une autre langue. (CRWB 2006)
 
-After all, language is just as much about identity as it is about words. As Gregory Warner, host of the NPR podcast Rough Translation, puts it:
+D'autre part, l'anglais est quelque peu unique en ce sens qu'il a été la langue du colonialisme pour de nombreuses cultures dans le monde. En tant que tel, l'anglais a joué un rôle pas tout à fait neutre dans sa propre prolifération. Dans de nombreux cas, l'anglais a été imposé aux communautés indigènes et, à juste titre, il peut encore servir de symbole d'assimilation agressive et de destruction des langues et des pratiques locales. Cette histoire de violence culturelle et linguistique se répercute-t-elle sur le comportement du consommateur moderne?
 
-> The process of remaking yourself in another language is about a lot more than grammar or pronunciation.
+Après tout, la langue est tout autant une question d'identité qu'une question de mots. Comme le dit Gregory Warner, animateur du podcast Rough Translation de NPR :
 
-Warner recently produced a story called ["How to Speak Bad English"](https://www.npr.org/2021/04/21/989477444/how-to-speak-bad-english), about an English teacher, [Heather Hansen](https://www.ted.com/talks/heather_hansen_2_billion_voices_how_to_speak_bad_english_perfectly), who has spent the second half of her career trying to make up for the way she taught English in the first half.
+> Le processus qui consiste à se reconstruire dans une autre langue va bien au-delà de la grammaire ou de la prononciation.
 
-Hansen started her career giving her students what she thought they wanted &mdash; assistance in the perfection of their grammar, the eradication of non-standard pronunciations, essentially to speak just like her. Only later did she begin to see this work as a form of linguistic imperialism that hindered effective communication:
+Warner a récemment produit un reportage intitulé ["How to Speak Bad English"](https://www.npr.org/2021/04/21/989477444/how-to-speak-bad-english), sur une enseignante d'anglais, [Heather Hansen](https://www.ted.com/talks/heather_hansen_2_billion_voices_how_to_speak_bad_english_perfectly), qui a passé la seconde moitié de sa carrière à essayer de rattraper la façon dont elle a enseigné l'anglais pendant la première moitié.
 
-> English is the most widely spoken language in the world, and the vast majority of English speakers learned the language in a classroom. Yet, in conference rooms and language courses around the world, they are often told they speak "bad English." [When in fact] "bad English" — with its simplified vocabulary, fueled by the contributions of non-native speakers around the world — might be more universally understandable.
+Heather Hansen a commencé sa carrière en donnant à ses élèves ce qu'elle pensait qu'ils voulaient : une aide pour perfectionner leur grammaire, l'éradication des prononciations non standard, essentiellement pour parler comme elle. Ce n'est que plus tard qu'elle a commencé à considérer ce travail comme une forme d'impérialisme linguistique qui entravait une communication efficace :
 
-A striking detail discussed in the podcast is that groups of non-native speakers communicate more effectively in English when there is no native English speaker present; the introduction of a single native English speaker to a conversation begins to increase the number of conversational hiccups and misunderstandings. It's hard not to imagine that power dynamics might have something to do with this interference. There are strong elements of psychological safety and trust at play. 
+> L'anglais est la langue la plus parlée au monde, et la grande majorité des anglophones ont appris la langue dans une salle de classe. Pourtant, dans les salles de conférence et les cours de langue du monde entier, on leur dit souvent qu'ils parlent un "mauvais anglais". [Alors qu'en fait] le "mauvais anglais" - avec son vocabulaire simplifié, alimenté par les contributions des locuteurs non natifs du monde entier - pourrait être plus universellement compréhensible.
 
-Indeed, even translation from English into other languages can be a slippery slope. As we've discussed in a [prior post](https://rotational.io/blog/a-parrot-trainer-eats-crow/), many of the language models used to power commercial Machine Translation products are trained first with English text. This means that the model's initial and primary way of understanding the world &mdash; metaphors and idioms, sports references, even regionalized spellings &mdash; are strongly rooted in English language and Western ways of thinking. All subsequent training is necessarily constrained by these initial influences.
+Un détail frappant abordé dans le podcast est que les groupes de locuteurs non natifs communiquent plus efficacement en anglais lorsqu'il n'y a pas de locuteur natif présent ; l'introduction d'un seul locuteur natif dans une conversation commence à augmenter le nombre de hoquets et de malentendus. Il est difficile de ne pas imaginer que la dynamique du pouvoir puisse avoir quelque chose à voir avec cette interférence. Des éléments importants de sécurité psychologique et de confiance sont en jeu.
 
-## Creative Localization
+En effet, même la traduction de l'anglais vers d'autres langues peut être une pente glissante. Comme nous l'avons évoqué dans un [article précédent](https://rotational.io/blog/a-parrot-trainer-eats-crow/), la plupart des modèles linguistiques utilisés pour les produits commerciaux de traduction automatique sont d'abord entraînés avec du texte anglais. Cela signifie que la manière initiale et primaire dont le modèle comprend le monde (métaphores et expressions idiomatiques, références sportives, voire orthographes régionales) est fortement ancrée dans la langue anglaise et les modes de pensée occidentaux. Toute formation ultérieure est nécessairement limitée par ces influences initiales.
 
-So if you're an app developer writing software in the US, how are you going to connect with potential customers in Asia, Africa, South America or Europe without falling into one of these linguistic traps?
+## Localisation Créative
 
-Online game developer King, a division of Activision Blizzard, recently invited gamers to participate in a [live presentation](https://community.king.com/en/blog/discussion/329999/virtual-event-a-kingdom-exclusive-live-series-with-chen-and-miguel) by the company's Globalization team. Producer of popular games including Candy Crush and Bubble Witch, King has an enviable 240 million monthly active users across web, social and mobile platforms. Headquartered in London and Stockholm, and with studios and staff in both Europe and North America, King's strategy for building inclusive games involves creatively adapting them to draw from cultures around the world.
+Si vous êtes un développeur d'applications qui écrit des logiciels aux États-Unis, comment allez-vous communiquer avec des clients potentiels en Asie, en Afrique, en Amérique du Sud ou en Europe sans tomber dans l'un de ces pièges linguistiques ?
 
-One example that came up during the discussion was from the 2015 animated movie Inside Out. As the [Independent reported:](https://www.independent.co.uk/arts-entertainment/films/news/inside-out-pixar-makes-crucial-change-japanese-tastes-editing-out-broccoli-10413794.html)
+Le développeur de jeux en ligne King, une division d'Activision Blizzard, a récemment invité les joueurs à participer à une [présentation en direct](https://community.king.com/en/blog/discussion/329999/virtual-event-a-kingdom-exclusive-live-series-with-chen-and-miguel) par l'équipe de mondialisation de l'entreprise. Producteur de jeux populaires tels que Candy Crush et Bubble Witch, King compte un nombre enviable de 240 millions d'utilisateurs actifs mensuels sur les plateformes web, sociales et mobiles. King, dont le siège est à Londres et à Stockholm et qui possède des studios et du personnel en Europe et en Amérique du Nord, a pour stratégie de créer des jeux inclusifs en les adaptant de manière créative afin de s'inspirer des cultures du monde entier.
 
-> Kids in Japan love broccoli so much that Pixar had to change the cause of its child protagonist’s food hell from the tree-shaped vegetable to green peppers. In the UK and US version of the animation's main character Riley can be seen throwing tantrums in disgust at the idea of eating broccoli for dinner. But because the vegetable doesn’t have such a poor reputation among Japanese kids it was replaced with green peppers which are generally considered disgusting.
+Un exemple qui est apparu au cours de la discussion est celui du film d'animation Inside Out de 2015. Comme  l’ [Independent l'a rapporté :](https://www.independent.co.uk/arts-entertainment/films/news/inside-out-pixar-makes-crucial-change-japanese-tastes-editing-out-broccoli-10413794.html)
 
-![Riley won't eat broccoli - or was that green peppers?](/images/blog/2021-04-27-riley-wont-eat-broccoli.png)
+> Les enfants au Japon aiment tellement le brocoli que Pixar a dû changer la cause de l'enfer alimentaire de son protagoniste enfantin en remplaçant le légume en forme d'arbre par des poivrons verts. Dans les versions britannique et américaine du film d'animation, on peut voir le personnage principal, Riley, piquer des colères de dégoût à l'idée de manger des brocolis pour le dîner. Mais comme ce légume n'a pas une si mauvaise réputation auprès des enfants japonais, il a été remplacé par des poivrons verts qui sont généralement considérés comme dégoûtants.
 
-One takeaway from the King presentation was the value of LQA &mdash; [Localization Quality Assurance](https://blog.inlingogames.com/en/2021/01/13/what-is-localization-testing-and-why-is-it-important/) &mdash; particularly when performed by people who are genuine participants in the local culture. In tech, we tend to think about QA (Quality Assurance), in terms of testing out the functionality of the software, catching bugs in the user interface, detecting sequences of actions that can cause the app to crash, etc. LQA is focused on testing out the linguistic and cultural features of an app &mdash; finding word connotations that feel unnatural, identifying names that may signal prejudice, and spotting imagery that could be seen as culturally insensitive.
+![Riley ne veut pas manger de brocoli - ou était-ce des poivrons verts ?](/images/blog/2021-04-27-riley-wont-eat-broccoli.png)
 
-Miguel Sepulvida, Director of Globalization at King Games, believes that translation is only the beginning. In an [interview with Inlingo](https://blog.inlingogames.com/en/2019/10/29/the-game-has-to-be-super-amazing-for-you-to-forget-about-the-language-barrier-an-interview-with-global-localization-manager-at-king-miguel-sepulveda/), he said:
+L'un des points à retenir de la présentation de King est la valeur du AQL &mdash; [Assurance Qualité de la Localisation](https://blog.inlingogames.com/en/2021/01/13/what-is-localization-testing-and-why-is-it-important/) &mdash; en particulier lorsqu'il est réalisé par des personnes qui participent véritablement à la culture locale. Dans le domaine de la technologie, nous avons tendance à penser à l'AQ ( Assurance Qualité ), en termes de test de la fonctionnalité du logiciel, de détection des bugs dans l'interface utilisateur, de détection des séquences d'actions qui peuvent faire planter l'application, etc. L'AQL se concentre sur l'évaluation des caractéristiques linguistiques et culturelles d'une application ; il s'agit de trouver les connotations de mots qui ne sont pas naturelles, d'identifier les noms qui peuvent indiquer des préjugés et de repérer les images qui pourraient être considérées comme culturellement insensibles.
 
-> We are going to start seeing some awareness about moving away from the words. Moving away from just putting the source into the target language and just pure translation to start having more questions about how the text might be perceived in China, in Russia, or in Korea.
+Miguel Sepulvida, Directeur de la Mondialisation chez King Games, estime que la traduction n'est qu'un début. Dans un [entretien avec Inlingo](https://blog.inlingogames.com/en/2019/10/29/the-game-has-to-be-super-amazing-for-you-to-forget-about-the-language-barrier-an-interview-with-global-localization-manager-at-king-miguel-sepulveda/), il a déclaré :
 
-King is ahead of the curve &mdash; during the live presentation, an audience member asked Sepulveda whether King had noticed any relationship between investment in globalization and the company's bottom line. The answer was a resounding "Yes!" Clearly for King, creative localization and LQA have been good for business.
+> Nous allons commencer à prendre conscience de la nécessité de s'éloigner des mots. Nous allons commencer à nous interroger sur la façon dont le texte peut être perçu en Chine, en Russie ou en Corée, plutôt que de simplement transposer la source dans la langue cible et de se contenter d'une traduction pure.
 
-## The Future of Localization
+King est en avance sur son temps &mdash; pendant la présentation en direct, un membre de l'auditoire a demandé à Sepulveda si King avait remarqué un lien entre l'investissement dans la mondialisation et les résultats de l'entreprise. La réponse a été un "Oui !" retentissant. Il est clair que pour King, la localisation créative et l'AQL ont été bénéfiques pour les affaires.
 
-What does all mean for app developers who are hoping to release software to geographically distributed audiences? It seems that there are several key challenges that such organizations will have to tackle; from the [technical challenges of distributed systems](https://rotational.io/blog/a-distributed-systems-maze/) to the recognition that English-only may not be a sufficient sales medium &mdash; and perhaps even more importantly, to learning how rich historic contexts and cultural experiences can inform the buying preferences of potential customers around the globe. Afterall, app developers know that the key to growth and impact is trust and engagement with end users; localization is increasingly important to those objectives. King Games proves localization *is* the future. 
+## L'Avenir de la Localisation
 
-## References
+Que signifie tout cela pour les développeurs d'applications qui espèrent publier des logiciels pour des publics géographiquement distribués ? Il semble que ces organisations devront relever plusieurs défis majeurs, qu'il s'agisse des [défis techniques des systèmes distribués](https://rotational.io/blog/a-distributed-systems-maze/), des la reconnaissance du fait que l'anglais seul n'est peut-être pas un moyen de vente suffisant et, peut-être plus important encore, de l'apprentissage de la façon dont les contextes historiques et les expériences culturelles riches peuvent informer les préférences d'achat des clients potentiels dans le monde entier. Après tout, les développeurs d'applications savent que la clé de la croissance et de l'impact est la confiance et l'engagement des utilisateurs finaux ; la localisation est de plus en plus importante pour atteindre ces objectifs. King Games prouve que la localisation *est* l'avenir.
+
+## Références
 
 - David Sedaris (2000) [Me Talk Pretty One Day](https://en.wikipedia.org/wiki/Me_Talk_Pretty_One_Day)
 - Donald DePalma, Benjamin Sargent, and Renato Beninatto (2006) [Can't Read, Won't Buy](https://insights.csa-research.com/reportaction/305013126/Marketing)
