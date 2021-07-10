@@ -1,5 +1,5 @@
 ---
-title: "Edwin Shmierer"
+title: "Edwin Schmierer"
 image: ""
 email: "edwin@rotational.io"
 social:

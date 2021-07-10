@@ -3,11 +3,12 @@ title: "A History of the Cloud and Where It's Going Next"
 slug: "cloud-generations"
 date: 2021-07-02T15:32:47-04:00
 draft: false
-image_webp: images/blog/bridgetoclouds.webp
-image: images/blog/bridgetoclouds.jpg
+image_webp: images/blog/cloudgeneration.webp
+image: images/blog/cloudgeneration.jpg
 author: Edwin Schmierer
 description: "How the public cloud has evolved and where it is headed"
 ---
+
 There's no doubt public cloud providers have transformed the technology landscape; in this post we retrace the evolution of the cloud to gather clues into where the industry is headed next.
 
 ## Framing Cloud Generations
@@ -62,7 +63,7 @@ Another more subtle pattern is the increasingly centralization around large data
 Lastly, and perhaps most subtle, is a loss of context in data storage and compute, which translates to a less than ideal experience for developers and end users. If data geography has been effectively abstracted away, will you be able to anticipate geographic scaling events?
 
 ## The Emerging Fourth Generation?
-At Rotational Labs, we believe the industry is on the cusp of a 4th generation. While excitement about cloud-hosted data, ML, and devops is still high, we're likely headed for a new season that's characterized by a greater emphasis on cloud economics (a la the [Duckbill Group](https://www.duckbillgroup.com/services/cloud-finance-analysis/)) than purely on convenience.
+We believe the industry is on the cusp of a 4th generation. While excitement about cloud-hosted data, ML, and devops is still high, we're likely headed for a new season that's characterized by a greater emphasis on cloud economics (a la the [Duckbill Group](https://www.duckbillgroup.com/services/cloud-finance-analysis/)) than purely on convenience.
 
 As cloud adoption grows, developers and organizations are asking important questions. We are hearing more and more that context and geography matter to users, developers, infrastructure, communities, and governments. Security and privacy-first computing are also top of mind, as countries are beginning to assert data sovereignty. More organizations are seeking multi-cloud solutions along with co-location (e.g. [Amazon Outposts](https://aws.amazon.com/outposts/)). More applications are being built for the edge as every device is now a "data center". The next generation of cloud services will have it's hands full in contending with this changing technical landscape!
 
@@ -70,4 +71,4 @@ The bottom line is that scale still matters, but it's not enough &mdash; because
 
 ***
 
-Photo by [Priscilla Du Preez](https://unsplash.com/@priscilladupreez?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/driving-into-a-cloud?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+Photo by [Ferdinand Stöhr](https://unsplash.com/@fellowferdi?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/driving-into-a-cloud?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText).
