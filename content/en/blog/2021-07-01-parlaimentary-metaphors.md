@@ -1,7 +1,7 @@
 ---
 title: "Parliamentary Metaphors"
 slug: "parliamentary-metaphors"
-date: "2021-06-08T17:07:56-05:00"
+date: "2021-07-01T10:07:56-05:00"
 draft: false
 image_webp: /images/blog/parliament.webp
 image: /images/blog/parliament.jpg
@@ -18,6 +18,16 @@ I am a computer scientist and software engineer, so you may be surprised to lear
 The paper, published in [_ACM Transactions on Computer Systems_](https://dl.acm.org/journal/tocs), even has an editorial note that the paper was "discovered" behind filing cabinets and that the original author was an archeologist that could not be reached due to ongoing field work in the Greek isles. The fun of this article disguised the fact that it was one of the first descriptions of the Paxos algorithm (eponymous with the island in the story) &mdash; an algorithm of which there are dozens of variations[^1], is notoriously difficult to understand[^2], and is the foundation of modern distributed systems[^3].
 
 The metaphors we use to describe systems help us understand them and guide how we advance the state-of-the-art. The primary metaphor of consensus is decision making via a parliament primarily because of this paper, and it has guided how researchers, engineers, and implementations reason about complex interactions. This also shows how important metaphors are to technology and innovation in general. In this post, we explore the parliamentary metaphor in detail and discuss what, if any, other metaphors might assist us in reasoning about distributed systems.
+
+## Distributed Consensus
+
+A distributed system is composed of two or more nodes, often referred to as _replicas_ because they replicate a common data state that is accessed by external clients. As a simple example, let's consider an inventory system where users can checkout items so long as they are not checked out by any other user. The state of the system is the list of items in the inventory and a flag if the item is checked out or not.
+
+State machines are at the core of the theory behind distributed consensus; commands are applied to a state machine, e.g. `checkout(x)` or `checkin(y)` that move the machine from one state to the next. The state should also be readable, e.g. `is_available(x)`. However, this brings us to the essential problem behind a distributed system: how do we synchronize the state machines in the face of concurrent operations to any replica in the system? How can we ensure our observations and system understanding are consistent when we read from different replicas?
+
+A useful property of state machines is that if two machines independently apply the same commands in the same order, they will always arrive at the same state. As a result, the primary concern of a coordinated system is deciding the _ordering_ of commands. Please note my use of terminology &mdash; a system must _decide_ the ordering, not _determine_ the ordering.
+
+In theory, humans believe that time is linear and that the likelihood of true instantaneously occurring events is
 
 ## References
 
