@@ -9,15 +9,21 @@ contact:
   # Themify icon pack : https://themify.me/themify-icons
   contact_list:
     - icon : ti-email
-      info : "Email: info@rotational.io"
+      info : "info@rotational.io"
+    - icon : ti-twitter
+      info : "@rotationalio"
+    - icon : ti-github
+      info : "rotationalio"
+    - icon : ti-linkedin
+      info : rotational
 
-  # Contact form
-  # Works with https://formspree.io
-  contact_form:
-    enable : true
-    form_action : "https://formspree.io/f/xknpawwn"
-    name : "Votre nom"
-    email : "Votre email"
-    subject : "Matière"
-    message : "Message"
-    submit : "Soumettre"
+  # # Contact form
+  # # Works with https://formspree.io
+  # contact_form:
+  #   enable : true
+  #   form_action : "https://formspree.io/f/xknpawwn"
+  #   name : "Votre nom"
+  #   email : "Votre email"
+  #   subject : "Matière"
+  #   message : "Message"
+  #   submit : "Soumettre"
