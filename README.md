@@ -83,7 +83,11 @@ The `-q` flag is a "quality flag" which should be a number between 0 (worst qual
 
 ## I18n and L10n
 
-Coming Soon!
+When possible, we aim to translate blog posts from their original language into the other languages offered via the Rotational webpage.
+
+Our practice so far has been to have the translations performed via Fiverr. We provide the translator with a Word doc, where the original Markdown has been copied in (keeping all the formatting as is). The cost is about $35 for a 1500-word post (this may vary from language-to-language), and takes about 2-3 days.
+
+In future, we would like to introduce an additional LQA (Linguistic Quality Assurance) pass by a second translator to validate the original translation.
 
 ## Publication
 
