@@ -942,6 +942,7 @@ a:visited {
 .post-block {
   background-color: #292F36;
   margin-bottom: 10px;
+  height: 100%;
 }
 
 .post-block .content {
