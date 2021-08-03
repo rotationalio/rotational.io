@@ -1,0 +1,27 @@
+############################# feature ###################################
+feature:
+  enable : true
+  image : images/backgrounds/17-042_main_image.jpg
+  image_webp : images/backgrounds/17-042_main_image.webp
+  title : Nous sommes une entreprise de données distribuées
+  content : "Nous construisons des produits et services avec une technologie de systèmes distribués de pointe."
+  feature_item :
+      # feature item loop
+    - title : Cohérence Forte
+      icon : ti-magnet # themify icon pack : https://themify.me/themify-icons
+      content : Basé sur Alia, un nouveau protocole pour un consensus distribué répliqué géographiquement qui garantit la cohérence et la durabilité des données dans les services cloud et périphériques.
+
+      # feature item loop
+    - title : Conformité Légale
+      icon : ti-lock # themify icon pack : https://themify.me/themify-icons
+      content : La confidentialité des utilisateurs est un droit fondamental. La sécurité est notre principe de conception principal. Nous chiffrons par défaut et vous permettons de contrôler et de comprendre où vont vos données d'application.
+
+      # feature item loop
+    - title : Rapide et Flexible
+      icon : ti-bolt # themify icon pack : https://themify.me/themify-icons
+      content : Le consensus hiérarchique est rapide et flexible, ce qui est essentiel pour les applications de nouvelle génération construites avec 5G, AI/ML, IoT, AR/VR et tout ce qui va suivre!
+
+      # feature item loop
+    - title : Facile à Utiliser
+      icon : ti-layout-grid2 # themify icon pack : https://themify.me/themify-icons
+      content : Nous donnons aux développeurs un accès à une cohérence forte à un niveau supérieur de la pile d'applications, ajoutant flexibilité et visibilité à vos services de données gérés existants.
