@@ -4,7 +4,7 @@ cta:
   bg_image : "images/backgrounds/clouds.jpg"
   bg_image_webp : "images/backgrounds/clouds.webp"
   title : "Drawing Flexibility | Resiliency | Security"
-  content : "We take innovative approaches to managing the increasing complexity of the cloud﻿."
+  content : "We take innovative approaches to managing the increasing complexity of the cloud."
   button:
     enable : true
     label : "Contact Us"
