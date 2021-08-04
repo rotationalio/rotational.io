@@ -13,4 +13,4 @@ social:
 
 Founder and CTO, Rotational Labs, LLC.
 
-Creator of Yellowbrick, applied NLP developer, Python & Go programmer, data science educator, O’Reilly author, bad ukulelist.
+Creator of Yellowbrick, applied NLP developer, Python & Go programmer, data science educator, O’Reilly author, bad ukulelist, and mom.
