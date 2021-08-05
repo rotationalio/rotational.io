@@ -18,15 +18,12 @@
 
 			{{ range .about_item }}
 			{{"<!-- About item -->" | safeHTML}}
-			<div class="col-lg-4 text-center wow fadeInUp" data-wow-duration="500ms">
+			<div class="col-lg-12 text-center wow fadeInUp" data-wow-duration="500ms">
 				<div class="block">
-					<div class="icon-box">
-						{{with .icon}}<i class="{{ . }}"></i>{{ end }}
-					</div>
 					{{"<!-- Express About Yourself -->" | safeHTML}}
 					<div class="content text-center">
-						<h3>{{ .title }}</h3>
-						<p>{{ .content | markdownify }}</p>
+						<h5>{{ .description1 }}</h5><br>
+						<h5>{{ .description2 }}</h5>
 					</div>
 				</div>
 			</div>
