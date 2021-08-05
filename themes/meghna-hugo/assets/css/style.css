@@ -8,7 +8,7 @@ Tags: one-page, single-page, portfolio, custom-colors, post-formats, responsive,
 */
 /*=== MEDIA QUERY ===*/
 html {
-  background-color: #354337;
+  background-color: #26292e;
   color: #737f8a;
 }
 
@@ -521,6 +521,7 @@ a:visited {
   font-size: 16px;
   font-weight: bold;
   letter-spacing: 1px;
+  display: none;
 }
 
 .hero-area-video {
@@ -571,6 +572,7 @@ a:visited {
   border-bottom: 2px solid transparent;
   transition: .5s all;
   margin-bottom: 20px;
+  height: 100%;
 }
 
 .about .block:hover {
@@ -795,6 +797,7 @@ a:visited {
   border-top: 1px solid rgba(236, 239, 241, 0.07);
   margin-bottom: 40px;
   box-shadow: 2px 2px 5px rgba(44, 44, 44, 0.3), 13px 13px 0 rgba(255, 255, 255, 0.7);
+  height: 100%;
 }
 
 .service-block .service-icon {
@@ -940,6 +943,7 @@ a:visited {
 .post-block {
   background-color: #292F36;
   margin-bottom: 10px;
+  height: 100%;
 }
 
 .post-block .content {

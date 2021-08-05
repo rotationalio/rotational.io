@@ -3,9 +3,9 @@ cta:
   enable : true
   bg_image : "images/backgrounds/clouds.jpg"
   bg_image_webp : "images/backgrounds/clouds.webp"
-  title : "Drawing Strength from Scale"
-  content : "Supporting geo-distributed companies, creators, and communities in the modern digital landscape."
+  title : "Flexibility | Resiliency | Security"
+  content : "We take innovative approaches to managing the increasing complexity of the cloud﻿."
   button:
     enable : true
-    label : "Build on us"
+    label : "Contact Us"
     link : "#contact"
