@@ -5,8 +5,8 @@ banner:
   bg_image : "images/backgrounds/NASA_GulfofMex.jpg"
   icon : "" # themify icon pack : https://themify.me/themify-icons
   title : "Rotational Labs"
-  content : "Redefine what’s possible with your app"
+  content : "Expertise, Hosted Services & Flexible Systems for a Rapidly Changing Digital Landscape"
   button:
-    enable : true
+    enable : false
     label : "Explore"
     link : "#blog"

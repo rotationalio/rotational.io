@@ -35,7 +35,7 @@ team:
     - name : Edwin Schmierer
       image_webp : images/team/edwin.webp
       image : images/team/edwin.jpg
-      designation : Advisor
+      designation : Founder/COO
       content : The Business
       social :
         - icon : "ti-linkedin" # themify icon pack : https://themify.me/themify-icons
