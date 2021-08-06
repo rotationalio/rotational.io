@@ -1993,3 +1993,96 @@ figcaption {
 .cookie-box-hide {
   display: none;
 }
+
+/*=================================================================
+  Our impact section
+==================================================================*/
+.impact .block {
+  background: #242930;
+  padding: 30px;
+  border-bottom: 2px solid transparent;
+  transition: .5s all;
+  margin-bottom: 20px;
+  height: 100%;
+}
+
+.impact .block:hover {
+  border-bottom: 2px solid #57cbcc;
+}
+
+.impact .block:hover .icon-box {
+  -webkit-transform: translateY(-10px);
+  transform: translateY(-10px);
+}
+
+.impact .block .icon-box {
+  position: relative;
+  width: 160px;
+  height: 92.38px;
+  background-color: transparent;
+  margin: 46.19px auto 60px;
+  padding: 20px 0;
+  border-left: 2px solid rgba(236, 239, 241, 0.07);
+  border-right: 2px solid rgba(236, 239, 241, 0.07);
+  font-size: 50px;
+  -webkit-transform: translateZ(0px);
+  transform: translateZ(0px);
+  transition-duration: 0.3s;
+  transition-property: -webkit-transform;
+  transition-property: transform;
+  transition-property: transform, -webkit-transform;
+}
+
+.impact .block .icon-box:after,
+.impact .block .icon-box:before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  width: 113.14px;
+  height: 113.14px;
+  background-color: inherit;
+  left: 20.4315px;
+  -webkit-transform: scaleY(0.5774) rotate(-45deg);
+  transform: scaleY(0.5774) rotate(-45deg);
+}
+
+.impact .block .icon-box:before {
+  top: -56.5685px;
+  border-top: 2px solid rgba(236, 239, 241, 0.07);
+  border-right: 2px solid rgba(236, 239, 241, 0.07);
+}
+
+.impact .block .icon-box:after {
+  bottom: -56.5685px;
+  border-bottom: 2px solid rgba(236, 239, 241, 0.07);
+  border-left: 2px solid rgba(236, 239, 241, 0.07);
+}
+
+.impact .block .icon-box h3 {
+  color: #afc4b1;
+}
+
+/*=================================================================
+  Our impact 2 section
+==================================================================*/
+.impact-2 .content-block {
+  padding: 40px;
+}
+
+.impact-2 .content-block .media {
+  margin-top: 25px;
+}
+
+.impact-2 .content-block .media .pull-left {
+  padding-right: 15px;
+}
+
+.impact-2 .content-block .media i {
+  font-size: 30px;
+  color: #57cbcc;
+}
+
+.impact-2 .content-block .media h4 {
+  font-size: 16px;
+  font-weight: 600;
+}
