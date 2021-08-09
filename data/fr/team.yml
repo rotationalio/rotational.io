@@ -1,14 +1,14 @@
 ############################### team ############################
 team:
   enable : true
-  title : Our Team
+  title : Notre Equipe
   team_member :
     # team member loop
     - name : Benjamin Bengfort
       image_webp : images/team/benjamin.webp
       image : images/team/benjamin.jpg
-      designation : Founder/CEO
-      content : Vision
+      designation : Fondateur/PDG
+      content : La Vision
       social :
         - icon : "ti-linkedin" # themify icon pack : https://themify.me/themify-icons
           link : "https://www.linkedin.com/in/bbengfort/"
@@ -21,8 +21,8 @@ team:
     - name : Rebecca Bilbro
       image_webp : images/team/rebecca.webp
       image : images/team/rebecca.jpg
-      designation : Founder/CTO
-      content : Produit
+      designation : Fondateur/CTO
+      content : Le Produit
       social :
         - icon : "ti-linkedin" # themify icon pack : https://themify.me/themify-icons
           link : "https://www.linkedin.com/in/rebeccabilbro/"
@@ -35,8 +35,8 @@ team:
     - name : Edwin Schmierer
       image_webp : images/team/edwin.webp
       image : images/team/edwin.jpg
-      designation : Advisor
-      content : Entreprise
+      designation : Fondateur/COO
+      content : L'Entreprise
       social :
         - icon : "ti-linkedin" # themify icon pack : https://themify.me/themify-icons
           link : "https://www.linkedin.com/in/edwinschmierer/"
