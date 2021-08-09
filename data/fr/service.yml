@@ -1,7 +1,7 @@
 ################################# Service #################################
 service:
   enable : true
-  title : Our Services
+  title : Nos Services
   service_item :
     # service item loop
     - name : Services conseil
