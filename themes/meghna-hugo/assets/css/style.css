@@ -846,6 +846,7 @@ a:visited {
 .team-member {
   background-color: #292F36;
   margin-bottom: 10px;
+  height: 100%;
 }
 
 .team-member:hover .mask {
