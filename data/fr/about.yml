@@ -1,16 +1,10 @@
 ############################# About ###################################
 about:
   enable : true
-  title : About Us
+  title : A propos
   about_item :
   - icon : ti-world # themify icon pack : https://themify.me/themify-icons
-    title : Fournir des données distribuées
-    content : Notre spécialité est la construction et la maintenance de services de données distribuées à l'échelle planétaire.
+    description1 : Le paysage numérique est devenu de plus en plus complexe. Des nouvelles technologies à l'évolution des attentes des utilisateurs en passant par les réglementations sur la confidentialité des données, les entreprises et les créateurs ont besoin d'approches nouvelles et flexibles pour construire, développer, engager et protéger leurs utilisateurs et leurs communautés.
+    description2 : Nous offrons une expertise de confiance aux développeurs d'applications qui cherchent à développer leurs pratiques d'ingénierie des données et des systèmes. Nous sommes spécialisés dans la mise en place d'architectures de données et de systèmes informatiques de pointe rapides, flexibles, résilients et conformes à la législation pour le paysage numérique moderne.
 
-  - icon : ti-link # themify icon pack : https://themify.me/themify-icons
-    title : Connecter les communautés mondiales
-    content : Nous respectons les droits légaux, la vie privée et les normes culturelles de nos utilisateurs dans le monde entier.
-
-  - icon : ti-github # themify icon pack : https://themify.me/themify-icons
-    title : S'engager avec l'Open Source
-    content : Nous croyons au pouvoir de l'open source pour améliorer la compréhension, démocratiser l'accès et renforcer la fiabilité des logiciels.
+    
