@@ -1,0 +1,26 @@
+################################# Service #################################
+service:
+  enable : true
+  title : 提供的服务
+  service_item :
+    # service item loop
+    - name : 咨询服务
+      icon : ti-support # themify icon pack : https://themify.me/themify-icons
+      item1 : 机器学习/智能运维
+      item2 : 多云解决方案
+      item3 : I数据工程
+        
+    # service item loop
+    - name : 托管数据服务
+      icon : ti-server # themify icon pack : https://themify.me/themify-icons
+      item1 : RotationalFS
+      item2 : AliaDB
+      item3 : Expérience globale des développeurs (GDX)
+
+    # service item loop
+    - name : 软件开发
+      icon : ti-star # themify icon pack : https://themify.me/themify-icons
+      item1 : 数据库设计&系统
+      item2 : 微服务& 应用程序接口
+      item3 : 云&分布式系统
+
