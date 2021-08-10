@@ -154,43 +154,43 @@ home = "Accueil"
 copyright = "Copyright &copy; 2021 Rotational Labs, LLC, Tous droits réservés"
 
 ## Chinese Navigation
-[[Languages.cn.menu.main]]
+[[Languages.zh.menu.main]]
 name = "关于我们"
-pre = "cn/#"
+pre = "zh/#"
 url = "about"
 weight = 1
 
-[[Languages.cn.menu.main]]
+[[Languages.zh.menu.main]]
 name = "服务"
-pre = "cn/#"
+pre = "zh/#"
 url = "services"
 weight = 2
 
-[[Languages.cn.menu.main]]
+[[Languages.zh.menu.main]]
 name = "团队"
-pre = "cn/#"
+pre = "zh/#"
 url = "team"
 weight = 3
 
-[[Languages.cn.menu.main]]
+[[Languages.zh.menu.main]]
 name = "博客"
-url = "/cn/blog"
+url = "/zh/blog"
 weight = 4
 
-[[Languages.cn.menu.main]]
+[[Languages.zh.menu.main]]
 name = "联系方式"
-pre = "cn/#"
+pre = "zh/#"
 url = "contact"
 weight = 5
 
 ## Chinese Langauge
-[Languages.cn]
-languageName = "Cn"
+[Languages.zh]
+languageName = "Zh"
 languageCode = "zh"
-contentDir = "content/cn"
+contentDir = "content/zh"
 weight = 1
 home = "Home"
-copyright = "Copyright &copy; 2021 Rotational Labs, LLC, All Rights Reserved"
+copyright = "Rotational Labs提供的服务将让您感受到物有所值。"
 
 ## Social Icons
 # See icons from themify icon pack : https://themify.me/themify-icons
