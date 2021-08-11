@@ -190,7 +190,7 @@ languageCode = "zh"
 contentDir = "content/zh"
 weight = 1
 home = "Home"
-copyright = "Rotational Labs提供的服务将让您感受到物有所值。"
+copyright = "Rotational Labs 提供的服务将让您感受到物有所值。"
 
 ## Social Icons
 # See icons from themify icon pack : https://themify.me/themify-icons
