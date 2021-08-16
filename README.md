@@ -67,6 +67,45 @@ The next steps are as follows:
 2. Find a blog image from [Unsplash](https://unsplash.com/collections/63030615/rotational-website) and add to `image_webp` and `image` fields.
 3. Write the blog post!
 
+## Author
+
+To create a new author, use the [`hugo new`](https://gohugo.io/commands/hugo_new/#readout) command as follows:
+
+```
+$ hugo new author/firstname-lastname.md
+```
+
+> **NOTE**: ensure that these commands are run in the root of the project.
+
+This will create a new file in the `content/en/author` directory (English is the default language for our site) that you can open and begin to edit. When creating new blog content, Hugo uses the `archetypes/author.md` template file and generates the following [frontmatter](https://gohugo.io/content-management/front-matter#readout):
+
+```
+---
+title: "" # Name
+image: ""
+email: ""
+social:
+  - icon : "ti-linkedin" # themify icon pack : https://themify.me/themify-icons
+    link : "#" # Linkedin
+  - icon : "ti-twitter-alt" # themify icon pack : https://themify.me/themify-icons
+    link : "#" # Twitter
+  - icon : "ti-github" # themify icon pack : https://themify.me/themify-icons
+    link : "#" # Github
+---
+
+<!--Write your function below-->
+
+
+<!--Write description below-->
+
+```
+
+The next steps are as follows:
+
+1. Update the `title`, `email`, and socials `link` fields.
+2. Add your image link to `image` field or leave empty to use email gravatar
+3. Write your function at Rotational and then description of you
+
 ## WebP
 
 Our current theme makes use of [WebP](https://developers.google.com/speed/webp) - an image format created by Google that is supposed to be smaller and richer to power web and mobile applications. However, because WebP is not fully supported by all browsers, the theme requires both a JPEG/PNG version of an image and the WebP version.
