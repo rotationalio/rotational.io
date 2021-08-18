@@ -3,8 +3,8 @@ title: "S'ils ne peuvent pas le lire, ils ne l'achèteront pas non plus"
 slug: "cant-read-wont-buy"
 date: "2021-04-27T11:24:40-04:00"
 draft: false
-image_webp: images/blog/streetblur.webp
-image: images/blog/streetblur.jpg
+image_webp: images/media/2021-04-27-cant-read-wont-buy/streetblur.webp
+image: images/media/2021-04-27-cant-read-wont-buy/streetblur.jpg
 author: Rebecca Bilbro
 description : "Dans cet article, nous allons explorer certains des inconvénients de l'utilisation de l'anglais comme moyen de vente, examiner certaines solutions créatives, identifier certaines zones de précautions et réfléchir à ce que tout cela signifie pour l'avenir du développement d'applications internationales."
 ---
@@ -37,9 +37,9 @@ Le coût relatif du bien ou du service est également significatif, et il est im
 
 Cependant, la *langue* est le principal obstacle à une internationalisation réussie ; tandis que 67,4 % des personnes interrogées dont l'anglais n'est pas la langue natale, ont déclaré qu'elles visitaient régulièrement des sites Web en langue anglaise, 74,5 % d'entre elles n'y effectuent que rarement ou jamais d'achats.
 
-![Visiter des sites Web anglophones](/images/blog/2021-04-27-non-native-visits.png)
+![Visiter des sites Web anglophones](/images/media/2021-04-27-cant-read-wont-buy/2021-04-27-non-native-visits.png)
 
-![Achats sur les sites Web anglophones](/images/blog/2021-04-27-cant-read-wont-buy.png)
+![Achats sur les sites Web anglophones](/images/media/2021-04-27-cant-read-wont-buy/2021-04-27-cant-read-wont-buy.png)
 
 ## Pourquoi Pas Seulement l'Anglais, *Spécifiquement* ?
 
@@ -73,7 +73,7 @@ Un exemple qui est apparu au cours de la discussion est celui du film d'animatio
 
 > Les enfants au Japon aiment tellement le brocoli que Pixar a dû changer la cause de l'enfer alimentaire de son protagoniste enfantin en remplaçant le légume en forme d'arbre par des poivrons verts. Dans les versions britannique et américaine du film d'animation, on peut voir le personnage principal, Riley, piquer des colères de dégoût à l'idée de manger des brocolis pour le dîner. Mais comme ce légume n'a pas une si mauvaise réputation auprès des enfants japonais, il a été remplacé par des poivrons verts qui sont généralement considérés comme dégoûtants.
 
-![Riley ne veut pas manger de brocoli - ou était-ce des poivrons verts ?](/images/blog/2021-04-27-riley-wont-eat-broccoli.png)
+![Riley ne veut pas manger de brocoli - ou était-ce des poivrons verts ?](/images/media/2021-04-27-cant-read-wont-buy/2021-04-27-riley-wont-eat-broccoli.png)
 
 L'un des points à retenir de la présentation de King est la valeur du AQL &mdash; [Assurance Qualité de la Localisation](https://blog.inlingogames.com/en/2021/01/13/what-is-localization-testing-and-why-is-it-important/) &mdash; en particulier lorsqu'il est réalisé par des personnes qui participent véritablement à la culture locale. Dans le domaine de la technologie, nous avons tendance à penser à l'AQ ( Assurance Qualité ), en termes de test de la fonctionnalité du logiciel, de détection des bugs dans l'interface utilisateur, de détection des séquences d'actions qui peuvent faire planter l'application, etc. L'AQL se concentre sur l'évaluation des caractéristiques linguistiques et culturelles d'une application ; il s'agit de trouver les connotations de mots qui ne sont pas naturelles, d'identifier les noms qui peuvent indiquer des préjugés et de repérer les images qui pourraient être considérées comme culturellement insensibles.
 

@@ -3,8 +3,8 @@ title: "Hello World"
 slug: "hello-world"
 date: "2021-01-21T16:20:18-04:00"
 draft: false
-image_webp: images/blog/gulfatnight.webp
-image: images/blog/gulfatnight.jpg
+image_webp: images/media/2021-01-21-hello-world/gulfatnight.webp
+image: images/media/2021-01-21-hello-world/gulfatnight.jpg
 author: Benjamin Bengfort
 description: "Hello World! Nous sommes Rotational Labs."
 ---
