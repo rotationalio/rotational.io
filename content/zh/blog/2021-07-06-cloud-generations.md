@@ -3,8 +3,8 @@ title: "A History of the Cloud and Where It's Going Next"
 slug: "cloud-generations"
 date: 2021-07-02T15:32:47-04:00
 draft: false
-image_webp: images/blog/cloudgeneration.webp
-image: images/blog/cloudgeneration.jpg
+image_webp: images/media/2021-07-06-cloud-generations/cloudgeneration.webp
+image: images/media/2021-07-06-cloud-generations/cloudgeneration.jpg
 author: Edwin Schmierer
 description: "How the public cloud has evolved and where it is headed"
 ---
