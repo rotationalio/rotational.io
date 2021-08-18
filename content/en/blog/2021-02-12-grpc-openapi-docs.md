@@ -2,8 +2,8 @@
 title: "Documenting a gRPC API with OpenAPI"
 slug: "documenting-grpc-with-openapi"
 date: 2021-02-12T17:45:35Z
-image_webp: images/blog/gateway.webp
-image: images/blog/gateway.jpg
+image_webp: images/media/2021-02-12-grpc-openapi-docs/gateway.webp
+image: images/media/2021-02-12-grpc-openapi-docs/gateway.jpg
 author: Benjamin Bengfort
 description : "Using grpc-gateway and Swagger"
 ---
@@ -229,6 +229,6 @@ $ docker run -p 80:8080 \
 
 This will pull the `swaggerapi/swagger-ui` image from DockerHub when you run it for the first time. You can then view the docs at `http://localhost/`:
 
-![Swagger UI](/images/blog/2021-02-12-swagger-notes.png)
+![Swagger UI](/images/media/2021-02-12-grpc-openapi-docs/2021-02-12-swagger-notes.png)
 
 The next steps are to use `grpc-gateway` to create a server that does both gRPC hosting and a JSON REST API - complete with live Swagger documentation and styling.

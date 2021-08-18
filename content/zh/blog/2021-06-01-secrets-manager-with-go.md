@@ -3,8 +3,8 @@ title: "Using Google's Secret Manager API with Go"
 slug: "secrets-manager-with-go"
 date: "2021-06-01T08:26:38-04:00"
 draft: false
-image_webp: images/blog/doorknocker.webp
-image: images/blog/doorknocker.jpg
+image_webp: images/media/2021-06-01-secrets-manager-with-go/doorknocker.webp
+image: images/media/2021-06-01-secrets-manager-with-go/doorknocker.jpg
 author: Rebecca Bilbro
 description: "In this post, we'll dive into Google's Secret Manager service, walk through the setup steps, and explore some Go code to interact with the API."
 ---

@@ -3,8 +3,8 @@ title: "What Are Protocol Buffers?"
 slug: "what-are-protocol-buffers"
 date: "2021-05-19T11:05:32-04:00"
 draft: false
-image_webp: images/blog/migration.webp
-image: images/blog/migration.jpg
+image_webp: images/media/2021-05-19-what-are-protocol-buffers/migration.webp
+image: images/media/2021-05-19-what-are-protocol-buffers/migration.jpg
 author: Rebecca Bilbro
 description: "Protocol buffers are a method for serializing data to efficiently send between programs. In this post, we'll explore some use cases for protobufs and learn the syntax."
 ---

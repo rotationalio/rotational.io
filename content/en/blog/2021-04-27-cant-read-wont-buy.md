@@ -3,8 +3,8 @@ title: "Can't Read, Won't Buy"
 slug: "cant-read-wont-buy"
 date: "2021-04-27T11:24:40-04:00"
 draft: false
-image_webp: images/blog/streetblur.webp
-image: images/blog/streetblur.jpg
+image_webp: images/media/2021-04-27-cant-read-wont-buy/streetblur.webp
+image: images/media/2021-04-27-cant-read-wont-buy/streetblur.jpg
 author: Rebecca Bilbro
 description : "In this post we'll explore some of the drawbacks of using only English as a sales medium, check out some creative solutions, identify some areas of caution, and consider what this all means to the future of global app development."
 ---
@@ -37,9 +37,9 @@ The relative cost of the good or service is also significant, and it's important
 
 However, *language* is the primary blocker to successful internationalization; while 67.4% of the non-native English speakers polled said they regularly visited English-language websites, 74.5% rarely or never go on to make purchases there.
 
-![Visiting English-Language Websites](/images/blog/2021-04-27-non-native-visits.png)
+![Visiting English-Language Websites](/images/media/2021-04-27-cant-read-wont-buy/2021-04-27-non-native-visits.png)
 
-![Buying on English-Language Websites](/images/blog/2021-04-27-cant-read-wont-buy.png)
+![Buying on English-Language Websites](/images/media/2021-04-27-cant-read-wont-buy/2021-04-27-cant-read-wont-buy.png)
 
 ## Why Not Just English, *Specifically*?
 
@@ -72,7 +72,7 @@ One example that came up during the discussion was from the 2015 animated movie 
 
 > Kids in Japan love broccoli so much that Pixar had to change the cause of its child protagonist’s food hell from the tree-shaped vegetable to green peppers. In the UK and US version of the animation's main character Riley can be seen throwing tantrums in disgust at the idea of eating broccoli for dinner. But because the vegetable doesn’t have such a poor reputation among Japanese kids it was replaced with green peppers which are generally considered disgusting.
 
-![Riley won't eat broccoli - or was that green peppers?](/images/blog/2021-04-27-riley-wont-eat-broccoli.png)
+![Riley won't eat broccoli - or was that green peppers?](/images/media/2021-04-27-cant-read-wont-buy/2021-04-27-riley-wont-eat-broccoli.png)
 
 One takeaway from the King presentation was the value of LQA &mdash; [Localization Quality Assurance](https://blog.inlingogames.com/en/2021/01/13/what-is-localization-testing-and-why-is-it-important/) &mdash; particularly when performed by people who are genuine participants in the local culture. In tech, we tend to think about QA (Quality Assurance), in terms of testing out the functionality of the software, catching bugs in the user interface, detecting sequences of actions that can cause the app to crash, etc. LQA is focused on testing out the linguistic and cultural features of an app &mdash; finding word connotations that feel unnatural, identifying names that may signal prejudice, and spotting imagery that could be seen as culturally insensitive.
 
