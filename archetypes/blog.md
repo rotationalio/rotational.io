@@ -8,3 +8,11 @@ image: images/blog/
 author: Your Name
 description: "Add Description Here"
 ---
+
+<!--write the summary part that will be previewed *below* and before the "more" comment-->
+
+
+<!--more-->
+
+
+<!--write the rest of your post below -->
