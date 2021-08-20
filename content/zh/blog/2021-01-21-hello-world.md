@@ -9,7 +9,7 @@ author: Benjamin Bengfort
 description: "Hello World! 我们是 Rotational Labs."
 ---
 
-现在，只有一半的世界是白昼。为实现成功的行星尺度的网络，是时候使用能区分昼夜的智能分布式系统了。
+现在，只有一半的世界是白昼。为实现成功的行星尺度的网络，是时候使用能区分昼夜的智能分布式系统了。<!--more-->
 
 
 如今，我和合作伙伴 [Rebecca Bilbro博士]({{< ref "/author/rebecca-bilbro.md" >}})，[Edwin Schmierer]({{< ref "/author/edwin-schmierer.md" >}}) 一起开创了在Rotational Labs开发商用的行星尺度的系统和应用的新篇章。互联网和云提供了快速开发应用程序的机会，他们可以快速在国际上获得受众。然而，仅仅有工具的存在并不意味着开发的简单易行。“语境为王”，一些与我们关系最近的顾问这样说道。我们的主要目标就是创建考虑到语境信息的智能分布式系统来避免过于同质化的用户体验。
