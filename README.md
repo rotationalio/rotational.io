@@ -81,22 +81,22 @@ This will create a new file in the `content/en/author` directory (English is the
 
 ```
 ---
-title: "" # Name
-image: ""
+title: "" # Your full name
+image: "" # Note if left empty, the Gravatar from your email will be used
 email: ""
 social:
   - icon : "ti-linkedin" # themify icon pack : https://themify.me/themify-icons
-    link : "#" # Linkedin
+    link : "https://www.linkedin.com/in/" # Linkedin
   - icon : "ti-twitter-alt" # themify icon pack : https://themify.me/themify-icons
-    link : "#" # Twitter
+    link : "https://twitter.com/" # Twitter
   - icon : "ti-github" # themify icon pack : https://themify.me/themify-icons
-    link : "#" # Github
+    link : "https://github/com/" # Github
 ---
 
-<!--Write your function below-->
+<!--Write your job title or function below, should be one line-->
 
 
-<!--Write description below-->
+<!--Write a brief 1-2 sentence bio/personal description below-->
 
 ```
 
@@ -105,6 +105,26 @@ The next steps are as follows:
 1. Update the `title`, `email`, and socials `link` fields.
 2. Add your image link to `image` field or leave empty to use email gravatar
 3. Write your function at Rotational and then description of you
+
+## hugo new command 
+
+"hugo new" command is used to create content…
+
+If you type "hugo new example.md" the file created will be directly located in the root of the "content" folder. 
+
+According to archetypes and their content folder, you can use "hugo new archetype-content-folder/your-file.md" to create 
+a specific file
+
+e.g:  $ hugo new blog/YYYY-MM-DD-title-of-blog.md  "to create blog post"
+        Or
+      $ hugo new author/firstname-lastname.md  "to create new author".
+
+
+Can be useful: you can create blog or author subfolder by typing :
+
+       $ hugo new blog/subfolder/YYYY-MM-DD-title-of-blog.md
+          Or 
+       $ hugo new author/subfolder/firstname-lastname.md
 
 ## WebP
 
