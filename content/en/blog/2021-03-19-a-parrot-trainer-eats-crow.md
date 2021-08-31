@@ -3,8 +3,8 @@ title: "A Parrot Trainer Eats Crow"
 slug: "a-parrot-trainer-eats-crow"
 date: "2021-03-19T08:42:21-04:00"
 draft: false
-image_webp: images/blog/parrots.webp
-image: images/blog/parrots.jpg
+image_webp: images/media/2021-03-19-a-parrot-trainer-eats-crow/parrots.webp
+image: images/media/2021-03-19-a-parrot-trainer-eats-crow/parrots.jpg
 author: Rebecca Bilbro
 description : "Models trained on massive datasets using millions of parameters can both have low bias and also be very biased - what can we in the ML community do about this?"
 ---

@@ -20,7 +20,7 @@ disableLanguages = []
 ## Default Parameters
 [params]
 # Metadata
-logo = "images/logo.png"
+logo = "images/assets/logos/logo.png"
 description = "We see planet-wide possibilities."
 author = "Rotational Labs, LLC"
 
@@ -32,7 +32,7 @@ post_share = true
 
 [params.preloader]
 enable = false
-preloader = "images/logo.png"
+preloader = "images/assets/logos/logo.png"
 
 [params.cookies]
 enable = false
@@ -44,7 +44,7 @@ enable = false
 gmap_api = "https://maps.googleapis.com/maps/api/js?key=AIzaSyBu5nZKbeK-WHQ70oqOWo-_4VmwOwKP9YQ"
 map_latitude = "51.5223477"
 map_longitude = "-0.1622023"
-map_marker = "images/marker.png"
+map_marker = "images/assets/icons/marker.png"
 
 ## CSS Plugins
 [[params.plugins.css]]
@@ -116,19 +116,19 @@ copyright = "Copyright &copy; 2021 Rotational Labs, LLC, All Rights Reserved"
 
 ## French Navigation
 [[Languages.fr.menu.main]]
-name = "sur"
+name = "a propos"
 pre = "fr/#"
 url = "about"
 weight = 1
 
 [[Languages.fr.menu.main]]
-name = "un service"
+name = "services"
 pre = "fr/#"
 url = "services"
 weight = 2
 
 [[Languages.fr.menu.main]]
-name = "équipe"
+name = "notre équipe"
 pre = "fr/#"
 url = "team"
 weight = 3
@@ -151,7 +151,46 @@ languageCode = "fr-fr"
 contentDir = "content/fr"
 weight = 2
 home = "Accueil"
-copyright = "Copyright &copy; 2021 Rotational Labs, LLC, All Rights Reserved"
+copyright = "Copyright &copy; 2021 Rotational Labs, LLC, Tous droits réservés"
+
+## Chinese Navigation
+[[Languages.zh.menu.main]]
+name = "关于我们"
+pre = "zh/#"
+url = "about"
+weight = 1
+
+[[Languages.zh.menu.main]]
+name = "服务"
+pre = "zh/#"
+url = "services"
+weight = 2
+
+[[Languages.zh.menu.main]]
+name = "团队"
+pre = "zh/#"
+url = "team"
+weight = 3
+
+[[Languages.zh.menu.main]]
+name = "博客"
+url = "/zh/blog"
+weight = 4
+
+[[Languages.zh.menu.main]]
+name = "联系方式"
+pre = "zh/#"
+url = "contact"
+weight = 5
+
+## Chinese Langauge
+[Languages.zh]
+languageName = "Zh"
+languageCode = "zh"
+contentDir = "content/zh"
+weight = 1
+home = "Home"
+copyright = "Rotational Labs 提供的服务将让您感受到物有所值。"
 
 ## Social Icons
 # See icons from themify icon pack : https://themify.me/themify-icons
@@ -161,7 +200,7 @@ link = "https://twitter.com/rotationalio"
 
 [[params.social]]
 icon = "ti-github"
-link = "https://github.com/rotational.io"
+link = "https://github.com/rotationalio"
 
 [[params.social]]
 icon = "ti-linkedin"

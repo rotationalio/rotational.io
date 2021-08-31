@@ -3,8 +3,8 @@ title: "Project Planning With Block Based Dependencies"
 slug: "project-planning-with-block-based-dependencies"
 date: "2021-03-24T07:49:48-04:00"
 draft: false
-image_webp: images/blog/2021-03-24-blocks-dependencies.png
-image: images/blog/2021-03-24-blocks-dependencies.png
+image_webp: images/media/2021-03-24-project-planning-with-block-based-dependencies/2021-03-24-blocks-dependencies.png
+image: images/media/2021-03-24-project-planning-with-block-based-dependencies/2021-03-24-blocks-dependencies.png
 author: Benjamin Bengfort
 description : "A temporal block based dependency method for planning complex projects."
 ---

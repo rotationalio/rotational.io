@@ -4,13 +4,6 @@ about:
   title : About Us
   about_item :
   - icon : ti-world # themify icon pack : https://themify.me/themify-icons
-    title : Providing Distributed Data
-    content : We specialize in building and maintaining planetary-scale distributed data services.
-
-  - icon : ti-link # themify icon pack : https://themify.me/themify-icons
-    title : Connecting Global Communities
-    content : We respect the legal rights, privacy, and cultural norms of our users around the world.
-
-  - icon : ti-github # themify icon pack : https://themify.me/themify-icons
-    title : Engaging with Open Source
-    content : We believe in the power of open source to inspire, democratize, and bolster our software.
+    description1 : The digital landscape has grown increasingly complex. From new technologies to changing user expectations to data privacy regulations, companies and creators require new and flexible approaches to build, grow, engage and protect their users and communities.
+    description2 : We provide trusted expertise to application developers seeking to build their data and systems engineering practices. We specialize in building fast, flexible, resilient and legally-compliant data architectures and cloud-to-edge computing systems for the modern digital landscape.
+    

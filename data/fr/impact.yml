@@ -1,0 +1,26 @@
+############################# Impact ###################################
+impact:
+  enable : true
+  title : Notre Impact
+  impact_item :
+  - icon : ti-world # themify icon pack : https://themify.me/themify-icons
+    title : Clients
+    client1 : CipherTrace
+    client2 : TRISA
+    client3 : 202 Group
+    client4 : Hopewell
+
+  - icon : ti-book # themify icon pack : https://themify.me/themify-icons
+    title : Publications
+    publication1 : Analyse de texte appliquée avec Python
+    publication2 :  Analyse de données avec Hadoop
+    publication3 : Cookbook pratique sur la science des données
+    publication4 : Consensus hiérarchique
+
+  - icon : ti-github # themify icon pack : https://themify.me/themify-icons
+    title : Open Source
+    opensource1 : Sci-kit Yellowbrick
+    opensource2 : TRISA
+    opensource3 : Honu
+    opensource4 : Whisper
+    opensource5 : Geodistributed.systems

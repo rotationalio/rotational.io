@@ -3,8 +3,8 @@ title: "A Distributed Systems Maze"
 slug: "a-distributed-systems-maze"
 date: "2021-04-06T13:49:57-04:00"
 draft: false
-image_webp: images/blog/maze.webp
-image: images/blog/maze.jpg
+image_webp: images/media/2021-04-06-a-distributed-systems-maze/maze.webp
+image: images/media/2021-04-06-a-distributed-systems-maze/maze.jpg
 author: Benjamin Bengfort
 description : "Distributed systems jargon can feel like a maze that your constantly lost in. In this post we try to see our way clear with a maze metaphor to understand why coordination is necessary, and difficult."
 ---
@@ -27,7 +27,7 @@ The first coordination scenario is, well, no coordination: each robot receives a
 
 If the robots are strictly coordinated then when they receive a command from their human team they will pass the command to the other robot, then execute the command; if it receives a command from the other robot it will simply execute the command. Coordination in this scenario quickly gets out of hand: if two teams give commands to different robots simultaneously: "turn left" and "move forward", then the first robot will turn left then move forward, while the second robot will move forward then turn left. They are now in two different positions and the more commands they get, the worse it is. It's unlikely in this scenario that either robot will be able to leave the maze.
 
-![Strict coordination inconsistency](/images/blog/2021-04-06-strict-coordination.png)
+![Strict coordination inconsistency](/images/media/2021-04-06-a-distributed-systems-maze/2021-04-06-strict-coordination.png)
 
 When the two robots end up in two different positions like this, an inconsistency has occurred. From the human controller point of view, they expected both robots to both move forward or turn left, and now when they ask for pictures from each robot, they get two different results! One way to think about coordination and consistency is the desirable property that both robots receive the commands in the same exact order so that they never end up in two different positions.
 

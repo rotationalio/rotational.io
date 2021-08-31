@@ -4,16 +4,23 @@ service:
   title : Our Services
   service_item :
     # service item loop
-    - name : Contracting
+    - name : Advisory Services
       icon : ti-support # themify icon pack : https://themify.me/themify-icons
-      content : Data Systems, Data Engineering, Data Science, ML
-
+      item1 : Machine Learning / AIOps
+      item2 : Multi-cloud Solutions
+      item3 : Data Engineering
+        
     # service item loop
-    - name : Data Products
+    - name : Hosted Data Services
       icon : ti-server # themify icon pack : https://themify.me/themify-icons
-      content : RotationalFS, Alia, GDX, Geodistributed.Systems
+      item1 : RotationalFS
+      item2 : AliaDB
+      item3 : Global Developer Experience (GDX)
 
     # service item loop
-    - name : Open Source
+    - name : Software Development
       icon : ti-star # themify icon pack : https://themify.me/themify-icons
-      content : Scikit-Yellowbrick, TRISA, Baleen, Radish, Tidal
+      item1 : Database Design & Systems
+      item2 : Microservices & APIs
+      item3 : Cloud & Distributed Systems
+
