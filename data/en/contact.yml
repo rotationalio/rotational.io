@@ -8,13 +8,13 @@ contact:
   # Themify icon pack : https://themify.me/themify-icons
   contact_list:
     - icon : ti-email
-      info : "info@rotational.io"
+      info1 : "info@rotational.io"
     - icon : ti-twitter
-      info : "@rotationalio"
+      info2 : "@rotationalio"
     - icon : ti-github
-      info : "rotationalio"
+      info3 : "rotationalio"
     - icon : ti-linkedin
-      info : rotational
+      info4 : rotational
 
   # # Contact form
   # # Works with https://formspree.io
