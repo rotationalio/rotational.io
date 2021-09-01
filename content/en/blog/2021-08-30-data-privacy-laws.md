@@ -1,5 +1,5 @@
 ---
-title: "The Data Privacy Regulatory Landscape"
+title: "The Data Privacy Regulatory Landscape (as of August 2021)"
 slug: "data-privacy-laws"
 date: 2021-08-31T17:32:47-04:00
 draft: false
