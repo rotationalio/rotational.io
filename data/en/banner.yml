@@ -3,6 +3,7 @@ banner:
   enable : true
   bg_image_webp : "images/backgrounds/NASA_GulfofMex.webp"
   bg_image : "images/backgrounds/NASA_GulfofMex.jpg"
+  image: "images/assets/logos/logo.png"
   icon : "" # themify icon pack : https://themify.me/themify-icons
   title : "Rotational Labs"
   content : "Expertise, Hosted Services & Flexible Systems for a Rapidly Changing Digital Landscape"
