@@ -3,7 +3,6 @@ banner:
   enable : true
   bg_image_webp : "images/backgrounds/NASA_GulfofMex.webp"
   bg_image : "images/backgrounds/NASA_GulfofMex.jpg"
-  logo : "images/assets/logos/Rotationaltxt.png"
   icon : "" # themify icon pack : https://themify.me/themify-icons
   title : ""
   content : "Expertise, Hosted Services & Flexible Systems for a Rapidly Changing Digital Landscape"
