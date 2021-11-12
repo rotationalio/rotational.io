@@ -189,6 +189,15 @@ a:hover {
   background-size: cover;
 }
 
+@media (hover: none) {
+	.parallax {
+	  height: auto;
+	  background-attachment: scroll;
+	  background-size: contain;
+	  background-repeat: repeat;
+	}
+}
+
 .no-padding {
   padding: 0 !important;
 }
@@ -292,13 +301,6 @@ a:visited {
 .btn:active:focus,
 .btn:focus {
   outline: 0;
-}
-
-.parallax-section {
-  background-attachment: fixed;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 
 .preloader {
