@@ -9,7 +9,7 @@
 
 	<div class="block">
 
-	<img src="{{ .logo | markdownify }}"/>
+	<img src={{ site.Params.logo_text | absURL }}/>
 
 		<h1>{{ .title | markdownify }}</h1>
 		<p>{{ .content | markdownify }}</p>
