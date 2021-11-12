@@ -21,7 +21,6 @@ disableLanguages = []
 [params]
 # Metadata
 logo = "images/assets/logos/logo.png"
-logo_text = "images/assets/logos/Rotationaltxt.png"
 description = "We see planet-wide possibilities."
 author = "Rotational Labs, LLC"
 
