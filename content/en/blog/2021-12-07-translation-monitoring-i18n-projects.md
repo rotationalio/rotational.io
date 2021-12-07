@@ -89,11 +89,10 @@ stats = reporter.get_stats(commits)
 reporter.print_stats(stats)
 
 """
-    | Target Language   |   Total |   Open |   Updated |   Completed |,
-    |-------------------+---------+--------+-----------+-------------|,
-    | fr                |       0 |      0 |         0 |           0 |,
-    | en                |       1 |      0 |         0 |           1 |,
-    | zh                |       1 |      0 |         1 |           0 |,
+    | Target Language   |   Total |   Open |   Updated |   Completed |
+    |-------------------+---------+--------+-----------+-------------|
+    | fr                |       0 |      0 |         0 |           0 |
+    | en                |       1 |      0 |         0 |           1 |
     | ja                |       1 |      1 |         0 |           0 |
 """
 ```
@@ -136,7 +135,7 @@ reader = MsgReader(
     repo_path=".",
     branch="main",
     content_paths=["locales"],
-    extensions=[".po"]
+    extensions=[".po"],
     src_lang="en",
     use_cache=True
     )
@@ -166,7 +165,7 @@ reporter = MsgReporter()
 
 Messaged-based Rumi also supports reporting translation status in stats mode and details mode.  
 
-- stats mode: Print out a summary of the translation status including number of message missing and word count.
+- stats mode: Print out a summary of the translation status.
 
 ```python
 stats = reporter.get_stats(commits, src_lang)
@@ -181,8 +180,7 @@ reporter.print_stats(stats)
 """
 ```
 
-- detail mode: Print out the details of messages needing translations for each language
-and provide word count.
+- detail mode: Print out the details of messages needing translations for each language and provide word count.
 
 ```python
 details = reporter.get_details(commits, src_lang)
