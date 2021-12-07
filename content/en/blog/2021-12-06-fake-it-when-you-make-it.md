@@ -16,9 +16,11 @@ In the age of microservices and containerized applications, software is less mon
 
 As developers we'd like to think that we're following test-driven development or at least "development with tests". However, sometimes things need to be built quickly or we find ourselves inheriting an existing codebase. How do we write tests without fundamentally changing the source code?
 
-At Rotational we are interested in building intelligent distributed systems. This adds an additional layer to our testing problem because such projects often involve many external dependencies. A common strategy for dealing with these dependencies is to use mocks.
+At Rotational we are interested in building intelligent distributed systems. This adds an additional layer to our testing problem because such projects often involve many dependencies. Consider for example an application that enables decentralized exchange of cryptographic information, which might require external calls to email delivery services and certificate authorities as well as internal calls to token managers, such as the one in the sketch below.
 
-From a black box perspective a mock imitates the behavior of a service. We use a very generic definition of a service here; in reality it could be an internal or external API, a web server, an external process, or maybe even just a method. At the end of the day we want to be able to test that our code handles the possible scenarios that such a service introduces.
+![Cryptographic Information Exchange Service](/images/media/2021-12-06-fake-it-when-you-make-it/crypto.png)
+
+ A common strategy for dealing with these dependencies is to use mocks. From a black box perspective a mock imitates the behavior of a service. We use a very generic definition of a service here; in reality it could be an internal or external API, a web server, an external process, or maybe even just a method. At the end of the day we want to be able to test that our code handles the possible scenarios that such a service introduces.
 
 ## Go Forth And Mock
 
@@ -39,9 +41,9 @@ type EmailManager struct {
 	client sendgrid.Client
 }
 
-func New(conf EmailConfig) (m *EmailManager) {
-    m = &EmailManager{
-        client = sendgrid.NewSendClient(conf.SendGridAPIKey)
+func New(conf EmailConfig) *EmailManager {
+	return &EmailManager{
+        client: sendgrid.NewSendClient(conf.SendGridAPIKey),
     }
 }
 
@@ -90,13 +92,14 @@ type EmailConfig struct {
     SendGridAPIKey string
 }
 
-func New(conf config.EmailConfig) (m *EmailManager, err error) {
+func New(conf config.EmailConfig) (m *EmailManager) {
 	m = &EmailManager{conf: conf}
 	if conf.Testing {
 		m.client = &mockSendGridClient{}
 	} else {
 		m.client = sendgrid.NewSendClient(conf.SendGridAPIKey)
 	}
+	return m, nil
 }
 ```
 
