@@ -2,7 +2,7 @@
 title: "Fake It When You Make It: Creating Mocks in Go"
 slug: "fake-it-when-you-make-it"
 date: "2021-12-06T10:39:45-06:00"
-draft: true
+draft: false
 image_webp: images/blog/lake_reflection.webp
 image: images/blog/lake_reflection.jpg
 author: Patrick Deziel
@@ -18,15 +18,17 @@ As developers we'd like to think that we're following test-driven development or
 
 At Rotational we are interested in building intelligent distributed systems. This adds an additional layer to our testing problem because such projects often involve many external dependencies. A common strategy for dealing with these dependencies is to use mocks.
 
-From a black box perspective a mock imitates the behavior of a service. We use a very generic definition of a service here; in reality it could be an internal or external API, a web server, an external process, or maybe even just a method. At the end of the day we want to be able to test that our code handles the possible scenarios that such as service introduces.
+From a black box perspective a mock imitates the behavior of a service. We use a very generic definition of a service here; in reality it could be an internal or external API, a web server, an external process, or maybe even just a method. At the end of the day we want to be able to test that our code handles the possible scenarios that such a service introduces.
 
 ## Go Forth And Mock
 
-In languages like Python, adding unit tests to existing code is fairly straightforward, mostly due to the availability of third party libraries such as [pytest](docs.pytests.org). In addition, the weakly typed nature of Python lends itself to easy mocking. For example, the [unittest.mock](https://docs.python.org/3/library/unittest.mock.html) library can be used to replace method calls with calls that returned mocked responses (e.g., 200 OK responses to HTTP requests).
+In languages like Python, adding unit tests to existing code is fairly straightforward, mostly due to the availability of third party libraries such as [pytest](docs.pytests.org). In addition, the weakly typed nature of Python lends itself to easy mocking. For example, the [unittest.mock](https://docs.python.org/3/library/unittest.mock.html) library can be used to replace method calls with calls that return mocked responses (e.g., 200 OK responses to HTTP requests).
 
 This is in stark constrast with Go, which has some properties which make it more of a challenge to write effective tests. Go is strongly typed, which makes it impossible to swap out variables and methods for mocked types on the fly. In addition, Go makes an important distinction between exported and unexported variables, an analogue to public and private variables in other languages. While this design is useful for protecting variables from unwanted access, it also makes tests more difficult to implement since they usually exist in separate packages from the source code.
 
-Nevertheless, Go is a popular language for distributed systems and sometimes we need a way to mock things to enable testing. Thankfully, it's possible to create mocks with some effort. Suppose we have an `EmailManager`[^1] struct with an associated method that's responsible for sending emails using the [SendGrid](https://sendgrid.com/) service.
+Nevertheless, Go is a popular language for distributed systems and sometimes we need a way to mock things to enable testing. Thankfully, it's possible to create mocks with some effort.
+
+Suppose we have an `EmailManager`[^1] struct with an associated method that's responsible for sending emails using the [SendGrid](https://sendgrid.com/) service.
 
 ```go
 type EmailConfig struct {
@@ -248,7 +250,9 @@ func TestAuthenticateInvalidCreds() {
 
 ## Conclusion
 
-Testing distributed systems applications is difficult due to the many interdependencies involved and the design of programming languages such as Go. In this post, we've looked at a few examples of how mocks can be used to alleviate some of these pain points. Mocks can help us bypass code that we don't want to run in our tests without fundamentally changing the architecture of our applications. With some configuration, mocks allow us to test both the success and error paths of our service-dependent code, which enables more complete unit testing.
+Testing distributed systems applications is difficult due to the many interdependencies involved and the design of programming languages such as Go. In this post, we've looked at a few examples of how mocks can be used to alleviate some of these pain points.
+
+Mocks can help us bypass code that we don't want to run in our tests without fundamentally changing the architecture of our applications. With some configuration, mocks allow us to test both the success and error paths of our service-dependent code, enabling more complete unit testing, and a greater degree of confidence in the implemention of highly complex systems.
 
 ***
 
