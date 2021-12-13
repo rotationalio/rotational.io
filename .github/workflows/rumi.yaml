@@ -10,7 +10,7 @@ jobs:
           git clone https://github.com/rotationalio/rotational.io.git
 
       - name: Run Action 
-        uses: rotationalio/rumi-actions@main # to be changed after rumi publication
+        uses: rotationalio/rumi-actions@sc-2311 # to be changed after rumi publication
         with: 
           which_rumi: "file" # "file" for file-based or "msg" for message-based
           repo_path: "rotational.io"
