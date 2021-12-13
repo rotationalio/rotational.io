@@ -1,0 +1,28 @@
+name: Rumi translation monitoring
+on: push
+
+jobs:
+  rumi:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone target repository
+        run: |
+          git clone https://github.com/rotationalio/rotational.io.git
+
+      - name: Run Action 
+        uses: rotationalio/rumi-actions@main # to be changed after rumi publication
+        with: 
+          which_rumi: "file" # "file" for file-based or "msg" for message-based
+          repo_path: "rotational.io"
+          branch: "main"
+          content_paths: "content"
+          extensions: ".md"
+          target_files: ""
+          pattern: "folder/"  # "folder/" or ".lang" depending on the setup of file-based project
+          langs: "en fr zh" # You can specify the languages to monitor with language codes
+          src_lang: "en"
+          detail_src_lang: ""
+          detail_tgt_lang: ""
+          stats_mode: "True"
+          details_mode: "True"
+          use_cache: "True"
