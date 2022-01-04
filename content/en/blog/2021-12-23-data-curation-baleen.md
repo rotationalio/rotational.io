@@ -11,7 +11,7 @@ description: "Recent developments in Artificial Intelligence (AI) and Natural La
 
 Once you become an AI/ML practitioner, you quickly realize that the machine learning work is often the *least* challenging step in the pipeline. So what's still really, really hard? Getting good data! In this post, we'll explore why that is and introduce a new open source tool for data curation, Baleen. <!--more-->
 
-The world of AI has seen a rapid increase in its practical usage, as AI companies and startups raised $33 billion during 2020.[^1] Many companies like Urbint are using AI and real-world data to predict and prevent incidents that threaten critical infrastructure, workers, the community, and the environment.[^2] Similarly, DataRobot claims to have the only AI Cloud platform with an AI-native strategic team to help its customers use and understand their data.[^3] Natural language processing applications have also seen a surge; 60% of technology leaders report that their NLP budgets grew by at least 10% in 2021, while 33% reported a 30% increase, and 15% reported they had more than doubled.[^4]
+The world of AI has seen a rapid increase in its practical usage, as AI companies and startups raised $33 billion during 2020.[^1] Many companies like Urbint are using AI and real-world data to predict and prevent incidents that threaten critical infrastructure, workers, the community, and the environment.[^2] Similarly, DataRobot is an Al Cloud leader that connects AI to production for organizations through providing platform for all types of data, users, and environments.[^3] Natural language processing applications have also seen a surge; 60% of technology leaders report that their NLP budgets grew by at least 10% in 2021, while 33% reported a 30% increase, and 15% reported they had more than doubled.[^4]
 
 Although this accelerated movement towards AI, NLP, and Machine Learning has added value to how we interact with and perceive the world, we are consistently reminded to be cautious about the acceleration of technology. The fears of some detractors are difficult to take seriously, but even some of the most brilliant minds have expressed concerns:
 
@@ -45,7 +45,7 @@ Photo by [Art of Backpacking](https://flic.kr/p/8GAVjS) on [Flickr Commons](http
 ---
 [^1]: https://builtin.com/artificial-intelligence/ai-companies-roundup
 [^2]: https://www.urbint.com/about
-[^3]: https://www.datarobot.com/abo
+[^3]: https://www.datarobot.com/
 [^4]: https://www.globenewswire.com/news-release/2021/09/21/2300838/0/en/Enterprise-Investments-in-Natural-Language-Processing-Surge-in-2021-and-Accuracy-Remains-the-Top-Concern-New-Research-Reveals.html
 [^5]: https://www.bbc.com/news/technology-30290540
 [^6]: https://en.wikipedia.org/wiki/GPT-3
