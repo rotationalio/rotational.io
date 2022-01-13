@@ -1,7 +1,7 @@
 ---
 title: "Data Curation: A Whale of a Problem"
 slug: "data-curation-baleen"
-date: 2021-12-24T11:37:43-05:00
+date: 2022-01-13T11:37:43-05:00
 draft: false
 image_webp: images/blog/whale.webp
 image: images/blog/whale.jpg
@@ -29,9 +29,11 @@ However, there was a turning point to this invention that sparked a lot of contr
 
 The goal of training GPT-3 on a large, general dataset may have been to imbue the model with general intelligence, but unfortunately its creators also unknowingly fed toxic elements into the machine learning model. As a result, GPT-3 is ultimately limited by the data used to teach it to "speak", much of it rife with racism, sexism, and religious prejudice. This is one of the key [pitfalls of megamodels](https://rotational.io/blog/a-parrot-trainer-eats-crow/) trained on uncurated text.
 
-Are models better when trained on more specific data? Github's Copilot may be an example of AI that is trained on custom dataset. Copilot (run by OpenAI Codex) is designed to help developers generate code faster. It works by "understanding" the previous lines of code and suggesting individual lines and whole functions instantly[^10], and is trained on code respositories on Github.[^11] In order to properly utilize NLP, AI and deep learning, we need to produce quality models that contain quality data.
+Are models better when trained on more specific data? Github's Copilot may be one of the most interesting recent examples of AI trained on custom data. Copilot (run by OpenAI Codex) is designed to help developers generate code faster. It works by "understanding" the previous lines of code and suggesting individual lines and whole functions instantly[^10], and is trained on code repositories on Github.[^11]
 
 ## Getting Better Data for AI/ML
+
+In order to properly utilize NLP, AI and deep learning, we need to produce quality models that contain quality data.
 
 So how can you create your own curate data to ensure your machine learning models have the best quality input? At Rotational, our emphasis is to approach NLP (and other ML problems) by first generating and storing custom datasets to allow for better machine learning models. This is where projects like Baleen can fill in the gap.
 
