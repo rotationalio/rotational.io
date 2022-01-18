@@ -63,8 +63,8 @@ team:
     - name : Elysee Bleu
       image_webp : images/team/elysee.webp
       image : images/team/elysee.png
-      designation : Frontend Engineer
-      content : React Specialist
+      designation : 前端工程师
+      content : React.js 专家
       social :
         - icon : "ti-github" # themify icon pack : https://themify.me/themify-icons
           link : "https://github.com/elysee15"
@@ -73,8 +73,8 @@ team:
     - name : Daniel Sollis
       image_webp : images/team/daniel.webp
       image : images/team/daniel.jpg
-      designation : Jr Software Engineer
-      content : Architecture Specialist
+      designation : 初级软件工程师
+      content : 软件架构
       social :
         - icon : "ti-linkedin" # themify icon pack : https://themify.me/themify-icons
           link : "https://www.linkedin.com/in/daniel-sollis-67481114a/"
@@ -85,7 +85,7 @@ team:
     - name : Tianshu Li
       image_webp : images/team/tianshu.webp
       image : images/team/tianshu.jpg
-      designation : Open Source Contributor
+      designation : 开源贡献者
       content : 机器学习专家
       social :
         - icon : "ti-linkedin" # themify icon pack : https://themify.me/themify-icons

@@ -64,7 +64,7 @@ team:
       image_webp : images/team/elysee.webp
       image : images/team/elysee.png
       designation : Frontend Engineer
-      content : React Specialist
+      content : React.js Specialist
       social :
         - icon : "ti-github" # themify icon pack : https://themify.me/themify-icons
           link : "https://github.com/elysee15"
