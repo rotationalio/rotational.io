@@ -92,3 +92,15 @@ team:
           link : "https://www.linkedin.com/in/tianshu-li-5b5563b0/"
         - icon : "ti-github" # themify icon pack : https://themify.me/themify-icons
           link : "https://github.com/tl6kk"
+
+    # team member loop
+    - name : Nabiha Naqvie
+      image_webp : images/team/nabiha.webp
+      image : images/team/nabiha.jpg
+      designation : Contributeur Open Source
+      content : Spécialiste en traitement automatique du langage naturel
+      social :
+        - icon : "ti-linkedin" # themify icon pack : https://themify.me/themify-icons
+          link : "https://www.linkedin.com/in/nabiha-naqvie-22765612a/"
+        - icon : "ti-github" # themify icon pack : https://themify.me/themify-icons
+          link : "https://github.com/nabihanaqvie"
