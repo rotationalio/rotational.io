@@ -70,6 +70,13 @@ team:
           link : "https://github.com/elysee15"
 
     # team member loop
+    - name : Beci Lambrecht
+      image_webp : images/team/beci.webp
+      image : images/team/beci.png
+      designation : 专案经理
+      content : 敏捷专家
+
+    # team member loop
     - name : Daniel Sollis
       image_webp : images/team/daniel.webp
       image : images/team/daniel.jpg

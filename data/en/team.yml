@@ -82,6 +82,13 @@ team:
           link : "https://github.com/DanielSollis"
 
     # team member loop
+    - name : Beci Lambrecht
+      image_webp : images/team/beci.webp
+      image : images/team/beci.png
+      designation : Project Management Support
+      content : Agile Specialist
+
+    # team member loop
     - name : Tianshu Li
       image_webp : images/team/tianshu.webp
       image : images/team/tianshu.jpg
