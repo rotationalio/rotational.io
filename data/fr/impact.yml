@@ -8,7 +8,9 @@ impact:
     client1 : CipherTrace
     client2 : TRISA
     client3 : 202 Group
-    client4 : Hopewell
+    client4 : Qredo
+    client5 : The Tactile Group
+    client6 : Hopewell
 
   - icon : ti-book # themify icon pack : https://themify.me/themify-icons
     title : Publications
