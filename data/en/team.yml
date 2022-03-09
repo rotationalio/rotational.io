@@ -70,6 +70,13 @@ team:
           link : "https://github.com/elysee15"
 
     # team member loop
+    - name : Beci Lambrecht
+      image_webp : images/team/beci.webp
+      image : images/team/beci.png
+      designation : Project Management Support
+      content : Agile Specialist
+
+    # team member loop
     - name : Daniel Sollis
       image_webp : images/team/daniel.webp
       image : images/team/daniel.jpg
@@ -80,13 +87,6 @@ team:
           link : "https://www.linkedin.com/in/daniel-sollis-67481114a/"
         - icon : "ti-github" # themify icon pack : https://themify.me/themify-icons
           link : "https://github.com/DanielSollis"
-
-    # team member loop
-    - name : Beci Lambrecht
-      image_webp : images/team/beci.webp
-      image : images/team/beci.png
-      designation : Project Management Support
-      content : Agile Specialist
 
     # team member loop
     - name : Tianshu Li
@@ -111,3 +111,13 @@ team:
           link : "https://www.linkedin.com/in/nabiha-naqvie-22765612a/"
         - icon : "ti-github" # themify icon pack : https://themify.me/themify-icons
           link : "https://github.com/nabihanaqvie"
+
+    # team member loop
+    - name : Cletus Razakou
+      image_webp : images/team/cletus.webp
+      image : images/team/cletus.jpeg
+      designation : Senior Frontend Engineer
+      content : React.js Specialist
+      social :
+        - icon : "ti-github" # themify icon pack : https://themify.me/themify-icons
+          link : "https://github.com/masskoder"

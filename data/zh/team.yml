@@ -111,3 +111,13 @@ team:
           link : "https://www.linkedin.com/in/nabiha-naqvie-22765612a/"
         - icon : "ti-github" # themify icon pack : https://themify.me/themify-icons
           link : "https://github.com/nabihanaqvie"
+
+    # team member loop
+    - name : Cletus Razakou
+      image_webp : images/team/cletus.webp
+      image : images/team/cletus.jpeg
+      designation : 前端工程师
+      content : React.js 专家
+      social :
+        - icon : "ti-github" # themify icon pack : https://themify.me/themify-icons
+          link : "https://github.com/masskoder"
