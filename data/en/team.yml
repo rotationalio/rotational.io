@@ -49,7 +49,7 @@ team:
     - name : Patrick Deziel
       image_webp : images/team/patrick.webp
       image : images/team/patrick.jpg
-      designation : Software Engineer
+      designation : Distributed Systems Engineer
       content : Machine Learning Specialist
       social :
         - icon : "ti-linkedin" # themify icon pack : https://themify.me/themify-icons
