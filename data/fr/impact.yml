@@ -15,9 +15,10 @@ impact:
   - icon : ti-book # themify icon pack : https://themify.me/themify-icons
     title : Publications
     publication1 : Analyse de texte appliquée avec Python
-    publication2 :  Analyse de données avec Hadoop
-    publication3 : Cookbook pratique sur la science des données
-    publication4 : Consensus hiérarchique
+    publication2 : Analyse de données avec Hadoop
+    publication3 : Anti-entropie bilatérale pour une éventuelle cohérence
+    publication4 : Cookbook pratique sur la science des données
+    publication5 : Consensus hiérarchique
 
   - icon : ti-github # themify icon pack : https://themify.me/themify-icons
     title : Open Source
