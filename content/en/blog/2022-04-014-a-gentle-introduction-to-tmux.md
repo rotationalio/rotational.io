@@ -17,12 +17,8 @@ Tmux is an extremely powerful terminal solution for unix-like operating systems,
 ## Tmux Panes
 Tmux panes are essentially individual terminals that are created when you split a single terminal in Tmux. For example, here is a Tmux session with six panes open:
 
-
-
-
-
-
-
+![Pane Example](/images/static/blog/2022-04-14-tmux-pane-example.png)
+**<div align="center">Tmux Pane Example</div>**
 
 In order to navigate between panes, first you’ll need to understand a little bit about how Tmux commands work. All commands in Tmux are preceded by the command key. By default this is control-b. To change which pane you are on you would use ‘<command key> <arrow key>’, which means to go to the pane below you (provided there is one), you would press control-b, then the down arrow. To split a pane vertically press ‘<command key> % ’, to split a pane horizontally press ‘<command key> “ ’ (using a double quote). You can also cycle through different organizations of panes using ‘<command key> <space>’. 
 
@@ -36,26 +32,13 @@ Once you get a handle on panes and windows you might start thinking about how yo
 Tmuxinator is a program that uses YAML files to automate Tmux setups. I’ve found using Tmuxinator to be incredibly helpful and couldn’t imagine using Tmux without it. With a pretty simple YAML file you can do some pretty complex things in Tmux. Let's look at an example program and how you might create a Tmuxinator setup for it. I’ve created an example program in Golang using protocol buffers (more on that [here](https://rotational.io/blog/what-are-protocol-buffers/)) and contexts (more on that [here](https://rotational.io/blog/contexts-in-go-microservice-chains/)) to send messages around a ring of multiple servers. You can find that code [here](https://github.com/DanielSollis/context_ring) 
 if you’d like to play around with it yourself, but to go over the basics of the program we have various flags:
 
-
-
-
-
-
-
-
-
+![Flags](/images/static/blog/2022-04-14-tmux-program-flags.png)
+**<div align="center">Tmux Program Flags</div>**
 
 Specifying whether the program is a server or client, its port number, name, whether it is the last node in the circle, etc. By creating a client on a port, and then several servers on subsequent ports, the client will send a message that will be passed along to each server in the chain until it reaches the last server, at which point the message will be returned to the client. Now let’s take a look at the Tmuxinator file that will set this program up.
 
-
-
-
-
-
-
-
-
-
+![Tmuxinator YAML File](/images/static/blog/2022-04-14-tmuxinator-example)
+**<div align="center">Tmuxinator YAML File Example</div>**
 
 As you can see, it is fairly simple to create windows and panes, executing a sequence of commands in each of them. Tmuxinator configurations are located under the .tmuxinator directory in each user’s home directory. The first two lines give the configuration a name and specify where the setup’s root directory will be. 
 
