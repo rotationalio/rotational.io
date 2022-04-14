@@ -1,6 +1,7 @@
 ---
 title: "Daniel Sollis" # Your full name
-image: "" # Note if left empty, the Gravatar from your email will be used
+image: "images/team/daniel.jpg" # Note if left empty, the Gravatar from your email will be used
+email: "daniel@rotational.io"
 email: "daniel@rotational.io"
 social:
   - icon : "ti-linkedin" # themify icon pack : https://themify.me/themify-icons
