@@ -45,7 +45,7 @@ team:
         - icon : "ti-github" # themify icon pack : https://themify.me/themify-icons
           link : "https://github.com/eschmier"
 
-          # team member loop
+    # team member loop
     - name : Patrick Deziel
       image_webp : images/team/patrick.webp
       image : images/team/patrick.jpg
@@ -58,3 +58,66 @@ team:
           link : "https://twitter.com/PatrickDeziel"
         - icon : "ti-github" # themify icon pack : https://themify.me/themify-icons
           link : "https://github.com/pdeziel"
+
+    # team member loop
+    - name : Elysee Bleu
+      image_webp : images/team/elysee.webp
+      image : images/team/elysee.png
+      designation : Ingénieur front-end
+      content : Spécialiste React.js
+      social :
+        - icon : "ti-github" # themify icon pack : https://themify.me/themify-icons
+          link : "https://github.com/elysee15"
+
+    # team member loop
+    - name : Beci Lambrecht
+      image_webp : images/team/beci.webp
+      image : images/team/beci.png
+      designation : Chef de projet
+      content : Spécialiste agile
+
+    # team member loop
+    - name : Daniel Sollis
+      image_webp : images/team/daniel.webp
+      image : images/team/daniel.jpg
+      designation : Ingénieur logiciel junior
+      content : Spécialiste de l'architecture
+      social :
+        - icon : "ti-linkedin" # themify icon pack : https://themify.me/themify-icons
+          link : "https://www.linkedin.com/in/daniel-sollis-67481114a/"
+        - icon : "ti-github" # themify icon pack : https://themify.me/themify-icons
+          link : "https://github.com/DanielSollis"
+
+    # team member loop
+    - name : Tianshu Li
+      image_webp : images/team/tianshu.webp
+      image : images/team/tianshu.jpg
+      designation : Contributeur Open Source
+      content : Spécialiste en apprentissage automatique
+      social :
+        - icon : "ti-linkedin" # themify icon pack : https://themify.me/themify-icons
+          link : "https://www.linkedin.com/in/tianshu-li-5b5563b0/"
+        - icon : "ti-github" # themify icon pack : https://themify.me/themify-icons
+          link : "https://github.com/tl6kk"
+
+    # team member loop
+    - name : Nabiha Naqvie
+      image_webp : images/team/nabiha.webp
+      image : images/team/nabiha.jpg
+      designation : Contributeur Open Source
+      content : Spécialiste en traitement automatique du langage naturel
+      social :
+        - icon : "ti-linkedin" # themify icon pack : https://themify.me/themify-icons
+          link : "https://www.linkedin.com/in/nabiha-naqvie-22765612a/"
+        - icon : "ti-github" # themify icon pack : https://themify.me/themify-icons
+          link : "https://github.com/nabihanaqvie"
+
+    # team member loop
+    - name : Cletus Razakou
+      image_webp : images/team/cletus.webp
+      image : images/team/cletus.jpeg
+      designation : Ingénieur front-end
+      content : Spécialiste React.js
+      social :
+        - icon : "ti-github" # themify icon pack : https://themify.me/themify-icons
+          link : "https://github.com/masskoder"
