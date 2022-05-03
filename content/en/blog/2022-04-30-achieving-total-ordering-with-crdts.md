@@ -17,7 +17,7 @@ Conflict-Free Replicated Data Types have recently inspired the creation of more 
 
 Distributed systems require coordination between nodes. One effective method is to use locks to prevent concurrent access to shared resources, but this limits collaboration between users. A more advanced method is to use consensus algorithms such as Paxos or Raft, which are difficult to implement and are network-intensive due to the amount of communication required between nodes.
 
-CRDTs achieve consensus at the *data* layer. They consist of some state which can be modified and a `merge` function which merges two states together to produce a completely deterministic value. This is a critical differentiator from other consensus mechanisms. Instead of trying to avoid conflict, we embrace that conflict is going to happen and have some way of "auto-resolving" concurrent writes to a value that all peers will consistenyly agree on. This comes at the cost of sacrificing some user intent but improves the extent to which peers can operate concurrently.
+CRDTs achieve consensus at the *data* layer. They consist of some state which can be modified and a `merge` function which merges two states together to produce a completely deterministic value. This is a critical differentiator from other consensus mechanisms. Instead of trying to avoid conflict, we embrace that conflict is going to happen and have some way of "auto-resolving" concurrent writes to a value that all peers will consistently agree on. This comes at the cost of sacrificing some user intent but improves the extent to which peers can operate concurrently.
 
 CRDTs can also be thought of as data structures designed specifically for replication. The `merge` function is idempotent, associative, and commutative. This ensures that merges can be done in any order and therefore peers can operate mostly asynchronously, only communicating with each other when it's necessary to exchange data.
 
@@ -154,7 +154,7 @@ def insert(self, position, item):
 
 ### Replicating the events
 
-To achieve eventual consistency across a number of nodes we need to replicate an updated event log to the other nodes. Therefore, we need a merge function which merges the local state of the `Sequence` with a remote state that we receive from other nodes. Since this is a composite CRDT, we need to merge the logical clock and the event log to keep both in sync with the rest of the peers. We may also need to apply the newly discovered operations if we are managing a local state that's not CRDT-based.
+To achieve eventual consistency across a number of nodes we need to be able to replicate the event log to other nodes. At the CRDT level our `Sequence` needs to be able to merge with an arbitrary `Sequence` that we have received from another node. Merging this composite CRDT is equivalent to merging the two "child" CRDTs: the event set and the logical clock. If we are managing a local state that's not CRDT-based (e.g., an ordered list of objects exposed to the user), we need to "patch" the state by applying the newly discovered events.
 
 ```python
 def merge(self, other):
