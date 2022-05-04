@@ -209,7 +209,7 @@ Photo by [Aron Visuals](https://unsplash.com/@aronvisuals?utm_source=unsplash&ut
 - [Martin Kleppmann - CRDTs: The hard parts](https://youtu.be/PMVBuMK_pJY)
 - [Michael Whittaker - Consistency in Distributed Systems](https://mwhittaker.github.io/consistency_in_distributed_systems/3_crdt.html)
 
-#### Code References
+#### References
 
 [^1]: [Paxos Made Live - An Engineering Perspective](https://static.googleusercontent.com/media/research.google.com/en//archive/paxos_made_live.pdf)
 [^2]: [Scalable but wasteful: current state of replication in the cloud](https://dl.acm.org/doi/10.1145/3465332.3470882)
