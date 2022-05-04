@@ -191,7 +191,7 @@ def merge(self, other):
 
 Using the `Sequence` CRDT it's possible to implement a distributed log which maintains a total ordering of events across an arbitrary number of nodes. We have used this abstraction to create a prototype for a collaborative Jupyter-like notebook [editor](https://github.com/rotationalio/eirene). In this context, the events refer to inserts and removes of notebook cells and characters within those cells. When two peers want to sync, they send their versions of the notebook to each other. Since the CRDT merge results in a consistent state for both peers, they are both able to render a consistent state to the user.
 
-![Merging Sequences](/images/media/2022-04-30-achieving-total-ordering-with-crdts/alicebob.png)
+![Merging Sequences](/images/media/2022-05-04-achieving-total-ordering-with-crdts/alicebob.png)
 
 Feel free to check out our open source demo [client](https://github.com/rotationalio/eirene) and our [talk](https://www.slideshare.net/RebeccaBilbro/conflictfree-replicated-data-types-pycon-2022) at PyCon US 2022!
 
