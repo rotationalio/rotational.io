@@ -11,6 +11,6 @@ social:
     link : "https://github/com/pdeziel" # Github
 ---
 
-Software Engineer - Machine Learning Specialist
+Distributed Systems Engineer
 
 Python and Go programmer, machine learning enthusiast, sci-fi addict.
