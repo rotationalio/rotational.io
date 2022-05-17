@@ -14,3 +14,7 @@ blockquote p {
 .post-single-content img {
   width: 100%;
 }
+
+.post-single-content a {
+  text-decoration: underline;
+}
