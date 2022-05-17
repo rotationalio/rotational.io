@@ -1,6 +1,6 @@
 ---
-title: "Marshalling Go Enums to and from JSON"
-slug: "marshalling-go-enums-to-and-from-json"
+title: "Marshaling Go Enums to and from JSON"
+slug: "marshaling-go-enums-to-and-from-json"
 date: "2022-05-16T15:43:13-05:00"
 draft: true
 image_webp: images/blog/fireworks_star.webp
@@ -39,7 +39,7 @@ func (s *Suit) UnmarshalJSON(data []byte) (err error) {
 }
 ```
 
-The complete, interactive, and runable code can be found [on the Go playground](https://go.dev/play/p/Y5WZIFj2DDd).
+The complete, interactive, and runable code can be found [on the Go playground](https://go.dev/play/p/oMh1TDiwi_H).
 
 ## Customizing JSON Serialization in Go
 
