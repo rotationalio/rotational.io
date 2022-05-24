@@ -89,16 +89,16 @@ team:
           link : "https://github.com/DanielSollis"
 
     # team member loop
-    - name : Tianshu Li
-      image_webp : images/team/tianshu.webp
-      image : images/team/tianshu.jpg
-      designation : Contributeur Open Source
-      content : Spécialiste en apprentissage automatique
+    - name : Karen Belita
+      image_webp : images/team/karen.webp
+      image : images/team/karen.jpg
+      designation :  Ingénieur logiciel
+      content : Spécialiste devOps
       social :
         - icon : "ti-linkedin" # themify icon pack : https://themify.me/themify-icons
-          link : "https://www.linkedin.com/in/tianshu-li-5b5563b0/"
+          link : "https://www.linkedin.com/in/karenbelita/"
         - icon : "ti-github" # themify icon pack : https://themify.me/themify-icons
-          link : "https://github.com/tl6kk"
+          link : "https://github.com/kbelita"
 
     # team member loop
     - name : Nabiha Naqvie
@@ -111,6 +111,19 @@ team:
           link : "https://www.linkedin.com/in/nabiha-naqvie-22765612a/"
         - icon : "ti-github" # themify icon pack : https://themify.me/themify-icons
           link : "https://github.com/nabihanaqvie"
+
+
+    # team member loop
+    - name : Tianshu Li
+      image_webp : images/team/tianshu.webp
+      image : images/team/tianshu.jpg
+      designation : Contributeur Open Source
+      content : Spécialiste en apprentissage automatique
+      social :
+        - icon : "ti-linkedin" # themify icon pack : https://themify.me/themify-icons
+          link : "https://www.linkedin.com/in/tianshu-li-5b5563b0/"
+        - icon : "ti-github" # themify icon pack : https://themify.me/themify-icons
+          link : "https://github.com/tl6kk"
 
     # team member loop
     - name : Cletus Razakou
