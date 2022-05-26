@@ -238,11 +238,15 @@ a:link {
   color: #fff;
 }
 
-a:hover {
+a:hover, a:visited:hover {
   color: #097ec5;
 }
 
 a:visited {
+  color: #fff;
+}
+
+a.btn:visited:hover {
   color: #fff;
 }
 
@@ -256,7 +260,7 @@ a:visited {
   text-transform: uppercase;
 }
 
-.btn-main:hover {
+.btn-main:hover, a.btn-main:visited:hover {
   background: #fff;
   color: #000;
 }
