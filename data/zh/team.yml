@@ -89,16 +89,16 @@ team:
           link : "https://github.com/DanielSollis"
 
     # team member loop
-    - name : Tianshu Li
-      image_webp : images/team/tianshu.webp
-      image : images/team/tianshu.jpg
-      designation : 开源贡献者
-      content : 机器学习专家
+    - name : Karen Belita
+      image_webp : images/team/karen.webp
+      image : images/team/karen.jpg
+      designation :  初级软件工程师
+      content : 开发专家
       social :
         - icon : "ti-linkedin" # themify icon pack : https://themify.me/themify-icons
-          link : "https://www.linkedin.com/in/tianshu-li-5b5563b0/"
+          link : "https://www.linkedin.com/in/karenbelita/"
         - icon : "ti-github" # themify icon pack : https://themify.me/themify-icons
-          link : "https://github.com/tl6kk"
+          link : "https://github.com/kbelita"
 
     # team member loop
     - name : Nabiha Naqvie
@@ -111,6 +111,18 @@ team:
           link : "https://www.linkedin.com/in/nabiha-naqvie-22765612a/"
         - icon : "ti-github" # themify icon pack : https://themify.me/themify-icons
           link : "https://github.com/nabihanaqvie"
+
+    # team member loop
+    - name : Tianshu Li
+      image_webp : images/team/tianshu.webp
+      image : images/team/tianshu.jpg
+      designation : 开源贡献者
+      content : 机器学习专家
+      social :
+        - icon : "ti-linkedin" # themify icon pack : https://themify.me/themify-icons
+          link : "https://www.linkedin.com/in/tianshu-li-5b5563b0/"
+        - icon : "ti-github" # themify icon pack : https://themify.me/themify-icons
+          link : "https://github.com/tl6kk"
 
     # team member loop
     - name : Cletus Razakou
