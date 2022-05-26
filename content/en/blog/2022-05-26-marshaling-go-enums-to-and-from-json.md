@@ -1,7 +1,7 @@
 ---
 title: "Marshaling Go Enums to and from JSON"
 slug: "marshaling-go-enums-to-and-from-json"
-date: "2022-05-16T15:43:13-05:00"
+date: "2022-05-26T08:50:04-05:00"
 draft: false
 image_webp: images/blog/fireworks_star.webp
 image: images/blog/fireworks_star.jpg
