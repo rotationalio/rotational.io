@@ -2,31 +2,31 @@
 title: "Marshaling Go Enums to and from JSON"
 slug: "marshaling-go-enums-to-and-from-json"
 date: "2022-05-16T15:43:13-05:00"
-draft: true
+draft: false
 image_webp: images/blog/fireworks_star.webp
 image: images/blog/fireworks_star.jpg
 author: Benjamin Bengfort
 description: "How to customize JSON serialization for your data types while avoiding pointer and receiver problems -- a story in three parts."
 ---
 
-Customizing JSON serialization for your data types seems relatively straight forward on the surface, but when you dive in deeper, you quickly get mired in receiver, value, pointer, and indirection confusion. The patterns and rules-of-thumb you use in your normal Go code will go out the window, but in this post, we'll illustrate exactly how and why to handle these edge cases.
+Customizing JSON serialization for your data types seems relatively straightforward on the surface, but it's easy to get turned around in receiver, value, pointer, and indirection confusion. Many of the patterns and rules-of-thumb you use in your normal Go code can lead you astray. In this post, we'll illustrate exactly how and why to handle these edge cases.
 <!--more-->
 
-But before we get any farther, if you're using this as a reference to determine how to implement JSON serialization for an enum type, here is the code snippet you're looking for:
+But before we get any further, if you're using this as a reference to determine how to implement JSON serialization for an enum type, here is the code snippet you're looking for:
 
 ```go
 type Suit uint8
 
-// MarshalJSON must be a value receiver to ensure that a Suit on a parent object
+// MarshalJSON must be a *value receiver* to ensure that a Suit on a parent object
 // does not have to be a pointer in order to have it correctly marshaled.
 func (s Suit) MarshalJSON() ([]byte, error) {
     // It is assumed Suit implements fmt.Stringer.
     return json.Marshal(s.String())
 }
 
-// UnmarshalJSON must be a pointer receiver to ensure that the indirect from the
+// UnmarshalJSON must be a *pointer receiver* to ensure that the indirect from the
 // parsed value can be set on the unmarshaling object. This means that the
-// ParseSuit function must return a value and not a pointer.
+// ParseSuit function must return a *value* and not a pointer.
 func (s *Suit) UnmarshalJSON(data []byte) (err error) {
     var suits string
     if err := json.Unmarshal(data, &suits); err != nil {
@@ -43,7 +43,7 @@ The complete, interactive, and runable code can be found [on the Go playground](
 
 ## Customizing JSON Serialization in Go
 
-The German-American side of my family loves playing [Euchre](https://bicyclecards.com/how-to-play/euchre/), so I thought it might be an interesting idea to create an online multiplayer card game to stay connected during the pandemic. Implementing the backend service in Go, in order to describe decks and hands I had to define cards, and in order to define cards, I had to implement a `Suit` type to describe the four possible card suits, hearts, diamonds, clubs, and spades. An [Enum (short for enumerated type)](https://en.wikipedia.org/wiki/Enumerated_type) is an excellent choice to define suits, and in fact -- the Wikipedia article about enumerated types uses card suits as an example!
+The German-American side of my family loves playing [Euchre](https://bicyclecards.com/how-to-play/euchre/), so I thought it might be an interesting idea to create an online multiplayer card game to stay connected during the pandemic. To describe decks and hands, I had to define cards, and in order to define cards, I had to implement a `Suit` type to describe the four possible card suits: hearts, diamonds, clubs, and spades. An [Enum (short for enumerated type)](https://en.wikipedia.org/wiki/Enumerated_type) is an excellent choice to define suits, and in fact -- the Wikipedia article about enumerated types uses card suits as an example!
 
 Here is a classic definition of an enum in Go using [`iota`](https://www.gopherguides.com/articles/how-to-use-iota-in-golang) to declare constant uint8 for our suits.
 
@@ -94,7 +94,7 @@ func ParseSuit(s string) (Suit, error) {
 }
 ```
 
-The `Suit` enum uses 1 byte (a `uint8`) to define our constants in a small but still convenient package (technically all we need is 2 bits to represent our 4 values; a uint8 can represent up to 255 values but is far easier to work with). This is more compact than a string, but is not terribly human friendly (e.g. you don't want to have to remember that `Hearts == 1`) so we implement the [`fmt.Stringer`](https://pkg.go.dev/fmt#Stringer) interface so that we can print the suit as ♥, ♦, ♣, or ♠ and a `ParseSuit` function so we can easily convert a string to a `Suit`. We then get the best of both worlds: a compact enum that can be type checked by the compiler and a string representation that we can read and understand.
+The `Suit` enum uses 1 byte (a `uint8`) to define our constants in a small but still convenient package (technically all we need is 2 bits to represent our 4 values; a uint8 can represent up to 255 values but is far easier to work with). This is more compact than a string, but is not terribly human-friendly (e.g. you don't want to have to remember that `Hearts == 1`) so we implement the [`fmt.Stringer`](https://pkg.go.dev/fmt#Stringer) interface so that we can print the suit as ♥, ♦, ♣, or ♠ and a `ParseSuit` function so we can easily convert a string to a `Suit`. We then get the best of both worlds: a compact enum that can be typechecked by the compiler and a string representation that we can read and understand.
 
 All is well and we can implement our `Card` type:
 
@@ -119,7 +119,7 @@ We get the following result:
 {"value":7,"suit":4}
 ```
 
-We just did a bunch of work to be able to represent our `Suit` as a string, but the `encoding/json` package ignores it. It makes sense to use the human readable string representation for JSON, so to customize how JSON is created from our type, we can implement the [`json.Marshaler`](https://pkg.go.dev/encoding/json#Marshaler) interface:
+We just did a bunch of work to be able to represent our `Suit` as a string, but the `encoding/json` package ignores it -- this is because we need to customize how JSON is created from our type. To do so, we must implement the [`json.Marshaler`](https://pkg.go.dev/encoding/json#Marshaler) interface:
 
 ```go
 func (s Suit) MarshalJSON() ([]byte, error) {
@@ -127,7 +127,7 @@ func (s Suit) MarshalJSON() ([]byte, error) {
 }
 ```
 
-The `MarshalJSON` function converts the `Suit` into a string, then JSON marshals the string so that the output is valid JSON: `[]byte("\"♠\"")` (quotation marks included). The most important thing to remember is that the method has a _value_ receiver not a _pointer_ receiver -- more on this later. Implementing this method for our `Suit` object now marshals the following JSON data:
+The `MarshalJSON` function converts the `Suit` into a string, then JSON-marshals the string so that the output is valid JSON: `[]byte("\"♠\"")` (quotation marks included). The most important thing to remember is that the method has a _value_ receiver not a _pointer_ receiver -- more on this later. Implementing this method for our `Suit` object now marshals the following JSON data:
 
 ```json
 {"value":7,"suit":"♠"}
@@ -190,7 +190,7 @@ func (s Suit) UnmarshalJSON(data []byte) (err error) {
 }
 ```
 
-Then a copy of the value is passed into the `UnmarshalJSON` method and the original variable is not modified. This means that the `Suit` on the card you're trying to unmarshal will remain zero valued:
+Then a copy of the value is passed into the `UnmarshalJSON` method and the original variable is not modified. This means that the `Suit` on the card you're trying to unmarshal will remain zero-valued:
 
 ```go
 card := &Card{}
@@ -302,4 +302,4 @@ Duplicating struct definitions will often make maintenance harder, but this is s
 
 ## Conclusion
 
-When you define your own types in Go and you want control over how those types are serialized and deserialized into JSON - the `Marshaler` and `Unmarshaler` interfaces give you a lot of flexibility. However, knowing and understanding pointers, values, indirection, and receivers is essential to correctly implementing these interfaces and can lead to a lot of tripping hazards. In particular when dealing with enumerations or other primitive type aliases, the rule of thumb to use all pointer or all value receivers does not hold and instead mixed receiver types are your best bet.
+When you define your own types in Go and you want control over how those types are serialized and deserialized into JSON - the `Marshaler` and `Unmarshaler` interfaces give you a lot of flexibility. However, knowing and understanding pointers, values, indirection, and receivers is essential to correctly implementing these interfaces -- and common wisdom can sometimes lead to tripping hazards. In particular, when dealing with enumerations or other primitive type aliases, the rule of thumb to use all pointer or all value receivers does not hold, and instead mixed receiver types are your best bet.
