@@ -133,3 +133,13 @@ team:
       social :
         - icon : "ti-github" # themify icon pack : https://themify.me/themify-icons
           link : "https://github.com/masskoder"
+
+    # team member loop
+    - name : Natasha White
+      image_webp : images/team/natasha.webp
+      image : images/team/natasha.jpeg
+      designation : 技术写作实习
+      content : 文件专家
+      social :
+        - icon : "ti-github" # themify icon pack : https://themify.me/themify-icons
+          link : "https://github.com/nwhite222"
