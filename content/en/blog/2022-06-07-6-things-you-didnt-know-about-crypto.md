@@ -1,18 +1,18 @@
 ---
 title: "6 Things You Didn't Realize about Crypto"
 slug: "6-things-you-didnt-know-about-crypto"
-date: "2022-05-31T14:53:22-05:00"
+date: "2022-06-07T14:53:22-05:00"
 draft: false
 image_webp: images/blog/viking_runes.webp
 image: images/blog/viking_runes.jpg
-author: Edwin Schmierer
+author: Edwin Schmierer & Rebecca Bilbro
 description: "This post describes some of the most important facts about cryptocurrency that people don't often understand -- including crypto people!"
 ---
 
 As a distributed systems company, we’ve had the privilege of speaking with dozens of vendors building crypto-adjacent solutions over the past few years. We’ve learned a lot along the way, especially about some of the key misconceptions that continue to challenge builders, users, investors, and other crypto stakeholders. <!--more--> We’ve struggled with these misconceptions ourselves, in both the words and the code we write. In this post, we'll present common misunderstandings about crypto that we've encountered in the hopes of providing clearer direction to others forging ahead in this space.
 
 
-# Blockchains Are Intentionally Slow
+# #1: Blockchains Are Intentionally Slow
 
 First and foremost, blockchain is not intended to be a high performance or low latency solution. In fact, it may well be one of the *least* performant types of distributed system technology &mdash; and that's no accident.
 
@@ -22,7 +22,7 @@ As a result, blockchains must prevent [Byzantine behavior](https://en.wikipedia.
 
 When organizations seek ways to speed up blockchain transactions, they introduce technical risk that could result in system failure or exploitation by a bad actor. Let’s look more into technical risk and a recent example.
 
-# Technical Risk Is Significantly Underestimated
+# #2: Technical Risk Is Significantly Underestimated
 
 People who get involved with cryptocurrency are usually prepared for volatility &mdash; it's all part of the gamble of adopting a fairly young asset type. As such, investors and vendors alike tend to keep an eye trained on volatility indices. However, as far as we can tell, these indices do not take into account *technical* risks when evaluating crypto. We believe many projects are much riskier than their current valuation.
 
@@ -30,7 +30,7 @@ Many builders attempt to optimize, scale, or reduce friction in blockchain syste
 
 An example is the recent [Ronin Network hack](https://metaversal.banklesshq.com/p/analyzing-the-ronin-bridge-hack?s=r). Ronin was an Ethereum side chain developed by Sky Mavis, creators of Axie Infinity, one of the most popular Web3 games. Ronin was a blockchain designed to support faster transactions at scale as the number of Axie Infinity players grew. Sky Mavis prioritized scale and speed over Byzantine fault tolerance; Ronin had its own consensus algorithm and only nine validator nodes. Unfortunately, this optimization came at a steep price &mdash; an attacker successfully acquired the private keys to five of the nine nodes, effectively gaining control of the quorum, and exploited this access to withdraw $625m in Ethereum over 6 days.
 
-# Decentralization Means *More* Responsibility, Not Less
+# #3: Decentralization Means *More* Responsibility, Not Less
 
 This seems to be a misconception about decentralization in general &mdash; if no one is "in charge" of P2P networks, that means all participants are absolved of any responsibility. Unfortunately it's almost the opposite of the truth; decentralization increases each individual participant's obligations.
 
@@ -40,7 +40,7 @@ However, a decentralized system shifts many burdens and complexities to the end 
 
 There’s a reason we’ve come to rely heavily on banks and other intermediaries: they abstract away many of these complexities for us. P2P is great as long as you’re willing to accept the responsibilities and manage the challenges that come with it &mdash; don't expect a 1-800 number to call when something goes wrong.
 
-# It's Not Private
+# #4: It's Not Private
 
 Blockchains do not inherently provide privacy. In fact, for public blockchains, it’s the opposite. Adding privacy on top of a public blockchain is possible, but difficult.
 
@@ -52,18 +52,18 @@ Each blockchain network such as Bitcoin and Ethereum has its own block explorer 
 
 The risk of physical harm or exposure to users can be mitigated if PII data is sufficiently protected (e.g. via a private blockchain), though these solutions often rely on more centralization. Conversely, it’s also easier for [law enforcement to trace the use and lineage of funds by bad actors](https://www.wired.com/story/tracers-in-the-dark-welcome-to-video-crypto-anonymity-myth/) as a result of the public design and immutable transactions of blockchain systems.
 
-# Encryption Can't Be Treated As a Black Box
+# #5: Encryption Can't Be Treated As a Black Box
 
 Paradoxically, one of the most common gaps in understanding in the crypto community is... cryptography. Cryptography is a complex field, and so it is somewhat understandable that vendors might hope to decouple these components and treat them as a black box. Unfortunately this strategy often results in security holes and may also unintentionally alienate potential customers.
 
 In trustless networks, robust security comes from using a multi-pronged approach to encryption, which may include:
 - **asymmetric (aka public key) cryptography**: these are the pairs of public and private keys described earlier. The sender uses the receiver's public key to encrypt the message, which only the receiver (i.e. holder of the corresponding private key) should be able to decrypt.
 - **symmetric encryption**: this uses a shared key between the sender and receiver, allowing them to encrypt and decrypt messages while impeding man-in-the-middle attacks.
-- **TLS and/or mTLS**: requires a sender or receiver (or both, in the case of mTLS) to authenticate as a counterparty to create a connection for exchanging messages. TLS connections require certifications granted by a certificate authority and leverage public key cryptography in the authentication process.
+- **TLS and/or mTLS**: TLS stands for [transport layer security](https://en.wikipedia.org/wiki/Transport_Layer_Security). It requires a sender or receiver (or both, in the case of mutual TLS or mTLS) to authenticate as a counterparty to create a connection for exchanging messages. TLS connections require certificates granted by a certificate authority and leverage public key cryptography in the authentication process.
 
 For each of the above, it's important to understand the actual cryptographic algorithms and underlying mechanisms; implementation choices matter a lot, and can even have impacts on who will be allowed to use your products, since encryption laws and approved algorithms vary by country. Other choices, such as using [protocol buffers](https://rotational.io/blog/what-are-protocol-buffers/) and mTLS rather than a RESTful API, will provide enhanced security but may require additional client-side support since they are not as common. Finally, as discussed in the next section, crypto vendors must be prepared to encrypt data not only in flight but also at rest.
 
-# Data Storage Is Not A Solved Problem
+# #6: Data Storage Is Not A Solved Problem
 
 Stemming from its P2P design, data storage is an open problem in blockchain systems. With no centralized party in charge of storing data (or paying for that storage!), these problems are often passed along to end users to deal with.
 
