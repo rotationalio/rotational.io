@@ -73,7 +73,7 @@ Moreover, for some transactions, there is often additional sensitive data such a
 
 # Conclusion
 
-While cryptocurrency has been around for more than a decade, vendors and engineering teams are still at the very early stages of developing around crypto. Tensions between performance and fault-tolerance, tradeoffs between the draw of decentralization and the convenience having centralized decision-makers and blame-takers, and balancing acts between the varying laws and policies of countries around the world add up to a very complex and challenging space. We hope this post and others like it will encourage more thoughtfulness on the part of developers and consumers alike, and lead to more cohesive best practices around performance, privacy, security, and storage for crypto in the future.
+While cryptocurrency has been around for more than a decade, vendors and engineering teams are still at the very early stages of developing around crypto. Tensions between performance and fault-tolerance, tradeoffs between the draw of decentralization and the convenience of having centralized decision-makers and blame-takers, and balancing acts between the varying laws and policies of countries around the world add up to a very complex and challenging space. We hope this post and others like it will encourage more thoughtfulness on the part of developers and consumers alike, and lead to more cohesive best practices around performance, privacy, security, and storage for crypto in the future.
 
 
 ***
