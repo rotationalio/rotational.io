@@ -1,7 +1,7 @@
 ---
 title: "6 Things You Didn't Realize about Crypto"
 slug: "6-things-you-didnt-know-about-crypto"
-date: "2022-06-07T14:53:22-05:00"
+date: "2022-06-07T09:53:22-05:00"
 draft: false
 image_webp: images/blog/viking_runes.webp
 image: images/blog/viking_runes.jpg
