@@ -143,3 +143,13 @@ team:
       social :
         - icon : "ti-github" # themify icon pack : https://themify.me/themify-icons
           link : "https://github.com/nwhite222"
+
+    # team member loop
+    - name : Pete Keleher
+      image_webp : images/team/pete.webp
+      image : images/team/pete.png
+      designation : Technical Advisor
+      content : Distributed Systems Researcher
+      social :
+        - icon : "ti-linkedin" # themify icon pack : https://themify.me/themify-icons
+          link : "https://www.linkedin.com/in/pete-keleher-a03639b"
