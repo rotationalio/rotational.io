@@ -8,7 +8,7 @@ Tags: one-page, single-page, portfolio, custom-colors, post-formats, responsive,
 */
 /*=== MEDIA QUERY ===*/
 html {
-  background-color: #2e262e;
+  background-color: #26292e;
   color: #737f8a;
 }
 
@@ -179,7 +179,7 @@ a:hover {
 }
 
 .bg-dark {
-  background: #243027;
+  background: #242930;
 }
 
 .parallax-section {
@@ -815,7 +815,7 @@ a.btn:visited:hover {
   Services section 2
 ==================================================================*/
 .service-2 .service-item {
-  border: 1px solid rgb(238, 238, 238);
+  border: 1px solid #eee;
   margin-bottom: 30px;
   padding: 50px 20px;
   transition: all 0.3s ease 0s;
@@ -2066,7 +2066,7 @@ figcaption {
 }
 
 .impact .block .icon-box h3 {
-  color: #c4afbb;
+  color: #afc4b1;
 }
 
 /*=================================================================
