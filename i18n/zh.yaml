@@ -16,6 +16,8 @@
   translation: 关于我们
 - id: services
   translation: 服务
+- id: careers
+  translation: Careers
 - id: portfolio
   translation: Portfolio
 - id: team
