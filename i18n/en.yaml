@@ -16,6 +16,8 @@
   translation: About Us
 - id: services
   translation: Service
+- id: careers
+  translation: Careers
 - id: portfolio
   translation: Portfolio
 - id: team
