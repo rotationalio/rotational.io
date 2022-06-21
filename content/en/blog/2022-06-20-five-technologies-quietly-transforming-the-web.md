@@ -2,15 +2,15 @@
 title: "Five Technologies Quietly Transforming the Web"
 slug: "five-technologies-quietly-transforming-the-web"
 date: "2022-06-20T13:00:01-04:00"
-draft: true
-image_webp: images/blog/
-image: images/blog/
+draft: false
+image_webp: images/blog/model_t.webp
+image: images/blog/model_t.jpg
 author: Edwin Schmierer
 description: "This post describes the significance of five technologies - new and old - that are transforming the web as they gain widespread adoption and become the foundation for next gen applications."
 ---
-With almost 30 billion connected devices, "this isn’t Al Gore’s internet anymore."
+With almost 30 billion connected devices, "this isn’t Al Gore’s internet anymore." 
 
-Consider this: According to [Cisco’s Annual Internet Report](https://www.cisco.com/c/en/us/solutions/collateral/executive-perspectives/annual-internet-report/white-paper-c11-741490.html), there will be 29.3 billion internet-connected devices in 2023, or more than three for every human. The internet has no doubt transformed society and industry, as well as it has proved to be resilient and scalable. It also continues to evolve. 
+Consider this: According to [Cisco’s Annual Internet Report](https://www.cisco.com/c/en/us/solutions/collateral/executive-perspectives/annual-internet-report/white-paper-c11-741490.html), there will be 29.3 billion internet-connected devices in 2023, or more than three for every human. The internet has no doubt transformed society and industry, as well as it has proved to be resilient and scalable. It also continues to evolve.<!--more--> 
 
 Under the hood, we believe there are five technologies that are transforming the web. Many of these technologies have been around for years, but are just now gaining widespread adoption and thus becoming the foundation for applications of the next generation.
 
@@ -73,3 +73,9 @@ Distributed systems play a key role in designing, managing, and maintaining next
 We live in an age when every device is a data center. The internet and its underlying technologies are evolving to adapt to this reality. Application developers and organizations that build digital products must also adapt and leverage these technologies to build next-generation applications.These technologies should not just be in reach of large, well-resourced  cloud-native tech companies; they should be accessible to all builders. 
 
 At Rotational, we strive to make meaningful contributions and partner with developers building next-generation applications. As a first step, over the next few months, we’ll take a deeper dive into each of these technologies or trends. We hope you’ll come along for the ride.
+
+***
+
+Photo by [Internet Archive Book Images](https://www.flickr.com/photos/internetarchivebookimages/) on [Flickr Commons](https://flic.kr/p/otfVz5)
+
+***         
