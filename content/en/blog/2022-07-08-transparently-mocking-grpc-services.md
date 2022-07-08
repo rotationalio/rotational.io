@@ -1,8 +1,8 @@
 ---
 title: "Transparently Mocking gRPC Services"
 slug: "transparently-mocking-grpc-services"
-date: "2022-06-24T12:30:33-05:00"
-draft: true
+date: "2022-07-08T09:32:01-04:00"
+draft: false
 image_webp: images/blog/blue_laser.webp
 image: images/blog/blue_laser.jpg
 author: Patrick Deziel
@@ -132,7 +132,7 @@ func (s *Server) Serve(addr string) (err error) {
 	return nil
 }
 
-// The test code can pass in a bufconn listener here 
+// The test code can pass in a bufconn listener here
 func (s *Server) Run(sock net.Listener) {
 	defer sock.Close()
 	if err := s.srv.Serve(sock); err != nil {
