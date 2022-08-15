@@ -1,7 +1,7 @@
 ---
 title: "In Which an English Major Interns in Tech"
 slug: "english-major-interns-in-tech"
-date: "2022-08-15T08:10:14-04:00"
+date: "2022-08-15T06:10:14-04:00"
 draft: false
 image_webp: images/blog/paths.webp
 image: images/blog/paths.jpg
