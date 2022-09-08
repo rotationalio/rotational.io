@@ -80,7 +80,7 @@ team:
     - name : Daniel Sollis
       image_webp : images/team/daniel.webp
       image : images/team/daniel.jpg
-      designation : Jr Software Engineer
+      designation : Jr Distributed Systems Engineer
       content : Architecture Specialist
       social :
         - icon : "ti-linkedin" # themify icon pack : https://themify.me/themify-icons
