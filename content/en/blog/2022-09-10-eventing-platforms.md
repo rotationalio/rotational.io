@@ -15,7 +15,7 @@ Kafka and PubSub and Kinesis, oh my! Which eventing platform is best? In this po
 
 ## Message Queues
 
-Message queues (also know as message brokers) have been around for a while (~15 years) and are the oldest of the eventing systems. The central contribution of message queues is that our applications can do work more efficiently if we break big jobs into standardized chunks. By abstracting the complex machinations of our apps into chunks, we can then queue those chunks up and pass information between components more systematically.
+Message queues (also known as message brokers) have been around for a while (~15 years) and are the oldest of the eventing systems. The central contribution of message queues is that our applications can do work more efficiently if we break big jobs into standardized chunks. By abstracting the complex machinations of our apps into chunks, we can then queue those chunks up and pass information between components more systematically.
 
 Message queues are designed so that each message is consumed by only one consumer. Think about your list of weekend errands; once the chore is done, you check it off the list.
 
