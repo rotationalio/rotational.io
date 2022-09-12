@@ -19,7 +19,7 @@ Message queues (also known as message brokers) have been around for a while (~15
 
 Message queues are designed so that each message is consumed by only one consumer. Think about your list of weekend errands; once the chore is done, you check it off the list.
 
-If you can express your eventing problem in the context of a simple message queue (for instance, if you don't need to handle multiple producers and consumers, don't have to worry about event persistance or exactly once semantics, etc.), you are in luck! Message queues are by far the cheapest and easiest to implement eventing solution.
+If you can express your eventing problem in the context of a simple message queue (for instance, if you don't need to handle multiple producers and consumers, don't have to worry about event persistence or exactly once semantics, etc.), you are in luck! Message queues are by far the cheapest and easiest to implement eventing solution.
 
 **Examples of Message Queues**
 - [RabbitMQ](https://www.rabbitmq.com/)

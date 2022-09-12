@@ -9,6 +9,10 @@ author: Rebecca Bilbro
 description: "In this post we'll dig into the wild world of eventing system performance benchmarks, and explore how features like throughput and latency compare for different eventing platforms."
 ---
 
+Kafka and PubSub and Kinesis, oh my! Which eventing platform is best? In part 2 we'll explore some of the benchmarks published by different eventing platforms. If you missed part 1, you can read it here!
+
+<!--more-->
+
 
 ## Sources
 
