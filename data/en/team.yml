@@ -74,7 +74,7 @@ team:
       image_webp : images/team/beci.webp
       image : images/team/beci.png
       designation : Project Management Support
-      content : Agile Specialist
+      content : Certified PMP & Agile Specialist
 
     # team member loop
     - name : Daniel Sollis
