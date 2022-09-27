@@ -18,7 +18,7 @@ If you talk about WebAssembly (WASM), you just may spark debate about whether it
 
 That's exactly what happened on March 27, 2019 when Solomon Hykes, co-founder of Docker, tweeted “If WASM+WASI existed in 2008, we wouldn't have needed to created[sic] Docker. That's how important it is. WebAssembly on the server is the future of computing.”[^1]
 
-If you’re like how I was a few months ago it’s possible that you don’t know much about WASM, and you're wondering how something so big could have passed you by. That’s totally understandable! As our COO, Edwin Schmierer, [wrote earlier this year](https://rotational.io/blog/five-technologies-quietly-transforming-the-web/), WASM is one of those things been quietly transforming the web.
+If you’re like how I was a few months ago it’s possible that you don’t know much about WASM, and you're wondering how something so big could have passed you by. That’s totally understandable! As our COO, Edwin Schmierer, [wrote earlier this year](https://rotational.io/blog/five-technologies-quietly-transforming-the-web/), WASM is one of those things that has been quietly transforming the web.
 
 Even if you *have* heard of WASM, it’s still possible that you don’t know much about how it’s currently being used. By the end of this post, you should have a better understanding of what WASM is and how it's being utilized.
 
