@@ -10,7 +10,7 @@ description: "Learn about WebAssembly, how it is currently transforming web deve
 ---
 
 <!--write the summary part that will be previewed *below* and before the "more" comment-->
-If you talk about WebAssembly (WASM), you just may spark debate about whether it is really the next best thing in web development or the second coming of Java applets. It this post, we'll dive into WASM, how it is currently transforming web development, and why we think its future is so bright.
+If you talk about WebAssembly (WASM), you just may spark debate about whether it is really the next best thing in web development or the second coming of Java applets. In this post, we'll dive into WASM, how it is currently transforming web development, and why we think its future is so bright.
 
 <!--more-->
 
