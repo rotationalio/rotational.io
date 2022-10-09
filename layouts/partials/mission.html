@@ -1,0 +1,20 @@
+
+{{ $data := index site.Data site.Language.Lang }}
+
+{{ if $data.about.about.mission.enable }}
+    {{ with $data.about.about.mission }}
+    <div>
+        <div class="flex items-center mt-9 sm:mt-11 lg:mt-14">
+            <h3 class="font-bold text-xl sm:text-2xl lg:text-3xl">
+                <b class="text-[#1D65A6]">{{ with .title }} {{ index (split . " ") 0 | safeHTML }} {{ end }}</b>
+                {{ with .title }} {{ after (len (index (split . " ") 0)) . | safeHTML }} {{ end }}
+            </h3>
+        </div>
+        {{ range .mission_item}}
+            <p class="mt-4 text-base sm:mt-5 lg:mt-7 lg:text-lg">
+                {{ .text }}
+            </p>
+        {{ end }}
+    </div>
+    {{ end }}
+{{ end }}

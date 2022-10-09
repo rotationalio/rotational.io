@@ -2,31 +2,48 @@
   translation: Recent Rotations
 - id: readMore
   translation: Read more
+- id: seeMore
+  translation: See more
+- id: learnMore
+  translation: Learn more
 - id: viewAllPost
   translation: All Posts
 - id: share
   translation: Share
+- id: submit
+  translation: Submit
 - id: aboutAuthor
   translation: About author
 - id: authorsPosts
   translation: Author's posts
-- id: all
-  translation: All
-- id: about
-  translation: About Us
-- id: services
-  translation: Service
-- id: careers
-  translation: Careers
-- id: portfolio
-  translation: Portfolio
-- id: team
-  translation: Team
-- id: pricing
-  translation: Pricing
+- id: viewAll
+  translation: View all
 - id: blog
   translation: Blog
-- id: contact
-  translation: Contact
-- id: themefisher
-  translation: Themefisher
+- id: contactUs
+  translation: Contact Us
+- id: privacyPolicy
+  translation: Privacy Policy
+- id: termsOfUse
+  translation: Terms of Use
+- id: backToHome
+  translation: Back to Home
+- id: pageNotFound
+  translation: Page not found
+- id: ofLabel
+  translation: of
+- id: aboutPost
+  translation: About this Post
+- id: writtenBy
+  translation: Written by
+- id: sharePost
+  translation: Share this post
+- id: photoCredit
+  translation: Photo credit
+- id: enterEmailToSubscribe
+  translation: Enter Your Email To Subscribe
+- id: newsLetterEngagment
+  translation: I want to received the monthly newsletter and other updates from Rotational. You
+        agree to your Privacy Policy. You may unsubscribe at any time.*
+- id: newsLetterEmail
+  translation: Your email address

@@ -1,0 +1,56 @@
+############################### technologies ############################
+tech:
+  enable : true
+  title : Technologies We Use
+  tech_item :
+    # tech_item loop
+    - name : Golang
+      image : img/tech/golang.png
+      
+    # tech_item loop
+    - name : Python
+      image : img/tech/python.png
+
+    # tech_item loop
+    - name : Kubernetes
+      image : img/tech/kubernetes.svg
+
+    # tech_item loop
+    - name : Docker
+      image : img/tech/docker.svg
+
+    # tech_item loop
+    - name : Github
+      image : img/tech/github.svg
+    
+    # tech_item loop
+    - name : Prometheus
+      image : img/tech/prometheus.svg
+
+    # tech_item loop
+    - name : PostgreSQL
+      image : img/tech/postgresql.svg
+
+    # tech_item loop
+    - name : TensorFlow
+      image : img/tech/tensorflow.svg
+
+    # tech_item loop
+    - name : gRPC
+      image : img/tech/grpc.svg
+
+    # tech_item loop
+    - name : LevelDB
+      image : img/tech/leveldb.svg
+
+    # tech_item loop
+    - name : Cassandra
+      image : img/tech/cassandra.svg
+    
+    # tech_item loop
+    - name : Typescript
+      image : img/tech/typescript.svg
+
+    # tech_item loop
+    - name : Reactjs
+      image : img/tech/reactjs.svg

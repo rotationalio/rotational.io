@@ -3,16 +3,16 @@ title: "An Eventing Benchmark Bake-Off"
 slug: "eventing-benchmarks"
 date: "2022-09-10T12:28:08-04:00"
 draft: true
-image_webp: images/blog/pastries.jpg
-image: images/blog/pastries.webp
 author: Rebecca Bilbro
+image: img/blog/pastries.jpg
+category: "Technologies"
+photo_credit: George Tan via Flickr Commons
 description: "In this post we'll dig into the wild world of eventing system performance benchmarks, and explore how features like throughput and latency compare for different eventing platforms."
 ---
 
 Kafka and PubSub and Kinesis, oh my! Which eventing platform is best? In part 2 we'll explore some of the benchmarks published by different eventing platforms. If you missed part 1, you can read it here!
 
 <!--more-->
-
 
 ## Sources
 
@@ -36,10 +36,8 @@ Kafka and PubSub and Kinesis, oh my! Which eventing platform is best? In part 2 
 - [https://www.libhunt.com/compare-redpanda-vs-kafka](https://www.libhunt.com/compare-redpanda-vs-kafka)
 - [https://whoisnnamdi.com/why-developers-love-redpanda/](https://whoisnnamdi.com/why-developers-love-redpanda/)
 
-
-
-***
+---
 
 Photo by [George Tan](https://www.flickr.com/photos/j0035001-2/) via [Flickr Commons](https://flic.kr/p/RK733T)
 
-***
+---

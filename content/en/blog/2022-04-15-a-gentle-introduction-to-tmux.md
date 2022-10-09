@@ -3,8 +3,7 @@ title: "Getting Started With Tmux"
 slug: "getting-started-with-tmux"
 date: "2022-04-15T09:41:51-07:00"
 draft: false
-image_webp: images/media/2022-04-15-a-gentle-introduction-to-tmux/muxing.webp
-image: images/media/2022-04-15-a-gentle-introduction-to-tmux/muxing.jpg
+image: img/blog/2022-04-15-a-gentle-introduction-to-tmux/muxing.jpg
 author: Daniel Sollis
 description: "Tmux is an extremely powerful terminal solution for Unix-like operating systems, but it has a steep learning curve. In this post we'll go over some Tmux basics and make it a little less daunting to get started."
 ---
@@ -23,7 +22,7 @@ To get started, let's go over the two most important features in Tmux: panes and
 
 Tmux panes are essentially individual terminals that are created when you split a single terminal in Tmux. For example, here is a Tmux session with six panes open:
 
-![Pane Example](/images/media/2022-04-15-a-gentle-introduction-to-tmux/2022-04-15-tmux-pane-example.png)
+![Pane Example](/img/blog/2022-04-15-a-gentle-introduction-to-tmux/2022-04-15-tmux-pane-example.png)
 
 In order to navigate between panes, first you’ll need to understand a little bit about how Tmux commands work.
 

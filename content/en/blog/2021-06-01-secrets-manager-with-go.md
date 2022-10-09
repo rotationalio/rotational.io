@@ -3,8 +3,7 @@ title: "Using Google's Secret Manager API with Go"
 slug: "secrets-manager-with-go"
 date: "2021-06-01T08:26:38-04:00"
 draft: false
-image_webp: images/media/2021-06-01-secrets-manager-with-go/doorknocker.webp
-image: images/media/2021-06-01-secrets-manager-with-go/doorknocker.jpg
+image: img/blog/2021-06-01-secrets-manager-with-go/doorknocker.jpg
 author: Rebecca Bilbro
 description: "In this post, we'll dive into Google's Secret Manager service, walk through the setup steps, and explore some Go code to interact with the API."
 ---
@@ -37,21 +36,21 @@ The setup requires you to navigate between the Google Console UI and the command
 
 - First, [download and install the SDK](https://cloud.google.com/sdk/docs/install) that matches your os, and make sure to add it to your `PATH`.
 - Next, navigate to the Console UI and [configure](https://cloud.google.com/secret-manager/docs/configuring-secret-manager) your Google Cloud project to use Secret Manager. You'll use the UI to do both of the following:
-    - create a new project (e.g. in this example, we'll use "knock-knock")
-    - enable the Google Secrets API (via the [API Console](https://console.cloud.google.com/apis/dashboard)) for that project
+  - create a new project (e.g. in this example, we'll use "knock-knock")
+  - enable the Google Secrets API (via the [API Console](https://console.cloud.google.com/apis/dashboard)) for that project
 - Now, return to the command line and run `gcloud init` to authenticate. This will open a browser window, where you'll select the correct gcloud account. Back on the command line, select the new project you just made.
 - Next we'll assign IAM privileges. Using the Google Console UI, navigate to the [IAM page](https://console.cloud.google.com/iam-admin/iam), select the correct project, and select your name from the members list. You'll need to add a role, e.g. "Secret Manager Secret Version Manager", that will allow you to create and manage secrets.
 - Now, back in the command line, we'll make a Service Account, which will generate a local JSON file containing the service account credentials for a hypothetical user named Jeeves.
-    ```bash
-    gcloud iam service-accounts create jeeves
-    gcloud projects add-iam-policy-binding knock-knock --member="serviceAccount:jeeves@knock-knock.iam.gserviceaccount.com" --role="roles/secretmanager.secretVersionManager"
-    gcloud iam service-accounts keys create knock.json --iam-account=jeeves@knock-knock.iam.gserviceaccount.com
-    ```
+  ```bash
+  gcloud iam service-accounts create jeeves
+  gcloud projects add-iam-policy-binding knock-knock --member="serviceAccount:jeeves@knock-knock.iam.gserviceaccount.com" --role="roles/secretmanager.secretVersionManager"
+  gcloud iam service-accounts keys create knock.json --iam-account=jeeves@knock-knock.iam.gserviceaccount.com
+  ```
 - Next we'll add the path to those credentials to our PATH so that we can access them as environment variables; let's also add the project name as an environment variable.
-    ```bash
-    export GOOGLE_APPLICATION_CREDENTIALS="/home/user/knock.json"
-    export GOOGLE_PROJECT_NAME="knock-knock"
-    ```
+  ```bash
+  export GOOGLE_APPLICATION_CREDENTIALS="/home/user/knock.json"
+  export GOOGLE_PROJECT_NAME="knock-knock"
+  ```
 
 Ok, now we're ready to start creating secrets!
 
@@ -73,10 +72,10 @@ import (
 )
 ```
 
-
 ### Create a New Secret
 
 First let's write a function to create a new secret. This function will take as input two parameters:
+
 - a `parent`, which should be a string path, e.g. "projects/project-name".
 - a `secretID`, which should be a string name to uniquely refer to the secret (though not the same as the key for the payload; that will come later when we create a secret version).
 
@@ -240,7 +239,7 @@ func ListSecrets(parent string) (secrets []string, errors []error) {
 
 Secrets can be configured to automatically expire after a certain amount of time ([example here](https://github.com/rotationalio/knock/blob/main/knock.go#L58-L72)), but you can also delete them explicitly (assuming your [role permissions](https://cloud.google.com/secret-manager/docs/access-control) allow you delete access). Note that deletion is irreversible, and deleting a secret will delete all of the versions inside the namespace for that secret. Any service or workload that attempts to access a deleted secret receives a Not Found error.
 
-Here's an example function that deletes a secret given the  path to the secret, e.g. "projects/projectID/secrets/secretID".
+Here's an example function that deletes a secret given the path to the secret, e.g. "projects/projectID/secrets/secretID".
 
 ```golang
 // DeleteSecret deletes the secret with the given `name`, and all of its versions.
@@ -274,8 +273,6 @@ With the ability to create, list, and delete secrets, and to add and access vers
 The everyday systems we interact with increasingly store our private data, so the need to raise the bar on data encryption has never been stronger. The flexibility of tools like the Google Secret Manager API means that we can and should be securing all kinds of information; not just passwords and credentials, but other types of information such as personally identifiable information (PII), as well.
 
 When it comes to security in big data systems, it's not about _if_ there will be a breach, but _when_. Prevention methods become out-of-date as soon as new attack vectors are devised, and there are no silver bullets. That's why security is (and should be!) hard. Thankfully, as we've seen in this post, with tools like Secret Manager, and its IAM controls, default encryption, and developer API, building software with a security-first principle can become more straightforward and programmatic.
-
-
 
 ## Further Reading
 

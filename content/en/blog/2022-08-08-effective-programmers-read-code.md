@@ -3,13 +3,13 @@ title: "Effective Programmers Read Code"
 slug: "effective-programmers-read-code"
 date: "2022-08-08T08:10:14-04:00"
 draft: false
-image_webp: images/blog/blazes.webp
-image: images/blog/blazes.jpg
 author: Benjamin Bengfort
+image: img/blog/blazes.jpg
+category: Crypto
 description: "While we often think ourselves as authors of code we probably spend more time reading code than writing it. Changing our mindset to think of ourselves as avid code readers will make us more effective programmers."
 ---
 
-As programmers, we tend think of ourselves as *authors* of code, but our daily engineering practice probably requires us to spend more time reading code than writing it. Perhaps this is even a source of stress for you. Changing your mindset to think of yourself as an avid code *reader* may not only alleviate this anxiety, but also make you a more effective programmer, capable of architecting complex mental maps of code, a technique I refer to as "building the glass castle".
+As programmers, we tend think of ourselves as _authors_ of code, but our daily engineering practice probably requires us to spend more time reading code than writing it. Perhaps this is even a source of stress for you. Changing your mindset to think of yourself as an avid code _reader_ may not only alleviate this anxiety, but also make you a more effective programmer, capable of architecting complex mental maps of code, a technique I refer to as "building the glass castle".
 
 <!--more-->
 
@@ -53,15 +53,12 @@ When it comes to writing code, we certainly should not only focus on or prioriti
 
 Documentation is essential and should give us a high level overview of what the code should do. The best documentation gives us entry points into the code so that we can understand it further, but doesn't go so far that it prevents you from engaging with the code itself. Ensure that all packages, structs, methods, and functions are correctly documented with doc strings and that all are reachable from the map that the documentation describes.
 
-***
+---
 
 Photo by [Nicholas_T](https://www.flickr.com/photos/nicholas_t/) via [Flickr Commons](https://flic.kr/p/NFnpAu)
 
-***
-
+---
 
 [^1]: My inspiration for the term "glass castle" comes from the ["mind palace"](https://www.smithsonianmag.com/arts-culture/secrets-sherlocks-mind-palace-180949567/) portrayed by Benedict Cumberbach as Sherlock Holmes in BBC's _Sherlock_ (2010). Sherlock uses the mind palace as a memory technique where memories are linked to objects arranged in specific places in the palace. I thought "palace" was a little too grandiose for what I did so I changed it to castle and modified it with "glass" to imply the fragility of the mental abstraction while programming. I suppose "mind glass castle" would be the full term but that was a little unwieldy.
-
 [^2]: My experience of the glass castle is as a graph or molecular structure which I can "see" in my mind. In fact, sight is the best way to describe my interaction with the castle, sort of like how "reading" (instead of "hearing") is the best way to describe how I consume an audiobook. It's a bit hard to describe what I see, just as it would be hard to describe a dream, and people's sensory experiences are unique. I think the important note here is that as you program, you should be mentally interacting with this model in a way that feels right to you, e.g. is it "movement", "tartness", or "touch" for you?
-
 [^3]: And that is before code reviews!

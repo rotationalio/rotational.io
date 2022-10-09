@@ -1,0 +1,24 @@
+
+<meta charset="UTF-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ with site.Params.description }}{{ . }}{{ end }}{{ end }}">
+{{ with site.Params.author }}
+	<meta name="author" content="{{ . }}">
+{{ end }}
+
+<base href="{{ .Site.BaseURL }}">
+<title>{{ block "title" . }}{{ .Site.Title }} {{ with .Params.Title }} | {{ . }}{{ end }}{{ end }}</title>
+
+{{ "<!--Favicon-->" | safeHTML }}
+<link rel="shortcut icon" href="{{ `img/favicon.png` | absURL }}" type="image/x-icon">
+<link rel="icon" href="{{ `img/favicon.png` | absURL }}" type="image/x-icon">
+
+{{ "<!-- plugins -->" | safeHTML }}
+{{ range site.Params.plugins.css }}
+<link rel="stylesheet" href="{{ .link | absURL }}">
+{{ end }}
+
+{{"<!-- Main Stylesheet -->"|safeHTML}}
+<link rel="stylesheet" href="{{ `css/app.css` | absURL }}" media="screen">

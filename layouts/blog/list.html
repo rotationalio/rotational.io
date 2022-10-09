@@ -1,0 +1,23 @@
+{{ define "title" }}
+    {{ .Title }} &ndash; {{ .Site.Title }}
+{{ end }}
+
+{{ define "main" }}
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
+        <div class="mt-9 sm:mt-11 lg:mt-14">
+            <ul class="sm:grid grid-cols-3 gap-8">
+                {{ $paginator := .Paginate .Data.Pages }}
+                {{ range $paginator.Pages }}
+                    <li class="mt-6 sm:mt-0">
+                        {{ .Render "article" }}
+                    </li>
+                {{ end }}
+                
+            </ul>
+
+            
+            {{ partial "paginator.html" . }}
+
+        </div>
+    </div>
+{{ end }}

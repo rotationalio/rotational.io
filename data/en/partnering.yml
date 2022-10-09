@@ -1,0 +1,14 @@
+############################# Partnering ###################################
+partnering:
+  enable : true
+  title : Partnering with Us
+  image: img/image-holder.png
+  text_item:
+  # text_item loop
+  - text : The digital landscape has grown increasingly complex. From new technologies to changing user expectations to data privacy regulations, companies and creators require new and flexible approaches to build, grow, engage and protect their users and communities.
+  # text_item loop
+  - text : We provide trusted expertise to application developers seeking to build their data and systems engineering practices. We specialize in building fast, flexible, resilient and legally-compliant data architectures and cloud-to-edge computing systems for the modern digital landscape.
+  button_text: Learn more
+  button_action: '/services'
+  image_src: 'img/global_data_blue_flow.png'
+

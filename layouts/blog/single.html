@@ -1,0 +1,109 @@
+{{ define "title" }}
+{{ .Title }} &ndash; {{ .Site.Title }}
+{{ end }}
+
+
+{{ define "header" }}
+<div class="sm:pt-5 pb-6 relative bg-[#1D65A6]">
+  {{ partial "site-nav.html" . }}
+</div>
+{{ end }}
+
+{{ define "main" }}
+<div class="relative max-w-7xl mx-auto px-4 sm:px-6">
+  <div class="mt-14">
+    <img src="{{ .Params.image | absURL }}" alt="{{ .Title }}" class="mx-auto">
+    <div class="mt-8">
+      <h3 class="font-bold text-xl sm:text-2xl lg:text-3xl text-center">
+        <b class="text-[#1D65A6]">{{ with .Title }} {{ index (split . " ") 0 | safeHTML }} {{ end }}</b>
+        {{ with .Title }} {{ after (len (index (split . " ") 0)) . | safeHTML }} {{ end }}
+      </h3>
+      <div class="flex justify-center items-center mt-4 mb-6">
+        <img src="img/team/{{lower ( replace .Params.author ' ' '-')}}.png" alt=""
+          class="border-4 border-white rounded-full h-11 drop-shadow-lg"><span class="ml-3">{{ .Params.author }} |
+          {{ dateFormat "Monday, Jan 2, 2006" .Date }} | {{ .Params.category }}</span>
+      </div>
+      <div class="max-w-[800px] mx-auto">
+        {{ .Content }}
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-[#E8EFF6] max-w-[800px] mx-auto mt-9 p-8 rounded-lg">
+    <div class="text-center">
+      <h3 class="font-bold text-xl sm:text-2xl lg:text-3xl">
+        <b class="text-[#1D65A6]">{{ with i18n "aboutPost" }} {{ index (split . " ") 0 | safeHTML }} {{ end }}</b>
+        {{ with i18n "aboutPost" }} {{ after (len (index (split . " ") 0)) . | safeHTML }} {{ end }}
+      </h3>
+    </div>
+    <p class="mt-4 text-base mx-auto text-center sm:mt-5 lg:mt-7 lg:text-base max-w-2xl">
+      {{ .Params.description }}
+    </p>
+    <div class="md:flex text-base border-t pt-6 mt-6">
+      <div>
+        <div class="text-lg text-[#1D65A6] font-bold mb-3">
+          {{ i18n "writtenBy" }}:</div>
+        <div class="flex items-center mt-4 mb-6">
+          <img src="img/bbfort.png" alt="" class="border-4 border-white rounded-full h-11 drop-shadow-lg"><span
+            class="ml-3">{{ .Params.author }}</span>
+        </div>
+        <div class="text-lg text-[#1D65A6] font-bold mb-3">{{ i18n "photoCredit" }}:</div>
+        <p>{{ .Params.photo_credit }}</p>
+      </div>
+      <div class="sm:ml-10 sm:mt-0 mt-12">
+        <div class="text-lg text-[#1D65A6] font-bold mb-3">{{ i18n "sharePost" }}:</div>
+        <ul class="grid grid-cols-2 gap-6 mt-4">
+          <li><a href="" class="flex items-center"><img src="img/email.png" alt=""
+                class="p-3 bg-white rounded-lg mr-3"><span>info@rotational.io</span></a></li>
+          <li><a href="" class="flex items-center"><img src="img/github.png" alt=""
+                class="p-3 bg-white rounded-lg mr-3"><span>rotationalio</span></a></li>
+          <li><a href="" class="flex items-center"><img src="img/twitter.png" alt=""
+                class="p-3 bg-white rounded-lg mr-4"><span>rotationalio</span></a></li>
+          <li><a href="" class="flex items-center"><img src="img/linkedin.png" alt=""
+                class="p-3 bg-white rounded-lg mr-3"><span>rotational</span></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="flex justify-between mt-12 sm:mt-24 items-center">
+      <h2 class="font-bold text-2xl sm:text-4xl flex">
+        <span>
+          <b class="text-[#1D65A6]">{{ with i18n "blogTitle" }} {{ index (split . " ") 0 | safeHTML }} {{ end }}</b>
+          {{ with i18n "blogTitle" }} {{ after (len (index (split . " ") 0)) . | safeHTML }} {{ end }}
+
+        </span>
+        <img src="img/butterfly.png" alt="butterfly" class="ml-4 h-6 sm:h-8 relative top-1">
+      </h2>
+      <div>
+        <a href="/blog" class="flex text-base sm:text-lg items-center font-bold text-[#1D65A6]"><span>View all</span>
+          <img src="img/arr-right.png" alt="" class="h-4 ml-2"></a>
+      </div>
+    </div>
+    <div>
+      <div class="sm:grid grid-cols-3 gap-8 sm:mt-16">
+        {{ range first 3 (where site.RegularPages "Section" "==" "blog")}}
+        <div class="mt-6 ">
+          {{ .Render "article"}}
+        </div>
+        {{ end }}
+
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="bg-[#1D65A6] max-w-[800px] mx-auto mt-20 py-14 px-12 md:px-16 text-white md:rounded-lg">
+  <h6 class="font-bold text-center">{{ i18n "enterEmailToSubscribe" }}</h6>
+  <input type="text" placeholder="{{ i18n " newsLetterEmail" }}" class="w-full px-4 py-2.5 rounded-lg mt-6">
+  <div class="flex mt-6 items-start">
+    <input type="checkbox" class="w-6 h-6 block border-0 ">
+    <span class="ml-2 text-left">{{ i18n "newsLetterEngagment" }}</span>
+  </div>
+  <div class="flex justify-center">
+    <a href="" class="bg-[#192E5B] px-14 py-4 mt-10 rounded-lg text-sm text-white uppercase md:text-base"> {{ i18n
+      "submit" }}</a>
+  </div>
+</div>
+{{ end }}

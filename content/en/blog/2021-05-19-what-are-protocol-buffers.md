@@ -3,12 +3,10 @@ title: "What Are Protocol Buffers?"
 slug: "what-are-protocol-buffers"
 date: "2021-05-19T11:05:32-04:00"
 draft: false
-image_webp: images/media/2021-05-19-what-are-protocol-buffers/migration.webp
-image: images/media/2021-05-19-what-are-protocol-buffers/migration.jpg
+image: img/blog/2021-05-19-what-are-protocol-buffers/migration.jpg
 author: Rebecca Bilbro
 description: "Protocol buffers are a method for serializing data to efficiently send between programs. In this post, we'll explore some use cases for protobufs and learn the syntax."
 ---
-
 
 Protocol buffers are a method for serializing data to efficiently send between programs. The structure is reminiscent of XML or JSON, but unlike these more commonly used text-based serialization methods, protocol buffers are designed to produce extremely compact messages using a binary format. The main tradeoff is that protocol buffers aren't human-readable, so when developing APIs, it's always important to consider the use case. In this post, we'll explore some of the use cases for protobufs and get to know the syntax.
 
@@ -46,24 +44,27 @@ This is particularly useful if we're loading the model in a different process e.
 
 There are many ways to serialize data:
 
-- **Semi-structured data** ([XML](https://en.wikipedia.org/wiki/XML_Schema_(W3C)), [JSON](https://en.wikipedia.org/wiki/JSON)) are meant to balance human readability with machine readability. XML has schemas and can represent complex, hierarchical data, but is more verbose; JSON is often the default choice for Python programmers because Python `dicts` can be mapped directly to JSON, and vice versa.
+- **Semi-structured data** ([XML](<https://en.wikipedia.org/wiki/XML_Schema_(W3C)>), [JSON](https://en.wikipedia.org/wiki/JSON)) are meant to balance human readability with machine readability. XML has schemas and can represent complex, hierarchical data, but is more verbose; JSON is often the default choice for Python programmers because Python `dicts` can be mapped directly to JSON, and vice versa.
 - **Configuration formats** ([YAML](https://yaml.org/), [TOML](https://toml.io/en/)) are geared towards human readability and are used to represent simple structures like strings, integers, boolean values, lists, maps, etc. While YAML uses whitespace to delineate fields for parsing, TOML trades some flexibility to offer unambiguous mapping from fields to dictionaries and hash tables.
 - **Binary formats** ([Avro](https://avro.apache.org/), [Parquet](https://parquet.apache.org/)) err on the side of machine readability and speed.
 
 There is a tendency to falsely infer competition between different serialization standards. The choice is less about selecting a "correct" one-size-fits-all technique and more about thoughtfully designing around the use case and the user. For example:
 
 ##### Use Case 1: Building a Public Data API
-*Preferred serialization technique: JSON or XML*
+
+_Preferred serialization technique: JSON or XML_
 
 JSON and XML don't require a robust contract between the data provider backend and the data consumers on the other end. For the data providers, that means you can change the schema by adding new fields without necessarily having to deprecate older versions of the API. Likewise, data consumers can get away with not having the schema (or not having the most recent version of it), because the schema can be inferred from the human-readable results that come back from their API calls. For analysts and data scientists who interact with public APIs, this is a key feature.
 
 ##### Use Case 2: Cloud Configuration
-*Preferred serialization technique: YAML or TOML*
+
+_Preferred serialization technique: YAML or TOML_
 
 YAML and TOML frequently get used in cloud configuration, deployment, and devops tools like Kubernetes and Heroku. They're convenient because they end up having a lot of boilerplate that can be reused across deployments, and support documentation features like adding comments and notes that you can't do with JSON.
 
 ##### Use Case 3: Computing on Massive Datasets
-*Preferred serialization technique: Avro or Parquet*
+
+_Preferred serialization technique: Avro or Parquet_
 
 Avro and Parquet are used for large datasets intended for distributed computing where the schema can be self-contained with the data.
 
@@ -71,7 +72,7 @@ Avro and Parquet are used for large datasets intended for distributed computing 
 
 On the other hand, human-readability has costs. For one thing, the serialization techniques described above are not very compact. And how would you validate and verify that your data is in the correct form, or if a service or an API has changed enough to break your system? How long does it take to serialize and deserialize messages?
 
-Perhaps most importantly, if the messages are not going to be used for *communication between people*, these costs might not be worth paying, particularly if the serialization method is slowing down throughput or complicating data security.
+Perhaps most importantly, if the messages are not going to be used for _communication between people_, these costs might not be worth paying, particularly if the serialization method is slowing down throughput or complicating data security.
 
 Here's where protocol buffers come in!
 
@@ -148,11 +149,13 @@ message Model {
 Note that with protocol buffer messages, fields are numbered to ensure the encoded data is unambiguously parseable. In other words, for the `Model` message, a field value of 1 means the `id` will always be in the first position in the series of bytes, the model's `title` will be in the second position, the training `notes` in the third, etc.
 
 ##### 2. Compile the File
+
 Once you have downloaded and installed the protobuf compiler (e.g. using `brew`), you can compile the above file into the language of your choice. For instance:
 
 ```bash
 protoc --python_out=. conductor.proto
 ```
+
 ... will generate `conductor_pb2.py`, containing Python code that can be used to write to and read from the schema we defined in `conductor.proto`.
 
 Protocol buffers are intended to be application language agnostic and are available in a large number of programming languages. For example, to generate Go code, we'd do:
@@ -160,6 +163,7 @@ Protocol buffers are intended to be application language agnostic and are availa
 ```bash
 protoc --go_out=. conductor.proto
 ```
+
 ... which would generate `conductor.pb.go`.
 
 ##### 3. Apply Generated Protobuf Code
@@ -214,12 +218,11 @@ Using protocol buffers means more forethought is required to ensure backwards co
 
 If you're used to the [RESTful API paradigm](https://restfulapi.net/), protocol buffers may take some adjustment. However, they're definitely worth looking into as the use cases are becoming more common. As applications become more complex, data is continuously more distributed, and user experience increasingly hinges on intermediate data transmission, protobufs will only become more useful!
 
-
 ## Further Reading/Watching
 
- - [Protocol Buffers - Developer Docs](https://developers.google.com/protocol-buffers/)
- - [Protocol Buffer Examples in C++, Java, Python, and Go](https://github.com/protocolbuffers/protobuf/tree/master/examples)
- - [An Introduction to Protobufs by Ten Loh](https://youtu.be/72mPlAfHIjs)
- - [justforfunc #30: The Basics of Protocol Buffers](https://youtu.be/_jQ3i_fyqGA)
- - [Installing the Protobuf Compiler on a Mac by Erika Dike](https://medium.com/@erika_dike/installing-the-protobuf-compiler-on-a-mac-a0d397af46b8)
- - [JSON vs XML vs Protobufs on Stackoverflow](https://stackoverflow.com/questions/14028293/google-protocol-buffers-vs-json-vs-xml)
+- [Protocol Buffers - Developer Docs](https://developers.google.com/protocol-buffers/)
+- [Protocol Buffer Examples in C++, Java, Python, and Go](https://github.com/protocolbuffers/protobuf/tree/master/examples)
+- [An Introduction to Protobufs by Ten Loh](https://youtu.be/72mPlAfHIjs)
+- [justforfunc #30: The Basics of Protocol Buffers](https://youtu.be/_jQ3i_fyqGA)
+- [Installing the Protobuf Compiler on a Mac by Erika Dike](https://medium.com/@erika_dike/installing-the-protobuf-compiler-on-a-mac-a0d397af46b8)
+- [JSON vs XML vs Protobufs on Stackoverflow](https://stackoverflow.com/questions/14028293/google-protocol-buffers-vs-json-vs-xml)

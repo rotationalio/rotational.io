@@ -1,0 +1,27 @@
+<div class="flex items-center justify-center mt-16 mx-auto">
+   {{ $paginator := .Paginate .Data.Pages }}
+    <div>
+        {{ if $paginator.HasPrev }}
+            <a href="{{ $paginator.Prev.URL }}">
+                <img src="img/arrow-left.png" alt="" class="hover:bg-opacity-50 cursor-pointer rounded-lg p-6 bg-[#1D65A6]">
+            </a>
+        {{ else }}
+            <img src="img/arrow-left.png" alt="" class="cursor-pointer rounded-lg p-6 bg-[#1D65A6]-disabled">
+        {{ end }}
+    </div>
+
+    <ul class="flex">
+        <li class="py-2 px-4 m-4 border rounded-lg flex items-center">{{ $paginator.PageNumber }}</li>
+        <li class="p-3 m-4 opacity-40">{{ i18n "ofLabel" }}</li>
+        <li class="p-3 m-4">{{  $paginator.TotalPages }}</li>
+    </ul>
+    <div>
+        {{ if $paginator.HasNext }}
+            <a href="{{ $paginator.Next.URL }}">
+                <img src="img/arrow-right.png" alt="" class="hover:bg-opacity-50 cursor-pointer rounded-lg p-6 bg-[#1D65A6]">
+            </a>
+        {{ else }}
+            <img src="img/arrow-right.png" alt="" class="cursor-pointer rounded-lg p-6 bg-[#1D65A6]-disabled">
+        {{ end }}
+    </div>
+</div>

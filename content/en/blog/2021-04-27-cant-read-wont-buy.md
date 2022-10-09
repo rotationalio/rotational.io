@@ -3,19 +3,18 @@ title: "Can't Read, Won't Buy"
 slug: "cant-read-wont-buy"
 date: "2021-04-27T11:24:40-04:00"
 draft: false
-image_webp: images/media/2021-04-27-cant-read-wont-buy/streetblur.webp
-image: images/media/2021-04-27-cant-read-wont-buy/streetblur.jpg
+image: img/blog/2021-04-27-cant-read-wont-buy/streetblur.jpg
 author: Rebecca Bilbro
-description : "In this post we'll explore some of the drawbacks of using only English as a sales medium, check out some creative solutions, identify some areas of caution, and consider what this all means to the future of global app development."
+description: "In this post we'll explore some of the drawbacks of using only English as a sales medium, check out some creative solutions, identify some areas of caution, and consider what this all means to the future of global app development."
 ---
 
-To say we are not at our most empowered when trying to communicate in an unfamiliar language is a bit of an understatement. As if the limitations of one's own language weren't bad enough, trying to get along in a different language often makes you feel downright *helpless*. Research suggests these feelings also strongly inform consumers' buying decisions. What does this mean for companies who want to connect with users in other countries and cultures? In this post we'll explore some of the drawbacks of using English-only as a sales medium, check out some creative solutions, and consider what this all means for global app development.
+To say we are not at our most empowered when trying to communicate in an unfamiliar language is a bit of an understatement. As if the limitations of one's own language weren't bad enough, trying to get along in a different language often makes you feel downright _helpless_. Research suggests these feelings also strongly inform consumers' buying decisions. What does this mean for companies who want to connect with users in other countries and cultures? In this post we'll explore some of the drawbacks of using English-only as a sales medium, check out some creative solutions, and consider what this all means for global app development.
 
 ## Why Not Just English?
 
 In David Sedaris' (2000) ["Me Talk Pretty One Day"](https://en.wikipedia.org/wiki/Me_Talk_Pretty_One_Day), the author recounts his time as a new student in a French language class for adults:
 
-> The first day of class was nerve-racking because I knew I'd be expected to perform. [The teacher] proceeded to rattle off a series of administrative announcements: "If you have not *meimslsxp* or *lgpdmurct* by this time, then you should NOT be in this room. Has everyone *apzkiubjxow*? Everyone? Good, we shall begin."
+> The first day of class was nerve-racking because I knew I'd be expected to perform. [The teacher] proceeded to rattle off a series of administrative announcements: "If you have not _meimslsxp_ or _lgpdmurct_ by this time, then you should NOT be in this room. Has everyone _apzkiubjxow_? Everyone? Good, we shall begin."
 
 The administrative context is enough to transform what would otherwise be a low-stakes situation into a stressful one &mdash; it's one thing to miss every few words of a menu or a movie in a different language, and quite another to not fully understand a legal, political, or financial choice due to unfluency.
 
@@ -35,15 +34,16 @@ The relative cost of the good or service is also significant, and it's important
 
 > The more valuable an item, the more likely it is that someone will want to read about the product and buy it in their own language. (CRWB 2006)
 
-However, *language* is the primary blocker to successful internationalization; while 67.4% of the non-native English speakers polled said they regularly visited English-language websites, 74.5% rarely or never go on to make purchases there.
+However, _language_ is the primary blocker to successful internationalization; while 67.4% of the non-native English speakers polled said they regularly visited English-language websites, 74.5% rarely or never go on to make purchases there.
 
-![Visiting English-Language Websites](/images/media/2021-04-27-cant-read-wont-buy/2021-04-27-non-native-visits.png)
+![Visiting English-Language Websites](/img/blog/2021-04-27-cant-read-wont-buy/2021-04-27-non-native-visits.png)
 
-![Buying on English-Language Websites](/images/media/2021-04-27-cant-read-wont-buy/2021-04-27-cant-read-wont-buy.png)
+![Buying on English-Language Websites](/img/blog/2021-04-27-cant-read-wont-buy/2021-04-27-cant-read-wont-buy.png)
 
-## Why Not Just English, *Specifically*?
+## Why Not Just English, _Specifically_?
 
-In "Can't Read, Won't Buy", DePalma et al propose that the problem is not with English *specifically*, and that the same kinds of localization problems can take place anywhere:
+In "Can't Read, Won't Buy", DePalma et al propose that the problem is not with English _specifically_, and that the same kinds of localization problems can take place anywhere:
+
 > we consider English to be a proxy for any language in which a company chooses to market to people who speak a different tongue. (CRWB 2006)
 
 On the other hand, English is somewhat unique in that it has been the language of colonialism for so many cultures around the world. As such, English has played a not-exactly-neutral role in it's own proliferation. In many cases, English was forced upon indigenous communities, and understandably may still serve as a symbol of aggressive assimilation and the destruction of local languages and practices. Does that history of cultural and linguistic violence come to bear on modern consumer behavior?
@@ -58,7 +58,7 @@ Hansen started her career giving her students what she thought they wanted &mdas
 
 > English is the most widely spoken language in the world, and the vast majority of English speakers learned the language in a classroom. Yet, in conference rooms and language courses around the world, they are often told they speak "bad English." [When in fact] "bad English" — with its simplified vocabulary, fueled by the contributions of non-native speakers around the world — might be more universally understandable.
 
-A striking detail discussed in the podcast is that groups of non-native speakers communicate more effectively in English when there is no native English speaker present; the introduction of a single native English speaker to a conversation begins to increase the number of conversational hiccups and misunderstandings. It's hard not to imagine that power dynamics might have something to do with this interference. There are strong elements of psychological safety and trust at play. 
+A striking detail discussed in the podcast is that groups of non-native speakers communicate more effectively in English when there is no native English speaker present; the introduction of a single native English speaker to a conversation begins to increase the number of conversational hiccups and misunderstandings. It's hard not to imagine that power dynamics might have something to do with this interference. There are strong elements of psychological safety and trust at play.
 
 Indeed, even translation from English into other languages can be a slippery slope. As we've discussed in a [prior post](https://rotational.io/blog/a-parrot-trainer-eats-crow/), many of the language models used to power commercial Machine Translation products are trained first with English text. This means that the model's initial and primary way of understanding the world &mdash; metaphors and idioms, sports references, even regionalized spellings &mdash; are strongly rooted in English language and Western ways of thinking. All subsequent training is necessarily constrained by these initial influences.
 
@@ -72,7 +72,7 @@ One example that came up during the discussion was from the 2015 animated movie 
 
 > Kids in Japan love broccoli so much that Pixar had to change the cause of its child protagonist’s food hell from the tree-shaped vegetable to green peppers. In the UK and US version of the animation's main character Riley can be seen throwing tantrums in disgust at the idea of eating broccoli for dinner. But because the vegetable doesn’t have such a poor reputation among Japanese kids it was replaced with green peppers which are generally considered disgusting.
 
-![Riley won't eat broccoli - or was that green peppers?](/images/media/2021-04-27-cant-read-wont-buy/2021-04-27-riley-wont-eat-broccoli.png)
+![Riley won't eat broccoli - or was that green peppers?](/img/blog/2021-04-27-cant-read-wont-buy/2021-04-27-riley-wont-eat-broccoli.png)
 
 One takeaway from the King presentation was the value of LQA &mdash; [Localization Quality Assurance](https://blog.inlingogames.com/en/2021/01/13/what-is-localization-testing-and-why-is-it-important/) &mdash; particularly when performed by people who are genuine participants in the local culture. In tech, we tend to think about QA (Quality Assurance), in terms of testing out the functionality of the software, catching bugs in the user interface, detecting sequences of actions that can cause the app to crash, etc. LQA is focused on testing out the linguistic and cultural features of an app &mdash; finding word connotations that feel unnatural, identifying names that may signal prejudice, and spotting imagery that could be seen as culturally insensitive.
 
@@ -84,7 +84,7 @@ King is ahead of the curve &mdash; during the live presentation, an audience mem
 
 ## The Future of Localization
 
-What does all mean for app developers who are hoping to release software to geographically distributed audiences? It seems that there are several key challenges that such organizations will have to tackle; from the [technical challenges of distributed systems](https://rotational.io/blog/a-distributed-systems-maze/) to the recognition that English-only may not be a sufficient sales medium &mdash; and perhaps even more importantly, to learning how rich historic contexts and cultural experiences can inform the buying preferences of potential customers around the globe. Afterall, app developers know that the key to growth and impact is trust and engagement with end users; localization is increasingly important to those objectives. King Games proves localization *is* the future. 
+What does all mean for app developers who are hoping to release software to geographically distributed audiences? It seems that there are several key challenges that such organizations will have to tackle; from the [technical challenges of distributed systems](https://rotational.io/blog/a-distributed-systems-maze/) to the recognition that English-only may not be a sufficient sales medium &mdash; and perhaps even more importantly, to learning how rich historic contexts and cultural experiences can inform the buying preferences of potential customers around the globe. Afterall, app developers know that the key to growth and impact is trust and engagement with end users; localization is increasingly important to those objectives. King Games proves localization _is_ the future.
 
 ## References
 

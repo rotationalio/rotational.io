@@ -3,9 +3,10 @@ title: "The Eventing Platform Landscape"
 slug: "eventing-platforms"
 date: "2022-09-10T12:28:08-04:00"
 draft: false
-image_webp: images/blog/herd.jpg
-image: images/blog/herd.webp
 author: Rebecca Bilbro
+image: img/blog/herd.jpg
+category: Crypto
+photo_credit: Rajarshi Mitra via Flickr Commons
 description: "In this post we'll explore some of the types of eventing platforms and discuss why it's not about deciding which is objectively the 'best', but about knowing how to select the best tool for a given context."
 ---
 
@@ -22,6 +23,7 @@ Message queues are designed so that each message is consumed by only one consume
 If you can express your eventing problem in the context of a simple message queue (for instance, if you don't need to handle multiple producers and consumers, don't have to worry about event persistence or exactly once semantics, etc.), you are in luck! Message queues are by far the cheapest and easiest to implement eventing solution.
 
 **Examples of Message Queues**
+
 - [RabbitMQ](https://www.rabbitmq.com/)
 - [Amazon SQS](https://aws.amazon.com/sqs/)
 
@@ -36,11 +38,13 @@ So what's the distinction between Pub/Sub and Event Stream? The question comes d
 Persisting a log of events and adding guarantees does come at a significant cost though, since they require the underlying system to use a consensus mechanism to put events in order, and consensus is slow. Tools that provide these features often offer them turned off by default because that increases throughput and decreases latency, so be a bit wary of published metrics. Turning these features on often means a lot more elbow grease in terms of configuration, and will also influence cost.
 
 **Examples of Pub/Sub Tools**
+
 - [Google PubSub](https://cloud.google.com/pubsub)
 - [Ably](https://ably.com/pub-sub-messaging)
 - [Core NATS](https://docs.nats.io/nats-concepts/core-nats)
 
 **Examples of Event Stream Tools**
+
 - [Apache Kafka](https://kafka.apache.org/)
 - [Redpanda](https://redpanda.com/)
 - [Apache Pulsar](https://pulsar.apache.org/)
@@ -53,12 +57,12 @@ The final category in streaming events is Stream Processing, which marries the i
 With Stream Processing, computation is more tightly coupled to the message stream, but this can be an important optimization in cases that require homogeneous data processing. Consider a climate change dashboard that consumes IoT data flowing in from sensors around the world that measure global surface temperature in kelvins to compute a rolling mean. In this case, the computation required is relatively straightforward, but doing it at scale would be much more efficient with a Stream Processing tool.
 
 **Examples of Stream Processing Tools**
+
 - [Apache Storm](https://storm.apache.org/)
 - [Apache Heron](https://heron.apache.org/)
 - [Apache Flink](https://flink.apache.org/)
 - [AWS Kinesis](https://aws.amazon.com/kinesis/)
 - [Hazelcast Jet](https://jet-start.sh/)
-
 
 ## Conclusion
 
@@ -66,15 +70,14 @@ So which is best - message queues, event streams, or stream processing? The trut
 
 When you are in the architecture and design phase of a new application, rather than asking "what's the best eventing tool?", the better question to ask is "what features does my eventing problem require?". Developers frequently get comfortable with one tool and take it with them from job to job, and there is certainly something to be said for knowing how to turn the configuration knobs on your favorite eventing tool. But if you're looking for an excuse to cast a wider net and explore some different options that might be better for your latest use case, this is your sign to go for it.
 
-
 ## Sources
 
 - Frank de Jonge, [The different types of events in event-driven systems](https://blog.frankdejonge.nl/the-different-types-of-events-in-event-driven-systems/)
 - Sudhir Jonathan, [The Big Little Guide to Message Queues](https://sudhir.io/the-big-little-guide-to-message-queues)
 - Jonathan Beard, [A Short Intro to Stream Processing](https://www.jonathanbeard.io/blog/2015/09/19/streaming-and-dataflow.html)
 
-***
+---
 
 Photo by [Rajarshi Mitra](https://www.flickr.com/photos/tataimitra/) via [Flickr Commons](https://flic.kr/p/244actT)
 
-***
+---

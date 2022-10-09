@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    
+<meta charset="UTF-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="gRPC is a common framework used to facilitate communication between microservices, but testing these services can be a challenge. In this post we will present a simple strategy for mocking gRPC services in Go.">
+
+	<meta name="author" content="Rotational Labs, LLC">
+
+
+<base href="https://rotational.io/">
+<title>Rotational Labs  | Transparently Mocking gRPC Services</title>
+
+<!--Favicon-->
+<link rel="shortcut icon" href="https://rotational.io/img/favicon.png" type="image/x-icon">
+<link rel="icon" href="https://rotational.io/img/favicon.png" type="image/x-icon">
+
+<!-- plugins -->
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+<!-- Main Stylesheet -->
+<link rel="stylesheet" href="https://rotational.io/css/app.css" media="screen">
+
+  </head>
+
+  <body class="bg-white">
+
+    
+    <div class="sm:pt-5 pb-6 relative bg-[#1D65A6]">
+        <nav class="relative max-w-7xl mx-auto flex items-center justify-between text-white px-4 sm:px-6"
+            aria-label="Global">
+    <a href="/" class="pt-3 sm:pt-0">
+        <img src="img/logo.png" alt="Rotational" class="h-14 w-auto sm:h-14">
+    </a>
+    <div class="topnav" id="myTopnav">
+        
+        
+            <a 
+            class=""
+            href="/services/">
+            Services 
+            </a>
+        
+            <a 
+            class=""
+            href="/opensource/">
+            Open Source 
+            </a>
+        
+            <a 
+            class=""
+            href="/blog/">
+            Blog 
+            </a>
+        
+            <a 
+            class=""
+            href="/about/">
+            About 
+            </a>
+        
+            <a 
+            class=""
+            href="/contact/">
+            Contact Us 
+            </a>
+        
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+</nav>
+
+    </div>
+
+
+    <main>
+      
+<div class="relative max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="mt-14">
+      <img src="https://rotational.io/img/blog/dawn.png" alt="" class="mx-auto">
+      <div class="mt-8">
+        <h3 class="font-bold text-xl sm:text-2xl lg:text-3xl text-center">
+            <b class="text-[#1D65A6]"> Transparently </b>
+              Mocking gRPC Services 
+        </h3>
+        <div class="flex justify-center items-center mt-4 mb-6">
+          <img src="img/bbfort.png" alt=""
+            class="border-4 border-white rounded-full h-11 drop-shadow-lg"><span class="ml-3">Patrick Deziel |
+                Friday, Jul 8, 2022 | gRPC</span>
+        </div>
+        <div class="max-w-[800px] mx-auto">
+            <p>gRPC is an effective way of implementing service-to-service APIs. However, there are limited tools available for mocking and testing gRPC services out of the box. One option is to set up a live test server, although this comes with its own challenges and costs. In this blog post we will demonstrate a more lightweight solution using the <code>bufconn</code> package and a hand-built mock. Don&rsquo;t worry, this is easier than it seems!</p>
+<p>Before we get started, the full tutorial code is available <a href="https://github.com/rotationalio/agenda">here</a>.</p>
+<h2 id="the-api">The API</h2>
+<p>We usually start by defining the API for our service, as it can inform many decisions related to implementation. For simplicity, we&rsquo;ll create an &ldquo;agenda&rdquo; service in our <code>.proto</code> file, which contains two RPC definitions and some protocol buffers. The <code>Schedule</code> RPC will allow the client to schedule items on the agenda and the <code>Daily</code> RPC will return a list of scheduled items to the client.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-protobuf" data-lang="protobuf"><span style="display:flex;"><span><span style="color:#66d9ef">service</span> Agenda {<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#66d9ef">rpc</span> Schedule(Item) <span style="color:#66d9ef">returns</span> (Item) {}<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#66d9ef">rpc</span> Daily(Day) <span style="color:#66d9ef">returns</span> (Docket) {}<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>}<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">message</span> <span style="color:#a6e22e">Item</span> {<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#66d9ef">string</span> id <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#66d9ef">string</span> title <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>;<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#66d9ef">string</span> date <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>;<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#66d9ef">string</span> start <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span>;<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#66d9ef">string</span> end <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>;<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#66d9ef">string</span> description <span style="color:#f92672">=</span> <span style="color:#ae81ff">6</span>;<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>}<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">message</span> <span style="color:#a6e22e">Day</span> {<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#66d9ef">string</span> date <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#66d9ef">string</span> start <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>;<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#66d9ef">string</span> end <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>;<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>}<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">message</span> <span style="color:#a6e22e">Docket</span> {<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#66d9ef">string</span> date <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#66d9ef">repeated</span> Item items <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>;<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>}<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><h2 id="mocking-communication">Mocking Communication</h2>
+<p>In order to test our gRPC service, we will need to inject a mocked connection. Fortunately, there is a package called <code>bufconn</code><sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>, which does most of the heavy lifting for us. <code>bufconn</code> gives us two things, a way to start an in-memory buffered listener and a way to connect to that listener using a <code>grpc.DialOption</code>. We have found it useful to abstract this functionality into a &ldquo;utils&rdquo; package.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">bufsize</span> = <span style="color:#ae81ff">1024</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">1024</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Listener</span> <span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">sock</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">bufconn</span>.<span style="color:#a6e22e">Listener</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">New</span>() <span style="color:#f92672">*</span><span style="color:#a6e22e">Listener</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">Listener</span>{
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">sock</span>: <span style="color:#a6e22e">bufconn</span>.<span style="color:#a6e22e">Listen</span>(<span style="color:#a6e22e">bufsize</span>),
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">l</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Listener</span>) <span style="color:#a6e22e">Sock</span>() <span style="color:#a6e22e">net</span>.<span style="color:#a6e22e">Listener</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">l</span>.<span style="color:#a6e22e">sock</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">l</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Listener</span>) <span style="color:#a6e22e">Close</span>() <span style="color:#66d9ef">error</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">l</span>.<span style="color:#a6e22e">sock</span>.<span style="color:#a6e22e">Close</span>()
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">l</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Listener</span>) <span style="color:#a6e22e">Connect</span>(<span style="color:#a6e22e">ctx</span> <span style="color:#a6e22e">context</span>.<span style="color:#a6e22e">Context</span>, <span style="color:#a6e22e">opts</span> <span style="color:#f92672">...</span><span style="color:#a6e22e">grpc</span>.<span style="color:#a6e22e">DialOption</span>) (<span style="color:#a6e22e">cc</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">grpc</span>.<span style="color:#a6e22e">ClientConn</span>, <span style="color:#a6e22e">err</span> <span style="color:#66d9ef">error</span>) {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">opts</span> = append([]<span style="color:#a6e22e">grpc</span>.<span style="color:#a6e22e">DialOption</span>{<span style="color:#a6e22e">grpc</span>.<span style="color:#a6e22e">WithContextDialer</span>(<span style="color:#a6e22e">l</span>.<span style="color:#a6e22e">Dialer</span>)}, <span style="color:#a6e22e">opts</span><span style="color:#f92672">...</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">cc</span>, <span style="color:#a6e22e">err</span> = <span style="color:#a6e22e">grpc</span>.<span style="color:#a6e22e">DialContext</span>(<span style="color:#a6e22e">ctx</span>, <span style="color:#e6db74">&#34;bufnet&#34;</span>, <span style="color:#a6e22e">opts</span><span style="color:#f92672">...</span>); <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">nil</span>, <span style="color:#a6e22e">err</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">cc</span>, <span style="color:#66d9ef">nil</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">l</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Listener</span>) <span style="color:#a6e22e">Dialer</span>(<span style="color:#a6e22e">context</span>.<span style="color:#a6e22e">Context</span>, <span style="color:#66d9ef">string</span>) (<span style="color:#a6e22e">net</span>.<span style="color:#a6e22e">Conn</span>, <span style="color:#66d9ef">error</span>) {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">l</span>.<span style="color:#a6e22e">sock</span>.<span style="color:#a6e22e">Dial</span>()
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="creating-the-server">Creating the Server</h2>
+<p>Our server setup is fairly idiomatic aside from one important detail: we don&rsquo;t want our testing code to start a &ldquo;real&rdquo; server since we are mocking that with <code>bufconn</code>. Therefore, our <code>Serve</code> function is separated into <code>Serve</code> and <code>Run</code>. This will allow our tests to pass in a <code>net.Listener</code> object obtained from <code>bufconn</code> rather than a connection address. The exciting part about this is that it completely isolates the mock code from the production server code!</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Server</span> <span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">api</span>.<span style="color:#a6e22e">UnimplementedAgendaServer</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">srv</span>   <span style="color:#f92672">*</span><span style="color:#a6e22e">grpc</span>.<span style="color:#a6e22e">Server</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">echan</span> <span style="color:#66d9ef">chan</span> <span style="color:#66d9ef">error</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">New</span>() (<span style="color:#f92672">*</span><span style="color:#a6e22e">Server</span>, <span style="color:#66d9ef">error</span>) {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">s</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">Server</span>{
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">echan</span>: make(<span style="color:#66d9ef">chan</span> <span style="color:#66d9ef">error</span>, <span style="color:#ae81ff">1</span>),
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// Create the gRPC Server
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">srv</span> = <span style="color:#a6e22e">grpc</span>.<span style="color:#a6e22e">NewServer</span>()
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">api</span>.<span style="color:#a6e22e">RegisterAgendaServer</span>(<span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">srv</span>, <span style="color:#a6e22e">s</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">s</span>, <span style="color:#66d9ef">nil</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// The test code will not call this function
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">s</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Server</span>) <span style="color:#a6e22e">Serve</span>(<span style="color:#a6e22e">addr</span> <span style="color:#66d9ef">string</span>) (<span style="color:#a6e22e">err</span> <span style="color:#66d9ef">error</span>) {
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// Catch OS signals for graceful shutdowns
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">quit</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">chan</span> <span style="color:#a6e22e">os</span>.<span style="color:#a6e22e">Signal</span>, <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">signal</span>.<span style="color:#a6e22e">Notify</span>(<span style="color:#a6e22e">quit</span>, <span style="color:#a6e22e">os</span>.<span style="color:#a6e22e">Interrupt</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">go</span> <span style="color:#66d9ef">func</span>() {
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&lt;-</span><span style="color:#a6e22e">quit</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">echan</span> <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">Shutdown</span>()
+</span></span><span style="display:flex;"><span>	}()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// Listen for TCP requests on the specified address and port
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">sock</span> <span style="color:#a6e22e">net</span>.<span style="color:#a6e22e">Listener</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">sock</span>, <span style="color:#a6e22e">err</span> = <span style="color:#a6e22e">net</span>.<span style="color:#a6e22e">Listen</span>(<span style="color:#e6db74">&#34;tcp&#34;</span>, <span style="color:#a6e22e">addr</span>); <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Errorf</span>(<span style="color:#e6db74">&#34;could not listen on %q&#34;</span>, <span style="color:#a6e22e">addr</span>)
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// Run the server
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#66d9ef">go</span> <span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">Run</span>(<span style="color:#a6e22e">sock</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">Info</span>().<span style="color:#a6e22e">Str</span>(<span style="color:#e6db74">&#34;listen&#34;</span>, <span style="color:#a6e22e">addr</span>).<span style="color:#a6e22e">Str</span>(<span style="color:#e6db74">&#34;version&#34;</span>, <span style="color:#a6e22e">pkg</span>.<span style="color:#a6e22e">Version</span>()).<span style="color:#a6e22e">Msg</span>(<span style="color:#e6db74">&#34;agenda server started&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// Block and wait for an error either from shutdown or grpc.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> = <span style="color:#f92672">&lt;-</span><span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">echan</span>; <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">err</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">nil</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// The test code can pass in a bufconn listener here
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">s</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Server</span>) <span style="color:#a6e22e">Run</span>(<span style="color:#a6e22e">sock</span> <span style="color:#a6e22e">net</span>.<span style="color:#a6e22e">Listener</span>) {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">defer</span> <span style="color:#a6e22e">sock</span>.<span style="color:#a6e22e">Close</span>()
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">srv</span>.<span style="color:#a6e22e">Serve</span>(<span style="color:#a6e22e">sock</span>); <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">echan</span> <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">err</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="creating-the-client">Creating the Client</h2>
+<p>For the client implementation, we take advantage of variadic arguments to implement a similar isolation strategy. When initializing the client, the caller can pass in any number of <code>grpc.DialOption</code> parameters (even zero). In production, we may want to pass in mTLS or other options here. For testing, we will pass in the dialer from <code>bufconn</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Client</span> <span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">cc</span>  <span style="color:#f92672">*</span><span style="color:#a6e22e">grpc</span>.<span style="color:#a6e22e">ClientConn</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">rpc</span> <span style="color:#a6e22e">api</span>.<span style="color:#a6e22e">AgendaClient</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">New</span>(<span style="color:#a6e22e">endpoint</span> <span style="color:#66d9ef">string</span>, <span style="color:#a6e22e">opts</span> <span style="color:#f92672">...</span><span style="color:#a6e22e">grpc</span>.<span style="color:#a6e22e">DialOption</span>) (<span style="color:#a6e22e">c</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Client</span>, <span style="color:#a6e22e">err</span> <span style="color:#66d9ef">error</span>) {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">c</span> = <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">Client</span>{}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> len(<span style="color:#a6e22e">opts</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// Production connection opts (TLS, etc.)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		<span style="color:#a6e22e">opts</span> = make([]<span style="color:#a6e22e">grpc</span>.<span style="color:#a6e22e">DialOption</span>, <span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">opts</span> = append(<span style="color:#a6e22e">opts</span>, <span style="color:#a6e22e">grpc</span>.<span style="color:#a6e22e">WithTransportCredentials</span>(<span style="color:#a6e22e">insecure</span>.<span style="color:#a6e22e">NewCredentials</span>()))
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">cc</span>, <span style="color:#a6e22e">err</span> = <span style="color:#a6e22e">grpc</span>.<span style="color:#a6e22e">Dial</span>(<span style="color:#a6e22e">endpoint</span>, <span style="color:#a6e22e">opts</span><span style="color:#f92672">...</span>); <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">nil</span>, <span style="color:#a6e22e">err</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">rpc</span> = <span style="color:#a6e22e">api</span>.<span style="color:#a6e22e">NewAgendaClient</span>(<span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">cc</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">c</span>, <span style="color:#66d9ef">nil</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">c</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Client</span>) <span style="color:#a6e22e">Close</span>() <span style="color:#66d9ef">error</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">cc</span>.<span style="color:#a6e22e">Close</span>()
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="the-server-mock">The Server Mock</h2>
+<p>In previous blog posts, we have discussed the importance of isolation and configurability of mocks. We will now demonstrate these concepts by creating an independent mock for the <code>AgendaServer</code> in a different package that we can easily utilize from the tests. The key is to use the <code>bufconn</code> utilities that we created earlier to start the server by calling <code>Run</code> and create an accessor for the tests to access the client side of the <code>bufconn</code> connection.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> (
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">DailyRPC</span>    = <span style="color:#e6db74">&#34;agenda.v1.Agenda/Daily&#34;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">ScheduleRPC</span> = <span style="color:#e6db74">&#34;agenda.v1.Agenda/Schedule&#34;</span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// New creates a new mock AgendaServer. If bufnet is nil, one is created for the user.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">New</span>(<span style="color:#a6e22e">bufnet</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">utils</span>.<span style="color:#a6e22e">Listener</span>) <span style="color:#f92672">*</span><span style="color:#a6e22e">AgendaServer</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">bufnet</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">bufnet</span> = <span style="color:#a6e22e">utils</span>.<span style="color:#a6e22e">New</span>()
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">remote</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">AgendaServer</span>{
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">bufnet</span>: <span style="color:#a6e22e">bufnet</span>,
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">srv</span>:    <span style="color:#a6e22e">grpc</span>.<span style="color:#a6e22e">NewServer</span>(),
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">Calls</span>:  make(<span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">string</span>]<span style="color:#66d9ef">int</span>),
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">api</span>.<span style="color:#a6e22e">RegisterAgendaServer</span>(<span style="color:#a6e22e">remote</span>.<span style="color:#a6e22e">srv</span>, <span style="color:#a6e22e">remote</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">go</span> <span style="color:#a6e22e">remote</span>.<span style="color:#a6e22e">srv</span>.<span style="color:#a6e22e">Run</span>(<span style="color:#a6e22e">remote</span>.<span style="color:#a6e22e">bufnet</span>.<span style="color:#a6e22e">Sock</span>())
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">remote</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">AgendaServer</span> <span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">api</span>.<span style="color:#a6e22e">UnimplementedAgendaServer</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">bufnet</span>     <span style="color:#f92672">*</span><span style="color:#a6e22e">utils</span>.<span style="color:#a6e22e">Listener</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">srv</span>        <span style="color:#f92672">*</span><span style="color:#a6e22e">grpc</span>.<span style="color:#a6e22e">Server</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">Calls</span>      <span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">string</span>]<span style="color:#66d9ef">int</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">OnSchedule</span> <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">context</span>.<span style="color:#a6e22e">Context</span>, <span style="color:#f92672">*</span><span style="color:#a6e22e">api</span>.<span style="color:#a6e22e">Item</span>) (<span style="color:#f92672">*</span><span style="color:#a6e22e">api</span>.<span style="color:#a6e22e">Item</span>, <span style="color:#66d9ef">error</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">OnDaily</span>    <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">context</span>.<span style="color:#a6e22e">Context</span>, <span style="color:#f92672">*</span><span style="color:#a6e22e">api</span>.<span style="color:#a6e22e">Day</span>) (<span style="color:#f92672">*</span><span style="color:#a6e22e">api</span>.<span style="color:#a6e22e">Docket</span>, <span style="color:#66d9ef">error</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Tests can call this to get access to the bufconn
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">s</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">AgendaServer</span>) <span style="color:#a6e22e">Channel</span>() <span style="color:#f92672">*</span><span style="color:#a6e22e">utils</span>.<span style="color:#a6e22e">Listener</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">bufnet</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">s</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">AgendaServer</span>) <span style="color:#a6e22e">Shutdown</span>() {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">srv</span>.<span style="color:#a6e22e">GracefulStop</span>()
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">bufnet</span>.<span style="color:#a6e22e">Close</span>()
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Note that we have included a call counter on the <code>AgendaServer</code>. This allows us to verify from the tests what methods have been called via the gRPC server.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">s</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">AgendaServer</span>) <span style="color:#a6e22e">Daily</span>(<span style="color:#a6e22e">ctx</span> <span style="color:#a6e22e">context</span>.<span style="color:#a6e22e">Context</span>, <span style="color:#a6e22e">in</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">api</span>.<span style="color:#a6e22e">Day</span>) (<span style="color:#a6e22e">out</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">api</span>.<span style="color:#a6e22e">Docket</span>, <span style="color:#a6e22e">err</span> <span style="color:#66d9ef">error</span>) {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">Calls</span>[<span style="color:#a6e22e">DailyRPC</span>]<span style="color:#f92672">++</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">OnDaily</span>(<span style="color:#a6e22e">ctx</span>, <span style="color:#a6e22e">in</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">s</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">AgendaServer</span>) <span style="color:#a6e22e">Schedule</span>(<span style="color:#a6e22e">ctx</span> <span style="color:#a6e22e">context</span>.<span style="color:#a6e22e">Context</span>, <span style="color:#a6e22e">in</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">api</span>.<span style="color:#a6e22e">Item</span>) (<span style="color:#a6e22e">out</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">api</span>.<span style="color:#a6e22e">Item</span>, <span style="color:#a6e22e">err</span> <span style="color:#66d9ef">error</span>) {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">Calls</span>[<span style="color:#a6e22e">ScheduleRPC</span>]<span style="color:#f92672">++</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">OnSchedule</span>(<span style="color:#a6e22e">ctx</span>, <span style="color:#a6e22e">in</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>The mock also gives us the ability to configure how the gRPC handlers will behave. For example, we might want to test how our code deals with errors or specific responses from the handlers.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#75715e">// UseFixture loads a a JSON fixture from disk (usually in a testdata folder) to use as
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// the protocol buffer response to the specified RPC, simplifying handler mocking.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">s</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">AgendaServer</span>) <span style="color:#a6e22e">UseFixture</span>(<span style="color:#a6e22e">rpc</span>, <span style="color:#a6e22e">path</span> <span style="color:#66d9ef">string</span>) (<span style="color:#a6e22e">err</span> <span style="color:#66d9ef">error</span>) {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">data</span> []<span style="color:#66d9ef">byte</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">data</span>, <span style="color:#a6e22e">err</span> = <span style="color:#a6e22e">ioutil</span>.<span style="color:#a6e22e">ReadFile</span>(<span style="color:#a6e22e">path</span>); <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Errorf</span>(<span style="color:#e6db74">&#34;could not read fixture: %v&#34;</span>, <span style="color:#a6e22e">err</span>)
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">jsonpb</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">protojson</span>.<span style="color:#a6e22e">UnmarshalOptions</span>{
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">AllowPartial</span>:   <span style="color:#66d9ef">true</span>,
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">DiscardUnknown</span>: <span style="color:#66d9ef">true</span>,
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">switch</span> <span style="color:#a6e22e">rpc</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">case</span> <span style="color:#a6e22e">ScheduleRPC</span>:
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">out</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">api</span>.<span style="color:#a6e22e">Item</span>{}
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> = <span style="color:#a6e22e">jsonpb</span>.<span style="color:#a6e22e">Unmarshal</span>(<span style="color:#a6e22e">data</span>, <span style="color:#a6e22e">out</span>); <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Errorf</span>(<span style="color:#e6db74">&#34;could not unmarshal json into %T: %v&#34;</span>, <span style="color:#a6e22e">out</span>, <span style="color:#a6e22e">err</span>)
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">OnSchedule</span> = <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">context</span>.<span style="color:#a6e22e">Context</span>, <span style="color:#f92672">*</span><span style="color:#a6e22e">api</span>.<span style="color:#a6e22e">Item</span>) (<span style="color:#f92672">*</span><span style="color:#a6e22e">api</span>.<span style="color:#a6e22e">Item</span>, <span style="color:#66d9ef">error</span>) {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">out</span>, <span style="color:#66d9ef">nil</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">case</span> <span style="color:#a6e22e">DailyRPC</span>:
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">out</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">api</span>.<span style="color:#a6e22e">Docket</span>{}
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> = <span style="color:#a6e22e">jsonpb</span>.<span style="color:#a6e22e">Unmarshal</span>(<span style="color:#a6e22e">data</span>, <span style="color:#a6e22e">out</span>); <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Errorf</span>(<span style="color:#e6db74">&#34;could not unmarshal json into %T: %v&#34;</span>, <span style="color:#a6e22e">out</span>, <span style="color:#a6e22e">err</span>)
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">OnDaily</span> = <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">context</span>.<span style="color:#a6e22e">Context</span>, <span style="color:#f92672">*</span><span style="color:#a6e22e">api</span>.<span style="color:#a6e22e">Day</span>) (<span style="color:#f92672">*</span><span style="color:#a6e22e">api</span>.<span style="color:#a6e22e">Docket</span>, <span style="color:#66d9ef">error</span>) {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">out</span>, <span style="color:#66d9ef">nil</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">default</span>:
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Errorf</span>(<span style="color:#e6db74">&#34;unknown RPC %q&#34;</span>, <span style="color:#a6e22e">rpc</span>)
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">nil</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// UseError allows you to specify a gRPC status error to return from the specified RPC.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">s</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">AgendaServer</span>) <span style="color:#a6e22e">UseError</span>(<span style="color:#a6e22e">rpc</span> <span style="color:#66d9ef">string</span>, <span style="color:#a6e22e">code</span> <span style="color:#a6e22e">codes</span>.<span style="color:#a6e22e">Code</span>, <span style="color:#a6e22e">msg</span> <span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">error</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">switch</span> <span style="color:#a6e22e">rpc</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">case</span> <span style="color:#a6e22e">ScheduleRPC</span>:
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">OnSchedule</span> = <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">context</span>.<span style="color:#a6e22e">Context</span>, <span style="color:#f92672">*</span><span style="color:#a6e22e">api</span>.<span style="color:#a6e22e">Item</span>) (<span style="color:#f92672">*</span><span style="color:#a6e22e">api</span>.<span style="color:#a6e22e">Item</span>, <span style="color:#66d9ef">error</span>) {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">nil</span>, <span style="color:#a6e22e">status</span>.<span style="color:#a6e22e">Error</span>(<span style="color:#a6e22e">code</span>, <span style="color:#a6e22e">msg</span>)
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">case</span> <span style="color:#a6e22e">DailyRPC</span>:
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">OnDaily</span> = <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">context</span>.<span style="color:#a6e22e">Context</span>, <span style="color:#f92672">*</span><span style="color:#a6e22e">api</span>.<span style="color:#a6e22e">Day</span>) (<span style="color:#f92672">*</span><span style="color:#a6e22e">api</span>.<span style="color:#a6e22e">Docket</span>, <span style="color:#66d9ef">error</span>) {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">nil</span>, <span style="color:#a6e22e">status</span>.<span style="color:#a6e22e">Error</span>(<span style="color:#a6e22e">code</span>, <span style="color:#a6e22e">msg</span>)
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">default</span>:
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Errorf</span>(<span style="color:#e6db74">&#34;unknown RPC %q&#34;</span>, <span style="color:#a6e22e">rpc</span>)
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">nil</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="putting-it-all-together">Putting It All Together</h2>
+<p>With our mock package, writing gRPC tests becomes more of a matter of <em>what</em> we want to test rather than <em>how</em> to test it. The test below verifies that our mock works by simulting an error path and a &ldquo;happy&rdquo; path.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">TestSchedule</span>(<span style="color:#a6e22e">t</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">testing</span>.<span style="color:#a6e22e">T</span>) {
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// Setup AgendaServer mock
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">srv</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">mock</span>.<span style="color:#a6e22e">New</span>(<span style="color:#66d9ef">nil</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">defer</span> <span style="color:#a6e22e">srv</span>.<span style="color:#a6e22e">Shutdown</span>()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// Create a client to test that is connected to the mock server.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">dialer</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">grpc</span>.<span style="color:#a6e22e">WithContextDialer</span>(<span style="color:#a6e22e">srv</span>.<span style="color:#a6e22e">Channel</span>().<span style="color:#a6e22e">Dialer</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">creds</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">grpc</span>.<span style="color:#a6e22e">WithTransportCredentials</span>(<span style="color:#a6e22e">insecure</span>.<span style="color:#a6e22e">NewCredentials</span>())
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">agenda</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">client</span>.<span style="color:#a6e22e">New</span>(<span style="color:#e6db74">&#34;bufconn&#34;</span>, <span style="color:#a6e22e">dialer</span>, <span style="color:#a6e22e">creds</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">require</span>.<span style="color:#a6e22e">NoError</span>(<span style="color:#a6e22e">t</span>, <span style="color:#a6e22e">err</span>, <span style="color:#e6db74">&#34;could not connect to remote agenda via bufconn&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// Test the case where the server returns an error
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">srv</span>.<span style="color:#a6e22e">UseError</span>(<span style="color:#a6e22e">mock</span>.<span style="color:#a6e22e">ScheduleRPC</span>, <span style="color:#a6e22e">codes</span>.<span style="color:#a6e22e">DataLoss</span>, <span style="color:#e6db74">&#34;something bad happened&#34;</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">err</span> = <span style="color:#a6e22e">agenda</span>.<span style="color:#a6e22e">Schedule</span>(<span style="color:#e6db74">&#34;hello&#34;</span>, <span style="color:#e6db74">&#34;world&#34;</span>, <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Now</span>(), <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Now</span>().<span style="color:#a6e22e">Add</span>(<span style="color:#ae81ff">5</span><span style="color:#f92672">*</span><span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Minute</span>))
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">require</span>.<span style="color:#a6e22e">Error</span>(<span style="color:#a6e22e">t</span>, <span style="color:#a6e22e">err</span>, <span style="color:#e6db74">&#34;expected an error returned from the server&#34;</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">require</span>.<span style="color:#a6e22e">Equal</span>(<span style="color:#a6e22e">t</span>, <span style="color:#ae81ff">1</span>, <span style="color:#a6e22e">srv</span>.<span style="color:#a6e22e">Calls</span>[<span style="color:#a6e22e">mock</span>.<span style="color:#a6e22e">ScheduleRPC</span>])
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// Test the case where server returns a response
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">srv</span>.<span style="color:#a6e22e">UseFixture</span>(<span style="color:#a6e22e">mock</span>.<span style="color:#a6e22e">ScheduleRPC</span>, <span style="color:#e6db74">&#34;testdata/item.json&#34;</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">err</span> = <span style="color:#a6e22e">agenda</span>.<span style="color:#a6e22e">Schedule</span>(<span style="color:#e6db74">&#34;hello&#34;</span>, <span style="color:#e6db74">&#34;world&#34;</span>, <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Now</span>(), <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Now</span>().<span style="color:#a6e22e">Add</span>(<span style="color:#ae81ff">5</span><span style="color:#f92672">*</span><span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Minute</span>))
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">require</span>.<span style="color:#a6e22e">NoError</span>(<span style="color:#a6e22e">t</span>, <span style="color:#a6e22e">err</span>, <span style="color:#e6db74">&#34;expected no error in happy path&#34;</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">require</span>.<span style="color:#a6e22e">Equal</span>(<span style="color:#a6e22e">t</span>, <span style="color:#ae81ff">2</span>, <span style="color:#a6e22e">srv</span>.<span style="color:#a6e22e">Calls</span>[<span style="color:#a6e22e">mock</span>.<span style="color:#a6e22e">ScheduleRPC</span>])
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="conclusion">Conclusion</h2>
+<p>Mocking gRPC services for the purposes of testing isn&rsquo;t always straightforward. However, with tools like <code>bufconn</code> and some clever code factoring, we can create an in-memory mock that is completely isolated from production code. Introducing some measure of configurability into the mocks can also help us focus on <em>what</em> we&rsquo;re testing rather than <em>how</em> we&rsquo;re testing it.</p>
+<p>Check out the full tutorial code <a href="https://github.com/rotationalio/agenda">here</a>.</p>
+<hr>
+<p>Photo by <a href="https://unsplash.com/@jjying?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">JJ Ying</a> on <a href="https://unsplash.com/s/photos/technology?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></p>
+<hr>
+<h4 id="references">References</h4>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p><a href="https://pkg.go.dev/google.golang.org/grpc/test/bufconn">bufconn</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="bg-[#E8EFF6] max-w-[800px] mx-auto mt-9 p-8 rounded-lg">
+      <div class="text-center">
+        <h3 class="font-bold text-xl sm:text-2xl lg:text-3xl"><b class="text-[#1D65A6]">About</b> this Post</h3>
+      </div>
+      <p class="mt-4 text-base mx-auto text-center sm:mt-5 lg:mt-7 lg:text-base max-w-2xl">Lorem ipsum dolor sit amet,
+        consectetur adipiscing elit. Donec sodales placerat dolor, non placerat dolor sagittis id. Quisque sollicitudin
+        convallis mi, eget facilisis augue mattis viverra. Suspendisse feugiat pharetra massa, sed luctus magna pulvinar
+        sed.</p>
+      <div class="md:flex text-base border-t pt-6 mt-6">
+        <div>
+          <div class="text-lg text-[#1D65A6] font-bold mb-3">Written by:</div>
+          <div class="flex items-center mt-4 mb-6">
+            <img src="img/bbfort.png" alt=""
+              class="border-4 border-white rounded-full h-11 drop-shadow-lg"><span class="ml-3">Patrick Deziel</span>
+          </div>
+          <div class="text-lg text-[#1D65A6] font-bold mb-3">Photo credit:</div>
+          <p>Nicholas_T via Flickr Commons</p>
+        </div>
+        <div class="sm:ml-10 sm:mt-0 mt-12">
+          <div class="text-lg text-[#1D65A6] font-bold mb-3">Share this post:</div>
+          <ul class="grid grid-cols-2 gap-6 mt-4">
+            <li><a href="" class="flex items-center"><img src="img/email.png" alt=""
+                  class="p-3 bg-white rounded-lg mr-3"><span>info@rotational.io</span></a></li>
+            <li><a href="" class="flex items-center"><img src="img/github.png" alt=""
+                  class="p-3 bg-white rounded-lg mr-3"><span>rotationalio</span></a></li>
+            <li><a href="" class="flex items-center"><img src="img/twitter.png" alt=""
+                  class="p-3 bg-white rounded-lg mr-4"><span>rotationalio</span></a></li>
+            <li><a href="" class="flex items-center"><img src="img/linkedin.png" alt=""
+                  class="p-3 bg-white rounded-lg mr-3"><span>rotational</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
+        <div class="flex justify-between mt-12 sm:mt-24 items-center">
+            <h2 class="font-bold text-2xl sm:text-4xl flex">
+                <span>
+                    Recents <span class="text-[#1D65A6]">Rotations</span>
+                </span>
+                <img src="img/butterfly.png" alt="butterfly" class="ml-4 h-6 sm:h-8 relative top-1">
+            </h2>
+            <div>
+                <a href="/blog" class="flex text-base sm:text-lg items-center font-bold text-[#1D65A6]"><span>View all</span>
+                    <img src="img/arr-right.png" alt="" class="h-4 ml-2"></a>
+            </div>
+        </div>
+        <div>
+            <div class="sm:grid grid-cols-3 gap-8 sm:mt-16">
+                
+                    <div class="mt-6 ">
+                        <div class="article">
+    <img src="https://rotational.io/img/blog/blazes.png" alt="" class="rounded-t-xl">
+    <div class="bg-[#ECF6FF] rounded-b-xl">
+        <div class="px-6 pt-4">
+            <h4 class="text-base font-bold text-[#1D65A6]">Technologies</h4>
+            <h3 class="text-xl font-extrabold mt-3 "><a href="https://rotational.io/blog/webassembly-the-future-of-computing/">Why WebAssembly Is the Future of Computing</a></h3>
+            <p class="mt-3 text-base font-extralight"><!-- raw HTML omitted -->
+<p>If you talk about WebAssembly (WASM), you just may spark debate about whether it is really the next best thing in web development or the second coming of Java applets. In this post, we&rsquo;ll dive into WASM, how it is currently transforming web development, and why we think its future is so bright.</p></p>
+        </div>
+        <footer class="flex justify-between items-center px-6 py-3 border-t mt-6">
+            <div class="flex items-center">
+                <img src="img/avatar.png" alt="" class="rounded-full">
+                <span class="ml-4 font-extralight">Danielle Maxwell</span>
+            </div>
+            <div class="font-extralight">
+                Sep 27, 2022
+            </div>
+        </footer>
+    </div>
+</div>
+                    </div>
+                
+                    <div class="mt-6 ">
+                        <div class="article">
+    <img src="https://rotational.io/img/blog/viking_runes.png" alt="" class="rounded-t-xl">
+    <div class="bg-[#ECF6FF] rounded-b-xl">
+        <div class="px-6 pt-4">
+            <h4 class="text-base font-bold text-[#1D65A6]">Crypto</h4>
+            <h3 class="text-xl font-extrabold mt-3 "><a href="https://rotational.io/blog/eventing-platforms/">The Eventing Platform Landscape</a></h3>
+            <p class="mt-3 text-base font-extralight"><p>Kafka and PubSub and Kinesis, oh my! Which eventing platform is best? In this post we&rsquo;ll explore the three primary categories of eventing systems and understand their similarities, differences, and key use cases.</p></p>
+        </div>
+        <footer class="flex justify-between items-center px-6 py-3 border-t mt-6">
+            <div class="flex items-center">
+                <img src="img/avatar.png" alt="" class="rounded-full">
+                <span class="ml-4 font-extralight">Rebecca Bilbro</span>
+            </div>
+            <div class="font-extralight">
+                Sep 10, 2022
+            </div>
+        </footer>
+    </div>
+</div>
+                    </div>
+                
+                    <div class="mt-6 ">
+                        <div class="article">
+    <img src="https://rotational.io/img/blog/dawn.png" alt="" class="rounded-t-xl">
+    <div class="bg-[#ECF6FF] rounded-b-xl">
+        <div class="px-6 pt-4">
+            <h4 class="text-base font-bold text-[#1D65A6]">Technologies</h4>
+            <h3 class="text-xl font-extrabold mt-3 "><a href="https://rotational.io/blog/ranges-of-integer-data-types/">Ranges of Integer Data Types</a></h3>
+            <p class="mt-3 text-base font-extralight"><p>The data type choices we make when building data systems or metrics is critically important: as our systems run for long periods of time it can be easy to overflow the integers that we use (Y2K bug anyone?). As a result, I find myself constantly checking the sizes of standard int types but I haven&rsquo;t found a good way to Google this. This blog post is a quick reference for the standard sizes and a discussion on why it matters.</p></p>
+        </div>
+        <footer class="flex justify-between items-center px-6 py-3 border-t mt-6">
+            <div class="flex items-center">
+                <img src="img/avatar.png" alt="" class="rounded-full">
+                <span class="ml-4 font-extralight">Benjamin Bengfort</span>
+            </div>
+            <div class="font-extralight">
+                Sep 7, 2022
+            </div>
+        </footer>
+    </div>
+</div>
+                    </div>
+                
+                
+               
+            </div>
+        </div>
+    </div>
+  </div>
+  <div class="bg-[#1D65A6] max-w-[800px] mx-auto mt-20 py-14 px-12 md:px-16 text-white md:rounded-lg">
+    <h6 class="font-bold text-center">Enter Your Email To Subscribe</h6>
+    <input type="text" placeholder="Your email address" class="w-full px-4 py-2.5 rounded-lg mt-6">
+    <div class="flex mt-6 items-start">
+      <input type="checkbox" class="w-6 h-6 block border-0 ">
+      <span class="ml-2 text-left">I want to received the monthly newsletter and other updates from Rotational. You
+        agree to your Privacy Policy. You may unsubscribe at any time.*</span>
+    </div>
+    <div class="flex justify-center">
+      <a href="" class="bg-[#192E5B] px-14 py-4 mt-10 rounded-lg text-sm text-white uppercase md:text-base">Submit</a>
+    </div>
+  </div>
+
+    </main>
+
+    <footer>
+    <div class="relative pt-[90px] sm:pt-[300px] font-extralight">
+        <img class="w-full absolute inset-y-0 left-0 lg:h-full lg:w-full lg:max-w-none" src="img/foot.png" alt="" />
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 bg-[#192E5B]">
+            <div class="sm:flex text-white">
+                <div>
+                    <a href=""><img src="img/logo-white.png" alt="" class="sm:h-auto h-16"></a>
+                </div>
+                <div class="sm:ml-24 mt-5 sm:mt-0 max-w-lg">
+                    
+
+                    
+                        
+                            <h5 class="font-bold text-lg">Contact Details</h5>
+                            <p class="mt-3">
+                                We love to talk through complex scaling and performance issues. What’s slowing you down? Drop us a line for a friendly chat. We’ll make it worth your while.
+                            </p>
+                        
+                    
+                </div>
+                <div class="sm:ml-24 sm:mt-0 mt-8">
+                    <ul class="grid grid-cols-2 gap-8">
+                        
+                            <li>
+                                <a href="" class="flex items-center" target="_blank">
+                                    <img src="img/email.png" alt="" class="p-4 bg-white rounded-lg mr-4">
+                                    <span>info@rotational.io</span>
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="" class="flex items-center" target="_blank">
+                                    <img src="img/github.png" alt="" class="p-4 bg-white rounded-lg mr-4">
+                                    <span>rotationalio</span>
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="" class="flex items-center" target="_blank">
+                                    <img src="img/twitter.png" alt="" class="p-4 bg-white rounded-lg mr-4">
+                                    <span>rotationalio</span>
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="" class="flex items-center" target="_blank">
+                                    <img src="img/linkedin.png" alt="" class="p-4 bg-white rounded-lg mr-4">
+                                    <span>rotational</span>
+                                </a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+            <div class="sm:flex justify-between border-t py-6 text-white mt-12 sm:mt-32">
+                <p>Copyright © 2021 Rotational Labs, LLC, All Rights Reserved</p>
+                <ul class="sm:mt-0 mt-4 flex">
+                    <li class="border-r pr-4 mr-4 "><a href="">Privacy Policy</a></li>
+                    <li><a href="">Terms of Use</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</footer>
+    <script src="https://rotational.io/js/app.js"></script>
+
+  </body>
+
+</html>
