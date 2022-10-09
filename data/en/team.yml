@@ -5,8 +5,7 @@ team:
   team_member :
     # team member loop
     - name : Benjamin Bengfort
-      image_webp : images/team/benjamin.webp
-      image : images/team/benjamin.jpg
+      image : img/team/benjamin-bengfort.png
       designation : Founder/CEO
       content : The Vision
       social :
@@ -19,8 +18,7 @@ team:
 
     # team member loop
     - name : Rebecca Bilbro
-      image_webp : images/team/rebecca.webp
-      image : images/team/rebecca.jpg
+      image : img/team/rebecca-bilbro.png
       designation : Founder/CTO
       content : The Product
       social :
@@ -33,8 +31,7 @@ team:
 
     # team member loop
     - name : Edwin Schmierer
-      image_webp : images/team/edwin.webp
-      image : images/team/edwin.jpg
+      image : img/team/edwin-schmierer.png
       designation : Founder/COO
       content : The Business
       social :
@@ -47,8 +44,7 @@ team:
 
     # team member loop
     - name : Patrick Deziel
-      image_webp : images/team/patrick.webp
-      image : images/team/patrick.jpg
+      image : img/team/patrick-deziel.png
       designation : Distributed Systems Engineer
       content : Machine Learning Specialist
       social :
@@ -61,8 +57,7 @@ team:
 
     # team member loop
     - name : Elysee Bleu
-      image_webp : images/team/elysee.webp
-      image : images/team/elysee.png
+      image : img/team/elysee-bleu.png
       designation : Frontend Engineer
       content : React.js Specialist
       social :
@@ -71,15 +66,13 @@ team:
 
     # team member loop
     - name : Beci Lambrecht
-      image_webp : images/team/beci.webp
-      image : images/team/beci.png
+      image : img/team/beci-lambrecht.png
       designation : Project Management Support
       content : Certified PMP & Agile Specialist
 
     # team member loop
     - name : Daniel Sollis
-      image_webp : images/team/daniel.webp
-      image : images/team/daniel.jpg
+      image : img/team/daniel-sollis.png
       designation : Jr Distributed Systems Engineer
       content : Architecture Specialist
       social :
@@ -90,8 +83,7 @@ team:
 
     # team member loop
     - name : Karen Belita
-      image_webp : images/team/karen.webp
-      image : images/team/karen.jpg
+      image : img/team/karen-belita.png
       designation : Software Engineer
       content : DevOps Specialist
       social :
@@ -102,8 +94,7 @@ team:
 
     # team member loop
     - name : Nabiha Naqvie
-      image_webp : images/team/nabiha.webp
-      image : images/team/nabiha.jpg
+      image : img/team/nabiha-naqvie.png
       designation : Open Source Contributor
       content : Natural Language Processing Specialist
       social :
@@ -114,8 +105,7 @@ team:
 
     # team member loop
     - name : Tianshu Li
-      image_webp : images/team/tianshu.webp
-      image : images/team/tianshu.jpg
+      image : img/team/tianshu-li.png
       designation : Open Source Contributor
       content : Machine Learning Specialist
       social :
@@ -126,8 +116,7 @@ team:
 
     # team member loop
     - name : Cletus Razakou
-      image_webp : images/team/cletus.webp
-      image : images/team/cletus.jpeg
+      image : img/team/cletus-razakou.png
       designation : Senior Frontend Engineer
       content : React.js Specialist
       social :
@@ -136,8 +125,7 @@ team:
 
     # team member loop
     - name : Natasha White
-      image_webp : images/team/natasha.webp
-      image : images/team/natasha.jpeg
+      image : img/team/natasha-white.png
       designation : Technical Writing Intern
       content : Documentation Specialist
       social :
@@ -146,8 +134,7 @@ team:
 
     # team member loop
     - name : Pete Keleher
-      image_webp : images/team/pete.webp
-      image : images/team/pete.png
+      image : img/team/pete-keleher.png
       designation : Technical Advisor
       content : Distributed Systems Researcher
       social :

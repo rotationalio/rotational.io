@@ -3,20 +3,19 @@ title: "A Parrot Trainer Eats Crow"
 slug: "a-parrot-trainer-eats-crow"
 date: "2021-03-19T08:42:21-04:00"
 draft: false
-image_webp: images/media/2021-03-19-a-parrot-trainer-eats-crow/parrots.webp
-image: images/media/2021-03-19-a-parrot-trainer-eats-crow/parrots.jpg
+image: img/blog/2021-03-19-a-parrot-trainer-eats-crow/parrots.jpg
 author: Rebecca Bilbro
-description : "Models trained on massive datasets using millions of parameters can both have low bias and also be very biased - what can we in the ML community do about this?"
+description: "Models trained on massive datasets using millions of parameters can both have low bias and also be very biased - what can we in the ML community do about this?"
+profile: img/team/rebecca-bilbro.png
 ---
 
-In this post, we'll consider how it is that models trained on massive datasets using millions of parameters can be both "low bias" and also *very biased*, and begin to think through what we in the ML community might be able to do about it.
+In this post, we'll consider how it is that models trained on massive datasets using millions of parameters can be both "low bias" and also _very biased_, and begin to think through what we in the ML community might be able to do about it.
 
 ## Birds on a Wire
 
 In the machine learning community, we are trained to think of [size as inversely proportional to bias](http://scott.fortmann-roe.com/docs/BiasVariance.html). We associate small datasets with the problem of underfit, which is to say high bias. We learn that in the face of unfamiliar data, underfit models make poor assumptions that lead to inaccuracies. Likewise, we call models with smaller sets of hyperparameters "weak learners" because their limited complexity limits our ability to reduce bias even as our dataset size grows.
 
 This intuition has driven the ML community towards ever larger datasets and increasingly complex model architectures, and to be sure, towards ever better accuracy scores. Unfortunately (and not unironically), this progression has driven a wedge between the ML definition[^1] of "bias" and the more colloquial sense of the word.
-
 
 ## Migration Patterns
 
@@ -52,23 +51,21 @@ Presumably the first step is admitting you have a problem. OpenAI [has acknowled
 
 > GPT-3, like all large language models trained on internet corpora, will generate stereotyped or prejudiced content. The model has the propensity to retain and magnify biases it inherited from any part of its training, from the datasets we selected to the training techniques we chose. This is concerning, since model bias could harm people in the relevant groups in different ways by entrenching existing stereotypes and producing demeaning portrayals amongst other potential harms.
 
-
 In his article, "For Some Reason I’m Covered in Blood", [Dave Gershgorn](https://onezero.medium.com/for-some-reason-im-covered-in-blood-gpt-3-contains-disturbing-bias-against-muslims-693d275552bf) writes about GPT-3's problem with Islam:
 
 > This bias is most evident when GPT-3 is given a phrase containing the word “Muslim” and asked to complete a sentence with the words that it thinks should come next. In more than 60% of cases documented by researchers, GPT-3 created sentences associating Muslims with shooting, bombs, murder, and violence.
 
-So, yes, as an NLP developer, I *am* concerned that leveraging pretrained LMs in my consumer-facing products could manifest in bias that might alienate my Muslim, my women, my LGBTQ+ users. However, I am *also* concerned about how my commercialization of such LMs could serve to further normalize and entrench racist, sexist, anti-Islamic, homophobic, transphobic, and white supremist beliefs for everyone else.
+So, yes, as an NLP developer, I _am_ concerned that leveraging pretrained LMs in my consumer-facing products could manifest in bias that might alienate my Muslim, my women, my LGBTQ+ users. However, I am _also_ concerned about how my commercialization of such LMs could serve to further normalize and entrench racist, sexist, anti-Islamic, homophobic, transphobic, and white supremist beliefs for everyone else.
 
 As developers, when we build data products, we help produce the training data that will be used for the next generations of machine learning models. When we build atop models like GPT-3, that has the effect of ensuring that bias and hate speech remain in the collective conversation online, indefinitely.
 
 How can we do a better job of dataset curation for large language models to avoid the problem of poisonous training data? In the Parrots paper, Dr. Gibru et al. discuss some of the approaches that were used to filter the training data for models like GPT-3 and BERT:
 
-> The Colossal Clean Crawled Corpus...is cleaned, *inter alia*, by discarding any page containing one of a list of about 400 “Dirty, Naughty, Obscene or Otherwise Bad Words". This list is overwhelmingly words related to sex, with a handful of racial slurs and words related to white supremacy (e.g. swastika, white power) included. While possibly effective at removing documents containing pornography (and the associated problematic stereotypes encoded in the language of such sites) and certain kinds of hate speech, this approach will also undoubtedly attenuate, by suppressing such words as *twink*, the influence of online spaces built by and for LGBTQ people. If we filter out the discourse of marginalized populations, we fail to provide training data that reclaims slurs and otherwise describes marginalized identities in a positive light.
+> The Colossal Clean Crawled Corpus...is cleaned, _inter alia_, by discarding any page containing one of a list of about 400 “Dirty, Naughty, Obscene or Otherwise Bad Words". This list is overwhelmingly words related to sex, with a handful of racial slurs and words related to white supremacy (e.g. swastika, white power) included. While possibly effective at removing documents containing pornography (and the associated problematic stereotypes encoded in the language of such sites) and certain kinds of hate speech, this approach will also undoubtedly attenuate, by suppressing such words as _twink_, the influence of online spaces built by and for LGBTQ people. If we filter out the discourse of marginalized populations, we fail to provide training data that reclaims slurs and otherwise describes marginalized identities in a positive light.
 
 In other words, the data cleaning mechanisms in place are crude at best, and perhaps overly aggressive in filtering out marginalized conversations that may be punctuated by reclaimed "bad" words. And yet...any solution I can think of that would manage to include marginalized conversations might also produce language models prone to using those reclaimed words.
 
-This leads us to the question of whether it would *ever* be ok for a LM to use a word like "twink". Knowing who can use and who should refrain from using such reclaimed words is something that humans &mdash; despite our access to education, historical context about oppression, and discussions about systemic racism, sexism, and homophobia &mdash; [still routinely screw up](https://www.yahoo.com/lifestyle/papa-johns-founder-says-hes-211500691.html).
-
+This leads us to the question of whether it would _ever_ be ok for a LM to use a word like "twink". Knowing who can use and who should refrain from using such reclaimed words is something that humans &mdash; despite our access to education, historical context about oppression, and discussions about systemic racism, sexism, and homophobia &mdash; [still routinely screw up](https://www.yahoo.com/lifestyle/papa-johns-founder-says-hes-211500691.html).
 
 ## Beyond the Gilded Cage
 
@@ -81,7 +78,6 @@ Reading the Parrots paper also got me thinking and reading up on indigenous lang
 > Indigenous ways of knowing are rooted in distinct, sovereign territories across the planet. These extremely diverse landscapes and histories have influenced different communities and their discrete cultural protocols over time. A single ‘Indigenous perspective’ does not exist, as epistemologies are motivated and shaped by the grounding of specific communities in particular territories. Historically, scholarly traditions that homogenize diverse Indigenous cultural practices have resulted in ontological and epistemological violence, and a flattening of the rich texture and variability of Indigenous thought. Our aim is to articulate a multiplicity of Indigenous knowledge systems and technological practices that can and should be brought to bear on the ‘question of AI.’
 
 Perhaps the time has come to move away from monolith language models that reduce the rich variations and complexities of our conversations to a simple argmax on the output layer, and instead embrace a new generation of language model architectures that are just as organic and diverse as the data they seek to encode.
-
 
 ## References
 

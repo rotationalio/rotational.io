@@ -1,0 +1,84 @@
+{{ define "title" }}
+{{ .Title }} &ndash; {{ .Site.Title }}
+{{ end }}
+
+{{ define "main" }}
+
+{{ $data := index site.Data site.Language.Lang }}
+
+{{ if $data.services.services.enable }}
+{{ with $data.services.services }}
+<div class="max-w-7xl mx-auto px-4 relative">
+    <h2 class="text-lg sm:text-xl lg:text-2xl mt:12 lg:mt-24">
+        <b class="text-[#1D65A6]">{{ with .subtitle }} {{ index (split . "org") 0 | safeHTML }} {{ end }}</b>
+        {{ with .subtitle }} {{ after (len (index (split . "org") 0)) . | safeHTML }} {{ end }}
+    </h2>
+    <div class="">
+        {{ if .approach.enable }}
+        <div class="flex items-center mt-9 sm:mt-11 lg:mt-14">
+            <h3 class="font-bold text-xl sm:text-2xl lg:text-3xl">{{ .approach.title }}</h3>
+            <img src="img/butterfly.png" class="h-6 ml-3 w-6" />
+        </div>
+        <p class="mt-4 text-base sm:mt-5 lg:mt-7 lg:text-lg">{{ .approach.description }}</p>
+        {{ end }}
+
+        {{ if .services.enable }}
+        <div class="flex items-center mt-9 sm:mt-11 lg:mt-14">
+            <h3 class="font-bold text-xl sm:text-2xl lg:text-3xl">{{ .services.title }}</h3>
+            <img src="img/butterfly.png" class="h-6 ml-3 w-6" />
+        </div>
+        <p class="mt-4 text-base sm:mt-5 lg:mt-7 lg:text-lg">{{ .services.description }}</p>
+
+        <div class="hidden mt-24 md:hidden md:mt-14 lg:block lg:mt-24" data-pg-collapsed>
+            <div class="grid grid-cols-3 rounded-tl text-xl">
+                {{ range .services.items }}
+                <div
+                    class="bg-[#192E5B] border-gray-500 border-solid divide-x-2 font-bold py-6  row-span-1 text-center text-white">
+                    {{ .name }}
+                </div>
+                {{ end }}
+            </div>
+
+            <div class="bg-[#E8EDF7] px-5 py-6">
+                <ul class="grid grid-cols-3">
+                    {{ range .services.items }}
+                    <li data-pg-collapsed>
+                        {{ range .details }}
+                        <div class="flex items-center mb-7">
+                            <span class="bg-[#1D65A6] h-4 rounded-full w-4"></span>
+                            <span class="ml-2 text-lg">{{ .title }}</span>
+                        </div>
+                        {{ end }}
+                    </li>
+                    {{ end }}
+                </ul>
+            </div>
+        </div>
+        <div data-pg-collapsed class="lg:hidden mt-6">
+            {{ range .services.items }}
+            <div class="mt-6 " data-pg-collapsed>
+                <div
+                    class="bg-[#192E5B] border-gray-500 border-solid divide-x-2 font-bold py-6 rounded-t-2xl row-span-1 text-center text-white">
+                    {{ .name }}</div>
+                <div class="bg-[#E8EDF7] p-5 rounded-b-2xl">
+                    {{ range .details }}
+                    <div class="flex items-center mb-4">
+                        <div class="bg-[#1D65A6] h-3 rounded-full w-3"></div>
+                        <span class="ml-2 text-base">{{ .title }}</span>
+                    </div>
+                    {{ end }}
+                </div>
+            </div>
+            {{ end }}
+        </div>
+        {{ end }}
+
+        <!-- <div class="mt-11 text-center md:mt-14 lg:mt-16">
+                            <a href="/contactus" class="bg-[#192E5B] px-8 py-4 rounded-lg text-sm text-white uppercase md:text-base"> {{ i18n "contactUs" }} </a>
+                        </div> -->
+    </div>
+</div>
+{{ end }}
+{{ end }}
+
+{{ end }}

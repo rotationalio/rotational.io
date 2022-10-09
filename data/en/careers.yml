@@ -1,16 +1,20 @@
 #################################### careers ###############################
 careers:
-  enable : true
+  enable : false
   title : Rotational Careers
+  subtitle : We value diversity of experience, empathy, and impact. We hire for “add”, not “fit”.
   careers_item :
     # careers item loop
     - name : Senior Distributed Systems Engineer
-      link : "jobs/senior_distributed_systems_engineer.pdf"
+      description : Nam gravida, erat quis aliquam consectetur, nulla nisi condimentum sapien, in vehicula orci augue vel diam. Suspendisse arcu est
+      link : ""
 
     # careers item loop
     - name : Distributed Systems Engineer
-      link : "jobs/distributed_systems_engineer.pdf"
+      description : Nam gravida, erat quis aliquam consectetur, nulla nisi condimentum sapien, in vehicula orci augue vel diam. Suspendisse arcu est,
+      link : ""
 
     # careers item loop
     - name : Marketing Specialist
-      link : "jobs/marketing_specialist.pdf"
+      description : Nam gravida, erat quis aliquam consectetur, nulla nisi condimentum sapien, in vehicula orci augue vel diam. Suspendisse arcu est,
+      link : ""

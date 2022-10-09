@@ -3,11 +3,12 @@ title: "Five Technologies Quietly Transforming the Web"
 slug: "five-technologies-quietly-transforming-the-web"
 date: "2022-06-27T13:00:01-04:00"
 draft: false
-image_webp: images/blog/dawn.webp
-image: images/blog/dawn.jpg
 author: Edwin Schmierer
+image: img/blog/dawn.jpg
+category: "Technologies"
 description: "This post describes five technologies - new and old - that are transforming the web and becoming the foundation for next-generation applications."
 ---
+
 With almost 30 billion connected devices, this isn’t Al Gore’s internet anymore.
 
 Consider this: According to [Cisco’s Annual Internet Report](https://www.cisco.com/c/en/us/solutions/collateral/executive-perspectives/annual-internet-report/white-paper-c11-741490.html), there will be 29.3 billion internet-connected devices in 2023, or more than three for every human. The internet has no doubt transformed society and industry, while proving to be resilient and scalable. It also continues to evolve.<!--more-->
@@ -34,7 +35,6 @@ HTTP/2 marks a significant evolution from HTTP/1.1. Standardized in 2015, the pr
 
 Currently, [HTTP/3](https://twitter.com/danielbryantuk/status/1534500437671411714) is under development as a standard and gaining traction. HTTP/3 better addresses how we access the internet today &mdash; with users streaming data across multiple devices, locations, and access points. The bottom line: mass adoption of HTTP/2 and HTTP/3 will enable a diversity of richer and more secure experiences across modalities.
 
-
 # #3: Event-driven Architecture (EDA)
 
 Since [Apache Kafka](https://kafka.apache.org/) was open sourced in 2011, event-driven applications have gained popularity. Event-driven Architecture (EDA) refers to a design pattern for building applications as a collection of highly decoupled, single-purpose event processing components that asynchronously receive and process events.
@@ -45,7 +45,7 @@ EDA is perhaps best understood in contrast to conventional application framework
 
 EDA flips this approach by employing active agents or components that produce and consume events asynchronously. Producers publish events to a log (or logs) that any number of Consumers can subscribe or listen to and act upon. With EDA, data flows move from a passive, “polling/querying” approach to an active, “subscribe to a stream of changes” approach.
 
-Traditional data ingestion models require some *a priori* plan for how the data will be queried once it has been collected, and data modeling decisions are very difficult to modify once they've been implemented. That often means a lot of compromises have to be made for potential downstream applications that are all using the same underlying database. By contrast, EDA opens up the possibility for each unique downstream application to consume and transform data in its most raw form.
+Traditional data ingestion models require some _a priori_ plan for how the data will be queried once it has been collected, and data modeling decisions are very difficult to modify once they've been implemented. That often means a lot of compromises have to be made for potential downstream applications that are all using the same underlying database. By contrast, EDA opens up the possibility for each unique downstream application to consume and transform data in its most raw form.
 
 EDA-designed applications consist of active agents/components passing messages to each other, more effectively mirroring real-life data flows and communications, instead of passive services. EDA opens the door to interactions and streaming experiences that are more immediate and high-quality, and that possess a greater capacity for resiliency and fault tolerance due to its asynchronous design.
 
@@ -78,8 +78,9 @@ We live in an age when every device is a data center. The internet and its under
 At Rotational, we think deeply about these issues and how to support developers building next-generation applications. Over the next few months, we’ll take a deeper dive into each of these technologies or trends. We hope you (and Al Gore!)[^1] come along for the ride.
 
 [^1]: According to Robert Kahn and Vinton Cerf, Al Gore does [deserve credit for his early support of the internet](https://web.eecs.umich.edu/~fessler/misc/funny/gore,net.txt).
-***
+
+---
 
 Photo by [Rajiv Bajaj](https://unsplash.com/@rajiv63) on [Unsplash](https://unsplash.com/photos/FsCh8MFy8Xs)
 
-***
+---

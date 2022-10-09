@@ -2,8 +2,25 @@
 about:
   enable : true
   title : About Us
-  about_item :
-  - icon : ti-world # themify icon pack : https://themify.me/themify-icons
-    description1 : The digital landscape has grown increasingly complex. From new technologies to changing user expectations to data privacy regulations, companies and creators require new and flexible approaches to build, grow, engage and protect their users and communities.
-    description2 : We provide trusted expertise to application developers seeking to build their data and systems engineering practices. We specialize in building fast, flexible, resilient and legally-compliant data architectures and cloud-to-edge computing systems for the modern digital landscape.
-    
+  mission :
+    enable : true
+    title : Our Mission
+    mission_item:
+    # mission_item loop
+    - text : The digital landscape has grown increasingly complex. From new technologies to changing user expectations to data privacy regulations, companies and creators require new and flexible approaches to build, grow, engage and protect their users and communities.
+    # mission_item loop
+    - text : We provide trusted expertise to application developers seeking to build their data and systems engineering practices. We specialize in building fast, flexible, resilient and legally-compliant data architectures and cloud-to-edge computing systems for the modern digital landscape.
+  values:
+    enable : true
+    title : Our Values
+    values_item:
+      # mission_item loop
+      - text: Respect - We take the time to listen and care with humility, valuing all contributions.
+      # mission_item loop 
+      - text: Curiosity - We ask questions, experiment, and explore, with an empathetic mindset.
+      # mission_item loop   
+      - text: Growth - We can and always strive to continuously learn and improve and make an impact.
+      # mission_item loop
+      - text: Excellence - We take pride in our style, our craftsmanship and aim to exceed expectations.
+      # mission_item loop
+      - text: Collaboration - Together we are resilient and can solve problems for a sustainable future.

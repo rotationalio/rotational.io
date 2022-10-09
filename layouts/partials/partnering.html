@@ -1,0 +1,30 @@
+{{ $data := index site.Data site.Language.Lang }}
+
+{{ if $data.partnering.partnering.enable }}
+{{ with $data.partnering.partnering }}
+<div class="relative max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6">
+    <div class="mt-24 sm:mt-24 sm:flex">
+        <img src="{{ .image_src }}" alt="image holder" class="h-auto sm:h-[480px]">
+        <div class="sm:ml-24">
+            <h2 class="font-bold text-2xl sm:text-4xl mt-10">
+                <span class="text-[#1D65A6]">{{ with .title }} {{ index (split . " ") 0 | safeHTML }} {{ end }}</span>
+                {{ with .title }} {{ after (len (index (split . " ") 0)) . | safeHTML }} {{ end }}
+            </h2>
+            <div class="text-base">
+                {{ range .text_item}}
+                <p class="mt-6 sm:mt-10">
+                    {{ .text }}
+                </p>
+                {{ end }}
+
+                <div class="mt-10 sm:mt-16 text-white">
+                    <a href="{{ .button_action }}"
+                        class="text-xs sm:text-lg font-semibold rounded-lg px-5 sm:px-12 py-3 sm:py-5 bg-[#192E5B] uppercase">{{
+                        i18n "learnMore" }}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{{ end }}
+{{ end }}

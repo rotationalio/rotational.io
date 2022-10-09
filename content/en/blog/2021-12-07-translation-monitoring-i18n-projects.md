@@ -3,8 +3,7 @@ title: "Translation Monitoring for I18n Projects"
 slug: "trans-monitor-i18n-proj"
 date: 2021-12-07T19:25:35+08:00
 draft: false
-image_webp: images/blog/translations.webp
-image: images/blog/translations.jpeg
+image: img/blog/translations.jpeg
 author: Tianshu Li
 description: "I18n projects are hard to manage when apps and docs both get updated continuously. In this post we introduce a new tool to ease the pains of monitoring and make it easier to stay in sync with international audiences."
 ---
@@ -32,10 +31,10 @@ For the example usage of file-based translation monitoring, let's look at the i1
 
 Rumi integrates (usually via Github Actions) at steps 2 and 4, performing the following steps to read and report translation status:
 
-![Hugo Flow](/images/media/hugo_flow.png)
+![Hugo Flow](/img/blog/hugo_flow.png)
 **<div align="center">File-based translation flow exemplified with Hugo site</div>**
 
-*Note: For more about setting up a Hugo site, check out the documentation about [Hugo in multilingual mode](https://gohugo.io/content-management/multilingual/).)*
+_Note: For more about setting up a Hugo site, check out the documentation about [Hugo in multilingual mode](https://gohugo.io/content-management/multilingual/).)_
 
 #### 1. Create a FileReader object
 
@@ -134,13 +133,13 @@ Here `Word Count` reports number of words in the source file. `Percent Completed
 
 Rumi also supports message-based translation monitoring for React apps that are set up with `Lingui.js`. The figure below illustrates the i18n workflow in such setting. This setting requires minimal changes in common UI dev (just wrap user messages as instructed). Once setup, the `extract` command can easily isolate these language-dependent messages from the rest of the code base into one separate file for each language, and the `compile` command will integrate translations back. Here are some additional resources for getting set up with Lingui on your React project:
 
-  - UI Dev: Setup Lingui.js
-    - Installation: [Setup Lingui with React project](https://lingui.js.org/tutorials/setup-react.html)
-    - Wrap Messages: Wrap UI text message according to [Lingui patterns](https://lingui.js.org/tutorials/react-patterns.html)
-  - Lingui Extract: `npm run extract` or `yarn extract`
-  - Lingui Compile: `npm run compile` or `yarn compile`
+- UI Dev: Setup Lingui.js
+  - Installation: [Setup Lingui with React project](https://lingui.js.org/tutorials/setup-react.html)
+  - Wrap Messages: Wrap UI text message according to [Lingui patterns](https://lingui.js.org/tutorials/react-patterns.html)
+- Lingui Extract: `npm run extract` or `yarn extract`
+- Lingui Compile: `npm run compile` or `yarn compile`
 
-![](/images/media/react_flow.png)
+![](/img/blog/react_flow.png)
 **<div align="center">Message-based translation flow exemplified with React App</div>**
 
 At `Lingui Extract` and `Lingui Compile`, Rumi will perform similar steps for monitoring the translation status:
@@ -263,7 +262,7 @@ jobs:
           content_paths: "content1, content2, content3"
           extensions: ".md, .txt"
           target_files: "target1, target2, target3"
-          pattern: "folder/"  # "folder/" or ".lang" depending on the setup of file-based project
+          pattern: "folder/" # "folder/" or ".lang" depending on the setup of file-based project
           langs: "en fr zh ja" # You can specify the languages to monitor with language codes
           src_lang: "en"
           detail_src_lang: ""

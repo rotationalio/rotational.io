@@ -3,13 +3,14 @@ title: "Transparently Mocking gRPC Services"
 slug: "transparently-mocking-grpc-services"
 date: "2022-07-08T09:32:01-04:00"
 draft: false
-image_webp: images/blog/blue_laser.webp
-image: images/blog/blue_laser.jpg
 author: Patrick Deziel
+image: img/blog/blue_laser.jpg
+category: "gRPC"
 description: "gRPC is a common framework used to facilitate communication between microservices, but testing these services can be a challenge. In this post we will present a simple strategy for mocking gRPC services in Go."
 ---
 
 gRPC is an effective way of implementing service-to-service APIs. However, there are limited tools available for mocking and testing gRPC services out of the box. One option is to set up a live test server, although this comes with its own challenges and costs. In this blog post we will demonstrate a more lightweight solution using the `bufconn` package and a hand-built mock. Don't worry, this is easier than it seems!
+
 <!--more-->
 
 Before we get started, the full tutorial code is available [here](https://github.com/rotationalio/agenda).
@@ -328,11 +329,11 @@ Mocking gRPC services for the purposes of testing isn't always straightforward. 
 
 Check out the full tutorial code [here](https://github.com/rotationalio/agenda).
 
-***
+---
 
 Photo by [JJ Ying](https://unsplash.com/@jjying?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/technology?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 
-***
+---
 
 #### References
 

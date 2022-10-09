@@ -1,21 +1,12 @@
 ## Base Configuration
 baseURL = "https://rotational.io/"
-title = "Rotational Labs"
-theme = "meghna-hugo"
 themesDir = "themes/"
+title = "Rotational Labs"
 
-paginate = "12"          # Number of posts per page in blog listing
-summaryLength = "15"     # Length of excerpt for post descriptions
-
-# Use Disqus for comments on blogs
-disqusShortname = ""    # get your shortname form here : https://disqus.com
-
-# Disable any languages from build process
-disableLanguages = []
-
-# Set canonical URLs
-[permalinks]
-  blog = "/blog/:slug/"
+removePathAccents = true
+post_share = true   # Share button on individual posts
+paginate = "9"      # Number of posts per page in blog listing
+summaryLength = "1" # Length of excerpt for post descriptions
 
 ## Default Parameters
 [params]
@@ -24,85 +15,59 @@ logo = "images/assets/logos/logo.png"
 description = "We see planet-wide possibilities."
 author = "Rotational Labs, LLC"
 
-# Google Analytics
-google_analytics_id = "G-2FKX6CWJHW"
 
-# Share button on individual posts
-post_share = true
+# Set canonical URLs
+[permalinks]
+blog = "/blog/:slug/"
 
-[params.preloader]
-enable = false
-preloader = "images/assets/logos/logo.png"
-
-[params.cookies]
-enable = false
-expire_days = 2
-
-# Google Maps Integration
-[params.map]
-enable = false
-gmap_api = "https://maps.googleapis.com/maps/api/js?key=AIzaSyBu5nZKbeK-WHQ70oqOWo-_4VmwOwKP9YQ"
-map_latitude = "51.5223477"
-map_longitude = "-0.1622023"
-map_marker = "images/assets/icons/marker.png"
 
 ## CSS Plugins
 [[params.plugins.css]]
-link = "plugins/bootstrap/bootstrap.min.css"
-[[params.plugins.css]]
-link = "plugins/themify-icons/themify-icons.css"
-[[params.plugins.css]]
-link = "plugins/magnific-popup/magnific-popup.css"
-[[params.plugins.css]]
-link = "plugins/slick/slick.css"
-[[params.plugins.css]]
-link = "https://fonts.googleapis.com/css?family=Anaheim|Quattrocento+Sans:400,700&display=swap"
+link = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
 
-## Javascript plugins
-[[params.plugins.js]]
-link = "plugins/jquery/jquery.min.js"
-[[params.plugins.js]]
-link = "plugins/bootstrap/bootstrap.min.js"
-[[params.plugins.js]]
-link = "plugins/slick/slick.min.js"
-[[params.plugins.js]]
-link = "plugins/shuffle/shuffle.min.js"
-[[params.plugins.js]]
-link = "plugins/magnific-popup/jquery.magnific-popup.min.js"
-[[params.plugins.js]]
-link = "plugins/lazy-load/lozad.min.js"
-[[params.plugins.js]]
-link = "plugins/google-map/map.js"
 
 ## English Navigation
 [[Languages.en.menu.main]]
-name = "about"
-pre = "#"
-url = "about"
+identifier = 'Ensign'
+pageRef = 'ensign'
+name = 'Ensign'
+url = 'https://rotational.app'
 weight = 1
 
 [[Languages.en.menu.main]]
-name = "services"
-pre = "#"
-url = "services"
+identifier = 'services'
+pageRef = 'services'
+name = 'Services'
+url = '/services'
 weight = 2
 
-[[Languages.en.menu.main]]
-name = "team"
-pre = "#"
-url = "team"
-weight = 3
+# [[Languages.en.menu.main]]
+# identifier = 'opensource'
+# pageRef = 'opensource'
+# name = 'Open Source'
+# url = '/opensource'
+# weight = 3
+
+# [[Languages.en.menu.main]]
+# identifier = 'blog'
+# pageRef = 'blog'
+# name = 'Blog'
+# url = '/blog'
+# weight = 4
 
 [[Languages.en.menu.main]]
-name = "blog"
-url = "/blog"
-weight = 4
-
-[[Languages.en.menu.main]]
-name = "contact"
-pre = "#"
-url = "contact"
+identifier = 'about'
+pageRef = 'about'
+name = 'About'
+url = '/about'
 weight = 5
+
+# [[Languages.en.menu.main]]
+# identifier = 'contact'
+# pageRef = 'contact'
+# name = 'Contact Us'
+# url = '/contact'
+# weight = 50
 
 ## English Langauge
 [Languages.en]
@@ -111,166 +76,29 @@ languageCode = "en-us"
 contentDir = "content/en"
 weight = 1
 home = "Home"
-copyright = "Copyright &copy; 2021 Rotational Labs, LLC, All Rights Reserved"
+copyright = "Copyright &copy; 2022 Rotational Labs, LLC &middot; All Rights Reserved"
 
+[params.socials]
+[params.socials.email]
+URL = "mailto:info@rotational.io"
+image = "img/email.png"
+username = "info@rotational.io"
+weight = 10
 
-## French Navigation
-[[Languages.fr.menu.main]]
-name = "a propos"
-pre = "fr/#"
-url = "about"
-weight = 1
+[params.socials.github]
+URL = "https://github.com/rotationalio"
+image = "img/github.png"
+username = "rotationalio"
+weight = 20
 
-[[Languages.fr.menu.main]]
-name = "services"
-pre = "fr/#"
-url = "services"
-weight = 2
+[params.socials.twitter]
+URL = "https://twitter.com/rotationalio"
+image = "img/twitter.png"
+username = "@rotationalio"
+weight = 30
 
-[[Languages.fr.menu.main]]
-name = "notre équipe"
-pre = "fr/#"
-url = "team"
-weight = 3
-
-[[Languages.fr.menu.main]]
-name = "blog"
-url = "/fr/blog"
-weight = 4
-
-[[Languages.fr.menu.main]]
-name = "contact"
-pre = "fr/#"
-url = "contact"
-weight = 5
-
-## French Language
-[Languages.fr]
-languageName = "Fr"
-languageCode = "fr-fr"
-contentDir = "content/fr"
-weight = 2
-home = "Accueil"
-copyright = "Copyright &copy; 2021 Rotational Labs, LLC, Tous droits réservés"
-
-## Chinese Navigation
-[[Languages.zh.menu.main]]
-name = "关于我们"
-pre = "zh/#"
-url = "about"
-weight = 1
-
-[[Languages.zh.menu.main]]
-name = "服务"
-pre = "zh/#"
-url = "services"
-weight = 2
-
-[[Languages.zh.menu.main]]
-name = "团队"
-pre = "zh/#"
-url = "team"
-weight = 3
-
-[[Languages.zh.menu.main]]
-name = "博客"
-url = "/zh/blog"
-weight = 4
-
-[[Languages.zh.menu.main]]
-name = "联系方式"
-pre = "zh/#"
-url = "contact"
-weight = 5
-
-## Chinese Langauge
-[Languages.zh]
-languageName = "Zh"
-languageCode = "zh"
-contentDir = "content/zh"
-weight = 1
-home = "Home"
-copyright = "Rotational Labs 提供的服务将让您感受到物有所值。"
-
-## Social Icons
-# See icons from themify icon pack : https://themify.me/themify-icons
-[[params.social]]
-icon = "ti-twitter-alt"
-link = "https://twitter.com/rotationalio"
-
-[[params.social]]
-icon = "ti-github"
-link = "https://github.com/rotationalio"
-
-[[params.social]]
-icon = "ti-linkedin"
-link = "https://www.linkedin.com/company/rotational/"
-
-
-## Syntax Highlighting
-[markup]
-  defaultMarkdownHandler = "goldmark"
-  [markup.asciidocExt]
-    backend = "html5"
-    extensions = []
-    failureLevel = "fatal"
-    noHeaderOrFooter = true
-    preserveTOC = false
-    safeMode = "unsafe"
-    sectionNumbers = false
-    trace = false
-    verbose = false
-    workingFolderCurrent = false
-    [markup.asciidocExt.attributes]
-  [markup.blackFriday]
-    angledQuotes = false
-    footnoteAnchorPrefix = ""
-    footnoteReturnLinkContents = ""
-    fractions = true
-    hrefTargetBlank = false
-    latexDashes = true
-    nofollowLinks = false
-    noreferrerLinks = false
-    plainIDAnchors = true
-    skipHTML = false
-    smartDashes = true
-    smartypants = true
-    smartypantsQuotesNBSP = false
-    taskLists = true
-  [markup.goldmark]
-    [markup.goldmark.extensions]
-      definitionList = true
-      footnote = true
-      linkify = true
-      strikethrough = true
-      table = true
-      taskList = true
-      typographer = true
-    [markup.goldmark.parser]
-      attribute = true
-      autoHeadingID = true
-      autoHeadingIDType = "github"
-    [markup.goldmark.renderer]
-      hardWraps = false
-      unsafe = false
-      xhtml = false
-  [markup.highlight]
-    anchorLineNos = false
-    codeFences = true
-    guessSyntax = false
-    hl_Lines = ""
-    lineAnchors = ""
-    lineNoStart = 1
-    lineNos = false
-    lineNumbersInTable = true
-    noClasses = true
-    style = "native"
-    tabWidth = 4
-  [markup.tableOfContents]
-    endLevel = 3
-    ordered = false
-    startLevel = 2
-
-# Code Block
-pygmentsCodeFences = true
-pygmentsStyle = "monokai"
+[params.socials.linkeding]
+URL = "https://www.linkedin.com/company/rotational"
+image = "img/linkedin.png"
+username = "Rotational"
+weight = 40

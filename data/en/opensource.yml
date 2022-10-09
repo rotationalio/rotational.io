@@ -1,0 +1,35 @@
+############################### technologies ############################
+opensource:
+  enable : true
+  title : Open source software, continuous learning, and research are vital to software development and innovation. Learn about our open source projects and publications.
+  
+  projects:
+    enable: true
+    title: Our Open Source Projects
+    items:
+    # projects_item loop
+    - name : Sci-kit Yellowbrick
+      description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor augue eu fermentum rutrum. Quisque mattis nulla egestas, condimentum lectus ut, ullamcorper lacus. Nullam non semper urna. Maecenas ultricies arcu elit,
+      image : img/image-blue.png
+    # projects_item loop
+    - name : Trisa
+      description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor augue eu fermentum rutrum. Quisque mattis nulla egestas, condimentum lectus ut, ullamcorper lacus. Nullam non semper urna. Maecenas ultricies arcu elit,
+      image : img/trisa-l.png
+    # projects_item loop
+    - name : Whisper
+      description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor augue eu fermentum rutrum. Quisque mattis nulla egestas, condimentum lectus ut, ullamcorper lacus. Nullam non semper urna. Maecenas ultricies arcu elit,
+      image : img/trisa-l.png
+
+  publications:
+    enable: true
+    title: Our publications
+    items:
+    # publications_item loop
+    - name : Applied Text Analysis with Python
+      description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor augue eu fermentum rutrum. Quisque mattis nulla egestas, condimentum lectus ut, ullamcorper lacus. Nullam non semper urna. Maecenas ultricies arcu elit,
+      image : img/book-1.png
+    # publications_item loop
+    - name : Data Analytics with Hadoop
+      description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor augue eu fermentum rutrum. Quisque mattis nulla egestas, condimentum lectus ut, ullamcorper lacus. Nullam non semper urna. Maecenas ultricies arcu elit,
+      image : img/book-2.png
+   

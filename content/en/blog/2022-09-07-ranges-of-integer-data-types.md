@@ -3,9 +3,9 @@ title: "Ranges of Integer Data Types"
 slug: "ranges-of-integer-data-types"
 date: "2022-09-07T09:40:12-05:00"
 draft: false
-image_webp: images/blog/num215.jpg
-image: images/blog/num215.webp
 author: Benjamin Bengfort
+image: img/blog/num215.jpg
+category: "Technologies"
 description: "A quick reference for the sizes of standard integer types in Go"
 ---
 
@@ -15,8 +15,8 @@ The data type choices we make when building data systems or metrics is criticall
 
 So without further ado, here are the ranges of the standard numeric types:
 
-| Type    | Minimum                    | Maximum                    |
-|---------|----------------------------|----------------------------|
+| Type      | Minimum                    | Maximum                    |
+| --------- | -------------------------- | -------------------------- |
 | `int8`    | -128                       | 127                        |
 | `int16`   | -32,768                    | 32,767                     |
 | `int32`   | -2,147,483,648             | 2,147,483,647              |

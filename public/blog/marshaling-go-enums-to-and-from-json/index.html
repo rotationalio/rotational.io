@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    
+<meta charset="UTF-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="How to customize JSON serialization for your data types while avoiding pointer and receiver problems -- a story in three parts.">
+
+	<meta name="author" content="Rotational Labs, LLC">
+
+
+<base href="https://rotational.io/">
+<title>Rotational Labs  | Marshaling Go Enums to and from JSON</title>
+
+<!--Favicon-->
+<link rel="shortcut icon" href="https://rotational.io/img/favicon.png" type="image/x-icon">
+<link rel="icon" href="https://rotational.io/img/favicon.png" type="image/x-icon">
+
+<!-- plugins -->
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+<!-- Main Stylesheet -->
+<link rel="stylesheet" href="https://rotational.io/css/app.css" media="screen">
+
+  </head>
+
+  <body class="bg-white">
+
+    
+    <div class="sm:pt-5 pb-6 relative bg-[#1D65A6]">
+        <nav class="relative max-w-7xl mx-auto flex items-center justify-between text-white px-4 sm:px-6"
+            aria-label="Global">
+    <a href="/" class="pt-3 sm:pt-0">
+        <img src="img/logo.png" alt="Rotational" class="h-14 w-auto sm:h-14">
+    </a>
+    <div class="topnav" id="myTopnav">
+        
+        
+            <a 
+            class=""
+            href="/services/">
+            Services 
+            </a>
+        
+            <a 
+            class=""
+            href="/opensource/">
+            Open Source 
+            </a>
+        
+            <a 
+            class=""
+            href="/blog/">
+            Blog 
+            </a>
+        
+            <a 
+            class=""
+            href="/about/">
+            About 
+            </a>
+        
+            <a 
+            class=""
+            href="/contact/">
+            Contact Us 
+            </a>
+        
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+</nav>
+
+    </div>
+
+
+    <main>
+      
+<div class="relative max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="mt-14">
+      <img src="https://rotational.io/img/blog/dawn.png" alt="" class="mx-auto">
+      <div class="mt-8">
+        <h3 class="font-bold text-xl sm:text-2xl lg:text-3xl text-center">
+            <b class="text-[#1D65A6]"> Marshaling </b>
+              Go Enums to and from JSON 
+        </h3>
+        <div class="flex justify-center items-center mt-4 mb-6">
+          <img src="img/bbfort.png" alt=""
+            class="border-4 border-white rounded-full h-11 drop-shadow-lg"><span class="ml-3">Benjamin Bengfort |
+                Thursday, May 26, 2022 | Technologies</span>
+        </div>
+        <div class="max-w-[800px] mx-auto">
+            <p>Customizing JSON serialization for your data types seems relatively straightforward on the surface, but it&rsquo;s easy to get turned around in receiver, value, pointer, and indirection confusion. Many of the patterns and rules-of-thumb you use in your normal Go code can lead you astray. In this post, we&rsquo;ll illustrate exactly how and why to handle these edge cases.</p>
+<p>But before we get any further, if you&rsquo;re using this as a reference to determine how to implement JSON serialization for an enum type, here is the code snippet you&rsquo;re looking for:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Suit</span> <span style="color:#66d9ef">uint8</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// MarshalJSON must be a *value receiver* to ensure that a Suit on a parent object
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// does not have to be a pointer in order to have it correctly marshaled.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">s</span> <span style="color:#a6e22e">Suit</span>) <span style="color:#a6e22e">MarshalJSON</span>() ([]<span style="color:#66d9ef">byte</span>, <span style="color:#66d9ef">error</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// It is assumed Suit implements fmt.Stringer.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">json</span>.<span style="color:#a6e22e">Marshal</span>(<span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">String</span>())
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// UnmarshalJSON must be a *pointer receiver* to ensure that the indirect from the
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// parsed value can be set on the unmarshaling object. This means that the
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// ParseSuit function must return a *value* and not a pointer.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">s</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Suit</span>) <span style="color:#a6e22e">UnmarshalJSON</span>(<span style="color:#a6e22e">data</span> []<span style="color:#66d9ef">byte</span>) (<span style="color:#a6e22e">err</span> <span style="color:#66d9ef">error</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">suits</span> <span style="color:#66d9ef">string</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">json</span>.<span style="color:#a6e22e">Unmarshal</span>(<span style="color:#a6e22e">data</span>, <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">suits</span>); <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">err</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">s</span>, <span style="color:#a6e22e">err</span> = <span style="color:#a6e22e">ParseSuit</span>(<span style="color:#a6e22e">suits</span>); <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">err</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">nil</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>The complete, interactive, and runable code can be found <a href="https://go.dev/play/p/oMh1TDiwi_H">on the Go playground</a>.</p>
+<h2 id="customizing-json-serialization-in-go">Customizing JSON Serialization in Go</h2>
+<p>The German-American side of my family loves playing <a href="https://bicyclecards.com/how-to-play/euchre/">Euchre</a>, so I thought it might be an interesting idea to create an online multiplayer card game to stay connected during the pandemic. To describe decks and hands, I had to define cards, and in order to define cards, I had to implement a <code>Suit</code> type to describe the four possible card suits: hearts, diamonds, clubs, and spades. An <a href="https://en.wikipedia.org/wiki/Enumerated_type">Enum (short for enumerated type)</a> is an excellent choice to define suits, and in fact &ndash; the Wikipedia article about enumerated types uses card suits as an example!</p>
+<p>Here is a classic definition of an enum in Go using <a href="https://www.gopherguides.com/articles/how-to-use-iota-in-golang"><code>iota</code></a> to declare constant uint8 for our suits.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> (
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">Hearts</span> <span style="color:#a6e22e">Suit</span> = <span style="color:#66d9ef">iota</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">Diamonds</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">Clubs</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">Spades</span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Suit</span> <span style="color:#66d9ef">uint8</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> (
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">Suit_name</span> = <span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">uint8</span>]<span style="color:#66d9ef">string</span>{
+</span></span><span style="display:flex;"><span>		<span style="color:#ae81ff">1</span>: <span style="color:#e6db74">&#34;♥&#34;</span>,
+</span></span><span style="display:flex;"><span>		<span style="color:#ae81ff">2</span>: <span style="color:#e6db74">&#34;♦&#34;</span>,
+</span></span><span style="display:flex;"><span>		<span style="color:#ae81ff">3</span>: <span style="color:#e6db74">&#34;♣&#34;</span>,
+</span></span><span style="display:flex;"><span>		<span style="color:#ae81ff">4</span>: <span style="color:#e6db74">&#34;♠&#34;</span>,
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">Suit_value</span> = <span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">string</span>]<span style="color:#66d9ef">uint8</span>{
+</span></span><span style="display:flex;"><span>		<span style="color:#e6db74">&#34;♥&#34;</span>:        <span style="color:#ae81ff">1</span>,
+</span></span><span style="display:flex;"><span>		<span style="color:#e6db74">&#34;hearts&#34;</span>:   <span style="color:#ae81ff">1</span>,
+</span></span><span style="display:flex;"><span>		<span style="color:#e6db74">&#34;♦&#34;</span>:        <span style="color:#ae81ff">2</span>,
+</span></span><span style="display:flex;"><span>		<span style="color:#e6db74">&#34;diamonds&#34;</span>: <span style="color:#ae81ff">2</span>,
+</span></span><span style="display:flex;"><span>		<span style="color:#e6db74">&#34;♣&#34;</span>:        <span style="color:#ae81ff">3</span>,
+</span></span><span style="display:flex;"><span>		<span style="color:#e6db74">&#34;clubs&#34;</span>:    <span style="color:#ae81ff">3</span>,
+</span></span><span style="display:flex;"><span>		<span style="color:#e6db74">&#34;♠&#34;</span>:        <span style="color:#ae81ff">4</span>,
+</span></span><span style="display:flex;"><span>		<span style="color:#e6db74">&#34;spades&#34;</span>:   <span style="color:#ae81ff">4</span>,
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// String allows Suit to implement fmt.Stringer
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">s</span> <span style="color:#a6e22e">Suit</span>) <span style="color:#a6e22e">String</span>() <span style="color:#66d9ef">string</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">Suit_name</span>[uint8(<span style="color:#a6e22e">s</span>)]
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Convert a string to a Suit, returns an error if the string is unknown.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// NOTE: for JSON marshaling this must return a Suit value not a pointer, which is
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// common when using integer enumerations (or any primitive type alias).
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">ParseSuit</span>(<span style="color:#a6e22e">s</span> <span style="color:#66d9ef">string</span>) (<span style="color:#a6e22e">Suit</span>, <span style="color:#66d9ef">error</span>) {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">s</span> = <span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">TrimSpace</span>(<span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">ToLower</span>(<span style="color:#a6e22e">s</span>))
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">value</span>, <span style="color:#a6e22e">ok</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">Suit_value</span>[<span style="color:#a6e22e">s</span>]
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> !<span style="color:#a6e22e">ok</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">Suit</span>(<span style="color:#ae81ff">0</span>), <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Errorf</span>(<span style="color:#e6db74">&#34;%q is not a valid card suit&#34;</span>, <span style="color:#a6e22e">s</span>)
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">Suit</span>(<span style="color:#a6e22e">value</span>), <span style="color:#66d9ef">nil</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>The <code>Suit</code> enum uses 1 byte (a <code>uint8</code>) to define our constants in a small but still convenient package (technically all we need is 2 bits to represent our 4 values; a uint8 can represent up to 255 values but is far easier to work with). This is more compact than a string, but is not terribly human-friendly (e.g. you don&rsquo;t want to have to remember that <code>Hearts == 1</code>) so we implement the <a href="https://pkg.go.dev/fmt#Stringer"><code>fmt.Stringer</code></a> interface so that we can print the suit as ♥, ♦, ♣, or ♠ and a <code>ParseSuit</code> function so we can easily convert a string to a <code>Suit</code>. We then get the best of both worlds: a compact enum that can be typechecked by the compiler and a string representation that we can read and understand.</p>
+<p>All is well and we can implement our <code>Card</code> type:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Card</span> <span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">Value</span> <span style="color:#66d9ef">uint8</span> <span style="color:#e6db74">`json:&#34;value&#34;`</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">Suit</span>  <span style="color:#a6e22e">Suit</span>  <span style="color:#e6db74">`json:&#34;suit&#34;`</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>But when we attempt to marshal our card as JSON:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#a6e22e">card</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">Card</span>{<span style="color:#a6e22e">Value</span>: <span style="color:#ae81ff">7</span>, <span style="color:#a6e22e">Suit</span>: <span style="color:#a6e22e">Spades</span>}
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">data</span>, <span style="color:#a6e22e">_</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">json</span>.<span style="color:#a6e22e">Marshal</span>(<span style="color:#a6e22e">card</span>)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(string(<span style="color:#a6e22e">data</span>))
+</span></span></code></pre></div><p>We get the following result:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{ <span style="color:#f92672">&#34;value&#34;</span>: <span style="color:#ae81ff">7</span>, <span style="color:#f92672">&#34;suit&#34;</span>: <span style="color:#ae81ff">4</span> }
+</span></span></code></pre></div><p>We just did a bunch of work to be able to represent our <code>Suit</code> as a string, but the <code>encoding/json</code> package ignores it &ndash; this is because we need to customize how JSON is created from our type. To do so, we must implement the <a href="https://pkg.go.dev/encoding/json#Marshaler"><code>json.Marshaler</code></a> interface:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">s</span> <span style="color:#a6e22e">Suit</span>) <span style="color:#a6e22e">MarshalJSON</span>() ([]<span style="color:#66d9ef">byte</span>, <span style="color:#66d9ef">error</span>) {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">json</span>.<span style="color:#a6e22e">Marshal</span>(<span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">String</span>())
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>The <code>MarshalJSON</code> function converts the <code>Suit</code> into a string, then JSON-marshals the string so that the output is valid JSON: <code>[]byte(&quot;\&quot;♠\&quot;&quot;)</code> (quotation marks included). The most important thing to remember is that the method has a <em>value</em> receiver not a <em>pointer</em> receiver &ndash; more on this later. Implementing this method for our <code>Suit</code> object now marshals the following JSON data:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{ <span style="color:#f92672">&#34;value&#34;</span>: <span style="color:#ae81ff">7</span>, <span style="color:#f92672">&#34;suit&#34;</span>: <span style="color:#e6db74">&#34;♠&#34;</span> }
+</span></span></code></pre></div><p>Of course, if we try to Unmarshal this data, we will get an error &ldquo;json: cannot unmarshal string into Go value of type main.Suit&rdquo; because <code>&quot;♠&quot;</code> cannot be converted to a <code>uint8</code> and then to our <code>Suit</code> type. To deal with our custom marshaled JSON data, we&rsquo;ll also have to implement the <a href="https://pkg.go.dev/encoding/json#Unmarshaler"><code>json.Unmarshaler</code></a> interface:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">s</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Suit</span>) <span style="color:#a6e22e">UnmarshalJSON</span>(<span style="color:#a6e22e">data</span> []<span style="color:#66d9ef">byte</span>) (<span style="color:#a6e22e">err</span> <span style="color:#66d9ef">error</span>) {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">suits</span> <span style="color:#66d9ef">string</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">json</span>.<span style="color:#a6e22e">Unmarshal</span>(<span style="color:#a6e22e">data</span>, <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">suits</span>); <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">err</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">s</span>, <span style="color:#a6e22e">err</span> = <span style="color:#a6e22e">ParseSuit</span>(<span style="color:#a6e22e">suits</span>); <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">err</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">nil</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>This function is slightly more complicated, so we&rsquo;ll go through it step by step. First, we declare a string variable <code>suits</code> and unmarshal the data into the string &ndash; this is possible because we expect the data to be the JSON string <code>&quot;♠&quot;</code> (quotation marks included). Once we&rsquo;ve unmarshaled this intermediate type, we can then use the <code>ParseSuit</code> function to convert it into a <code>Suit</code> object &ndash; but then what do we do with it? The short answer is that we have to use <a href="https://go.dev/tour/methods/6">pointer indirection</a> to assign the method receiver variable the value returned from <code>ParseSuit</code>. The long answer follows.</p>
+<h2 id="pointers-values-and-reflection-in-json-serialization">Pointers, Values, and Reflection in JSON Serialization</h2>
+<p>The <code>*</code> operator in this context is the <a href="https://en.wikipedia.org/wiki/Dereference_operator">indirection operator (or dereference operator)</a>. It is an operator that works on <code>pointer</code> variables to get access to the value of the variable stored in the memory address (e.g. it is an indirect way to access the value). It is the opposite of the <code>&amp;</code> operator, which is the &ldquo;address-of&rdquo; operator that returns the pointer to the given value. Besides what these operators do, it is also important to understand <a href="https://go.dev/tour/methods/4">method receivers</a> in Golang, which can be either pointer or value receivers depending on the type defined in the method signature.</p>
+<p>The <code>UnmarshalJSON</code> function is a method, meaning it is a function that has an object receiver. Because <code>UnmarshalJSON</code> only returns an error &ndash; it is up to us to unmarshal the data into the receiver (e.g. modify the receiver value as the unmarshaled object). This means we have a choice, we can implement the <code>UnmarshalJSON</code> method with either a value receiver:</p>
+<pre tabindex="0"><code>func (s Suit) UnmarshalJSON(data []byte) error
+</code></pre><p>or a pointer receiver:</p>
+<pre tabindex="0"><code>func (s *Suit) UnmarshalJSON(data []byte) error
+</code></pre><p>Although these method signatures are different by one character, the receiver type has a large impact on how the code behaves. If you attempt to use the pointer indirection with a value receiver:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">s</span> <span style="color:#a6e22e">Suit</span>) <span style="color:#a6e22e">UnmarshalJSON</span>(<span style="color:#a6e22e">data</span> []<span style="color:#66d9ef">byte</span>) (<span style="color:#a6e22e">err</span> <span style="color:#66d9ef">error</span>) {
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// ...
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#66d9ef">if</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">s</span>, <span style="color:#a6e22e">err</span> = <span style="color:#a6e22e">ParseSuit</span>(<span style="color:#a6e22e">suits</span>); <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">err</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">nil</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>The compiler will complain with the following error: &ldquo;invalid operation: cannot indirect s (variable of type Suit)&rdquo;. However, if you don&rsquo;t indirect:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">s</span> <span style="color:#a6e22e">Suit</span>) <span style="color:#a6e22e">UnmarshalJSON</span>(<span style="color:#a6e22e">data</span> []<span style="color:#66d9ef">byte</span>) (<span style="color:#a6e22e">err</span> <span style="color:#66d9ef">error</span>) {
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// ...
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">s</span>, <span style="color:#a6e22e">err</span> = <span style="color:#a6e22e">ParseSuit</span>(<span style="color:#a6e22e">suits</span>); <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">err</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">nil</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Then a copy of the value is passed into the <code>UnmarshalJSON</code> method and the original variable is not modified. This means that the <code>Suit</code> on the card you&rsquo;re trying to unmarshal will remain zero-valued:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#a6e22e">card</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">Card</span>{}
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">json</span>.<span style="color:#a6e22e">Unmarshal</span>([]byte(<span style="color:#e6db74">`{&#34;value&#34;: 12, &#34;suit&#34;: &#34;♥&#34;}`</span>))
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">card</span>.<span style="color:#a6e22e">Suit</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">Suit</span>(<span style="color:#ae81ff">0</span>)
+</span></span></code></pre></div><p>The <code>UnmarshalJSON</code> was called successfully but the <code>card.Suit</code> variable was never touched by the value receiver. This means that <strong>the <em>only</em> way to handle <code>UnmarshalJSON</code> is with a pointer receiver and indirection of the unmarshaled value</strong> (or direct modification of the values in the pointer).</p>
+<p>The <a href="https://go.dev/tour/methods/8">rule of thumb</a> for implementing value or pointer receivers is as follows:</p>
+<blockquote>
+<p>In general, all methods on a given type should have either value or pointer receivers, but not a mixture of both.</p>
+</blockquote>
+<p>However, we implemented our <code>MarshalJSON</code> function as a value receiver &hellip; what gives?</p>
+<p>This is where <a href="https://en.wikipedia.org/wiki/Reflective_programming">reflection</a> enters the picture. The <code>encoding/json</code> package makes heavy use of the <a href="https://pkg.go.dev/reflect"><code>reflect</code></a> package to examine arbitrary types, determine if those types implement the interfaces we defined in the previous section, get access to struct tags, and more.</p>
+<p>Remember that we defined our <code>Card</code> type as follows:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Card</span> <span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">Value</span> <span style="color:#66d9ef">uint8</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">Suit</span> <span style="color:#a6e22e">Suit</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>The property <code>Suit</code> on the <code>Card</code> is of type <code>Suit</code> &ndash; a value and not a pointer (<code>*Suit</code>). If we implemented our <code>MarshalJSON</code> method with a pointer receiver, you would notice something odd happen:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">s</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Suit</span>) <span style="color:#a6e22e">MarshalJSON</span>() ([]<span style="color:#66d9ef">byte</span>, <span style="color:#66d9ef">error</span>) {
+</span></span><span style="display:flex;"><span>	panic(<span style="color:#e6db74">&#34;this should not work&#34;</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#a6e22e">data</span>, <span style="color:#a6e22e">_</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">json</span>.<span style="color:#a6e22e">Marshal</span>(<span style="color:#a6e22e">Spades</span>)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(string(<span style="color:#a6e22e">data</span>))
+</span></span></code></pre></div><p>The output is <code>3</code> and the panic is never triggered. In order to trigger the panic you would have to do the following:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#a6e22e">spades</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">Spades</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">data</span>, <span style="color:#a6e22e">_</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">json</span>.<span style="color:#a6e22e">Marshal</span>(<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">spades</span>)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(string(<span style="color:#a6e22e">data</span>))
+</span></span></code></pre></div><p>In the first case we&rsquo;re passing a value to the <code>json.Marshal</code> method and in the second case we&rsquo;re passing a pointer. (We have to assign the constant <code>Spades</code> to a variable <code>spades</code> because we cannot use <code>&amp;</code> on a constant &ndash; this allows us to pass the address-of the pointer to the <code>json.Marshal</code> method.)</p>
+<p>In order to use reflection to determine if a variable implements the <code>json.Marshaler</code> interface, it has to determine if the <code>MarshalJSON</code> is in the <a href="http://golang.org/ref/spec#Method_sets">method set</a> of the variable. When using the pointer receiver, it is in the method set of <code>*Suit</code> but not <code>Suit</code> and when using the value receiver, it is in the method set of <code>Suit</code> not <code>*Suit</code>.</p>
+<p>Enums are usually treated as values since they are simple integers, e.g. it is preferable to use <code>Suit</code> rather than <code>*Suit</code> for the same reason it is preferable to use <code>int</code> rather than <code>*int</code>. Although the pointer receiver of <code>MarshalJSON</code> for the enum would work in 98% of cases, the 2% of cases it doesn&rsquo;t work would cause frustrating bugs that would be hard to diagnose, therefore I believe <strong>in the case of enum JSON serialization, mixing pointer and value method receivers is an exception to the normal rule of thumb</strong>.</p>
+<h2 id="sidebar-marshaling-cards">Sidebar: Marshaling Cards</h2>
+<p>To wrap up, I&rsquo;d like to discuss a couple of notes on the <code>Card</code> struct. First why did we add <code>UnmarshalJSON</code> and <code>MarshalJSON</code> to the enum <code>Suit</code> instead of to <code>Card</code>? Here I&rsquo;ll introduce another rule of thumb: <strong>implement the JSON Marshaler and Unmarshaler methods on the smallest possible type that needs custom serialization</strong>. JSON data is usually very nested data with lots of different types and subtypes. To make your custom types more flexible (e.g. using <code>Suit</code> in objects besides <code>Card</code>), you&rsquo;ll want each type to handle it&rsquo;s own marshaling and unmarshaling rather than requiring the parent type to do it.</p>
+<p>Second, if you tried marshaling the <code>Card</code> in the case above where <code>Suit</code> had a pointer receiver to <code>MarshalJSON</code>, you may have noticed that the code worked. I mentioned that in 2% of the cases the pointer receiver would not work, one of those cases is if you add a <code>MarshalJSON</code> method to <code>Card</code> and you attempt to create an intermediate value for the representation:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">c</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Card</span>) <span style="color:#a6e22e">MarshalJSON</span>() ([]<span style="color:#66d9ef">byte</span>, <span style="color:#66d9ef">error</span>) {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">middle</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">string</span>]<span style="color:#66d9ef">interface</span>{})
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">middle</span>[<span style="color:#e6db74">&#34;value&#34;</span>] = <span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">Value</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">middle</span>[<span style="color:#e6db74">&#34;suit&#34;</span>] = <span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">Suit</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">json</span>.<span style="color:#a6e22e">Marshal</span>(<span style="color:#a6e22e">middle</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>As discussed in the previous section, <code>c.Suit</code> is assigned to the type <code>interface{}</code>, so when the JSON reflection inspects its method set, it cannot find the pointer receiver of <code>MarshalJSON</code>. Without this method, the <code>c.Suit</code> type is <code>Suit</code>, so the JSON reflection can directly assert if the type implements <code>Marshaler</code>.</p>
+<p>Finally - what about custom unmarshaling of a <code>struct</code>, are there any gotchas there? Consider if we want to do custom validation of our card during unmarshal and return an error if the card is not valid (not the best design pattern, but used to illustrate a point):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">c</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Card</span>) <span style="color:#a6e22e">UnmarshalJSON</span>(<span style="color:#a6e22e">data</span> []<span style="color:#66d9ef">byte</span>) <span style="color:#66d9ef">error</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> = <span style="color:#a6e22e">json</span>.<span style="color:#a6e22e">Unmarshal</span>(<span style="color:#a6e22e">data</span>, <span style="color:#a6e22e">c</span>); <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">err</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">Value</span> &lt; <span style="color:#ae81ff">1</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">Value</span> &gt; <span style="color:#ae81ff">13</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">errors</span>.<span style="color:#a6e22e">New</span>(<span style="color:#e6db74">&#34;not a valid card value&#34;</span>)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">nil</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>This code will return a stack overflow because of the infinite recursive call to <code>UnmarshalJSON</code> - e.g. calling <code>json.Unmarshal(data, card)</code> will call <code>c.UnmarshalJSON(data)</code>, which will call <code>json.Unmarshal(data, c)</code> which will call <code>c.UnmarshalJSON(data)</code> and so on until the maximum recursion depth is reached and a stack overflow occurs. To solve this problem, an <a href="https://talks.golang.org/2012/10things.slide#2"><em>anonymous struct</em></a> is required:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">c</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Card</span>) <span style="color:#a6e22e">UnmarshalJSON</span>(<span style="color:#a6e22e">data</span> []<span style="color:#66d9ef">byte</span>) <span style="color:#66d9ef">error</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">cs</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">struct</span>{
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">Value</span> <span style="color:#66d9ef">uint8</span> <span style="color:#e6db74">`json:&#34;value&#34;`</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">Suit</span>  <span style="color:#a6e22e">Suit</span>  <span style="color:#e6db74">`json:&#34;suit&#34;`</span>
+</span></span><span style="display:flex;"><span>    }{}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> = <span style="color:#a6e22e">json</span>.<span style="color:#a6e22e">Unmarshal</span>(<span style="color:#a6e22e">data</span>, <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">cs</span>); <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">err</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">cs</span>.<span style="color:#a6e22e">Value</span> &lt; <span style="color:#ae81ff">1</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">cs</span>.<span style="color:#a6e22e">Value</span> &gt; <span style="color:#ae81ff">13</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">errors</span>.<span style="color:#a6e22e">New</span>(<span style="color:#e6db74">&#34;not a valid card value&#34;</span>)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">Value</span> = <span style="color:#a6e22e">cs</span>.<span style="color:#a6e22e">Value</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">Suit</span> = <span style="color:#a6e22e">cs</span>.<span style="color:#a6e22e">Suit</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">nil</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Duplicating struct definitions will often make maintenance harder, but this is sometimes necessary, particularly in the case of generated code that does not allow you to implement your own <code>json</code> struct tags (e.g. protocol buffers).</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>When you define your own types in Go and you want control over how those types are serialized and deserialized into JSON - the <code>Marshaler</code> and <code>Unmarshaler</code> interfaces give you a lot of flexibility. However, knowing and understanding pointers, values, indirection, and receivers is essential to correctly implementing these interfaces &ndash; and common wisdom can sometimes lead to tripping hazards. In particular, when dealing with enumerations or other primitive type aliases, the rule of thumb to use all pointer or all value receivers does not hold, and instead mixed receiver types are your best bet.</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="bg-[#E8EFF6] max-w-[800px] mx-auto mt-9 p-8 rounded-lg">
+      <div class="text-center">
+        <h3 class="font-bold text-xl sm:text-2xl lg:text-3xl"><b class="text-[#1D65A6]">About</b> this Post</h3>
+      </div>
+      <p class="mt-4 text-base mx-auto text-center sm:mt-5 lg:mt-7 lg:text-base max-w-2xl">Lorem ipsum dolor sit amet,
+        consectetur adipiscing elit. Donec sodales placerat dolor, non placerat dolor sagittis id. Quisque sollicitudin
+        convallis mi, eget facilisis augue mattis viverra. Suspendisse feugiat pharetra massa, sed luctus magna pulvinar
+        sed.</p>
+      <div class="md:flex text-base border-t pt-6 mt-6">
+        <div>
+          <div class="text-lg text-[#1D65A6] font-bold mb-3">Written by:</div>
+          <div class="flex items-center mt-4 mb-6">
+            <img src="img/bbfort.png" alt=""
+              class="border-4 border-white rounded-full h-11 drop-shadow-lg"><span class="ml-3">Benjamin Bengfort</span>
+          </div>
+          <div class="text-lg text-[#1D65A6] font-bold mb-3">Photo credit:</div>
+          <p>Nicholas_T via Flickr Commons</p>
+        </div>
+        <div class="sm:ml-10 sm:mt-0 mt-12">
+          <div class="text-lg text-[#1D65A6] font-bold mb-3">Share this post:</div>
+          <ul class="grid grid-cols-2 gap-6 mt-4">
+            <li><a href="" class="flex items-center"><img src="img/email.png" alt=""
+                  class="p-3 bg-white rounded-lg mr-3"><span>info@rotational.io</span></a></li>
+            <li><a href="" class="flex items-center"><img src="img/github.png" alt=""
+                  class="p-3 bg-white rounded-lg mr-3"><span>rotationalio</span></a></li>
+            <li><a href="" class="flex items-center"><img src="img/twitter.png" alt=""
+                  class="p-3 bg-white rounded-lg mr-4"><span>rotationalio</span></a></li>
+            <li><a href="" class="flex items-center"><img src="img/linkedin.png" alt=""
+                  class="p-3 bg-white rounded-lg mr-3"><span>rotational</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
+        <div class="flex justify-between mt-12 sm:mt-24 items-center">
+            <h2 class="font-bold text-2xl sm:text-4xl flex">
+                <span>
+                    Recents <span class="text-[#1D65A6]">Rotations</span>
+                </span>
+                <img src="img/butterfly.png" alt="butterfly" class="ml-4 h-6 sm:h-8 relative top-1">
+            </h2>
+            <div>
+                <a href="/blog" class="flex text-base sm:text-lg items-center font-bold text-[#1D65A6]"><span>View all</span>
+                    <img src="img/arr-right.png" alt="" class="h-4 ml-2"></a>
+            </div>
+        </div>
+        <div>
+            <div class="sm:grid grid-cols-3 gap-8 sm:mt-16">
+                
+                    <div class="mt-6 ">
+                        <div class="article">
+    <img src="https://rotational.io/img/blog/blazes.png" alt="" class="rounded-t-xl">
+    <div class="bg-[#ECF6FF] rounded-b-xl">
+        <div class="px-6 pt-4">
+            <h4 class="text-base font-bold text-[#1D65A6]">Technologies</h4>
+            <h3 class="text-xl font-extrabold mt-3 "><a href="https://rotational.io/blog/webassembly-the-future-of-computing/">Why WebAssembly Is the Future of Computing</a></h3>
+            <p class="mt-3 text-base font-extralight"><!-- raw HTML omitted -->
+<p>If you talk about WebAssembly (WASM), you just may spark debate about whether it is really the next best thing in web development or the second coming of Java applets. In this post, we&rsquo;ll dive into WASM, how it is currently transforming web development, and why we think its future is so bright.</p></p>
+        </div>
+        <footer class="flex justify-between items-center px-6 py-3 border-t mt-6">
+            <div class="flex items-center">
+                <img src="img/avatar.png" alt="" class="rounded-full">
+                <span class="ml-4 font-extralight">Danielle Maxwell</span>
+            </div>
+            <div class="font-extralight">
+                Sep 27, 2022
+            </div>
+        </footer>
+    </div>
+</div>
+                    </div>
+                
+                    <div class="mt-6 ">
+                        <div class="article">
+    <img src="https://rotational.io/img/blog/viking_runes.png" alt="" class="rounded-t-xl">
+    <div class="bg-[#ECF6FF] rounded-b-xl">
+        <div class="px-6 pt-4">
+            <h4 class="text-base font-bold text-[#1D65A6]">Crypto</h4>
+            <h3 class="text-xl font-extrabold mt-3 "><a href="https://rotational.io/blog/eventing-platforms/">The Eventing Platform Landscape</a></h3>
+            <p class="mt-3 text-base font-extralight"><p>Kafka and PubSub and Kinesis, oh my! Which eventing platform is best? In this post we&rsquo;ll explore the three primary categories of eventing systems and understand their similarities, differences, and key use cases.</p></p>
+        </div>
+        <footer class="flex justify-between items-center px-6 py-3 border-t mt-6">
+            <div class="flex items-center">
+                <img src="img/avatar.png" alt="" class="rounded-full">
+                <span class="ml-4 font-extralight">Rebecca Bilbro</span>
+            </div>
+            <div class="font-extralight">
+                Sep 10, 2022
+            </div>
+        </footer>
+    </div>
+</div>
+                    </div>
+                
+                    <div class="mt-6 ">
+                        <div class="article">
+    <img src="https://rotational.io/img/blog/dawn.png" alt="" class="rounded-t-xl">
+    <div class="bg-[#ECF6FF] rounded-b-xl">
+        <div class="px-6 pt-4">
+            <h4 class="text-base font-bold text-[#1D65A6]">Technologies</h4>
+            <h3 class="text-xl font-extrabold mt-3 "><a href="https://rotational.io/blog/ranges-of-integer-data-types/">Ranges of Integer Data Types</a></h3>
+            <p class="mt-3 text-base font-extralight"><p>The data type choices we make when building data systems or metrics is critically important: as our systems run for long periods of time it can be easy to overflow the integers that we use (Y2K bug anyone?). As a result, I find myself constantly checking the sizes of standard int types but I haven&rsquo;t found a good way to Google this. This blog post is a quick reference for the standard sizes and a discussion on why it matters.</p></p>
+        </div>
+        <footer class="flex justify-between items-center px-6 py-3 border-t mt-6">
+            <div class="flex items-center">
+                <img src="img/avatar.png" alt="" class="rounded-full">
+                <span class="ml-4 font-extralight">Benjamin Bengfort</span>
+            </div>
+            <div class="font-extralight">
+                Sep 7, 2022
+            </div>
+        </footer>
+    </div>
+</div>
+                    </div>
+                
+                
+               
+            </div>
+        </div>
+    </div>
+  </div>
+  <div class="bg-[#1D65A6] max-w-[800px] mx-auto mt-20 py-14 px-12 md:px-16 text-white md:rounded-lg">
+    <h6 class="font-bold text-center">Enter Your Email To Subscribe</h6>
+    <input type="text" placeholder="Your email address" class="w-full px-4 py-2.5 rounded-lg mt-6">
+    <div class="flex mt-6 items-start">
+      <input type="checkbox" class="w-6 h-6 block border-0 ">
+      <span class="ml-2 text-left">I want to received the monthly newsletter and other updates from Rotational. You
+        agree to your Privacy Policy. You may unsubscribe at any time.*</span>
+    </div>
+    <div class="flex justify-center">
+      <a href="" class="bg-[#192E5B] px-14 py-4 mt-10 rounded-lg text-sm text-white uppercase md:text-base">Submit</a>
+    </div>
+  </div>
+
+    </main>
+
+    <footer>
+    <div class="relative pt-[90px] sm:pt-[300px] font-extralight">
+        <img class="w-full absolute inset-y-0 left-0 lg:h-full lg:w-full lg:max-w-none" src="img/foot.png" alt="" />
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 bg-[#192E5B]">
+            <div class="sm:flex text-white">
+                <div>
+                    <a href=""><img src="img/logo-white.png" alt="" class="sm:h-auto h-16"></a>
+                </div>
+                <div class="sm:ml-24 mt-5 sm:mt-0 max-w-lg">
+                    
+
+                    
+                        
+                            <h5 class="font-bold text-lg">Contact Details</h5>
+                            <p class="mt-3">
+                                We love to talk through complex scaling and performance issues. What’s slowing you down? Drop us a line for a friendly chat. We’ll make it worth your while.
+                            </p>
+                        
+                    
+                </div>
+                <div class="sm:ml-24 sm:mt-0 mt-8">
+                    <ul class="grid grid-cols-2 gap-8">
+                        
+                            <li>
+                                <a href="" class="flex items-center" target="_blank">
+                                    <img src="img/email.png" alt="" class="p-4 bg-white rounded-lg mr-4">
+                                    <span>info@rotational.io</span>
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="" class="flex items-center" target="_blank">
+                                    <img src="img/github.png" alt="" class="p-4 bg-white rounded-lg mr-4">
+                                    <span>rotationalio</span>
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="" class="flex items-center" target="_blank">
+                                    <img src="img/twitter.png" alt="" class="p-4 bg-white rounded-lg mr-4">
+                                    <span>rotationalio</span>
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="" class="flex items-center" target="_blank">
+                                    <img src="img/linkedin.png" alt="" class="p-4 bg-white rounded-lg mr-4">
+                                    <span>rotational</span>
+                                </a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+            <div class="sm:flex justify-between border-t py-6 text-white mt-12 sm:mt-32">
+                <p>Copyright © 2021 Rotational Labs, LLC, All Rights Reserved</p>
+                <ul class="sm:mt-0 mt-4 flex">
+                    <li class="border-r pr-4 mr-4 "><a href="">Privacy Policy</a></li>
+                    <li><a href="">Terms of Use</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</footer>
+    <script src="https://rotational.io/js/app.js"></script>
+
+  </body>
+
+</html>

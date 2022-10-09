@@ -1,0 +1,26 @@
+
+{{ $data := index site.Data site.Language.Lang }}
+
+{{ if $data.about.about.values.enable }}
+    {{ with $data.about.about.values }}
+    <div class="sm:ml-20">
+        <div class="flex items-center mt-9 sm:mt-11 lg:mt-14">
+            <h3 class="font-bold text-xl sm:text-2xl lg:text-3xl">
+                <b class="text-[#1D65A6]">{{ with .title }} {{ index (split . " ") 0 | safeHTML }} {{ end }}</b>
+                {{ with .title }} {{ after (len (index (split . " ") 0)) . | safeHTML }} {{ end }}
+            </h3>
+        </div>
+
+        <ul class="mt-4 text-base sm:mt-5 lg:mt-7 lg:text-lg">
+            {{ range .values_item}}
+                <li class="mb-4">
+                    <p>
+                        <b class="text-[#1D65A6]">{{ with .text }} {{ index (split . " ") 0 | safeHTML }} {{ end }}</b>
+                        {{ with .text }} {{ after (len (index (split . " ") 0)) . | safeHTML }} {{ end }}
+                    </p>
+                </li>
+            {{ end }}
+        </ul>
+    </div>
+    {{ end }}
+{{ end }}

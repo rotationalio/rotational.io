@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    
+<meta charset="UTF-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="In this post we&#39;ll explore some of the types of eventing platforms and discuss why it&#39;s not about deciding which is objectively the &#39;best&#39;, but about knowing how to select the best tool for a given context.">
+
+	<meta name="author" content="Rotational Labs, LLC">
+
+
+<base href="https://rotational.io/">
+<title>Rotational Labs  | The Eventing Platform Landscape</title>
+
+<!--Favicon-->
+<link rel="shortcut icon" href="https://rotational.io/img/favicon.png" type="image/x-icon">
+<link rel="icon" href="https://rotational.io/img/favicon.png" type="image/x-icon">
+
+<!-- plugins -->
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+<!-- Main Stylesheet -->
+<link rel="stylesheet" href="https://rotational.io/css/app.css" media="screen">
+
+  </head>
+
+  <body class="bg-white">
+
+    
+    <div class="sm:pt-5 pb-6 relative bg-[#1D65A6]">
+        <nav class="relative max-w-7xl mx-auto flex items-center justify-between text-white px-4 sm:px-6"
+            aria-label="Global">
+    <a href="/" class="pt-3 sm:pt-0">
+        <img src="img/logo.png" alt="Rotational" class="h-14 w-auto sm:h-14">
+    </a>
+    <div class="topnav" id="myTopnav">
+        
+        
+            <a 
+            class=""
+            href="/services/">
+            Services 
+            </a>
+        
+            <a 
+            class=""
+            href="/opensource/">
+            Open Source 
+            </a>
+        
+            <a 
+            class=""
+            href="/blog/">
+            Blog 
+            </a>
+        
+            <a 
+            class=""
+            href="/about/">
+            About 
+            </a>
+        
+            <a 
+            class=""
+            href="/contact/">
+            Contact Us 
+            </a>
+        
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+</nav>
+
+    </div>
+
+
+    <main>
+      
+<div class="relative max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="mt-14">
+      <img src="https://rotational.io/img/blog/viking_runes.png" alt="" class="mx-auto">
+      <div class="mt-8">
+        <h3 class="font-bold text-xl sm:text-2xl lg:text-3xl text-center">
+            <b class="text-[#1D65A6]"> The </b>
+              Eventing Platform Landscape 
+        </h3>
+        <div class="flex justify-center items-center mt-4 mb-6">
+          <img src="img/bbfort.png" alt=""
+            class="border-4 border-white rounded-full h-11 drop-shadow-lg"><span class="ml-3">Rebecca Bilbro |
+                Saturday, Sep 10, 2022 | Crypto</span>
+        </div>
+        <div class="max-w-[800px] mx-auto">
+            <p>Kafka and PubSub and Kinesis, oh my! Which eventing platform is best? In this post we&rsquo;ll explore the three primary categories of eventing systems and understand their similarities, differences, and key use cases.</p>
+<h2 id="message-queues">Message Queues</h2>
+<p>Message queues (also known as message brokers) have been around for a while (~15 years) and are the oldest of the eventing systems. The central contribution of message queues is that our applications can do work more efficiently if we break big jobs into standardized chunks. By abstracting the complex machinations of our apps into chunks, we can then queue those chunks up and pass information between components more systematically.</p>
+<p>Message queues are designed so that each message is consumed by only one consumer. Think about your list of weekend errands; once the chore is done, you check it off the list.</p>
+<p>If you can express your eventing problem in the context of a simple message queue (for instance, if you don&rsquo;t need to handle multiple producers and consumers, don&rsquo;t have to worry about event persistence or exactly once semantics, etc.), you are in luck! Message queues are by far the cheapest and easiest to implement eventing solution.</p>
+<p><strong>Examples of Message Queues</strong></p>
+<ul>
+<li><a href="https://www.rabbitmq.com/">RabbitMQ</a></li>
+<li><a href="https://aws.amazon.com/sqs/">Amazon SQS</a></li>
+</ul>
+<h2 id="pubsub-and-event-streaming">Pub/Sub and Event Streaming</h2>
+<p>The natural evolution of message queues and brokers was a use case where the system needs a log of events rather than an ephemeral todo list. The Pub/Sub pattern refers to a system where some parts of an application (usually called &ldquo;publishers&rdquo; or &ldquo;producers&rdquo;) create data and other parts of the application (usually called &ldquo;subscribers&rdquo; or &ldquo;consumers&rdquo;) react to that data.</p>
+<p>Unlike the original vision of the message queue, in the Pub/Sub pattern, the relationship between data creation and data acquisition is no longer 1-1. That means unlike a grocery list, where we check items off once we&rsquo;ve got them, we can&rsquo;t delete data until it&rsquo;s been retrieved by all interested parties. A better metaphor here is a teacher passing out a homework assignment to a classfull of students; the activity isn&rsquo;t complete until all the students have received the assignment.</p>
+<p>So what&rsquo;s the distinction between Pub/Sub and Event Stream? The question comes down to whether the teacher needs to keep a record of the assignment after all of the students have received it &ndash; if the answer is no, this is the Pub/Sub pattern; if the answer is yes, we need log persistence, which requires an Event Stream.</p>
+<p>Persisting a log of events and adding guarantees does come at a significant cost though, since they require the underlying system to use a consensus mechanism to put events in order, and consensus is slow. Tools that provide these features often offer them turned off by default because that increases throughput and decreases latency, so be a bit wary of published metrics. Turning these features on often means a lot more elbow grease in terms of configuration, and will also influence cost.</p>
+<p><strong>Examples of Pub/Sub Tools</strong></p>
+<ul>
+<li><a href="https://cloud.google.com/pubsub">Google PubSub</a></li>
+<li><a href="https://ably.com/pub-sub-messaging">Ably</a></li>
+<li><a href="https://docs.nats.io/nats-concepts/core-nats">Core NATS</a></li>
+</ul>
+<p><strong>Examples of Event Stream Tools</strong></p>
+<ul>
+<li><a href="https://kafka.apache.org/">Apache Kafka</a></li>
+<li><a href="https://redpanda.com/">Redpanda</a></li>
+<li><a href="https://pulsar.apache.org/">Apache Pulsar</a></li>
+<li><a href="https://docs.nats.io/nats-concepts/jetstream">NATS Jetstream</a></li>
+</ul>
+<h2 id="stream-processing">Stream Processing</h2>
+<p>The final category in streaming events is Stream Processing, which marries the idea of streaming events with distributed computing. In addition to breaking data down into chunks to send along a stream (a stream that potentially many different processes are consuming from), each downstream process performs some computation on the portion of the data they receive. As with the MapReduce model implemented in Hadoop, the independently transformed chunks of data can then be reduced back into a single dataset. However, while Hadoop was designed to operate on batches of data, Stream Processing tools allow for the same kind of task parallelization on streaming data.</p>
+<p>With Stream Processing, computation is more tightly coupled to the message stream, but this can be an important optimization in cases that require homogeneous data processing. Consider a climate change dashboard that consumes IoT data flowing in from sensors around the world that measure global surface temperature in kelvins to compute a rolling mean. In this case, the computation required is relatively straightforward, but doing it at scale would be much more efficient with a Stream Processing tool.</p>
+<p><strong>Examples of Stream Processing Tools</strong></p>
+<ul>
+<li><a href="https://storm.apache.org/">Apache Storm</a></li>
+<li><a href="https://heron.apache.org/">Apache Heron</a></li>
+<li><a href="https://flink.apache.org/">Apache Flink</a></li>
+<li><a href="https://aws.amazon.com/kinesis/">AWS Kinesis</a></li>
+<li><a href="https://jet-start.sh/">Hazelcast Jet</a></li>
+</ul>
+<h2 id="conclusion">Conclusion</h2>
+<p>So which is best - message queues, event streams, or stream processing? The truth is that this is a false choice! All three types of eventing platforms have their place. Moreover, as we&rsquo;ll explore in a future post, each may offer superior or subpar performance, given a specific context and depending on the specific configuration details of a given deployment.</p>
+<p>When you are in the architecture and design phase of a new application, rather than asking &ldquo;what&rsquo;s the best eventing tool?&rdquo;, the better question to ask is &ldquo;what features does my eventing problem require?&rdquo;. Developers frequently get comfortable with one tool and take it with them from job to job, and there is certainly something to be said for knowing how to turn the configuration knobs on your favorite eventing tool. But if you&rsquo;re looking for an excuse to cast a wider net and explore some different options that might be better for your latest use case, this is your sign to go for it.</p>
+<h2 id="sources">Sources</h2>
+<ul>
+<li>Frank de Jonge, <a href="https://blog.frankdejonge.nl/the-different-types-of-events-in-event-driven-systems/">The different types of events in event-driven systems</a></li>
+<li>Sudhir Jonathan, <a href="https://sudhir.io/the-big-little-guide-to-message-queues">The Big Little Guide to Message Queues</a></li>
+<li>Jonathan Beard, <a href="https://www.jonathanbeard.io/blog/2015/09/19/streaming-and-dataflow.html">A Short Intro to Stream Processing</a></li>
+</ul>
+<hr>
+<p>Photo by <a href="https://www.flickr.com/photos/tataimitra/">Rajarshi Mitra</a> via <a href="https://flic.kr/p/244actT">Flickr Commons</a></p>
+<hr>
+        </div>
+      </div>
+    </div>
+    
+    <div class="bg-[#E8EFF6] max-w-[800px] mx-auto mt-9 p-8 rounded-lg">
+      <div class="text-center">
+        <h3 class="font-bold text-xl sm:text-2xl lg:text-3xl"><b class="text-[#1D65A6]">About</b> this Post</h3>
+      </div>
+      <p class="mt-4 text-base mx-auto text-center sm:mt-5 lg:mt-7 lg:text-base max-w-2xl">Lorem ipsum dolor sit amet,
+        consectetur adipiscing elit. Donec sodales placerat dolor, non placerat dolor sagittis id. Quisque sollicitudin
+        convallis mi, eget facilisis augue mattis viverra. Suspendisse feugiat pharetra massa, sed luctus magna pulvinar
+        sed.</p>
+      <div class="md:flex text-base border-t pt-6 mt-6">
+        <div>
+          <div class="text-lg text-[#1D65A6] font-bold mb-3">Written by:</div>
+          <div class="flex items-center mt-4 mb-6">
+            <img src="img/bbfort.png" alt=""
+              class="border-4 border-white rounded-full h-11 drop-shadow-lg"><span class="ml-3">Rebecca Bilbro</span>
+          </div>
+          <div class="text-lg text-[#1D65A6] font-bold mb-3">Photo credit:</div>
+          <p>Nicholas_T via Flickr Commons</p>
+        </div>
+        <div class="sm:ml-10 sm:mt-0 mt-12">
+          <div class="text-lg text-[#1D65A6] font-bold mb-3">Share this post:</div>
+          <ul class="grid grid-cols-2 gap-6 mt-4">
+            <li><a href="" class="flex items-center"><img src="img/email.png" alt=""
+                  class="p-3 bg-white rounded-lg mr-3"><span>info@rotational.io</span></a></li>
+            <li><a href="" class="flex items-center"><img src="img/github.png" alt=""
+                  class="p-3 bg-white rounded-lg mr-3"><span>rotationalio</span></a></li>
+            <li><a href="" class="flex items-center"><img src="img/twitter.png" alt=""
+                  class="p-3 bg-white rounded-lg mr-4"><span>rotationalio</span></a></li>
+            <li><a href="" class="flex items-center"><img src="img/linkedin.png" alt=""
+                  class="p-3 bg-white rounded-lg mr-3"><span>rotational</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
+        <div class="flex justify-between mt-12 sm:mt-24 items-center">
+            <h2 class="font-bold text-2xl sm:text-4xl flex">
+                <span>
+                    Recents <span class="text-[#1D65A6]">Rotations</span>
+                </span>
+                <img src="img/butterfly.png" alt="butterfly" class="ml-4 h-6 sm:h-8 relative top-1">
+            </h2>
+            <div>
+                <a href="/blog" class="flex text-base sm:text-lg items-center font-bold text-[#1D65A6]"><span>View all</span>
+                    <img src="img/arr-right.png" alt="" class="h-4 ml-2"></a>
+            </div>
+        </div>
+        <div>
+            <div class="sm:grid grid-cols-3 gap-8 sm:mt-16">
+                
+                    <div class="mt-6 ">
+                        <div class="article">
+    <img src="https://rotational.io/img/blog/blazes.png" alt="" class="rounded-t-xl">
+    <div class="bg-[#ECF6FF] rounded-b-xl">
+        <div class="px-6 pt-4">
+            <h4 class="text-base font-bold text-[#1D65A6]">Technologies</h4>
+            <h3 class="text-xl font-extrabold mt-3 "><a href="https://rotational.io/blog/webassembly-the-future-of-computing/">Why WebAssembly Is the Future of Computing</a></h3>
+            <p class="mt-3 text-base font-extralight"><!-- raw HTML omitted -->
+<p>If you talk about WebAssembly (WASM), you just may spark debate about whether it is really the next best thing in web development or the second coming of Java applets. In this post, we&rsquo;ll dive into WASM, how it is currently transforming web development, and why we think its future is so bright.</p></p>
+        </div>
+        <footer class="flex justify-between items-center px-6 py-3 border-t mt-6">
+            <div class="flex items-center">
+                <img src="img/avatar.png" alt="" class="rounded-full">
+                <span class="ml-4 font-extralight">Danielle Maxwell</span>
+            </div>
+            <div class="font-extralight">
+                Sep 27, 2022
+            </div>
+        </footer>
+    </div>
+</div>
+                    </div>
+                
+                    <div class="mt-6 ">
+                        <div class="article">
+    <img src="https://rotational.io/img/blog/viking_runes.png" alt="" class="rounded-t-xl">
+    <div class="bg-[#ECF6FF] rounded-b-xl">
+        <div class="px-6 pt-4">
+            <h4 class="text-base font-bold text-[#1D65A6]">Crypto</h4>
+            <h3 class="text-xl font-extrabold mt-3 "><a href="https://rotational.io/blog/eventing-platforms/">The Eventing Platform Landscape</a></h3>
+            <p class="mt-3 text-base font-extralight"><p>Kafka and PubSub and Kinesis, oh my! Which eventing platform is best? In this post we&rsquo;ll explore the three primary categories of eventing systems and understand their similarities, differences, and key use cases.</p></p>
+        </div>
+        <footer class="flex justify-between items-center px-6 py-3 border-t mt-6">
+            <div class="flex items-center">
+                <img src="img/avatar.png" alt="" class="rounded-full">
+                <span class="ml-4 font-extralight">Rebecca Bilbro</span>
+            </div>
+            <div class="font-extralight">
+                Sep 10, 2022
+            </div>
+        </footer>
+    </div>
+</div>
+                    </div>
+                
+                    <div class="mt-6 ">
+                        <div class="article">
+    <img src="https://rotational.io/img/blog/dawn.png" alt="" class="rounded-t-xl">
+    <div class="bg-[#ECF6FF] rounded-b-xl">
+        <div class="px-6 pt-4">
+            <h4 class="text-base font-bold text-[#1D65A6]">Technologies</h4>
+            <h3 class="text-xl font-extrabold mt-3 "><a href="https://rotational.io/blog/ranges-of-integer-data-types/">Ranges of Integer Data Types</a></h3>
+            <p class="mt-3 text-base font-extralight"><p>The data type choices we make when building data systems or metrics is critically important: as our systems run for long periods of time it can be easy to overflow the integers that we use (Y2K bug anyone?). As a result, I find myself constantly checking the sizes of standard int types but I haven&rsquo;t found a good way to Google this. This blog post is a quick reference for the standard sizes and a discussion on why it matters.</p></p>
+        </div>
+        <footer class="flex justify-between items-center px-6 py-3 border-t mt-6">
+            <div class="flex items-center">
+                <img src="img/avatar.png" alt="" class="rounded-full">
+                <span class="ml-4 font-extralight">Benjamin Bengfort</span>
+            </div>
+            <div class="font-extralight">
+                Sep 7, 2022
+            </div>
+        </footer>
+    </div>
+</div>
+                    </div>
+                
+                
+               
+            </div>
+        </div>
+    </div>
+  </div>
+  <div class="bg-[#1D65A6] max-w-[800px] mx-auto mt-20 py-14 px-12 md:px-16 text-white md:rounded-lg">
+    <h6 class="font-bold text-center">Enter Your Email To Subscribe</h6>
+    <input type="text" placeholder="Your email address" class="w-full px-4 py-2.5 rounded-lg mt-6">
+    <div class="flex mt-6 items-start">
+      <input type="checkbox" class="w-6 h-6 block border-0 ">
+      <span class="ml-2 text-left">I want to received the monthly newsletter and other updates from Rotational. You
+        agree to your Privacy Policy. You may unsubscribe at any time.*</span>
+    </div>
+    <div class="flex justify-center">
+      <a href="" class="bg-[#192E5B] px-14 py-4 mt-10 rounded-lg text-sm text-white uppercase md:text-base">Submit</a>
+    </div>
+  </div>
+
+    </main>
+
+    <footer>
+    <div class="relative pt-[90px] sm:pt-[300px] font-extralight">
+        <img class="w-full absolute inset-y-0 left-0 lg:h-full lg:w-full lg:max-w-none" src="img/foot.png" alt="" />
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 bg-[#192E5B]">
+            <div class="sm:flex text-white">
+                <div>
+                    <a href=""><img src="img/logo-white.png" alt="" class="sm:h-auto h-16"></a>
+                </div>
+                <div class="sm:ml-24 mt-5 sm:mt-0 max-w-lg">
+                    
+
+                    
+                        
+                            <h5 class="font-bold text-lg">Contact Details</h5>
+                            <p class="mt-3">
+                                We love to talk through complex scaling and performance issues. What’s slowing you down? Drop us a line for a friendly chat. We’ll make it worth your while.
+                            </p>
+                        
+                    
+                </div>
+                <div class="sm:ml-24 sm:mt-0 mt-8">
+                    <ul class="grid grid-cols-2 gap-8">
+                        
+                            <li>
+                                <a href="" class="flex items-center" target="_blank">
+                                    <img src="img/email.png" alt="" class="p-4 bg-white rounded-lg mr-4">
+                                    <span>info@rotational.io</span>
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="" class="flex items-center" target="_blank">
+                                    <img src="img/github.png" alt="" class="p-4 bg-white rounded-lg mr-4">
+                                    <span>rotationalio</span>
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="" class="flex items-center" target="_blank">
+                                    <img src="img/twitter.png" alt="" class="p-4 bg-white rounded-lg mr-4">
+                                    <span>rotationalio</span>
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="" class="flex items-center" target="_blank">
+                                    <img src="img/linkedin.png" alt="" class="p-4 bg-white rounded-lg mr-4">
+                                    <span>rotational</span>
+                                </a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+            <div class="sm:flex justify-between border-t py-6 text-white mt-12 sm:mt-32">
+                <p>Copyright © 2021 Rotational Labs, LLC, All Rights Reserved</p>
+                <ul class="sm:mt-0 mt-4 flex">
+                    <li class="border-r pr-4 mr-4 "><a href="">Privacy Policy</a></li>
+                    <li><a href="">Terms of Use</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</footer>
+    <script src="https://rotational.io/js/app.js"></script>
+
+  </body>
+
+</html>

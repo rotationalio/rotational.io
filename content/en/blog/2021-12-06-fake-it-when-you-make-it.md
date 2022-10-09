@@ -3,13 +3,13 @@ title: "Fake It When You Make It: Creating Mocks in Go"
 slug: "fake-it-when-you-make-it"
 date: "2021-12-06T10:39:45-06:00"
 draft: false
-image_webp: images/blog/lake_reflection.webp
-image: images/blog/lake_reflection.jpg
+image: img/blog/lake_reflection.jpg
 author: Patrick Deziel
 description: "A mock is a common pattern for unit testing interdependent services. In this post we will explore creating mocks in Go."
 ---
 
 In the age of microservices and containerized applications, software is less monolithic and more interdependent. How do we write tests which account for this new reality? One common strategy is to create mocks for services. In this post, we'll explore some of the challenges with testing in Go and dive into some concrete examples where creating mocks can help alleviate these problems.
+
 <!--more-->
 
 ## Testing An Existing Codebase
@@ -18,9 +18,9 @@ As developers we'd like to think that we're following test-driven development or
 
 At Rotational we are interested in building intelligent distributed systems. This adds an additional layer to our testing problem because such projects often involve many dependencies. Consider for example an application that enables decentralized exchange of cryptographic information, which might require external calls to email delivery services and certificate authorities as well as internal calls to token managers, such as the one in the sketch below.
 
-![Cryptographic Information Exchange Service](/images/media/2021-12-06-fake-it-when-you-make-it/crypto.png)
+![Cryptographic Information Exchange Service](/img/blog/2021-12-06-fake-it-when-you-make-it/crypto.png)
 
- A common strategy for dealing with these dependencies is to use mocks. From a black box perspective a mock imitates the behavior of a service. We use a very generic definition of a service here; in reality it could be an internal or external API, a web server, an external process, or maybe even just a method. At the end of the day we want to be able to test that our code handles the possible scenarios that such a service introduces.
+A common strategy for dealing with these dependencies is to use mocks. From a black box perspective a mock imitates the behavior of a service. We use a very generic definition of a service here; in reality it could be an internal or external API, a web server, an external process, or maybe even just a method. At the end of the day we want to be able to test that our code handles the possible scenarios that such a service introduces.
 
 ## Go Forth And Mock
 
@@ -257,7 +257,7 @@ Testing distributed systems applications is difficult due to the many interdepen
 
 Mocks can help us bypass code that we don't want to run in our tests without fundamentally changing the architecture of our applications. With some configuration, mocks allow us to test both the success and error paths of our service-dependent code, enabling more complete unit testing, and a greater degree of confidence in the implemention of highly complex systems.
 
-***
+---
 
 Photo by [Dave Hoefler](https://unsplash.com/@davehoefler?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/pond-reflection?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 

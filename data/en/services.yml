@@ -1,0 +1,35 @@
+############################# Services ###################################
+services:
+  enable : true
+  title : Consulting Services
+  subtitle: Rotational supports organizations in building and modernizing their technical infrastructure for scale, resiliency, and innovation.
+  approach:
+    enable : true
+    title: Approach
+    description: "Our approach is that “architecture enables innovation” and that the right set of systems, tools, and practices opens the doors to new possibilities. We enable our customers to become thoughtful data-centric organizations by facilitating transition from project-driven focus to a product-oriented approach."
+  services:
+    enable : true
+    title: Services
+    description: "Rotational Labs offers consulting and software development services that moves organizations forward in their digital transformation journey. Whether on-prem, cloud native or hybrid, we have experience building data products, developing analytics tools, augmenting technical teams, and advising on technical issues across cloud, web, and IoT applications. From prototyping to technical architecture to application development, we promote growth and act as a catalyst to move organizations forward on their most important priorities."
+    items:
+    - name: Infrastructure
+      details:
+      - title: Cloud & Distributed Systems
+      - title: Privacy & Security
+      - title: APIs & Microservices
+      - title: Databases
+      - title: Networking
+    - name: Application Development
+      details:
+      - title: Requirements Elicitation
+      - title: Rapid Prototyping
+      - title: Front-end Development
+      - title: Back-end Systems
+      - title: Product Support
+    - name: Analytics
+      details:
+      - title: Modeling & Simulation
+      - title: Machine Learning Operations
+      - title: Data Engineering & Pipelines
+      - title: Big Data Analytics
+      - title: Data Visualization

@@ -3,8 +3,7 @@ title: "Predicting Star Ratings: Sentiment Analysis Built on MongoDB"
 slug: "predicting-star-ratings"
 date: 2021-11-14T10:40:29-04:00
 draft: false
-image_webp: images/blog/predicting-stars.webp
-image: images/blog/predicting-stars.jpg
+image: img/blog/predicting-stars.jpg
 author: Nabiha Naqvie
 description: "Modern sentiment analysis requires both creativity and elbow grease. In this post, we explore a project to understand Amazon reviews and predict start ratings using open source sentiment analyzers and MongoDB."
 ---
@@ -41,7 +40,7 @@ For the machine learning analysis, four different approaches were taken and we c
 
 ## Evaluation
 
-Our strongest overall approach, in terms of accuracy, was TF-IDF. For the binary analysis, the logistic regression  performed very well. For the multi-class, TF-IDF was also the strongest performer. Our second most accurate approach was Doc2Vec. It performed well overall, but lagged behind TF-IDF by around 3 percentage points for both binary and multiclass. The VADER and Five Emotions approaches were both a tier below the word vectorizers in terms of accuracy, with VADER being the stronger of the two. Similarly, both VADER and Five Emotions models significantly underperformed the word vectorizer models for multiclass.
+Our strongest overall approach, in terms of accuracy, was TF-IDF. For the binary analysis, the logistic regression performed very well. For the multi-class, TF-IDF was also the strongest performer. Our second most accurate approach was Doc2Vec. It performed well overall, but lagged behind TF-IDF by around 3 percentage points for both binary and multiclass. The VADER and Five Emotions approaches were both a tier below the word vectorizers in terms of accuracy, with VADER being the stronger of the two. Similarly, both VADER and Five Emotions models significantly underperformed the word vectorizer models for multiclass.
 
 ## Next Steps
 
@@ -49,7 +48,8 @@ Moving forward, we plan to create a GUI or a dashboard that will alert merchants
 
 To see our implementation, go to: https://github.com/georgetown-analytics/Amazonian-Sentiments.
 
-****
+---
+
 ## Footnotes
 
 [^1]: Haque, M. E., Tozal, M. E., & Islam, A. (2018, August). Helpfulness prediction of online product reviews. In Proceedings of the ACM Symposium on Document Engineering 2018 (pp. 1-4). https://doi.org/10.1145/3209280.3229105

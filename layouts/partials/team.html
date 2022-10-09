@@ -1,0 +1,36 @@
+{{ $data := index site.Data site.Language.Lang }}
+
+{{ if $data.team.team.enable }}
+    {{ with $data.team.team }}
+        {{"<!-- Start Our Team -->" | safeHTML}}
+        <section id="team" class="section">
+            <div>
+                {{"<!-- section title -->" | safeHTML}}
+                    <h3 class="font-bold text-xl sm:text-2xl lg:text-3xl text-center lg:mt-24">
+                        <b class="text-[#1D65A6]">{{ with .title }} {{ index (split . " ") 0 | safeHTML }} {{ end }}</b>
+                        {{ with .title }} {{ after (len (index (split . " ") 0)) . | safeHTML }} {{ end }}
+                    </h3>
+                {{"<!-- /section title -->" | safeHTML}}
+
+                {{"<!-- section team -->" | safeHTML}}
+                <ul class="sm:grid grid-cols-3 gap-8 sm:mt-16">
+                    {{ range .team_member}}
+                    {{"<!-- team member -->" | safeHTML}}
+                        <li class="mt-6 sm:mt-0">
+                            <img src="{{ .image | absURL }}" alt="{{ .name }}" class="rounded-t-xl">
+                            <div class="bg-[#ECF6FF] rounded-b-xl">
+                                <div class="px-6 pt-8 pb-5">
+                                    <h4 class="text-base font-bold text-[#1D65A6]">{{ .designation | markdownify}}</h4>
+                                    <h3 class="text-xl font-extrabold mt-3 ">{{ .name }}</h3>
+                                    <p class="mt-3 text-base font-extralight">{{ .content | markdownify }}</p>
+                                </div>
+                            </div>
+                        </li>
+                    {{"<!-- end team member -->" | safeHTML}}
+                    {{ end }}
+                </ul>
+            </div>
+        </section>
+        {{"<!-- /team -->" | safeHTML}}
+    {{ end }}
+{{ end }}

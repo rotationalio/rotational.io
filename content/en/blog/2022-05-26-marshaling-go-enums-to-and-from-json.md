@@ -3,13 +3,15 @@ title: "Marshaling Go Enums to and from JSON"
 slug: "marshaling-go-enums-to-and-from-json"
 date: "2022-05-26T08:50:04-05:00"
 draft: false
-image_webp: images/blog/fireworks_star.webp
-image: images/blog/fireworks_star.jpg
 author: Benjamin Bengfort
+image: img/blog/fireworks_star.jpg
+category: "Technologies"
 description: "How to customize JSON serialization for your data types while avoiding pointer and receiver problems -- a story in three parts."
+profile: img/team/benjamin-bengfort.png
 ---
 
 Customizing JSON serialization for your data types seems relatively straightforward on the surface, but it's easy to get turned around in receiver, value, pointer, and indirection confusion. Many of the patterns and rules-of-thumb you use in your normal Go code can lead you astray. In this post, we'll illustrate exactly how and why to handle these edge cases.
+
 <!--more-->
 
 But before we get any further, if you're using this as a reference to determine how to implement JSON serialization for an enum type, here is the code snippet you're looking for:
@@ -116,7 +118,7 @@ fmt.Println(string(data))
 We get the following result:
 
 ```json
-{"value":7,"suit":4}
+{ "value": 7, "suit": 4 }
 ```
 
 We just did a bunch of work to be able to represent our `Suit` as a string, but the `encoding/json` package ignores it -- this is because we need to customize how JSON is created from our type. To do so, we must implement the [`json.Marshaler`](https://pkg.go.dev/encoding/json#Marshaler) interface:
@@ -130,7 +132,7 @@ func (s Suit) MarshalJSON() ([]byte, error) {
 The `MarshalJSON` function converts the `Suit` into a string, then JSON-marshals the string so that the output is valid JSON: `[]byte("\"♠\"")` (quotation marks included). The most important thing to remember is that the method has a _value_ receiver not a _pointer_ receiver -- more on this later. Implementing this method for our `Suit` object now marshals the following JSON data:
 
 ```json
-{"value":7,"suit":"♠"}
+{ "value": 7, "suit": "♠" }
 ```
 
 Of course, if we try to Unmarshal this data, we will get an error "json: cannot unmarshal string into Go value of type main.Suit" because `"♠"` cannot be converted to a `uint8` and then to our `Suit` type. To deal with our custom marshaled JSON data, we'll also have to implement the [`json.Unmarshaler`](https://pkg.go.dev/encoding/json#Unmarshaler) interface:

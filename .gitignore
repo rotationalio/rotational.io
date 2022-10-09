@@ -1,5 +1,16 @@
-/public/
+resources
+builds
+
+Thumbs.db
+.DS_Store
+
+.dist
+.tmp
 
 .hugo_build.lock
+.sass-cache
 
-*.DS_Store
+npm-debug.log
+node_modules
+package-lock.json
+yarn.lock

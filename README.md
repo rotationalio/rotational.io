@@ -28,6 +28,12 @@ Once Hugo is installed, run a local server as follows:
 $ hugo serve -D
 ```
 
+If you have yarn installed and prefer to use it for front end:
+
+```
+$ yarn dev:hugo
+```
+
 Note that the `-D` flag enables draft content, which is necessary to see any draft posts or content that you're writing. With the local server running, you can navigate to [http://localhost:1313/](http://localhost:1313/) to view the rendered website. Everytime you make changes in the repository, the website will be re-rendered and you can simply refersh the page to see it.
 
 ## Blog
@@ -106,13 +112,13 @@ The next steps are as follows:
 2. Add your image link to `image` field or leave empty to use email gravatar
 3. Write your function at Rotational and then description of you
 
-## hugo new command 
+## hugo new command
 
 "hugo new" command is used to create content…
 
-If you type "hugo new example.md" the file created will be directly located in the root of the "content" folder. 
+If you type "hugo new example.md" the file created will be directly located in the root of the "content" folder.
 
-According to archetypes and their content folder, you can use "hugo new archetype-content-folder/your-file.md" to create 
+According to archetypes and their content folder, you can use "hugo new archetype-content-folder/your-file.md" to create
 a specific file
 
 e.g:  $ hugo new blog/YYYY-MM-DD-title-of-blog.md  "to create blog post"
@@ -123,7 +129,7 @@ e.g:  $ hugo new blog/YYYY-MM-DD-title-of-blog.md  "to create blog post"
 Can be useful: you can create blog or author subfolder by typing :
 
        $ hugo new blog/subfolder/YYYY-MM-DD-title-of-blog.md
-          Or 
+          Or
        $ hugo new author/subfolder/firstname-lastname.md
 
 ## WebP

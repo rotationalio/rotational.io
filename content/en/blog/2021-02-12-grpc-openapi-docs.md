@@ -2,10 +2,10 @@
 title: "Documenting a gRPC API with OpenAPI"
 slug: "documenting-grpc-with-openapi"
 date: 2021-02-12T17:45:35Z
-image_webp: images/media/2021-02-12-grpc-openapi-docs/gateway.webp
-image: images/media/2021-02-12-grpc-openapi-docs/gateway.jpg
+image: img/blog/2021-02-12-grpc-openapi-docs/gateway.jpg
 author: Benjamin Bengfort
-description : "Using grpc-gateway and Swagger"
+description: "Using grpc-gateway and Swagger"
+profile: img/team/benjamin-bengfort.png
 ---
 
 gRPC makes the specification and implementation of networked APIs a snap. But what is the simplest way to _document_ a gRPC API? There seem to be some hosted providers by Google, e.g. [SmartDocs](https://cloud.google.com/endpoints/docs/grpc/dev-portal-update-ref-docs), but I have yet to find a gRPC-specific tool. For REST API frameworks, documentation is commonly generated along with live examples using [OpenAPI (formerly swagger)](https://swagger.io/resources/open-api/). By using [grpc-gateway](https://github.com/grpc-ecosystem/grpc-gateway) it appears to be pretty straight forward to generate a REST/gRPC API combo from protocol buffers and then hook into the OpenAPI specification.
@@ -132,15 +132,15 @@ If you're using VSCode and the [vscode-proto3 extension](https://marketplace.vis
 
 ```json
 {
-    "protoc": {
-        "path": "/usr/local/bin/protoc",
-        "compile_on_save": false,
-        "options": [
-            "-I=${workspaceRoot}/proto",
-            "-I=${workspaceRoot}/includes/googleapis",
-            "-I=${workspaceRoot}/includes/grpc-gateway",
-        ]
-    }
+  "protoc": {
+    "path": "/usr/local/bin/protoc",
+    "compile_on_save": false,
+    "options": [
+      "-I=${workspaceRoot}/proto",
+      "-I=${workspaceRoot}/includes/googleapis",
+      "-I=${workspaceRoot}/includes/grpc-gateway"
+    ]
+  }
 }
 ```
 
@@ -229,6 +229,6 @@ $ docker run -p 80:8080 \
 
 This will pull the `swaggerapi/swagger-ui` image from DockerHub when you run it for the first time. You can then view the docs at `http://localhost/`:
 
-![Swagger UI](/images/media/2021-02-12-grpc-openapi-docs/2021-02-12-swagger-notes.png)
+![Swagger UI](/img/blog/2021-02-12-grpc-openapi-docs/2021-02-12-swagger-notes.png)
 
 The next steps are to use `grpc-gateway` to create a server that does both gRPC hosting and a JSON REST API - complete with live Swagger documentation and styling.

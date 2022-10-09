@@ -3,21 +3,21 @@ title: "Achieving Total Ordering With CRDTs"
 slug: "achieving-total-ordering-with-crdts"
 date: "2022-05-04T15:02:21-06:00"
 draft: false
-image_webp: images/blog/hourglass.webp
-image: images/blog/hourglass.jpg
 author: Patrick Deziel
+image: img/blog/hourglass.jpg
+category: "Technologies"
 description: "Conflict-free replicated data types are starting to take off in popularity, especially in terms of collaborative applications. In this post we will explore how these data structures can be used to achieve a total ordering of events across many peers."
 ---
 
 Conflict-free replicated data types (or "CRDTs") are inspiring the creation of more collaborative applications and improving the experience of users of distributed systems. In this post, we will explore how these data structures can be used to achieve a consistent, total ordering of events across many peers.
-<!--more-->
 
+<!--more-->
 
 ## What Is a CRDT?
 
 Distributed systems require coordination between nodes. One effective method is to use locks to prevent concurrent access to shared resources, but this limits collaboration between users. A more advanced method is to use consensus algorithms such as Paxos or Raft; these however are difficult to implement [^1] and network-intensive[^2] due to the amount of communication required between nodes, as each write decision must be agreed on before it can be committed/executed.
 
-CRDTs achieve consensus at the *data* layer. They consist of some state which can be modified and a `merge` function which merges two states together to produce a completely deterministic value. This is a critical differentiator from other consensus mechanisms. Instead of trying to avoid conflict, we embrace that conflict is going to happen and have some way of "auto-resolving" concurrent writes to a value that all peers will consistently agree on. This comes at the cost of sacrificing some user intent, but improves the extent to which peers can operate concurrently.
+CRDTs achieve consensus at the _data_ layer. They consist of some state which can be modified and a `merge` function which merges two states together to produce a completely deterministic value. This is a critical differentiator from other consensus mechanisms. Instead of trying to avoid conflict, we embrace that conflict is going to happen and have some way of "auto-resolving" concurrent writes to a value that all peers will consistently agree on. This comes at the cost of sacrificing some user intent, but improves the extent to which peers can operate concurrently.
 
 CRDTs can also be thought of as data structures designed specifically for replication. The `merge` function is idempotent, associative, and commutative. This ensures that merges can be done in any order and therefore peers can operate mostly asynchronously, only communicating with each other when it's necessary to exchange data.
 
@@ -98,6 +98,7 @@ class GCounter:
         """
         return sum(self.counts.values())
 ```
+
 Note that this data structure assumes that separate instances will have distinct IDs. On a single system we can use UUIDs to achieve this, but on distributed systems this issue of peer discovery and distinctness is a really tough problem.
 
 An important property of CRDTs is that they can be composed together create more complex CRDTs. For example, we can use two `GSet`s to implement a `TwoPhaseSet` which has one set for "added" items and one set for "removed" items, solving the problem of not being able to remove items from the `GSet`. This makes the `GSet` and `GCounter` two simple yet powerful abstractions for implementing distributed applications.
@@ -191,15 +192,15 @@ def merge(self, other):
 
 Using the `Sequence` CRDT it's possible to implement a distributed log which maintains a total ordering of events across an arbitrary number of nodes. We have used this abstraction to create a prototype for a collaborative Jupyter-like notebook [editor](https://github.com/rotationalio/eirene). In this context, the events refer to inserts and removes of notebook cells and characters within those cells. When two peers want to sync, they send their versions of the notebook to each other. Since the CRDT merge results in a consistent state for both peers, they are both able to render a consistent state to the user.
 
-![Merging Sequences](/images/media/2022-05-04-achieving-total-ordering-with-crdts/alicebob.png)
+![Merging Sequences](/img/blog/2022-05-04-achieving-total-ordering-with-crdts/alicebob.png)
 
 Feel free to check out our open source demo [client](https://github.com/rotationalio/eirene) and our [talk](https://www.slideshare.net/RebeccaBilbro/conflictfree-replicated-data-types-pycon-2022) at PyCon US 2022!
 
-***
+---
 
 Photo by [Aron Visuals](https://unsplash.com/@aronvisuals?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/time?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 
-***
+---
 
 #### Further Reading
 

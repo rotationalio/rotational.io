@@ -3,12 +3,13 @@ title: "Introducing Whisper"
 slug: "introducing-whisper"
 date: 2021-10-01T16:32:47-04:00
 draft: false
-image_webp: images/blog/whispering_wheat.webp
-image: images/blog/whispering_wheat.jpg
+image: img/blog/whispering_wheat.jpg
 author: Edwin Schmierer
 description: "Shhh..there's a better way to share secrets. Introducing Whisper, our secret-sharing utility."
 ---
+
 Imagine you have a new engineer joining your team and you need to provide passwords for access to critical systems. Or you need to send a sensitive file to a client. Or you need to share encryption keys with a team member. What do you do?
+
 <!--more-->
 
 You might text a password or key (hopefully using [Signal](https://signal.org/en/) since it uses end-to-end encryption), but that won't work for lengthy keys, files, or large docs. You might write it on a piece of paper or place it on a thumb drive, but both are limited by proximity, which frankly doesn't work too well when remote work has become the norm. Or you might email it but that exposes several security risks. What if the recipient forwards it or is hacked or never deletes the message so it remains indefinitely in their inbox? How secure is email, really? If you're using a popular free email service, the Terms of Service may give the provider limited permissions to access your data.
@@ -23,5 +24,6 @@ We've [open-sourced Whisper](https://github.com/rotationalio/whisper), meaning y
 
 Stay tuned for an upcoming post about the technical details under the hood. For now, please try [Whisper](https://whisper.rotational.dev/) and send feedback to [info@rotational.io](mailto:info@rotational.io).
 
-***
+---
+
 Photo by <a href="https://unsplash.com/@kent_pilcher?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Kent Pilcher</a> on <a href="https://unsplash.com/s/photos/wind-blowing-on-wheat?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>

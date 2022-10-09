@@ -1,28 +1,32 @@
 contact:
   enable : true
-  title : Contact Us
-  subtitle : Contact Details
-  content : We love to talk through complex scaling and performance issues. What’s slowing you down? Drop us a line for a friendly chat. We’ll make it worth your while.
+  title : Get In Touch
+  subtitle : Learn how we can 10x the value of your data by getting it to the right stakeholder at the right time and place, quickly, securely, and reliably.
 
   # Contact details
-  # Themify icon pack : https://themify.me/themify-icons
-  contact_list:
-    - icon : ti-email
-      info1 : "info@rotational.io"
-    - icon : ti-twitter
-      info2 : "@rotationalio"
-    - icon : ti-github
-      info3 : "rotationalio"
-    - icon : ti-linkedin
-      info4 : rotational
-
-  # # Contact form
-  # # Works with https://formspree.io
-  # contact_form:
-  #   enable : true
-  #   form_action : "https://formspree.io/f/xknpawwn"
-  #   name : "Your Name"
-  #   email : "Your Email"
-  #   subject : "Subject"
-  #   message : "Message"
-  #   submit : "Submit"
+  contact_details:
+    enable : true
+    title: Contact Details
+    subtitle: We love to talk through complex scaling and performance issues. What’s slowing you down? Drop us a line for a friendly chat. We’ll make it worth your while.
+    details_item:
+    - image : "img/support.png"
+      info : "support@rotational.io"
+    - image : "img/material-email.png"
+      info : "info@rotational.io"
+    - image : "img/documentation.png"
+      info : "https://rotational.io/documentation"
+    
+  # Contact form
+  contact_form:
+    enable : true
+    title: Contact Form
+    form_action : "https://formspree.io/f/xoqbwrbq"
+    firstname : "First Name"
+    lastname : "Last Name"
+    email : "Email"
+    phone_number : "Phone Number"
+    subject : "Subject"
+    subscribe_to_email : "Subscribe to Rotational email content"
+    message : "Message"
+    submit : "Submit"
+    
