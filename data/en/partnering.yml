@@ -9,6 +9,6 @@ partnering:
   # text_item loop
   - text : We provide trusted expertise to application developers seeking to build their data and systems engineering practices. We specialize in building fast, flexible, resilient and legally-compliant data architectures and cloud-to-edge computing systems for the modern digital landscape.
   button_text: Learn more
-  button_action: '/services'
+  button_action: '/services/'
   image_src: 'img/global_data_blue_flow.png'
 
