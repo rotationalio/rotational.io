@@ -140,3 +140,14 @@ team:
       social :
         - icon : "ti-linkedin" # themify icon pack : https://themify.me/themify-icons
           link : "https://www.linkedin.com/in/pete-keleher-a03639b"
+
+    # team member loop
+    - name : Danielle Maxwell
+      image : img/team/danielle-maxwell.png
+      designation : Junior Distributed Systems Engineer
+      content : WebAssembly Specialist
+      social :
+        - icon : "ti-github" # themify icon pack : https://themify.me/themify-icons
+          link : "https://github.com/daniellemaxwell"
+        - icon : "ti-linkedin" # themify icon pack : https://themify.me/themify-icons
+          link : "https://www.linkedin.com/in/daniellemaxwell"
