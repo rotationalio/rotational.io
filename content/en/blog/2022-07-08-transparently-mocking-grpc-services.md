@@ -7,6 +7,7 @@ author: Patrick Deziel
 image: img/blog/blue_laser.jpg
 category: gRPC, Mocks, Programming
 description: "gRPC is a common framework used to facilitate communication between microservices, but testing these services can be a challenge. In this post we will present a simple strategy for mocking gRPC services in Go."
+profile: img/team/patrick-deziel.png
 ---
 
 gRPC is an effective way of implementing service-to-service APIs. However, there are limited tools available for mocking and testing gRPC services out of the box. One option is to set up a live test server, although this comes with its own challenges and costs. In this blog post we will demonstrate a more lightweight solution using the `bufconn` package and a hand-built mock. Don't worry, this is easier than it seems!

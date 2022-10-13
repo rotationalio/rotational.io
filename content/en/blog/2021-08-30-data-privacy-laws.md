@@ -7,6 +7,8 @@ image: img/blog/islands.jpg
 author: Edwin Schmierer
 category: "Data Privacy"
 description: "We look at the state of play in data privacy regulations and how business and tech leaders can adapt."
+profile: img/team/edwin-schmierer.png
+
 ---
 
 Data privacy regulations are gaining traction domestically and internationally. Business and tech leaders would do well to take notice and re-consider their approach to privacy. Here's a synopsis of the latest regulations taking effect or up for consideration.

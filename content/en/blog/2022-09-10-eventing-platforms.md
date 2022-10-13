@@ -8,6 +8,7 @@ image: img/blog/herd.jpg
 category: Microservices, Eventing
 photo_credit: Rajarshi Mitra via Flickr Commons
 description: "In this post we'll explore some of the types of eventing platforms and discuss why it's not about deciding which is objectively the 'best', but about knowing how to select the best tool for a given context."
+profile: img/team/rebecca-bilbro.png
 ---
 
 Kafka and PubSub and Kinesis, oh my! Which eventing platform is best? In this post we'll explore the three primary categories of eventing systems and understand their similarities, differences, and key use cases.

@@ -7,6 +7,7 @@ image: img/blog/2021-04-27-cant-read-wont-buy/streetblur.jpg
 author: Rebecca Bilbro
 category: i18n
 description: "In this post we'll explore some of the drawbacks of using only English as a sales medium, check out some creative solutions, identify some areas of caution, and consider what this all means to the future of global app development."
+profile: img/team/rebecca-bilbro.png
 ---
 
 To say we are not at our most empowered when trying to communicate in an unfamiliar language is a bit of an understatement. As if the limitations of one's own language weren't bad enough, trying to get along in a different language often makes you feel downright _helpless_. Research suggests these feelings also strongly inform consumers' buying decisions. What does this mean for companies who want to connect with users in other countries and cultures? In this post we'll explore some of the drawbacks of using English-only as a sales medium, check out some creative solutions, and consider what this all means for global app development.

@@ -7,6 +7,7 @@ image: img/blog/translations.jpeg
 author: Tianshu Li
 category: i18n
 description: "I18n projects are hard to manage when apps and docs both get updated continuously. In this post we introduce a new tool to ease the pains of monitoring and make it easier to stay in sync with international audiences."
+profile: img/team/tianshu-li.png
 ---
 
 Developing applications for global users usually requires an internationalization (i18n) process that translates contents or user messages into different languages. Given how manual these process tend to be, the more we can automate the better -- for our sanity, for our wallets, and for our users. That's where Rumi comes in! <!--more-->

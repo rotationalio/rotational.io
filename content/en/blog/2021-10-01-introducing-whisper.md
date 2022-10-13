@@ -7,6 +7,7 @@ image: img/blog/whispering_wheat.jpg
 author: Edwin Schmierer
 category: Security
 description: "Shhh..there's a better way to share secrets. Introducing Whisper, our secret-sharing utility."
+profile: img/team/edwin-schmierer.png
 ---
 
 Imagine you have a new engineer joining your team and you need to provide passwords for access to critical systems. Or you need to send a sensitive file to a client. Or you need to share encryption keys with a team member. What do you do?

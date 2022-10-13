@@ -5,6 +5,7 @@ date: 2021-06-10T17:20:00Z
 category: UX, Technology
 image: img/blog/2021-06-10-ux-whats-missing/window.jpg
 author: Rebecca Bilbro
+profile: img/team/rebecca-bilbro.png
 ---
 
 The things we make are not user-friendly by accident; we have to _make_ them that way. And that's hard. For most of the time people have been making things, we've been mainly concerned with making them user-friendly for just _us_. And, even if the last few decades of app development have brought more focus to the importance of empathy (especially if it helps you capture market share), the last few years have forced app developers to acknowledge the continued pervasiveness of white privilege, gender privilege, and class privilege in UI/UX. Unfortunately, as our efforts to become more intentional and empathetic as technologists continue in the coming years, there is another problem we have barely considered that will become a major threat to compassionate, egalitarian, and even subversive app development. Spoiler: it's our cloud infrastructure.
