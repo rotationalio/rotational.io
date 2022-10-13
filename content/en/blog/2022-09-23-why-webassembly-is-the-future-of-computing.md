@@ -6,7 +6,7 @@ draft: false
 author: Danielle Maxwell
 image: img/blog/rocket.jpeg
 photo_credit: Bill Jelen on Unsplash
-category: "Technologies"
+category: WASM
 description: "Learn about WebAssembly, how it is currently transforming web development, and why its future is bright."
 ---
 
