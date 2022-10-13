@@ -10,7 +10,6 @@ description: "This post describes five technologies - new and old - that are tra
 ---
 
 With almost 30 billion connected devices, this isn’t Al Gore’s internet anymore.
-
 Consider this: According to [Cisco’s Annual Internet Report](https://www.cisco.com/c/en/us/solutions/collateral/executive-perspectives/annual-internet-report/white-paper-c11-741490.html), there will be 29.3 billion internet-connected devices in 2023, or more than three for every human. The internet has no doubt transformed society and industry, while proving to be resilient and scalable. It also continues to evolve.<!--more-->
 
 Under the hood, we believe there are five technologies that are transforming the web. Many of these technologies have been around for years, but are now gaining widespread adoption and becoming the foundation for new applications, experiences, and systems.

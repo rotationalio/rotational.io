@@ -21,4 +21,16 @@
 {{ end }}
 
 {{"<!-- Main Stylesheet -->"|safeHTML}}
-<link rel="stylesheet" href="{{ `css/app.css` | absURL }}" media="screen">
+<link rel="stylesheet" href="{{ `output.css` | absURL }}" media="screen">
+
+{{ if .Site.Params.googleAnalytics }}
+{{ "<!-- Google Analytics -->" | safeHTML }}
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ .Site.Params.googleAnalytics }}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', '{{ .Site.Params.googleAnalytics }}');
+</script>
+{{ end }}
+

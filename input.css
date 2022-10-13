@@ -4,10 +4,29 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900');
 
+@layer components {
+  /* .cms-content > h2{
+    @apply text-2xl font-extrabold mt-8 mb-4;
+  }
+  .cms-content > p{
+    @apply mt-6;
+  } */
+  .blog-img img {
+    @apply h-96 overflow-hidden;
+  }
+   .art-s p:nth-of-type(2) {
+    @apply max-h-36 overflow-hidden;
+  }
+
+ 
+  
+}
 body {
     font-family: 'Montserrat', sans-serif;
 }
-
+/* .art-s p:nth-of-type(2) {
+   color: red;
+} */
 /* Add a black background color to the top navigation */
 .topnav {
     /* background-color: #333; */

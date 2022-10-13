@@ -1,35 +1,37 @@
 {{ define "main" }}
 
-    {{ partial "partnering.html" . }}
+{{ partial "partnering.html" . }}
 
-    <!-- TODO: bring back!
-    <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
-        <div class="flex justify-between mt-12 sm:mt-24 items-center">
-            <h2 class="font-bold text-2xl sm:text-4xl flex">
-                <span>
-                    <b class="text-[#1D65A6]">{{ with i18n "blogTitle" }} {{ index (split . " ") 0 | safeHTML }} {{ end }}</b>
-                    {{ with i18n "blogTitle" }} {{ after (len (index (split . " ") 0)) . | safeHTML }} {{ end }}
-                </span>
-                <img src="img/butterfly.png" alt="butterfly" class="ml-4 h-6 sm:h-8 relative top-1">
-            </h2>
-            <div>
-                <a href="/blog" class="flex text-base sm:text-lg items-center font-bold text-[#1D65A6]"><span>View all</span>
-                    <img src="img/arr-right.png" alt="" class="h-4 ml-2"></a>
-            </div>
-        </div>
+
+<div class="relative max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="flex justify-between mt-12 sm:mt-24 items-center">
+        <h2 class="font-bold text-2xl sm:text-4xl flex">
+            <span>
+                <b class="text-[#1D65A6]">{{ with i18n "blogTitle" }} {{ index (split . " ") 0 | safeHTML }} {{ end
+                    }}</b>
+                {{ with i18n "blogTitle" }} {{ after (len (index (split . " ") 0)) . | safeHTML }} {{ end }}
+            </span>
+            <img src="img/butterfly.png" alt="butterfly" class="ml-4 h-6 sm:h-8 relative top-1">
+        </h2>
         <div>
-            <div class="sm:grid grid-cols-3 gap-8 sm:mt-16">
-                {{ range first 3 (where site.RegularPages "Section" "==" "blog")}}
-                    <div class="mt-6 ">
-                        {{ .Render "article"}}
-                    </div>
-                {{ end }}
-
-
-            </div>
+            <a href="/blog" class="flex text-base sm:text-lg items-center font-bold text-[#1D65A6]"><span>View
+                    all</span>
+                <img src="img/arr-right.png" alt="arrow right" class="h-4 ml-2"></a>
         </div>
     </div>
-    -->
+    <div>
+        <div class="sm:grid grid-cols-3 gap-8 sm:mt-16">
+            {{ range first 3 (where site.RegularPages "Section" "==" "blog")}}
+            <div class="mt-6 ">
+                {{ .Render "article"}}
+            </div>
+            {{ end }}
 
-    {{ partial "clients.html" . }}
+
+        </div>
+    </div>
+</div>
+
+
+{{ partial "clients.html" . }}
 {{ end }}
