@@ -28,7 +28,7 @@
                     {{ with .title }} {{ after (len (index (split . " ") 0)) . | safeHTML }} {{ end }}
                 </h5>
                 <div class="mt-4">
-                    <form method="post" action="{{ .form_action }}" role="form">
+                    <form action="contact" method="post" id="contactForm">
                         <div class="md:flex">
                             <input type="text" name='firstname' placeholder="{{ .firstname }}"
                                 class="px-7 py-4 mt-6 mr-8 rounded-lg w-full basis-1/2">
@@ -36,24 +36,25 @@
                                 class="px-7 py-4 mt-6 rounded-lg w-full basis-1/2">
                         </div>
                         <div class="md:flex">
-                            <input type="text" name='email' placeholder="{{ .email }}"
+                            <input type="email" name='email' placeholder="{{ .email }}"
                                 class="px-7 py-4 mt-6 mr-8 rounded-lg w-full basis-1/2">
-                            <input type="text" name='phonenumber' placeholder="{{ .phone_number }}"
+                            <input type="phone" name='phone' placeholder="{{ .phone_number }}"
                                 class="px-7 py-4 mt-6 rounded-lg w-full basis-1/2">
                         </div>
                         <textarea name="message" id="" cols="30" rows="6"
                             class="px-7 py-4 mt-6 rounded-lg text-gray-500 w-full">Message</textarea>
                         <div class="flex mt-4 items-center">
-                            <input type="checkbox" id="checkbox" class="w-4 h-4 border-0 ">
+                            <input type="checkbox" id="checkbox" name='subscribe' class="w-4 h-4 border-0 ">
                             <label for="checkbox"><span class="ml-2">{{ .subscribe_to_email }}</span></label>
                         </div>
-                        <div class="flex mt-4 items-center">
-                            <button>Submit</button>
+                        <div class="md:flex items-center justify-between mt-6 text-center md:mt-7 lg:mt-8">
+                            <div class="g-recaptcha" data-sitekey="{{.Site.Params.g_recaptcha_key}}"></div>
+                            <button type="submit" class="flex mt-6 bg-[#1D65A6] text-white px-7 py-4 rounded-lg ">{{
+                                .submit }}</button>
                         </div>
-                        <!-- <div class="md:flex items-center justify-between mt-6 text-center md:mt-7 lg:mt-8">
-                                                <img src="../img/captcha.png" alt="">
-                                                <a href="" class="bg-[#192E5B] px-8 py-4 block mt-10 rounded-lg text-sm text-white uppercase md:text-base">{{ .submit }}</a>
-                                            </div> -->
+
+
+
                     </form>
                 </div>
             </div>

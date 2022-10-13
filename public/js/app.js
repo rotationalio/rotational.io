@@ -9,4 +9,30 @@ function myFunction() {
   }
 
 
-// onclick send data to sendgrid api
+// onclick event post contact form
+const form = document.getElementById('contactForm');
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData);
+    console.log(data);
+    fetch('https://api.rotationallabs.com/v1/contact', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log('Success:', data);
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
+  }
+  );
+  
+
+
+
