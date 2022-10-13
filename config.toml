@@ -15,7 +15,7 @@ logo = "images/assets/logos/logo.png"
 description = "We see planet-wide possibilities."
 author = "Rotational Labs, LLC"
 googleAnalytics = "G-2FKX6CWJHW" # Google Analytics ID
-g-recaptcha-key="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" # Google reCAPTCHA key
+g_recaptcha_key="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" # Google reCAPTCHA key
 
 # Set canonical URLs
 [permalinks]
