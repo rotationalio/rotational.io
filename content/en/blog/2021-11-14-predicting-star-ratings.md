@@ -5,6 +5,7 @@ date: 2021-11-14T10:40:29-04:00
 draft: false
 image: img/blog/predicting-stars.jpg
 author: Nabiha Naqvie
+category: AI/ML
 description: "Modern sentiment analysis requires both creativity and elbow grease. In this post, we explore a project to understand Amazon reviews and predict start ratings using open source sentiment analyzers and MongoDB."
 ---
 

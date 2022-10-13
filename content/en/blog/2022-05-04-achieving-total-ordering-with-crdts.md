@@ -5,7 +5,7 @@ date: "2022-05-04T15:02:21-06:00"
 draft: false
 author: Patrick Deziel
 image: img/blog/hourglass.jpg
-category: "Technologies"
+category: "Distributed Systems"
 description: "Conflict-free replicated data types are starting to take off in popularity, especially in terms of collaborative applications. In this post we will explore how these data structures can be used to achieve a total ordering of events across many peers."
 ---
 

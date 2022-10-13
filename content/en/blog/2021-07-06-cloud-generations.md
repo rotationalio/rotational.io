@@ -5,6 +5,7 @@ date: 2021-07-02T15:32:47-04:00
 draft: false
 image: img/blog/2021-07-06-cloud-generations/cloudgeneration.jpg
 author: Edwin Schmierer
+category: Cloud, Technology
 description: "How the public cloud has evolved and where it is headed"
 ---
 
