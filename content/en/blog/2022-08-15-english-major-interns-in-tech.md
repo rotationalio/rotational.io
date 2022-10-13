@@ -7,6 +7,7 @@ author: Natasha White
 image: img/blog/paths.jpg
 category: Technology
 description: "Over the course of the past few months, I’ve had the pleasure of interning at Rotational as a technical writer. I’m excited to share a little bit about my experience and provide some insight from the perspective of someone who is entering the world of distributed systems for the first time."
+profile: img/team/natasha-white.png
 ---
 
 Over the course of the past few months, I’ve had the pleasure of interning at Rotational Labs as a technical writer. I’m excited to share a little bit about my experience and provide some insight from the perspective of someone who is entering the world of distributed systems for the first time.

@@ -7,6 +7,7 @@ author: Edwin S. & Rebecca B.
 image: img/blog/viking_runes.jpg
 category: Crypto
 description: "This post describes some of the most important facts about cryptocurrency that people don't often understand -- including crypto people!"
+profile: img/butterfly.png
 ---
 
 As a distributed systems company, we’ve had the privilege of speaking with dozens of vendors building crypto-adjacent solutions over the past few years. We’ve learned a lot along the way, especially about some of the key misconceptions that continue to challenge builders, users, investors, and other crypto stakeholders. <!--more--> We’ve struggled with these misconceptions ourselves, in both the words and the code we write. In this post, we'll present common misunderstandings about crypto that we've encountered in the hopes of providing clearer direction to others forging ahead in this space.

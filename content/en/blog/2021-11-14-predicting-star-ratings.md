@@ -7,6 +7,7 @@ image: img/blog/predicting-stars.jpg
 author: Nabiha Naqvie
 category: AI/ML
 description: "Modern sentiment analysis requires both creativity and elbow grease. In this post, we explore a project to understand Amazon reviews and predict start ratings using open source sentiment analyzers and MongoDB."
+profile: img/team/nabiha-naqvie.png
 ---
 
 If you want to build a robust machine learning model, the most important ingredient is data -- but keep in mind that tuning your model will rely on devising a systematic way to store and query that data! In this post, we explore a project to understand a large dataset of Amazon reviews and predict start ratings using open source sentiment analyzers and the MongoDB ecosystem. <!--more-->

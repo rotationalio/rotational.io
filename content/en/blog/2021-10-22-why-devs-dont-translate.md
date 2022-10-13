@@ -7,6 +7,7 @@ image: img/blog/hubble_tarantula_nebula.jpg
 author: Rebecca Bilbro
 category: i18n
 description: "Many tech projects do not translate their docs, often at the expense of reaching a more global userbase. In this post we explore why."
+profile: img/team/rebecca-bilbro.png
 ---
 
 Stars, forks, likes, upvotes, downloads. In a world where user metrics rule, why don't more technical projects translate their docs to reach more global users?

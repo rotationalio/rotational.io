@@ -7,6 +7,7 @@ author: Benjamin Bengfort
 image: img/blog/blazes.jpg
 category: Programming
 description: "While we often think ourselves as authors of code we probably spend more time reading code than writing it. Changing our mindset to think of ourselves as avid code readers will make us more effective programmers."
+profile: img/team/benjamin-bengfort.png
 ---
 
 As programmers, we tend think of ourselves as _authors_ of code, but our daily engineering practice probably requires us to spend more time reading code than writing it. Perhaps this is even a source of stress for you. Changing your mindset to think of yourself as an avid code _reader_ may not only alleviate this anxiety, but also make you a more effective programmer, capable of architecting complex mental maps of code, a technique I refer to as "building the glass castle".

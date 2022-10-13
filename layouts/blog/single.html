@@ -24,8 +24,8 @@
         {{ with .Title }} {{ after (len (index (split . " ") 0)) . | safeHTML }} {{ end }}
       </h3>
       <div class="flex justify-center items-center mt-4 mb-6">
-        <img src="img/team/{{lower ( replace .Params.author ' ' '-')}}.png" alt=""
-          class="border-4 border-white rounded-full h-11 drop-shadow-lg"><span class="ml-3">{{ .Params.author }} |
+        <img src="{{ .Params.profile }}" alt="" class="border-4 border-white rounded-full h-11 drop-shadow-lg"><span
+          class="ml-3">{{ .Params.author }} |
           {{ dateFormat "Monday, Jan 2, 2006" .Date }} | {{ .Params.category }}</span>
       </div>
       <div class="max-w-[800px] mx-auto prose prose-blue">
@@ -49,7 +49,7 @@
         <div class="text-lg text-[#1D65A6] font-bold mb-3">
           {{ i18n "writtenBy" }}:</div>
         <div class="flex items-center mt-4 mb-6">
-          <img src="img/bbfort.png" alt="" class="border-4 border-white rounded-full h-11 drop-shadow-lg"><span
+          <img src="{{ .Params.profile }}" alt="" class="border-4 border-white rounded-full h-11 drop-shadow-lg"><span
             class="ml-3">{{ .Params.author }}</span>
         </div>
         <div class="text-lg text-[#1D65A6] font-bold mb-3">{{ i18n "photoCredit" }}:</div>

@@ -7,6 +7,7 @@ image: img/blog/2022-04-15-a-gentle-introduction-to-tmux/muxing.jpg
 author: Daniel Sollis
 category: Programming
 description: "Tmux is an extremely powerful terminal solution for Unix-like operating systems, but it has a steep learning curve. In this post we'll go over some Tmux basics and make it a little less daunting to get started."
+profile: img/team/daniel-sollis.png
 ---
 
 If you’re working in distributed systems, having a good terminal setup is pretty important! On MacOS [iTerm2](https://iterm2.com/) is a popular choice. It has tabs, autocomplete, a built-in password manager and a fantastic screen splitting feature. If however you’re like me and aren’t using a Mac it can be difficult to find a replacement that fits your needs. Tmux is here to help! <!--more-->

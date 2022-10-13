@@ -8,6 +8,7 @@ image: img/blog/rocket.jpeg
 photo_credit: Bill Jelen on Unsplash
 category: WASM
 description: "Learn about WebAssembly, how it is currently transforming web development, and why its future is bright."
+profile: img/team/danielle-maxwell.png
 ---
 
 <!--write the summary part that will be previewed *below* and before the "more" comment-->

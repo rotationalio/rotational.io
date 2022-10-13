@@ -7,6 +7,7 @@ image: img/blog/2021-07-06-cloud-generations/cloudgeneration.jpg
 author: Edwin Schmierer
 category: Cloud, Technology
 description: "How the public cloud has evolved and where it is headed"
+profile: img/team/edwin-schmierer.png
 ---
 
 There's no doubt public cloud providers have transformed the technology landscape; in this post we retrace the evolution of the cloud to gather clues into where the industry is headed next.
