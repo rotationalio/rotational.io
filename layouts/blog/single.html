@@ -12,7 +12,12 @@
 {{ define "main" }}
 <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
   <div class="mt-14">
-    <img src="{{ .Params.image | absURL }}" alt="{{ .Title }}" class="mx-auto">
+    <div class="blog-img">
+      <img src="{{ .Params.image | absURL }}" alt="{{ .Title }}" class="mx-auto ">
+    </div>
+
+
+
     <div class="mt-8">
       <h3 class="font-bold text-xl sm:text-2xl lg:text-3xl text-center">
         <b class="text-[#1D65A6]">{{ with .Title }} {{ index (split . " ") 0 | safeHTML }} {{ end }}</b>
@@ -23,8 +28,8 @@
           class="border-4 border-white rounded-full h-11 drop-shadow-lg"><span class="ml-3">{{ .Params.author }} |
           {{ dateFormat "Monday, Jan 2, 2006" .Date }} | {{ .Params.category }}</span>
       </div>
-      <div class="max-w-[800px] mx-auto">
-        {{ .Content }}
+      <div class="max-w-[800px] mx-auto prose prose-blue">
+        {{ .Content | safeHTML }}
       </div>
     </div>
   </div>

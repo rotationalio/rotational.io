@@ -3,7 +3,7 @@ title: "6 Things You Didn't Realize about Crypto"
 slug: "six-things-you-didnt-know-about-crypto"
 date: "2022-06-06T09:53:22-05:00"
 draft: false
-author: Edwin Schmierer & Rebecca Bilbro
+author: Edwin S. & Rebecca B.
 image: img/blog/viking_runes.jpg
 category: Crypto
 description: "This post describes some of the most important facts about cryptocurrency that people don't often understand -- including crypto people!"

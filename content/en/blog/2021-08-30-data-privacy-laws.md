@@ -10,6 +10,7 @@ description: "We look at the state of play in data privacy regulations and how b
 
 Data privacy regulations are gaining traction domestically and internationally. Business and tech leaders would do well to take notice and re-consider their approach to privacy. Here's a synopsis of the latest regulations taking effect or up for consideration.
 
+<!--more-->
 ## US: States Take the Helm
 
 Within the U.S., states have taken the initiative to adopt and pass data privacy regulations in the absence of action by Congress at the federal level. To date, [California](https://oag.ca.gov/privacy/ccpa), [Virginia](https://www.natlawreview.com/article/virginia-becomes-2nd-state-to-adopt-comprehensive-consumer-data-privacy-law), and most recently [Colorado](https://www.zdnet.com/article/colorado-becomes-latest-state-to-pass-data-privacy-law/#:~:text=The%20Colorado%20Privacy%20Act%2C%20which,data%20companies%20have%20about%20them.) have passed data privacy and protection laws. Washington state is on the cusp of passing the [Washington Privacy Act](https://app.leg.wa.gov/billsummary?BillNumber=5062&Initiative=false&Year=2021), perhaps the [strongest state-level data privacy law](https://www.politico.com/news/2021/07/14/washington-state-tech-privacy-fight-499571). Florida and Connecticut are expected to pass data privacy laws in upcoming legislative sessions.

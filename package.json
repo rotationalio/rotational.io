@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "dev:css": "npx tailwindcss -i public/css/app.css -o static/output.css -w",
+    "dev:css": "npx tailwindcss -i input.css -o static/output.css -w",
     "dev:hugo": "hugo server",
     "dev": "run-p dev:*",
     "build:css": "NODE_ENV=production npx tailwindcss -i public/css/input.css -o static/output.css -m",
@@ -12,5 +12,8 @@
     "prettier": "^2.7.1",
     "prettier-plugin-tailwindcss": "^0.1.13",
     "tailwindcss": "^3.1.8"
+  },
+  "dependencies": {
+    "@tailwindcss/typography": "^0.5.7"
   }
 }

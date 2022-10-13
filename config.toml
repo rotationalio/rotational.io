@@ -14,7 +14,8 @@ summaryLength = "1" # Length of excerpt for post descriptions
 logo = "images/assets/logos/logo.png"
 description = "We see planet-wide possibilities."
 author = "Rotational Labs, LLC"
-
+googleAnalytics = "G-2FKX6CWJHW" # Google Analytics ID
+g_recaptcha_key="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" # Google reCAPTCHA key
 
 # Set canonical URLs
 [permalinks]
@@ -48,12 +49,12 @@ weight = 2
 # url = '/opensource'
 # weight = 3
 
-# [[Languages.en.menu.main]]
-# identifier = 'blog'
-# pageRef = 'blog'
-# name = 'Blog'
-# url = '/blog'
-# weight = 4
+[[Languages.en.menu.main]]
+identifier = 'blog'
+pageRef = 'blog'
+name = 'Blog'
+url = '/blog'
+weight = 4
 
 [[Languages.en.menu.main]]
 identifier = 'about'
@@ -62,12 +63,12 @@ name = 'About'
 url = '/about'
 weight = 5
 
-# [[Languages.en.menu.main]]
-# identifier = 'contact'
-# pageRef = 'contact'
-# name = 'Contact Us'
-# url = '/contact'
-# weight = 50
+[[Languages.en.menu.main]]
+identifier = 'contact'
+pageRef = 'contact'
+name = 'Contact Us'
+url = '/contact'
+weight = 50
 
 ## English Langauge
 [Languages.en]
