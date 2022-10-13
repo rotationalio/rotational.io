@@ -6,6 +6,7 @@ draft: false
 author: Benjamin Bengfort
 image: img/blog/num215.jpg
 category: Golang, Programming
+profile: img/team/benjamin-bengfort.png
 description: "A quick reference for the sizes of standard integer types in Go"
 ---
 

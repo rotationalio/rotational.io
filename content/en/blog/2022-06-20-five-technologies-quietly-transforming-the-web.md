@@ -7,6 +7,7 @@ author: Edwin Schmierer
 image: img/blog/dawn.jpg
 category: WASM, AI/ML, gRPC, Microservices
 description: "This post describes five technologies - new and old - that are transforming the web and becoming the foundation for next-generation applications."
+profile: img/team/edwin-schmierer.png
 ---
 
 With almost 30 billion connected devices, this isn’t Al Gore’s internet anymore.

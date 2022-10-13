@@ -7,6 +7,7 @@ image: img/blog/whale.jpg
 author: Nabiha Naqvie
 category: "Data Engineering"
 description: "Recent developments in Artificial Intelligence (AI) and Natural Language Processing (NLP) indicate a growing need for better mechanisms for collecting curated datasets, and introduces a new open source tool for this purpose."
+profile: img/team/nabiha-naqvie.png
 ---
 
 Once you become an AI/ML practitioner, you quickly realize that the machine learning work is often the _least_ challenging step in the pipeline. So what's still really, really hard? Getting good data! In this post, we'll explore why that is and introduce a new open source tool for data curation, Baleen. <!--more-->

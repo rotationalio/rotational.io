@@ -7,6 +7,7 @@ author: Patrick Deziel
 image: img/blog/hourglass.jpg
 category: "Distributed Systems"
 description: "Conflict-free replicated data types are starting to take off in popularity, especially in terms of collaborative applications. In this post we will explore how these data structures can be used to achieve a total ordering of events across many peers."
+profile: img/team/patrick-deziel.png
 ---
 
 Conflict-free replicated data types (or "CRDTs") are inspiring the creation of more collaborative applications and improving the experience of users of distributed systems. In this post, we will explore how these data structures can be used to achieve a consistent, total ordering of events across many peers.

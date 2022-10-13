@@ -7,6 +7,7 @@ image: img/blog/2021-06-01-secrets-manager-with-go/doorknocker.jpg
 author: Rebecca Bilbro
 category: Security, Golang, Programming
 description: "In this post, we'll dive into Google's Secret Manager service, walk through the setup steps, and explore some Go code to interact with the API."
+profile: img/team/rebecca-bilbro.png
 ---
 
 Security is by definition an inconvenience. At the very least, it's about making access to data as challenging as possible for the baddies, conveniently measured in computation time. But good security also requires us good folks to go above and beyond &mdash; adopting architectural and engineering practices that involve more forethought, more effort, and more testing than are strictly required to get a basic application running on the web. If you're here already, we don't need to convince you that the effort is well worth it; good security pays for itself in customer trust, not to mention helping to preclude the kinds of breaches that can get careless folks in hot water. In this post, we'll dive into Google's Secret Manager service, walk through the setup steps, and explore some Go code to interact with the API.
