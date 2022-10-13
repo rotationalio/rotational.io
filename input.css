@@ -14,12 +14,10 @@
   .blog-img img {
     @apply h-96 overflow-hidden;
   }
-  /* .art-s p:nth-of-type(2) {
-    @apply h-[350px];
+   .art-s p:nth-of-type(2) {
+    @apply max-h-36 overflow-hidden;
   }
-  article img:first-of-type {
-    @apply h-[800px] object-cover object-center;
-  } */
+
  
   
 }

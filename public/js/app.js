@@ -8,6 +8,8 @@ function myFunction() {
     }
   }
 
+  // add reCAPTCHA on contact form submit
+
 
 // onclick event post contact form
 const form = document.getElementById('contactForm');
