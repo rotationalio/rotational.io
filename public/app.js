@@ -23,6 +23,12 @@ function myFunction() {
       .then((response) => response.json())
       .then((data) => {
         console.log('Success:', data);
+        if (data.success) {
+          document.getElementById('contactForm-alert-success').style.display = 'block';
+
+        } else {
+          console.log('fail:', data);
+        }
       })
       .catch((error) => {
         console.error('Error:', error);
