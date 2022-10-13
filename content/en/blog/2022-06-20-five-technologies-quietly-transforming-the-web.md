@@ -5,7 +5,7 @@ date: "2022-06-27T13:00:01-04:00"
 draft: false
 author: Edwin Schmierer
 image: img/blog/dawn.jpg
-category: "Technologies"
+category: WASM, AI/ML, gRPC, Microservices
 description: "This post describes five technologies - new and old - that are transforming the web and becoming the foundation for next-generation applications."
 ---
 

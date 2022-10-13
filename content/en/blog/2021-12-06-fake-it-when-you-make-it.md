@@ -5,6 +5,7 @@ date: "2021-12-06T10:39:45-06:00"
 draft: false
 image: img/blog/lake_reflection.jpg
 author: Patrick Deziel
+category: Programming, Mocks, Golang
 description: "A mock is a common pattern for unit testing interdependent services. In this post we will explore creating mocks in Go."
 ---
 

@@ -5,7 +5,7 @@ date: "2022-09-07T09:40:12-05:00"
 draft: false
 author: Benjamin Bengfort
 image: img/blog/num215.jpg
-category: "Technologies"
+category: Golang, Programming
 description: "A quick reference for the sizes of standard integer types in Go"
 ---
 
