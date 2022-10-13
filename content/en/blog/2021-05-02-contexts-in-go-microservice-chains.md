@@ -11,7 +11,7 @@ profile: img/team/benjamin-bengfort.png
 ---
 
 Contexts are a critical part of services implemented in Golang. Although we see them often in server interfaces, they can be mysterious to developers implementing request handlers. In this post, we'll discuss what contexts are and take a look at a specific example where contexts shine: services that are implemented as a series of microservice requests. Then we'll dive into the tl;dr of contexts &mdash; namely, the two crucial rules that all service handlers should implement. Finally, we'll demonstrate a quick experiment using gRPC to show how context deadlines are propagated to downstream microservices during request processing, enabling effective coordination.
-
+<!--more-->
 The code for the experiment can be found at: [github.com/rotationalio/ctxms](https://github.com/rotationalio/ctxms).
 
 ## Contexts in Service Handlers

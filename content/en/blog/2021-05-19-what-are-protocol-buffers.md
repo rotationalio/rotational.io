@@ -11,7 +11,7 @@ profile: img/team/rebecca-bilbro.png
 ---
 
 Protocol buffers are a method for serializing data to efficiently send between programs. The structure is reminiscent of XML or JSON, but unlike these more commonly used text-based serialization methods, protocol buffers are designed to produce extremely compact messages using a binary format. The main tradeoff is that protocol buffers aren't human-readable, so when developing APIs, it's always important to consider the use case. In this post, we'll explore some of the use cases for protobufs and get to know the syntax.
-
+<!--more-->
 ## From Data to Bytes
 
 When we serialize, we're converting from an in-memory representation of data that's good for analysis and/or computation into a form that's better for storage and/or transmission.

@@ -3,7 +3,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        'poppins': ['Montserrat','Poppins', 'open-sans', 'sans-serif']
+        MontSerrat: ["Montserrat", "sans-serif"],
       },
     },
   },
