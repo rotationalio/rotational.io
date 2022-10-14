@@ -1,4 +1,4 @@
-// static files are served from the /static/ path prefix
+// static 
 function myFunction() {
     var x = document.getElementById("myTopnav");
     if (x.className === "topnav") {
@@ -12,15 +12,18 @@ function myFunction() {
     event.preventDefault();
     const formData = new FormData(form);
     const data = Object.fromEntries(formData);
-    console.log(data);
+    const { subscribe, ...rest } = data;
+
     const formattedData = {
-      ...data,
-      subscribe: data?.subscribe === 'on' ? true : false,
+      
+      subscribe: subscribe === 'on' ? true : false,
+      ...rest,
       lists: [
         "4ada7d4b-e0a7-4017-8b9d-4db172b5be64",
         "54b7fc6a-db4b-491b-b6ff-4348c15072bc"
     ]
     }
+        console.log(formattedData);
     fetch('https://api.rotationallabs.com/v1/contact', {
       method: 'POST',
       headers: {
