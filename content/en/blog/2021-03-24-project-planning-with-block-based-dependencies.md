@@ -15,7 +15,7 @@ profile: img/team/benjamin-bengfort.png
 <!-- frame the context -->
 
 Good software development achieves complexity by describing the interactions of simple components. Of course, this is harder than it sounds, and if Mark Twain had been a software developer he would have likely said: "if I had more time, I would have created a simpler design." This feels even more true at the start of a project when a roadmap has to be laid out and time and cost estimates applied.
-
+<!--more-->
 One of the primary challenges to simplicity lies in the conflict between how we tend to think of software processes: as step-by-step "wizards", and the need to overlay this process on decoupled components whose interactions are distinctly non-linear. Agile software development workflows have identified this conflict and have designed processes to handle it including story based requirements gathering and iterative development cycles. This is my comfort zone, however, I've found myself in a new context recently: having to sunrise multiple projects simultaneously and plan discrete contracts with fixed budget and staffing.
 
 <!-- the challenge -->

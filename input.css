@@ -15,7 +15,7 @@
     @apply h-96 overflow-hidden;
   }
    .art-s p:nth-of-type(2) {
-    @apply max-h-36 overflow-hidden;
+    @apply h-36 overflow-hidden;
   }
 
  

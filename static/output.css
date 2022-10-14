@@ -1172,7 +1172,7 @@ video {
 }
 
 .art-s p:nth-of-type(2) {
-  max-height: 9rem;
+  height: 9rem;
   overflow: hidden;
 }
 
