@@ -19,6 +19,11 @@
 {{ range site.Params.plugins.css }}
 <link rel="stylesheet" href="{{ .link | absURL }}">
 {{ end }}
+  
+{{ "<!-- fonts -->" | safeHTML }}
+<link href="{{.Site.Params.googleFonts}}" rel="stylesheet">
+
+{{ "<!-- styles -->" | safeHTML }}
 
 {{"<!-- Main Stylesheet -->"|safeHTML}}
 <link rel="stylesheet" href="{{ `output.css` | absURL }}" media="screen">

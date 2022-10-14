@@ -10,7 +10,7 @@ profile: img/team/benjamin-bengfort.png
 ---
 
 gRPC makes the specification and implementation of networked APIs a snap. But what is the simplest way to _document_ a gRPC API? There seem to be some hosted providers by Google, e.g. [SmartDocs](https://cloud.google.com/endpoints/docs/grpc/dev-portal-update-ref-docs), but I have yet to find a gRPC-specific tool. For REST API frameworks, documentation is commonly generated along with live examples using [OpenAPI (formerly swagger)](https://swagger.io/resources/open-api/). By using [grpc-gateway](https://github.com/grpc-ecosystem/grpc-gateway) it appears to be pretty straight forward to generate a REST/gRPC API combo from protocol buffers and then hook into the OpenAPI specification.
-
+<!--more-->
 In this post, I'll go through the creation of docs from gRPC protocol buffers. In a following post, I'll go through the creation of a live gRPC/REST service with Swagger documentation.
 
 **Step 1**: Define the service.

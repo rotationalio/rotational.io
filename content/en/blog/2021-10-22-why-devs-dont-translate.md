@@ -11,7 +11,6 @@ profile: img/team/rebecca-bilbro.png
 ---
 
 Stars, forks, likes, upvotes, downloads. In a world where user metrics rule, why don't more technical projects translate their docs to reach more global users?
-
 <!--more-->
 
 Have you ever wondered why the large majority of software is monolingual? Think about the documentation, examples, code, and API of your stack of choice. It's likely that it is available in one language only (usually English). Incredibly, this holds true for some of the biggest, most well-known, and well-funded projects. You'd think making tech accessible to speakers of other languages would be a surefire way to rapidly gain global users and market share, so what gives?
