@@ -24,7 +24,7 @@ function myFunction() {
       .then((data) => {
         console.log('Success:', data);
         if (data.success) {
-          document.getElementById('contactForm-alert-success').style.display = 'block';
+          document.getElementById('contact-alert').style.display = 'block';
 
         } else {
           console.log('fail:', data);

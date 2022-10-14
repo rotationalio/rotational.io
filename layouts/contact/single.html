@@ -28,8 +28,8 @@
                     {{ with .title }} {{ after (len (index (split . " ") 0)) . | safeHTML }} {{ end }}
                 </h5>
                 <div class="mt-4">
-                    <div class="bg-teal-100 border-t-4 border-teal-500 rounded-b text-teal-900 px-4 py-3 shadow-md "
-                        id='contact-alert-success' role="alert">
+                    <div class="bg-teal-100 border-t-4 border-teal-500 rounded-b text-teal-900 px-4 py-3 shadow-md hide"
+                        id='contact-alert' role="alert">
                         <div class="flex">
 
                             <div>
