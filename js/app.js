@@ -23,7 +23,6 @@ function myFunction() {
         "54b7fc6a-db4b-491b-b6ff-4348c15072bc"
     ]
     }
-        console.log(formattedData);
     fetch('https://api.rotationallabs.com/v1/contact', {
       method: 'POST',
       headers: {
@@ -31,17 +30,18 @@ function myFunction() {
       },
       body: JSON.stringify(formattedData),
     })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log('Success:', data);
-        if (data.success) {
+      .then((response) => {
+        if (response.status === 204) {
           document.getElementById('contact-alert').style.display = 'block';
           form.reset();
+        } 
+        return response.json()
 
-        } else {
-          console.log('fail:', data);
-        }
       })
+      .then((data) => {
+        console.log('Success:', data);
+      })
+     
       .catch((error) => {
         console.error('Error:', error);
       });
