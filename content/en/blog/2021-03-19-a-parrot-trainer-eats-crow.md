@@ -11,7 +11,7 @@ profile: img/team/rebecca-bilbro.png
 ---
 
 In this post, we'll consider how it is that models trained on massive datasets using millions of parameters can be both "low bias" and also _very biased_, and begin to think through what we in the ML community might be able to do about it.
-
+<!--more-->
 ## Birds on a Wire
 
 In the machine learning community, we are trained to think of [size as inversely proportional to bias](http://scott.fortmann-roe.com/docs/BiasVariance.html). We associate small datasets with the problem of underfit, which is to say high bias. We learn that in the face of unfamiliar data, underfit models make poor assumptions that lead to inaccuracies. Likewise, we call models with smaller sets of hyperparameters "weak learners" because their limited complexity limits our ability to reduce bias even as our dataset size grows.

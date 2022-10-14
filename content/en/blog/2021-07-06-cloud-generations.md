@@ -11,7 +11,7 @@ profile: img/team/edwin-schmierer.png
 ---
 
 There's no doubt public cloud providers have transformed the technology landscape; in this post we retrace the evolution of the cloud to gather clues into where the industry is headed next.
-
+<!--more-->
 ## Framing Cloud Generations
 
 Cloud providers such as AWS and Google Cloud have provided critical infrastructure, lowered barriers to entry, and established a global presence. Organizations large and small have a plethora of options when building their technology solutions. But one question we've been exploring is: What is the future of cloud services?

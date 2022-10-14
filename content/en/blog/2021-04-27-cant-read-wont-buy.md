@@ -11,7 +11,7 @@ profile: img/team/rebecca-bilbro.png
 ---
 
 To say we are not at our most empowered when trying to communicate in an unfamiliar language is a bit of an understatement. As if the limitations of one's own language weren't bad enough, trying to get along in a different language often makes you feel downright _helpless_. Research suggests these feelings also strongly inform consumers' buying decisions. What does this mean for companies who want to connect with users in other countries and cultures? In this post we'll explore some of the drawbacks of using English-only as a sales medium, check out some creative solutions, and consider what this all means for global app development.
-
+<!--more-->
 ## Why Not Just English?
 
 In David Sedaris' (2000) ["Me Talk Pretty One Day"](https://en.wikipedia.org/wiki/Me_Talk_Pretty_One_Day), the author recounts his time as a new student in a French language class for adults:

@@ -11,7 +11,7 @@ profile: img/team/benjamin-bengfort.png
 ---
 
 Right now only half the world is awake. For successful planetary-scale networking, it's time for diurnal intelligently distributed systems.
-
+<!--more-->
 Today my partners [Dr. Rebecca Bilbro], [Edwin Schmierer], and I have embarked on a journey to develop commercial planetary-scale systems and applications with Rotational Labs. The Internet and the cloud provide opportunities to rapidly develop applications that quickly reach an international audience. However, just because the tools exist doesn’t mean it’s easy. “Context is king,” say some of our closest advisors, and our primary goal is to create intelligent distributed systems that accommodate context without homogenizing experience.
 
 “Hello World” is the traditional first computer program, but we see an additional meaning. We strive to develop respectful systems that create meaningful interactions between people in diverse parts of the world with diverse cultural backgrounds. The world is a big place, and “Hello World” signifies that tackling big problems affecting us all requires finding means to cooperate effectively together. “Hello World” means that seemingly simple outcomes are borne of the complex interactions of simple components. For us, technology is not a panacea; it is the means by which we can collaborate and produce change and value.

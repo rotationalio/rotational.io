@@ -17,6 +17,9 @@ author = "Rotational Labs, LLC"
 googleAnalytics = "G-2FKX6CWJHW" # Google Analytics ID
 g_recaptcha_key="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" # Google reCAPTCHA key
 
+# google fonts
+googleFonts = "https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,600;1,700;1,800&display=swap"
+
 # Set canonical URLs
 [permalinks]
 blog = "/blog/:slug/"
@@ -78,6 +81,8 @@ contentDir = "content/en"
 weight = 1
 home = "Home"
 copyright = "Copyright &copy; 2022 Rotational Labs, LLC &middot; All Rights Reserved"
+contactFormSuccessTitle = "Message sent!"
+contactFormSuccessMessage = "Thank you for your interest in Rotational Labs. Please expect a response within one business day. If you need immediate assistance, please email support@rotational.io."
 
 [params.socials]
 [params.socials.email]
