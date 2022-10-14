@@ -33,6 +33,7 @@ function myFunction() {
         console.log('Success:', data);
         if (data.success) {
           document.getElementById('contact-alert').style.display = 'block';
+          form.reset();
 
         } else {
           console.log('fail:', data);
