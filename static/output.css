@@ -1386,12 +1386,12 @@ video {
   height: 2.75rem;
 }
 
-.h-96 {
-  height: 24rem;
-}
-
 .h-16 {
   height: 4rem;
+}
+
+.h-96 {
+  height: 24rem;
 }
 
 .h-\[300px\] {
@@ -1408,14 +1408,6 @@ video {
 
 .h-3 {
   height: 0.75rem;
-}
-
-.h-20 {
-  height: 5rem;
-}
-
-.h-32 {
-  height: 8rem;
 }
 
 .w-10 {
@@ -1685,6 +1677,10 @@ video {
 .bg-\[\#E8EDF7\] {
   --tw-bg-opacity: 1;
   background-color: rgb(232 237 247 / var(--tw-bg-opacity));
+}
+
+.bg-hero-pattern {
+  background-image: url('/img/hero.png');
 }
 
 .fill-current {

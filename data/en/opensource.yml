@@ -23,7 +23,7 @@ opensource:
     - name : Whisper
       description:  Whisper is a secure secret-sharing utility that allows users to securely share and control access to confidential information such as passwords, documents, config files, keys, and certificates across an organization.
       image : img/favicon.png
-      link: https://www.oreilly.com/library/view/applied-text-analysis/9781491963036/
+      link: https://github.com/rotationalio/whisper
       alt: Whisper logo
 
   publications:
