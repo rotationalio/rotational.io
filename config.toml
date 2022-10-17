@@ -45,12 +45,12 @@ name = 'Services'
 url = '/services'
 weight = 2
 
-# [[Languages.en.menu.main]]
-# identifier = 'opensource'
-# pageRef = 'opensource'
-# name = 'Open Source'
-# url = '/opensource'
-# weight = 3
+[[Languages.en.menu.main]]
+identifier = 'opensource'
+pageRef = 'opensource'
+name = 'Open Source'
+url = '/opensource'
+weight = 3
 
 [[Languages.en.menu.main]]
 identifier = 'blog'

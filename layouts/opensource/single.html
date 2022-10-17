@@ -1,67 +1,71 @@
 {{ define "title" }}
-    {{ .Title }} &ndash; {{ .Site.Title }}
+{{ .Title }} &ndash; {{ .Site.Title }}
 {{ end }}
 
 {{ define "main" }}
-    {{ $data := index site.Data site.Language.Lang }}
+{{ $data := index site.Data site.Language.Lang }}
 
-    {{ if $data.opensource.opensource.enable }}
-        {{ with $data.opensource.opensource }}
-        <div class="max-w-7xl mx-auto px-4 relative">
-            <h2 class="text-lg sm:text-xl lg:text-2xl mt:12 lg:mt-24">
-                <b class="text-[#1D65A6]">{{ with .title }} {{ index (split . ". ") 0 | safeHTML }} {{ end }}</b>
-                {{ with .title }} {{ after (len (index (split . ". ") 0)) . | safeHTML }} {{ end }}
-            </h2>
-            <div class="">
-                {{ if $data.opensource.opensource.projects.enable }}
-                    {{ with $data.opensource.opensource.projects }}
-                        <div class="flex items-center mt-9 sm:mt-11 lg:mt-14">
-                            <h3 class="font-bold text-xl sm:text-2xl lg:text-3xl">{{ .title }}</h3>
-                            <img src="../img/butterfly.png" class="h-6 ml-3 w-6"/>
+{{ if $data.opensource.opensource.enable }}
+{{ with $data.opensource.opensource }}
+<div class="max-w-7xl mx-auto px-4 relative">
+    <h2 class="text-lg sm:text-xl lg:text-2xl mt:12 lg:mt-24">
+        <b class="text-[#1D65A6]">{{ with .title }} {{ index (split . ". ") 0 | safeHTML }} {{ end }}</b>
+        {{ with .title }} {{ after (len (index (split . ". ") 0)) . | safeHTML }} {{ end }}
+    </h2>
+    <div class="">
+        {{ if $data.opensource.opensource.projects.enable }}
+        {{ with $data.opensource.opensource.projects }}
+        <div class="flex items-center mt-9 sm:mt-11 lg:mt-14">
+            <h3 class="font-bold text-xl sm:text-2xl lg:text-3xl">{{ .title }}</h3>
+            <img src="../img/butterfly.png" class="h-6 ml-3 w-6" />
+        </div>
+        <div>
+            <ul>
+                {{ range .items }}
+                <li class="mt-6 ">
+                    <a href="{{ .link }}" target="_blank">
+                        <div class="block md:flex p-5 bg-[#E8EDF7] rounded-lg prose-blue">
+                            <div>
+                                <h4 class="font-bold text-lg">{{ .name }}</h4>
+                                <p class="mt-4">{{ .description }}</p>
+                            </div>
+                            <img src="{{ .image }}" alt="" class="lg:ml-4 lg:mt-0 mt-6 h-16">
                         </div>
-                        <div >
-                            <ul>
-                                {{ range .items }}
-                                <li class="mt-6">
-                                    <div class="block md:flex p-5 bg-[#E8EDF7] rounded-lg">
-                                        <div>
-                                            <h4 class="font-bold text-lg">{{ .name }}</h4>
-                                            <p class="mt-4">{{ .description }}</p>
-                                        </div>
-                                        <img src="{{ .image }}" alt="" class="lg:ml-4 lg:mt-0 mt-6">
-                                    </div>
-                                </li>
-                                {{ end }}
-                            </ul>
-                        </div>
-                    {{ end }}
+                    </a>
+                </li>
                 {{ end }}
-
-                {{ if $data.opensource.opensource.publications.enable }}
-                    {{ with $data.opensource.opensource.publications }}
-                        <div class="flex items-center mt-9 sm:mt-11 lg:mt-14">
-                            <h3 class="font-bold text-xl sm:text-2xl lg:text-3xl">{{ .title }}</h3>
-                            <img src="../img/butterfly.png" class="h-6 ml-3 w-6"/>
-                        </div>
-                        <div >
-                            <ul>
-                                {{ range .items }}
-                                <li class="mt-6">
-                                    <div class="block md:flex p-5 bg-[#E8EDF7] rounded-lg">
-                                        <div>
-                                            <h4 class="font-bold text-lg">{{ .name }}</h4>
-                                            <p class="mt-4">{{ .description }}</p>
-                                        </div>
-                                        <img src="{{ .image }}" alt="" class="lg:ml-4 lg:mt-0 mt-6">
-                                    </div>
-                                </li>
-                                {{ end }}
-                            </ul>
-                        </div>
-                    {{ end }}
-                {{ end }}
-            </div>
+            </ul>
         </div>
         {{ end }}
-    {{ end }}
+        {{ end }}
+
+        {{ if $data.opensource.opensource.publications.enable }}
+        {{ with $data.opensource.opensource.publications }}
+        <div class="flex items-center mt-9 sm:mt-11 lg:mt-14">
+            <h3 class="font-bold text-xl sm:text-2xl lg:text-3xl">{{ .title }}</h3>
+            <img src="../img/butterfly.png" class="h-6 ml-3 w-6" />
+        </div>
+        <div>
+            <ul>
+                {{ range .items }}
+                <li class="mt-6">
+                    <a href="{{ .link }}" target="_blank">
+                        <div class="block md:flex p-5 bg-[#E8EDF7] rounded-lg">
+                            <div>
+                                <h4 class="font-bold text-lg">{{ .name }}</h4>
+                                <p class="mt-4">{{ .description }}</p>
+                            </div>
+                            <img src="{{ .image }}" alt="" class="lg:ml-4 lg:mt-0 mt-6 h-96">
+                        </div>
+                    </a>
+                </li>
+                {{ end }}
+            </ul>
+        </div>
+        {{ end }}
+        {{ end }}
+    </div>
+</div>
+{{ end }}
+{{ end }}
 {{ end }}
