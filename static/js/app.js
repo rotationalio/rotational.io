@@ -76,7 +76,7 @@ newsletterForm?.addEventListener('submit', (event) => {
      .then((response) => {
       if (response.status === 204) {
         document.getElementById('newsletter-alert').style.display = 'block';
-        form.reset();
+        newsletterForm.reset();
       }
       return response.json()
 
