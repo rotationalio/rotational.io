@@ -10,7 +10,7 @@ opensource:
     # projects_item loop
     - name : Yellowbrick
       description: Yellowbrick is an open source project built using Python that extends the scikit-learn API with visual analysis and diagnostic tools. The Yellowbrick library is a diagnostic visualization platform for machine learning.
-      image : img/favicon.png
+      image : img/yellowbrick-flat-logo.png
       link: https://www.scikit-yb.org/en/latest/index.html
       alt: Yellobrick logo
     # projects_item loop
@@ -28,7 +28,7 @@ opensource:
 
   publications:
     enable: true
-    title: Our publications
+    title: Our Publications
     items:
     # publications_item loop
     - name : Applied Text Analysis with Python
