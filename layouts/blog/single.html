@@ -103,10 +103,10 @@
 
   <form action="blog" method="post" id="newsletterForm">
     <h6 class="font-bold text-center">{{ i18n "enterEmailToSubscribe" }}</h6>
-    <input type="text" required placeholder="{{ i18n " newsLetterEmail" }}"
+    <input type="text" name="email" required placeholder="{{ i18n " newsLetterEmail" }}"
       class="w-full px-4 py-2.5 rounded-lg mt-6 text-black" style="color:black">
     <div class="flex mt-6 items-start">
-      <input type="checkbox" required name="email" class="w-6 h-6 block border-0 ">
+      <input type="checkbox" required class="w-6 h-6 block border-0 ">
       <span class="ml-2 text-left">{{ i18n "newsLetterEngagment" }}</span>
     </div>
     <div class="bg-teal-100 border-t-4 border-teal-500 mt-10 rounded-b text-teal-900 px-4 py-3 shadow-md hidden "
