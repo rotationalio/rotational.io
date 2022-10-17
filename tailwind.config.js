@@ -5,6 +5,9 @@ module.exports = {
       fontFamily: {
         MontSerrat: ["Montserrat", "sans-serif"],
       },
+      backgroundImage: {
+        "hero-pattern": "url('/img/hero.png')",
+      },
     },
   },
   plugins: [require("@tailwindcss/typography")],
