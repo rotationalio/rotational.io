@@ -43,7 +43,7 @@
 - id: enterEmailToSubscribe
   translation: Enter Your Email To Subscribe
 - id: newsLetterEngagment
-  translation: I want to received the monthly newsletter and other updates from Rotational. You
+  translation: I want to receive the monthly newsletter and other updates from Rotational. You
         agree to our Privacy Policy. You may unsubscribe at any time.*
 - id: newsLetterEmail
   translation: Your email address

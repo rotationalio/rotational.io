@@ -49,7 +49,7 @@ form?.addEventListener('submit', (event) => {
 }
 );
 
-// check newsletter form subn=mission 
+// check newsletter form submission
 const newsletterForm = document.getElementById('newsletterForm');
 newsletterForm?.addEventListener('submit', (event) => {
   event.preventDefault();
