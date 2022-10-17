@@ -12,16 +12,19 @@ opensource:
       description: Yellowbrick is an open source project built using Python that extends the scikit-learn API with visual analysis and diagnostic tools. The Yellowbrick library is a diagnostic visualization platform for machine learning.
       image : img/favicon.png
       link: https://www.scikit-yb.org/en/latest/index.html
+      alt: Yellobrick logo
     # projects_item loop
     - name : TRISA
       description: The Travel Rule Information Sharing Alliance (TRISA) is an open source standard that defines how Virtual Asset Service Providers (VASPs) securely exchange digital assets to comply with the FATF Travel Rule while protecting privacy.
       image : img/trisa-l.png
       link: https://github.com/trisacrypto
+      alt: Trisa logo
     # projects_item loop
     - name : Whisper
       description:  Whisper is a secure secret-sharing utility that allows users to securely share and control access to confidential information such as passwords, documents, config files, keys, and certificates across an organization.
       image : img/favicon.png
       link: https://www.oreilly.com/library/view/applied-text-analysis/9781491963036/
+      alt: Whisper logo
 
   publications:
     enable: true
@@ -32,9 +35,11 @@ opensource:
       description: A practical book for data scientists building language-aware products with applied machine learning. Emphasizes robust, repeatable, and scalable techniques for text analysis with Python.
       image : img/book-1.png
       link:  https://www.oreilly.com/library/view/applied-text-analysis/9781491963036/
+      alt: applied text analysis book
     # publications_item loop
     - name : Data Analytics with Hadoop
       description: A practical guide on how the Hadoop ecosystem is useful for statistical and machine-learning techniques across large data sets and delves into analytics, data warehousing techniques, and workflows.
       image : img/book-2.png
       link: https://www.oreilly.com/library/view/data-analytics-with/9781491913734/
+      alt: data analytics with hadoop book
    
