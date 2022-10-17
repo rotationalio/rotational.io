@@ -9,7 +9,7 @@ function myFunction() {
 }
 const form = document.getElementById('contactForm');
 
-form.addEventListener('submit', (event) => {
+form?.addEventListener('submit', (event) => {
   event.preventDefault();
   const formData = new FormData(form);
   const data = Object.fromEntries(formData);
@@ -51,8 +51,9 @@ form.addEventListener('submit', (event) => {
 
 // check newsletter form subn=mission 
 const newsletterForm = document.getElementById('newsletterForm');
-newsletterForm.addEventListener('submit', (event) => {
+newsletterForm?.addEventListener('submit', (event) => {
   event.preventDefault();
+  console.log('newsletter form submitted');
   const formData = new FormData(newsletterForm);
   const data = Object.fromEntries(formData);
 
@@ -74,7 +75,7 @@ newsletterForm.addEventListener('submit', (event) => {
   })
      .then((response) => {
       if (response.status === 204) {
-        document.getElementById('notification-alert').style.display = 'block';
+        document.getElementById('newsletter-alert').style.display = 'block';
         form.reset();
       }
       return response.json()
