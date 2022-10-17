@@ -83,6 +83,7 @@ home = "Home"
 copyright = "Copyright &copy; 2022 Rotational Labs, LLC &middot; All Rights Reserved"
 contactFormSuccessTitle = "Message sent!"
 contactFormSuccessMessage = "Thank you for your interest in Rotational Labs. Please expect a response within one business day. If you need immediate assistance, please email support@rotational.io."
+newsletterFormSuccessMessage = "Thank you for your interest."
 
 [params.socials]
 [params.socials.email]
