@@ -6,6 +6,7 @@ draft: false
 author: Natasha White
 image: img/blog/paths.jpg
 category: Technology
+photo_credit: Elzbieta Pacuszka via Flickr Commons
 description: "Over the course of the past few months, I’ve had the pleasure of interning at Rotational as a technical writer. I’m excited to share a little bit about my experience and provide some insight from the perspective of someone who is entering the world of distributed systems for the first time."
 profile: img/team/natasha-white.png
 ---
@@ -46,6 +47,6 @@ I feel so grateful for the learning and growth opportunities I’ve been afforde
 
 ---
 
-Photo by [elzbietapacuszka](https://www.flickr.com/people/192219560@N03/) via [Flickr Commons](https://www.flickr.com/photos/192219560@N03/)
+<!-- Photo by [elzbietapacuszka](https://www.flickr.com/people/192219560@N03/) via [Flickr Commons](https://www.flickr.com/photos/192219560@N03/)
 
----
+--- -->
