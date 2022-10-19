@@ -1386,16 +1386,8 @@ video {
   height: 2.75rem;
 }
 
-.h-96 {
-  height: 24rem;
-}
-
 .h-16 {
   height: 4rem;
-}
-
-.h-96 {
-  height: 24rem;
 }
 
 .h-\[300px\] {
@@ -1414,12 +1406,28 @@ video {
   height: 0.75rem;
 }
 
-.h-20 {
-  height: 5rem;
+.h-\[480px\] {
+  height: 480px;
 }
 
-.h-32 {
-  height: 8rem;
+.min-h-\[480px\] {
+  min-height: 480px;
+}
+
+.min-h-\[750px\] {
+  min-height: 750px;
+}
+
+.min-h-\[550px\] {
+  min-height: 550px;
+}
+
+.min-h-\[450px\] {
+  min-height: 450px;
+}
+
+.min-h-\[592px\] {
+  min-height: 592px;
 }
 
 .w-10 {
@@ -1454,6 +1462,10 @@ video {
   width: 0.75rem;
 }
 
+.w-\[100\%\] {
+  width: 100%;
+}
+
 .max-w-7xl {
   max-width: 80rem;
 }
@@ -1472,6 +1484,14 @@ video {
 
 .max-w-lg {
   max-width: 32rem;
+}
+
+.max-w-5xl {
+  max-width: 64rem;
+}
+
+.max-w-4xl {
+  max-width: 56rem;
 }
 
 .grow {
@@ -1542,6 +1562,12 @@ video {
   --tw-divide-x-reverse: 0;
   border-right-width: calc(2px * var(--tw-divide-x-reverse));
   border-left-width: calc(2px * calc(1 - var(--tw-divide-x-reverse)));
+}
+
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .rounded-full {
@@ -1691,8 +1717,80 @@ video {
   background-color: rgb(232 237 247 / var(--tw-bg-opacity));
 }
 
+.bg-wave-pattern {
+  background-image: url('/img/wave.png');
+}
+
 .bg-hero-pattern {
   background-image: url('/img/hero.png');
+}
+
+.bg-\[length\:882\.5px_480px\] {
+  background-size: 882.5px 480px;
+}
+
+.bg-\[length\:982\.5px_480px\] {
+  background-size: 982.5px 480px;
+}
+
+.bg-\[length\:922\.5px_480px\] {
+  background-size: 922.5px 480px;
+}
+
+.bg-\[length\:892\.5px_480px\] {
+  background-size: 892.5px 480px;
+}
+
+.bg-\[length\:892\.5px_750px\] {
+  background-size: 892.5px 750px;
+}
+
+.bg-\[length\:882\.5px_750px\] {
+  background-size: 882.5px 750px;
+}
+
+.bg-\[length\:982\.5px_750px\] {
+  background-size: 982.5px 750px;
+}
+
+.bg-\[length\:1082\.5px_750px\] {
+  background-size: 1082.5px 750px;
+}
+
+.bg-cover {
+  background-size: cover;
+}
+
+.bg-contain {
+  background-size: contain;
+}
+
+.bg-\[length\:882\.5px_580px\] {
+  background-size: 882.5px 580px;
+}
+
+.bg-\[length\:882\.5px_592px\] {
+  background-size: 882.5px 592px;
+}
+
+.bg-\[length\:882\.5px_582px\] {
+  background-size: 882.5px 582px;
+}
+
+.bg-right-top {
+  background-position: right top;
+}
+
+.bg-right-center {
+  background-position: right center;
+}
+
+.bg-right {
+  background-position: right;
+}
+
+.bg-no-repeat {
+  background-repeat: no-repeat;
 }
 
 .fill-current {
@@ -2223,6 +2321,11 @@ body {
   .sm\:text-5xl {
     font-size: 3rem;
     line-height: 1;
+  }
+
+  .sm\:text-3xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
   }
 
   .sm\:leading-normal {

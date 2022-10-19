@@ -1,42 +1,44 @@
 {{ if eq $.Page.Kind "home" }}
-<div class="sm:pt-5 relative lg:h-[750px] bg-hero-pattern">
-    <img class="w-full absolute lg:inset-y-0 lg:left-0 lg:h-full lg:w-full lg:max-w-none" src="img/hero.png" alt="" />
+<div class=" bg-wave-pattern bg-right-center min-h-[480px] w-full">
+    <!-- <img class="w-full absolute lg:inset-y-0 lg:left-0 lg:h-full lg:w-full lg:max-w-none" src="img/hero.png" alt="" /> -->
+    <div class="bg-hero-pattern bg-[length:882.5px_480px] bg-right-center bg-no-repeat min-h-[480px] w-full">
 
-    {{ partial "site-nav.html" . }}
+        {{ partial "site-nav.html" . }}
 
-    <div class="relative max-w-7xl mx-auto flex items-center justify-between text-white px-4 sm:px-6">
-        <div class="w-1/2 text-3x">
-            {{ with .Params.headertext }}
-            <h1 class="sm:text-5xl sm:leading-normal font-bold mt-6 sm:mt-20">
-                {{ . }}
-            </h1>
-            {{ end }}
+        <div class="relative max-w-7xl mx-auto flex items-center justify-between text-white px-4 sm:px-6">
+            <div class="w-1/2 text-3x">
+                {{ with .Params.headertext }}
+                <h1 class="sm:text-3xl sm:leading-normal font-bold mt-6 sm:mt-20">
+                    {{ . }}
+                </h1>
+                {{ end }}
 
-            {{ if .Params.headeraction }}
-            <div class="mt-8 lg:mt-12">
-                <a href="{{ .Params.headeractionlink }}"
-                    class="text-xs sm:text-lg font-semibold rounded-lg px-5 sm:px-12 py-3 sm:py-5 bg-[#192E5B] uppercase">{{
-                    .Params.headeraction }}
-                </a>
+                {{ if .Params.headeraction }}
+                <div class="mt-8 lg:mt-12">
+                    <a href="{{ .Params.headeractionlink }}"
+                        class="text-xs sm:text-lg font-semibold rounded-lg px-5 sm:px-12 py-3 sm:py-5 bg-[#192E5B] uppercase">{{
+                        .Params.headeraction }}
+                    </a>
+                </div>
+                {{ end }}
             </div>
-            {{ end }}
         </div>
     </div>
 </div>
 {{ else }}
-<div class="sm:pt-5 relative h-[300px] lg:h-[520px]">
-    <img class="w-full absolute lg:inset-y-0 lg:left-0 lg:h-full lg:w-full lg:max-w-none" src="../img/hero.png"
-        alt="" />
+<div class=" bg-wave-pattern bg-right-center min-h-[480px] w-full">
+    <div class="bg-hero-pattern bg-[length:882.5px_480px] bg-right-center bg-no-repeat min-h-[480px] w-full">
 
-    {{ partial "site-nav.html" . }}
+        {{ partial "site-nav.html" . }}
 
-    <div class="relative max-w-7xl mx-auto flex items-center justify-between text-white px-4 sm:px-6">
-        <div class="lg:w-1/2 text-3x">
-            <div class="flex items-center mt-20 lg:mt-44">
-                {{ with .Params.headertext }}
-                <h3 class="font-bold text-3xl lg:text-5xl">{{ . }}</h3>
-                {{ end }}
-                <img src="../img/butterfly.png" class="h-8 lg:h-12 ml-0 lg:ml-3 w-8 lg:w-12" />
+        <div class="relative max-w-7xl mx-auto flex items-center justify-between text-white px-4 sm:px-6">
+            <div class="lg:w-1/2 text-3x">
+                <div class="flex items-center mt-20 lg:mt-44">
+                    {{ with .Params.headertext }}
+                    <h3 class="font-bold text-3xl lg:text-5xl">{{ . }}</h3>
+                    {{ end }}
+                    <img src="../img/butterfly.png" class="h-8 lg:h-12 ml-0 lg:ml-3 w-8 lg:w-12" />
+                </div>
             </div>
         </div>
     </div>

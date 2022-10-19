@@ -7,6 +7,10 @@ module.exports = {
       },
       backgroundImage: {
         "hero-pattern": "url('/img/hero.png')",
+        "wave-pattern": "url('/img/wave.png')",
+      },
+      backgroundPosition: {
+        'right-center': 'right center',
       },
     },
   },
