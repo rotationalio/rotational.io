@@ -7,8 +7,11 @@ module.exports = {
       },
       backgroundImage: {
         "hero-pattern": "url('/img/hero.png')",
-        "wave-pattern": "url('/img/wave.png')",
         'hero-footer': "url('/img/foot.png')",
+        "wave-pattern": "url('/img/wave.png')",
+        "wavexl-pattern": "url('/img/wave_xl.png')",
+        "wavelg-pattern": "url('/img/wave_lg.png')",
+        
       },
       backgroundPosition: {
         'right-center': 'right center',
