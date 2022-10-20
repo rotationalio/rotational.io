@@ -6,7 +6,6 @@ draft: false
 image: img/blog/islands.jpg
 author: Edwin Schmierer
 category: "Data Privacy"
-photo_credit: Irina Shishkina via Unsplash
 description: "We look at the state of play in data privacy regulations and how business and tech leaders can adapt."
 profile: img/team/edwin-schmierer.png
 
@@ -53,4 +52,4 @@ In contrast, business and tech leaders should adopt a core philosophy that [prio
 
 ---
 
-<!-- Photo by <a href="https://unsplash.com/@whoisrobinhood?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Irina Shishkina</a> on <a href="https://unsplash.com/s/photos/privacy-nature?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a> -->
+Photo by [Irina Shishkina](https://unsplash.com/@whoisrobinhood?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/privacy-nature?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
