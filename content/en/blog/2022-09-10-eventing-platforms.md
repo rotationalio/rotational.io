@@ -6,7 +6,6 @@ draft: false
 author: Rebecca Bilbro
 image: img/blog/herd.jpg
 category: Microservices, Eventing
-photo_credit: Rajarshi Mitra via Flickr Commons
 description: "In this post we'll explore some of the types of eventing platforms and discuss why it's not about deciding which is objectively the 'best', but about knowing how to select the best tool for a given context."
 profile: img/team/rebecca-bilbro.png
 ---
@@ -79,6 +78,4 @@ When you are in the architecture and design phase of a new application, rather t
 
 ---
 
-<!-- Photo by [Rajarshi Mitra](https://www.flickr.com/photos/tataimitra/) via [Flickr Commons](https://flic.kr/p/244actT)
-
---- -->
+Photo by [Rajarshi Mitra](https://www.flickr.com/photos/tataimitra/) via [Flickr Commons](https://flic.kr/p/244actT)

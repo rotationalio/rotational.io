@@ -332,10 +332,9 @@ Mocking gRPC services for the purposes of testing isn't always straightforward. 
 Check out the full tutorial code [here](https://github.com/rotationalio/agenda).
 
 ---
+Photo by [JJ Ying](https://unsplash.com/@jjying?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/technology?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 
-<!-- Photo by [JJ Ying](https://unsplash.com/@jjying?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/technology?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
-
---- -->
+---
 
 #### References
 

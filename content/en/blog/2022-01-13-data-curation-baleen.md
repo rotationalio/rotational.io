@@ -6,7 +6,6 @@ draft: false
 image: img/blog/whale.jpg
 author: Nabiha Naqvie
 category: "Data Engineering"
-photo_credit: Art of Backpacking via Flickr
 description: "Recent developments in Artificial Intelligence (AI) and Natural Language Processing (NLP) indicate a growing need for better mechanisms for collecting curated datasets, and introduces a new open source tool for this purpose."
 profile: img/team/nabiha-naqvie.png
 ---
@@ -43,9 +42,7 @@ So how can you create your own curate data to ensure your machine learning model
 
 ---
 
-<!-- Photo by [Art of Backpacking](https://flic.kr/p/8GAVjS) on [Flickr Commons](https://flic.kr/p/8GAVjS)
-
---- -->
+Photo by [Art of Backpacking](https://flic.kr/p/8GAVjS) on [Flickr Commons](https://flic.kr/p/8GAVjS)
 
 [^1]: https://builtin.com/artificial-intelligence/ai-companies-roundup
 [^2]: https://www.urbint.com/about
