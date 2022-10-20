@@ -6,6 +6,7 @@ draft: false
 author: Benjamin Bengfort
 image: img/blog/blazes.jpg
 category: Programming
+photo_credit: Nicholas_T via Flickr Commons
 description: "While we often think ourselves as authors of code we probably spend more time reading code than writing it. Changing our mindset to think of ourselves as avid code readers will make us more effective programmers."
 profile: img/team/benjamin-bengfort.png
 ---
@@ -56,9 +57,9 @@ Documentation is essential and should give us a high level overview of what the 
 
 ---
 
-Photo by [Nicholas_T](https://www.flickr.com/photos/nicholas_t/) via [Flickr Commons](https://flic.kr/p/NFnpAu)
+<!-- Photo by [Nicholas_T](https://www.flickr.com/photos/nicholas_t/) via [Flickr Commons](https://flic.kr/p/NFnpAu)
 
----
+--- -->
 
 [^1]: My inspiration for the term "glass castle" comes from the ["mind palace"](https://www.smithsonianmag.com/arts-culture/secrets-sherlocks-mind-palace-180949567/) portrayed by Benedict Cumberbach as Sherlock Holmes in BBC's _Sherlock_ (2010). Sherlock uses the mind palace as a memory technique where memories are linked to objects arranged in specific places in the palace. I thought "palace" was a little too grandiose for what I did so I changed it to castle and modified it with "glass" to imply the fragility of the mental abstraction while programming. I suppose "mind glass castle" would be the full term but that was a little unwieldy.
 [^2]: My experience of the glass castle is as a graph or molecular structure which I can "see" in my mind. In fact, sight is the best way to describe my interaction with the castle, sort of like how "reading" (instead of "hearing") is the best way to describe how I consume an audiobook. It's a bit hard to describe what I see, just as it would be hard to describe a dream, and people's sensory experiences are unique. I think the important note here is that as you program, you should be mentally interacting with this model in a way that feels right to you, e.g. is it "movement", "tartness", or "touch" for you?

@@ -6,6 +6,7 @@ draft: false
 image: img/blog/2021-01-21-hello-world/gulfatnight.jpg
 author: Benjamin Bengfort
 category: "Distributed Systems"
+photo_credit: NASA
 description: "Hello World! We're Rotational Labs."
 profile: img/team/benjamin-bengfort.png
 ---
@@ -24,4 +25,5 @@ Hello, world &mdash; we can’t wait to work with you!
 
 ---
 
-Photo by [NASA](https://www.nasa.gov/content/the-us-gulf-coast-at-night).
+<!-- Photo by [NASA](https://www.nasa.gov/content/the-us-gulf-coast-at-night).
+ -->
