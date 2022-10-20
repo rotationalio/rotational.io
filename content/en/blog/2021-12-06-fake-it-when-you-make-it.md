@@ -6,7 +6,6 @@ draft: false
 image: img/blog/lake_reflection.jpg
 author: Patrick Deziel
 category: Programming, Mocks, Golang
-photo_credit: Dave Hoefler via Unsplash
 description: "A mock is a common pattern for unit testing interdependent services. In this post we will explore creating mocks in Go."
 profile: img/team/patrick-deziel.png
 ---
@@ -262,7 +261,7 @@ Mocks can help us bypass code that we don't want to run in our tests without fun
 
 ---
 
-<!-- Photo by [Dave Hoefler](https://unsplash.com/@davehoefler?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/pond-reflection?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) -->
+Photo by [Dave Hoefler](https://unsplash.com/@davehoefler?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/pond-reflection?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 
 #### Code References
 

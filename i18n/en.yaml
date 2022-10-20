@@ -38,8 +38,6 @@
   translation: Written by
 - id: sharePost
   translation: Share this post
-- id: photoCredit
-  translation: Photo credit
 - id: enterEmailToSubscribe
   translation: Enter Your Email To Subscribe
 - id: newsLetterEngagment

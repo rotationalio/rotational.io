@@ -6,7 +6,6 @@ draft: false
 author: Patrick Deziel
 image: img/blog/hourglass.jpg
 category: "Distributed Systems"
-photo_credit: Aron Visuals via Unsplash
 description: "Conflict-free replicated data types are starting to take off in popularity, especially in terms of collaborative applications. In this post we will explore how these data structures can be used to achieve a total ordering of events across many peers."
 profile: img/team/patrick-deziel.png
 ---
@@ -200,9 +199,7 @@ Feel free to check out our open source demo [client](https://github.com/rotation
 
 ---
 
-<!-- Photo by [Aron Visuals](https://unsplash.com/@aronvisuals?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/time?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
-
---- -->
+Photo by [Aron Visuals](https://unsplash.com/@aronvisuals?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/time?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 
 #### Further Reading
 

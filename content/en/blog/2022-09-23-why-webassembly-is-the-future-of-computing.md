@@ -5,7 +5,6 @@ date: "2022-09-27T08:51:27-04:00"
 draft: false
 author: Danielle Maxwell
 image: img/blog/rocket.jpeg
-photo_credit: Bill Jelen on Unsplash
 category: WASM
 description: "Learn about WebAssembly, how it is currently transforming web development, and why its future is bright."
 profile: img/team/danielle-maxwell.png
@@ -71,9 +70,9 @@ To some, WASM may be the future of computing. However, I think it is the moment.
 
 ---
 
-<!-- Photo by [Bill Jelen](https://unsplash.com/@billjelen?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/speed?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+Photo by [Bill Jelen](https://unsplash.com/@billjelen?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/speed?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 
---- -->
+---
 
 #### References
 
