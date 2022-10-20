@@ -6,6 +6,7 @@ draft: false
 author: Patrick Deziel
 image: img/blog/blue_laser.jpg
 category: gRPC, Mocks, Programming
+photo_credit: JJ Ying via Unsplash
 description: "gRPC is a common framework used to facilitate communication between microservices, but testing these services can be a challenge. In this post we will present a simple strategy for mocking gRPC services in Go."
 profile: img/team/patrick-deziel.png
 ---
@@ -332,9 +333,9 @@ Check out the full tutorial code [here](https://github.com/rotationalio/agenda).
 
 ---
 
-Photo by [JJ Ying](https://unsplash.com/@jjying?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/technology?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+<!-- Photo by [JJ Ying](https://unsplash.com/@jjying?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/technology?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 
----
+--- -->
 
 #### References
 

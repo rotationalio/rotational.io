@@ -6,6 +6,7 @@ draft: false
 author: Edwin Schmierer
 image: img/blog/dawn.jpg
 category: WASM, AI/ML, gRPC, Microservices
+photo_credit: Rajiv Bajaj via Unplash
 description: "This post describes five technologies - new and old - that are transforming the web and becoming the foundation for next-generation applications."
 profile: img/team/edwin-schmierer.png
 ---
@@ -81,6 +82,6 @@ At Rotational, we think deeply about these issues and how to support developers 
 
 ---
 
-Photo by [Rajiv Bajaj](https://unsplash.com/@rajiv63) on [Unsplash](https://unsplash.com/photos/FsCh8MFy8Xs)
+<!-- Photo by [Rajiv Bajaj](https://unsplash.com/@rajiv63) on [Unsplash](https://unsplash.com/photos/FsCh8MFy8Xs)
 
----
+--- -->

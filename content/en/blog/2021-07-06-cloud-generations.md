@@ -6,6 +6,7 @@ draft: false
 image: img/blog/2021-07-06-cloud-generations/cloudgeneration.jpg
 author: Edwin Schmierer
 category: Cloud, Technology
+photo_credit: Ferdinand Stöhr via Unsplash
 description: "How the public cloud has evolved and where it is headed"
 profile: img/team/edwin-schmierer.png
 ---
@@ -79,4 +80,4 @@ The bottom line is that scale still matters, but it's not enough &mdash; because
 
 ---
 
-Photo by [Ferdinand Stöhr](https://unsplash.com/@fellowferdi?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/driving-into-a-cloud?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText).
+<!-- Photo by [Ferdinand Stöhr](https://unsplash.com/@fellowferdi?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/driving-into-a-cloud?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText). -->
