@@ -6,6 +6,7 @@ draft: false
 image: img/blog/hubble_tarantula_nebula.jpg
 author: Rebecca Bilbro
 category: i18n
+photo_credit: Judy Schmidt via Flickr
 description: "Many tech projects do not translate their docs, often at the expense of reaching a more global userbase. In this post we explore why."
 profile: img/team/rebecca-bilbro.png
 ---
@@ -73,4 +74,4 @@ Do you have a project that puts i18n and l10n first? Are you working on an Inter
 
 ---
 
-[Photo](https://flic.kr/p/Yaz1mM) by Judy Schmidt on Flickr, CC By 2.0
+<!-- [Photo](https://flic.kr/p/Yaz1mM) by Judy Schmidt on Flickr, CC By 2.0 -->

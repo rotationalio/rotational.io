@@ -6,6 +6,7 @@ draft: false
 author: Edwin S. & Rebecca B.
 image: img/blog/viking_runes.jpg
 category: Crypto
+photo_credit: Victor Montol via Flickr Commons
 description: "This post describes some of the most important facts about cryptocurrency that people don't often understand -- including crypto people!"
 profile: img/butterfly.png
 ---
@@ -78,9 +79,9 @@ While cryptocurrency has been around for more than a decade, vendors and enginee
 
 ---
 
-Photo by [Victor Montol](https://www.flickr.com/photos/vicmontol/) on [Flickr Commons](https://flic.kr/p/PRU1W)
+<!-- Photo by [Victor Montol](https://www.flickr.com/photos/vicmontol/) on [Flickr Commons](https://flic.kr/p/PRU1W)
 
----
+--- -->
 
 #### References
 

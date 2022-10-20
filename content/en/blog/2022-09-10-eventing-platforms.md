@@ -79,6 +79,6 @@ When you are in the architecture and design phase of a new application, rather t
 
 ---
 
-Photo by [Rajarshi Mitra](https://www.flickr.com/photos/tataimitra/) via [Flickr Commons](https://flic.kr/p/244actT)
+<!-- Photo by [Rajarshi Mitra](https://www.flickr.com/photos/tataimitra/) via [Flickr Commons](https://flic.kr/p/244actT)
 
----
+--- -->

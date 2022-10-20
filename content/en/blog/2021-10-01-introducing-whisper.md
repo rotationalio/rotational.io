@@ -6,6 +6,7 @@ draft: false
 image: img/blog/whispering_wheat.jpg
 author: Edwin Schmierer
 category: Security
+photo_credit: Kent Pilcher via Unsplash
 description: "Shhh..there's a better way to share secrets. Introducing Whisper, our secret-sharing utility."
 profile: img/team/edwin-schmierer.png
 ---
@@ -28,4 +29,4 @@ Stay tuned for an upcoming post about the technical details under the hood. For 
 
 ---
 
-Photo by <a href="https://unsplash.com/@kent_pilcher?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Kent Pilcher</a> on <a href="https://unsplash.com/s/photos/wind-blowing-on-wheat?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+<!-- Photo by <a href="https://unsplash.com/@kent_pilcher?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Kent Pilcher</a> on <a href="https://unsplash.com/s/photos/wind-blowing-on-wheat?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a> -->
