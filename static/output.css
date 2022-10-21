@@ -2265,6 +2265,10 @@ body {
     font-size: 1.25rem;
     line-height: 1.75rem;
   }
+
+  .sm\:leading-normal {
+    line-height: 1.5;
+  }
 }
 
 @media (min-width: 768px) {

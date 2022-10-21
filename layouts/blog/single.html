@@ -55,15 +55,14 @@
       </div>
       <div class="sm:ml-10 sm:mt-0 mt-12">
         <div class="text-lg text-[#1D65A6] font-bold mb-3">{{ i18n "sharePost" }}:</div>
-        <ul class="grid grid-cols-2 gap-6 mt-4">
-          <li><a href="" class="flex items-center"><img src="img/email.png" alt=""
-                class="p-3 bg-white rounded-lg mr-3"><span>info@rotational.io</span></a></li>
-          <li><a href="" class="flex items-center"><img src="img/github.png" alt=""
-                class="p-3 bg-white rounded-lg mr-3"><span>rotationalio</span></a></li>
-          <li><a href="" class="flex items-center"><img src="img/twitter.png" alt=""
-                class="p-3 bg-white rounded-lg mr-4"><span>rotationalio</span></a></li>
-          <li><a href="" class="flex items-center"><img src="img/linkedin.png" alt=""
-                class="p-3 bg-white rounded-lg mr-3"><span>rotational</span></a></li>
+        <ul class="grid grid-cols-3 gap-6 mt-4">
+          <li><a onClick="shareByEmail()" class="flex items-center"><img src="img/email.png" alt=""
+                class="p-3 bg-white rounded-lg mr-3"></a></li>
+
+          <li><a class="flex items-center" onClick="shareOnTwitter()"><img src="img/twitter.png" alt=""
+                class="p-3 bg-white rounded-lg mr-4"></a></li>
+          <li><a onClick="shareOnLinkedIn()" class="flex items-center"><img src="img/linkedin.png" alt=""
+                class="p-3 bg-white rounded-lg mr-3"></a></li>
         </ul>
       </div>
     </div>
