@@ -53,14 +53,14 @@ form?.addEventListener('submit', (event) => {
 
 // share on twitter
 function shareOnTwitter() {
-  var twitterWindow = window.open('https://twitter.com/share?url=' + document.URL, 'twitter-popup', 'height=350,width=600');  
+  const twitterWindow = window.open('https://twitter.com/share?url=' + document.URL, 'twitter-popup', 'height=350,width=600');  
   if (twitterWindow.focus) { twitterWindow.focus(); }
   return false;
 }
 
 //share on linkedin
 function shareOnLinkedIn() {
-  var linkedinWindow = window.open('https://www.linkedin.com/shareArticle?mini=true&url=' + document.URL, 'linkedin-popup', 'height=350,width=600');
+  const linkedinWindow = window.open('https://www.linkedin.com/shareArticle?mini=true&url=' + document.URL, 'linkedin-popup', 'height=350,width=600');
   if (linkedinWindow.focus) { linkedinWindow.focus(); }
   return false;
 
@@ -68,7 +68,7 @@ function shareOnLinkedIn() {
 
 // share by email 
 function shareByEmail() {
-  var emailWindow = window.open('mailto:?subject=Check out this article&body=' + document.URL, 'email-popup', 'height=350,width=600');
+  const emailWindow = window.open('mailto:?subject=Check out this article&body=' + document.URL, 'email-popup', 'height=350,width=600');
   if (emailWindow.focus) { emailWindow.focus(); }
   return false;
 }

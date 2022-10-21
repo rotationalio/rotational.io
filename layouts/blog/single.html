@@ -44,7 +44,8 @@
     <p class="mt-4 text-base mx-auto text-center sm:mt-5 lg:mt-7 lg:text-base max-w-2xl">
       {{ .Params.description }}
     </p>
-    <div class="md:flex text-base border-t pt-6 mt-6">
+
+    <div class="md:flex text-base border-t pt-6 mt-6 align-center justify-between">
       <div>
         <div class="text-lg text-[#1D65A6] font-bold mb-3">
           {{ i18n "writtenBy" }}:</div>
@@ -53,7 +54,7 @@
             class="ml-3">{{ .Params.author }}</span>
         </div>
       </div>
-      <div class="sm:ml-10 sm:mt-0 mt-12">
+      <div class="sm:ml-10 sm:mt-0 mt-12 justify-end">
         <div class="text-lg text-[#1D65A6] font-bold mb-3">{{ i18n "sharePost" }}:</div>
         <ul class="grid grid-cols-3 gap-6 mt-4">
           <li><a onClick="shareByEmail()" class="flex items-center"><img src="img/email.png" alt=""
@@ -65,6 +66,7 @@
                 class="p-3 bg-white rounded-lg mr-3"></a></li>
         </ul>
       </div>
+
     </div>
   </div>
 
