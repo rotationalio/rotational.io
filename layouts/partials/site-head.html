@@ -3,7 +3,13 @@
 
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ with site.Params.description }}{{ . }}{{ end }}{{ end }}">
+{{ with .Params.Image }}
+<meta property="og:image" content="{{ . | absURL }}" />
+{{ end }}
+{{ with .Params.Title }}
+ <meta property="og:title" content="{{ . }}" />
+{{ end }}
+<meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{ with site.Params.description }}{{ . }}{{ end }}{{ end }}" />
 {{ with site.Params.author }}
 	<meta name="author" content="{{ . }}">
 {{ end }}
