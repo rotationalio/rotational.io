@@ -19,8 +19,9 @@
 
 
     <div class="mt-8">
-      <h3 class="font-bold text-xl sm:text-2xl lg:text-3xl text-center">
-        <b class="text-[#1D65A6]">{{ with .Title }} {{ index (split . " ") 0 | safeHTML }} {{ end }}</b>
+      <h3 class="font-bold text-xl sm:text-2xl lg:text-3xl text-center" data-blog-title="{{ .Title }}">
+        <b class="text-[#1D65A6]">{{ with .Title }} {{ index (split . " ") 0 | safeHTML }} {{
+          end }}</b>
         {{ with .Title }} {{ after (len (index (split . " ") 0)) . | safeHTML }} {{ end }}
       </h3>
       <div class="flex justify-center items-center mt-4 mb-6">
@@ -60,7 +61,7 @@
           <li><a onClick="shareByEmail()" class="flex items-center"><img src="img/email.png" alt=""
                 class="p-3 bg-white rounded-lg mr-3"></a></li>
 
-          <li><a class="flex items-center" onClick="shareOnTwitter()"><img src="img/twitter.png" alt=""
+          <li><a class="flex items-center" onClick="shareOnTwitterWithTitle()"><img src="img/twitter.png" alt=""
                 class="p-3 bg-white rounded-lg mr-4"></a></li>
           <li><a onClick="shareOnLinkedIn()" class="flex items-center"><img src="img/linkedin.png" alt=""
                 class="p-3 bg-white rounded-lg mr-3"></a></li>

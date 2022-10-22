@@ -46,7 +46,7 @@ form?.addEventListener('submit', (event) => {
     });
 });
 
-// share on twitter with title , description and url
+// share on twitter 
 
 function shareOnTwitter() {
   const twitterWindow = window.open(
@@ -58,6 +58,25 @@ function shareOnTwitter() {
     twitterWindow.focus();
   }
   return false;
+}
+
+// share on tiwtter with title , url
+function shareOnTwitterWithTitle() {
+  const title = document.querySelector('[data-blog-title]').innerText;
+  const twitterWindow = window.open(
+    'https://twitter.com/intent/tweet?text=' +
+    title +
+    '&url=' +
+    document.URL +
+    '&via=rotationallabs',
+    'twitter-popup',
+    'height=350,width=600'
+  );
+  if (twitterWindow.focus) {
+    twitterWindow.focus();
+  }
+  return false;
+
 }
 
 //share on linkedin
@@ -85,6 +104,8 @@ function shareByEmail() {
   }
   return false;
 }
+
+
 
 // check newsletter form submission
 const newsletterForm = document.getElementById('newsletterForm');
