@@ -1212,6 +1212,10 @@ video {
   left: -0.5rem;
 }
 
+.left-1 {
+  left: 0.25rem;
+}
+
 .isolate {
   isolation: isolate;
 }
@@ -1341,6 +1345,10 @@ video {
   display: block;
 }
 
+.inline-block {
+  display: inline-block;
+}
+
 .inline {
   display: inline;
 }
@@ -1401,18 +1409,6 @@ video {
   height: 0.75rem;
 }
 
-.h-\[400px\] {
-  height: 400px;
-}
-
-.h-\[200px\] {
-  height: 200px;
-}
-
-.max-h-\[400px\] {
-  max-height: 400px;
-}
-
 .min-h-\[480px\] {
   min-height: 480px;
 }
@@ -1445,14 +1441,6 @@ video {
   width: 0.75rem;
 }
 
-.w-\[200px\] {
-  width: 200px;
-}
-
-.w-\[400px\] {
-  width: 400px;
-}
-
 .max-w-7xl {
   max-width: 80rem;
 }
@@ -1465,6 +1453,10 @@ video {
   max-width: 42rem;
 }
 
+.max-w-\[600px\] {
+  max-width: 600px;
+}
+
 .max-w-xl {
   max-width: 36rem;
 }
@@ -1473,16 +1465,8 @@ video {
   max-width: 32rem;
 }
 
-.max-w-\[700px\] {
-  max-width: 700px;
-}
-
-.max-w-\[500px\] {
-  max-width: 500px;
-}
-
-.max-w-\[600px\] {
-  max-width: 600px;
+.flex-none {
+  flex: none;
 }
 
 .grow {
@@ -1529,28 +1513,12 @@ video {
   align-items: center;
 }
 
-.justify-start {
-  justify-content: flex-start;
-}
-
-.justify-end {
-  justify-content: flex-end;
-}
-
 .justify-center {
   justify-content: center;
 }
 
 .justify-between {
   justify-content: space-between;
-}
-
-.justify-evenly {
-  justify-content: space-evenly;
-}
-
-.justify-items-start {
-  justify-items: start;
 }
 
 .gap-8 {
@@ -1907,20 +1875,12 @@ video {
   padding-bottom: 1.25rem;
 }
 
-.pl-10 {
-  padding-left: 2.5rem;
-}
-
 .text-left {
   text-align: left;
 }
 
 .text-center {
   text-align: center;
-}
-
-.text-start {
-  text-align: start;
 }
 
 .text-2xl {
@@ -2227,6 +2187,10 @@ body {
     margin-left: 5rem;
   }
 
+  .sm\:block {
+    display: block;
+  }
+
   .sm\:inline {
     display: inline;
   }
@@ -2261,6 +2225,10 @@ body {
 
   .sm\:w-1\/2 {
     width: 50%;
+  }
+
+  .sm\:flex-none {
+    flex: none;
   }
 
   .sm\:grid-cols-7 {
@@ -2325,10 +2293,6 @@ body {
     font-size: 1.25rem;
     line-height: 1.75rem;
   }
-
-  .sm\:leading-normal {
-    line-height: 1.5;
-  }
 }
 
 @media (min-width: 768px) {
@@ -2366,6 +2330,10 @@ body {
 
   .md\:max-w-md {
     max-width: 28rem;
+  }
+
+  .md\:flex-none {
+    flex: none;
   }
 
   .md\:rounded-lg {
@@ -2485,6 +2453,10 @@ body {
 
   .lg\:max-w-none {
     max-width: none;
+  }
+
+  .lg\:flex-none {
+    flex: none;
   }
 
   .lg\:text-start {
