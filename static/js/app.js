@@ -1,5 +1,5 @@
 // static
-function openPopup() {
+function openMobNav() {
   var x = document.getElementById('myTopnav');
   if (x.className === 'topnav') {
     x.className += ' responsive';

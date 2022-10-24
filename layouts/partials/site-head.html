@@ -56,9 +56,11 @@
 <script src="https://www.google.com/recaptcha/enterprise.js?render={{.Site.Params.g_recaptcha_key}}"></script>
 <script>
   grecaptcha.enterprise.ready(function() {
-    grecaptcha.enterprise.execute('{{.Site.Params.g_recaptcha_key}}', {action: 'contactform'}).then(function(token) {
-      // Add the logic to submit to the backend server.
+    grecaptcha.enterprise.execute('{{.Site.Params.g_recaptcha_key}}', {action: 'homepage'}).then(function(token) {
+      // Add your logic to submit to your backend server here.
     });
   });
+
+
 </script>
 
