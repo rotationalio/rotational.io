@@ -70,9 +70,14 @@
                             <label for="checkbox"><span class="ml-2">{{ .subscribe_to_email }}</span></label>
                         </div>
                         <div class="md:flex items-center justify-between mt-6 text-center md:mt-7 lg:mt-8">
-                            <div class="g-recaptcha" data-sitekey="{{site.Params.g_recaptcha_key}}"></div>
+                            <!-- <div class="g-recaptcha" data-sitekey="{{site.Params.g_recaptcha_key}}"></div> -->
+                            <div class="g-recaptcha"></div>
                             <button type="submit" class="flex mt-6 bg-[#1D65A6] text-white px-7 py-4 rounded-lg ">{{
                                 .submit }}</button>
+
+                            <!-- <button data-sitekey="{{site.Params.g_recaptcha_key}}" data-callback='onSubmit' data-action='submit' type="submit"
+                                    class="g-recaptcha flex mt-6 bg-[#1D65A6] text-white px-7 py-4 rounded-lg ">{{
+                                    .submit }}</button> -->
                         </div>
 
 

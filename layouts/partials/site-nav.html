@@ -1,18 +1,15 @@
-<nav class="relative max-w-7xl mx-auto flex items-center justify-between text-white px-4 sm:px-6"
-            aria-label="Global">
+<nav class="relative max-w-7xl mx-auto flex items-center justify-between text-white px-4 sm:px-6" aria-label="Global">
     <a href="/" class="pt-3 sm:pt-0">
         <img src="img/logo.png" alt="Rotational Lab logo" class="h-14 w-auto sm:h-14">
     </a>
     <div class="topnav" id="myTopnav">
         {{ $currentPage := . }}
         {{ range .Site.Menus.main }}
-            <a 
-            class="{{ if $currentPage.IsMenuCurrent "main" . }}active{{ end }}"
-            href="{{ .URL }}">
-            {{ .Name }} 
-            </a>
+        <a class=" {{ if $currentPage.IsMenuCurrent " main" . }}active{{ end }}" href="{{ .URL }}">
+            {{ .Name }}
+        </a>
         {{ end }}
-        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <a class="icon mt-4 " onclick="openMobNav()">
             <i class="fa fa-bars"></i>
         </a>
     </div>
