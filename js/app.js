@@ -68,7 +68,7 @@ function shareOnTwitterWithTitle() {
     title +
     '&url=' +
     document.URL +
-    '&via=rotationallabs',
+    '&via=rotationalio',
     'twitter-popup',
     'height=350,width=600'
   );
@@ -109,7 +109,7 @@ function shareByEmail() {
 
 // check newsletter form submission
 const newsletterForm = document.getElementById('newsletterForm');
-newsletterForm?.addEventListener('submit', (event) => {
+newsletterForm.addEventListener('submit', (event) => {
   event.preventDefault();
   console.log('newsletter form submitted');
   const formData = new FormData(newsletterForm);
