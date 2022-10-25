@@ -90,15 +90,14 @@
 
             {{ if $data.contact.contact.contact_details.enable }}
             {{ with $data.contact.contact.contact_details }}
-            <div
-                class="text-white bg-[#1D65A6] md:max-w-md mt-10 md:mb-0 md:mt-0 mb-6 p-14 md:relative -left-2  rounded-xl">
+            <div class="text-white bg-[#1D65A6] md:max-w-sm mt-10 md:mb-0 md:mt-0 mb-6 p-14   rounded-xl">
                 <h5 class="text-xl font-bold">{{ .title }}</h5>
                 <p class="mt-6">{{ .subtitle }}</p>
                 <ul>
                     {{ range .details_item }}
-                    <li class="flex mt-14">
+                    <li class="flex mt-14 ">
                         <img src="{{ .image }}" alt="{{ .info }}">
-                        <span class="ml-6">{{ .info }}</span>
+                        <span class="ml-6 md:text-sm ">{{ .info }}</span>
                     </li>
                     {{ end }}
                 </ul>
