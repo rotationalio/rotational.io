@@ -1212,10 +1212,6 @@ video {
   left: -0.5rem;
 }
 
-.left-1 {
-  left: 0.25rem;
-}
-
 .isolate {
   isolation: isolate;
 }
@@ -1341,16 +1337,8 @@ video {
   margin-bottom: 1.75rem;
 }
 
-.mt-2 {
-  margin-top: 0.5rem;
-}
-
 .block {
   display: block;
-}
-
-.inline-block {
-  display: inline-block;
 }
 
 .inline {
@@ -1359,10 +1347,6 @@ video {
 
 .flex {
   display: flex;
-}
-
-.inline-flex {
-  display: inline-flex;
 }
 
 .grid {
@@ -1411,10 +1395,6 @@ video {
 
 .h-3 {
   height: 0.75rem;
-}
-
-.h-\[55px\] {
-  height: 55px;
 }
 
 .min-h-\[480px\] {
@@ -1471,10 +1451,6 @@ video {
 
 .max-w-lg {
   max-width: 32rem;
-}
-
-.flex-none {
-  flex: none;
 }
 
 .grow {
@@ -1739,10 +1715,6 @@ video {
 
 .bg-right-center {
   background-position: right center;
-}
-
-.bg-right-top {
-  background-position: right top;
 }
 
 .bg-no-repeat {
@@ -2079,9 +2051,7 @@ body {
   text-align: right;
 }
 
-/* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
-
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 910px) {
   .topnav a {
     display: none;
   }
@@ -2094,7 +2064,7 @@ body {
 
 /* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 910px) {
   .topnav.responsive {
     position: fixed;
     right: 0;
@@ -2132,6 +2102,13 @@ body {
   }
 }
 
+@media screen and (min-width: 601px) {
+  .topnav {
+    display: flex;
+    font-weight: 600;
+  }
+}
+
 .hover-card:hover {
   background-color: #1D65A6;
 }
@@ -2144,6 +2121,26 @@ body {
   color: #192E5B;
   background-color: white;
   border: none;
+}
+
+.b-card {
+  display:block;
+}
+
+@media screen and (min-width:640px) {
+  .b-card {
+    display:grid;
+    gap:32px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .b-card {
+    display:grid;
+    gap:32px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
 
 .hover\:bg-opacity-50:hover {
@@ -2175,10 +2172,6 @@ body {
     margin-left: 2.5rem;
   }
 
-  .sm\:ml-24 {
-    margin-left: 6rem;
-  }
-
   .sm\:mt-10 {
     margin-top: 2.5rem;
   }
@@ -2199,10 +2192,6 @@ body {
     margin-left: 5rem;
   }
 
-  .sm\:block {
-    display: block;
-  }
-
   .sm\:inline {
     display: inline;
   }
@@ -2219,24 +2208,16 @@ body {
     height: 2rem;
   }
 
-  .sm\:h-auto {
+  .sm\:h-\[auto\] {
     height: auto;
   }
 
-  .sm\:h-\[480px\] {
-    height: 480px;
+  .sm\:h-\[380px\] {
+    height: 380px;
   }
 
   .sm\:h-14 {
     height: 3.5rem;
-  }
-
-  .sm\:h-\[55px\] {
-    height: 55px;
-  }
-
-  .sm\:h-\[auto\] {
-    height: auto;
   }
 
   .sm\:min-h-\[691px\] {
@@ -2247,20 +2228,12 @@ body {
     width: 50%;
   }
 
-  .sm\:flex-none {
-    flex: none;
-  }
-
   .sm\:grid-cols-7 {
     grid-template-columns: repeat(7, minmax(0, 1fr));
   }
 
   .sm\:bg-wavelg-pattern {
     background-image: url('/img/wave_lg.png');
-  }
-
-  .sm\:bg-\[length\:1228px_691px\] {
-    background-size: 1228px 691px;
   }
 
   .sm\:bg-\[length\:1267px_691px\] {
@@ -2288,10 +2261,6 @@ body {
 
   .sm\:pb-5 {
     padding-bottom: 1.25rem;
-  }
-
-  .sm\:pt-0 {
-    padding-top: 0px;
   }
 
   .sm\:text-start {
@@ -2356,8 +2325,8 @@ body {
     max-width: 28rem;
   }
 
-  .md\:flex-none {
-    flex: none;
+  .md\:max-w-sm {
+    max-width: 24rem;
   }
 
   .md\:rounded-lg {
@@ -2386,6 +2355,16 @@ body {
   .md\:text-4xl {
     font-size: 2.25rem;
     line-height: 2.5rem;
+  }
+
+  .md\:text-lg {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+
+  .md\:text-sm {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
   }
 }
 
@@ -2455,6 +2434,10 @@ body {
     display: none;
   }
 
+  .lg\:h-\[480px\] {
+    height: 480px;
+  }
+
   .lg\:h-full {
     height: 100%;
   }
@@ -2477,10 +2460,6 @@ body {
 
   .lg\:max-w-none {
     max-width: none;
-  }
-
-  .lg\:flex-none {
-    flex: none;
   }
 
   .lg\:text-start {

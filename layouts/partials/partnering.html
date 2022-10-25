@@ -3,9 +3,9 @@
 {{ if $data.partnering.partnering.enable }}
 {{ with $data.partnering.partnering }}
 <div class="relative max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6">
-    <div class="mt-24 sm:mt-24 sm:flex">
-        <img src="{{ .image_src }}" alt="image holder" class="h-auto sm:h-[480px] ">
-        <div class="sm:ml-24">
+    <div class="mt-24 sm:grid grid-cols-2 gap-8">
+        <img src="{{ .image_src }}" alt="image holder" class="h-auto sm:h-[380px] lg:h-[480px]">
+        <div class="">
             <h2 class="font-bold text-2xl sm:text-4xl mt-10">
                 <span class="text-[#1D65A6]">{{ with .title }} {{ index (split . " ") 0 | safeHTML }} {{ end }}</span>
                 {{ with .title }} {{ after (len (index (split . " ") 0)) . | safeHTML }} {{ end }}
