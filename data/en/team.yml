@@ -133,15 +133,6 @@ team:
           link : "https://github.com/nwhite222"
 
     # team member loop
-    - name : Pete Keleher
-      image : img/team/pete-keleher.png
-      designation : Technical Advisor
-      content : Distributed Systems Researcher
-      social :
-        - icon : "ti-linkedin" # themify icon pack : https://themify.me/themify-icons
-          link : "https://www.linkedin.com/in/pete-keleher-a03639b"
-
-    # team member loop
     - name : Danielle Maxwell
       image : img/team/danielle-maxwell.png
       designation : Junior Distributed Systems Engineer
@@ -151,3 +142,23 @@ team:
           link : "https://github.com/daniellemaxwell"
         - icon : "ti-linkedin" # themify icon pack : https://themify.me/themify-icons
           link : "https://www.linkedin.com/in/daniellemaxwell"
+
+    # team member loop
+    - name : Pete Keleher
+      image : img/team/pete-keleher.png
+      designation : Technical Advisor
+      content : Distributed Systems Researcher
+      social :
+        - icon : "ti-linkedin" # themify icon pack : https://themify.me/themify-icons
+          link : "https://www.linkedin.com/in/pete-keleher-a03639b"
+
+    # team member loop
+    - name : Prema Roman
+      image : img/team/prema-roman.png
+      designation : Distributed Systems Engineer
+      content : MLOps Specialist
+      social :
+        - icon : "ti-linkedin" # themify icon pack : https://themify.me/themify-icons
+          link : "https://www.linkedin.com/in/premaroman/"
+        - icon : "ti-github" # themify icon pack : https://themify.me/themify-icons
+          link : "https://github.com/pdamodaran"

@@ -17,7 +17,7 @@
                     {{ range .team_member}}
                     {{"<!-- team member -->" | safeHTML}}
                         <li class="mt-6 sm:mt-0">
-                            <img src="{{ .image | absURL }}" alt="{{ .name }}" class="rounded-t-xl">
+                            <img src="{{ .image | absURL }}" alt="{{ .name }}" class="rounded-t-xl covatar">
                             <div class="bg-[#ECF6FF] rounded-b-xl">
                                 <div class="px-6 pt-8 pb-5">
                                     <h4 class="text-base font-bold text-[#1D65A6]">{{ .designation | markdownify}}</h4>
