@@ -6,7 +6,13 @@
 
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="In this post we&#39;ll explore some of the types of eventing platforms and discuss why it&#39;s not about deciding which is objectively the &#39;best&#39;, but about knowing how to select the best tool for a given context.">
+
+<meta property="og:image" content="https://rotational.io/img/blog/herd.jpg" />
+
+
+ <meta property="og:title" content="The Eventing Platform Landscape" />
+
+<meta property="og:description" content="In this post we&#39;ll explore some of the types of eventing platforms and discuss why it&#39;s not about deciding which is objectively the &#39;best&#39;, but about knowing how to select the best tool for a given context." />
 
 	<meta name="author" content="Rotational Labs, LLC">
 
@@ -22,80 +28,106 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+  
+<!-- fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,600;1,700;1,800&amp;display=swap" rel="stylesheet">
+
+<!-- styles -->
 
 <!-- Main Stylesheet -->
-<link rel="stylesheet" href="https://rotational.io/css/app.css" media="screen">
+<link rel="stylesheet" href="https://rotational.io/output.css" media="screen">
+
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2FKX6CWJHW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2FKX6CWJHW');
+</script>
+
+
+
+<script src="https://www.google.com/recaptcha/enterprise.js?render=6Ld5O3kiAAAAAJU0z0h81X1RxEMHyoROe6KWe_vk"></script>
+<script>
+  grecaptcha.enterprise.ready(function() {
+    grecaptcha.enterprise.execute('6Ld5O3kiAAAAAJU0z0h81X1RxEMHyoROe6KWe_vk', {action: 'homepage'}).then(function(token) {
+      
+    });
+  });
+
+
+</script>
+
 
   </head>
 
   <body class="bg-white">
 
     
-    <div class="sm:pt-5 pb-6 relative bg-[#1D65A6]">
-        <nav class="relative max-w-7xl mx-auto flex items-center justify-between text-white px-4 sm:px-6"
-            aria-label="Global">
-    <a href="/" class="pt-3 sm:pt-0">
-        <img src="img/logo.png" alt="Rotational" class="h-14 w-auto sm:h-14">
+<div class="sm:pt-5 pb-6 relative bg-[#1D65A6]">
+  <nav class="relative max-w-7xl mx-auto flex items-center justify-between text-white px-4 sm:px-6" aria-label="Global">
+    <a href="/" class="pt-3">
+        <img src="img/logo.png" alt="Rotational Lab logo" class="h-14 w-auto sm:h-14">
     </a>
     <div class="topnav" id="myTopnav">
         
         
-            <a 
-            class=""
-            href="/services/">
-            Services 
-            </a>
+        <a class=" " href="https://rotational.app">
+            Ensign
+        </a>
         
-            <a 
-            class=""
-            href="/opensource/">
-            Open Source 
-            </a>
+        <a class=" " href="/services/">
+            Services
+        </a>
         
-            <a 
-            class=""
-            href="/blog/">
-            Blog 
-            </a>
+        <a class=" " href="/opensource/">
+            Open Source
+        </a>
         
-            <a 
-            class=""
-            href="/about/">
-            About 
-            </a>
+        <a class=" " href="/blog/">
+            Blog
+        </a>
         
-            <a 
-            class=""
-            href="/contact/">
-            Contact Us 
-            </a>
+        <a class=" " href="/about/">
+            About
+        </a>
         
-        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <a class=" " href="/contact/">
+            Contact Us
+        </a>
+        
+        <a class="icon mt-4 " onclick="openMobNav()">
             <i class="fa fa-bars"></i>
         </a>
     </div>
 </nav>
-
-    </div>
+</div>
 
 
     <main>
       
 <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
-    <div class="mt-14">
-      <img src="https://rotational.io/img/blog/viking_runes.png" alt="" class="mx-auto">
-      <div class="mt-8">
-        <h3 class="font-bold text-xl sm:text-2xl lg:text-3xl text-center">
-            <b class="text-[#1D65A6]"> The </b>
-              Eventing Platform Landscape 
-        </h3>
-        <div class="flex justify-center items-center mt-4 mb-6">
-          <img src="img/bbfort.png" alt=""
-            class="border-4 border-white rounded-full h-11 drop-shadow-lg"><span class="ml-3">Rebecca Bilbro |
-                Saturday, Sep 10, 2022 | Crypto</span>
-        </div>
-        <div class="max-w-[800px] mx-auto">
-            <p>Kafka and PubSub and Kinesis, oh my! Which eventing platform is best? In this post we&rsquo;ll explore the three primary categories of eventing systems and understand their similarities, differences, and key use cases.</p>
+  <div class="mt-14">
+    <div class="blog-img">
+      <img src="https://rotational.io/img/blog/herd.jpg" alt="The Eventing Platform Landscape" class="mx-auto ">
+    </div>
+
+
+
+    <div class="mt-8">
+      <h3 class="font-bold text-xl sm:text-2xl lg:text-3xl text-center" data-blog-title="The Eventing Platform Landscape">
+        <b class="text-[#1D65A6]"> The </b>
+          Eventing Platform Landscape 
+      </h3>
+      <div class="flex justify-center items-center mt-4 mb-6">
+        <img src="img/team/rebecca-bilbro.png" alt="" class="border-4 border-white rounded-full h-11 drop-shadow-lg"><span
+          class="ml-3">Rebecca Bilbro |
+          Saturday, Sep 10, 2022 | Microservices, Eventing</span>
+      </div>
+      <div class="max-w-[800px] mx-auto prose prose-blue">
+        <p>Kafka and PubSub and Kinesis, oh my! Which eventing platform is best? In this post we&rsquo;ll explore the three primary categories of eventing systems and understand their similarities, differences, and key use cases.</p>
 <h2 id="message-queues">Message Queues</h2>
 <p>Message queues (also known as message brokers) have been around for a while (~15 years) and are the oldest of the eventing systems. The central contribution of message queues is that our applications can do work more efficiently if we break big jobs into standardized chunks. By abstracting the complex machinations of our apps into chunks, we can then queue those chunks up and pass information between components more systematically.</p>
 <p>Message queues are designed so that each message is consumed by only one consumer. Think about your list of weekend errands; once the chore is done, you check it off the list.</p>
@@ -145,208 +177,250 @@
 </ul>
 <hr>
 <p>Photo by <a href="https://www.flickr.com/photos/tataimitra/">Rajarshi Mitra</a> via <a href="https://flic.kr/p/244actT">Flickr Commons</a></p>
-<hr>
-        </div>
       </div>
     </div>
-    
-    <div class="bg-[#E8EFF6] max-w-[800px] mx-auto mt-9 p-8 rounded-lg">
-      <div class="text-center">
-        <h3 class="font-bold text-xl sm:text-2xl lg:text-3xl"><b class="text-[#1D65A6]">About</b> this Post</h3>
+  </div>
+
+  <div class="bg-[#E8EFF6] max-w-[800px] mx-auto mt-9 p-8 rounded-lg">
+    <div class="text-center">
+      <h3 class="font-bold text-xl sm:text-2xl lg:text-3xl">
+        <b class="text-[#1D65A6]"> About </b>
+          This Post 
+      </h3>
+    </div>
+    <p class="mt-4 text-base mx-auto text-center sm:mt-5 lg:mt-7 lg:text-base max-w-2xl">
+      In this post we&#39;ll explore some of the types of eventing platforms and discuss why it&#39;s not about deciding which is objectively the &#39;best&#39;, but about knowing how to select the best tool for a given context.
+    </p>
+
+    <div class="md:flex text-center max-w-[600px] mx-auto border-t pt-6 mt-6 align-center justify-between">
+      <div>
+        <div class="text-lg text-[#1D65A6] font-bold mb-3 ">
+          Written by:</div>
+        <div class="flex items-center mt-4 mb-6  ">
+          <img src="img/team/rebecca-bilbro.png" alt="" class="border-4 border-white rounded-full h-11 drop-shadow-lg"><span
+            class="ml-3">Rebecca Bilbro</span>
+        </div>
       </div>
-      <p class="mt-4 text-base mx-auto text-center sm:mt-5 lg:mt-7 lg:text-base max-w-2xl">Lorem ipsum dolor sit amet,
-        consectetur adipiscing elit. Donec sodales placerat dolor, non placerat dolor sagittis id. Quisque sollicitudin
-        convallis mi, eget facilisis augue mattis viverra. Suspendisse feugiat pharetra massa, sed luctus magna pulvinar
-        sed.</p>
-      <div class="md:flex text-base border-t pt-6 mt-6">
-        <div>
-          <div class="text-lg text-[#1D65A6] font-bold mb-3">Written by:</div>
-          <div class="flex items-center mt-4 mb-6">
-            <img src="img/bbfort.png" alt=""
-              class="border-4 border-white rounded-full h-11 drop-shadow-lg"><span class="ml-3">Rebecca Bilbro</span>
-          </div>
-          <div class="text-lg text-[#1D65A6] font-bold mb-3">Photo credit:</div>
-          <p>Nicholas_T via Flickr Commons</p>
-        </div>
-        <div class="sm:ml-10 sm:mt-0 mt-12">
-          <div class="text-lg text-[#1D65A6] font-bold mb-3">Share this post:</div>
-          <ul class="grid grid-cols-2 gap-6 mt-4">
-            <li><a href="" class="flex items-center"><img src="img/email.png" alt=""
-                  class="p-3 bg-white rounded-lg mr-3"><span>info@rotational.io</span></a></li>
-            <li><a href="" class="flex items-center"><img src="img/github.png" alt=""
-                  class="p-3 bg-white rounded-lg mr-3"><span>rotationalio</span></a></li>
-            <li><a href="" class="flex items-center"><img src="img/twitter.png" alt=""
-                  class="p-3 bg-white rounded-lg mr-4"><span>rotationalio</span></a></li>
-            <li><a href="" class="flex items-center"><img src="img/linkedin.png" alt=""
-                  class="p-3 bg-white rounded-lg mr-3"><span>rotational</span></a></li>
-          </ul>
-        </div>
+      <div class="sm:ml-10 sm:mt-0 mt-12 ">
+        <div class="text-lg text-[#1D65A6] font-bold mb-3">Share this post:</div>
+        <ul class="grid grid-cols-3 gap-6 mt-4">
+          <li><a onClick="shareByEmail()" class="flex items-center"><img src="img/email.png" alt=""
+                class="p-3 bg-white rounded-lg mr-3"></a></li>
+
+          <li><a onClick="shareOnTwitterWithTitle()" class="flex items-center"><img src="img/twitter.png" alt=""
+                class="p-3 bg-white rounded-lg mr-4"></a></li>
+          <li><a onClick="shareOnLinkedIn()" class="flex items-center"><img src="img/linkedin.png" alt=""
+                class="p-3 bg-white rounded-lg mr-3"></a></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="flex justify-between mt-12 sm:mt-24 items-center">
+      <h2 class="font-bold text-2xl sm:text-4xl flex">
+        <span>
+          <b class="text-[#1D65A6]"> Recent </b>
+            Rotations 
+
+        </span>
+        <img src="img/butterfly.png" alt="butterfly" class="ml-4 h-6 sm:h-8 relative top-1">
+      </h2>
+      <div>
+        <a href="/blog" class="flex text-base sm:text-lg items-center font-bold text-[#1D65A6]"><span>View all</span>
+          <img src="img/arr-right.png" alt="" class="h-4 ml-2"></a>
       </div>
     </div>
-    
-    <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
-        <div class="flex justify-between mt-12 sm:mt-24 items-center">
-            <h2 class="font-bold text-2xl sm:text-4xl flex">
-                <span>
-                    Recents <span class="text-[#1D65A6]">Rotations</span>
-                </span>
-                <img src="img/butterfly.png" alt="butterfly" class="ml-4 h-6 sm:h-8 relative top-1">
-            </h2>
-            <div>
-                <a href="/blog" class="flex text-base sm:text-lg items-center font-bold text-[#1D65A6]"><span>View all</span>
-                    <img src="img/arr-right.png" alt="" class="h-4 ml-2"></a>
-            </div>
-        </div>
-        <div>
-            <div class="sm:grid grid-cols-3 gap-8 sm:mt-16">
-                
-                    <div class="mt-6 ">
-                        <div class="article">
-    <img src="https://rotational.io/img/blog/blazes.png" alt="" class="rounded-t-xl">
-    <div class="bg-[#ECF6FF] rounded-b-xl">
+    <div>
+      <div class="sm:grid grid-cols-3 gap-8 sm:mt-16">
+        
+        <div class="mt-6 ">
+          <div class="article ">
+    <a class="block" href="https://rotational.io/blog/webassembly-the-future-of-computing/">
+        <img src="https://rotational.io/img/blog/rocket.jpeg" alt="" class="rounded-t-xl" style="height:212px; width:100%"></a>
+    <div class="bg-[#ECF6FF] rounded-b-xl ">
+
         <div class="px-6 pt-4">
-            <h4 class="text-base font-bold text-[#1D65A6]">Technologies</h4>
-            <h3 class="text-xl font-extrabold mt-3 "><a href="https://rotational.io/blog/webassembly-the-future-of-computing/">Why WebAssembly Is the Future of Computing</a></h3>
-            <p class="mt-3 text-base font-extralight"><!-- raw HTML omitted -->
-<p>If you talk about WebAssembly (WASM), you just may spark debate about whether it is really the next best thing in web development or the second coming of Java applets. In this post, we&rsquo;ll dive into WASM, how it is currently transforming web development, and why we think its future is so bright.</p></p>
+            <h4 class="text-base font-bold text-[#1D65A6]">WASM</h4>
+            <h3 class="text-xl font-extrabold mt-3 "><a class="block h-24" href="https://rotational.io/blog/webassembly-the-future-of-computing/">Why WebAssembly Is the Future of Computing</a>
+            </h3>
+            <div class='art-s'>
+                <p class="mt-3 text-base font-extralight"><!-- raw HTML omitted -->
+<p>If you talk about WebAssembly (WASM), you just may spark debate about whether it is really the next best thing in web development or the second coming of Java applets. In this post, we&rsquo;ll dive into WASM, how it is currently …</p></!--></p>
+
+            </div>
+
         </div>
-        <footer class="flex justify-between items-center px-6 py-3 border-t mt-6">
+
+        <div class="flex justify-between items-center px-6 py-3 border-t mt-6">
             <div class="flex items-center">
-                <img src="img/avatar.png" alt="" class="rounded-full">
+                <img src="img/team/danielle-maxwell.png" alt="" class="rounded-full h-10 w-10">
                 <span class="ml-4 font-extralight">Danielle Maxwell</span>
             </div>
             <div class="font-extralight">
                 Sep 27, 2022
             </div>
-        </footer>
+        </div>
     </div>
 </div>
-                    </div>
-                
-                    <div class="mt-6 ">
-                        <div class="article">
-    <img src="https://rotational.io/img/blog/viking_runes.png" alt="" class="rounded-t-xl">
-    <div class="bg-[#ECF6FF] rounded-b-xl">
-        <div class="px-6 pt-4">
-            <h4 class="text-base font-bold text-[#1D65A6]">Crypto</h4>
-            <h3 class="text-xl font-extrabold mt-3 "><a href="https://rotational.io/blog/eventing-platforms/">The Eventing Platform Landscape</a></h3>
-            <p class="mt-3 text-base font-extralight"><p>Kafka and PubSub and Kinesis, oh my! Which eventing platform is best? In this post we&rsquo;ll explore the three primary categories of eventing systems and understand their similarities, differences, and key use cases.</p></p>
         </div>
-        <footer class="flex justify-between items-center px-6 py-3 border-t mt-6">
+        
+        <div class="mt-6 ">
+          <div class="article ">
+    <a class="block" href="https://rotational.io/blog/eventing-platforms/">
+        <img src="https://rotational.io/img/blog/herd.jpg" alt="" class="rounded-t-xl" style="height:212px; width:100%"></a>
+    <div class="bg-[#ECF6FF] rounded-b-xl ">
+
+        <div class="px-6 pt-4">
+            <h4 class="text-base font-bold text-[#1D65A6]">Microservices, Eventing</h4>
+            <h3 class="text-xl font-extrabold mt-3 "><a class="block h-24" href="https://rotational.io/blog/eventing-platforms/">The Eventing Platform Landscape</a>
+            </h3>
+            <div class='art-s'>
+                <p class="mt-3 text-base font-extralight"><p>Kafka and PubSub and Kinesis, oh my! Which eventing platform is best? In this post we&rsquo;ll explore the three primary categories of eventing systems and understand their similarities, differences, and key use cases.</p></p>
+
+            </div>
+
+        </div>
+
+        <div class="flex justify-between items-center px-6 py-3 border-t mt-6">
             <div class="flex items-center">
-                <img src="img/avatar.png" alt="" class="rounded-full">
+                <img src="img/team/rebecca-bilbro.png" alt="" class="rounded-full h-10 w-10">
                 <span class="ml-4 font-extralight">Rebecca Bilbro</span>
             </div>
             <div class="font-extralight">
                 Sep 10, 2022
             </div>
-        </footer>
+        </div>
     </div>
 </div>
-                    </div>
-                
-                    <div class="mt-6 ">
-                        <div class="article">
-    <img src="https://rotational.io/img/blog/dawn.png" alt="" class="rounded-t-xl">
-    <div class="bg-[#ECF6FF] rounded-b-xl">
-        <div class="px-6 pt-4">
-            <h4 class="text-base font-bold text-[#1D65A6]">Technologies</h4>
-            <h3 class="text-xl font-extrabold mt-3 "><a href="https://rotational.io/blog/ranges-of-integer-data-types/">Ranges of Integer Data Types</a></h3>
-            <p class="mt-3 text-base font-extralight"><p>The data type choices we make when building data systems or metrics is critically important: as our systems run for long periods of time it can be easy to overflow the integers that we use (Y2K bug anyone?). As a result, I find myself constantly checking the sizes of standard int types but I haven&rsquo;t found a good way to Google this. This blog post is a quick reference for the standard sizes and a discussion on why it matters.</p></p>
         </div>
-        <footer class="flex justify-between items-center px-6 py-3 border-t mt-6">
+        
+        <div class="mt-6 ">
+          <div class="article ">
+    <a class="block" href="https://rotational.io/blog/ranges-of-integer-data-types/">
+        <img src="https://rotational.io/img/blog/num215.jpg" alt="" class="rounded-t-xl" style="height:212px; width:100%"></a>
+    <div class="bg-[#ECF6FF] rounded-b-xl ">
+
+        <div class="px-6 pt-4">
+            <h4 class="text-base font-bold text-[#1D65A6]">Golang, Programming</h4>
+            <h3 class="text-xl font-extrabold mt-3 "><a class="block h-24" href="https://rotational.io/blog/ranges-of-integer-data-types/">Ranges of Integer Data Types</a>
+            </h3>
+            <div class='art-s'>
+                <p class="mt-3 text-base font-extralight"><p>The data type choices we make when building data systems or metrics is critically important: as our systems run for long periods of time it can be easy to overflow the integers that we use (Y2K bug anyone?). As a result, I find myself …</p></p>
+
+            </div>
+
+        </div>
+
+        <div class="flex justify-between items-center px-6 py-3 border-t mt-6">
             <div class="flex items-center">
-                <img src="img/avatar.png" alt="" class="rounded-full">
+                <img src="img/team/benjamin-bengfort.png" alt="" class="rounded-full h-10 w-10">
                 <span class="ml-4 font-extralight">Benjamin Bengfort</span>
             </div>
             <div class="font-extralight">
                 Sep 7, 2022
             </div>
-        </footer>
-    </div>
-</div>
-                    </div>
-                
-                
-               
-            </div>
         </div>
     </div>
+</div>
+        </div>
+        
+
+
+      </div>
+    </div>
   </div>
-  <div class="bg-[#1D65A6] max-w-[800px] mx-auto mt-20 py-14 px-12 md:px-16 text-white md:rounded-lg">
+</div>
+<div class="bg-[#1D65A6] max-w-[800px] mx-auto mt-20 py-14 px-12 md:px-16 text-white md:rounded-lg">
+
+  <form action="blog" method="post" id="newsletterForm">
     <h6 class="font-bold text-center">Enter Your Email To Subscribe</h6>
-    <input type="text" placeholder="Your email address" class="w-full px-4 py-2.5 rounded-lg mt-6">
+    <input type="text" name="email" required placeholder=""
+      class="w-full px-4 py-2.5 rounded-lg mt-6 text-black" style="color:black">
     <div class="flex mt-6 items-start">
-      <input type="checkbox" class="w-6 h-6 block border-0 ">
-      <span class="ml-2 text-left">I want to received the monthly newsletter and other updates from Rotational. You
-        agree to your Privacy Policy. You may unsubscribe at any time.*</span>
+      <input type="checkbox" required class="w-6 h-6 block border-0 ">
+      <span class="ml-2 text-left">I want to receive the monthly newsletter and other updates from Rotational. You agree to our Privacy Policy. You may unsubscribe at any time.*</span>
+    </div>
+    <div class="bg-teal-100 border-t-4 border-teal-500 mt-10 rounded-b text-teal-900 px-4 py-3 shadow-md hidden "
+      id='newsletter-alert' role="alert">
+      <div class="flex">
+
+        <div>
+          <p class="text-sm">Thank you for your interest!</p>
+        </div>
+      </div>
     </div>
     <div class="flex justify-center">
-      <a href="" class="bg-[#192E5B] px-14 py-4 mt-10 rounded-lg text-sm text-white uppercase md:text-base">Submit</a>
+
+      <button type="submit" class="bg-[#192E5B] px-14 py-4 mt-10 rounded-lg text-sm text-white uppercase md:text-base">
+        Submit</button>
     </div>
-  </div>
+  </form>
+</div>
 
     </main>
 
-    <footer>
-    <div class="relative pt-[90px] sm:pt-[300px] font-extralight">
-        <img class="w-full absolute inset-y-0 left-0 lg:h-full lg:w-full lg:max-w-none" src="img/foot.png" alt="" />
-        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 bg-[#192E5B]">
-            <div class="sm:flex text-white">
+    <footer class=" bg-hero-footer bg-cover ">
+    <div class="relative  pt-[350px] font-extralight">
+
+        <div class="relative max-w-7xl  mx-auto px-4 sm:px-6 ">
+            <div class="lg:grid grid-cols-3 text-white">
                 <div>
-                    <a href=""><img src="img/logo-white.png" alt="" class="sm:h-auto h-16"></a>
+                    <a href="/"><img src="img/logo-white.png" alt="Rotational Labs logo"
+                            class="mt-10 sm:mt-0 mx-auto sm:pb-5 "></a>
                 </div>
-                <div class="sm:ml-24 mt-5 sm:mt-0 max-w-lg">
+                <div class="mx-auto mt-5 sm:mt-0 max-w-lg pb-8 xl:mr-5">
                     
 
                     
-                        
-                            <h5 class="font-bold text-lg">Contact Details</h5>
-                            <p class="mt-3">
-                                We love to talk through complex scaling and performance issues. What’s slowing you down? Drop us a line for a friendly chat. We’ll make it worth your while.
-                            </p>
-                        
+                    
+                    <h5 class="text-center lg:text-start font-bold text-lg">Contact Details</h5>
+                    <p class="mt-3 ml-10 sm:ml-0 text-lg">
+                        We love to talk through complex scaling and performance issues. What’s slowing you down? Drop us a line for a friendly chat. We’ll make it worth your while.
+                    </p>
+                    
                     
                 </div>
-                <div class="sm:ml-24 sm:mt-0 mt-8">
-                    <ul class="grid grid-cols-2 gap-8">
+                <div class="ml-10 xl:ml-5 sm:mt-0 mt-8">
+                    <ul class="sm:grid grid-cols-2 lg:flex flex-col gap-0 mr-5 xl:grid  gap-x-32 gap-y-4">
                         
-                            <li>
-                                <a href="" class="flex items-center" target="_blank">
-                                    <img src="img/email.png" alt="" class="p-4 bg-white rounded-lg mr-4">
-                                    <span>info@rotational.io</span>
-                                </a>
-                            </li>
+                        <li class="pb-8">
+                            <a href="mailto:info@rotational.io" class="flex items-center" target="_blank">
+                                <img src="img/email.png" alt="" class="p-4 bg-white rounded-lg mr-4">
+                                <span>info@rotational.io</span>
+                            </a>
+                        </li>
                         
-                            <li>
-                                <a href="" class="flex items-center" target="_blank">
-                                    <img src="img/github.png" alt="" class="p-4 bg-white rounded-lg mr-4">
-                                    <span>rotationalio</span>
-                                </a>
-                            </li>
+                        <li class="pb-8">
+                            <a href="https://github.com/rotationalio" class="flex items-center" target="_blank">
+                                <img src="img/github.png" alt="" class="p-4 bg-white rounded-lg mr-4">
+                                <span>rotationalio</span>
+                            </a>
+                        </li>
                         
-                            <li>
-                                <a href="" class="flex items-center" target="_blank">
-                                    <img src="img/twitter.png" alt="" class="p-4 bg-white rounded-lg mr-4">
-                                    <span>rotationalio</span>
-                                </a>
-                            </li>
+                        <li class="pb-8">
+                            <a href="https://twitter.com/rotationalio" class="flex items-center" target="_blank">
+                                <img src="img/twitter.png" alt="" class="p-4 bg-white rounded-lg mr-4">
+                                <span>@rotationalio</span>
+                            </a>
+                        </li>
                         
-                            <li>
-                                <a href="" class="flex items-center" target="_blank">
-                                    <img src="img/linkedin.png" alt="" class="p-4 bg-white rounded-lg mr-4">
-                                    <span>rotational</span>
-                                </a>
-                            </li>
+                        <li class="pb-8">
+                            <a href="https://www.linkedin.com/company/rotational" class="flex items-center" target="_blank">
+                                <img src="img/linkedin.png" alt="" class="p-4 bg-white rounded-lg mr-4">
+                                <span>Rotational</span>
+                            </a>
+                        </li>
                         
                     </ul>
                 </div>
             </div>
             <div class="sm:flex justify-between border-t py-6 text-white mt-12 sm:mt-32">
-                <p>Copyright © 2021 Rotational Labs, LLC, All Rights Reserved</p>
+                <p>Copyright © 2022 Rotational Labs, LLC · All Rights Reserved</p>
                 <ul class="sm:mt-0 mt-4 flex">
-                    <li class="border-r pr-4 mr-4 "><a href="">Privacy Policy</a></li>
-                    <li><a href="">Terms of Use</a></li>
+                    <li class="border-r pr-4 mr-4 "><a href="/privacy/">Privacy Policy</a></li>
+                    <li><a href="/terms/">Terms of Use</a></li>
                 </ul>
             </div>
         </div>

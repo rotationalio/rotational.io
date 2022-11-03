@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    
+<meta charset="UTF-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta property="og:image" content="https://rotational.io/img/blog/2022-04-15-a-gentle-introduction-to-tmux/muxing.jpg" />
+
+
+ <meta property="og:title" content="Getting Started With Tmux" />
+
+<meta property="og:description" content="Tmux is an extremely powerful terminal solution for Unix-like operating systems, but it has a steep learning curve. In this post we&#39;ll go over some Tmux basics and make it a little less daunting to get started." />
+
+	<meta name="author" content="Rotational Labs, LLC">
+
+
+<base href="https://rotational.io/">
+<title>Rotational Labs  | Getting Started With Tmux</title>
+
+<!--Favicon-->
+<link rel="shortcut icon" href="https://rotational.io/img/favicon.png" type="image/x-icon">
+<link rel="icon" href="https://rotational.io/img/favicon.png" type="image/x-icon">
+
+<!-- plugins -->
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  
+<!-- fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,600;1,700;1,800&amp;display=swap" rel="stylesheet">
+
+<!-- styles -->
+
+<!-- Main Stylesheet -->
+<link rel="stylesheet" href="https://rotational.io/output.css" media="screen">
+
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2FKX6CWJHW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2FKX6CWJHW');
+</script>
+
+
+
+<script src="https://www.google.com/recaptcha/enterprise.js?render=6Ld5O3kiAAAAAJU0z0h81X1RxEMHyoROe6KWe_vk"></script>
+<script>
+  grecaptcha.enterprise.ready(function() {
+    grecaptcha.enterprise.execute('6Ld5O3kiAAAAAJU0z0h81X1RxEMHyoROe6KWe_vk', {action: 'homepage'}).then(function(token) {
+      
+    });
+  });
+
+
+</script>
+
+
+  </head>
+
+  <body class="bg-white">
+
+    
+<div class="sm:pt-5 pb-6 relative bg-[#1D65A6]">
+  <nav class="relative max-w-7xl mx-auto flex items-center justify-between text-white px-4 sm:px-6" aria-label="Global">
+    <a href="/" class="pt-3">
+        <img src="img/logo.png" alt="Rotational Lab logo" class="h-14 w-auto sm:h-14">
+    </a>
+    <div class="topnav" id="myTopnav">
+        
+        
+        <a class=" " href="https://rotational.app">
+            Ensign
+        </a>
+        
+        <a class=" " href="/services/">
+            Services
+        </a>
+        
+        <a class=" " href="/opensource/">
+            Open Source
+        </a>
+        
+        <a class=" " href="/blog/">
+            Blog
+        </a>
+        
+        <a class=" " href="/about/">
+            About
+        </a>
+        
+        <a class=" " href="/contact/">
+            Contact Us
+        </a>
+        
+        <a class="icon mt-4 " onclick="openMobNav()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+</nav>
+</div>
+
+
+    <main>
+      
+<div class="relative max-w-7xl mx-auto px-4 sm:px-6">
+  <div class="mt-14">
+    <div class="blog-img">
+      <img src="https://rotational.io/img/blog/2022-04-15-a-gentle-introduction-to-tmux/muxing.jpg" alt="Getting Started With Tmux" class="mx-auto ">
+    </div>
+
+
+
+    <div class="mt-8">
+      <h3 class="font-bold text-xl sm:text-2xl lg:text-3xl text-center" data-blog-title="Getting Started With Tmux">
+        <b class="text-[#1D65A6]"> Getting </b>
+          Started With Tmux 
+      </h3>
+      <div class="flex justify-center items-center mt-4 mb-6">
+        <img src="img/team/daniel-sollis.png" alt="" class="border-4 border-white rounded-full h-11 drop-shadow-lg"><span
+          class="ml-3">Daniel Sollis |
+          Friday, Apr 15, 2022 | Programming</span>
+      </div>
+      <div class="max-w-[800px] mx-auto prose prose-blue">
+        <p>If you’re working in distributed systems, having a good terminal setup is pretty important! On MacOS <a href="https://iterm2.com/">iTerm2</a> is a popular choice. It has tabs, autocomplete, a built-in password manager and a fantastic screen splitting feature. If however you’re like me and aren’t using a Mac it can be difficult to find a replacement that fits your needs. Tmux is here to help!</p>
+<h2 id="introducing-tmux">Introducing Tmux</h2>
+<p><a href="https://github.com/tmux/tmux">Tmux</a> is an extremely powerful terminal solution for Unix-like operating systems, but it has a steep learning curve. Getting used to Tmux takes some effort but after spending some time with it, I’ve found that it’s well worth the effort.</p>
+<p>Installing and running Tmux is easy enough, simply use <code>sudo apt install tmux</code> on Linux or <code>brew install tmux</code> if you’re on a Mac, then enter <code>tmux</code> and you’re good to go. You&rsquo;ll see a status bar at the bottom of the terminal window once you launch your first session letting you know Tmux is running.</p>
+<p>To get started, let&rsquo;s go over the two most important features in Tmux: panes and windows.</p>
+<h2 id="tmux-panes">Tmux Panes</h2>
+<p>Tmux panes are essentially individual terminals that are created when you split a single terminal in Tmux. For example, here is a Tmux session with six panes open:</p>
+<p><img src="/img/blog/2022-04-15-a-gentle-introduction-to-tmux/2022-04-15-tmux-pane-example.png" alt="Pane Example"></p>
+<p>In order to navigate between panes, first you’ll need to understand a little bit about how Tmux commands work.</p>
+<p>All commands in Tmux are preceded by the command key. By default this is <code>control-b</code>. To change which pane you are on you would use <code>&lt;command key&gt; &lt;arrow key&gt;</code>, which means to go to the pane below you (provided there is one), you would press <code>control-b</code>, then the down arrow (↓). To split a pane vertically press <code>&lt;command key&gt; %</code>; to split a pane horizontally press <code>&lt;command key&gt; &quot;</code> (using a double quote). You can also cycle through different organizations of panes using <code>&lt;command key&gt; &lt;space&gt;</code>.</p>
+<h2 id="tmux-windows">Tmux Windows</h2>
+<p>You can think of a window as a new tab in your Tmux session; windows are essentially a collection of panes. To create a new window, press <code>&lt;command key&gt; c</code>. To switch between different windows you can use <code>&lt;command key&gt; &lt;n&gt;</code>, where n is the window number, zero-indexed (so if you have two windows open, ‘n’ would either be 0 or 1). You can also use <code>&lt;command key&gt; p</code> or <code>&lt;command key&gt; n</code> to go to the previous or next window respectively. <code>&lt;command key&gt; w</code> will bring up an interactive list of windows for you to choose from.</p>
+<h2 id="automating-tmux">Automating Tmux</h2>
+<p>Once you get a handle on panes and windows, you might start thinking about how you can automate them. For instance, if you have a pane/window configuration you use frequently, it might be helpful to create a script to do the setup for you. Tmux allows several commands to be used in bash scripts, but because of the complexity of a Tmux setup, creating a bash script to automate it all can be a tedious process. Fortunately there is an alternative.</p>
+<h2 id="tmuxinator">Tmuxinator</h2>
+<p><a href="https://github.com/tmuxinator/tmuxinator">Tmuxinator</a> is a program that uses YAML files to automate Tmux setups. I’ve found using Tmuxinator to be incredibly helpful and couldn’t imagine using Tmux without it. With a pretty simple YAML file you can do some pretty complex things in Tmux.</p>
+<p>Let&rsquo;s look at an example program and how you might create a Tmuxinator setup for it. I’ve created an example program in Golang using <a href="https://rotational.io/blog/what-are-protocol-buffers/"><strong>Protocol Buffers</strong></a> and <a href="https://rotational.io/blog/contexts-in-go-microservice-chains/"><strong>Contexts</strong></a> to send messages around a ring of multiple servers. You can find that code <a href="https://github.com/DanielSollis/context_ring"><strong>here</strong></a> if you’d like to play around with it yourself, but to go over the basics of the program we have various flags:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span>	<span style="color:#a6e22e">serverOrClient</span> = <span style="color:#a6e22e">flag</span>.<span style="color:#a6e22e">String</span>(<span style="color:#e6db74">&#34;s&#34;</span>, <span style="color:#e6db74">&#34;server&#34;</span>, <span style="color:#e6db74">&#34;Is the program a server or client&#34;</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">port</span>           = <span style="color:#a6e22e">flag</span>.<span style="color:#a6e22e">Int64</span>(<span style="color:#e6db74">&#34;p&#34;</span>, <span style="color:#ae81ff">9000</span>, <span style="color:#e6db74">&#34;The Server&#39;s Port number&#34;</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">name</span>           = <span style="color:#a6e22e">flag</span>.<span style="color:#a6e22e">String</span>(<span style="color:#e6db74">&#34;n&#34;</span>, <span style="color:#e6db74">&#34;DefaultName&#34;</span>, <span style="color:#e6db74">&#34;The Server&#39;s name&#34;</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">terminalNode</span>   = <span style="color:#a6e22e">flag</span>.<span style="color:#a6e22e">Bool</span>(<span style="color:#e6db74">&#34;t&#34;</span>, <span style="color:#66d9ef">false</span>, <span style="color:#e6db74">&#34;If the node is the last on the ring&#34;</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">firstHop</span>       = <span style="color:#a6e22e">flag</span>.<span style="color:#a6e22e">Int64</span>(<span style="color:#e6db74">&#34;f&#34;</span>, <span style="color:#ae81ff">9001</span>, <span style="color:#e6db74">&#34;The client&#39;s first port to visit&#34;</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">timeOut</span>        = <span style="color:#a6e22e">flag</span>.<span style="color:#a6e22e">Int64</span>(<span style="color:#e6db74">&#34;d&#34;</span>, <span style="color:#ae81ff">10</span>, <span style="color:#e6db74">&#34;Timeout time in seconds&#34;</span>)
+</span></span></code></pre></div><p>These flags specify whether the program is a server or client, its port number, name, whether it is the last node in the circle, etc. By creating a client on a port, and then several servers on subsequent ports, the client will send a message that will be passed along to each server in the chain until it reaches the last server, at which point the message will be returned to the client.</p>
+<p>Now let’s take a look at the Tmuxinator file that will set this program up.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-YAML" data-lang="YAML"><span style="display:flex;"><span><span style="color:#75715e"># ~/.tmuxinator/ring.yml</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">name</span>: <span style="color:#ae81ff">ring</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">root</span>: <span style="color:#ae81ff">~/go/src/context_ring/</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">windows</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">ring</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">layout</span>: <span style="color:#ae81ff">main-vertical</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">panes</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">server_1</span>:
+</span></span><span style="display:flex;"><span>         - <span style="color:#ae81ff">go run context_server/main.go -s server -p 9001 -n server_1</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">server_2</span>:
+</span></span><span style="display:flex;"><span>         - <span style="color:#ae81ff">go run context_server/main.go -s server -p 9002 -n server_2</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">server_3</span>:
+</span></span><span style="display:flex;"><span>         - <span style="color:#ae81ff">go run context_server/main.go -s server -p 9003 -n server_3</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">server_4</span>:
+</span></span><span style="display:flex;"><span>         - <span style="color:#ae81ff">go run context_server/main.go -s server -p 9004 -n server_4</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">server_5</span>:
+</span></span><span style="display:flex;"><span>         - <span style="color:#ae81ff">go run context_server/main.go -s server -p 9005 -n server_5 -t true</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">client</span>:
+</span></span><span style="display:flex;"><span>         - <span style="color:#ae81ff">tmux select-pane -t 5</span>
+</span></span></code></pre></div><p>Tmuxinator configurations are located under the <code>.tmuxinator</code> directory in each user’s home directory. As you can see, it is fairly simple to create windows and panes, executing a sequence of commands in each of them.</p>
+<p>At the highest level, Tmuxinator describes one or more windows. In the file we are looking at above, we describe a window, named ring, and give it a layout. The first two lines give the configuration a name and specify where the setup’s root directory will be. There are five main layout options in Tmuxinator, <code>even-horizontal</code>, <code>even-vertical</code>, <code>main-horizontal</code>, <code>main-vertical</code> and <code>tiled</code> (which you can see above). Next, you name each pane that you want created and give a list of commands to be run in each pane when it is created, and that’s it!</p>
+<p>Now go have fun Tmuxinating!</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-[#E8EFF6] max-w-[800px] mx-auto mt-9 p-8 rounded-lg">
+    <div class="text-center">
+      <h3 class="font-bold text-xl sm:text-2xl lg:text-3xl">
+        <b class="text-[#1D65A6]"> About </b>
+          This Post 
+      </h3>
+    </div>
+    <p class="mt-4 text-base mx-auto text-center sm:mt-5 lg:mt-7 lg:text-base max-w-2xl">
+      Tmux is an extremely powerful terminal solution for Unix-like operating systems, but it has a steep learning curve. In this post we&#39;ll go over some Tmux basics and make it a little less daunting to get started.
+    </p>
+
+    <div class="md:flex text-center max-w-[600px] mx-auto border-t pt-6 mt-6 align-center justify-between">
+      <div>
+        <div class="text-lg text-[#1D65A6] font-bold mb-3 ">
+          Written by:</div>
+        <div class="flex items-center mt-4 mb-6  ">
+          <img src="img/team/daniel-sollis.png" alt="" class="border-4 border-white rounded-full h-11 drop-shadow-lg"><span
+            class="ml-3">Daniel Sollis</span>
+        </div>
+      </div>
+      <div class="sm:ml-10 sm:mt-0 mt-12 ">
+        <div class="text-lg text-[#1D65A6] font-bold mb-3">Share this post:</div>
+        <ul class="grid grid-cols-3 gap-6 mt-4">
+          <li><a onClick="shareByEmail()" class="flex items-center"><img src="img/email.png" alt=""
+                class="p-3 bg-white rounded-lg mr-3"></a></li>
+
+          <li><a onClick="shareOnTwitterWithTitle()" class="flex items-center"><img src="img/twitter.png" alt=""
+                class="p-3 bg-white rounded-lg mr-4"></a></li>
+          <li><a onClick="shareOnLinkedIn()" class="flex items-center"><img src="img/linkedin.png" alt=""
+                class="p-3 bg-white rounded-lg mr-3"></a></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="flex justify-between mt-12 sm:mt-24 items-center">
+      <h2 class="font-bold text-2xl sm:text-4xl flex">
+        <span>
+          <b class="text-[#1D65A6]"> Recent </b>
+            Rotations 
+
+        </span>
+        <img src="img/butterfly.png" alt="butterfly" class="ml-4 h-6 sm:h-8 relative top-1">
+      </h2>
+      <div>
+        <a href="/blog" class="flex text-base sm:text-lg items-center font-bold text-[#1D65A6]"><span>View all</span>
+          <img src="img/arr-right.png" alt="" class="h-4 ml-2"></a>
+      </div>
+    </div>
+    <div>
+      <div class="sm:grid grid-cols-3 gap-8 sm:mt-16">
+        
+        <div class="mt-6 ">
+          <div class="article ">
+    <a class="block" href="https://rotational.io/blog/webassembly-the-future-of-computing/">
+        <img src="https://rotational.io/img/blog/rocket.jpeg" alt="" class="rounded-t-xl" style="height:212px; width:100%"></a>
+    <div class="bg-[#ECF6FF] rounded-b-xl ">
+
+        <div class="px-6 pt-4">
+            <h4 class="text-base font-bold text-[#1D65A6]">WASM</h4>
+            <h3 class="text-xl font-extrabold mt-3 "><a class="block h-24" href="https://rotational.io/blog/webassembly-the-future-of-computing/">Why WebAssembly Is the Future of Computing</a>
+            </h3>
+            <div class='art-s'>
+                <p class="mt-3 text-base font-extralight"><!-- raw HTML omitted -->
+<p>If you talk about WebAssembly (WASM), you just may spark debate about whether it is really the next best thing in web development or the second coming of Java applets. In this post, we&rsquo;ll dive into WASM, how it is currently …</p></!--></p>
+
+            </div>
+
+        </div>
+
+        <div class="flex justify-between items-center px-6 py-3 border-t mt-6">
+            <div class="flex items-center">
+                <img src="img/team/danielle-maxwell.png" alt="" class="rounded-full h-10 w-10">
+                <span class="ml-4 font-extralight">Danielle Maxwell</span>
+            </div>
+            <div class="font-extralight">
+                Sep 27, 2022
+            </div>
+        </div>
+    </div>
+</div>
+        </div>
+        
+        <div class="mt-6 ">
+          <div class="article ">
+    <a class="block" href="https://rotational.io/blog/eventing-platforms/">
+        <img src="https://rotational.io/img/blog/herd.jpg" alt="" class="rounded-t-xl" style="height:212px; width:100%"></a>
+    <div class="bg-[#ECF6FF] rounded-b-xl ">
+
+        <div class="px-6 pt-4">
+            <h4 class="text-base font-bold text-[#1D65A6]">Microservices, Eventing</h4>
+            <h3 class="text-xl font-extrabold mt-3 "><a class="block h-24" href="https://rotational.io/blog/eventing-platforms/">The Eventing Platform Landscape</a>
+            </h3>
+            <div class='art-s'>
+                <p class="mt-3 text-base font-extralight"><p>Kafka and PubSub and Kinesis, oh my! Which eventing platform is best? In this post we&rsquo;ll explore the three primary categories of eventing systems and understand their similarities, differences, and key use cases.</p></p>
+
+            </div>
+
+        </div>
+
+        <div class="flex justify-between items-center px-6 py-3 border-t mt-6">
+            <div class="flex items-center">
+                <img src="img/team/rebecca-bilbro.png" alt="" class="rounded-full h-10 w-10">
+                <span class="ml-4 font-extralight">Rebecca Bilbro</span>
+            </div>
+            <div class="font-extralight">
+                Sep 10, 2022
+            </div>
+        </div>
+    </div>
+</div>
+        </div>
+        
+        <div class="mt-6 ">
+          <div class="article ">
+    <a class="block" href="https://rotational.io/blog/ranges-of-integer-data-types/">
+        <img src="https://rotational.io/img/blog/num215.jpg" alt="" class="rounded-t-xl" style="height:212px; width:100%"></a>
+    <div class="bg-[#ECF6FF] rounded-b-xl ">
+
+        <div class="px-6 pt-4">
+            <h4 class="text-base font-bold text-[#1D65A6]">Golang, Programming</h4>
+            <h3 class="text-xl font-extrabold mt-3 "><a class="block h-24" href="https://rotational.io/blog/ranges-of-integer-data-types/">Ranges of Integer Data Types</a>
+            </h3>
+            <div class='art-s'>
+                <p class="mt-3 text-base font-extralight"><p>The data type choices we make when building data systems or metrics is critically important: as our systems run for long periods of time it can be easy to overflow the integers that we use (Y2K bug anyone?). As a result, I find myself …</p></p>
+
+            </div>
+
+        </div>
+
+        <div class="flex justify-between items-center px-6 py-3 border-t mt-6">
+            <div class="flex items-center">
+                <img src="img/team/benjamin-bengfort.png" alt="" class="rounded-full h-10 w-10">
+                <span class="ml-4 font-extralight">Benjamin Bengfort</span>
+            </div>
+            <div class="font-extralight">
+                Sep 7, 2022
+            </div>
+        </div>
+    </div>
+</div>
+        </div>
+        
+
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="bg-[#1D65A6] max-w-[800px] mx-auto mt-20 py-14 px-12 md:px-16 text-white md:rounded-lg">
+
+  <form action="blog" method="post" id="newsletterForm">
+    <h6 class="font-bold text-center">Enter Your Email To Subscribe</h6>
+    <input type="text" name="email" required placeholder=""
+      class="w-full px-4 py-2.5 rounded-lg mt-6 text-black" style="color:black">
+    <div class="flex mt-6 items-start">
+      <input type="checkbox" required class="w-6 h-6 block border-0 ">
+      <span class="ml-2 text-left">I want to receive the monthly newsletter and other updates from Rotational. You agree to our Privacy Policy. You may unsubscribe at any time.*</span>
+    </div>
+    <div class="bg-teal-100 border-t-4 border-teal-500 mt-10 rounded-b text-teal-900 px-4 py-3 shadow-md hidden "
+      id='newsletter-alert' role="alert">
+      <div class="flex">
+
+        <div>
+          <p class="text-sm">Thank you for your interest!</p>
+        </div>
+      </div>
+    </div>
+    <div class="flex justify-center">
+
+      <button type="submit" class="bg-[#192E5B] px-14 py-4 mt-10 rounded-lg text-sm text-white uppercase md:text-base">
+        Submit</button>
+    </div>
+  </form>
+</div>
+
+    </main>
+
+    <footer class=" bg-hero-footer bg-cover ">
+    <div class="relative  pt-[350px] font-extralight">
+
+        <div class="relative max-w-7xl  mx-auto px-4 sm:px-6 ">
+            <div class="lg:grid grid-cols-3 text-white">
+                <div>
+                    <a href="/"><img src="img/logo-white.png" alt="Rotational Labs logo"
+                            class="mt-10 sm:mt-0 mx-auto sm:pb-5 "></a>
+                </div>
+                <div class="mx-auto mt-5 sm:mt-0 max-w-lg pb-8 xl:mr-5">
+                    
+
+                    
+                    
+                    <h5 class="text-center lg:text-start font-bold text-lg">Contact Details</h5>
+                    <p class="mt-3 ml-10 sm:ml-0 text-lg">
+                        We love to talk through complex scaling and performance issues. What’s slowing you down? Drop us a line for a friendly chat. We’ll make it worth your while.
+                    </p>
+                    
+                    
+                </div>
+                <div class="ml-10 xl:ml-5 sm:mt-0 mt-8">
+                    <ul class="sm:grid grid-cols-2 lg:flex flex-col gap-0 mr-5 xl:grid  gap-x-32 gap-y-4">
+                        
+                        <li class="pb-8">
+                            <a href="mailto:info@rotational.io" class="flex items-center" target="_blank">
+                                <img src="img/email.png" alt="" class="p-4 bg-white rounded-lg mr-4">
+                                <span>info@rotational.io</span>
+                            </a>
+                        </li>
+                        
+                        <li class="pb-8">
+                            <a href="https://github.com/rotationalio" class="flex items-center" target="_blank">
+                                <img src="img/github.png" alt="" class="p-4 bg-white rounded-lg mr-4">
+                                <span>rotationalio</span>
+                            </a>
+                        </li>
+                        
+                        <li class="pb-8">
+                            <a href="https://twitter.com/rotationalio" class="flex items-center" target="_blank">
+                                <img src="img/twitter.png" alt="" class="p-4 bg-white rounded-lg mr-4">
+                                <span>@rotationalio</span>
+                            </a>
+                        </li>
+                        
+                        <li class="pb-8">
+                            <a href="https://www.linkedin.com/company/rotational" class="flex items-center" target="_blank">
+                                <img src="img/linkedin.png" alt="" class="p-4 bg-white rounded-lg mr-4">
+                                <span>Rotational</span>
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+            <div class="sm:flex justify-between border-t py-6 text-white mt-12 sm:mt-32">
+                <p>Copyright © 2022 Rotational Labs, LLC · All Rights Reserved</p>
+                <ul class="sm:mt-0 mt-4 flex">
+                    <li class="border-r pr-4 mr-4 "><a href="/privacy/">Privacy Policy</a></li>
+                    <li><a href="/terms/">Terms of Use</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</footer>
+    <script src="https://rotational.io/js/app.js"></script>
+
+  </body>
+
+</html>
