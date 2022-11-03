@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    
+<meta charset="UTF-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta property="og:image" content="https://rotational.io/img/blog/2021-06-01-secrets-manager-with-go/doorknocker.jpg" />
+
+
+ <meta property="og:title" content="Using Google&#39;s Secret Manager API with Go" />
+
+<meta property="og:description" content="In this post, we&#39;ll dive into Google&#39;s Secret Manager service, walk through the setup steps, and explore some Go code to interact with the API." />
+
+	<meta name="author" content="Rotational Labs, LLC">
+
+
+<base href="https://rotational.io/">
+<title>Rotational Labs  | Using Google&#39;s Secret Manager API with Go</title>
+
+<!--Favicon-->
+<link rel="shortcut icon" href="https://rotational.io/img/favicon.png" type="image/x-icon">
+<link rel="icon" href="https://rotational.io/img/favicon.png" type="image/x-icon">
+
+<!-- plugins -->
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  
+<!-- fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,600;1,700;1,800&amp;display=swap" rel="stylesheet">
+
+<!-- styles -->
+
+<!-- Main Stylesheet -->
+<link rel="stylesheet" href="https://rotational.io/output.css" media="screen">
+
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2FKX6CWJHW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2FKX6CWJHW');
+</script>
+
+
+
+<script src="https://www.google.com/recaptcha/enterprise.js?render=6Ld5O3kiAAAAAJU0z0h81X1RxEMHyoROe6KWe_vk"></script>
+<script>
+  grecaptcha.enterprise.ready(function() {
+    grecaptcha.enterprise.execute('6Ld5O3kiAAAAAJU0z0h81X1RxEMHyoROe6KWe_vk', {action: 'homepage'}).then(function(token) {
+      
+    });
+  });
+
+
+</script>
+
+
+  </head>
+
+  <body class="bg-white">
+
+    
+<div class="sm:pt-5 pb-6 relative bg-[#1D65A6]">
+  <nav class="relative max-w-7xl mx-auto flex items-center justify-between text-white px-4 sm:px-6" aria-label="Global">
+    <a href="/" class="pt-3">
+        <img src="img/logo.png" alt="Rotational Lab logo" class="h-14 w-auto sm:h-14">
+    </a>
+    <div class="topnav" id="myTopnav">
+        
+        
+        <a class=" " href="https://rotational.app">
+            Ensign
+        </a>
+        
+        <a class=" " href="/services/">
+            Services
+        </a>
+        
+        <a class=" " href="/opensource/">
+            Open Source
+        </a>
+        
+        <a class=" " href="/blog/">
+            Blog
+        </a>
+        
+        <a class=" " href="/about/">
+            About
+        </a>
+        
+        <a class=" " href="/contact/">
+            Contact Us
+        </a>
+        
+        <a class="icon mt-4 " onclick="openMobNav()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+</nav>
+</div>
+
+
+    <main>
+      
+<div class="relative max-w-7xl mx-auto px-4 sm:px-6">
+  <div class="mt-14">
+    <div class="blog-img">
+      <img src="https://rotational.io/img/blog/2021-06-01-secrets-manager-with-go/doorknocker.jpg" alt="Using Google&#39;s Secret Manager API with Go" class="mx-auto ">
+    </div>
+
+
+
+    <div class="mt-8">
+      <h3 class="font-bold text-xl sm:text-2xl lg:text-3xl text-center" data-blog-title="Using Google&#39;s Secret Manager API with Go">
+        <b class="text-[#1D65A6]"> Using </b>
+          Google's Secret Manager API with Go 
+      </h3>
+      <div class="flex justify-center items-center mt-4 mb-6">
+        <img src="img/team/rebecca-bilbro.png" alt="" class="border-4 border-white rounded-full h-11 drop-shadow-lg"><span
+          class="ml-3">Rebecca Bilbro |
+          Tuesday, Jun 1, 2021 | Security, Golang, Programming</span>
+      </div>
+      <div class="max-w-[800px] mx-auto prose prose-blue">
+        <p>Security is by definition an inconvenience. At the very least, it&rsquo;s about making access to data as challenging as possible for the baddies, conveniently measured in computation time. But good security also requires us good folks to go above and beyond — adopting architectural and engineering practices that involve more forethought, more effort, and more testing than are strictly required to get a basic application running on the web. If you&rsquo;re here already, we don&rsquo;t need to convince you that the effort is well worth it; good security pays for itself in customer trust, not to mention helping to preclude the kinds of breaches that can get careless folks in hot water. In this post, we&rsquo;ll dive into Google&rsquo;s Secret Manager service, walk through the setup steps, and explore some Go code to interact with the API.</p>
+<p>The example code can be found at: <a href="https://github.com/rotationalio/knock">github.com/rotationalio/knock</a>.</p>
+<h2 id="what-is-google-secret-manager">What is Google Secret Manager?</h2>
+<p><a href="https://cloud.google.com/secret-manager">Google Secret Manager</a> is a hosted service that allows users to store, manage, and access secure information. Information stored in Secret Manager is encrypted by default, and can only be accessed by an application if it has been granted valid credentials. Access can be granted (and revoked) on a very granular level, meaning that you can give out <a href="https://cloud.google.com/secret-manager/docs/access-control">role-based permissions</a> for individual secrets using the <a href="https://cloud.google.com/secret-manager/docs/access-control#least-privilege">principle of least privilege</a>.</p>
+<p>One big advantage of the Secret Manager implementation is its flexibility in terms of what can be stored. &ldquo;Secrets&rdquo; can be text or arbitrary bytes (well, almost; there is a <a href="https://cloud.google.com/secret-manager/quotas">64KiB limit</a>); meaning they can be passwords, API keys, or certificates.</p>
+<p>Secrets are stored using a namespace-like convention, where the key that references the payload value takes the form of a path, e.g.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>projects/projectID/secrets/exampleSecret
+</span></span></code></pre></div><p>Rather than storing encrypted payload data on the secret itself, Secret Manager exposes <code>versions</code> that store the actual secret data. When retrieving payloads, you retrieve them from the version, which is immutable, e.g.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>projects/projectID/secrets/exampleSecret/versions/2
+</span></span></code></pre></div><h2 id="getting-started-with-google-secret-manager">Getting Started with Google Secret Manager</h2>
+<p>The setup requires you to navigate between the Google Console UI and the command line.</p>
+<ul>
+<li>First, <a href="https://cloud.google.com/sdk/docs/install">download and install the SDK</a> that matches your os, and make sure to add it to your <code>PATH</code>.</li>
+<li>Next, navigate to the Console UI and <a href="https://cloud.google.com/secret-manager/docs/configuring-secret-manager">configure</a> your Google Cloud project to use Secret Manager. You&rsquo;ll use the UI to do both of the following:
+<ul>
+<li>create a new project (e.g. in this example, we&rsquo;ll use &ldquo;knock-knock&rdquo;)</li>
+<li>enable the Google Secrets API (via the <a href="https://console.cloud.google.com/apis/dashboard">API Console</a>) for that project</li>
+</ul>
+</li>
+<li>Now, return to the command line and run <code>gcloud init</code> to authenticate. This will open a browser window, where you&rsquo;ll select the correct gcloud account. Back on the command line, select the new project you just made.</li>
+<li>Next we&rsquo;ll assign IAM privileges. Using the Google Console UI, navigate to the <a href="https://console.cloud.google.com/iam-admin/iam">IAM page</a>, select the correct project, and select your name from the members list. You&rsquo;ll need to add a role, e.g. &ldquo;Secret Manager Secret Version Manager&rdquo;, that will allow you to create and manage secrets.</li>
+<li>Now, back in the command line, we&rsquo;ll make a Service Account, which will generate a local JSON file containing the service account credentials for a hypothetical user named Jeeves.
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gcloud iam service-accounts create jeeves
+</span></span><span style="display:flex;"><span>gcloud projects add-iam-policy-binding knock-knock --member<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;serviceAccount:jeeves@knock-knock.iam.gserviceaccount.com&#34;</span> --role<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;roles/secretmanager.secretVersionManager&#34;</span>
+</span></span><span style="display:flex;"><span>gcloud iam service-accounts keys create knock.json --iam-account<span style="color:#f92672">=</span>jeeves@knock-knock.iam.gserviceaccount.com
+</span></span></code></pre></div></li>
+<li>Next we&rsquo;ll add the path to those credentials to our PATH so that we can access them as environment variables; let&rsquo;s also add the project name as an environment variable.
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>export GOOGLE_APPLICATION_CREDENTIALS<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/home/user/knock.json&#34;</span>
+</span></span><span style="display:flex;"><span>export GOOGLE_PROJECT_NAME<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;knock-knock&#34;</span>
+</span></span></code></pre></div></li>
+</ul>
+<p>Ok, now we&rsquo;re ready to start creating secrets!</p>
+<h2 id="interacting-with-the-secret-manager-api-in-go">Interacting with the Secret Manager API in Go</h2>
+<p>There are a few good tutorials for interacting with the Secret Manager using languages like <a href="https://codelabs.developers.google.com/codelabs/secret-manager-python#0">Python</a> and <a href="https://github.com/googleapis/nodejs-secret-manager/tree/master/samples">Node</a>. Since there&rsquo;s not much available that demonstrates Golang examples, this post will focus on Go.</p>
+<p>The example implementation can be seen in full <a href="https://github.com/rotationalio/knock">here</a>; it takes the following imports:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#f92672">import</span> (
+</span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#34;context&#34;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#34;errors&#34;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">secretmanager</span> <span style="color:#e6db74">&#34;cloud.google.com/go/secretmanager/apiv1&#34;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#34;google.golang.org/api/iterator&#34;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">secretmanagerpb</span> <span style="color:#e6db74">&#34;google.golang.org/genproto/googleapis/cloud/secretmanager/v1&#34;</span>
+</span></span><span style="display:flex;"><span>)
+</span></span></code></pre></div><h3 id="create-a-new-secret">Create a New Secret</h3>
+<p>First let&rsquo;s write a function to create a new secret. This function will take as input two parameters:</p>
+<ul>
+<li>a <code>parent</code>, which should be a string path, e.g. &ldquo;projects/project-name&rdquo;.</li>
+<li>a <code>secretID</code>, which should be a string name to uniquely refer to the secret (though not the same as the key for the payload; that will come later when we create a secret version).</li>
+</ul>
+<p>Our function will return a string representation of the path where the new secret is stored, e.g &ldquo;projects/projectID/secrets/secretID&rdquo;, and an error if any occurs.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#75715e">// CreateSecret creates a new secret in the Google Cloud Manager top-
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// level directory, specified as `parent`, using the `secretID` provided
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// as the name.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">CreateSecret</span>(<span style="color:#a6e22e">parent</span> <span style="color:#66d9ef">string</span>, <span style="color:#a6e22e">secretID</span> <span style="color:#66d9ef">string</span>) (<span style="color:#66d9ef">string</span>, <span style="color:#66d9ef">error</span>) {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// Create the client.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">ctx</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">context</span>.<span style="color:#a6e22e">Background</span>()
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">client</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">secretmanager</span>.<span style="color:#a6e22e">NewClient</span>(<span style="color:#a6e22e">ctx</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// The most likely causes of the error are:
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		<span style="color:#75715e">//     1 - google application creds failed
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		<span style="color:#75715e">//     2 - secret already exists
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		<span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;&#34;</span>, <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Errorf</span>(<span style="color:#e6db74">&#34;failed to create secretmanager client: %v&#34;</span>, <span style="color:#a6e22e">err</span>)
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">defer</span> <span style="color:#a6e22e">client</span>.<span style="color:#a6e22e">Close</span>()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// Build the request.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">req</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">secretmanagerpb</span>.<span style="color:#a6e22e">CreateSecretRequest</span>{
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">Parent</span>:   <span style="color:#a6e22e">parent</span>,
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">SecretId</span>: <span style="color:#a6e22e">secretID</span>,
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">Secret</span>: <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">secretmanagerpb</span>.<span style="color:#a6e22e">Secret</span>{
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">Replication</span>: <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">secretmanagerpb</span>.<span style="color:#a6e22e">Replication</span>{
+</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">Replication</span>: <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">secretmanagerpb</span>.<span style="color:#a6e22e">Replication_Automatic_</span>{
+</span></span><span style="display:flex;"><span>					<span style="color:#a6e22e">Automatic</span>: <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">secretmanagerpb</span>.<span style="color:#a6e22e">Replication_Automatic</span>{},
+</span></span><span style="display:flex;"><span>				},
+</span></span><span style="display:flex;"><span>			},
+</span></span><span style="display:flex;"><span>		},
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// Call the API.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">result</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">client</span>.<span style="color:#a6e22e">CreateSecret</span>(<span style="color:#a6e22e">ctx</span>, <span style="color:#a6e22e">req</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;&#34;</span>, <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Errorf</span>(<span style="color:#e6db74">&#34;failed to create secret: %v&#34;</span>, <span style="color:#a6e22e">err</span>)
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;created secret: %s\n&#34;</span>, <span style="color:#a6e22e">result</span>.<span style="color:#a6e22e">Name</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">result</span>.<span style="color:#a6e22e">Name</span>, <span style="color:#66d9ef">nil</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="add-a-new-secret-version">Add a New Secret Version</h3>
+<p>To store a payload, we need to create a version inside the secret namespace we&rsquo;ve just created. Let&rsquo;s write a new function for creating versions that takes as input the full path to the secret, e.g. &ldquo;projects/projectID/secrets/secretID&rdquo; and the payload as a slice of bytes. It will return the path to the secret version, e.g. &ldquo;projects/projectID/secrets/secretID/versions/1&rdquo; and an error if one occurs.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#75715e">// AddSecretVersion adds a new secret version to the given secret path with the
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// provided payload.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">AddSecretVersion</span>(<span style="color:#a6e22e">path</span> <span style="color:#66d9ef">string</span>, <span style="color:#a6e22e">payload</span> []<span style="color:#66d9ef">byte</span>) (<span style="color:#66d9ef">string</span>, <span style="color:#66d9ef">error</span>) {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// Create the client.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">ctx</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">context</span>.<span style="color:#a6e22e">Background</span>()
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">client</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">secretmanager</span>.<span style="color:#a6e22e">NewClient</span>(<span style="color:#a6e22e">ctx</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;&#34;</span>, <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Errorf</span>(<span style="color:#e6db74">&#34;failed to create secretmanager client: %v&#34;</span>, <span style="color:#a6e22e">err</span>)
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">defer</span> <span style="color:#a6e22e">client</span>.<span style="color:#a6e22e">Close</span>()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// Build the request.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">req</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">secretmanagerpb</span>.<span style="color:#a6e22e">AddSecretVersionRequest</span>{
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">Parent</span>: <span style="color:#a6e22e">path</span>,
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">Payload</span>: <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">secretmanagerpb</span>.<span style="color:#a6e22e">SecretPayload</span>{
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">Data</span>: <span style="color:#a6e22e">payload</span>,
+</span></span><span style="display:flex;"><span>		},
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// Call the API.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">result</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">client</span>.<span style="color:#a6e22e">AddSecretVersion</span>(<span style="color:#a6e22e">ctx</span>, <span style="color:#a6e22e">req</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;&#34;</span>, <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Errorf</span>(<span style="color:#e6db74">&#34;failed to add secret version: %v&#34;</span>, <span style="color:#a6e22e">err</span>)
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;added secret version: %s\n&#34;</span>, <span style="color:#a6e22e">result</span>.<span style="color:#a6e22e">Name</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">result</span>.<span style="color:#a6e22e">Name</span>, <span style="color:#66d9ef">nil</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="access-an-existing-secret">Access an Existing Secret</h3>
+<p>To access a secret version, we need the full path to the secret version, which can reference the version number as a string (e.g. &ldquo;5&rdquo;) or an alias (e.g. &ldquo;latest&rdquo;), i.e. &ldquo;projects/projectID/secrets/secretID/versions/latest&rdquo; or &ldquo;projects/projectID/secrets/secretID/versions/5&rdquo;.</p>
+<p>Our <code>AccessSecretVersion</code> will use this path to return the payload, else an error:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#75715e">// AccessSecretVersion returns the payload for the given secret version if one
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// exists.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">AccessSecretVersion</span>(<span style="color:#a6e22e">version</span> <span style="color:#66d9ef">string</span>) ([]<span style="color:#66d9ef">byte</span>, <span style="color:#66d9ef">error</span>) {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// Create the client.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">ctx</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">context</span>.<span style="color:#a6e22e">Background</span>()
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">client</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">secretmanager</span>.<span style="color:#a6e22e">NewClient</span>(<span style="color:#a6e22e">ctx</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">nil</span>, <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Errorf</span>(<span style="color:#e6db74">&#34;failed to create secretmanager client: %v&#34;</span>, <span style="color:#a6e22e">err</span>)
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">defer</span> <span style="color:#a6e22e">client</span>.<span style="color:#a6e22e">Close</span>()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// Build the request.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">req</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">secretmanagerpb</span>.<span style="color:#a6e22e">AccessSecretVersionRequest</span>{
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">Name</span>: <span style="color:#a6e22e">version</span>,
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// Call the API.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">result</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">client</span>.<span style="color:#a6e22e">AccessSecretVersion</span>(<span style="color:#a6e22e">ctx</span>, <span style="color:#a6e22e">req</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">nil</span>, <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Errorf</span>(<span style="color:#e6db74">&#34;failed to access secret version: %v&#34;</span>, <span style="color:#a6e22e">err</span>)
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;retrieved payload for: %s\n&#34;</span>, <span style="color:#a6e22e">result</span>.<span style="color:#a6e22e">Name</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">result</span>.<span style="color:#a6e22e">Payload</span>.<span style="color:#a6e22e">Data</span>, <span style="color:#66d9ef">nil</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="get-all-secrets">Get All Secrets</h3>
+<p>If you try to add a secret to a project when that secret already exists, you&rsquo;ll get an error. For that reason, it will be useful to list out the secrets (again, these are the namespace keys, not the actual versions that store the encrypted payload). Our <code>ListSecrets</code> function will take as input the path to the <code>parent</code>, e.g. &ldquo;projects/my-project&rdquo;, and returns a slice of strings representing the paths to the retrieved secrets, and a matching slice of errors for each failed retrieval.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#75715e">// ListSecrets retrieves the names of all secrets in the project,
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// given the `parent` (string).
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">ListSecrets</span>(<span style="color:#a6e22e">parent</span> <span style="color:#66d9ef">string</span>) (<span style="color:#a6e22e">secrets</span> []<span style="color:#66d9ef">string</span>, <span style="color:#a6e22e">errors</span> []<span style="color:#66d9ef">error</span>) {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// Create the client.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">ctx</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">context</span>.<span style="color:#a6e22e">Background</span>()
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">client</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">secretmanager</span>.<span style="color:#a6e22e">NewClient</span>(<span style="color:#a6e22e">ctx</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">secrets</span>, append(<span style="color:#a6e22e">errors</span>, <span style="color:#a6e22e">err</span>)
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">defer</span> <span style="color:#a6e22e">client</span>.<span style="color:#a6e22e">Close</span>()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// Build the request.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">req</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">secretmanagerpb</span>.<span style="color:#a6e22e">ListSecretsRequest</span>{
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">Parent</span>: <span style="color:#a6e22e">parent</span>,
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// Call the API.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">it</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">client</span>.<span style="color:#a6e22e">ListSecrets</span>(<span style="color:#a6e22e">ctx</span>, <span style="color:#a6e22e">req</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">resp</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">it</span>.<span style="color:#a6e22e">Next</span>()
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">iterator</span>.<span style="color:#a6e22e">Done</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">break</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">errors</span> = append(<span style="color:#a6e22e">errors</span>, <span style="color:#a6e22e">err</span>)
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">secrets</span> = append(<span style="color:#a6e22e">secrets</span>, <span style="color:#e6db74">&#34;&#34;</span>)
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">continue</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">secrets</span> = append(<span style="color:#a6e22e">secrets</span>, <span style="color:#a6e22e">resp</span>.<span style="color:#a6e22e">Name</span>)
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">errors</span> = append(<span style="color:#a6e22e">errors</span>, <span style="color:#66d9ef">nil</span>)
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">secrets</span>, <span style="color:#a6e22e">errors</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="delete-a-secret">Delete a Secret</h3>
+<p>Secrets can be configured to automatically expire after a certain amount of time (<a href="https://github.com/rotationalio/knock/blob/main/knock.go#L58-L72">example here</a>), but you can also delete them explicitly (assuming your <a href="https://cloud.google.com/secret-manager/docs/access-control">role permissions</a> allow you delete access). Note that deletion is irreversible, and deleting a secret will delete all of the versions inside the namespace for that secret. Any service or workload that attempts to access a deleted secret receives a Not Found error.</p>
+<p>Here&rsquo;s an example function that deletes a secret given the path to the secret, e.g. &ldquo;projects/projectID/secrets/secretID&rdquo;.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#75715e">// DeleteSecret deletes the secret with the given `name`, and all of its versions.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">DeleteSecret</span>(<span style="color:#a6e22e">name</span> <span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">error</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// Create the client.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">ctx</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">context</span>.<span style="color:#a6e22e">Background</span>()
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">client</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">secretmanager</span>.<span style="color:#a6e22e">NewClient</span>(<span style="color:#a6e22e">ctx</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Errorf</span>(<span style="color:#e6db74">&#34;failed to create secretmanager client: %v&#34;</span>, <span style="color:#a6e22e">err</span>)
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">defer</span> <span style="color:#a6e22e">client</span>.<span style="color:#a6e22e">Close</span>()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// Build the request.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">req</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">secretmanagerpb</span>.<span style="color:#a6e22e">DeleteSecretRequest</span>{
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">Name</span>: <span style="color:#a6e22e">name</span>,
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// Call the API.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">client</span>.<span style="color:#a6e22e">DeleteSecret</span>(<span style="color:#a6e22e">ctx</span>, <span style="color:#a6e22e">req</span>); <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Errorf</span>(<span style="color:#e6db74">&#34;failed to delete secret: %v&#34;</span>, <span style="color:#a6e22e">err</span>)
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">nil</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>With the ability to create, list, and delete secrets, and to add and access versions we&rsquo;re getting close to a complete Golang implementation that would allow you to systematically interact with the Secret Manager API from an application!</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>The everyday systems we interact with increasingly store our private data, so the need to raise the bar on data encryption has never been stronger. The flexibility of tools like the Google Secret Manager API means that we can and should be securing all kinds of information; not just passwords and credentials, but other types of information such as personally identifiable information (PII), as well.</p>
+<p>When it comes to security in big data systems, it&rsquo;s not about <em>if</em> there will be a breach, but <em>when</em>. Prevention methods become out-of-date as soon as new attack vectors are devised, and there are no silver bullets. That&rsquo;s why security is (and should be!) hard. Thankfully, as we&rsquo;ve seen in this post, with tools like Secret Manager, and its IAM controls, default encryption, and developer API, building software with a security-first principle can become more straightforward and programmatic.</p>
+<h2 id="further-reading">Further Reading</h2>
+<ul>
+<li><a href="https://cloud.google.com/sdk/docs/install">Installing Google Cloud SDK</a></li>
+<li><a href="https://cloud.google.com/sdk/docs/initializing">Initializing Cloud SDK</a></li>
+<li><a href="https://cloud.google.com/docs/authentication/production">Authenticating as a service account</a></li>
+<li><a href="https://cloud.google.com/docs/authentication/production#create_service_account">Creating a service account</a></li>
+<li><a href="https://cloud.google.com/secret-manager/docs/creating-and-accessing-secrets">Creating and Accessing Secrets</a></li>
+<li><a href="https://codelabs.developers.google.com/codelabs/secret-manager-python#0">Using Secret Manager with Python by Katie McLaughlin</a></li>
+<li><a href="https://github.com/googleapis/nodejs-secret-manager">NodeJS Secret Manager</a></li>
+<li><a href="https://github.com/kioie/gsm">A Go GCP Secret Manager by kioie</a></li>
+</ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-[#E8EFF6] max-w-[800px] mx-auto mt-9 p-8 rounded-lg">
+    <div class="text-center">
+      <h3 class="font-bold text-xl sm:text-2xl lg:text-3xl">
+        <b class="text-[#1D65A6]"> About </b>
+          This Post 
+      </h3>
+    </div>
+    <p class="mt-4 text-base mx-auto text-center sm:mt-5 lg:mt-7 lg:text-base max-w-2xl">
+      In this post, we&#39;ll dive into Google&#39;s Secret Manager service, walk through the setup steps, and explore some Go code to interact with the API.
+    </p>
+
+    <div class="md:flex text-center max-w-[600px] mx-auto border-t pt-6 mt-6 align-center justify-between">
+      <div>
+        <div class="text-lg text-[#1D65A6] font-bold mb-3 ">
+          Written by:</div>
+        <div class="flex items-center mt-4 mb-6  ">
+          <img src="img/team/rebecca-bilbro.png" alt="" class="border-4 border-white rounded-full h-11 drop-shadow-lg"><span
+            class="ml-3">Rebecca Bilbro</span>
+        </div>
+      </div>
+      <div class="sm:ml-10 sm:mt-0 mt-12 ">
+        <div class="text-lg text-[#1D65A6] font-bold mb-3">Share this post:</div>
+        <ul class="grid grid-cols-3 gap-6 mt-4">
+          <li><a onClick="shareByEmail()" class="flex items-center"><img src="img/email.png" alt=""
+                class="p-3 bg-white rounded-lg mr-3"></a></li>
+
+          <li><a onClick="shareOnTwitterWithTitle()" class="flex items-center"><img src="img/twitter.png" alt=""
+                class="p-3 bg-white rounded-lg mr-4"></a></li>
+          <li><a onClick="shareOnLinkedIn()" class="flex items-center"><img src="img/linkedin.png" alt=""
+                class="p-3 bg-white rounded-lg mr-3"></a></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="flex justify-between mt-12 sm:mt-24 items-center">
+      <h2 class="font-bold text-2xl sm:text-4xl flex">
+        <span>
+          <b class="text-[#1D65A6]"> Recent </b>
+            Rotations 
+
+        </span>
+        <img src="img/butterfly.png" alt="butterfly" class="ml-4 h-6 sm:h-8 relative top-1">
+      </h2>
+      <div>
+        <a href="/blog" class="flex text-base sm:text-lg items-center font-bold text-[#1D65A6]"><span>View all</span>
+          <img src="img/arr-right.png" alt="" class="h-4 ml-2"></a>
+      </div>
+    </div>
+    <div>
+      <div class="sm:grid grid-cols-3 gap-8 sm:mt-16">
+        
+        <div class="mt-6 ">
+          <div class="article ">
+    <a class="block" href="https://rotational.io/blog/webassembly-the-future-of-computing/">
+        <img src="https://rotational.io/img/blog/rocket.jpeg" alt="" class="rounded-t-xl" style="height:212px; width:100%"></a>
+    <div class="bg-[#ECF6FF] rounded-b-xl ">
+
+        <div class="px-6 pt-4">
+            <h4 class="text-base font-bold text-[#1D65A6]">WASM</h4>
+            <h3 class="text-xl font-extrabold mt-3 "><a class="block h-24" href="https://rotational.io/blog/webassembly-the-future-of-computing/">Why WebAssembly Is the Future of Computing</a>
+            </h3>
+            <div class='art-s'>
+                <p class="mt-3 text-base font-extralight"><!-- raw HTML omitted -->
+<p>If you talk about WebAssembly (WASM), you just may spark debate about whether it is really the next best thing in web development or the second coming of Java applets. In this post, we&rsquo;ll dive into WASM, how it is currently …</p></!--></p>
+
+            </div>
+
+        </div>
+
+        <div class="flex justify-between items-center px-6 py-3 border-t mt-6">
+            <div class="flex items-center">
+                <img src="img/team/danielle-maxwell.png" alt="" class="rounded-full h-10 w-10">
+                <span class="ml-4 font-extralight">Danielle Maxwell</span>
+            </div>
+            <div class="font-extralight">
+                Sep 27, 2022
+            </div>
+        </div>
+    </div>
+</div>
+        </div>
+        
+        <div class="mt-6 ">
+          <div class="article ">
+    <a class="block" href="https://rotational.io/blog/eventing-platforms/">
+        <img src="https://rotational.io/img/blog/herd.jpg" alt="" class="rounded-t-xl" style="height:212px; width:100%"></a>
+    <div class="bg-[#ECF6FF] rounded-b-xl ">
+
+        <div class="px-6 pt-4">
+            <h4 class="text-base font-bold text-[#1D65A6]">Microservices, Eventing</h4>
+            <h3 class="text-xl font-extrabold mt-3 "><a class="block h-24" href="https://rotational.io/blog/eventing-platforms/">The Eventing Platform Landscape</a>
+            </h3>
+            <div class='art-s'>
+                <p class="mt-3 text-base font-extralight"><p>Kafka and PubSub and Kinesis, oh my! Which eventing platform is best? In this post we&rsquo;ll explore the three primary categories of eventing systems and understand their similarities, differences, and key use cases.</p></p>
+
+            </div>
+
+        </div>
+
+        <div class="flex justify-between items-center px-6 py-3 border-t mt-6">
+            <div class="flex items-center">
+                <img src="img/team/rebecca-bilbro.png" alt="" class="rounded-full h-10 w-10">
+                <span class="ml-4 font-extralight">Rebecca Bilbro</span>
+            </div>
+            <div class="font-extralight">
+                Sep 10, 2022
+            </div>
+        </div>
+    </div>
+</div>
+        </div>
+        
+        <div class="mt-6 ">
+          <div class="article ">
+    <a class="block" href="https://rotational.io/blog/ranges-of-integer-data-types/">
+        <img src="https://rotational.io/img/blog/num215.jpg" alt="" class="rounded-t-xl" style="height:212px; width:100%"></a>
+    <div class="bg-[#ECF6FF] rounded-b-xl ">
+
+        <div class="px-6 pt-4">
+            <h4 class="text-base font-bold text-[#1D65A6]">Golang, Programming</h4>
+            <h3 class="text-xl font-extrabold mt-3 "><a class="block h-24" href="https://rotational.io/blog/ranges-of-integer-data-types/">Ranges of Integer Data Types</a>
+            </h3>
+            <div class='art-s'>
+                <p class="mt-3 text-base font-extralight"><p>The data type choices we make when building data systems or metrics is critically important: as our systems run for long periods of time it can be easy to overflow the integers that we use (Y2K bug anyone?). As a result, I find myself …</p></p>
+
+            </div>
+
+        </div>
+
+        <div class="flex justify-between items-center px-6 py-3 border-t mt-6">
+            <div class="flex items-center">
+                <img src="img/team/benjamin-bengfort.png" alt="" class="rounded-full h-10 w-10">
+                <span class="ml-4 font-extralight">Benjamin Bengfort</span>
+            </div>
+            <div class="font-extralight">
+                Sep 7, 2022
+            </div>
+        </div>
+    </div>
+</div>
+        </div>
+        
+
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="bg-[#1D65A6] max-w-[800px] mx-auto mt-20 py-14 px-12 md:px-16 text-white md:rounded-lg">
+
+  <form action="blog" method="post" id="newsletterForm">
+    <h6 class="font-bold text-center">Enter Your Email To Subscribe</h6>
+    <input type="text" name="email" required placeholder=""
+      class="w-full px-4 py-2.5 rounded-lg mt-6 text-black" style="color:black">
+    <div class="flex mt-6 items-start">
+      <input type="checkbox" required class="w-6 h-6 block border-0 ">
+      <span class="ml-2 text-left">I want to receive the monthly newsletter and other updates from Rotational. You agree to our Privacy Policy. You may unsubscribe at any time.*</span>
+    </div>
+    <div class="bg-teal-100 border-t-4 border-teal-500 mt-10 rounded-b text-teal-900 px-4 py-3 shadow-md hidden "
+      id='newsletter-alert' role="alert">
+      <div class="flex">
+
+        <div>
+          <p class="text-sm">Thank you for your interest!</p>
+        </div>
+      </div>
+    </div>
+    <div class="flex justify-center">
+
+      <button type="submit" class="bg-[#192E5B] px-14 py-4 mt-10 rounded-lg text-sm text-white uppercase md:text-base">
+        Submit</button>
+    </div>
+  </form>
+</div>
+
+    </main>
+
+    <footer class=" bg-hero-footer bg-cover ">
+    <div class="relative  pt-[350px] font-extralight">
+
+        <div class="relative max-w-7xl  mx-auto px-4 sm:px-6 ">
+            <div class="lg:grid grid-cols-3 text-white">
+                <div>
+                    <a href="/"><img src="img/logo-white.png" alt="Rotational Labs logo"
+                            class="mt-10 sm:mt-0 mx-auto sm:pb-5 "></a>
+                </div>
+                <div class="mx-auto mt-5 sm:mt-0 max-w-lg pb-8 xl:mr-5">
+                    
+
+                    
+                    
+                    <h5 class="text-center lg:text-start font-bold text-lg">Contact Details</h5>
+                    <p class="mt-3 ml-10 sm:ml-0 text-lg">
+                        We love to talk through complex scaling and performance issues. What’s slowing you down? Drop us a line for a friendly chat. We’ll make it worth your while.
+                    </p>
+                    
+                    
+                </div>
+                <div class="ml-10 xl:ml-5 sm:mt-0 mt-8">
+                    <ul class="sm:grid grid-cols-2 lg:flex flex-col gap-0 mr-5 xl:grid  gap-x-32 gap-y-4">
+                        
+                        <li class="pb-8">
+                            <a href="mailto:info@rotational.io" class="flex items-center" target="_blank">
+                                <img src="img/email.png" alt="" class="p-4 bg-white rounded-lg mr-4">
+                                <span>info@rotational.io</span>
+                            </a>
+                        </li>
+                        
+                        <li class="pb-8">
+                            <a href="https://github.com/rotationalio" class="flex items-center" target="_blank">
+                                <img src="img/github.png" alt="" class="p-4 bg-white rounded-lg mr-4">
+                                <span>rotationalio</span>
+                            </a>
+                        </li>
+                        
+                        <li class="pb-8">
+                            <a href="https://twitter.com/rotationalio" class="flex items-center" target="_blank">
+                                <img src="img/twitter.png" alt="" class="p-4 bg-white rounded-lg mr-4">
+                                <span>@rotationalio</span>
+                            </a>
+                        </li>
+                        
+                        <li class="pb-8">
+                            <a href="https://www.linkedin.com/company/rotational" class="flex items-center" target="_blank">
+                                <img src="img/linkedin.png" alt="" class="p-4 bg-white rounded-lg mr-4">
+                                <span>Rotational</span>
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+            <div class="sm:flex justify-between border-t py-6 text-white mt-12 sm:mt-32">
+                <p>Copyright © 2022 Rotational Labs, LLC · All Rights Reserved</p>
+                <ul class="sm:mt-0 mt-4 flex">
+                    <li class="border-r pr-4 mr-4 "><a href="/privacy/">Privacy Policy</a></li>
+                    <li><a href="/terms/">Terms of Use</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</footer>
+    <script src="https://rotational.io/js/app.js"></script>
+
+  </body>
+
+</html>
