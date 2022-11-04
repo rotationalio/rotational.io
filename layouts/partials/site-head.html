@@ -44,15 +44,10 @@
   gtag('config', '{{ .Site.Params.googleAnalytics }}');
 </script>
 {{ end }}
-<!-- 
-<script src="https://www.google.com/recaptcha/api.js" async defer></script> -->
-<!-- <script type="text/javascript">
-  var onloadCallback = function () {
-    grecaptcha.enterprise.render('g-recaptcha', {
-      'sitekey': '{{ .Site.Params.g_recaptcha_key }}',
-    });
-  };
-</script> -->
+{{ "<!-- Font Awesome -->" | safeHTML }}
+<script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+
+
 <script src="https://www.google.com/recaptcha/enterprise.js?render={{.Site.Params.g_recaptcha_key}}"></script>
 <script>
   grecaptcha.enterprise.ready(function() {

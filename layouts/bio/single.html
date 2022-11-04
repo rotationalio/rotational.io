@@ -28,8 +28,9 @@
             <ul class="mt-4 flex w-full gap-8 md:mt-6">
                 {{ range .Params.social }}
                 <li><a href="{{ .link | absURL }}" target="_blank"
-                        class="flex w-16 h-16 items-center  rounded-lg bg-sky-900 text-white"><img
-                            src="img/{{.name}}.png" alt="" class="p-5 rounded-lg mr-5"> </a></li>
+                        class="flex w-16 h-16 items-center  rounded-lg bg-sky-900 text-white">
+                        <i class="fab {{ .icon }} text-2xl mx-auto"></i>
+                    </a></li>
                 {{ end }}
 
             </ul>
