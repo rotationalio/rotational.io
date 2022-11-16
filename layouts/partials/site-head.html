@@ -34,14 +34,14 @@
 {{"<!-- Main Stylesheet -->"|safeHTML}}
 <link rel="stylesheet" href="{{ `output.css` | absURL }}" media="screen">
 
-{{ if .Site.Params.googleAnalytics }}
+{{ if .Site.Params.HUGO_PARAMS_GOOGLE_ANALYTICS_ID  }}
 {{ "<!-- Google Analytics -->" | safeHTML }}
-<script async src="https://www.googletagmanager.com/gtag/js?id={{ .Site.Params.googleAnalytics }}"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ .Site.Params.HUGO_PARAMS_GOOGLE_ANALYTICS_ID }}"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', '{{ .Site.Params.googleAnalytics }}');
+  gtag('config', '{{ .Site.Params.HUGO_PARAMS_GOOGLE_ANALYTICS_ID}}');
 </script>
 {{ end }}
 <!-- 
@@ -49,14 +49,14 @@
 <!-- <script type="text/javascript">
   var onloadCallback = function () {
     grecaptcha.enterprise.render('g-recaptcha', {
-      'sitekey': '{{ .Site.Params.g_recaptcha_key }}',
+      'sitekey': '{{ .Site.Params.HUGO_PARAMS_GOOGLE_RECAPTCHA_KEY }}',
     });
   };
 </script> -->
-<script src="https://www.google.com/recaptcha/enterprise.js?render={{.Site.Params.g_recaptcha_key}}"></script>
+<script src="https://www.google.com/recaptcha/enterprise.js?render={{.Site.Params.HUGO_PARAMS_GOOGLE_RECAPTCHA_KEY}}"></script>
 <script>
   grecaptcha.enterprise.ready(function() {
-    grecaptcha.enterprise.execute('{{.Site.Params.g_recaptcha_key}}', {action: 'homepage'}).then(function(token) {
+    grecaptcha.enterprise.execute('{{.Site.Params.HUGO_PARAMS_GOOGLE_RECAPTCHA_KEY}}', {action: 'homepage'}).then(function(token) {
       // Add your logic to submit to your backend server here.
     });
   });
