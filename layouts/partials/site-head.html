@@ -25,7 +25,7 @@
 {{ range site.Params.plugins.css }}
 <link rel="stylesheet" href="{{ .link | absURL }}">
 {{ end }}
-  
+
 {{ "<!-- fonts -->" | safeHTML }}
 <link href="{{.Site.Params.googleFonts}}" rel="stylesheet">
 
@@ -44,23 +44,11 @@
   gtag('config', '{{ .Site.Params.HUGO_PARAMS_GOOGLE_ANALYTICS_ID}}');
 </script>
 {{ end }}
-<!-- 
-<script src="https://www.google.com/recaptcha/api.js" async defer></script> -->
-<!-- <script type="text/javascript">
-  var onloadCallback = function () {
-    grecaptcha.enterprise.render('g-recaptcha', {
-      'sitekey': '{{ .Site.Params.HUGO_PARAMS_GOOGLE_RECAPTCHA_KEY }}',
-    });
-  };
-</script> -->
-<script src="https://www.google.com/recaptcha/enterprise.js?render={{.Site.Params.HUGO_PARAMS_GOOGLE_RECAPTCHA_KEY}}"></script>
+<script src="https://www.google.com/recaptcha/enterprise.js?render={{ .Site.Params.recaptchaKey }}"></script>
 <script>
   grecaptcha.enterprise.ready(function() {
-    grecaptcha.enterprise.execute('{{.Site.Params.HUGO_PARAMS_GOOGLE_RECAPTCHA_KEY}}', {action: 'homepage'}).then(function(token) {
+    grecaptcha.enterprise.execute('{{ .Site.Params.recaptchaKey }}', {action: 'homepage'}).then(function(token) {
       // Add your logic to submit to your backend server here.
     });
   });
-
-
 </script>
-
