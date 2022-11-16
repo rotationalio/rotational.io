@@ -19,6 +19,9 @@ jobs:
           hugo-version: "0.104.3"
 
       - name: Build Hugo Site
+        env:
+          HUGO_PARAMS_GOOGLEANALYTICS: ${{ secrets.GOOGLE_ANALYTICS_ID }}
+          HUGO_PARAMS_RECAPTCHAKEY: ${{ secrets.RECAPTCHA_KEY }}
         run: hugo --minify
 
       - name: Deploy GitHub Pages
