@@ -14,8 +14,8 @@ summaryLength = "1" # Length of excerpt for post descriptions
 logo = "images/assets/logos/logo.png"
 description = "We see planet-wide possibilities."
 author = "Rotational Labs, LLC"
-googleAnalytics = "G-2FKX6CWJHW" # Google Analytics ID
-g_recaptcha_key="6Ld5O3kiAAAAAJU0z0h81X1RxEMHyoROe6KWe_vk" # Google reCAPTCHA key
+googleAnalytics = "" # Google Analytics ID (set $HUGO_PARAMS_GOOGLEANALYTICS)
+recaptchaKey = "" # Google reCAPTCHA key (set $HUGO_PARAMS_RECAPTCHAKEY)
 
 # google fonts
 googleFonts = "https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,600;1,700;1,800&display=swap"
