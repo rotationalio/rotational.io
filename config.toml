@@ -12,7 +12,7 @@ summaryLength = "1" # Length of excerpt for post descriptions
 [params]
 # Metadata
 logo = "images/assets/logos/logo.png"
-description = "Navigating data through time and space."
+description = "Navigating data across time and space."
 author = "Rotational Labs, LLC"
 googleAnalytics = "" # Google Analytics ID (set $HUGO_PARAMS_GOOGLEANALYTICS)
 recaptchaKey = "" # Google reCAPTCHA key (set $HUGO_PARAMS_RECAPTCHAKEY)
