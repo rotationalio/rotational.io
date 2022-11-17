@@ -2,6 +2,7 @@
 date: 2022-10-14T11:44:56-05:00
 title: "Terms and Conditions"
 headertext: "Terms and Conditions"
+image: "img/horizontal-global-data-flow.png"
 ---
 
 **Last updated: October 14, 2022**

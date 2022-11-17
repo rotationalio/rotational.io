@@ -2,6 +2,7 @@
 date: 2022-10-14T11:44:56-05:00
 title: "Privacy Policy"
 headertext: "Privacy Policy"
+image: "img/horizontal-global-data-flow.png"
 ---
 
 This Privacy Policy governs the manner in which Rotational Labs, LLC collects, uses, maintains and discloses information collected from users (each, a "User") of the https://rotational.io website ("Site"). This privacy policy applies to the Site and all products and services offered by Rotational Labs, LLC at related websites.
