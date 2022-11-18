@@ -109,6 +109,8 @@ function shareByEmail() {
 
 // check newsletter form submission
 const newsletterForm = document.getElementById('newsletterForm');
+
+if(newsletterForm != null) {
 newsletterForm.addEventListener('submit', (event) => {
   event.preventDefault();
   console.log('newsletter form submitted');
@@ -144,3 +146,4 @@ newsletterForm.addEventListener('submit', (event) => {
       console.error('Error:', error);
     });
 });
+}
