@@ -16,7 +16,7 @@ In this post we'll explore the question, how does a distributed system *actually
 
 <!--more-->
 
-> "Reports of my death have been greatly exaggerated." - Samuel L. Clemens (aka Mark Twain)
+> Reports of my death have been greatly exaggerated. - Samuel L. Clemens (aka Mark Twain)
 
 At Rotational, we are avid users of Twitter. Like many, we use the service to engage with the communities we care about, stay informed, and learn from others. As such, we have been watching Elon Musk's "Twitter Drama" with concern and interest. One curious sentiment we've noticed is the expectation from many users that Twitter will fail overnight and suddenly disappear due to mismanagement.
 
