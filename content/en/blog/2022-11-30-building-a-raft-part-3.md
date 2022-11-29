@@ -7,7 +7,7 @@ image: img/blog/2022-11-30-building-a-raft-part-3/otterRaftThree.png
 author: "Daniel Sollis"
 category: "Distributed Systems"
 profile: img/team/daniel-sollis.png
-description: "Add Description Here"
+description: "In the third and final part of our series on the Raft consensus algorithm we'll wrap up by going over leader election."
 ---
 
 There's One final thing we need to cover about the **AppendEntries** RPC that will be very important for leader election.
@@ -32,4 +32,6 @@ Just like in **AppendEntries**, we can assume that if a candidate requesting a v
 Each server in a **Raft** cluster keeps track of who it has voted for (until the next successful heartbeat) with a votedFor field. If that field is null, then it hasn’t voted for anyone in the current term and is free to vote for the candidate that sent the request.
 
 ## Wrapping up
-And that’s about it for the **Raft** algorithm! If you want to take a crack at implementing the algorithm I would encourage you to read the [original whitepaper by Diego Ongaro and John Ousterhout](https://raft.github.io/raft.pdf), it will give you a deeper dive into the algorithm and provide some explanations for more advanced topics in **Raft** like configurations changes and snapshots.
+And that’s about it for the **Raft** algorithm! If you want to take a crack at implementing the algorithm I would encourage you to read the [original whitepaper](https://raft.github.io/raft.pdf) by Diego Ongaro and John Ousterhout, it will give you a deeper dive into the algorithm and provide some explanations for more advanced topics in **Raft** like configurations changes and snapshots. 
+
+Writing you're own implementation of **Raft** is definitely a difficult task, but if you're at all interested in distributed systems it's a fantastic way to get started down the path of learning about the field. For further reference you can check out [Rotational Labs' implementation of Raft.](https://github.com/rotationalio/Raft), and if you missed the first two parts of our **Raft** series you can find part 1 [here](https://rotational.io/blog/building-a-raft-part-1/) and part two [here](https://rotational.io/blog/building-a-raft-part-2/).

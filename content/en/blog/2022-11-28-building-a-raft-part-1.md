@@ -2,12 +2,12 @@
 title: "Building a Raft (Part 1)"
 slug: "building-a-raft-part-1"
 date: "2022-11-28T09:30:05-08:00"
-draft: true
+draft: false
 image: img/blog/2022-11-28-building-a-raft-part-1/otterRaftOne.png
 author: "Daniel Sollis"
 category: "Distributed Systems"
 profile: img/team/daniel-sollis.png
-description: "Add Description Here"
+description: "In the first part of our series on the Raft consensus algorithm we'll give an overview and introduction of the algorithm."
 ---
 
 You may have recently heard about the growing field of distributed systems, or maybe you already know about it and are just curious. Distributed systems have become a more and more central part of software engineering each year as the focus of modern applications becomes global. 

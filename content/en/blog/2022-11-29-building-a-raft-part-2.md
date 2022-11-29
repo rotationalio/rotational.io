@@ -7,11 +7,12 @@ image: img/blog/2022-11-29-building-a-raft-part-2/otterRaftTwo.png
 author: "Daniel Sollis"
 category: "Distributed Systems"
 profile: img/team/daniel-sollis.png
-description: "Add Description Here"
+description: "In the second part of our series on the Raft consensus algorithm we'll be covering log replication."
 ---
 
-http://localhost:1313/blog/building-a-raft-part-1/
+In the second part of our series on the Raft consensus algorithm we'll be going over what is the beating heart and core of the algorithm: log replication, handled by the AppendEntries RPC
 
+<!--more-->
 ## Log Replication
 **Raft** is mainly composed of two Remote Procedure Calls (RPCs), one handling log replication across servers and the other handling leader election. The RPC that handles log replication, AppendEntries, is the beating heart of the **Raft** algorithm. The **Raft** paper delineates five clear steps for AppendEntries, and it is important to understand each one to understand **Raft**, So we should spend some time going over each one and its purpose.
 
@@ -41,3 +42,4 @@ Following up from the previous step, the leader forces followers to duplicate it
 
 #### 5. If leaderCommit > commitIndex, set commitIndex min(leaderCommit , index of the last new entry)
 Finally, if the index of the highest log entry known by the leader to be committed (leaderCommit) is greater than the highest log entry known by the follower to be committed (commitIndex), than we update the follower with a new commitIndex that is either in line with the leader’s commitIndex, bringing the follower into sync with the leader, or the length of the log, if that is smaller, since in that case we know we don’t yet have all log entries that have been committed.
+
