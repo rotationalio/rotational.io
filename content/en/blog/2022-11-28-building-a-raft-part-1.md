@@ -3,7 +3,7 @@ title: "Building a Raft (Part 1)"
 slug: "building-a-raft-part-1"
 date: "2022-11-28T09:30:05-08:00"
 draft: true
-image: img/blog/2022-11-28-building-a-raft/otterRaft.png
+image: img/blog/2022-11-28-building-a-raft-part-1/otterRaftOne.png
 author: "Daniel Sollis"
 category: "Distributed Systems"
 profile: img/team/daniel-sollis.png
@@ -40,6 +40,6 @@ Followers are in charge of two things, responding to the leader’s requests (su
 ### In Terms of Time
 Time in **Raft** is divided into what it calls Terms. Terms in **Raft** are equivalent to each leader's reign (); if an election is triggered and a new leader is decided on, a new term begins. Each server in a **Raft** cluster is responsible for keeping track of the current term. Terms are used in **Raft** to allow servers to detect obsolete information and ensure that there is only one leader at a given time.
 
-!["Terms in Raft"](/img/blog/2022-11-28-building-a-raft/raftTerms.png)
+!["Terms in Raft"](/img/blog/2022-11-28-building-a-raft-part-1/raftTerms.png)
 
 It should be noted that leaders also keep track of which log entries are considered committed. An entry is committed if the leader has received confirmation that it has been replicated to a majority of servers. Once an entry is committed **Raft** guarantees that that entry is durable and will eventually be replicated to all other servers.
