@@ -10,7 +10,7 @@ profile: img/team/daniel-sollis.png
 description: "In the second part of our series on the Raft consensus algorithm we'll be covering log replication."
 ---
 
-In the second part of our series on the Raft consensus algorithm we'll be going over what is the beating heart and core of the algorithm: log replication, handled by the AppendEntries RPC
+In the second part of our series on the Raft consensus algorithm we'll be going over what turns out to be the beating heart and core of the algorithm: log replication, handled by the AppendEntries RPC.
 
 <!--more-->
 ## Log Replication
@@ -40,6 +40,8 @@ To fix this, the leader forces followers to delete inconsistent entries and…
 #### 4. Append any new entries not already in the log.
 Following up from the previous step, the leader forces followers to duplicate its own log when it finds inconsistencies in the follower’s log.
 
-#### 5. If leaderCommit > commitIndex, set commitIndex min(leaderCommit , index of the last new entry)
-Finally, if the index of the highest log entry known by the leader to be committed (leaderCommit) is greater than the highest log entry known by the follower to be committed (commitIndex), than we update the follower with a new commitIndex that is either in line with the leader’s commitIndex, bringing the follower into sync with the leader, or the length of the log, if that is smaller, since in that case we know we don’t yet have all log entries that have been committed.
+#### 5. If leaderCommit > commitIndex, set commitIndex min(leaderCommit, index of the last new entry)
+Finally, if the index of the highest log entry known by the leader to be committed (leaderCommit) is greater than the highest log entry known by the follower to be committed (commitIndex), then we update the follower with a new commitIndex that is either in line with the leader’s commitIndex, bringing the follower into sync with the leader, or the length of the log, if that is smaller, since in that case we know we don’t yet have all log entries that have been committed.
 
+#### Next Time...
+We're now halfway through **Raft's** two RPCs and two thirds of the way through our series. In the third and final installment we'll finally be taking a look at how **Raft** handles leader. If you missed the first part of our **Raft** series you can find part 1 [here](https://rotational.io/blog/building-a-raft-part-1/).
