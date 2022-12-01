@@ -79,7 +79,7 @@ Package used: [MessagePack encoding for Golang](github.com/vmihailenco/msgpack)
 
 Package used: [Protobuf](https://github.com/protocolbuffers/protobuf)
 
-One thing we noticed is that for really small data, it's probably not worth it to compress it with gzip. Another thing to note is that for the medium and large JSON, using gzip to compress the data helped significantly reduce the size. The binary serialization formats all performed better than JSON. 
+One thing we noticed is that for really small data, it's probably not worth it to compress with gzip. Another thing to note is that for the medium and large JSON, using gzip to compress the data helped significantly reduce the size. The binary serialization formats all performed better than JSON. 
 
 Although MessagePack is quick, it became apparent that as the amount of data increased its size was on par with or worse than gzipped JSON and BSON. We did use [TinyLib MessagePack Code Generator](https://github.com/tinylib/msgp) to test a generated version of MessagePack, but saw no significant difference in the results. However, it was nice to have the test files automatically created. 
 
@@ -87,7 +87,7 @@ Since size matters, just as much as speed, we found that protobufs are the best 
 
 As Protocol Buffers and the Go language were developed by Google this likely played a big role in why protobufs performed the best during our tests. Test results will vary depending on the programming language used. In fact, if using a higher-level language, JSON may be the better choice. 
 
-We'd like to thank Alec Thomas for creating a [GitHub repo](https://github.com/alecthomas/go_serialization_benchmarks) that made it easier for us to look into different Go packages for this post. If you're interested in learning more about other serialization formats that may be used with Go, not mentioned in this post, we highly recommend checking out their repo.
+We'd like to thank Alec Thomas for creating a [GitHub repo](https://github.com/alecthomas/go_serialization_benchmarks) that made it easier for us to look into different Go packages for this post. If you're interested in learning more about other serialization formats that may be used with Go, we highly recommend checking out their repo.
 
 #### Resources
 [BSON vs JSON on Stack Overflow](https://stackoverflow.com/questions/12438280/what-is-bson-and-exactly-how-is-it-different-from-json)
