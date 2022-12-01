@@ -1,12 +1,12 @@
 ---
-title: "Go Serialization Formats"
+title: "Choosing Serialization Formats in Go"
 slug: "go-serialization-formats"
 date: "2022-11-30T18:12:08-05:00"
-draft: true
-image: 
+draft: false
+image: img/blog/serialization.png
 author: Daniel S. & Danielle M.
 category: "Serialization"
-photo_credit: "Add Photo Credits Here"
+photo_credit: "Photo by Rickie-Tom Schünemann on Unsplash"
 description: "In this post we’ll go over a few important serialization formats along with their pros and cons to help you determine the best choice for your situation."
 profile: img/butterfly.png
 ---
@@ -67,7 +67,7 @@ Package used: [Golang driver for MongoDB](https://github.com/mongodb/mongo-go-dr
 | Medium msgpack | 356 B | 11.25µs | Medium gzipped msgpack | 275 B | 304.708µs |
 | Large msgpack | 819 B | 25µs | Large gzipped msgpack | 501 B | 107.042µs |
 
-Package used: [MessagePack encoding for Golang](github.com/vmihailenco/msgpack/v5)
+Package used: [MessagePack encoding for Golang](github.com/vmihailenco/msgpack)
 
 ## Protocol Buffer Results
 
@@ -88,3 +88,12 @@ Since size matters, just as much as speed, we found that protobufs are the best 
 As Protocol Buffers and the Go language were developed by Google this likely played a big role in why protobufs performed the best during our tests. Test results will vary depending on the programming language used. In fact, if using a higher-level language, JSON may be the better choice. 
 
 We'd like to thank Alec Thomas for creating a [GitHub repo](https://github.com/alecthomas/go_serialization_benchmarks) that made it easier for us to look into different Go packages for this post. If you're interested in learning more about other serialization formats that may be used with Go, not mentioned in this post, we highly recommend checking out their repo.
+
+#### Resources
+[BSON vs JSON on Stack Overflow](https://stackoverflow.com/questions/12438280/what-is-bson-and-exactly-how-is-it-different-from-json)
+
+[BSON vs MessagePack Stack Overflow](https://stackoverflow.com/questions/6355497/performant-entity-serialization-bson-vs-messagepack-vs-json)
+
+[MessagePack Wikipedia page](https://en.wikipedia.org/wiki/MessagePack)
+
+[JSON MDN Article](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON) 
