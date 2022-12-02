@@ -81,7 +81,7 @@ message Sleigh {
 
 Because everyone loves benchmarks, we decided to put each of the serialization formats mentioned above to the test using Golang.
 
-We created three different data structs: small (5 items), medium (20 items), and large (45 items). We were sure to use a range of data types (strings, integers, booleans, and time), but since time can be a little tricky with protocol buffers, we used strings to represent time in this experiment. Finally, we compared JSON, BSON, and MessagePack both in their raw and gzipped form.
+We created three different data structs: small (5 items), medium (20 items), and large (45 items). We were sure to use a range of data types (strings, integers, booleans, and time). For the protocol buffers, we used strings to represent time in this experiment instead of using [Timestamp](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#google.protobuf.Timestamp). Finally, we compared JSON, BSON, and MessagePack both in their raw and gzipped form.
 
 Now, let's take a look at the results!
 
