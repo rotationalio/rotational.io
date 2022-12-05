@@ -1,7 +1,7 @@
 ---
 title: "Choosing Serialization Formats in Go"
 slug: "go-serialization-formats"
-date: "2022-12-05T15:30:58-05:00"
+date: "2022-12-05T10:27:11-05:00"
 draft: false
 image: img/blog/serialization.png
 author: Daniel Sollis & Danielle Maxwell
