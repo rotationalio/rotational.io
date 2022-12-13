@@ -140,11 +140,11 @@ team:
       designation : Junior Distributed Systems Engineer
       content : WebAssembly Specialist
       social :
-        - icon : "ti-github" # themify icon pack : https://themify.me/themify-icons
-          link : "https://github.com/daniellemaxwell"
         - icon : "ti-linkedin" # themify icon pack : https://themify.me/themify-icons
           link : "https://www.linkedin.com/in/daniellemaxwell"
-      bioLink: ''
+        - icon : "ti-github" # themify icon pack : https://themify.me/themify-icons
+          link : "https://github.com/daniellemaxwell"
+      bioLink: 'bio/danielle-maxwell'
     # team member loop
     - name : Pete Keleher
       image : img/team/pete-keleher.png
