@@ -82,7 +82,7 @@ team:
           link : "https://www.linkedin.com/in/daniel-sollis-67481114a/"
         - icon : "ti-github" # themify icon pack : https://themify.me/themify-icons
           link : "https://github.com/DanielSollis"
-      bioLink: ''
+      bioLink: 'bio/daniel-sollis'
     # team member loop
     - name : Karen Belita
       image : img/team/karen-belita.png
