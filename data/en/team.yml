@@ -56,7 +56,7 @@ team:
           link : "https://twitter.com/PatrickDeziel"
         - icon : "ti-github" # themify icon pack : https://themify.me/themify-icons
           link : "https://github.com/pdeziel"
-      bioLink: ''
+      bioLink: 'bio/patrick-deziel'
     # team member loop
     - name : Elysee Bleu
       image : img/team/elysee-bleu.png
@@ -71,7 +71,7 @@ team:
       image : img/team/beci-lambrecht.png
       designation : Project Management Support
       content : Certified PMP & Agile Specialist
-      bioLink: ''
+      bioLink: 'bio/beci-lambrecht'
     # team member loop
     - name : Daniel Sollis
       image : img/team/daniel-sollis.png
