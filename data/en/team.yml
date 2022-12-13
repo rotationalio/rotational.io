@@ -65,7 +65,7 @@ team:
       social :
         - icon : "ti-github" # themify icon pack : https://themify.me/themify-icons
           link : "https://github.com/elysee15"
-      bioLink: ''
+      bioLink: 'bio/elysee-bleu'
     # team member loop
     - name : Beci Lambrecht
       image : img/team/beci-lambrecht.png
