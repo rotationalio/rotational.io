@@ -124,7 +124,7 @@ team:
       social :
         - icon : "ti-github" # themify icon pack : https://themify.me/themify-icons
           link : "https://github.com/masskoder"
-      bioLink: ''
+      bioLink: 'bio/cletus-razakou'
     # team member loop
     - name : Natasha White
       image : img/team/natasha-white.png
