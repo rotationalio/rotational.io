@@ -93,7 +93,7 @@ team:
           link : "https://www.linkedin.com/in/karenbelita/"
         - icon : "ti-github" # themify icon pack : https://themify.me/themify-icons
           link : "https://github.com/kbelita"
-      bioLink: ''
+      bioLink: '/about'
     # team member loop
     - name : Nabiha Naqvie
       image : img/team/nabiha-naqvie.png
@@ -104,7 +104,7 @@ team:
           link : "https://www.linkedin.com/in/nabiha-naqvie-22765612a/"
         - icon : "ti-github" # themify icon pack : https://themify.me/themify-icons
           link : "https://github.com/nabihanaqvie"
-      bioLink: ''
+      bioLink: '/about'
     # team member loop
     - name : Tianshu Li
       image : img/team/tianshu-li.png
@@ -115,7 +115,7 @@ team:
           link : "https://www.linkedin.com/in/tianshu-li-5b5563b0/"
         - icon : "ti-github" # themify icon pack : https://themify.me/themify-icons
           link : "https://github.com/tl6kk"
-      bioLink: ''
+      bioLink: '/about'
     # team member loop
     - name : Cletus Razakou
       image : img/team/cletus-razakou.png
@@ -133,7 +133,7 @@ team:
       social :
         - icon : "ti-github" # themify icon pack : https://themify.me/themify-icons
           link : "https://github.com/nwhite222"
-      bioLink: ''
+      bioLink: '/about'
     # team member loop
     - name : Danielle Maxwell
       image : img/team/danielle-maxwell.png
@@ -153,7 +153,7 @@ team:
       social :
         - icon : "ti-linkedin" # themify icon pack : https://themify.me/themify-icons
           link : "https://www.linkedin.com/in/pete-keleher-a03639b"
-      bioLink: ''
+      bioLink: '/about'
     # team member loop
     - name : Prema Roman
       image : img/team/prema-roman.png
