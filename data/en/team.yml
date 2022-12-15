@@ -60,7 +60,7 @@ team:
     # team member loop
     - name : Elysee Bleu
       image : img/team/elysee-bleu.png
-      designation : Frontend Engineer
+      designation : Front-end Engineer
       content : React.js Specialist
       social :
         - icon : "ti-github" # themify icon pack : https://themify.me/themify-icons
@@ -119,7 +119,7 @@ team:
     # team member loop
     - name : Cletus Razakou
       image : img/team/cletus-razakou.png
-      designation : Senior Frontend Engineer
+      designation : Senior Front-end Engineer
       content : React.js Specialist
       social :
         - icon : "ti-github" # themify icon pack : https://themify.me/themify-icons
