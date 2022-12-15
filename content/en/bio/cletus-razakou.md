@@ -2,7 +2,7 @@
 name: "Cletus Razakou"
 slug: "cletus-razakou"
 profile: img/team/cletus-razakou.png
-designation : Senior Frontend Engineer
+designation : Senior Front-end Engineer
 field: React.JS Specialist
 social :
   - name : "linkedin"
@@ -14,5 +14,5 @@ social :
   - name : "github"
     link: 'https://github.com/masskoder'
     icon: 'fa-github'
-bio : "Cletus Razakou is a senior front-end engineer at Rotational Labs. He has more than a decade of experience in full-stack development, most often using typescript, ReactJS, Angular, Dart, C# and NodeJS. He also has experience in leading engineering teams building scalable products. Aside from work, he loves spending time with his daughter, reading, traveling to new places, and discovering new foods."
+bio : "Cletus Razakou is a Senior Front-end engineer at Rotational Labs. He has more than a decade of experience in full-stack development, most often using Typescript, ReactJS, Angular, Dart, C# and NodeJS. He also has experience in leading engineering teams building scalable products. Aside from work, he loves spending time with his daughter, reading, traveling to new places, and discovering new foods."
 ---
