@@ -2,7 +2,7 @@
 name: "Rebecca Bilbro, Ph.D"
 slug: "rebecca-bilbro"
 profile: img/team/rebecca-bilbro.png
-designation : Founder/CEO
+designation : Founder/CTO
 field: The Vision
 social :
   - name : "linkedin"
