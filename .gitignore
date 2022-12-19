@@ -6,6 +6,7 @@ Thumbs.db
 
 .dist
 .tmp
+.env
 
 .hugo_build.lock
 .sass-cache
