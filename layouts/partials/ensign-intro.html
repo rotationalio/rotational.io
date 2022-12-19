@@ -1,5 +1,4 @@
-<main class="container pt-8">
-    <section class="xl:grid grid-cols-2 gap-8">
+    <section class="pb-10 pt-8 xl:grid grid-cols-2 gap-8 bg-[#DED6C5]">
         <section>
             <h2 class="font-bold text-3xl leading-10 pb-5">Powering Real-time Apps & Analytics</h2>
             <p class="pb-5">The global real-time revolution is here.</p>
@@ -19,8 +18,60 @@
                 Designed as a “low ops / no ops” cloud-agnostic <span class="font-bold">managed service</span>, Ensign is ideal for developers and organizations building <span class="font-bold">event-driven microservices</span> to power rich consumer digital experiences, streaming machine learning models, and real-time business intelligence dashboards.
             </p>
         </section>
-        <section>
-           
+        <section class="bg-[#DED6C5]">
+            <form action="https://api.rotational.app/v1/notifications/signup" method="post">
+                <div class="w-[26rem] p-7 text-center mx-auto max-w-fit">
+                    <h3 class="pb-2 text-2xl font-bold">Request Alpha Access Today</h3>
+                    <p class="pb-3">We're opening up Ensign on a limited basis. No credit card required.</p>
+                </div>
+                <div>
+                    <label class="hidden">First Name </label>
+                    <input name="firstName" type="text" required="required" placeholder="First Name *" class="px-7 py-4 mt-6 mr-8 rounded-lg w-full basis-1/2"/>
+                </div>
+                <div>
+                    <label class="hidden">Last Name </label>
+                    <input name="lastName" type="text" required="required" placeholder="Last Name *" class="px-7 py-4 mt-6 mr-8 rounded-lg w-full basis-1/2"/>
+                </div>
+                <div>
+                    <label class="hidden">Email address </label>
+                    <input type="email" required="required" placeholder="Email address *" class="px-7 py-4 mt-6 mr-8 rounded-lg w-full basis-1/2"/>
+                </div>
+                <div>
+                    <label class="hidden">Title </label>
+                    <input name="title" type="title"placeholder="Title" class="px-7 py-4 mt-6 mr-8 rounded-lg w-full basis-1/2"/>
+                </div>
+                <div class="form-group pb-3">
+                    <label class="hidden">Organization </label>
+                    <input name="organization" type="text" placeholder="Organization" class="px-7 py-4 mt-6 mr-8 rounded-lg w-full basis-1/2" />
+                </div>
+                <div class="form-group pb-5 form-multiselect">
+                    <label class="hidden">Cloud Service Provider</label>
+                    <select name="cloudServiceProvider" class="px-7 py-4 mt-6 mr-8 rounded-lg w-full basis-1/2">
+                        <option value="Cloud service provider not selected">Cloud service provider</option>
+                        <option value="Amazon Web Services (AWS)">Amazon Web Services (AWS)</option>
+                        <option value="Microsoft Azure">Microsoft Azure</option>
+                        <option value="Google Cloud">Google Cloud</option>
+                        <option value="Alibaba Cloud">Alibaba Cloud</option>
+                        <option value="Digital Ocean">Digital Ocean</option>
+                        <option value="IBM Cloud">IBM Cloud</option>
+                        <option value="Oracle">Oracle</option>
+                        <option value="Salesforce">Salesforce</option>
+                        <option value="SAP">SAP</option>
+                        <option value="Rackspace Cloud">Rackspace Cloud</option>
+                        <option value="VMWare">VMWare</option>
+                        <option value="On premises">On premises</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <div class="pb-5">
+                    <label>
+                    <input type="checkbox" required="required" />
+                    <span>I agree to receive notifications about Ensign from Rotational Labs. Your contact information will not be shared with external parties. Unsubscribe any time.</span>
+                    </label>
+                </div>
+                <div>
+                    <button type="submit" class="bg-black">Request Access</button>
+                </div>
+            </form>
         </section>
     </section>
-</main>
