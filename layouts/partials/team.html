@@ -16,6 +16,7 @@
                 <ul class="sm:grid grid-cols-3 gap-8 sm:mt-16">
                     {{ range .team_member}}
                     {{"<!-- team member -->" | safeHTML}}
+                    <a href="{{.bioLink}}">
                         <li class="mt-6 sm:mt-0">
                             <img src="{{ .image | absURL }}" alt="{{ .name }}" class="rounded-t-xl covatar">
                             <div class="bg-[#ECF6FF] rounded-b-xl">
@@ -26,6 +27,7 @@
                                 </div>
                             </div>
                         </li>
+                        </a>
                     {{"<!-- end team member -->" | safeHTML}}
                     {{ end }}
                 </ul>
