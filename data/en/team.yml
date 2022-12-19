@@ -15,6 +15,7 @@ team:
           link : "https://twitter.com/bbengfort"
         - icon : "ti-github" # themify icon pack : https://themify.me/themify-icons
           link : "https://github.com/bbengfort"
+      bioLink : bio/benjamin-bengfort
 
     # team member loop
     - name : Rebecca Bilbro
@@ -28,6 +29,7 @@ team:
           link : "https://twitter.com/rebeccabilbro"
         - icon : "ti-github" # themify icon pack : https://themify.me/themify-icons
           link : "https://github.com/rebeccabilbro"
+      bioLink : bio/rebecca-bilbro
 
     # team member loop
     - name : Edwin Schmierer
@@ -41,7 +43,7 @@ team:
           link : "https://twitter.com/eschmierer"
         - icon : "ti-github" # themify icon pack : https://themify.me/themify-icons
           link : "https://github.com/eschmier"
-
+      bioLink : bio/edwin-schmierer
     # team member loop
     - name : Patrick Deziel
       image : img/team/patrick-deziel.png
@@ -54,22 +56,22 @@ team:
           link : "https://twitter.com/PatrickDeziel"
         - icon : "ti-github" # themify icon pack : https://themify.me/themify-icons
           link : "https://github.com/pdeziel"
-
+      bioLink: 'bio/patrick-deziel'
     # team member loop
     - name : Elysee Bleu
       image : img/team/elysee-bleu.png
-      designation : Frontend Engineer
+      designation : Front-end Engineer
       content : React.js Specialist
       social :
         - icon : "ti-github" # themify icon pack : https://themify.me/themify-icons
           link : "https://github.com/elysee15"
-
+      bioLink: 'bio/elysee-bleu'
     # team member loop
     - name : Beci Lambrecht
       image : img/team/beci-lambrecht.png
       designation : Project Management Support
       content : Certified PMP & Agile Specialist
-
+      bioLink: 'bio/beci-lambrecht'
     # team member loop
     - name : Daniel Sollis
       image : img/team/daniel-sollis.png
@@ -80,7 +82,7 @@ team:
           link : "https://www.linkedin.com/in/daniel-sollis-67481114a/"
         - icon : "ti-github" # themify icon pack : https://themify.me/themify-icons
           link : "https://github.com/DanielSollis"
-
+      bioLink: 'bio/daniel-sollis'
     # team member loop
     - name : Karen Belita
       image : img/team/karen-belita.png
@@ -91,7 +93,7 @@ team:
           link : "https://www.linkedin.com/in/karenbelita/"
         - icon : "ti-github" # themify icon pack : https://themify.me/themify-icons
           link : "https://github.com/kbelita"
-
+      bioLink: 'bio/karen-belita'
     # team member loop
     - name : Nabiha Naqvie
       image : img/team/nabiha-naqvie.png
@@ -102,7 +104,7 @@ team:
           link : "https://www.linkedin.com/in/nabiha-naqvie-22765612a/"
         - icon : "ti-github" # themify icon pack : https://themify.me/themify-icons
           link : "https://github.com/nabihanaqvie"
-
+      bioLink: 'bio/nabiha-naqvie'
     # team member loop
     - name : Tianshu Li
       image : img/team/tianshu-li.png
@@ -113,16 +115,16 @@ team:
           link : "https://www.linkedin.com/in/tianshu-li-5b5563b0/"
         - icon : "ti-github" # themify icon pack : https://themify.me/themify-icons
           link : "https://github.com/tl6kk"
-
+      bioLink: 'bio/tianshu-li'
     # team member loop
     - name : Cletus Razakou
       image : img/team/cletus-razakou.png
-      designation : Senior Frontend Engineer
+      designation : Senior Front-end Engineer
       content : React.js Specialist
       social :
         - icon : "ti-github" # themify icon pack : https://themify.me/themify-icons
           link : "https://github.com/masskoder"
-
+      bioLink: 'bio/cletus-razakou'
     # team member loop
     - name : Natasha White
       image : img/team/natasha-white.png
@@ -131,18 +133,18 @@ team:
       social :
         - icon : "ti-github" # themify icon pack : https://themify.me/themify-icons
           link : "https://github.com/nwhite222"
-
+      bioLink: 'bio/natasha-white'
     # team member loop
     - name : Danielle Maxwell
       image : img/team/danielle-maxwell.png
-      designation : Junior Distributed Systems Engineer
+      designation : Jr Distributed Systems Engineer
       content : WebAssembly Specialist
       social :
-        - icon : "ti-github" # themify icon pack : https://themify.me/themify-icons
-          link : "https://github.com/daniellemaxwell"
         - icon : "ti-linkedin" # themify icon pack : https://themify.me/themify-icons
           link : "https://www.linkedin.com/in/daniellemaxwell"
-
+        - icon : "ti-github" # themify icon pack : https://themify.me/themify-icons
+          link : "https://github.com/daniellemaxwell"
+      bioLink: 'bio/danielle-maxwell'
     # team member loop
     - name : Pete Keleher
       image : img/team/pete-keleher.png
@@ -151,7 +153,7 @@ team:
       social :
         - icon : "ti-linkedin" # themify icon pack : https://themify.me/themify-icons
           link : "https://www.linkedin.com/in/pete-keleher-a03639b"
-
+      bioLink: 'bio/pete-keleher'
     # team member loop
     - name : Prema Roman
       image : img/team/prema-roman.png
@@ -162,3 +164,4 @@ team:
           link : "https://www.linkedin.com/in/premaroman/"
         - icon : "ti-github" # themify icon pack : https://themify.me/themify-icons
           link : "https://github.com/pdamodaran"
+      bioLink: 'bio/prema-roman'
