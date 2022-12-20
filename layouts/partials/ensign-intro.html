@@ -1,52 +1,52 @@
-    <section class="pb-10 pt-8 xl:grid grid-cols-2 gap-8">
+    <section class="pb-20 pt-8 xl:grid grid-cols-2 gap-8">
         <section>
-            <h2 class="font-bold text-3xl leading-10 pb-5">Powering Real-time Apps & Analytics</h2>
+            <h2 class="font-bold text-4xl leading-10 pb-5">Powering Real-time Apps & Analytics</h2>
             <p class="pb-5">The global real-time revolution is here.</p>
             <p class="pb-5">
                 <span class="text-[#1D65A6] font-bold">Ensign</span> is a <span class="font-bold">next-generation distributed event store and stream-processing platform</span> for real-time apps and analytics that requires no additional investment in infrastructure or overhead. <span class="font-bold">Built for speed and simplicity</span>, Ensign offers advanced features for next-generation applications while significantly reducing barriers to building, maintaining, and scaling event-driven applications. With Ensign, you can:
             </p>
 
-            <ul class="list-disc pb-5 pl-10">
+            <ul class="list-disc list-outside pb-5 pl-10">
 
-                <li class="text-red-500">- Customize your data pipelines</li>
-                <li>- Quickly build or integrate events into new or existing applications</li>
-                <li>- Provide fast, consistent, and personalized digital experiences across time and space</li>
-                <li>- Accelerate time-to-insight in business intelligence and data analytics</li>
+                <li>Customize your data pipelines</li>
+                <li>Quickly build or integrate events into new or existing applications</li>
+                <li>Provide fast, consistent, and personalized digital experiences across time and space</li>
+                <li>Accelerate time-to-insight in business intelligence and data analytics</li>
 
             </ul>
             <p class="pb-5">
                 Designed as a “low ops / no ops” cloud-agnostic <span class="font-bold">managed service</span>, Ensign is ideal for developers and organizations building <span class="font-bold">event-driven microservices</span> to power rich consumer digital experiences, streaming machine learning models, and real-time business intelligence dashboards.
             </p>
         </section>
-        <div class="bg-[#DED6C5] w-full">
-            <form action="https://api.rotational.app/v1/notifications/signup" method="post" class="z-1 bg-red-500">
-                <div class="w-[26rem] p-7 text-center mx-auto max-w-fit">
-                    <h3 class="pb-2 text-2xl text-red-500 font-bold">Request Alpha Access Today</h3>
+        <section>
+            <form action="https://api.rotational.app/v1/notifications/signup" method="post" class="bg-[#DED6C5]">
+                <div class="w-[26rem] p-7 max-w-fit">
+                    <h3 class="pb-2 text-2xl font-bold">Request Alpha Access Today</h3>
                     <p class="pb-3">We're opening up Ensign on a limited basis. No credit card required.</p>
                 </div>
-                <div class="bg-red-500">
+                <div>
                     <label class="hidden">First Name </label>
-                    <input name="firstName" type="text" required="required" placeholder="First Name *" class="px-7 py-4 mt-6 mr-8 rounded-lg w-full basis-1/2"/>
+                    <input name="firstName" type="text" required="required" placeholder="First Name *" class="px-7 py-4 mr-2 ml-4 rounded-lg w-11/12 basis-1/2" />
                 </div>
                 <div>
                     <label class="hidden">Last Name </label>
-                    <input name="lastName" type="text" required="required" placeholder="Last Name *" class="px-7 py-4 mt-6 mr-8 rounded-lg w-full basis-1/2"/>
+                    <input name="lastName" type="text" required="required" placeholder="Last Name *" class="px-7 py-4 mt-7 mr-2 ml-4 rounded-lg w-11/12 basis-1/2" />
                 </div>
                 <div>
                     <label class="hidden">Email address </label>
-                    <input type="email" required="required" placeholder="Email address *" class="px-7 py-4 mt-6 mr-8 rounded-lg w-full basis-1/2"/>
+                    <input type="email" required="required" placeholder="Email address *" class="px-7 py-4 mt-7 mr-2 ml-4 rounded-lg w-11/12 basis-1/2" />
                 </div>
                 <div>
                     <label class="hidden">Title </label>
-                    <input name="title" type="title"placeholder="Title" class="px-7 py-4 mt-6 mr-8 rounded-lg w-full basis-1/2"/>
+                    <input name="title" type="title"placeholder="Title" class="px-7 py-4 mt-7 mr-2 ml-4 rounded-lg w-11/12 basis-1/2" />
                 </div>
                 <div class="form-group pb-3">
                     <label class="hidden">Organization </label>
-                    <input name="organization" type="text" placeholder="Organization" class="px-7 py-4 mt-6 mr-8 rounded-lg w-full basis-1/2" />
+                    <input name="organization" type="text" placeholder="Organization" class="px-7 py-4 mt-7 mr-2 ml-4 rounded-lg w-11/12 basis-1/2" />
                 </div>
                 <div class="form-group pb-5 form-multiselect">
                     <label class="hidden">Cloud Service Provider</label>
-                    <select name="cloudServiceProvider" class="px-7 py-4 mt-6 mr-8 rounded-lg w-full basis-1/2">
+                    <select name="cloudServiceProvider" class="px-7 py-4 mt-7 mr-2 ml-4 rounded-lg w-11/12 basis-1/2" >
                         <option value="Cloud service provider not selected">Cloud service provider</option>
                         <option value="Amazon Web Services (AWS)">Amazon Web Services (AWS)</option>
                         <option value="Microsoft Azure">Microsoft Azure</option>
@@ -63,15 +63,15 @@
                         <option value="Other">Other</option>
                     </select>
                 </div>
-                <div class="pb-5">
+                <div class="pb-5 ml-3">
                     <label>
-                    <input type="checkbox" required="required" />
-                    <span>I agree to receive notifications about Ensign from Rotational Labs. Your contact information will not be shared with external parties. Unsubscribe any time.</span>
+                        <input type="checkbox" required="required" />
+                        <span>I agree to receive notifications about Ensign from Rotational Labs. Your contact information will not be shared with external parties. Unsubscribe any time.</span>
                     </label>
                 </div>
-                <div>
-                    <button type="submit" name="button" class="bg-[#37A36E]">Request Access</button>
+                <div class="flex justify-center content-center pb-10">
+                    <button type="submit" name="button" class="p-2 text-2xl text-center text-white bg-[#37A36E]">Request Access</button>
                 </div>
             </form>
-        </div>
+        </section>
     </section>
