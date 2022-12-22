@@ -7,6 +7,15 @@ function openMobNav() {
     x.className = 'topnav';
   }
 }
+
+// Change footer background color on the Ensign page
+const footerBackground = document.getElementById('footerBackground')
+
+// TODO: Add pathname for Ensign sign up form confirmation page
+if(location.pathname == '/ensign/') {
+  footerBackground.style.backgroundColor = '#ECF6FF'
+}
+
 const form = document.getElementById('contactForm');
 
 form?.addEventListener('submit', (event) => {
@@ -145,11 +154,3 @@ newsletterForm?.addEventListener('submit', (event) => {
       console.error('Error:', error);
     });
 });
-
-// Change footer background color on the Ensign page
-const footerBackground = document.getElementById('footerBackground')
-
-// TODO: Add pathname for Ensign sign up form confirmation page
-if(location.pathname == '/ensign/') {
-  footerBackground.style.backgroundColor = '#ECF6FF'
-}
