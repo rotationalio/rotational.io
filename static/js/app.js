@@ -11,7 +11,6 @@ function openMobNav() {
 // Change footer background color on the Ensign page
 const footerBackground = document.getElementById('footerBackground')
 
-// TODO: Add pathname for Ensign sign up form confirmation page
 if(location.pathname == '/ensign/') {
   footerBackground.style.backgroundColor = '#ECF6FF'
 }
