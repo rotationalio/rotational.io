@@ -25,13 +25,6 @@ body {
     font-family: 'Montserrat', sans-serif;
 }
 
-/* Get background for Ensign Developer Experience section to span the full width */
-.experience-background {
-  margin: 0 -1000px;
-  padding: 0.25rem 1000px;
-  background: #ECF6FF;
-}
-
 /* .art-s p:nth-of-type(2) {
    color: red;
 } */
@@ -74,6 +67,12 @@ body {
   text-align: right;
 }
 
+/* Get background for Ensign Developer Experience section to span the full width */
+.experience-background {
+  margin: 0 -1000px;
+  padding: 0.25rem 1000px;
+  background: #ECF6FF;
+}
 
 @media screen and (max-width: 910px) {
 .topnav a {display: none;}

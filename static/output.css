@@ -1434,18 +1434,6 @@ video {
   gap: 2.5rem;
 }
 
-.gap-2 {
-  gap: 0.5rem;
-}
-
-.gap-12 {
-  gap: 3rem;
-}
-
-.gap-14 {
-  gap: 3.5rem;
-}
-
 .gap-x-32 {
   -moz-column-gap: 8rem;
        column-gap: 8rem;
@@ -1838,14 +1826,6 @@ video {
 
 .pt-3 {
   padding-top: 0.75rem;
-}
-
-.pt-10 {
-  padding-top: 2.5rem;
-}
-
-.pt-16 {
-  padding-top: 4rem;
 }
 
 .text-left {
