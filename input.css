@@ -69,8 +69,8 @@ body {
 
 /* Get background for Ensign Developer Experience section to span the full width */
 .experience-background {
-  margin: 0 -1000px;
-  padding: 0.25rem 1000px;
+  margin: 0 -62.5rem;
+  padding: 0.25rem 62.5rem;
   background: #ECF6FF;
 }
 
