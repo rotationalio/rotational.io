@@ -1,0 +1,27 @@
+---
+title: "Mocking the Universe"
+slug: "mocking-the-universe"
+date: "2023-01-02T09:40:12-05:00"
+draft: true
+author: DanielSollis
+image: img/blog/num215.jpg
+category: Golang, Programming, gRPC
+profile: img/team/daniel-sollis.png
+description: ""
+---
+
+Here at rotational as you might know, we use gRPC [quite](https://rotational.io/blog/documenting-grpc-with-openapi) [a bit,](https://rotational.io/blog/what-are-protocol-buffers/) and while gRPC is an extremely useful for specifying and implementing network APIs it does raise the question: How do we integrate gRPC one of our other practices, [mocking?] (https://rotational.io/blog/fake-it-when-you-make-it/) Let's find out!
+
+<!--more-->
+
+Intro
+Package mocks
+- Why we need package mocks (test what you’re testing)
+- Getting around dependencies
+- Easily decide call results
+- structure
+- Problem: how do you test the package?
+Universal mocks
+- How do you fake a gRPC connection?
+- Buffcon
+- structure
