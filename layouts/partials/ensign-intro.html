@@ -27,33 +27,34 @@
                     <p class="pb-3 text-center">No credit card required.</p>
                 </div>
                 <div>
-                    <label class="hidden">First Name </label>
-                    <input name="firstName" type="text" required="required" placeholder="First Name *" 
-                    class="px-7 py-4 mr-2 ml-4 rounded-lg w-11/12 basis-1/2" />
+                    <label for="firstName" class="hidden">First Name </label>
+                    <input name="firstName" type="text" required id="firstName" placeholder="First Name *" 
+                        class="px-7 py-4 mr-2 ml-4 rounded-lg w-11/12 basis-1/2" />
                 </div>
                 <div>
-                    <label class="hidden">Last Name </label>
-                    <input name="lastName" type="text" required="required" placeholder="Last Name *" 
-                    class="px-7 py-4 mt-7 mr-2 ml-4 rounded-lg w-11/12 basis-1/2" />
+                    <label for="lastName" class="hidden">Last Name </label>
+                    <input name="lastName" type="text" required id="lastName" placeholder="Last Name *" 
+                        class="px-7 py-4 mt-7 mr-2 ml-4 rounded-lg w-11/12 basis-1/2" />
                 </div>
                 <div>
-                    <label class="hidden">Email address </label>
-                    <input type="email" required="required" placeholder="Email address *" 
-                    class="px-7 py-4 mt-7 mr-2 ml-4 rounded-lg w-11/12 basis-1/2" />
+                    <label for="email" class="hidden">Email address </label>
+                    <input type="email" required id="email" placeholder="Email address *" 
+                        class="px-7 py-4 mt-7 mr-2 ml-4 rounded-lg w-11/12 basis-1/2" />
                 </div>
                 <div>
-                    <label class="hidden">Title </label>
-                    <input name="title" type="title"placeholder="Title" 
-                    class="px-7 py-4 mt-7 mr-2 ml-4 rounded-lg w-11/12 basis-1/2" />
+                    <label for="title" class="hidden">Title </label>
+                    <input name="title" type="title" id="title" placeholder="Title" 
+                        class="px-7 py-4 mt-7 mr-2 ml-4 rounded-lg w-11/12 basis-1/2" />
                 </div>
                 <div class="pb-3">
-                    <label class="hidden">Organization </label>
-                    <input name="organization" type="text" placeholder="Organization" 
-                    class="px-7 py-4 mt-7 mr-2 ml-4 rounded-lg w-11/12 basis-1/2" />
+                    <label for="organization" class="hidden">Organization </label>
+                    <input name="organization" type="text" id="organization" placeholder="Organization" 
+                        class="px-7 py-4 mt-7 mr-2 ml-4 rounded-lg w-11/12 basis-1/2" />
                 </div>
                 <div class="pb-5">
-                    <label class="hidden">Cloud Service Provider</label>
-                    <select name="cloudServiceProvider" class="px-7 py-4 mt-7 mr-2 ml-4 rounded-lg w-11/12 basis-1/2" >
+                    <label for="cloudServiceProvider" class="hidden">Cloud Service Provider</label>
+                    <select name="cloudServiceProvider" id="cloudServiceProvider" 
+                        class="px-7 py-4 mt-7 mr-2 ml-4 rounded-lg w-11/12 basis-1/2" >
                         <option value="Cloud service provider not selected">Cloud service provider</option>
                         <option value="Amazon Web Services (AWS)">Amazon Web Services (AWS)</option>
                         <option value="Microsoft Azure">Microsoft Azure</option>
@@ -72,9 +73,10 @@
                 </div>
                 <div class="pb-5 ml-5 mr-2">
                     <label>
-                        <input type="checkbox" required="required" />
-                        <span>I agree to receive notifications about Ensign from Rotational Labs. Your contact information will not be shared with external parties. Unsubscribe any time.</span>
-                    </label>
+                        <input type="checkbox" required id="checkbox" />
+                        <label for="checkbox">
+                            <span>I agree to receive notifications about Ensign from Rotational Labs. Your contact information will not be shared with external parties. Unsubscribe any time.</span>
+                        </label>
                 </div>
                 <div class="flex justify-center content-center pb-10">
                     <button type="submit" name="button" class="p-2 text-2xl text-center text-white bg-[#37A36E]">
