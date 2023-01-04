@@ -34,6 +34,12 @@ form?.addEventListener('submit', (event) => {
       if (response.status === 204) {
         document.getElementById('contact-alert').style.display = 'block';
         form.reset();
+
+        // Hide contact form submission confirmation message after 10 seconds.
+        setTimeout(() => {
+          const contactAlert = document.getElementById('contact-alert');
+          contactAlert.style.display = 'none';
+        }, 10000);
       }
       return response.json();
     })
@@ -45,6 +51,8 @@ form?.addEventListener('submit', (event) => {
       console.error('Error:', error);
     });
 });
+
+
 
 // share on twitter 
 
@@ -134,6 +142,12 @@ newsletterForm?.addEventListener('submit', (event) => {
       if (response.status === 204) {
         document.getElementById('newsletter-alert').style.display = 'block';
         newsletterForm.reset();
+
+        // Hide newsletter submission message after 5 seconds.
+        setTimeout(() => {
+          const newsletterAlert = document.getElementById('newsletter-alert');
+          newsletterAlert.style.display = 'none';
+        }, 5000);
       }
       return response.json();
     })
