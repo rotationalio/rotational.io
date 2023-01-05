@@ -14,14 +14,80 @@ Here at rotational as you might know, we use gRPC [quite](https://rotational.io/
 
 <!--more-->
 
-Intro
-Package mocks
-- Why we need package mocks (test what you’re testing)
-- Getting around dependencies
-- Easily decide call results
-- structure
-- Problem: how do you test the package?
-Universal mocks
+## Package Mocks
+One of the main points of using mocks is to get around dependencies. If you are testing a piece of code you want to test THAT piece of code, not every dependency it's using as well. The same goes for code using gRPC, you don't want to have to test the entire gRPC service when a piece of code calls an RPC. But how can we avoid stepping into the implementation details when testing? 
+
+The easiest way to get around this is to avoid gRPC all together using package mocks. In most cases, different gRPC service calls are isolated into their own packages that contain structs (likely a gRPC client or a struct containing the client) that implement the service's procedure calls. By mocking these structs you can avoid not only the gRPC calls, but any other dependencies that might show up in the service's implementation.
+
+## Creating A Package Mock
+
+Lets imagine we have the following service defined:
+
+```proto
+syntax = "proto3";
+
+service Database {
+    rpc Get(GetRequest) returns (GetReply) {};
+    rpc Put(PutRequest) returns (PutReply) {};
+}
+```
+
+in the Database package, under database/database.go we might have the following struct defined:
+
+```golang
+type Database struct {
+    conf database.config
+    client database.DatabaseNetworkClient
+}
+```
+
+that has the Get, Put, Update and Delete methods. if we add a new interface that the Database struct implements:
+
+```golang
+type DatabaseInterface {
+    Get(GetRequest) GetReply
+    Put(PutRequest) PutReply
+}
+```
+
+We can now start defining a package mock that will allow us to circumvent calls to the Database service that implements the same interface.
+
+```golang
+const (
+    MockDatabaseGet = "MockDatabase specified error on call to Get"
+    MockDatabasePut = "MockDatabase specified error on call to Put"
+)
+
+type MockDatabase struct {
+    conf database.config
+    Calls      map[string]int 
+	ErrorOn    string
+}
+
+func (d *MockDatabase) Get(GetRequest) (GetReply) {
+	d.Calls[MockDatabaseGet]++
+	if d.ErrorOn == MockPeersGet {
+		return nil, errors.New(d.ErrorOn)
+	}
+	return &GetReply{
+        Success: true
+    }, nil
+}
+
+func (d *MockDatabase) Put(PutRequest) (PutReply) {
+	d.Calls[MockDatabasePut]++
+	if d.ErrorOn == MockPeersGet {
+		return nil, errors.New(d.ErrorOn)
+	}
+	return &PutReply{
+        Success: true
+    }, nil
+}
+```
+
+By adding the Calls and ErrorOn field this pattern allows you to easily make sure that the call occurs, as well as easily cause the call to return an error when needed. This approach works perfectly for testing code that uses the package that we are mocking, but what about testing the package and service themselves? This requires a different pattern.
+
+## Universal Mocks
 - How do you fake a gRPC connection?
 - Buffcon
 - structure
