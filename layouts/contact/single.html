@@ -52,21 +52,26 @@
                     </div> -->
                     <form action="contact" method="post" id="contactForm">
                         <div class="md:flex">
-                            <input type="text" name='first_name' placeholder="{{ .firstname }}"
+                            <label for="first_name" class="hidden">First Name</label>
+                            <input type="text" name='first_name' id="first_name" required placeholder="{{ .firstname }}"
                                 class="px-7 py-4 mt-6 mr-8 rounded-lg w-full basis-1/2 border-red-500">
-                            <input type="text" name='last_name' placeholder="{{ .lastname }}"
+                            <label for="last_name" class="hidden">Last Name</label>
+                            <input type="text" name='last_name' id="last_name" required placeholder="{{ .lastname }}"
                                 class="px-7 py-4 mt-6 rounded-lg w-full basis-1/2">
                         </div>
                         <div class="md:flex">
-                            <input type="email" name='email' placeholder="{{ .email }}"
+                            <label for="email" class="hidden">Email</label>
+                            <input type="email" name='email' id="email" required placeholder="{{ .email }}"
                                 class="px-7 py-4 mt-6 mr-8 rounded-lg w-full basis-1/2">
-                            <input type="phone" name='phone' placeholder="{{ .phone_number }}"
+                            <label for="phone" class="hidden">Phone Number</label>
+                            <input type="phone" name='phone' id="phone" placeholder="{{ .phone_number }}"
                                 class="px-7 py-4 mt-6 rounded-lg w-full basis-1/2">
                         </div>
-                        <textarea name="message" id="" cols="30" rows="6"
-                            class="px-7 py-4 mt-6 rounded-lg text-gray-500 w-full">Message</textarea>
+                        <label for="message" class="hidden">Message</label>
+                        <textarea name="message" required placeholder="Message" id="message" cols="30" rows="6"
+                            class="px-7 py-4 mt-6 rounded-lg text-gray-500 w-full"></textarea>
                         <div class="flex mt-4 items-center">
-                            <input type="checkbox" id="checkbox" name='subscribe' class="w-4 h-4 border-0 ">
+                            <input type="checkbox" id="checkbox" required name='subscribe' class="w-4 h-4 border-0 ">
                             <label for="checkbox"><span class="ml-2">{{ .subscribe_to_email }}</span></label>
                         </div>
                         <div class="md:flex items-center justify-between mt-6 text-center md:mt-7 lg:mt-8">
