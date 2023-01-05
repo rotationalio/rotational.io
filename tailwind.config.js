@@ -11,7 +11,7 @@ module.exports = {
         "wave-pattern": "url('/img/wave.png')",
         "wavexl-pattern": "url('/img/wave_xl.png')",
         "wavelg-pattern": "url('/img/wave_lg.png')",
-        "hexagon": "url('/img/tileable-hexagon.svg')",
+        "hexagon": "url('/img/tileable-hexagon.png')",
         
       },
       backgroundPosition: {

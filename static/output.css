@@ -1535,11 +1535,6 @@ video {
   background-color: rgb(236 246 255 / var(--tw-bg-opacity));
 }
 
-.bg-green-100 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(220 252 231 / var(--tw-bg-opacity));
-}
-
 .bg-\[\#1D65A6\] {
   --tw-bg-opacity: 1;
   background-color: rgb(29 101 166 / var(--tw-bg-opacity));
@@ -1580,9 +1575,8 @@ video {
   background-color: rgb(232 237 247 / var(--tw-bg-opacity));
 }
 
-.bg-red-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(239 68 68 / var(--tw-bg-opacity));
+.bg-hexagon {
+  background-image: url('/img/tileable-hexagon.png');
 }
 
 .bg-hero-footer {
@@ -1597,8 +1591,8 @@ video {
   background-image: url('/img/hero.png');
 }
 
-.bg-hexagon {
-  background-image: url('/img/tileable-hexagon.svg');
+.bg-contain {
+  background-size: contain;
 }
 
 .bg-cover {
@@ -1607,6 +1601,10 @@ video {
 
 .bg-\[length\:882\.5px_480px\] {
   background-size: 882.5px 480px;
+}
+
+.bg-center {
+  background-position: center;
 }
 
 .bg-right-center {
