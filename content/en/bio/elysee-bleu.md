@@ -11,5 +11,5 @@ social :
   - name : "github"
     link: 'https://github.com/elysee15'
     icon: 'fa-github'
-bio : "Elysee Bleu is a Junior front-end developer with over 2 years of experience. He also has some knowledge and experience in back-end development. As a front-end developer, his job is to create user interfaces and maintain the client side web applications. In his spare time, he loves reading, watching movies and spending time with his family and friends."
 ---
+Elysee Bleu is a Junior front-end developer with over 2 years of experience. He also has some knowledge and experience in back-end development. As a front-end developer, his job is to create user interfaces and maintain the client side web applications. In his spare time, he loves reading, watching movies and spending time with his family and friends.

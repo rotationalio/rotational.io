@@ -11,5 +11,5 @@ social :
   - name : "github"
     link: 'https://github.com/DanielSollis'
     icon: 'fa-github'
-bio : "Daniel Sollis is a Junior Distributed Systems Engineer working at Rotational Labs. Daniel is a skilled programmer with experience working in Golang, Python and C++. Daniel spends most of his free time playing guitar, reading, hiking and generally staying fit."
 ---
+Daniel Sollis is a Junior Distributed Systems Engineer working at Rotational Labs. Daniel is a skilled programmer with experience working in Golang, Python and C++. Daniel spends most of his free time playing guitar, reading, hiking and generally staying fit.

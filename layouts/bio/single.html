@@ -24,7 +24,7 @@
         </div>
         <div class="flex w-full flex-wrap  pl-5 sm:w-[50%]">
             <h1 class="text-xl font-bold text-sky-900 my-2 md:my-4 ">Bio</h1>
-            <div class="w-full">{{ .Params.bio }}</div>
+            <div class="w-full mx-auto prose prose-blue">{{ .Content | safeHTML }}</div>
             <ul class="mt-4 flex w-full gap-8 md:mt-6">
                 {{ range .Params.social }}
                 <li><a href="{{ .link | absURL }}" target="_blank"
