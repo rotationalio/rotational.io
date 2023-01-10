@@ -1535,11 +1535,6 @@ video {
   background-color: rgb(236 246 255 / var(--tw-bg-opacity));
 }
 
-.bg-white {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-
 .bg-\[\#1D65A6\] {
   --tw-bg-opacity: 1;
   background-color: rgb(29 101 166 / var(--tw-bg-opacity));
@@ -1553,6 +1548,11 @@ video {
 .bg-\[\#E8EFF6\] {
   --tw-bg-opacity: 1;
   background-color: rgb(232 239 246 / var(--tw-bg-opacity));
+}
+
+.bg-white {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
 .bg-teal-100 {
@@ -1575,6 +1575,10 @@ video {
   background-color: rgb(232 237 247 / var(--tw-bg-opacity));
 }
 
+.bg-hexagon {
+  background-image: url('/img/tileable-hexagon.png');
+}
+
 .bg-hero-footer {
   background-image: url('/img/foot.png');
 }
@@ -1587,12 +1591,20 @@ video {
   background-image: url('/img/hero.png');
 }
 
+.bg-contain {
+  background-size: contain;
+}
+
 .bg-cover {
   background-size: cover;
 }
 
 .bg-\[length\:882\.5px_480px\] {
   background-size: 882.5px 480px;
+}
+
+.bg-center {
+  background-position: center;
 }
 
 .bg-right-center {
