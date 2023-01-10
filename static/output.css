@@ -1567,11 +1567,6 @@ video {
   background-color: rgb(236 246 255 / var(--tw-bg-opacity));
 }
 
-.bg-white {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-
 .bg-\[\#1D65A6\] {
   --tw-bg-opacity: 1;
   background-color: rgb(29 101 166 / var(--tw-bg-opacity));
@@ -1585,6 +1580,11 @@ video {
 .bg-\[\#E8EFF6\] {
   --tw-bg-opacity: 1;
   background-color: rgb(232 239 246 / var(--tw-bg-opacity));
+}
+
+.bg-white {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
 .bg-teal-100 {
@@ -1617,6 +1617,10 @@ video {
   background-color: rgb(55 163 110 / var(--tw-bg-opacity));
 }
 
+.bg-hexagon {
+  background-image: url('/img/tileable-hexagon.png');
+}
+
 .bg-hero-footer {
   background-image: url('/img/foot.png');
 }
@@ -1629,12 +1633,20 @@ video {
   background-image: url('/img/hero.png');
 }
 
+.bg-contain {
+  background-size: contain;
+}
+
 .bg-cover {
   background-size: cover;
 }
 
 .bg-\[length\:882\.5px_480px\] {
   background-size: 882.5px 480px;
+}
+
+.bg-center {
+  background-position: center;
 }
 
 .bg-right-center {
@@ -2005,14 +2017,6 @@ body {
   font-family: 'Montserrat', sans-serif;
 }
 
-/* Get background for Ensign Developer Experience section to span the full width */
-
-.experience-background {
-  margin: 0 -1000px;
-  padding: 0.25rem 1000px;
-  background: #ECF6FF;
-}
-
 /* .art-s p:nth-of-type(2) {
    color: red;
 } */
@@ -2059,6 +2063,14 @@ body {
   border-radius: 8px;
   width: 100%;
   text-align: right;
+}
+
+/* Get background for Ensign Developer Experience section to span the full width */
+
+.experience-background {
+  margin: 0 -62.5rem;
+  padding: 0.25rem 62.5rem;
+  background: #ECF6FF;
 }
 
 @media screen and (max-width: 910px) {
