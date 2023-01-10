@@ -11,5 +11,5 @@ social :
   - name : "github"
     link: 'https://github.com/nabihanaqvie'
     icon: 'fa-github'
-bio : "Nabiha Naqvie is a data scientist with a background in molecular biology and an interest in Data Engineering, Applied Natural Language Processing and Distributed Systems."
 ---
+Nabiha Naqvie is a data scientist with a background in molecular biology and an interest in Data Engineering, Applied Natural Language Processing and Distributed Systems.

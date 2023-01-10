@@ -8,5 +8,5 @@ social :
   - name : "github"
     link: 'https://github.com/nwhite222'
     icon: 'fa-github'
-bio : "Natasha White is a technical writer and college student with rather intimidating volleyball skills."
 ---
+Natasha White is a technical writer and college student with rather intimidating volleyball skills.
