@@ -3,7 +3,7 @@ title: "Building a Raft (Part 3)"
 slug: "building-a-raft-part-3"
 date: "2023-01-09T19:51:33-08:00"
 draft: true
-image: img/blog/2023-01-09-building-a-raft-part-3/otterRaftThree.png
+image: img/blog/2023-01-19-building-a-raft-part-3/otterRaftThree.png
 author: "Daniel Sollis"
 category: "Distributed Systems"
 profile: img/team/daniel-sollis.png
@@ -24,7 +24,7 @@ Instead, a leader periodically (say, every n seconds or so) will send AppendEntr
 ## Leader Election
 Leader election in **Raft** is handled by the **RequestVote** RPC. First off, remember at the start of this series we mentioned that there are three states that a **Raft** server can be in: Leader, Candidate and Follower. We haven’t talked about the candidate state yet because this is where it actually comes into play.
 
-!["State change flowchart"](/img/blog/2023-01-09-building-a-raft-part-3/stateChanges.png)
+!["State change flowchart"](/img/blog/2023-01-19-building-a-raft-part-3/stateChanges.png)
 
 If a **raft** server does not receive any communication from the leader (heartbeat or regular requests) for a given amount of time, it will assume the leader has died and will start a new election to become the new leader, incrementing it’s term, voting for itself and sending **RequestVote** RPCs to the other servers in the cluster. If it receives a majority of the cluster’s votes, it declares itself leader and starts sending out heartbeats. Luckily for us, the **RequestVote** RPC ends up being much simpler than **AppendEntries**, but we should still spend some time exploring it in depth.
 
