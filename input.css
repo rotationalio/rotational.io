@@ -17,6 +17,9 @@
    .art-s p:nth-of-type(2) {
     @apply h-36 overflow-hidden;
   }
+  .input-sl {
+    @apply px-7 py-4 mt-6 mr-8 rounded-lg w-full basis-1/2 border-red-500
+  }
 
  
   

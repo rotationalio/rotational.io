@@ -9,11 +9,13 @@ function openMobNav() {
 }
 
 // Change footer background color on the Ensign page
-const footerBackground = document.getElementById('footerBackground')
+const footerBackground = document.getElementById('footerBackground');
 
-if(location.pathname == '/ensign/') {
-  footerBackground.style.backgroundColor = '#ECF6FF'
+if (location.pathname == '/ensign/') {
+  footerBackground.style.backgroundColor = '#ECF6FF';
 }
+
+// Contact Form submission
 
 const form = document.getElementById('contactForm');
 
@@ -60,9 +62,7 @@ form?.addEventListener('submit', (event) => {
     });
 });
 
-
-
-// share on twitter 
+// share on twitter
 
 function shareOnTwitter() {
   const twitterWindow = window.open(
@@ -81,10 +81,10 @@ function shareOnTwitterWithTitle() {
   const title = document.querySelector('[data-blog-title]').innerText;
   const twitterWindow = window.open(
     'https://twitter.com/intent/tweet?text=' +
-    title +
-    '&url=' +
-    document.URL +
-    '&via=rotationalio',
+      title +
+      '&url=' +
+      document.URL +
+      '&via=rotationalio',
     'twitter-popup',
     'height=350,width=600'
   );
@@ -92,7 +92,6 @@ function shareOnTwitterWithTitle() {
     twitterWindow.focus();
   }
   return false;
-
 }
 
 //share on linkedin
@@ -121,9 +120,7 @@ function shareByEmail() {
   return false;
 }
 
-
-
-// check newsletter form submission
+//  newsletter form submission
 const newsletterForm = document.getElementById('newsletterForm');
 
 newsletterForm?.addEventListener('submit', (event) => {
@@ -155,6 +152,52 @@ newsletterForm?.addEventListener('submit', (event) => {
         setTimeout(() => {
           const newsletterAlert = document.getElementById('newsletter-alert');
           newsletterAlert.style.display = 'none';
+        }, 5000);
+      }
+      return response.json();
+    })
+    .then((data) => {
+      console.log('Success:', data);
+    })
+
+    .catch((error) => {
+      console.error('Error:', error);
+    });
+});
+
+// submit ensign form
+
+const ensignForm = document.getElementById('ensignForm');
+
+ensignForm?.addEventListener('submit', (event) => {
+  event.preventDefault();
+  const formData = new FormData(ensignForm);
+  const data = Object.fromEntries(formData);
+
+  const formattedData = {
+    ...data,
+    lists: [
+      '4ada7d4b-e0a7-4017-8b9d-4db172b5be64',
+      '54b7fc6a-db4b-491b-b6ff-4348c15072bc',
+    ],
+  };
+  console.log(formattedData);
+  fetch('https://api.rotationallabs.com/v1/notifications/signup', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(formattedData),
+  })
+    .then((response) => {
+      if (response.status === 204) {
+        document.getElementById('ensign-alert').style.display = 'block';
+        ensignForm.reset();
+
+        // Hide ensign submission message after 5 seconds.
+        setTimeout(() => {
+          const ensignAlert = document.getElementById('ensign-alert');
+          ensignAlert.style.display = 'none';
         }, 5000);
       }
       return response.json();
