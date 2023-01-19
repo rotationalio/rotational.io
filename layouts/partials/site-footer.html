@@ -34,7 +34,7 @@
                     </div>
                 </div>
                 <div class="sm:flex justify-between border-t py-6 text-white mt-12 sm:mt-32">
-                    <p>{{ site.Params.copyright | markdownify }}</p>
+                    <p>{{ replace site.Params.copyright "{year}" now.Year | markdownify }}</p>
                     <ul class="sm:mt-0 mt-4 flex">
                         <li class="border-r pr-4 mr-4 "><a href="/privacy/">{{ i18n "privacyPolicy" }}</a></li>
                         <li><a href="/terms/">{{ i18n "termsOfUse" }}</a></li>

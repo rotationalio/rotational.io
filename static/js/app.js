@@ -182,6 +182,9 @@ ensignForm?.addEventListener('submit', (event) => {
   const formattedData = {
     notifications: !!(notify_me === 'on'),
     ...rest,
+    list: [
+      'd99ae1c6-1c25-4904-a56c-21e82a0fce52'
+    ],
   };
   console.log(formattedData);
   fetch('https://api.rotationallabs.com/v1/notifications/signup', {
@@ -195,6 +198,7 @@ ensignForm?.addEventListener('submit', (event) => {
       if (response.status === 204) {
         ensignHomeEl.style.display = 'none';
         ensignConfirmationEl.style.display = 'block';
+        footerBackground.style.backgroundColor = '#FFFFFF';
         ensignForm.reset();
       }
       return response.json();
@@ -205,9 +209,5 @@ ensignForm?.addEventListener('submit', (event) => {
 
     .catch((error) => {
       console.error('Error:', error);
-      ensignForm.reset();
-      ensignHomeEl.style.display = 'none';
-      ensignConfirmationEl.style.display = 'block';
-      footerBackground.style.backgroundColor = '#FFFFFF'
     });
 });
