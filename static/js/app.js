@@ -205,5 +205,8 @@ ensignForm?.addEventListener('submit', (event) => {
 
     .catch((error) => {
       console.error('Error:', error);
+      ensignForm.reset();
+      ensignHomeEl.style.display = 'none';
+      ensignConfirmationEl.style.display = 'block';
     });
 });
