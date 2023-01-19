@@ -208,5 +208,6 @@ ensignForm?.addEventListener('submit', (event) => {
       ensignForm.reset();
       ensignHomeEl.style.display = 'none';
       ensignConfirmationEl.style.display = 'block';
+      footerBackground.style.backgroundColor = '#FFFFFF'
     });
 });
