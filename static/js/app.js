@@ -173,13 +173,15 @@ ensignForm?.addEventListener('submit', (event) => {
   event.preventDefault();
   const formData = new FormData(ensignForm);
   const data = Object.fromEntries(formData);
+  const ensignHomeEl = document.getElementById('ensign-home');
+  const ensignConfirmationEl = document.getElementById('ensign-confirmation');
+  console.log('ensignConfirmationEl', ensignConfirmationEl);
+
+  const { notify_me, ...rest } = data;
 
   const formattedData = {
-    ...data,
-    lists: [
-      '4ada7d4b-e0a7-4017-8b9d-4db172b5be64',
-      '54b7fc6a-db4b-491b-b6ff-4348c15072bc',
-    ],
+    notifications: !!(notify_me === 'on'),
+    ...rest,
   };
   console.log(formattedData);
   fetch('https://api.rotationallabs.com/v1/notifications/signup', {
@@ -191,14 +193,9 @@ ensignForm?.addEventListener('submit', (event) => {
   })
     .then((response) => {
       if (response.status === 204) {
-        document.getElementById('ensign-alert').style.display = 'block';
+        ensignHomeEl.style.display = 'none';
+        ensignConfirmationEl.style.display = 'block';
         ensignForm.reset();
-
-        // Hide ensign submission message after 5 seconds.
-        setTimeout(() => {
-          const ensignAlert = document.getElementById('ensign-alert');
-          ensignAlert.style.display = 'none';
-        }, 5000);
       }
       return response.json();
     })

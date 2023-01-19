@@ -1,18 +1,22 @@
 {{ define "title" }}
-    {{ .Title }} &ndash; {{ .Site.Title }}
+{{ .Title }} &ndash; {{ .Site.Title }}
 {{ end }}
 
 {{ define "main" }}
-    <div class="max-w-7xl mx-auto px-4">
-
+<div class="max-w-7xl mx-auto px-4">
+    <div id="ensign-home">
         {{ partial "ensign-intro.html" }}
 
-        {{ partial "engineering-simplified.html" }} 
+
+        {{ partial "engineering-simplified.html" }}
 
         <div class="experience-background">
-                {{ partial "experience.html" }}
+            {{ partial "experience.html" }}
         </div>
-
     </div>
+
+    {{ partial "ensign-confirmation.html" }}
+
+</div>
 
 {{ end }}

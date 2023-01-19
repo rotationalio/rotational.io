@@ -1027,6 +1027,20 @@ video {
   overflow: hidden;
 }
 
+.input-sl {
+  margin-top: 1.5rem;
+  margin-right: 2rem;
+  width: 100%;
+  flex-basis: 50%;
+  border-radius: 0.5rem;
+  --tw-border-opacity: 1;
+  border-color: rgb(239 68 68 / var(--tw-border-opacity));
+  padding-left: 1.75rem;
+  padding-right: 1.75rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
 .static {
   position: static;
 }
@@ -1210,6 +1224,10 @@ video {
   margin-bottom: 1.75rem;
 }
 
+.mt-7 {
+  margin-top: 1.75rem;
+}
+
 .block {
   display: block;
 }
@@ -1310,6 +1328,15 @@ video {
   width: 0.75rem;
 }
 
+.w-11\/12 {
+  width: 91.666667%;
+}
+
+.min-w-min {
+  min-width: -moz-min-content;
+  min-width: min-content;
+}
+
 .max-w-7xl {
   max-width: 80rem;
 }
@@ -1332,6 +1359,10 @@ video {
 
 .max-w-lg {
   max-width: 32rem;
+}
+
+.max-w-full {
+  max-width: 100%;
 }
 
 .grow {
@@ -1599,6 +1630,16 @@ video {
   background-color: rgb(232 237 247 / var(--tw-bg-opacity));
 }
 
+.bg-\[\#DED6C5\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(222 214 197 / var(--tw-bg-opacity));
+}
+
+.bg-\[\#37A36E\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(55 163 110 / var(--tw-bg-opacity));
+}
+
 .bg-hexagon {
   background-image: url('/img/tileable-hexagon.png');
 }
@@ -1671,6 +1712,10 @@ video {
   padding: 1rem;
 }
 
+.p-2 {
+  padding: 0.5rem;
+}
+
 .px-4 {
   padding-left: 1rem;
   padding-right: 1rem;
@@ -1729,6 +1774,11 @@ video {
 .px-8 {
   padding-left: 2rem;
   padding-right: 2rem;
+}
+
+.py-5 {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
 }
 
 .px-5 {
@@ -1797,6 +1847,10 @@ video {
   padding-bottom: 5rem;
 }
 
+.pl-2 {
+  padding-left: 0.5rem;
+}
+
 .pt-\[350px\] {
   padding-top: 350px;
 }
@@ -1807,6 +1861,10 @@ video {
 
 .pt-3 {
   padding-top: 0.75rem;
+}
+
+.pt-10 {
+  padding-top: 2.5rem;
 }
 
 .text-left {
@@ -1840,6 +1898,11 @@ video {
 .text-sm {
   font-size: 0.875rem;
   line-height: 1.25rem;
+}
+
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
 }
 
 .text-xs {
@@ -2283,6 +2346,10 @@ body {
   .sm\:text-xl {
     font-size: 1.25rem;
     line-height: 1.75rem;
+  }
+
+  .sm\:leading-loose {
+    line-height: 2;
   }
 }
 
