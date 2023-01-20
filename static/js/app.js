@@ -9,6 +9,8 @@ function openMobNav() {
 }
 
 // Change footer background color on the Ensign page
+const changeFooterBackground = document.getElementById('footerBackground');
+
 if (location.pathname == '/ensign/') {
   changeFooterBackground.style.backgroundColor = '#ECF6FF';
 }
