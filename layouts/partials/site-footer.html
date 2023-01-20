@@ -1,45 +1,47 @@
-<footer class=" bg-hero-footer bg-cover ">
-    <div class="relative  pt-[350px] font-extralight">
-
-        <div class="relative max-w-7xl  mx-auto px-4 sm:px-6 ">
-            <div class="lg:grid grid-cols-3 text-white">
-                <div>
-                    <a href="/"><img src="img/logo-white.png" alt="Rotational Labs logo"
-                            class="mt-10 sm:mt-0 mx-auto sm:pb-5 "></a>
-                </div>
-                <div class="mx-auto mt-5 sm:mt-0 max-w-lg pb-8 xl:mr-5">
-                    {{ $data := index site.Data site.Language.Lang }}
-
-                    {{ if $data.contact.contact.contact_details.enable }}
-                    {{ with $data.contact.contact.contact_details }}
-                    <h5 class="text-center lg:text-start font-bold text-lg">{{ .title }}</h5>
-                    <p class="mt-3 ml-10 sm:ml-0 text-lg">
-                        {{ .subtitle }}
-                    </p>
-                    {{ end }}
-                    {{ end }}
-                </div>
-                <div class="ml-10 xl:ml-5 sm:mt-0 mt-8">
-                    <ul class="sm:grid grid-cols-2 lg:flex flex-col gap-0 mr-5 xl:grid  gap-x-32 gap-y-4">
-                        {{ range sort (.Site.Params.socials) "weight" "asc" }}
-                        <li class="pb-8">
-                            <a href="{{ .url }}" class="flex items-center" target="_blank">
-                                <img src="{{ .image }}" alt="" class="p-4 bg-white rounded-lg mr-4">
-                                <span>{{ .username }}</span>
-                            </a>
-                        </li>
+<div id="footerBackground">
+    <footer class=" bg-hero-footer bg-cover ">
+        <div class="relative  pt-[350px] font-extralight">
+    
+            <div class="relative max-w-7xl  mx-auto px-4 sm:px-6 ">
+                <div class="lg:grid grid-cols-3 text-white">
+                    <div>
+                        <a href="/"><img src="img/logo-white.png" alt="Rotational Labs logo"
+                                class="mt-10 sm:mt-0 mx-auto sm:pb-5 "></a>
+                    </div>
+                    <div class="mx-auto mt-5 sm:mt-0 max-w-lg pb-8 xl:mr-5">
+                        {{ $data := index site.Data site.Language.Lang }}
+    
+                        {{ if $data.contact.contact.contact_details.enable }}
+                        {{ with $data.contact.contact.contact_details }}
+                        <h5 class="text-center lg:text-start font-bold text-lg">{{ .title }}</h5>
+                        <p class="mt-3 ml-10 sm:ml-0 text-lg">
+                            {{ .subtitle }}
+                        </p>
                         {{ end }}
+                        {{ end }}
+                    </div>
+                    <div class="ml-10 xl:ml-5 sm:mt-0 mt-8">
+                        <ul class="sm:grid grid-cols-2 lg:flex flex-col gap-0 mr-5 xl:grid  gap-x-32 gap-y-4">
+                            {{ range sort (.Site.Params.socials) "weight" "asc" }}
+                            <li class="pb-8">
+                                <a href="{{ .url }}" class="flex items-center" target="_blank">
+                                    <img src="{{ .image }}" alt="" class="p-4 bg-white rounded-lg mr-4">
+                                    <span>{{ .username }}</span>
+                                </a>
+                            </li>
+                            {{ end }}
+                        </ul>
+                    </div>
+                </div>
+                <div class="sm:flex justify-between border-t py-6 text-white mt-12 sm:mt-32">
+                    <p>{{ replace site.Params.copyright "{year}" now.Year | markdownify }}</p>
+                    <ul class="sm:mt-0 mt-4 flex">
+                        <li class="border-r pr-4 mr-4 "><a href="/privacy/">{{ i18n "privacyPolicy" }}</a></li>
+                        <li><a href="/terms/">{{ i18n "termsOfUse" }}</a></li>
                     </ul>
                 </div>
             </div>
-            <div class="sm:flex justify-between border-t py-6 text-white mt-12 sm:mt-32">
-                <p>{{ site.Params.copyright | markdownify }}</p>
-                <ul class="sm:mt-0 mt-4 flex">
-                    <li class="border-r pr-4 mr-4 "><a href="/privacy/">{{ i18n "privacyPolicy" }}</a></li>
-                    <li><a href="/terms/">{{ i18n "termsOfUse" }}</a></li>
-                </ul>
-            </div>
         </div>
-    </div>
-
-</footer>
+    
+    </footer>
+</div>

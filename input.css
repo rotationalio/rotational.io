@@ -17,6 +17,9 @@
    .art-s p:nth-of-type(2) {
     @apply h-36 overflow-hidden;
   }
+  .input-sl {
+    @apply px-7 py-4 mt-6 mr-8 rounded-lg w-full basis-1/2 border-red-500;
+  }
 
  
   
@@ -24,6 +27,7 @@
 body {
     font-family: 'Montserrat', sans-serif;
 }
+
 /* .art-s p:nth-of-type(2) {
    color: red;
 } */
@@ -66,6 +70,12 @@ body {
   text-align: right;
 }
 
+/* Get background for Ensign Developer Experience section to span the full width */
+.experience-background {
+  margin: 0 -62.5rem;
+  padding: 0.25rem 62.5rem;
+  background: #ECF6FF;
+}
 
 @media screen and (max-width: 910px) {
 .topnav a {display: none;}

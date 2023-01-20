@@ -1027,6 +1027,20 @@ video {
   overflow: hidden;
 }
 
+.input-sl {
+  margin-top: 1.5rem;
+  margin-right: 2rem;
+  width: 100%;
+  flex-basis: 50%;
+  border-radius: 0.5rem;
+  --tw-border-opacity: 1;
+  border-color: rgb(239 68 68 / var(--tw-border-opacity));
+  padding-left: 1.75rem;
+  padding-right: 1.75rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
 .static {
   position: static;
 }
@@ -1061,6 +1075,10 @@ video {
 
 .isolate {
   isolation: isolate;
+}
+
+.col-span-2 {
+  grid-column: span 2 / span 2;
 }
 
 .row-span-1 {
@@ -1154,10 +1172,6 @@ video {
   margin-top: 2.5rem;
 }
 
-.mr-8 {
-  margin-right: 2rem;
-}
-
 .ml-6 {
   margin-left: 1.5rem;
 }
@@ -1170,16 +1184,24 @@ video {
   margin-top: 2.75rem;
 }
 
+.ml-10 {
+  margin-left: 2.5rem;
+}
+
+.ml-5 {
+  margin-left: 1.25rem;
+}
+
+.mr-2 {
+  margin-right: 0.5rem;
+}
+
 .mt-16 {
   margin-top: 4rem;
 }
 
 .mt-24 {
   margin-top: 6rem;
-}
-
-.ml-10 {
-  margin-left: 2.5rem;
 }
 
 .mr-5 {
@@ -1330,16 +1352,20 @@ video {
   flex-basis: 0.75rem;
 }
 
-.basis-1\/2 {
-  flex-basis: 50%;
-}
-
 .transform {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 .cursor-pointer {
   cursor: pointer;
+}
+
+.list-outside {
+  list-style-position: outside;
+}
+
+.list-disc {
+  list-style-type: disc;
 }
 
 .grid-flow-col {
@@ -1364,6 +1390,10 @@ video {
 
 .flex-wrap {
   flex-wrap: wrap;
+}
+
+.content-center {
+  align-content: center;
 }
 
 .items-start {
@@ -1515,11 +1545,6 @@ video {
   border-color: rgb(248 113 113 / var(--tw-border-opacity));
 }
 
-.border-red-500 {
-  --tw-border-opacity: 1;
-  border-color: rgb(239 68 68 / var(--tw-border-opacity));
-}
-
 .border-\[\#192E5B\] {
   --tw-border-opacity: 1;
   border-color: rgb(25 46 91 / var(--tw-border-opacity));
@@ -1635,6 +1660,10 @@ video {
   padding: 1.25rem;
 }
 
+.p-7 {
+  padding: 1.75rem;
+}
+
 .p-6 {
   padding: 1.5rem;
 }
@@ -1741,6 +1770,34 @@ video {
   padding-bottom: 2.5rem;
 }
 
+.pb-5 {
+  padding-bottom: 1.25rem;
+}
+
+.pl-10 {
+  padding-left: 2.5rem;
+}
+
+.pb-2 {
+  padding-bottom: 0.5rem;
+}
+
+.pb-3 {
+  padding-bottom: 0.75rem;
+}
+
+.pb-1 {
+  padding-bottom: 0.25rem;
+}
+
+.pt-20 {
+  padding-top: 5rem;
+}
+
+.pb-20 {
+  padding-bottom: 5rem;
+}
+
 .pt-\[350px\] {
   padding-top: 350px;
 }
@@ -1751,10 +1808,6 @@ video {
 
 .pt-3 {
   padding-top: 0.75rem;
-}
-
-.pb-5 {
-  padding-bottom: 1.25rem;
 }
 
 .text-left {
@@ -1824,6 +1877,14 @@ video {
   text-transform: uppercase;
 }
 
+.leading-relaxed {
+  line-height: 1.625;
+}
+
+.leading-10 {
+  line-height: 2.5rem;
+}
+
 .text-\[\#1D65A6\] {
   --tw-text-opacity: 1;
   color: rgb(29 101 166 / var(--tw-text-opacity));
@@ -1877,6 +1938,11 @@ video {
 .text-\[\#192E5B\] {
   --tw-text-opacity: 1;
   color: rgb(25 46 91 / var(--tw-text-opacity));
+}
+
+.text-\[\#1D66A6\] {
+  --tw-text-opacity: 1;
+  color: rgb(29 102 166 / var(--tw-text-opacity));
 }
 
 .opacity-40 {
@@ -1962,6 +2028,14 @@ body {
   border-radius: 8px;
   width: 100%;
   text-align: right;
+}
+
+/* Get background for Ensign Developer Experience section to span the full width */
+
+.experience-background {
+  margin: 0 -62.5rem;
+  padding: 0.25rem 62.5rem;
+  background: #ECF6FF;
 }
 
 @media screen and (max-width: 910px) {
@@ -2145,6 +2219,10 @@ body {
     width: 50%;
   }
 
+  .sm\:max-w-2xl {
+    max-width: 42rem;
+  }
+
   .sm\:grid-cols-7 {
     grid-template-columns: repeat(7, minmax(0, 1fr));
   }
@@ -2174,6 +2252,10 @@ body {
 
   .sm\:pt-5 {
     padding-top: 1.25rem;
+  }
+
+  .sm\:pt-0 {
+    padding-top: 0px;
   }
 
   .sm\:pb-5 {
@@ -2383,6 +2465,10 @@ body {
     width: 3rem;
   }
 
+  .lg\:max-w-4xl {
+    max-width: 56rem;
+  }
+
   .lg\:max-w-none {
     max-width: none;
   }
@@ -2415,6 +2501,10 @@ body {
     font-size: 3rem;
     line-height: 1;
   }
+
+  .lg\:leading-loose {
+    line-height: 2;
+  }
 }
 
 @media (min-width: 1280px) {
@@ -2428,6 +2518,10 @@ body {
 
   .xl\:grid {
     display: grid;
+  }
+
+  .xl\:max-w-6xl {
+    max-width: 72rem;
   }
 
   .xl\:text-5xl {
