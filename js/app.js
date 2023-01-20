@@ -9,14 +9,10 @@ function openMobNav() {
 }
 
 // Change footer background color on the Ensign page
-
-function changeFooterBackground() {
-  const footerBackground = document.getElementById('footerBackground');
-  footerBackground.style.backgroundColor = '#ECF6FF';
-}
+const changeFooterBackground = document.getElementById('footerBackground');
 
 if (location.pathname == '/ensign/') {
-  changeFooterBackground();
+  changeFooterBackground.style.backgroundColor = '#ECF6FF';
 }
 
 // Contact Form submission
@@ -200,7 +196,7 @@ ensignForm?.addEventListener('submit', (event) => {
         ensignForm.reset();
         ensignHomeEl.style.display = 'none';
         ensignConfirmationEl.style.display = 'block';
-        changeFooterBackground();
+        changeFooterBackground.style.backgroundColor = '#FFFFFF';
       }
       return response.json();
     })
