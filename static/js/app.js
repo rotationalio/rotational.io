@@ -9,10 +9,14 @@ function openMobNav() {
 }
 
 // Change footer background color on the Ensign page
-const footerBackground = document.getElementById('footerBackground');
+
+function changeFooterBackground() {
+  const footerBackground = document.getElementById('footerBackground');
+  footerBackground.style.backgroundColor = '#ECF6FF';
+}
 
 if (location.pathname == '/ensign/') {
-  footerBackground.style.backgroundColor = '#ECF6FF';
+  changeFooterBackground();
 }
 
 // Contact Form submission
@@ -171,20 +175,17 @@ const ensignForm = document.getElementById('ensignForm');
 
 ensignForm?.addEventListener('submit', (event) => {
   event.preventDefault();
+  console.log('ensign form submitted');
   const formData = new FormData(ensignForm);
   const data = Object.fromEntries(formData);
   const ensignHomeEl = document.getElementById('ensign-home');
   const ensignConfirmationEl = document.getElementById('ensign-confirmation');
-  console.log('ensignConfirmationEl', ensignConfirmationEl);
-
   const { notify_me, ...rest } = data;
 
   const formattedData = {
     notifications: !!(notify_me === 'on'),
     ...rest,
-    list: [
-      'd99ae1c6-1c25-4904-a56c-21e82a0fce52'
-    ],
+    list: ['d99ae1c6-1c25-4904-a56c-21e82a0fce52'],
   };
   console.log(formattedData);
   fetch('https://api.rotationallabs.com/v1/notifications/signup', {
@@ -196,10 +197,10 @@ ensignForm?.addEventListener('submit', (event) => {
   })
     .then((response) => {
       if (response.status === 204) {
+        ensignForm.reset();
         ensignHomeEl.style.display = 'none';
         ensignConfirmationEl.style.display = 'block';
-        footerBackground.style.backgroundColor = '#FFFFFF';
-        ensignForm.reset();
+        changeFooterBackground();
       }
       return response.json();
     })
