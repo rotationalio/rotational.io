@@ -33,7 +33,7 @@ There are several advantages to this framework. First, the producer and consumer
 
 ## Getting Started with Watermill
 
-Watermill provides a very simple interface to create a publisher and a subscriber.
+Watermill provides a very simple interface to create a publisher and a subscriber.  The following code snippets assume that **watermill**, **ensign**, and **watermill-ensign** have already been installed.
 
 ```go
 type Publisher interface {
