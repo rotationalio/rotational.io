@@ -27,19 +27,31 @@
         </p>
     </section>
     <section class="w-full bg-[#1D65A6] p-14 rounded-xl md:rounded-l-xl">
+
         <form action="ensign" method="post" id="ensignForm">
             <div class="p-7 text-white">
                 <h3 class="pb-2 text-2xl font-bold text-center">Request Alpha Access Today</h3>
                 <p class="text-center">We're opening up Ensign on a limited basis.</p>
                 <p class="pb-3 text-center">No credit card required.</p>
             </div>
+            <div class="bg-red-100 border-t-4 border-red-500 rounded-b text-red-900 px-4 py-3 shadow-md hidden "
+                id='ensign-alert' role="alert">
+                <div class="flex">
+
+                    <div>
+                        <p class="text-sm">{{site.Params.ensignFormErrorMessage}}</p>
+                    </div>
+                </div>
+            </div>
             <div>
                 <label for="firstName" class="hidden">First Name </label>
-                <input name="firstName" type="text" name="firstName" required placeholder="First Name *" class="input-sl" />
+                <input name="firstName" type="text" name="firstName" required placeholder="First Name *"
+                    class="input-sl" />
             </div>
             <div>
                 <label for="lastName" class="hidden">Last Name </label>
-                <input name="lastName" type="text" name="lastName" required placeholder="Last Name *" class="input-sl" />
+                <input name="lastName" type="text" name="lastName" required placeholder="Last Name *"
+                    class="input-sl" />
             </div>
             <div>
                 <label for="email" class="hidden">Email address </label>
@@ -51,11 +63,13 @@
             </div>
             <div class="pb-3">
                 <label for="organization" class="hidden">Organization </label>
-                <input name="organization" name="organization" type="text" placeholder="Organization" class="input-sl" />
+                <input name="organization" name="organization" type="text" placeholder="Organization"
+                    class="input-sl" />
             </div>
             <div class="pb-5">
                 <label for="cloudServiceProvider" class="hidden">Cloud Service Provider</label>
-                <select name="cloudServiceProvider" name="cloudServiceProvider" id="cloudServiceProvider" class="input-sl">
+                <select name="cloudServiceProvider" name="cloudServiceProvider" id="cloudServiceProvider"
+                    class="input-sl">
                     <option value="Cloud service provider not selected">Cloud service provider</option>
                     <option value="Amazon Web Services (AWS)">Amazon Web Services (AWS)</option>
                     <option value="Microsoft Azure">Microsoft Azure</option>
@@ -76,7 +90,8 @@
                 <label>
                     <input type="checkbox" required name="notify_me" class="w-4 h-4 border-0 " />
                     <label for="checkbox">
-                        <span class="text-white">I agree to receive notifications about Ensign from Rotational Labs. Your contact
+                        <span class="text-white">I agree to receive notifications about Ensign from Rotational Labs.
+                            Your contact
                             information will not be shared with external parties. Unsubscribe any time.</span>
                     </label>
             </div>

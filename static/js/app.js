@@ -175,13 +175,14 @@ ensignForm?.addEventListener('submit', (event) => {
   const formData = new FormData(ensignForm);
   const data = Object.fromEntries(formData);
   const ensignHomeEl = document.getElementById('ensign-home');
+  const ensignAlertEl = document.getElementById('ensign-alert');
   const ensignConfirmationEl = document.getElementById('ensign-confirmation');
   const { notify_me, ...rest } = data;
 
   const formattedData = {
     notifications: !!(notify_me === 'on'),
     ...rest,
-    list: ['d99ae1c6-1c25-4904-a56c-21e82a0fce52'],
+    lists: ['d99ae1c6-1c25-4904-a56c-21e82a0fce52'],
   };
   console.log(formattedData);
   fetch('https://api.rotationallabs.com/v1/notifications/signup', {
@@ -191,14 +192,15 @@ ensignForm?.addEventListener('submit', (event) => {
     },
     body: JSON.stringify(formattedData),
   })
-    .then((response) => {
+    .then(async (response) => {
       if (response.status === 204) {
         ensignForm.reset();
         ensignHomeEl.style.display = 'none';
         ensignConfirmationEl.style.display = 'block';
         changeFooterBackground.style.backgroundColor = '#FFFFFF';
       }
-      return response.json();
+      // return response avoid error in console
+      return await response.text();
     })
     .then((data) => {
       console.log('Success:', data);
@@ -206,5 +208,6 @@ ensignForm?.addEventListener('submit', (event) => {
 
     .catch((error) => {
       console.error('Error:', error);
+      ensignAlertEl.style.display = 'block';
     });
 });
