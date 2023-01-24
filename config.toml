@@ -86,7 +86,7 @@ contactFormSuccessMessage = "Thank you for your interest in Rotational Labs! Ple
 newsletterFormSuccessMessage = "Thank you for your interest!"
 
 ensignFormErrorTitle=""
-ensignFormErrorMessage="Your request didn't go through, please retry again.  If you need immediate assistance, please email support@rotational.io. "
+ensignFormErrorMessage="Your request didn't go through, please try again. If you need immediate assistance, please email support@rotational.io. "
 
 [params.socials]
 [params.socials.email]
