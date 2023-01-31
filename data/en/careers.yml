@@ -1,20 +1,21 @@
 #################################### careers ###############################
 careers:
-  enable : false
-  title : Rotational Careers
-  subtitle : We value diversity of experience, empathy, and impact. We hire for “add”, not “fit”.
-  careers_item :
-    # careers item loop
-    - name : Senior Distributed Systems Engineer
-      description : Nam gravida, erat quis aliquam consectetur, nulla nisi condimentum sapien, in vehicula orci augue vel diam. Suspendisse arcu est
-      link : ""
+  enable: true
+  title: Rotational Careers
+  subtitle: We value diversity of experience, empathy, and impact. We hire for “add”, not “fit”.
+  careers_item:
+    - name: Senior Distributed Systems Engineer
+      description: We're looking for senior software engineers who are excited about distributed systems and want to build the next-generation of cloud native solutions (full-time, fully remote).
+      link: "/pdf/jobs/senior_distributed_systems_engineer.pdf"
 
-    # careers item loop
-    - name : Distributed Systems Engineer
-      description : Nam gravida, erat quis aliquam consectetur, nulla nisi condimentum sapien, in vehicula orci augue vel diam. Suspendisse arcu est,
-      link : ""
+    - name: Distributed Systems Engineer
+      description: Join us to help build next generation globally distributed systems and work in a curiosity-driven environment that prioritizes respect and excellence (full-time, fully remote).
+      link: "/pdf/jobs/distributed_systems_engineer.pdf"
 
-    # careers item loop
-    - name : Marketing Specialist
-      description : Nam gravida, erat quis aliquam consectetur, nulla nisi condimentum sapien, in vehicula orci augue vel diam. Suspendisse arcu est,
-      link : ""
+    - name: Business Development Associate
+      description: Help our COO develop and implement a coordinated business development strategy, perform market research, and engage potential customers (full or part time, fully remote).
+      link: "/pdf/jobs/business_development_associate.pdf"
+
+    - name: Marketing Specialist
+      description: Our brand is very important to us, and we're looking for someone who is excited to help us develop and communicate it, and create a community that fosters curiosity, collaboration, and respect (full or part time, fully remote).
+      link: "/pdf/jobs/marketing_specialist.pdf"
