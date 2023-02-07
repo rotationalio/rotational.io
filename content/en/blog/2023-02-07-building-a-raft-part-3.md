@@ -3,7 +3,7 @@ title: "Building a Raft (Part 3)"
 slug: "building-a-raft-part-3"
 date: "2023-01-30T12:24:32-05:00"
 draft: false
-image: img/blog/2023-01-19-building-a-raft-part-3/otterRaftThree.png
+image: img/blog/2023-02-07-building-a-raft-part-3/otterRaftThree.png
 author: "Daniel Sollis"
 category: "Distributed Systems"
 profile: img/team/daniel-sollis.png
@@ -38,7 +38,7 @@ Instead, a leader periodically (say, every `n` seconds or so) will send an empty
 
 Leader election in Raft is handled by the `RequestVote` RPC. First off, remember at the start of this series we mentioned that there are three states that a Raft server can be in: Leader, Candidate and Follower. We haven’t talked about the candidate state yet because this is where it actually comes into play.
 
-!["State change flowchart"](/img/blog/2023-01-19-building-a-raft-part-3/stateChanges.png)
+!["State change flowchart"](/img/blog/2023-02-07-building-a-raft-part-3/stateChanges.png)
 
 If a Raft server does not receive any communication from the leader (heartbeat or regular requests) for a given amount of time, it will assume the leader has died and will start a campaign to become the new leader, incrementing it’s term, voting for itself and sending `RequestVote` RPCs to the other servers in the cluster. If it receives a majority of the cluster’s votes, it declares itself leader and starts sending out heartbeats. Luckily for us, the `RequestVote` RPC ends up being much simpler than `AppendEntries`, but we should still spend some time stepping through it.
 
@@ -68,7 +68,7 @@ message VoteReply {
 
 #### 1. Vote "no" if the candidate is behind
 
-Just like in `AppendEntries`, we first need to check if the candidate has an up-to-date term. If a candidate requesting a vote has a term less than the recipient's term, that candidate is not up-to-date with the rest of the cluster, and should be denied the vote.
+Just like in `AppendEntries`, we first need to check if the candidate has an up-to-date term. If the candidate requesting the vote has a term less than the recipient's term, that candidate is not up-to-date with the rest of the cluster, and should be denied the vote. On the other hand if the candidate has a term greater than ours, we should ensure that we are a follower and reset our election timeout since we know there is a node in the cluster more up to date. 
 
 #### 2. Vote "yes" if the candidate is ahead or even (but only vote once!)
 
@@ -80,14 +80,20 @@ Here's the full logic for the `RequestVote` function:
 func (s *RaftServer) RequestVote(ctx context.Context, in *api.VoteRequest) (out *api.VoteReply, err error) {
 	s.Lock()
 	defer s.Unlock()
-	out = &api.VoteReply{Id: s.id, Term: s.currentTerm}
+	out = &api.VoteReply{Id: s.id, Term: s.currentTerm, VoteGranted: false}
 	lastLogIndex, lastLogTerm := s.lastLogIndexAndTerm()
 
+	// Check if the incoming request has a higher term than ours, if so then there is a node in the cluster 
+	// more up to date, so we ensure we are a follower and reset our election timeout
 	if in.Term > s.currentTerm {
 		fmt.Printf("RequestVote: in.Term > s.currentTerm, reverting to follower\n")
 		s.becomeFollower(in.Term)
 	}
 
+	// This (very complicated) check is to make sure the following things are true before granting the vote:
+	//	1. This nodes current term is the same as the requester's term
+	//  2. This node hasn't voted for another candidate
+	//  3. The lastLogTerm and LastLogIndex of the requestor is at least up to date with this node's
 	if s.currentTerm == in.Term && (s.votedFor == in.CandidateId || s.votedFor == "") &&
 		(int(in.LastLogTerm) > lastLogTerm || (in.LastLogTerm == int32(lastLogTerm) &&
 			in.LastLogIndex >= int64(lastLogIndex))) {
@@ -95,10 +101,7 @@ func (s *RaftServer) RequestVote(ctx context.Context, in *api.VoteRequest) (out 
 		out.VoteGranted = true
 		s.votedFor = in.CandidateId
 		s.lastHeartbeat = time.Now()
-	} else {
-		out.VoteGranted = false
-	}
-	out.Term = s.currentTerm
+	} 
 	return out, nil
 }
 ```
