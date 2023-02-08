@@ -9,6 +9,10 @@ jobs:
         run: |
           git clone https://github.com/rotationalio/rotational.io.git
 
+      - name: Skip Ownership Check
+        run: |
+          git config --global --add safe.directory rotational.io
+
       - name: Run Action 
         uses: rotationalio/rumi-actions@main
         with: 
