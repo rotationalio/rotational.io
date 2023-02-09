@@ -753,11 +753,11 @@ video {
 }
 
 .prose :where(code):not(:where([class~="not-prose"] *))::before {
-  content: "`";
+  content: none;
 }
 
 .prose :where(code):not(:where([class~="not-prose"] *))::after {
-  content: "`";
+  content: none;
 }
 
 .prose :where(a code):not(:where([class~="not-prose"] *)) {
@@ -2553,11 +2553,6 @@ body {
   .lg\:leading-loose {
     line-height: 2;
   }
-
-  .lg\:after\:hidden::after {
-    content: var(--tw-content);
-    display: none;
-  }
 }
 
 @media (min-width: 1280px) {
@@ -2584,10 +2579,5 @@ body {
 
   .xl\:leading-normal {
     line-height: 1.15;
-  }
-
-  .xl\:after\:hidden::after {
-    content: var(--tw-content);
-    display: none;
   }
 }
