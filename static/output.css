@@ -2365,6 +2365,10 @@ body {
     margin-top: 0px;
   }
 
+  .md\:mt-10 {
+    margin-top: 2.5rem;
+  }
+
   .md\:mt-14 {
     margin-top: 3.5rem;
   }
@@ -2578,6 +2582,6 @@ body {
   }
 
   .xl\:leading-normal {
-    line-height: 1.15;
+    line-height: 1.5;
   }
 }
