@@ -1077,6 +1077,10 @@ video {
   isolation: isolate;
 }
 
+.z-10 {
+  z-index: 10;
+}
+
 .col-span-2 {
   grid-column: span 2 / span 2;
 }
@@ -1654,16 +1658,6 @@ video {
      object-fit: cover;
 }
 
-.object-fill {
-  -o-object-fit: fill;
-     object-fit: fill;
-}
-
-.object-center {
-  -o-object-position: center;
-     object-position: center;
-}
-
 .p-14 {
   padding: 3.5rem;
 }
@@ -2155,6 +2149,51 @@ body {
   }
 }
 
+.after\:absolute::after {
+  content: var(--tw-content);
+  position: absolute;
+}
+
+.after\:left-0::after {
+  content: var(--tw-content);
+  left: 0px;
+}
+
+.after\:top-0::after {
+  content: var(--tw-content);
+  top: 0px;
+}
+
+.after\:z-\[1\]::after {
+  content: var(--tw-content);
+  z-index: 1;
+}
+
+.after\:block::after {
+  content: var(--tw-content);
+  display: block;
+}
+
+.after\:h-\[465px\]::after {
+  content: var(--tw-content);
+  height: 465px;
+}
+
+.after\:w-full::after {
+  content: var(--tw-content);
+  width: 100%;
+}
+
+.after\:bg-transparent-overlay::after {
+  content: var(--tw-content);
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), transparent);
+}
+
+.after\:content-\[\'\'\]::after {
+  --tw-content: '';
+  content: var(--tw-content);
+}
+
 .hover\:bg-opacity-50:hover {
   --tw-bg-opacity: 0.5;
 }
@@ -2398,18 +2437,14 @@ body {
     font-size: 0.875rem;
     line-height: 1.25rem;
   }
+
+  .md\:after\:hidden::after {
+    content: var(--tw-content);
+    display: none;
+  }
 }
 
 @media (min-width: 1024px) {
-  .lg\:inset-y-0 {
-    top: 0px;
-    bottom: 0px;
-  }
-
-  .lg\:left-0 {
-    left: 0px;
-  }
-
   .lg\:ml-3 {
     margin-left: 0.75rem;
   }
@@ -2474,10 +2509,6 @@ body {
     height: 480px;
   }
 
-  .lg\:h-full {
-    height: 100%;
-  }
-
   .lg\:w-1\/2 {
     width: 50%;
   }
@@ -2486,16 +2517,8 @@ body {
     width: 3rem;
   }
 
-  .lg\:w-full {
-    width: 100%;
-  }
-
   .lg\:max-w-4xl {
     max-width: 56rem;
-  }
-
-  .lg\:max-w-none {
-    max-width: none;
   }
 
   .lg\:text-start {
@@ -2530,6 +2553,11 @@ body {
   .lg\:leading-loose {
     line-height: 2;
   }
+
+  .lg\:after\:hidden::after {
+    content: var(--tw-content);
+    display: none;
+  }
 }
 
 @media (min-width: 1280px) {
@@ -2556,5 +2584,10 @@ body {
 
   .xl\:leading-normal {
     line-height: 1.5;
+  }
+
+  .xl\:after\:hidden::after {
+    content: var(--tw-content);
+    display: none;
   }
 }
