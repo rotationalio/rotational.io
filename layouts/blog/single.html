@@ -29,9 +29,9 @@
           class="ml-3">{{ .Params.author }} |
           {{ dateFormat "Monday, Jan 2, 2006" .Date }} | {{ .Params.category }}</span>
       </div>
-      <div class="max-w-[800px] mx-auto prose prose-blue">
+      <article class="max-w-[800px] mx-auto prose">
         {{ .Content | safeHTML }}
-      </div>
+      </article>
     </div>
   </div>
 

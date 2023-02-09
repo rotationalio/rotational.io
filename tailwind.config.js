@@ -18,6 +18,20 @@ module.exports = {
       backgroundPosition: {
         "right-center": "right center",
       },
+      typography(theme) {
+        return {
+          DEFAULT: {
+            css: {
+              "code::before": {
+                content: "none",
+              },
+              "code::after": {
+                content: "none",
+              },
+            },
+          },
+        };
+      },
     },
   },
   plugins: [require("@tailwindcss/typography")],
