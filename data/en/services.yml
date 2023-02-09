@@ -2,34 +2,47 @@
 services:
   enable : true
   title : Consulting Services
-  subtitle: Rotational supports organizations in building and modernizing their technical infrastructure for scale, resiliency, and innovation.
+  subtitle: |
+    Building secure, performant, and scalable applications and data products is hard. We
+    want to make it easier and less costly.
   approach:
     enable : true
-    title: Approach
-    description: "Our approach is that “architecture enables innovation” and that the right set of systems, tools, and practices opens the doors to new possibilities. We enable our customers to become thoughtful data-centric organizations by facilitating transition from project-driven focus to a product-oriented approach."
+    title: Our Value
+    description: |
+      We work with our clients to leverage **event-driven microservices** to deliver rich,
+      personalized user experiences, real-time business insights, and streamlined machine
+      learning operations. We also help our customers future proof and stay compliant with
+      privacy regulations.
   services:
     enable : true
-    title: Services
-    description: "Rotational Labs offers consulting and software development services that moves organizations forward in their digital transformation journey. Whether on-prem, cloud native or hybrid, we have experience building data products, developing analytics tools, augmenting technical teams, and advising on technical issues across cloud, web, and IoT applications. From prototyping to technical architecture to application development, we promote growth and act as a catalyst to move organizations forward on their most important priorities."
+    title: Our Expertise
+    description: |
+      Moving from request-response to publish-subscribe has never been easier and can
+      open a realm of possibility.
+
+      Contact us if you're thinking about how to:
     items:
-    - name: Infrastructure
+    - name: Enhance DataOps
       details:
-      - title: Cloud & Distributed Systems
-      - title: Privacy & Security
-      - title: APIs & Microservices
-      - title: Databases
-      - title: Networking
-    - name: Application Development
+      - title: Leverage data from legacy systems
+      - title: Synchronize databases across regions
+      - title: Optimize cloud resources and spend
+      - title: Implement disaster recovery
+      - title: Move data out of silos
+    - name: Build Event-Driven Applications
       details:
-      - title: Requirements Elicitation
-      - title: Rapid Prototyping
-      - title: Front-end Development
-      - title: Back-end Systems
-      - title: Product Support
-    - name: Analytics
+      - title: Rapidly prototype apps and features
+      - title: Stay compliant with privacy regulations
+      - title: Ensure end-to-end data cryptography
+      - title: Untangle micro-service hairballs
+      - title: Multi-app integration
+    - name: Empower Machine Learning
       details:
-      - title: Modeling & Simulation
-      - title: Machine Learning Operations
-      - title: Data Engineering & Pipelines
-      - title: Big Data Analytics
-      - title: Data Visualization
+      - title: Give data scientists access to real data
+      - title: Enable rich experiementation
+      - title: Build reinforcement learning systems
+      - title: Real-time data analytics
+      - title: Historical queries and CDC
+  action:
+    enable: true
+    description: What's blocking your growth? Drop us a line for a friendly chat. We'll make it worth your while.

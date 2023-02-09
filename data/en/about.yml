@@ -1,26 +1,25 @@
 ############################# About ###################################
 about:
-  enable : true
-  title : About Us
-  mission :
-    enable : true
-    title : Our Mission
+  enable: true
+  title: About Us
+  mission:
+    enable: true
+    title: Our Mission
     mission_item:
-    # mission_item loop
-    - text : The digital landscape has grown increasingly complex. From new technologies to changing user expectations to data privacy regulations, companies and creators require new and flexible approaches to build, grow, engage and protect their users and communities.
-    # mission_item loop
-    - text : We provide trusted expertise to application developers seeking to build their data and systems engineering practices. We specialize in building fast, flexible, resilient and legally-compliant data architectures and cloud-to-edge computing systems for the modern digital landscape.
+    - text: |
+        Our mission is to empower modern data teams to build next-generation apps, APIs,
+        and models quickly, reliably, and securely. We help developers and organizations
+        unlock value and growth by getting the right data to the right process at the
+        right time and place. As specialists in cloud native computing, event-driven
+        data systems, and machine learning, we bring empathy to Event-Driven
+        Architectures to create developer experiences that enable collaboration and
+        curiosity in software engineering and operations.
   values:
-    enable : true
-    title : Our Values
+    enable: true
+    title: Our Values
     values_item:
-      # mission_item loop
       - text: Respect - We take the time to listen and care with humility, valuing all contributions.
-      # mission_item loop 
       - text: Curiosity - We ask questions, experiment, and explore, with an empathetic mindset.
-      # mission_item loop   
       - text: Growth - We can and always strive to continuously learn and improve and make an impact.
-      # mission_item loop
       - text: Excellence - We take pride in our style, our craftsmanship and aim to exceed expectations.
-      # mission_item loop
       - text: Collaboration - Together we are resilient and can solve problems for a sustainable future.

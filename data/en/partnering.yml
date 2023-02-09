@@ -1,14 +1,12 @@
 ############################# Partnering ###################################
 partnering:
-  enable : true
-  title : Partnering with Us
+  enable: true
+  title: Empowering Teams to Build What They Can Imagine
   image: img/image-holder.png
   text_item:
-  # text_item loop
-  - text : The digital landscape has grown increasingly complex. From new technologies to changing user expectations to data privacy regulations, companies and creators require new and flexible approaches to build, grow, engage and protect their users and communities.
-  # text_item loop
-  - text : We provide trusted expertise to application developers seeking to build their data and systems engineering practices. We specialize in building fast, flexible, resilient and legally-compliant data architectures and cloud-to-edge computing systems for the modern digital landscape.
+  - text: We help engineers and companies leverage **event-driven microservices** to deliver rich, personalized user experiences, real-time business insights, and streamlined machine learning operations.
+  - text: We make it easy to put data in motion securely and efficiently so our customers can unlock the value of their data and grow. With event streams, we build bridges to support collaboration and innovation between teams, data, services, and applications.
   button_text: Learn more
-  button_action: '/services/'
+  button_action: '/ensign/'
   image_src: 'img/global_data_blue_flow.png'
 
