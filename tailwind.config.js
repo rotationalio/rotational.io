@@ -7,15 +7,30 @@ module.exports = {
       },
       backgroundImage: {
         "hero-pattern": "url('/img/hero.png')",
-        'hero-footer': "url('/img/foot.png')",
+        "hero-footer": "url('/img/foot.png')",
         "wave-pattern": "url('/img/wave.png')",
         "wavexl-pattern": "url('/img/wave_xl.png')",
         "wavelg-pattern": "url('/img/wave_lg.png')",
-        "hexagon": "url('/img/tileable-hexagon.png')",
-        
+        hexagon: "url('/img/tileable-hexagon.png')",
+        "transparent-overlay":
+          "linear-gradient(to bottom, rgba(0, 0, 0, 0.4), transparent)",
       },
       backgroundPosition: {
-        'right-center': 'right center',
+        "right-center": "right center",
+      },
+      typography(theme) {
+        return {
+          DEFAULT: {
+            css: {
+              "code::before": {
+                content: "none",
+              },
+              "code::after": {
+                content: "none",
+              },
+            },
+          },
+        };
       },
     },
   },
