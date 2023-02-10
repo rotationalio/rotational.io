@@ -85,7 +85,7 @@ func (s *RaftServer) RequestVote(ctx context.Context, in *api.VoteRequest) (out 
 
 	// Check if the incoming request has a higher term than ours, if so then there is a node in the cluster 
 	// more up to date, so we ensure we are a follower and reset our election timeout
-	// Note: It's important that we return the node's current term so that the requester can check if it is 
+	// Note: It's important that we return this node's current term so that the requester can check if it is 
 	// 		 out of date and if so, do the same (revert to follower and reset it's election timeout)
 	if in.Term > s.currentTerm {
 		fmt.Printf("RequestVote: in.Term > s.currentTerm, reverting to follower\n")
