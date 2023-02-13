@@ -40,7 +40,7 @@ Leader election in Raft is handled by the `RequestVote` RPC. First off, remember
 
 !["State change flowchart"](/img/blog/2023-02-07-building-a-raft-part-3/stateChanges.png)
 
-If a Raft server does not receive any communication from the leader (heartbeat or regular requests) for a given amount of time, it will assume the leader has died and will start a campaign to become the new leader, incrementing it’s term, voting for itself and sending `RequestVote` RPCs to the other servers in the cluster. If it receives a majority of the cluster’s votes, it declares itself leader and starts sending out heartbeats. Luckily for us, the `RequestVote` RPC ends up being much simpler than `AppendEntries`, but we should still spend some time stepping through it.
+If a Raft server does not receive any communication from the leader (heartbeat or regular requests) for a given amount of time, it will assume the leader has died and will start a campaign to become the new leader, incrementing its term, voting for itself and sending `RequestVote` RPCs to the other servers in the cluster. If it receives a majority of the cluster’s votes, it declares itself leader and starts sending out heartbeats. Luckily for us, the `RequestVote` RPC ends up being much simpler than `AppendEntries`, but we should still spend some time stepping through it.
 
 ## RequestVote Steps
 
