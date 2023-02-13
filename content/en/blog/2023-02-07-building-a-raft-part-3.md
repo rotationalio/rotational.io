@@ -18,7 +18,7 @@ If you missed [part 1](https://rotational.io/blog/building-a-raft-part-1/) or [p
 
 ## Follow the Leader
 
-In the last post, we broke down the `AppendEntries` RPC, focusing on how Raft ensures safety in log replication. When implementing Raft, be extra careful that you get `AppendEntries` right, because any bugs can cause really weird or really bad behavior, such as data getting accidentally overwritten, or a fork, where two parts of the system diverge and wind up with entirely different sets of changes that should be applied to the database. Yikes!
+In the last post, we broke down the `AppendEntries` RPC, focusing on how Raft ensures safety in log replication. When implementing Raft, be extra careful that you get `AppendEntries` right, because bugs can end up overwriting data or introduce a fork, where two nodes in the system diverge and produce entirely different sets of changes in their databases. Yikes!
 
 There's one final thing we need to cover about `AppendEntries` that will be very important for safety, which is **leader election**.
 
