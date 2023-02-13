@@ -10,7 +10,7 @@ profile: img/team/daniel-sollis.png
 description: "In the third and final part of our series on the Raft consensus algorithm we'll wrap up by going over leader election."
 ---
 
-In the third and final part of our series exploring the popular Raft consensus algorithm we'll finally explore how Raft handles leader election, and in doing so discover how Raft is so incredibly resilient.
+In the third and final part of our series exploring the popular consensus algorithm we'll finally explore how Raft handles leader election, and in doing so discover how Raft is so incredibly resilient.
 
 <!--more-->
 
