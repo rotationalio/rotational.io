@@ -95,7 +95,7 @@ func (s *RaftServer) RequestVote(ctx context.Context, in *api.VoteRequest) (out 
 	// This (very complicated) check is to make sure the following things are true before granting the vote:
 	//	1. This nodes current term is the same as the requester's term
 	//  2. This node hasn't voted for another candidate
-	//  3. The lastLogTerm and LastLogIndex of the requestor is at least up to date with this node's
+	//  3. The lastLogTerm and LastLogIndex of the requester is at least up to date with this node's
 	if s.currentTerm == in.Term && (s.votedFor == in.CandidateId || s.votedFor == "") &&
 		(int(in.LastLogTerm) > lastLogTerm || (in.LastLogTerm == int32(lastLogTerm) &&
 			in.LastLogIndex >= int64(lastLogIndex))) {
