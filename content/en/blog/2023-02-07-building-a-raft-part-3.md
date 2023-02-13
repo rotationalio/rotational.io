@@ -32,7 +32,7 @@ So how do you know when the leader is dead?
 
 We mentioned in part 2 that the leader in Raft periodically sends out "heartbeats" to let the followers know that it is still alive and well. This happens to be done using `AppendEntries`. If a follower receives a typical `AppendEntries` request from the leader it can consider that a heartbeat from the leader, but we can’t simply rely on those alone. If a leader doesn’t receive requests from clients then there would be no heartbeats!
 
-Instead, a leader periodically (say, every `n` seconds or so) will send an empty `AppendEntry` request to all of the followers (e.g. one without any new log entries). Followers can then tell this is a heartbeat from the leader and reset their election timeout, preventing a new election and therefore a new term. Speaking of which, it’s time to move on to the final RPC in Raft.
+Instead, a leader periodically (say, every `n` seconds or so) will send an `AppendEntry` request without any new log entries to all of the followers. Followers can then tell this is a heartbeat from the leader and reset their election timeout, preventing a new election and therefore a new term. Speaking of which, it’s time to move on to the final RPC in Raft.
 
 ## Leader Election
 
