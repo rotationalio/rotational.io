@@ -10,7 +10,7 @@ profile: img/team/daniel-sollis.png
 description: "In the third and final part of our series on the Raft consensus algorithm we'll wrap up by going over leader election."
 ---
 
-In the third and final part of our series exploring the popular Raft consensus algorithm we'll finally explore how Raft handles leader election, and in doing so discover how Raft is so incredibly resilient.
+In the third and final part of our series exploring the popular consensus algorithm we'll finally explore how Raft handles leader election, and in doing so discover how Raft is so incredibly resilient.
 
 <!--more-->
 
@@ -18,7 +18,7 @@ If you missed [part 1](https://rotational.io/blog/building-a-raft-part-1/) or [p
 
 ## Follow the Leader
 
-In the last post, we broke down the `AppendEntries` RPC, focusing on how Raft ensures safety in log replication. When implementing Raft, be extra careful that you get `AppendEntries` right, because any bugs can cause really weird or really bad behavior, such as data getting accidentally overwritten, or a fork, where two parts of the system diverge and wind up with entirely different sets of changes that should be applied to the database. Yikes!
+In the last post, we broke down the `AppendEntries` RPC, focusing on how Raft ensures safety in log replication. When implementing Raft, be extra careful that you get `AppendEntries` right, because bugs can end up overwriting data or introduce a fork, where two nodes in the system diverge and produce entirely different sets of changes in their databases. Yikes!
 
 There's one final thing we need to cover about `AppendEntries` that will be very important for safety, which is **leader election**.
 
@@ -32,7 +32,7 @@ So how do you know when the leader is dead?
 
 We mentioned in part 2 that the leader in Raft periodically sends out "heartbeats" to let the followers know that it is still alive and well. This happens to be done using `AppendEntries`. If a follower receives a typical `AppendEntries` request from the leader it can consider that a heartbeat from the leader, but we can’t simply rely on those alone. If a leader doesn’t receive requests from clients then there would be no heartbeats!
 
-Instead, a leader periodically (say, every `n` seconds or so) will send an empty `AppendEntry` request to all of the followers (e.g. one without any new log entries). Followers can then tell this is a heartbeat from the leader and reset their election timeout, preventing a new election and therefore a new term. Speaking of which, it’s time to move on to the final RPC in Raft.
+Instead, a leader periodically (say, every `n` seconds or so) will send an `AppendEntry` request without any new log entries to all of the followers. Followers can then tell this is a heartbeat from the leader and reset their election timeout, preventing a new election and therefore a new term. Speaking of which, it’s time to move on to the final RPC in Raft.
 
 ## Introducing Leader Election
 
@@ -40,7 +40,7 @@ Leader election in Raft is handled by the `RequestVote` RPC. First off, remember
 
 !["State change flowchart"](/img/blog/2023-02-07-building-a-raft-part-3/stateChanges.png)
 
-If a Raft server does not receive any communication from the leader (heartbeat or regular requests) for a given amount of time, it will assume the leader has died and will start a campaign to become the new leader, incrementing it’s term, voting for itself and sending `RequestVote` RPCs to the other servers in the cluster. If it receives a majority of the cluster’s votes, it declares itself leader and starts sending out heartbeats. Luckily for us, the `RequestVote` RPC ends up being much simpler than `AppendEntries`, but we should still spend some time stepping through it.
+If a Raft server does not receive any communication from the leader (heartbeat or regular requests) for a given amount of time, it will assume the leader has died and will start a campaign to become the new leader, incrementing its term, voting for itself and sending `RequestVote` RPCs to the other servers in the cluster. If it receives a majority of the cluster’s votes, it declares itself leader and starts sending out heartbeats. Luckily for us, the `RequestVote` RPC ends up being much simpler than `AppendEntries`, but we should still spend some time stepping through it.
 
 ## RequestVote Steps
 
@@ -85,8 +85,8 @@ func (s *RaftServer) RequestVote(ctx context.Context, in *api.VoteRequest) (out 
 
 	// Check if the incoming request has a higher term than ours, if so then there is a node in the cluster 
 	// more up to date, so we ensure we are a follower and reset our election timeout
-	// Note: It's important that we return the node's current term so that the requester can check if it is 
-	// 		 out of date and if so, do the same (revert to follower and reset it's election timeout)
+	// Note: It's important that we return this node's current term so that the requester can check if it is 
+	// out of date and if so, do the same (revert to follower and reset its election timeout)
 	if in.Term > s.currentTerm {
 		fmt.Printf("RequestVote: in.Term > s.currentTerm, reverting to follower\n")
 		s.becomeFollower(in.Term)
@@ -95,7 +95,7 @@ func (s *RaftServer) RequestVote(ctx context.Context, in *api.VoteRequest) (out 
 	// This (very complicated) check is to make sure the following things are true before granting the vote:
 	//	1. This nodes current term is the same as the requester's term
 	//  2. This node hasn't voted for another candidate (to prevent nodes from voting twice)
-	//  3. The lastLogTerm and LastLogIndex of the requestor is at least up to date with this node's
+	//  3. The lastLogTerm and LastLogIndex of the requester is at least up to date with this node's
 	if s.currentTerm == in.Term && (s.votedFor == in.CandidateId || s.votedFor == "") &&
 		(int(in.LastLogTerm) > lastLogTerm || (in.LastLogTerm == int32(lastLogTerm) &&
 			in.LastLogIndex >= int64(lastLogIndex))) {
@@ -114,4 +114,4 @@ So, to sum it all up, the RequestVote rpc will First check that it is not out of
 
 And that’s a high level summary of the Raft algorithm! If you want to take a crack at implementing the algorithm I would encourage you to read the [original whitepaper](https://raft.github.io/raft.pdf) by Diego Ongaro and John Ousterhout. It will give you a deeper dive into the algorithm and provide some explanations for more advanced topics in Raft like configuration changes and snapshots.
 
-Writing your own implementation of Raft is definitely a difficult task, but if you're at all interested in distributed systems it's a fantastic way to get started down the path of learning about the field. For further reference you can check out [my experimental implementation of Raft.](https://github.com/rotationalio/Raft). If you missed the first two parts of my Raft series you can find part 1 [here](https://rotational.io/blog/building-a-raft-part-1/) and part two [here](https://rotational.io/blog/building-a-raft-part-2/).
+Writing your own implementation of Raft is definitely a difficult task, but if you're at all interested in distributed systems it's a fantastic way to get started down the path of learning about the field. For further reference you can check out [my experimental implementation of Raft](https://github.com/rotationalio/Raft). If you missed the first two parts of my Raft series you can find part 1 [here](https://rotational.io/blog/building-a-raft-part-1/) and part two [here](https://rotational.io/blog/building-a-raft-part-2/).
