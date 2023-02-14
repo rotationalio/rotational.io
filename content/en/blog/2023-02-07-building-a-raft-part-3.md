@@ -34,7 +34,7 @@ We mentioned in part 2 that the leader in Raft periodically sends out "heartbeat
 
 Instead, a leader periodically (say, every `n` seconds or so) will send an empty `AppendEntry` request to all of the followers (e.g. one without any new log entries). Followers can then tell this is a heartbeat from the leader and reset their election timeout, preventing a new election and therefore a new term. Speaking of which, it’s time to move on to the final RPC in Raft.
 
-## Leader Election
+## Introducing Leader Election
 
 Leader election in Raft is handled by the `RequestVote` RPC. First off, remember at the start of this series we mentioned that there are three states that a Raft server can be in: Leader, Candidate and Follower. We haven’t talked about the candidate state yet because this is where it actually comes into play.
 
@@ -94,7 +94,7 @@ func (s *RaftServer) RequestVote(ctx context.Context, in *api.VoteRequest) (out 
 
 	// This (very complicated) check is to make sure the following things are true before granting the vote:
 	//	1. This nodes current term is the same as the requester's term
-	//  2. This node hasn't voted for another candidate
+	//  2. This node hasn't voted for another candidate (to prevent nodes from voting twice)
 	//  3. The lastLogTerm and LastLogIndex of the requestor is at least up to date with this node's
 	if s.currentTerm == in.Term && (s.votedFor == in.CandidateId || s.votedFor == "") &&
 		(int(in.LastLogTerm) > lastLogTerm || (in.LastLogTerm == int32(lastLogTerm) &&
@@ -107,6 +107,8 @@ func (s *RaftServer) RequestVote(ctx context.Context, in *api.VoteRequest) (out 
 	return out, nil
 }
 ```
+
+So, to sum it all up, the RequestVote rpc will First check that it is not out of date based on the requesters term and revert back to a follower if it is, enforcing Raft's guarantee that there is only one leader at a time. Next it will make sure the requestor is up to date using the term and index from request, as well as checking if it has already voted for someone else (in order to prevent double voting) and if both of these checks pass, will grant the requester it's vote. 
 
 ## Wrapping Up
 
