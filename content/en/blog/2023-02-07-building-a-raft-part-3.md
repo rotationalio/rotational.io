@@ -44,9 +44,9 @@ If a Raft server does not receive any communication from the leader (heartbeat o
 
 ## RequestVote Steps
 
-The `RequestVote` function is how candidates carry out elections in remote replicas. The function expects as input a `VoteRequest`, which contains the candidate's term, it's unique identifier, and some details of it's last log entry.
+The `RequestVote` function is how candidates carry out elections in remote replicas. The function expects as input a `VoteRequest`, which contains the candidate's term, its unique identifier, and some details of its last log entry.
 
-*Note: Abbreviated for brevity*
+*Note: Abbreviated for clarity*
 ```proto
 message VoteRequest {
     int32 term = 2;           // The candidate's term.
@@ -94,7 +94,7 @@ func (s *RaftServer) RequestVote(ctx context.Context, in *api.VoteRequest) (out 
 	}
 
 	// This (very complicated) check is to make sure the following things are true before granting the vote:
-	//	1. This nodes current term is the same as the requester's term
+	//  1. This nodes current term is the same as the requester's term
 	//  2. This node hasn't voted for another candidate (to prevent nodes from voting twice)
 	//  3. The lastLogTerm and LastLogIndex of the requester is at least up to date with this node's
 	if s.currentTerm == in.Term && (s.votedFor == in.CandidateId || s.votedFor == "") &&
