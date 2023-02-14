@@ -44,7 +44,7 @@ If a Raft server does not receive any communication from the leader (heartbeat o
 
 ## RequestVote Steps
 
-The `RequestVote` function is how candidates carry out elections in remote replicas. The function expects as input a `VoteRequest`, which contains the candidate's term, it's unique identifier, and some details of it's last log entry.
+The `RequestVote` function is how candidates carry out elections in remote replicas. The function expects as input a `VoteRequest`, which contains the candidate's term, its unique identifier, and some details of its last log entry.
 
 *Note: Abbreviated for brevity*
 ```proto
