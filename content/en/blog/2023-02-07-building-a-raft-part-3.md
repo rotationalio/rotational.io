@@ -88,6 +88,7 @@ func (s *RaftServer) RequestVote(ctx context.Context, in *api.VoteRequest) (out 
 	// Note: It's important that we return this node's current term so that the requester can check if it is 
 	// out of date and if so, do the same (revert to follower and reset its election timeout)
 	if in.Term > s.currentTerm {
+		// Note: When implementing Raft logging is extremely helpful
 		fmt.Printf("RequestVote: in.Term > s.currentTerm, reverting to follower\n")
 		s.becomeFollower(in.Term)
 	}
