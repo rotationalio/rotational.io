@@ -1,7 +1,7 @@
 ---
 title: "Building a Raft (Part 3)"
 slug: "building-a-raft-part-3"
-date: "2023-01-30T12:24:32-05:00"
+date: "2023-02-14T12:24:32-05:00"
 draft: false
 image: img/blog/2023-02-07-building-a-raft-part-3/otterRaftThree.png
 author: "Daniel Sollis"
@@ -68,7 +68,7 @@ message VoteReply {
 
 #### 1. Vote "no" if the candidate is behind
 
-Just like in `AppendEntries`, we first need to check if the candidate has an up-to-date term. If the candidate requesting the vote has a term less than the recipient's term, that candidate is not up-to-date with the rest of the cluster, and should be denied the vote. On the other hand if the candidate has a term greater than ours, we should ensure that we are a follower and reset our election timeout since we know there is a node in the cluster more up to date. 
+Just like in `AppendEntries`, we first need to check if the candidate has an up-to-date term. If the candidate requesting the vote has a term less than the recipient's term, that candidate is not up-to-date with the rest of the cluster, and should be denied the vote. On the other hand if the candidate has a term greater than ours, we should ensure that we are a follower and reset our election timeout since we know there is a node in the cluster more up to date.
 
 #### 2. Vote "yes" if the candidate is ahead or even (but only vote once!)
 
@@ -83,9 +83,9 @@ func (s *RaftServer) RequestVote(ctx context.Context, in *api.VoteRequest) (out 
 	out = &api.VoteReply{Id: s.id, Term: s.currentTerm, VoteGranted: false}
 	lastLogIndex, lastLogTerm := s.lastLogIndexAndTerm()
 
-	// Check if the incoming request has a higher term than ours, if so then there is a node in the cluster 
+	// Check if the incoming request has a higher term than ours, if so then there is a node in the cluster
 	// more up to date, so we ensure we are a follower and reset our election timeout
-	// Note: It's important that we return this node's current term so that the requester can check if it is 
+	// Note: It's important that we return this node's current term so that the requester can check if it is
 	// out of date and if so, do the same (revert to follower and reset its election timeout)
 	if in.Term > s.currentTerm {
 		// Note: When implementing Raft logging is extremely helpful
@@ -104,15 +104,17 @@ func (s *RaftServer) RequestVote(ctx context.Context, in *api.VoteRequest) (out 
 		out.VoteGranted = true
 		s.votedFor = in.CandidateId
 		s.lastHeartbeat = time.Now()
-	} 
+	}
 	return out, nil
 }
 ```
 
-So, to sum it all up, the RequestVote rpc will First check that it is not out of date based on the requesters term and revert back to a follower if it is, enforcing Raft's guarantee that there is only one leader at a time. Next it will make sure the requestor is up to date using the term and index from request, as well as checking if it has already voted for someone else (in order to prevent double voting) and if both of these checks pass, will grant the requester it's vote. 
+So, to sum it all up, the first job of the `RequestVote` RPC is to determine if the recipient itself is a candidate for election; the recipient will check to see if it is behind the requesting candidate's term, and if so, will become a follower. If the recipient is actually ahead of the candidate, it will notify the candidate that it is not eligible for election by passing it's current term back to the candidate. This helps enforce Raft's guarantee that there is only one leader at a time, and is important to determine early on to prevent the recipient from concurrently mounting its own campaign or for an ineligible candidate to repeatedly seek election (both of which can cause election thrashing).
+
+Next, the recipient must determine whether it can vote for the candidate. The requirements for that decision are: (1) their terms must match (2) the recipient must not have already voted for another candidate (3) the most recent entry in the requesting candidate's log must have either the same term or a later term than the recipient's most recent log entry, and (4) the requesting candidate's log must not be shorter than the recipient's. If all these checks pass, the recipient will grant the candidate it's vote.
 
 ## Wrapping Up
 
 And that’s a high level summary of the Raft algorithm! If you want to take a crack at implementing the algorithm I would encourage you to read the [original whitepaper](https://raft.github.io/raft.pdf) by Diego Ongaro and John Ousterhout. It will give you a deeper dive into the algorithm and provide some explanations for more advanced topics in Raft like configuration changes and snapshots.
 
-Writing your own implementation of Raft is definitely a difficult task, but if you're at all interested in distributed systems it's a fantastic way to get started down the path of learning about the field. For further reference you can check out [my experimental implementation of Raft](https://github.com/rotationalio/Raft). If you missed the first two parts of my Raft series you can find part 1 [here](https://rotational.io/blog/building-a-raft-part-1/) and part two [here](https://rotational.io/blog/building-a-raft-part-2/).
+Writing your own implementation of Raft is definitely a difficult task, but if you're at all interested in distributed systems it's a fantastic way to get started down the path of learning about the field. For further reference you can check out [my experimental implementation of Raft](https://github.com/rotationalio/Raft). If you missed the first two parts of my Raft series you can find part one [here](https://rotational.io/blog/building-a-raft-part-1/) and part two [here](https://rotational.io/blog/building-a-raft-part-2/).
