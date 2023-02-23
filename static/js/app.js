@@ -8,15 +8,7 @@ function openMobNav() {
   }
 }
 
-// Change footer background color on the Ensign page
-const changeFooterBackground = document.getElementById('footerBackground');
-
-if (location.pathname == '/ensign/') {
-  changeFooterBackground.style.backgroundColor = '#ECF6FF';
-}
-
 // Contact Form submission
-
 const form = document.getElementById('contactForm');
 
 form?.addEventListener('submit', (event) => {
@@ -197,7 +189,6 @@ ensignForm?.addEventListener('submit', (event) => {
         ensignForm.reset();
         ensignHomeEl.style.display = 'none';
         ensignConfirmationEl.style.display = 'block';
-        changeFooterBackground.style.backgroundColor = '#FFFFFF';
       }
       // return response avoid error in console
       return await response.text();
