@@ -93,7 +93,7 @@ ensignFormErrorMessage="Your request didn't go through, please try again. If you
 URL = "https://twitter.com/rotationalio"
 image = "img/twitter.png"
 username = "Twitter"
-weight = 30
+weight = 10
 
 [params.socials.github]
 URL = "https://github.com/rotationalio"
@@ -105,10 +105,10 @@ weight = 20
 URL = "https://www.linkedin.com/company/rotational"
 image = "img/linkedin.png"
 username = "LinkedIn"
-weight = 40
+weight = 30
 
 [params.socials.email]
 URL = "mailto:info@rotational.io"
 image = "img/email.png"
 username = "Email"
-weight = 10
+weight = 40

@@ -1340,6 +1340,10 @@ video {
   max-width: 36rem;
 }
 
+.max-w-6xl {
+  max-width: 72rem;
+}
+
 .grow {
   flex-grow: 1;
 }
@@ -1382,6 +1386,10 @@ video {
 
 .grid-cols-4 {
   grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.grid-cols-1 {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
 }
 
 .flex-wrap {
@@ -1812,6 +1820,14 @@ video {
   padding-top: 0.75rem;
 }
 
+.pr-2 {
+  padding-right: 0.5rem;
+}
+
+.pr-6 {
+  padding-right: 1.5rem;
+}
+
 .text-left {
   text-align: left;
 }
@@ -2182,6 +2198,38 @@ body {
   content: var(--tw-content);
 }
 
+.hover\:max-w-\[50\%\]:hover {
+  max-width: 50%;
+}
+
+.hover\:max-w-xl:hover {
+  max-width: 36rem;
+}
+
+.hover\:max-w-2xl:hover {
+  max-width: 42rem;
+}
+
+.hover\:rounded-full:hover {
+  border-radius: 9999px;
+}
+
+.hover\:rounded-sm:hover {
+  border-radius: 0.125rem;
+}
+
+.hover\:rounded-lg:hover {
+  border-radius: 0.5rem;
+}
+
+.hover\:rounded-xl:hover {
+  border-radius: 0.75rem;
+}
+
+.hover\:bg-icon-hover:hover {
+  background-color: rgba(217, 217, 217, 0.4);
+}
+
 .hover\:bg-opacity-50:hover {
   --tw-bg-opacity: 0.5;
 }
@@ -2213,10 +2261,6 @@ body {
 
   .sm\:mt-10 {
     margin-top: 2.5rem;
-  }
-
-  .sm\:ml-0 {
-    margin-left: 0px;
   }
 
   .sm\:mt-32 {
@@ -2345,6 +2389,11 @@ body {
     margin-bottom: 1rem;
   }
 
+  .md\:mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   .md\:mt-8 {
     margin-top: 2rem;
   }
@@ -2377,6 +2426,42 @@ body {
     margin-top: 2.5rem;
   }
 
+  .md\:ml-10 {
+    margin-left: 2.5rem;
+  }
+
+  .md\:ml-16 {
+    margin-left: 4rem;
+  }
+
+  .md\:ml-20 {
+    margin-left: 5rem;
+  }
+
+  .md\:ml-12 {
+    margin-left: 3rem;
+  }
+
+  .md\:ml-8 {
+    margin-left: 2rem;
+  }
+
+  .md\:ml-14 {
+    margin-left: 3.5rem;
+  }
+
+  .md\:ml-24 {
+    margin-left: 6rem;
+  }
+
+  .md\:ml-28 {
+    margin-left: 7rem;
+  }
+
+  .md\:ml-32 {
+    margin-left: 8rem;
+  }
+
   .md\:flex {
     display: flex;
   }
@@ -2391,6 +2476,10 @@ body {
 
   .md\:max-w-sm {
     max-width: 24rem;
+  }
+
+  .md\:grid-cols-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
   .md\:rounded-lg {
@@ -2437,6 +2526,10 @@ body {
 }
 
 @media (min-width: 1024px) {
+  .lg\:col-span-4 {
+    grid-column: span 4 / span 4;
+  }
+
   .lg\:mt-14 {
     margin-top: 3.5rem;
   }
@@ -2481,6 +2574,10 @@ body {
     display: block;
   }
 
+  .lg\:flex {
+    display: flex;
+  }
+
   .lg\:grid {
     display: grid;
   }
@@ -2509,8 +2606,8 @@ body {
     max-width: 56rem;
   }
 
-  .lg\:text-start {
-    text-align: start;
+  .lg\:grid-cols-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
   .lg\:text-3xl {

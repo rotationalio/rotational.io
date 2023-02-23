@@ -1,8 +1,8 @@
 <div id="footerBackground">
     <footer class=" bg-hero-footer bg-cover ">
         <div class="pt-[350px] font-extralight">
-            <div class="max-w-7x  mx-auto px-4 sm:px-6 ">
-                <div class="lg:grid grid-cols-4 text-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 ">
+                <div class="grid text-center lg:grid-cols-4 text-white">
                     <div>
                         <a href="/"><img src="img/footer-otter.png" alt=""
                                 class="mt-10 sm:mt-0 mx-auto sm:pb-5 "></a>
@@ -10,58 +10,77 @@
                     <div class="">
                         {{ $data := index site.Data site.Language.Lang }}
     
-                        {{ if $data.contact.contact.contact_details.enable }}
-                        {{ with $data.contact.contact.contact_details }}
-                        <h5 class="text-center lg:text-start font-bold text-lg">{{ .title }}</h5>
-                        <p class="mt-3 ml-10 sm:ml-0 text-lg">
-                            {{ .subtitle }}
-                        </p>
+                        {{ if $data.footer.footer.product.enable }}
+                        {{ with $data.footer.footer.product }}
+                        <h5 class="mb-3">{{ .title }}</h5>
+                        <ul>
+                            {{ range .product_items }}
+                            <li class="pb-2">
+                                <a href="{{ .link }}" target="_blank" class="font-bold">{{ .name }}</a>
+                            </li>
+                            {{ end }}
+                        </ul>
                         {{ end }}
                         {{ end }}
                     </div>
                     <div class="">
                         {{ $data := index site.Data site.Language.Lang }}
     
-                        {{ if $data.contact.contact.contact_details.enable }}
-                        {{ with $data.contact.contact.contact_details }}
-                        <h5 class="text-center lg:text-start font-bold text-lg">{{ .title }}</h5>
-                        <p class="mt-3 ml-10 sm:ml-0 text-lg">
-                            {{ .subtitle }}
-                        </p>
+                        {{ if $data.footer.footer.company.enable }}
+                        {{ with $data.footer.footer.company }}
+                        <h5 class="mb-3">{{ .title }}</h5>
+                        <ul class="">
+                            {{ range .company_items }}
+                            <li class="pb-2">
+                                <a href="{{ .link }}" class="font-bold">{{ .name }}</a>
+                            </li>
+                            {{ end }}
+                        </ul>
                         {{ end }}
                         {{ end }}
                     </div>
                     <div class="">
                         {{ $data := index site.Data site.Language.Lang }}
     
-                        {{ if $data.contact.contact.contact_details.enable }}
-                        {{ with $data.contact.contact.contact_details }}
-                        <h5 class="text-center lg:text-start font-bold text-lg">{{ .title }}</h5>
-                        <p class="mt-3 ml-10 sm:ml-0 text-lg">
-                            {{ .subtitle }}
-                        </p>
+                        {{ if $data.footer.footer.info.enable }}
+                        {{ with $data.footer.footer.info }}
+                        <h5 class="mb-3">{{ .title }}</h5>
+                        <ul>
+                            {{ range .info_items }}
+                            <li class="pb-2">
+                                <a href="{{ .link }}" class="font-bold">{{ .name }}</a>
+                            </li>
+                            {{ end }}
+                        </ul>
                         {{ end }}
                         {{ end }}
                     </div>
                 </div>
                 <div class="sm:flex justify-between border-t py-6 text-white mt-12 sm:mt-32">
-                    <div class="ml-10 xl:ml-5 sm:mt-0 mt-8">
-                        <ul class="sm:grid grid-cols-2 md:flex gap-x-32 gap-y-4">
-                            {{ range sort (.Site.Params.socials) "weight" "asc" }}
-                            <li class="pb-8">
-                                <a href="{{ .url }}" class="flex items-center" target="_blank">
-                                    <img src="{{ .image }}" alt="" class="p-4 rounded-lg mr-4">
-                                    <span>{{ .username }}</span>
-                                </a>
-                            </li>
-                            {{ end }}
+                    <div class="xl:ml-5 sm:mt-0 mt-8">
+                        <div class="">
+                            <ul class="sm:grid grid-cols-2 lg:grid-cols-4 gap-x-32 gap-y-4">
+                                {{ range sort (.Site.Params.socials) "weight" "asc" }}
+                                <li class="pb-8 ">
+                                        <a href="{{ .url }}" class="flex items-center hover:rounded-full hover:bg-icon-hover" target="_blank">
+                                            <img src="{{ .image }}" alt="" class="p-4 rounded-lg mr-4">
+                                            <span>{{ .username }}</span>
+                                        </a>
+                                </li>
+                                {{ end }}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-white sm:flex justify-between pb-6">
+                    <p>{{ replace site.Params.copyright "{year}" now.Year | markdownify }}</p>
+                    <div>
+                        <ul class="sm:mt-0 mt-4 flex">
+                            <li class="border-r pr-4 mr-4 "><a href="/privacy/">{{ i18n "privacyPolicy" }}</a></li>
+                            <li><a href="/terms/">{{ i18n "termsOfUse" }}</a></li>
                         </ul>
                     </div>
-                    <p>{{ replace site.Params.copyright "{year}" now.Year | markdownify }}</p>
-                    <ul class="sm:mt-0 mt-4 flex">
-                        <li class="border-r pr-4 mr-4 "><a href="/privacy/">{{ i18n "privacyPolicy" }}</a></li>
-                        <li><a href="/terms/">{{ i18n "termsOfUse" }}</a></li>
-                    </ul>
+                </div>
                 </div>
             </div>
         </div>
