@@ -1,105 +1,80 @@
-<section class="pb-20 pt-8 xl:grid grid-cols-2 gap-20">
-    <section class="mt-4 text-base sm:mt-5 lg:mt-7 lg:text-lg">
-        <div class="pb-10">
-            <h3 class="font-bold text-xl sm:text-2xl">Powering Real-time Apps & Analytics</h3>
-            <p class="pb-5">The global real-time revolution is here.</p>
-        </div>
-        <p class="pb-5">
-            <span class="text-[#1D65A6] font-bold">Ensign</span> is a <span class="font-bold">next-generation
-                distributed event store and stream-processing platform</span> for real-time apps and analytics that
-            requires no additional investment in infrastructure or overhead. <span class="font-bold">Built for speed and
-                simplicity</span>, Ensign offers advanced features for next-generation applications while significantly
-            reducing barriers to building, maintaining, and scaling event-driven applications. With Ensign, you can:
+<section id="ensign-intro" class="pb-20 pt-8">
+  <section class="text-base text-xl">
+    <h2 class="pb-5 leading-tight font-bold text-4xl">
+      <span class="text-[#1D65A6]">Simplified</span>, Flexible and Secure Event Streams with No Overhead
+    </h2>
+    <p class="pb-5">
+    Trust us, we know how hard it is to make stuff. All you want is to build, ship,
+    scale, and monitor all the data-driven features on your PM's fancy roadmap. Is that
+    so much to ask?
+    </p>
+    <p class="pb-5">
+    We don't think so! <span class="text-[#1D65A6] font-bold">Ensign</span> can help you make analytics real time, do
+    MLOps without days of refactoring, and automate all those boring ETLs. All it takes
+    is an API Key and a few lines of code. No new infrastructure, no surprise costs.
+    </p>
+  </section>
+  <section class="text-base text-xl pt-5">
+    <h2 class="pb-5 leading-normal font-bold text-3xl">
+      Built for the Modern Data Team
+    </h2>
+    <p class="pb-5">
+    Whether you wear one hat or all the hats, the right tool can make a world of difference.
+    </p>
+
+    <!-- Begin Otter Cards -->
+    <div class="sm:grid grid-cols-3 gap-8 mt-5">
+      <div class="bg-[#E3E3E1] rounded-xl mb-5">
+        <h3 class="font-bold text-2xl lg:text-3xl text-center pt-6">Developers</h3>
+        <img src="/img/ensign/otter_developer.png"
+             class="rounded-xl w-72 m-auto"
+             alt="Otter software developer face wearing glasses and a beret"
+        />
+        <p class="text-xl text-center px-5 pb-5">
+          Quickly build event-driven APIs to leverage reactive, asynchronous streams
+          for scalable and reliable microservices and intuitive and fast front-ends.
+        <p>
+        <p class="text-center text-white font-semibold pt-3 pb-10">
+          <a href="https://ensign.rotational.dev/examples/developers/" target="_blank"
+            class="text-xs sm:text-lg rounded-lg px-5 md:px-12 py-3 md:py-5 bg-[#1D65A6] uppercase">
+            Learn More
+          </a>
         </p>
-
-        <ul class="list-disc list-outside pb-5 pl-10">
-            <li>Customize your data pipelines</li>
-            <li>Quickly build or integrate events into new or existing applications</li>
-            <li>Provide fast, consistent, and personalized digital experiences across time and space</li>
-            <li>Accelerate time-to-insight in business intelligence and data analytics</li>
-        </ul>
-
-        <p class="pb-5">
-            Designed as a “low ops / no ops” cloud-agnostic <span class="font-bold">managed service</span>, Ensign is
-            ideal for developers and organizations building <span class="font-bold">event-driven microservices</span> to
-            power rich consumer digital experiences, streaming machine learning models, and real-time business
-            intelligence dashboards.
+      </div>
+      <div class="bg-[#E3E3E1] rounded-xl mb-5">
+        <h3 class="font-bold text-2xl lg:text-3xl text-center pt-6">Data Scientists</h3>
+        <img src="/img/ensign/otter_data_scientist.png"
+             class="rounded-xl w-72 m-auto"
+             alt="Otter data scientist face with a goatee"
+        />
+        <p class="text-xl text-center px-5 pb-5">
+          Self-serve data and move from batch processing to active and reinforcement
+          machine learning. Bonus: skip over all those MLOps headaches.
+        <p>
+        <p class="text-center text-white font-semibold pt-3 pb-10">
+          <a href="https://ensign.rotational.dev/examples/data_scientists/" target="_blank"
+            class="text-xs sm:text-lg rounded-lg px-5 md:px-12 py-3 md:py-5 bg-[#1D65A6] uppercase">
+            Learn More
+          </a>
         </p>
-    </section>
-    <section class="w-full bg-[#1D65A6] p-14 rounded-xl md:rounded-l-xl">
-
-        <form action="ensign" method="post" id="ensignForm">
-            <div class="p-7 text-white">
-                <h3 class="pb-2 text-2xl font-bold text-center">Request Alpha Access Today</h3>
-                <p class="text-center">We're opening up Ensign on a limited basis.</p>
-                <p class="pb-3 text-center">No credit card required.</p>
-            </div>
-            <div class="bg-red-100 border-t-4 border-red-500 rounded-b text-red-900 px-4 py-3 shadow-md hidden"
-                id='ensign-alert' role="alert">
-                <div class="flex">
-                    <div>
-                        <p class="text-sm">{{site.Params.ensignFormErrorMessage}}</p>
-                    </div>
-                </div>
-            </div>
-            <div>
-                <label for="firstName" class="hidden">First Name </label>
-                <input name="firstName" type="text" name="firstName" required placeholder="First Name *"
-                    class="input-sl" />
-            </div>
-            <div>
-                <label for="lastName" class="hidden">Last Name </label>
-                <input name="lastName" type="text" name="lastName" required placeholder="Last Name *"
-                    class="input-sl" />
-            </div>
-            <div>
-                <label for="email" class="hidden">Email address </label>
-                <input type="email" required id="email" name="email" placeholder="Email address *" class="input-sl" />
-            </div>
-            <div>
-                <label for="title" class="hidden">Title </label>
-                <input name="title" type="title" name="title" i placeholder="Title" class="input-sl" />
-            </div>
-            <div class="pb-3">
-                <label for="organization" class="hidden">Organization </label>
-                <input name="organization" name="organization" type="text" placeholder="Organization"
-                    class="input-sl" />
-            </div>
-            <div class="pb-5">
-                <label for="cloudServiceProvider" class="hidden">Cloud Service Provider</label>
-                <select name="cloudServiceProvider" name="cloudServiceProvider" id="cloudServiceProvider"
-                    class="input-sl">
-                    <option value="Cloud service provider not selected">Cloud service provider</option>
-                    <option value="Amazon Web Services (AWS)">Amazon Web Services (AWS)</option>
-                    <option value="Microsoft Azure">Microsoft Azure</option>
-                    <option value="Google Cloud">Google Cloud</option>
-                    <option value="Alibaba Cloud">Alibaba Cloud</option>
-                    <option value="Digital Ocean">Digital Ocean</option>
-                    <option value="IBM Cloud">IBM Cloud</option>
-                    <option value="Oracle">Oracle</option>
-                    <option value="Salesforce">Salesforce</option>
-                    <option value="SAP">SAP</option>
-                    <option value="Rackspace Cloud">Rackspace Cloud</option>
-                    <option value="VMWare">VMWare</option>
-                    <option value="On premises">On premises</option>
-                    <option value="Other">Other</option>
-                </select>
-            </div>
-            <div class="pb-5 ml-5 mr-2">
-                <label>
-                    <input type="checkbox" required name="notify_me" class="w-4 h-4 border-0 " />
-                    <label for="checkbox">
-                        <span class="text-white">I agree to receive notifications about Ensign from Rotational Labs.
-                            Your contact
-                            information will not be shared with external parties. Unsubscribe any time.</span>
-                    </label>
-            </div>
-            <div class="flex justify-center content-center pb-10">
-                <div class="g-recaptcha"></div>
-                <button type="submit" class="flex mt-6 bg-white text-[#192E5B] font-bold px-7 py-4 rounded-lg">
-                    Request Access
-                </button>
-            </div>
-        </form>
-    </section>
+      </div>
+      <div class="bg-[#E3E3E1] rounded-xl mb-5">
+        <h3 class="font-bold text-2xl lg:text-3xl text-center pt-6">Data Engineers</h3>
+        <img src="/img/ensign/otter_data_engineer.png"
+             class="rounded-xl w-72 m-auto"
+             alt="Otter data engineer face with earings, a pony tail, and a pencil behind the ear"
+        />
+        <p class="text-xl text-center px-5 pb-5">
+          Let downstream consumers define their own data schemas rather than struggling
+          to find one the one schema that everyone can agree on.
+        <p>
+        <p class="text-center text-white font-semibold pt-3 pb-10">
+          <a href="https://ensign.rotational.dev/examples/data_engineers/" target="_blank"
+            class="text-xs sm:text-lg rounded-lg px-5 md:px-12 py-3 md:py-5 bg-[#1D65A6] uppercase">
+            Learn More
+          </a>
+        </p>
+      </div>
+    </div>
+  </section>
 </section>
