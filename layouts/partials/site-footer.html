@@ -1,13 +1,13 @@
 <div id="footerBackground">
     <footer class=" bg-hero-footer bg-cover ">
-        <div class="pt-[350px] font-extralight">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 ">
-                <div class="grid text-center lg:grid-cols-4 text-white">
+        <div class="pt-[350px] font-extralight text-white">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="sm:grid grid-cols-4">
                     <div>
                         <a href="/"><img src="img/footer-otter.png" alt=""
-                                class="mt-10 sm:mt-0 mx-auto sm:pb-5 "></a>
+                                class="mx-auto mt-28 sm:mt-0"></a>
                     </div>
-                    <div class="">
+                    <div class="my-10 sm:my-0">
                         {{ $data := index site.Data site.Language.Lang }}
     
                         {{ if $data.footer.footer.product.enable }}
@@ -15,7 +15,7 @@
                         <h5 class="mb-3">{{ .title }}</h5>
                         <ul>
                             {{ range .product_items }}
-                            <li class="pb-2">
+                            <li class="pb-3">
                                 <a href="{{ .link }}" target="_blank" class="font-bold">{{ .name }}</a>
                             </li>
                             {{ end }}
@@ -23,15 +23,15 @@
                         {{ end }}
                         {{ end }}
                     </div>
-                    <div class="">
+                    <div class="mb-10 sm:mb-0">
                         {{ $data := index site.Data site.Language.Lang }}
     
                         {{ if $data.footer.footer.company.enable }}
                         {{ with $data.footer.footer.company }}
                         <h5 class="mb-3">{{ .title }}</h5>
-                        <ul class="">
+                        <ul>
                             {{ range .company_items }}
-                            <li class="pb-2">
+                            <li class="pb-3">
                                 <a href="{{ .link }}" class="font-bold">{{ .name }}</a>
                             </li>
                             {{ end }}
@@ -39,7 +39,7 @@
                         {{ end }}
                         {{ end }}
                     </div>
-                    <div class="">
+                    <div>
                         {{ $data := index site.Data site.Language.Lang }}
     
                         {{ if $data.footer.footer.info.enable }}
@@ -47,7 +47,7 @@
                         <h5 class="mb-3">{{ .title }}</h5>
                         <ul>
                             {{ range .info_items }}
-                            <li class="pb-2">
+                            <li class="pb-3">
                                 <a href="{{ .link }}" class="font-bold">{{ .name }}</a>
                             </li>
                             {{ end }}
@@ -56,10 +56,10 @@
                         {{ end }}
                     </div>
                 </div>
-                <div class="sm:flex justify-between border-t py-6 text-white mt-12 sm:mt-32">
-                    <div class="xl:ml-5 sm:mt-0 mt-8">
-                        <div class="">
-                            <ul class="sm:grid grid-cols-2 lg:grid-cols-4 gap-x-32 gap-y-4">
+                <div class="sm:flex justify-between border-t py-6 mt-12 sm:mt-32">
+                    <div class="mx-auto xl:ml-5 sm:mt-0 mt-8">
+                        <div>
+                            <ul class="mx-auto ml-24 min-[600px]:grid grid-cols-2 min-[600px]:ml-0 lg:grid-cols-4 gap-x-32 xl:ml-20">
                                 {{ range sort (.Site.Params.socials) "weight" "asc" }}
                                 <li class="pb-8 ">
                                         <a href="{{ .url }}" class="flex items-center hover:rounded-full hover:bg-icon-hover" target="_blank">
@@ -72,7 +72,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="text-white sm:flex justify-between pb-6">
+                <div class="sm:flex justify-between py-6">
                     <p>{{ replace site.Params.copyright "{year}" now.Year | markdownify }}</p>
                     <div>
                         <ul class="sm:mt-0 mt-4 flex">
