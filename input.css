@@ -21,8 +21,8 @@
     @apply px-7 py-4 mt-6 mr-8 rounded-lg w-full basis-1/2 border-red-500;
   }
 
- 
-  
+
+
 }
 body {
     font-family: 'Montserrat', sans-serif;
@@ -98,7 +98,7 @@ body {
 }
 .topnav.responsive .icon {
   border-radius: 0 !important;
-  
+
 }
 .topnav.responsive a {
   float: none;

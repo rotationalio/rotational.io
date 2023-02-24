@@ -8,15 +8,7 @@ function openMobNav() {
   }
 }
 
-// Change footer background color on the Ensign page
-const changeFooterBackground = document.getElementById('footerBackground');
-
-if (location.pathname == '/ensign/') {
-  changeFooterBackground.style.backgroundColor = '#ECF6FF';
-}
-
 // Contact Form submission
-
 const form = document.getElementById('contactForm');
 
 form?.addEventListener('submit', (event) => {
@@ -171,7 +163,6 @@ const ensignForm = document.getElementById('ensignForm');
 
 ensignForm?.addEventListener('submit', (event) => {
   event.preventDefault();
-  console.log('ensign form submitted');
   const formData = new FormData(ensignForm);
   const data = Object.fromEntries(formData);
   const ensignHomeEl = document.getElementById('ensign-home');
@@ -184,7 +175,7 @@ ensignForm?.addEventListener('submit', (event) => {
     ...rest,
     lists: ['d99ae1c6-1c25-4904-a56c-21e82a0fce52'],
   };
-  console.log(formattedData);
+
   fetch('https://api.rotationallabs.com/v1/notifications/signup', {
     method: 'POST',
     headers: {
@@ -197,15 +188,13 @@ ensignForm?.addEventListener('submit', (event) => {
         ensignForm.reset();
         ensignHomeEl.style.display = 'none';
         ensignConfirmationEl.style.display = 'block';
-        changeFooterBackground.style.backgroundColor = '#FFFFFF';
       }
       // return response avoid error in console
       return await response.text();
     })
     .then((data) => {
-      console.log('Success:', data);
+      console.log('successfully submitted ensign form:', data);
     })
-
     .catch((error) => {
       console.error('Error:', error);
       ensignAlertEl.style.display = 'block';
