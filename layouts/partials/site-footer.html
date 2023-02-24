@@ -2,7 +2,7 @@
     <footer class=" bg-hero-footer bg-cover ">
         <div class="pt-[350px] font-extralight text-white">
             <div class="max-w-7xl mx-auto px-6">
-                <div class="sm:grid grid-cols-4">
+                <div class="max-[650px]:text-center sm:grid grid-cols-4">
                     <div>
                         <a href="/"><img src="img/footer-otter.png" alt=""
                                 class="mx-auto mt-28 sm:mt-0"></a>
@@ -56,10 +56,10 @@
                         {{ end }}
                     </div>
                 </div>
-                <div class="sm:flex justify-between border-t py-6 mt-12 sm:mt-32">
+                <div class="max-w-7xl sm:flex justify-between border-t py-6 mt-12 sm:mt-32">
                     <div class="mx-auto xl:ml-5 sm:mt-0 mt-8">
                         <div>
-                            <ul class="mx-auto ml-24 min-[600px]:grid grid-cols-2 min-[600px]:ml-0 lg:grid-cols-4 gap-x-32 xl:ml-20">
+                            <ul class="mx-auto min-[600px]:grid grid-cols-2 min-[600px]:ml-0 lg:grid-cols-4 gap-x-32 xl:ml-20">
                                 {{ range sort (.Site.Params.socials) "weight" "asc" }}
                                 <li class="pb-8 ">
                                         <a href="{{ .url }}" class="flex items-center hover:rounded-full hover:bg-icon-hover" target="_blank">
