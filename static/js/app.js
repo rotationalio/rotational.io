@@ -163,7 +163,6 @@ const ensignForm = document.getElementById('ensignForm');
 
 ensignForm?.addEventListener('submit', (event) => {
   event.preventDefault();
-  console.log('ensign form submitted');
   const formData = new FormData(ensignForm);
   const data = Object.fromEntries(formData);
   const ensignHomeEl = document.getElementById('ensign-home');
@@ -176,7 +175,7 @@ ensignForm?.addEventListener('submit', (event) => {
     ...rest,
     lists: ['d99ae1c6-1c25-4904-a56c-21e82a0fce52'],
   };
-  console.log(formattedData);
+
   fetch('https://api.rotationallabs.com/v1/notifications/signup', {
     method: 'POST',
     headers: {
@@ -194,9 +193,8 @@ ensignForm?.addEventListener('submit', (event) => {
       return await response.text();
     })
     .then((data) => {
-      console.log('Success:', data);
+      console.log('successfully submitted ensign form:', data);
     })
-
     .catch((error) => {
       console.error('Error:', error);
       ensignAlertEl.style.display = 'block';
