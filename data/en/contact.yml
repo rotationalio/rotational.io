@@ -11,10 +11,13 @@ contact:
     details_item:
     - image : "img/support.png"
       info : "support@rotational.io"
+      link: "mailto:support@rotational.io"
     - image : "img/material-email.png"
       info : "info@rotational.io"
+      link:  "mailto:info@rotational.io"
     - image : "img/documentation.png"
-      info : "https://rotational.io/documentation"
+      info : "Ensign Docs"
+      link: "https://ensign.rotational.dev/getting-started/"
     
   # Contact form
   contact_form:
@@ -26,7 +29,7 @@ contact:
     email : "Email"
     phone_number : "Phone Number"
     subject : "Subject"
-    subscribe_to_email : "Subscribe to Rotational email content"
+    subscribe_to_email : "Subscribe to Rotational email content."
     message : "Message"
     submit : "Submit"
     
