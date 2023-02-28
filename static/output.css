@@ -1176,6 +1176,10 @@ video {
   margin-top: 2.5rem;
 }
 
+.mr-9 {
+  margin-right: 2.25rem;
+}
+
 .ml-6 {
   margin-left: 1.5rem;
 }
@@ -1336,28 +1340,6 @@ video {
   width: 0.75rem;
 }
 
-.w-fit {
-  width: -moz-fit-content;
-  width: fit-content;
-}
-
-.w-max {
-  width: -moz-max-content;
-  width: max-content;
-}
-
-.w-11\/12 {
-  width: 91.666667%;
-}
-
-.w-\[95\%\] {
-  width: 95%;
-}
-
-.w-\[96\%\] {
-  width: 96%;
-}
-
 .max-w-7xl {
   max-width: 80rem;
 }
@@ -1420,10 +1402,6 @@ video {
 
 .grid-cols-5 {
   grid-template-columns: repeat(5, minmax(0, 1fr));
-}
-
-.grid-cols-1 {
-  grid-template-columns: repeat(1, minmax(0, 1fr));
 }
 
 .flex-col {
@@ -1718,16 +1696,16 @@ video {
   padding: 3.5rem;
 }
 
+.p-4 {
+  padding: 1rem;
+}
+
 .p-5 {
   padding: 1.25rem;
 }
 
 .p-7 {
   padding: 1.75rem;
-}
-
-.p-4 {
-  padding: 1rem;
 }
 
 .p-6 {
@@ -2344,15 +2322,6 @@ body {
     width: 60%;
   }
 
-  .sm\:w-fit {
-    width: -moz-fit-content;
-    width: fit-content;
-  }
-
-  .sm\:w-\[91\%\] {
-    width: 91%;
-  }
-
   .sm\:grid-cols-7 {
     grid-template-columns: repeat(7, minmax(0, 1fr));
   }
@@ -2467,39 +2436,6 @@ body {
     display: none;
   }
 
-  .md\:w-\[96\%\] {
-    width: 96%;
-  }
-
-  .md\:w-\[95\%\] {
-    width: 95%;
-  }
-
-  .md\:w-\[94\%\] {
-    width: 94%;
-  }
-
-  .md\:w-\[91\%\] {
-    width: 91%;
-  }
-
-  .md\:w-fit {
-    width: -moz-fit-content;
-    width: fit-content;
-  }
-
-  .md\:w-9\/12 {
-    width: 75%;
-  }
-
-  .md\:w-\[90\%\] {
-    width: 90%;
-  }
-
-  .md\:w-\[93\%\] {
-    width: 93%;
-  }
-
   .md\:max-w-sm {
     max-width: 24rem;
   }
@@ -2570,6 +2506,10 @@ body {
     margin-top: 1.75rem;
   }
 
+  .lg\:ml-8 {
+    margin-left: 2rem;
+  }
+
   .lg\:mt-8 {
     margin-top: 2rem;
   }
@@ -2602,6 +2542,14 @@ body {
     margin-left: 0.75rem;
   }
 
+  .lg\:ml-7 {
+    margin-left: 1.75rem;
+  }
+
+  .lg\:ml-6 {
+    margin-left: 1.5rem;
+  }
+
   .lg\:block {
     display: block;
   }
@@ -2626,24 +2574,16 @@ body {
     height: 3rem;
   }
 
+  .lg\:w-\[94\%\] {
+    width: 94%;
+  }
+
   .lg\:w-1\/2 {
     width: 50%;
   }
 
   .lg\:w-12 {
     width: 3rem;
-  }
-
-  .lg\:w-\[96\%\] {
-    width: 96%;
-  }
-
-  .lg\:w-\[95\%\] {
-    width: 95%;
-  }
-
-  .lg\:w-\[94\%\] {
-    width: 94%;
   }
 
   .lg\:text-start {
@@ -2691,10 +2631,6 @@ body {
 
   .xl\:w-\[96\%\] {
     width: 96%;
-  }
-
-  .xl\:w-\[95\%\] {
-    width: 95%;
   }
 
   .xl\:text-5xl {
