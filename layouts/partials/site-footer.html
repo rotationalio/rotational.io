@@ -58,8 +58,8 @@
                 </div>
                 <div class="max-w-7xl sm:flex justify-between border-t py-6 mt-12 sm:mt-32">
                     <div class="mx-auto xl:ml-5 sm:mt-0 mt-8">
-                        <div>
-                            <ul class="mx-auto ml-32 min-[600px]:grid grid-cols-2 gap-x-2 md:ml-0 lg:grid-cols-4 md:gap-x-32 xl:ml-20">
+                        <div class="mx-auto">
+                            <ul class="mx-auto grid grid-cols-2 gap-x-20 md:gap-x-32 lg:grid-cols-4 xl:ml-20">
                                 {{ range sort (.Site.Params.socials) "weight" "asc" }}
                                 <li class="pb-8 ">
                                         <a href="{{ .url }}" class="flex items-center hover:rounded-full hover:bg-icon-hover" target="_blank">
