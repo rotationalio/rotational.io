@@ -18,6 +18,9 @@ module.exports = {
       backgroundPosition: {
         "right-center": "right center",
       },
+      colors: {
+        'icon-hover': 'rgba(217, 217, 217, 0.4)',
+      },
       typography(theme) {
         return {
           DEFAULT: {
