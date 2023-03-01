@@ -1221,10 +1221,6 @@ video {
   margin-bottom: 2.5rem;
 }
 
-.ml-24 {
-  margin-left: 6rem;
-}
-
 .ml-0 {
   margin-left: 0px;
 }
@@ -1237,12 +1233,28 @@ video {
   margin-bottom: 1.75rem;
 }
 
+.ml-24 {
+  margin-left: 6rem;
+}
+
 .ml-20 {
   margin-left: 5rem;
 }
 
+.-ml-16 {
+  margin-left: -4rem;
+}
+
 .ml-16 {
   margin-left: 4rem;
+}
+
+.ml-28 {
+  margin-left: 7rem;
+}
+
+.ml-32 {
+  margin-left: 8rem;
 }
 
 .block {
@@ -1452,6 +1464,41 @@ video {
 .gap-x-32 {
   -moz-column-gap: 8rem;
        column-gap: 8rem;
+}
+
+.gap-x-24 {
+  -moz-column-gap: 6rem;
+       column-gap: 6rem;
+}
+
+.gap-x-10 {
+  -moz-column-gap: 2.5rem;
+       column-gap: 2.5rem;
+}
+
+.gap-x-8 {
+  -moz-column-gap: 2rem;
+       column-gap: 2rem;
+}
+
+.gap-x-12 {
+  -moz-column-gap: 3rem;
+       column-gap: 3rem;
+}
+
+.gap-x-6 {
+  -moz-column-gap: 1.5rem;
+       column-gap: 1.5rem;
+}
+
+.gap-x-2 {
+  -moz-column-gap: 0.5rem;
+       column-gap: 0.5rem;
+}
+
+.gap-x-1 {
+  -moz-column-gap: 0.25rem;
+       column-gap: 0.25rem;
 }
 
 .divide-x-2 > :not([hidden]) ~ :not([hidden]) {
@@ -2203,14 +2250,6 @@ body {
   content: var(--tw-content);
 }
 
-.hover\:max-w-\[50\%\]:hover {
-  max-width: 50%;
-}
-
-.hover\:max-w-\[75\%\]:hover {
-  max-width: 75%;
-}
-
 .hover\:rounded-full:hover {
   border-radius: 9999px;
 }
@@ -2229,35 +2268,83 @@ body {
   }
 }
 
-@media (max-width: 641px) {
-  .max-\[641px\]\:text-center {
-    text-align: center;
+@media (max-width: 599px) {
+  .max-\[599px\]\:ml-24 {
+    margin-left: 6rem;
   }
-}
 
-@media (max-width: 640px) {
-  .max-\[640px\]\:text-center {
-    text-align: center;
+  .max-\[599px\]\:ml-32 {
+    margin-left: 8rem;
   }
-}
 
-@media (max-width: 600px) {
-  .max-\[600px\]\:text-center {
-    text-align: center;
+  .max-\[599px\]\:ml-28 {
+    margin-left: 7rem;
   }
 }
 
 @media (min-width: 600px) {
+  .min-\[600px\]\:mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   .min-\[600px\]\:ml-0 {
     margin-left: 0px;
+  }
+
+  .min-\[600px\]\:ml-6 {
+    margin-left: 1.5rem;
+  }
+
+  .min-\[600px\]\:ml-4 {
+    margin-left: 1rem;
+  }
+
+  .min-\[600px\]\:ml-8 {
+    margin-left: 2rem;
+  }
+
+  .min-\[600px\]\:ml-10 {
+    margin-left: 2.5rem;
+  }
+
+  .min-\[600px\]\:ml-12 {
+    margin-left: 3rem;
+  }
+
+  .min-\[600px\]\:ml-16 {
+    margin-left: 4rem;
+  }
+
+  .min-\[600px\]\:ml-20 {
+    margin-left: 5rem;
+  }
+
+  .min-\[600px\]\:ml-24 {
+    margin-left: 6rem;
   }
 
   .min-\[600px\]\:grid {
     display: grid;
   }
 
-  .min-\[600px\]\:text-center {
-    text-align: center;
+  .min-\[600px\]\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .min-\[600px\]\:gap-x-10 {
+    -moz-column-gap: 2.5rem;
+         column-gap: 2.5rem;
+  }
+
+  .min-\[600px\]\:gap-x-20 {
+    -moz-column-gap: 5rem;
+         column-gap: 5rem;
+  }
+
+  .min-\[600px\]\:gap-x-1 {
+    -moz-column-gap: 0.25rem;
+         column-gap: 0.25rem;
   }
 }
 
@@ -2390,14 +2477,6 @@ body {
     padding-top: 0px;
   }
 
-  .sm\:text-left {
-    text-align: left;
-  }
-
-  .sm\:text-justify {
-    text-align: justify;
-  }
-
   .sm\:text-start {
     text-align: start;
   }
@@ -2420,10 +2499,6 @@ body {
   .sm\:text-xl {
     font-size: 1.25rem;
     line-height: 1.75rem;
-  }
-
-  .sm\:hover\:max-w-\[100\%\]:hover {
-    max-width: 100%;
   }
 }
 
@@ -2465,6 +2540,10 @@ body {
     margin-top: 2.5rem;
   }
 
+  .md\:ml-0 {
+    margin-left: 0px;
+  }
+
   .md\:flex {
     display: flex;
   }
@@ -2479,6 +2558,15 @@ body {
 
   .md\:max-w-sm {
     max-width: 24rem;
+  }
+
+  .md\:grid-cols-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .md\:gap-x-32 {
+    -moz-column-gap: 8rem;
+         column-gap: 8rem;
   }
 
   .md\:rounded-lg {
@@ -2521,10 +2609,6 @@ body {
   .md\:after\:hidden::after {
     content: var(--tw-content);
     display: none;
-  }
-
-  .md\:hover\:max-w-\[100\%\]:hover {
-    max-width: 100%;
   }
 }
 
@@ -2599,11 +2683,6 @@ body {
 
   .lg\:grid-cols-4 {
     grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-
-  .lg\:gap-x-32 {
-    -moz-column-gap: 8rem;
-         column-gap: 8rem;
   }
 
   .lg\:text-3xl {
