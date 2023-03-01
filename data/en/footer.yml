@@ -1,0 +1,38 @@
+footer:
+  enable: true
+
+#Product
+  product:
+    enable: true
+    title: PRODUCT
+    product_items:
+    - name: Ensign
+      link: https://rotational.app
+    - name: Documentation
+      link: https://ensign.rotational.dev/getting-started/
+
+#Company
+  company:
+    enable: true
+    title:  COMPANY
+    company_items:
+    - name: Services
+      link: /services
+    - name: Blog
+      link: /blog
+    - name: Open Source
+      link: /opensource
+    - name: About
+      link: /about
+    - name: Contact Us
+      link: /contact
+
+#Information
+  info:
+    enable: true
+    title: INFORMATION
+    info_items:
+    - name: Privacy
+      link: /privacy
+    - name: Terms
+      link: /terms

@@ -89,26 +89,26 @@ ensignFormErrorTitle=""
 ensignFormErrorMessage="Your request didn't go through, please try again. If you need immediate assistance, please email support@rotational.io. "
 
 [params.socials]
-[params.socials.email]
-URL = "mailto:info@rotational.io"
-image = "img/email.png"
-username = "info@rotational.io"
+[params.socials.twitter]
+URL = "https://twitter.com/rotationalio"
+image = "img/twitter.png"
+username = "Twitter"
 weight = 10
 
 [params.socials.github]
 URL = "https://github.com/rotationalio"
 image = "img/github.png"
-username = "rotationalio"
+username = "GitHub"
 weight = 20
-
-[params.socials.twitter]
-URL = "https://twitter.com/rotationalio"
-image = "img/twitter.png"
-username = "@rotationalio"
-weight = 30
 
 [params.socials.linkeding]
 URL = "https://www.linkedin.com/company/rotational"
 image = "img/linkedin.png"
-username = "Rotational"
+username = "LinkedIn"
+weight = 30
+
+[params.socials.email]
+URL = "mailto:info@rotational.io"
+image = "img/email.png"
+username = "Email"
 weight = 40
