@@ -249,7 +249,7 @@ on: push
 
 jobs:
   rumi:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - name: Clone target repository
         run: |
