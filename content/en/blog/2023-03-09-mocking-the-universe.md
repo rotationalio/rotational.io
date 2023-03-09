@@ -1,23 +1,23 @@
 ---
 title: "Mocking the Universe"
 slug: "mocking-the-universe"
-date: "2023-01-02T09:40:12-05:00"
+date: "2023-03-02T09:40:12-05:00"
 draft: false
 image: img/blog/2023-03-08-mocking-the-universe/monkey-in-mirror.jpg
 author: DanielSollis
 category: Golang, Programming, gRPC
 profile: img/team/daniel-sollis.png
-description: ""
+description: "An easy way to get around gRPC connections for testing"
 ---
 
-Here at rotational as you might know, we use gRPC and protocol buffers [quite](https://rotational.io/blog/documenting-grpc-with-openapi) [a bit,](https://rotational.io/blog/what-are-protocol-buffers/) and while gRPC is extremely useful for specifying and implementing network APIs it does raise the question: How do we integrate gRPC with one of our other favorite practices, [mocking?] (https://rotational.io/blog/fake-it-when-you-make-it/) Let's find out!
+Here at rotational as you might know, we use gRPC and protocol buffers [quite](https://rotational.io/blog/documenting-grpc-with-openapi) [a bit,](https://rotational.io/blog/what-are-protocol-buffers/) and while gRPC is extremely useful for specifying and implementing network APIs it does raise the question: How do we integrate gRPC with one of our other favorite practices, [mocking?](https://rotational.io/blog/fake-it-when-you-make-it/) Let's find out!
 
 <!--more-->
 
 ## Package Mocks
-One of the main reasons using mocks is that they allow you to get around dependencies. If you are testing a piece of code you want to test THAT piece of code, not every dependency it's using as well. The same goes for code using gRPC, you don't want to have to test the entire `gRPC service` as well as the network (which can be unreliable) when a piece of code calls an RPC. But how can we avoid stepping into the implementation details when testing? 
+One of the main reasons using mocks is that they allow you to get around dependencies. If you are testing a piece of code you want to test THAT piece of code, not every dependency it's using as well. The same goes for code using gRPC, you don't want to have to test the entire **gRPC service** as well as the network (which can be unreliable) when a piece of code calls an RPC. But how can we avoid stepping into the implementation details when testing? 
 
-The easiest way to get around this is to avoid gRPC all together using package mocks. In many cases, different gRPC service calls are isolated into their own packages that contain structs (likely a `gRPC client` or a struct containing the client) that implement the service's procedure calls. By mocking these structs you can avoid not only the `gRPC calls`, but any other dependencies that might show up in the service's implementation.
+The easiest way to get around this is to avoid gRPC all together using package mocks. In many cases, different gRPC service calls are isolated into their own packages that contain structs (likely a **gRPC client** or a struct containing the client) that implement the service's procedure calls. By mocking these structs you can avoid not only the **gRPC calls**, but any other dependencies that might show up in the service's implementation.
 
 ## Creating A Package Mock
 
@@ -50,7 +50,7 @@ type DatabaseInterface {
 }
 ```
 
-We can now start defining a package mock that will allow us to circumvent calls to the Database service by creating a new struct that also implements `DatabaseInterface`. 
+We can now start defining a package mock that will allow us to circumvent calls to the Database service by creating a new struct that also implements **DatabaseInterface**. 
 
 ```golang
 const (
@@ -95,12 +95,12 @@ The fields we've added to the mock struct are particularly useful. By using the 
 This approach works perfectly for testing code that uses the package that we are mocking, but what about testing the package itself? The package will contain the actual RPC calls, and is going to require a different method.
 
 ## Bufconn
-When testing a package that implements a `gRPC service` we seemingly won't be able to get around having to deal with RPC calls, which bring with them all of the complications of dealing with an unreliable network and whatever dependencies are part of the RPC handling code on the other side of the network. Fortunately for us gRPC comes with a built in solution, the [Bufconn package.](https://pkg.go.dev/google.golang.org/grpc/test/bufconn)
+When testing a package that implements a **gRPC service** we seemingly won't be able to get around having to deal with RPC calls, which bring with them all of the complications of dealing with an unreliable network and whatever dependencies are part of the RPC handling code on the other side of the network. Fortunately for us gRPC comes with a built in solution, the [Bufconn package.](https://pkg.go.dev/google.golang.org/grpc/test/bufconn)
 
-Bufconn provides a way to get around the network dependency by creating an in-memory buffer that simulates a real `gRPC connection`. What about the service at the other end of the connection though? Doesn't that still have dependencies that we don't want to deal with? Well, we can mock it! With the combination of `Bufconn` and mocking we can test code that makes calls to `gRPC`, a technique we've been calling `Universal Mocking`.
+Bufconn provides a way to get around the network dependency by creating an in-memory buffer that simulates a real **gRPC connection**. What about the service at the other end of the connection though? Doesn't that still have dependencies that we don't want to deal with? Well, we can mock it! With the combination of **Bufconn** and mocking we can test code that makes calls to **gRPC**, a technique we've been calling **Universal Mocking**.
 
 ## Universal mock
-Let's go back to our original `Database` definition:
+Let's go back to our original **Database** definition:
 
 ```golang
 type DatabaseInterface {
@@ -126,7 +126,7 @@ type RemoteDatabase struct {
 }
 ```
 
-This looks a lot like the Package mock with a few modifications. We keep the `Calls` map to count specific RPC calls but add a bufconn and `grpc.Server` to serve with. The `OnGet` and `OnPut` field's type is a bit odd and we'll go over those later. Creating a new `RemoteDatabase` will be a bit different than with the package mock:
+This looks a lot like the Package mock with a few modifications. We keep the **Calls** map to count specific RPC calls but add a bufconn and **grpc.Server** to serve with. The **OnGet** and **OnPut** field's type is a bit odd and we'll go over those later. Creating a new **RemoteDatabase** will be a bit different than with the package mock:
 
 ```golang
 func NewRemoteDatabase() *RemoteDatabase {
@@ -160,7 +160,7 @@ func (r *RemoteDatabase) ClientOptions() (opts []grpc.DialOption) {
 }
 ```
 
-In the `NewRemoteDatabase` function we have to instantiate a new bufconn and gRPC server that we need to register and serve. We also have an additional function for serving with the gRPC server and a method for returning the preferred gRPC.DialOptions to make connecting to the mocked server easier. The final piece of the puzzle is the RPC implementations, this is were those odd field types from before come in:
+In the **NewRemoteDatabase** function we have to instantiate a new **bufconn** and **gRPC server** that we need to register and serve. We also have an additional function for serving with the **gRPC server** and a method for returning the preferred **gRPC.DialOptions** to make connecting to the mocked server easier. The final piece of the puzzle is the RPC implementations, this is were those odd field types from before come in:
 
 ```golang
 func (r *RemoteDatabase) Get(ctx context.Context, in GetRequest) (out *GetReply, err error) {
@@ -185,7 +185,7 @@ mock.OnGet = func(context.Context, GetRequest) (*GetReply, error) {
 reply := mock.Get()
 ```
 
- Putting all of this together we get a Universal Mock: 
+Putting all of this together we get a Universal Mock: 
 
 ```golang
 const(
@@ -245,7 +245,7 @@ func (r *RemoteDatabase) Put(ctx context.Context, in PutRequest) (out *PutReques
 
 ## Connecting the Universal Mock
 
-The last step is to have the `Database` struct's client to the Universal Mock. We need to add a method to the struct that handles connecting to a gRPC server:
+The last step is to have the **Database** struct's client to the Universal Mock. We need to add a method to the struct that handles connecting to a **RPC server**:
 
 ```golang
 func (d *Database) Connect(opts ...grpc.DialOption) (err error) {
@@ -269,3 +269,5 @@ With this method in place creating and connecting to a Universal Mock becomes ea
 remoteDatabase := NewRemoteDatabase()
 err = database.Connect(remoteDatabase.ClientOptions()...)
 ```
+
+And that's about it for Universal Mocks, We can now get around any **gRPC calls** for testing purposes while still simulating an actual **gRPC** connection, happy mocking! 
