@@ -37,7 +37,7 @@ In our `Database package`, likely under database/database.go we might have the f
 ```golang
 type Database struct {
     conf database.config
-    client database.DatabaseNetworkClient
+    client DatabaseNetworkClient
 }
 ```
 
@@ -59,9 +59,14 @@ const (
 )
 
 type MockDatabase struct {
-    conf database.config
     Calls      map[string]int 
 	ErrorOn    string
+}
+
+func NewMockDatabase(conf) *MockDatabase {
+	return &MockDatabase{
+		Calls: make(map[string]int),
+	}
 }
 
 func (d *MockDatabase) Get(context.Context, GetRequest) (*GetReply) {
@@ -109,7 +114,78 @@ type Database struct {
 }
 ```
 
+In order to test this struct we'll need to create a mocked server with bufconn that this struct's client can connect to, this will be the Universal mock, and will look something like this:
 
+```golang
+type RemoteDatabase struct {
+	conn        *bufconn.Listener
+    srv         *grpc.Server
+    Calls       map[string]int
+    OnGet       func(context.Context, GetRequest) (*GetReply, error)
+    OnPut       func(context.Context, PutRequest) (*PutRequest, error)
+}
+```
+
+This looks a lot like the Package mock with a few modifications. We keep the `Calls` map to count specific RPC calls but add a bufconn and `grpc.Server` to serve with. The `OnGet` and `OnPut` field's type is a bit odd and we'll go over those later. Creating a new `RemoteDatabase` will be a bit different than with the package mock:
+
+```golang
+func NewRemoteDatabase() *RemoteDatabase {
+	database := &RemoteDatabase{
+		conn:  bufconn.Listen(bufsize),
+		srv:   grpc.NewServer(),
+		Calls: make(map[string]int),
+	}
+	pb.RegisterDatabaseNetworkServer(database.srv, database)
+	go database.Serve()
+	return database
+}
+
+func (r *RemoteDatabase) Serve() {
+	if err := r.srv.Serve(r.conn); err != nil {
+		fmt.Println(err.Error())
+	}
+}
+
+func (r *RemoteDatabase) ClientOptions() (opts []grpc.DialOption) {
+	// Create the dialer
+	dialer := func(context.Context, string) (net.Conn, error) {
+		return r.conn.Dial()
+	}
+	opts = append(opts, grpc.WithContextDialer(dialer))
+
+	// Disable transport security
+	opts = append(opts, grpc.WithInsecure())
+
+	return opts
+}
+```
+
+In the `NewRemoteDatabase` function we have to instantiate a new bufconn and gRPC server that we need to register and serve. We also have an additional function for serving with the gRPC server and a method for returning the preferred gRPC.DialOptions to make connecting to the mocked server easier. The final piece of the puzzle is the RPC implementations, this is were those odd field types from before come in:
+
+```golang
+func (r *RemoteDatabase) Get(ctx context.Context, in GetRequest) (out *GetReply, err error) {
+	r.Calls[GetRPC]++
+	return r.OnGet(ctx, in)
+}
+
+func (r *RemoteDatabase) Put(ctx context.Context, in PutRequest) (out *PutRequest, err error) {
+	r.Calls[PutRPC]++
+	return r.OnPut(ctx, in)
+}
+```
+
+The use of the `Calls` field is largely the same as with the package mock, but we are basically just calling the functions stored on the `OnGet and OnPut` fields. Because these store functions this allows us to specify whatever functionality that we want the server to have for these RPCs!
+for example if we want the server to simply return an empty reply:
+
+```golang
+mock := NewRemoteDatabase()
+mock.OnGet = func(context.Context, GetRequest) (*GetReply, error) {
+	return &GetReply{}, nil
+}
+reply := mock.Get()
+```
+
+ Putting all of this together we get a Universal Mock: 
 
 ```golang
 const(
@@ -119,11 +195,41 @@ const(
 )
 
 type RemoteDatabase struct {
-    pb.UnimplementedDatabaseNetworkServer
 	conn        *bufconn.Listener
+    srv         *grpc.Server
     Calls       map[string]int
     OnGet       func(context.Context, GetRequest) (*GetReply, error)
     OnPut       func(context.Context, PutRequest) (*PutRequest, error)
+}
+
+func NewRemoteDatabase() *RemoteDatabase {
+	database := &RemoteDatabase{
+		conn:  bufconn.Listen(bufsize),
+		srv:   grpc.NewServer(),
+		Calls: make(map[string]int),
+	}
+	pb.RegisterDatabaseNetworkServer(database.srv, database)
+	go database.Serve()
+	return database
+}
+
+func (r *RemoteDatabase) Serve() {
+	if err := r.srv.Serve(r.conn); err != nil {
+		fmt.Println(err.Error())
+	}
+}
+
+func (r *RemoteDatabase) ClientOptions() (opts []grpc.DialOption) {
+	// Create the dialer
+	dialer := func(context.Context, string) (net.Conn, error) {
+		return r.conn.Dial()
+	}
+	opts = append(opts, grpc.WithContextDialer(dialer))
+
+	// Disable transport security
+	opts = append(opts, grpc.WithInsecure())
+
+	return opts
 }
 
 func (r *RemoteDatabase) Get(ctx context.Context, in GetRequest) (out *GetReply, err error) {
@@ -135,4 +241,31 @@ func (r *RemoteDatabase) Put(ctx context.Context, in PutRequest) (out *PutReques
 	r.Calls[PutRPC]++
 	return r.OnPut(ctx, in)
 }
+```
+
+## Connecting the Universal Mock
+
+The last step is to have the `Database` struct's client to the Universal Mock. We need to add a method to the struct that handles connecting to a gRPC server:
+
+```golang
+func (d *Database) Connect(opts ...grpc.DialOption) (err error) {
+	if d.client != nil {
+		return nil
+	}
+
+	var cc *grpc.ClientConn
+	if cc, err = grpc.Dial("bufnet", opts...); err != nil {
+		return fmt.Errorf("could not dial database service: %s", err)
+	}
+
+	d.client = NewDatabaseNetworkClient(cc)
+	return nil
+}
+```
+
+With this method in place creating and connecting to a Universal Mock becomes easy as can be:
+
+```golang
+remoteDatabase := NewRemoteDatabase()
+err = database.Connect(remoteDatabase.ClientOptions()...)
 ```
