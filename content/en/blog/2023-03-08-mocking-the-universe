@@ -2,9 +2,9 @@
 title: "Mocking the Universe"
 slug: "mocking-the-universe"
 date: "2023-01-02T09:40:12-05:00"
-draft: true
+draft: false
+image: img/blog/2023-03-08-mocking-the-universe/monkey-in-mirror.jpg
 author: DanielSollis
-image: img/blog/num215.jpg
 category: Golang, Programming, gRPC
 profile: img/team/daniel-sollis.png
 description: ""
