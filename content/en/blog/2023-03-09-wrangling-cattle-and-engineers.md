@@ -56,6 +56,6 @@ A willingness to work, the ability to learn from failures, and enthusiasm for ex
 
 I suppose Rotational may be [a bit unique](https://rotational.io/about/); we're a team that puts a lot of value on having a mixture of backgrounds and life experiences (as you can probably tell from reading this) &mdash; we look for people who broaden and enrich the team, rather than limiting ourselves to looking for people who "fit".
 
-So, strange as it may seem, I feel just about as home in the world of technology development as I do out here on the range.
+So, strange as it may seem, I feel just about at home in the world of technology development as I do out here on the range.
 
 
