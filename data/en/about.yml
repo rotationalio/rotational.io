@@ -10,10 +10,11 @@ about:
         Our mission is to empower modern data teams to build next-generation apps, APIs,
         and models quickly, reliably, and securely. We help developers and organizations
         unlock value and growth by getting the right data to the right process at the
-        right time and place. As specialists in cloud native computing, event-driven
-        data systems, and machine learning, we bring empathy to Event-Driven
-        Architectures to create developer experiences that enable collaboration and
-        curiosity in software engineering and operations.
+        right time and place. As specialists who occupy the unique intersection of cloud
+        native computing, event-driven data systems, and machine learning, we aim to
+        create shared tools across technical teams that encourage collaboration,
+        empathy, and curiosity.
+
   values:
     enable: true
     title: Our Values
