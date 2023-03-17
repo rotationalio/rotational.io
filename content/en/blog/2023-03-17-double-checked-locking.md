@@ -102,7 +102,9 @@ func (s *Store) set(key string, value int) {
 
 Unfortunately, the above implementation introduces a race condition. It is possible for two or more go routines to perform the check in the read-lock concurrently, detect that the value does not exist, then attempt to acquire the write lock. Go queues accessors to the write lock, therefore they will each acquire it one at a time, write their value and overwite the previous value set by the go routine.
 
-Try running the [following example code on the Go playground](https://go.dev/play/p/vDwbAg64Yj4) a few times; you'll notice that occasionally you'll have two or more go routines who think they've set the value. If you don't see it the first time, keep trying, one of the reasons this error is so common is because the race condition is very hard to observe! To more clearly illustrate the point, you can also introduce some lag in the `set` function either by doing a computation before acquiring the lock or sleeping for a bit of time.
+Try running the [following example code on the Go playground](https://go.dev/play/p/vDwbAg64Yj4) a few times; you'll notice that occasionally you'll have two or more go routines who think they've set the value. If you don't see it the first time, keep trying.  You will notice that at least one of the tests has a situation where the value gets set more than once.  See the screenshot below for an example.  One of the reasons this error is so common is because the race condition is very hard to observe! To more clearly illustrate the point, you can also introduce some lag in the `set` function either by doing a computation before acquiring the lock or sleeping for a bit of time.
+
+!["Race Condition"](/img/blog/2023-03-17-double-checked-locking/race_condition.png)
 
 ## The Solution
 
@@ -140,11 +142,11 @@ func (s *Store) SetOnce(key string, value int) bool {
 
 Now you're guaranteed that only one go routine will ever set the value. Note, however, that you can't guarantee _which_ go routine sets the value, just that whichever go routine acquires the write lock first will be the winner.
 
-Here is [example code on the Go playground](https://go.dev/play/p/KuI2bL6o0tb) that illustrates the semantic.
+Here is [example code on the Go playground](https://go.dev/play/p/KuI2bL6o0tb) that illustrates the semantic.  Run the test multiple times and you will notice that the value gets set only once per test.
 
 ## Rate Limiter Example
 
-We have an API service that we want to prevent being abused, so we'd like to rate limit it on a per-client basis. However, we also expect that we'll have lots of clients, so we don't want to store rate limit information for the duration of the service and we'd like to clean it up occasionally!
+We have an API service that we want to prevent from being abused, so we'd like to rate limit it on a per-client basis. However, we also expect that we'll have lots of clients, so we don't want to store rate limit information for the duration of the service and we'd like to clean it up occasionally!
 
 Determining if a client is violating rate limits can be done using the Golang [rate](https://pkg.go.dev/golang.org/x/time/rate) package. However, we need some data structure to map clients by their ID or IP address to their specific limiter. Each request is handled by the API server in its own Go routine and we have another go routine that is routinely cleaning up all of our rate limiters to prevent unbounded growth.
 
