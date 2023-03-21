@@ -1081,6 +1081,10 @@ video {
   z-index: 10;
 }
 
+.z-\[9999\] {
+  z-index: 9999;
+}
+
 .row-span-1 {
   grid-row: span 1 / span 1;
 }
