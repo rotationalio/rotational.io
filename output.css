@@ -1113,6 +1113,11 @@ video {
   margin-bottom: auto;
 }
 
+.mx-2 {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
 .mb-10 {
   margin-bottom: 2.5rem;
 }
@@ -1237,6 +1242,10 @@ video {
   margin-top: 2.25rem;
 }
 
+.ml-1 {
+  margin-left: 0.25rem;
+}
+
 .block {
   display: block;
 }
@@ -1303,6 +1312,10 @@ video {
 
 .h-auto {
   height: auto;
+}
+
+.h-56 {
+  height: 14rem;
 }
 
 .min-h-\[480px\] {
@@ -1379,6 +1392,10 @@ video {
 
 .w-\[20ch\] {
   width: 20ch;
+}
+
+.w-14 {
+  width: 3.5rem;
 }
 
 .max-w-2xl {
