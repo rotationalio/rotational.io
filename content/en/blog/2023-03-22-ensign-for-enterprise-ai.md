@@ -1,7 +1,7 @@
 ---
 title: "Ensign for Enterprise AI"
 slug: "ensign-for-enterprise-ai"
-date: "2023-03-21T10:32:35-04:00"
+date: "2023-04-21T10:32:35-04:00"
 draft: true
 image:
 author: "Edwin Schmierer"
