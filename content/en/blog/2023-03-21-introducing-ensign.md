@@ -1,7 +1,7 @@
 ---
 title: "Introducing Ensign"
 slug: "introducing-ensign"
-date: "2023-02-24T16:26:50-05:00"
+date: "2023-03-21T10:32:35-04:00"
 draft: false
 image: img/blog/supernova.jpg
 author: "Edwin Schmierer"
@@ -16,25 +16,30 @@ Introducing Ensign -- eventing made easy! Have you always wanted to try out even
 <!--more-->
 
 ## Introducing Ensign
-This month is an exciting one for Rotational Labs. We’re launching [Ensign](https://rotational.io/ensign), our developer platform for building event-driven applications and machine learning models.
+This month is an exciting one for Rotational Labs. We’re launching [Ensign](https://rotational.app), our developer platform for building event-driven applications and machine learning models.
 
-What are we sellin’? Simplicity as a service for event-driven microservices.
+What are we sellin’? **Simplicity as a service** for event-driven microservices.
 
-Ensign makes it fast (and fun) for data teams to leverage the publish-subscribe model for event-driven microservices, real-time machine learning, and data pipelines. It helps companies unlock the hidden value in data silos to grow and innovate.
-
-Want to build...
-
-- new prototypes without refactoring legacy database schemas?
-- real-time dashboards and analytics in days rather than months?
-- rich, tailored experiences so your users know how much they mean to you?
-- MLOps pipelines that bridge the gap between the training and deployment phases?
+Ensign makes it fast (and fun) for data teams to leverage the publish-subscribe model for event-driven microservices, real-time machine learning, and data pipelines. It helps companies unlock data silos to grow and innovate.
 
 Ensign is about no-hassle event-driven applications, models, and dashboards. All it takes is an API key and a few lines of code. No additional infrastructure. No surprise costs.
+
+## Who is Ensign For?
+
+Do you want to build new prototypes without refactoring legacy database schemas?
+
+Are you struggling to build MLOps pipelines that bridge the gap between the training and deployment phases?
+
+Do you wish you could spin up real-time dashboards and analytics in days rather than months?
+
+Do you dream of delivering rich, tailored experiences so that your users know how much they mean to you?
+
+If you answered "yes" to any of the above, Ensign might just be what you've been hoping for.
 
 ## “Wanna Be Startin’ Somethin’“
 Yup, we hope to curry as much fame and fortune as Michael Jackson! Seriously, we do wanna be startin’ somethin’!
 
-Why’d we do it? One word: empathy. Event-driven architecture is a powerful framework but it’s also pretty inaccessible because you often need highly specialized skills, tools, or infrastructure.
+Why’d we do it? One word: **empathy**. Event-driven architecture is a powerful framework but it’s also pretty inaccessible because you often need highly specialized skills, tools, or infrastructure.
 
 We want to take away that friction and empower teams to collaborate and innovate across data, services, and applications to create new applications, services, and models. As [engineers and data scientists ourselves](https://rotational.io/about/), we’ve personally felt the pain. We’ve worked with a variety of clients and talked to hundreds of engineers and data scientists who have also experienced the friction of getting data in motion and building new services and models.
 

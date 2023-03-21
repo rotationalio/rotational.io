@@ -4,8 +4,15 @@ slug: "{{ replaceRE "^[-0-9]{10}-" "" .Name }}"
 date: "{{ .Date }}"
 draft: true
 image: img/blog/
-author: Your Name
-category: "Add Category Here"
 photo_credit: "Add Photo Credits Here"
+author: Your Name
+profile: img/team/your-name.png
+category: "Add Category Here"
 description: "Add Description Here"
 ---
+
+Add description or snippet here.
+
+<!--more-->
+
+Time to write the post!
