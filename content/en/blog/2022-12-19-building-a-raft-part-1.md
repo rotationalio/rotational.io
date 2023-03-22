@@ -10,7 +10,7 @@ profile: img/team/daniel-sollis.png
 description: "In the first part of our series on the Raft consensus algorithm we'll give an overview and introduction of the algorithm."
 ---
 
-With all the [blockchain breaches](http://localhost:1313/blog/six-things-you-didnt-know-about-crypto/) and [social media escapades](https://rotational.io/blog/twitter-wont-disappear-overnight/), there's been an awful lot of buzz about distributed systems lately. But how many of us really understand how they work? Let's dive in together...
+With all the [blockchain breaches](https://rotational.io/blog/six-things-you-didnt-know-about-crypto/) and [social media escapades](https://rotational.io/blog/twitter-wont-disappear-overnight/), there's been an awful lot of buzz about distributed systems lately. But how many of us really understand how they work? Let's dive in together...
 
 <!--more-->
 
