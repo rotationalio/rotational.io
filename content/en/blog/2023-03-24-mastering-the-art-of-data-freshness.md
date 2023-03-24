@@ -1,7 +1,7 @@
 ---
 title: "Mastering the Art of Data Freshness"
 slug: "mastering-the-art-of-data-freshness"
-date: "2023-03-24T09:55:07-04:00"
+date: "2023-03-24T10:34:25-04:00"
 draft: false
 image: img/blog/ripe-pears.jpg
 author: "Edwin Schmierer"
