@@ -10,6 +10,8 @@ footer:
       link: https://rotational.app
     - name: Documentation
       link: https://ensign.rotational.dev/getting-started/
+    - name: SDKs
+      link: https://ensign.rotational.dev/sdk/
 
 #Company
   company:
