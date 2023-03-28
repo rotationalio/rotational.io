@@ -22,7 +22,7 @@ If you are testing a discrete piece of code, you want to test THAT piece of code
 
 The same goes for code using gRPC. When a piece of code calls an RPC, you don't want to have to test the entire **gRPC service** as well as the network (which can be unreliable and *super* hard to test). But how can we avoid stepping into the implementation details when testing gRPC?
 
-The easiest way to get around this is to avoid gRPC altogether, with what we at Rotational refer to as **"package mocks"**. The second technique, which we call **"universal mocks"**, allows us to directly test gRPC methods in a more structured way Read on to learn more about both and see some examples.
+The easiest way to get around this is to avoid gRPC altogether, with what we at Rotational refer to as **"package mocks"**. The second technique, which we call **"universal mocks"**, allows us to directly test gRPC methods in a more structured way. Read on to learn more about both and see some examples.
 
 ## Package Mocks
 
