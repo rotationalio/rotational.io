@@ -60,14 +60,30 @@
                     <div class="mx-auto xl:ml-5 sm:mt-0 mt-8">
                         <div>
                             <ul class="mx-auto grid grid-cols-2 gap-x-20 md:gap-x-32 lg:grid-cols-4 xl:ml-20">
-                                {{ range sort (.Site.Params.socials) "weight" "asc" }}
-                                <li class="pb-8 ">
-                                        <a href="{{ .url }}" class="flex items-center hover:rounded-full hover:bg-icon-hover" target="_blank">
-                                            <img src="{{ .image }}" alt="" class="p-4 rounded-lg mr-4">
-                                            <span>{{ .username }}</span>
+                                <li class="pb-8 mt-1">
+                                        <a href="https://twitter.com/rotationalio" class="flex items-center p-2 hover:rounded-full hover:bg-icon-hover" target="_blank">
+                                            <img src="img/footer/twitter.svg" alt="" class="scale-75">
+                                            <span class="ml-4">Twitter</span>
                                         </a>
                                 </li>
-                                {{ end }}
+                                <li class="pb-8 mt-1">
+                                    <a href="https://github.com/rotationalio" class="flex items-center p-2 hover:rounded-full hover:bg-icon-hover" target="_blank">
+                                        <img src="img/footer/github.svg" alt="" class="scale-[.8]">
+                                        <span class="ml-4">GitHub</span>
+                                    </a>
+                                </li>
+                                <li class="pb-8 ">
+                                    <a href="https://www.linkedin.com/company/rotational" class="flex items-center p-2 hover:rounded-full hover:bg-icon-hover" target="_blank">
+                                        <img src="img/footer/linkedin.svg" alt="" class="scale-75">
+                                        <span class="mt-2 ml-4">LinkedIn</span>
+                                    </a>
+                                </li>
+                                <li class="pb-8 mt-2">
+                                    <a href="mailto:info@rotational.io" class="flex items-center p-2 hover:rounded-full hover:bg-icon-hover" target="_blank">
+                                        <img src="img/footer/email.svg" alt="" class="scale-[.8]">
+                                        <span class="ml-4">Email</span>
+                                    </a>
+                                </li>
                             </ul>
                         </div>
                     </div>
