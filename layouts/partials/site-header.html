@@ -1,17 +1,16 @@
 {{ if eq $.Page.Kind "home" }}
-<div class=" sm:bg-wavelg-pattern bg-wave-pattern bg-right-center sm:min-h-[691px] min-h-[480px] w-full">
-    <!-- <img class="w-full absolute lg:inset-y-0 lg:left-0 lg:h-full lg:w-full lg:max-w-none" src="img/hero.png" alt="" /> -->
+<div class=" sm:bg-wavelg-pattern bg-wave-pattern bg-right-center sm:min-h-[691px] min-h-[480px] w-full ">
     <div
-        class="bg-hero-pattern sm:bg-[length:1267px_691px] bg-[length:882.5px_480px] bg-right-center bg-no-repeat sm:min-h-[691px] min-h-[480px] w-full pt-3">
+        class="bg-hero-pattern sm:bg-[length:1267px_691px] bg-[length:882.5px_480px] bg-right-center bg-no-repeat sm:min-h-[691px] min-h-[480px] w-full after:absolute after:content-[''] after:top-0 after:left-0 after:w-full after:block after:h-[465px] after:z-[1] after:bg-transparent-overlay md:after:hidden">
 
         {{ partial "site-nav.html" . }}
 
-        <div class="relative max-w-7xl mx-auto flex items-center  justify-between text-white px-4 sm:px-6">
-            <div class="w-full sm:w-1/2 text-center sm:text-start text-3xl ">
+        <div class="relative max-w-7xl mx-auto flex items-center justify-between text-white px-4 sm:px-6 z-10">
+            <div class="w-full sm:w-3/5 text-center sm:text-start text-3xl ">
                 {{ with .Params.headertext }}
-                <h1 class=" text-3xl xl:text-5xl md:text-4xl leading-1 xl:leading-normal font-bold mt-6 sm:mt-20">
+                <p class="text-3xl xl:text-5xl md:text-4xl leading-snug sm:leading-tight md:leading-snug xl:leading-tight font-bold mt-6 sm:mt-20">
                     {{ . }}
-                </h1>
+                </p>
                 {{ end }}
 
                 {{ if .Params.headeraction }}

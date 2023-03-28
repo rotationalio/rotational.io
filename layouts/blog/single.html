@@ -4,7 +4,7 @@
 
 
 {{ define "header" }}
-<div class="sm:pt-5 pb-6 relative bg-[#1D65A6]">
+<div class="relative bg-[#1D65A6]">
   {{ partial "site-nav.html" . }}
 </div>
 {{ end }}
@@ -13,7 +13,7 @@
 <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
   <div class="mt-14">
     <div class="blog-img">
-      <img src="{{ .Params.image | absURL }}" alt="{{ .Title }}" class="mx-auto ">
+      <img src="{{ .Params.image | absURL }}" alt="{{ .Title }}" class="mx-auto object-cover">
     </div>
 
 
@@ -29,42 +29,40 @@
           class="ml-3">{{ .Params.author }} |
           {{ dateFormat "Monday, Jan 2, 2006" .Date }} | {{ .Params.category }}</span>
       </div>
-      <div class="max-w-[800px] mx-auto prose prose-blue">
+      <article class="max-w-[800px] mx-auto prose">
         {{ .Content | safeHTML }}
-      </div>
+      </article>
     </div>
   </div>
 
   <div class="bg-[#E8EFF6] max-w-[800px] mx-auto mt-9 p-8 rounded-lg">
-    <div class="text-center">
-      <h3 class="font-bold text-xl sm:text-2xl lg:text-3xl">
-        <b class="text-[#1D65A6]">{{ with i18n "aboutPost" }} {{ index (split . " ") 0 | safeHTML }} {{ end }}</b>
-        {{ with i18n "aboutPost" }} {{ after (len (index (split . " ") 0)) . | safeHTML }} {{ end }}
-      </h3>
-    </div>
-    <p class="mt-4 text-base mx-auto text-center sm:mt-5 lg:mt-7 lg:text-base max-w-2xl">
+    <h3 class="font-bold text-xl sm:text-2xl lg:text-3xl text-center mb-3">
+      <span class="text-[#1D65A6] font-bold">{{ with i18n "aboutPost" }} {{ index (split . " ") 0 | safeHTML }} {{ end }}</span>
+      {{ with i18n "aboutPost" }} {{ after (len (index (split . " ") 0)) . | safeHTML }} {{ end }}
+    </h3>
+    <p class="text-base mx-auto px-2 text-center lg:text-base">
       {{ .Params.description }}
     </p>
 
-    <div class="md:flex text-center max-w-[600px] mx-auto border-t pt-6 mt-6 align-center justify-between">
-      <div>
-        <div class="text-lg text-[#1D65A6] font-bold mb-3 ">
-          {{ i18n "writtenBy" }}:</div>
-        <div class="flex items-center mt-4 mb-6  ">
-          <img src="{{ .Params.profile }}" alt="" class="border-4 border-white rounded-full h-11 drop-shadow-lg"><span
-            class="ml-3">{{ .Params.author }}</span>
+    <div class="flex flex-col md:flex-row text-center mx-auto border-t pt-6 mt-6 align-center justify-between gap-10">
+      <div class="lg:w-1/2 text-center">
+        <h2 class="text-lg text-[#1D65A6] font-bold mb-3">
+          {{ i18n "writtenBy" }}:</h2>
+        <div class="flex items-center justify-center">
+          <img src="{{ .Params.profile }}" alt="" class="border-4 border-white rounded-full drop-shadow-lg w-14 h-14">
+          <span class="lg:w-[20ch] mx-2">{{ .Params.author }}</span>
         </div>
       </div>
-      <div class="sm:ml-10 sm:mt-0 mt-12 ">
-        <div class="text-lg text-[#1D65A6] font-bold mb-3">{{ i18n "sharePost" }}:</div>
-        <ul class="grid grid-cols-3 gap-6 mt-4">
-          <li><a onClick="shareByEmail()" class="flex items-center"><img src="img/email.png" alt=""
-                class="p-3 bg-white rounded-lg mr-3"></a></li>
+      <div class="lg:w-1/2">
+        <h2 class="text-lg text-[#1D65A6] font-bold mb-3">{{ i18n "sharePost" }}:</h2>
+        <ul class="flex items-center justify-center gap-6 mt-4">
+          <li><a onClick="shareByEmail()" class="cursor-pointer "><img src="img/email.png" alt=""
+                class="rounded-lg bg-white p-3"></a></li>
 
-          <li><a onClick="shareOnTwitterWithTitle()" class="flex items-center"><img src="img/twitter.png" alt=""
-                class="p-3 bg-white rounded-lg mr-4"></a></li>
-          <li><a onClick="shareOnLinkedIn()" class="flex items-center"><img src="img/linkedin.png" alt=""
-                class="p-3 bg-white rounded-lg mr-3"></a></li>
+          <li><a onClick="shareOnTwitterWithTitle()" class="cursor-pointer"><img src="img/twitter.png" alt=""
+                class="rounded-lg bg-white p-3"></a></li>
+          <li><a onClick="shareOnLinkedIn()" class="cursor-pointer"><img src="img/linkedin.png" alt=""
+                class="rounded-lg bg-white p-3"></a></li>
         </ul>
       </div>
 
@@ -103,11 +101,12 @@
 
   <form action="blog" method="post" id="newsletterForm">
     <h6 class="font-bold text-center">{{ i18n "enterEmailToSubscribe" }}</h6>
-    <input type="text" name="email" required placeholder="{{ i18n " newsLetterEmail" }}"
+    <label for="email" class="hidden">Email</label>
+    <input type="text" name="email" id="email" required placeholder="{{ i18n " newsLetterEmail" }}"
       class="w-full px-4 py-2.5 rounded-lg mt-6 text-black" style="color:black">
     <div class="flex mt-6 items-start">
-      <input type="checkbox" required class="w-6 h-6 block border-0 ">
-      <span class="ml-2 text-left">{{ i18n "newsLetterEngagment" }}</span>
+      <input type="checkbox" id="checkbox" required class="w-6 h-6 block border-0 ">
+      <label for="checkbox"><span class="ml-2 text-left">{{ i18n "newsLetterEngagment" }}</span></label>
     </div>
     <div class="bg-teal-100 border-t-4 border-teal-500 mt-10 rounded-b text-teal-900 px-4 py-3 shadow-md hidden "
       id='newsletter-alert' role="alert">

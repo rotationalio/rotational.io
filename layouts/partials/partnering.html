@@ -11,9 +11,10 @@
                 {{ with .title }} {{ after (len (index (split . " ") 0)) . | safeHTML }} {{ end }}
             </h2>
             <div class="text-base ">
+                {{ $optInline := dict "display" "inline" }}
                 {{ range .text_item}}
                 <p class="mt-6 sm:mt-10 ">
-                    {{ .text }}
+                    {{ .text | markdownify }}
                 </p>
                 {{ end }}
 

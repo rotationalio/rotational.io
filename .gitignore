@@ -17,3 +17,6 @@ node_modules
 package-lock.json
 yarn.lock
 public
+.history
+
+static/output.css

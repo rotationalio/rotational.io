@@ -7,6 +7,8 @@ function openMobNav() {
     x.className = 'topnav';
   }
 }
+
+// Contact Form submission
 const form = document.getElementById('contactForm');
 
 form?.addEventListener('submit', (event) => {
@@ -34,6 +36,12 @@ form?.addEventListener('submit', (event) => {
       if (response.status === 204) {
         document.getElementById('contact-alert').style.display = 'block';
         form.reset();
+
+        // Hide contact form submission confirmation message after 10 seconds.
+        setTimeout(() => {
+          const contactAlert = document.getElementById('contact-alert');
+          contactAlert.style.display = 'none';
+        }, 10000);
       }
       return response.json();
     })
@@ -46,7 +54,7 @@ form?.addEventListener('submit', (event) => {
     });
 });
 
-// share on twitter 
+// share on twitter
 
 function shareOnTwitter() {
   const twitterWindow = window.open(
@@ -65,10 +73,10 @@ function shareOnTwitterWithTitle() {
   const title = document.querySelector('[data-blog-title]').innerText;
   const twitterWindow = window.open(
     'https://twitter.com/intent/tweet?text=' +
-    title +
-    '&url=' +
-    document.URL +
-    '&via=rotationalio',
+      title +
+      '&url=' +
+      document.URL +
+      '&via=rotationalio',
     'twitter-popup',
     'height=350,width=600'
   );
@@ -76,7 +84,6 @@ function shareOnTwitterWithTitle() {
     twitterWindow.focus();
   }
   return false;
-
 }
 
 //share on linkedin
@@ -105,9 +112,7 @@ function shareByEmail() {
   return false;
 }
 
-
-
-// check newsletter form submission
+//  newsletter form submission
 const newsletterForm = document.getElementById('newsletterForm');
 
 newsletterForm?.addEventListener('submit', (event) => {
@@ -134,6 +139,12 @@ newsletterForm?.addEventListener('submit', (event) => {
       if (response.status === 204) {
         document.getElementById('newsletter-alert').style.display = 'block';
         newsletterForm.reset();
+
+        // Hide newsletter submission message after 5 seconds.
+        setTimeout(() => {
+          const newsletterAlert = document.getElementById('newsletter-alert');
+          newsletterAlert.style.display = 'none';
+        }, 5000);
       }
       return response.json();
     })
@@ -143,5 +154,49 @@ newsletterForm?.addEventListener('submit', (event) => {
 
     .catch((error) => {
       console.error('Error:', error);
+    });
+});
+
+// submit ensign form
+
+const ensignForm = document.getElementById('ensignForm');
+
+ensignForm?.addEventListener('submit', (event) => {
+  event.preventDefault();
+  const formData = new FormData(ensignForm);
+  const data = Object.fromEntries(formData);
+  const ensignHomeEl = document.getElementById('ensign-home');
+  const ensignAlertEl = document.getElementById('ensign-alert');
+  const ensignConfirmationEl = document.getElementById('ensign-confirmation');
+  const { notify_me, ...rest } = data;
+
+  const formattedData = {
+    notifications: !!(notify_me === 'on'),
+    ...rest,
+    lists: ['d99ae1c6-1c25-4904-a56c-21e82a0fce52'],
+  };
+
+  fetch('https://api.rotationallabs.com/v1/notifications/signup', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(formattedData),
+  })
+    .then(async (response) => {
+      if (response.status === 204) {
+        ensignForm.reset();
+        ensignHomeEl.style.display = 'none';
+        ensignConfirmationEl.style.display = 'block';
+      }
+      // return response avoid error in console
+      return await response.text();
+    })
+    .then((data) => {
+      console.log('successfully submitted ensign form:', data);
+    })
+    .catch((error) => {
+      console.error('Error:', error);
+      ensignAlertEl.style.display = 'block';
     });
 });

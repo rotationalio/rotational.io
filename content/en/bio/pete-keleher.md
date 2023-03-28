@@ -8,5 +8,5 @@ social :
   - name : "linkedin"
     link: 'https://www.linkedin.com/in/pete-keleher-a03639b'
     icon: 'fa-linkedin-in'
-bio : "Dr. Peter Keleher is a professor in the Computer Science department at University of Maryland. His research centers on Distributed Systems and Cloud Storage."
 ---
+Dr. Peter Keleher is a professor in the Computer Science department at University of Maryland. His research centers on Distributed Systems and Cloud Storage.

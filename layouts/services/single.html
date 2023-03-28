@@ -10,8 +10,8 @@
 {{ with $data.services.services }}
 <div class="max-w-7xl mx-auto px-4 relative">
     <h2 class="text-lg sm:text-xl lg:text-2xl mt:12 lg:mt-24">
-        <b class="text-[#1D65A6]">{{ with .subtitle }} {{ index (split . "org") 0 | safeHTML }} {{ end }}</b>
-        {{ with .subtitle }} {{ after (len (index (split . "org") 0)) . | safeHTML }} {{ end }}
+        <b class="text-[#1D65A6]">{{ with .subtitle }} {{ index (split . " ") 0 | safeHTML }} {{ end }}</b>
+        {{ with .subtitle }} {{ after (len (index (split . " ") 0)) . | safeHTML }} {{ end }}
     </h2>
     <div class="">
         {{ if .approach.enable }}
@@ -19,7 +19,7 @@
             <h3 class="font-bold text-xl sm:text-2xl lg:text-3xl">{{ .approach.title }}</h3>
             <img src="img/butterfly.png" class="h-6 ml-3 w-6" />
         </div>
-        <p class="mt-4 text-base sm:mt-5 lg:mt-7 lg:text-lg">{{ .approach.description }}</p>
+        <p class="mt-4 text-base sm:mt-5 lg:mt-7 lg:text-lg">{{ .approach.description | markdownify }}</p>
         {{ end }}
 
         {{ if .services.enable }}
@@ -27,9 +27,11 @@
             <h3 class="font-bold text-xl sm:text-2xl lg:text-3xl">{{ .services.title }}</h3>
             <img src="img/butterfly.png" class="h-6 ml-3 w-6" />
         </div>
-        <p class="mt-4 text-base sm:mt-5 lg:mt-7 lg:text-lg">{{ .services.description }}</p>
+        <div class="mt-4 text-base sm:mt-5 lg:mt-7 lg:text-lg">
+          {{ .services.description | markdownify }}
+        </div>
 
-        <div class="hidden mt-24 md:hidden md:mt-14 lg:block lg:mt-24" data-pg-collapsed>
+        <div class="hidden mt-10 md:hidden md:mt-10 lg:block lg:mt-14" data-pg-collapsed>
             <div class="grid grid-cols-3 rounded-tl text-xl">
                 {{ range .services.items }}
                 <div
@@ -46,7 +48,7 @@
                         {{ range .details }}
                         <div class="flex items-center mb-7">
                             <span class="bg-[#1D65A6] h-4 rounded-full w-4"></span>
-                            <span class="ml-2 text-lg">{{ .title }}</span>
+                            <span class="ml-4 mr-3 text-lg">{{ .title }}</span>
                         </div>
                         {{ end }}
                     </li>
@@ -64,12 +66,18 @@
                     {{ range .details }}
                     <div class="flex items-center mb-4">
                         <div class="bg-[#1D65A6] h-3 rounded-full w-3"></div>
-                        <span class="ml-2 text-base">{{ .title }}</span>
+                        <span class="ml-2 mr-2 text-base">{{ .title }}</span>
                     </div>
                     {{ end }}
                 </div>
             </div>
             {{ end }}
+        </div>
+        {{ end }}
+
+        {{ if .action.enable }}
+        <div class="mt-4 text-base sm:mt-5 lg:mt-14 lg:text-lg">
+          {{ .action.description | markdownify }}
         </div>
         {{ end }}
 
