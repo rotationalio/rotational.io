@@ -3,23 +3,23 @@ clients:
   enable : true
   title : Our Clients
   clients_item :
-    # clients_item loop
-    - name : Ciphertrace
-      image : img/clients/ciphertrace.png
-      
-    # clients_item loop
     - name : Tactile
       image : img/clients/tactile.png
 
-    # clients_item loop
     - name : Trisa
       image : img/clients/trisa.png
 
-    # clients_item loop
     - name : 202 Group
       image : img/clients/202group.png
 
-    # clients_item loop
+    - name : Ciphertrace
+      image : img/clients/ciphertrace.png
+
     - name : Qredo
       image : img/clients/qredo.png
 
+    - name : AMG
+      image : img/clients/amg.png
+
+    - name : University of Chicago
+      image : img/clients/uchicago.png

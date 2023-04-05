@@ -1,0 +1,9 @@
+############################### partnerships ############################
+partnerships:
+  enable : true
+  title : Partnerships
+  partner_item :
+    # partner_item loop
+    - name : Linode
+      image : img/partners/linode.png
+
