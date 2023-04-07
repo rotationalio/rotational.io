@@ -6,7 +6,7 @@ tech:
     # tech_item loop
     - name : Golang
       image : img/tech/golang.png
-      
+
     # tech_item loop
     - name : Python
       image : img/tech/python.png
@@ -22,7 +22,7 @@ tech:
     # tech_item loop
     - name : Github
       image : img/tech/github.svg
-    
+
     # tech_item loop
     - name : Prometheus
       image : img/tech/prometheus.svg
@@ -46,7 +46,7 @@ tech:
     # tech_item loop
     - name : Cassandra
       image : img/tech/cassandra.svg
-    
+
     # tech_item loop
     - name : Typescript
       image : img/tech/typescript.svg
