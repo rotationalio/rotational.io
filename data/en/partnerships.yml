@@ -6,4 +6,6 @@ partnerships:
     # partner_item loop
     - name : Linode
       image : img/partners/linode.png
+    - name : Google Cloud Partner
+      image : img/partners/googlecloud.png
 
