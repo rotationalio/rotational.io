@@ -73,6 +73,13 @@ name = 'Contact Us'
 url = '/contact'
 weight = 50
 
+[[Languages.en.menu.main]]
+identifier = 'login'
+pageRef = 'login'
+name = 'Login'
+url = 'https://rotational.app'
+weight = 60
+
 ## English Langauge
 [Languages.en]
 languageName = "En"
