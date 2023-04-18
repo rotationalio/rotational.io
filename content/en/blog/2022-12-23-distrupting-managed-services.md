@@ -57,3 +57,4 @@ But devOps and platform engineers are busy! So in order to free up some mental b
 
 It has been a tough year for many, and we send out our sympathies to our tech sisters, brothers, and siblings who lost jobs and teammates. It was also a year that brought signals of more wide-reaching changes to the world's tech services, all of which suggest that there are more disruptions coming and new challenges and problems for us to work together to solve in 2023 and beyond.
 
+Want early access to a platform and community for developers building event-driven applications? Check out our [free beta of Ensign](https://rotational.app/register/).

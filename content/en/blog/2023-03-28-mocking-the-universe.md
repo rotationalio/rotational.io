@@ -288,3 +288,5 @@ At Rotational we frequently use both "package mocks" and "universal mocks". The 
 Together these techniques have enabled us to more easily test our gRPC services, including those for [Ensign](https://ensign.rotational.dev/getting-started/), our managed eventing platform that takes a lot of the stress out of building microservices. If you're interested in reading more on how we use mocks, check out [this post next]( https://rotational.io/blog/fake-it-when-you-make-it/).
 
 Happy mocking!
+
+*Want early access to a platform and community for developers building event-driven apps? Check out our [free beta of Ensign](https://rotational.app/register/).*

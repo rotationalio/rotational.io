@@ -54,4 +54,4 @@ What have you got to lose? Think about that the next time you take a trip to the
 - Does it make sense to buy more cloud storage so your data can just sit around? Also probably no.
 - Or do you instead focus on keeping data fresh and putting it to use? That’s [Ensign](https://rotational.app/)!
 
-
+Want early access to a platform and community for developers building event-driven apps? Check out our [free beta of Ensign](https://rotational.app/register/).

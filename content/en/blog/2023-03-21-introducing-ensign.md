@@ -16,7 +16,7 @@ Have you always wanted to build an event-driven system, but couldn’t justify s
 <!--more-->
 
 ## Introducing Ensign
-This month is an exciting one for Rotational Labs. Last week we released the first version of [Ensign](https://rotational.app), our developer platform for building event-driven applications and machine learning models.
+This month is an exciting one for Rotational Labs. Last week we released the first version of [Ensign](https://rotational.app/register/), our developer platform for building event-driven applications and machine learning models.
 
 What are we selling? In short, it's **simplicity as a service** for event-driven microservices.
 
