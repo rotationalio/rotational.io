@@ -168,6 +168,8 @@ With all of these building blocks, a [Getting Started](https://watermill.io/docs
 
 Watermill is not an eventing system itself, but rather provides a common API that can be used to interface with many differing underlying eventing backends (e.g. RabbitMQ, Kafka, Google PubSub, etc). As such, it does have limited functionality compared to the SDKs exposed directly by these backend eventing tools. But this is not a big setback, given that the purpose of Watermill is to enable teams to experiment and prototype architectures without having to go through the pains of setting up clusters and scaling up node resources. It's nice to be able to focus on data flows, transformations, and application logic rather than editing tons of YAML files before you can even get started!
 
+Want early access to a platform and community for developers building event-driven apps? Check out our [free beta of Ensign](https://rotational.app/register/).
+
 ## Stay Tuned!
 
 In the next blog post, I will cover an end-to-end use case using Watermill and [**Ensign**](https://rotational.io/ensign/), which like Watermill abstracts away much of the complexities of eventing so that you can focus on building more apps!

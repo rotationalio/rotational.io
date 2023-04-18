@@ -70,6 +70,8 @@ So which is best - message queues, event streams, or stream processing? The trut
 
 When you are in the architecture and design phase of a new application, rather than asking "what's the best eventing tool?", the better question to ask is "what features does my eventing problem require?". Developers frequently get comfortable with one tool and take it with them from job to job, and there is certainly something to be said for knowing how to turn the configuration knobs on your favorite eventing tool. But if you're looking for an excuse to cast a wider net and explore some different options that might be better for your latest use case, this is your sign to go for it.
 
+Want early access to a platform and community for developers building event-driven apps? Check out our [free beta of Ensign](https://rotational.app/register/).
+
 ## Sources
 
 - Frank de Jonge, [The different types of events in event-driven systems](https://blog.frankdejonge.nl/the-different-types-of-events-in-event-driven-systems/)

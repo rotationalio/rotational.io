@@ -29,4 +29,6 @@ Here are just a few enterprise examples that are particularly well-suited for En
 
 Want some more ideas? Check out our top streaming use cases for enterprise automation [here](https://ensign.rotational.dev/eventing/use_cases/)!
 
+Want early access to Ensign? Check out our [free beta](https://rotational.app/register/).
+
 Want to brainstorm your use case with our engineers? Just reach out at support@rotational.io.
