@@ -1,0 +1,121 @@
+############################# Ensign Data ###################################
+competition:
+  enable: true
+  features:
+  - id: throughput
+    title: Awesome Throughput &amp; Latency
+    subtitle: Super-duper fast!
+  - id: persistence
+    title: Change Data Capture &amp; Persistence
+    subtitle: By default, replay all events from Day 1.
+  - id: consistency
+    title: Global Consistency
+    subtitle: All users can count on the same data, regardless of where they live.
+  - id: beginner
+    title: Beginner-Friendly
+    subtitle: Quickstarts, SDKs, and templates.
+  - id: neckbeard
+    title: Neckbeard-Friendly
+    subtitle: Fine controls, transparency, &amp; granularity.
+  - id: lowops
+    title: Low-Ops/No-Ops
+    subtitle: Use it without a dedicated team to maintain.
+  - id: encryption
+    title: End-to-end Encryption by Default
+    subtitle: Only you can read your events.
+  - id: collaboration
+    title: Data Collaboration
+    subtitle: Tools for teams working together.
+  projects:
+  - name: Ensign
+    features:
+      throughput: true
+      persistence: true
+      consistency: true
+      beginner: true
+      neckbeard: true
+      lowops: true
+      encryption: true
+      collaboration: true
+  - name: Kafka
+    company: Confluent
+    category: Eventing Tools
+    features:
+      throughput: true
+      persistence: false
+      consistency: false
+      beginner: false
+      neckbeard: true
+      lowops: false
+      encryption: false
+      collaboration: false
+  - name: PubSub
+    company: Google
+    category: Eventing Tools
+    features:
+      throughput: true
+      persistence: false
+      consistency: false
+      beginner: true
+      neckbeard: true
+      lowops: true
+      encryption: false
+      collaboration: false
+  - name: SQS
+    company: Amazon
+    category: Eventing Tools
+    features:
+      throughput: true
+      persistence: false
+      consistency: false
+      beginner: true
+      neckbeard: true
+      lowops: true
+      encryption: false
+      collaboration: false
+  - name: Redpanda
+    category: Eventing Tools
+    features:
+      throughput: true
+      persistence: false
+      consistency: false
+      beginner: true
+      neckbeard: true
+      lowops: false
+      encryption: false
+      collaboration: false
+  - name: Aurora
+    company: Amazon
+    category: Databases
+    features:
+      throughput: true
+      persistence: false
+      consistency: true
+      beginner: false
+      neckbeard: false
+      lowops: true
+      encryption: false
+      collaboration: false
+  - name: Spanner
+    company: Google
+    category: Databases
+    features:
+      throughput: true
+      persistence: false
+      consistency: true
+      beginner: false
+      neckbeard: false
+      lowops: true
+      encryption: false
+      collaboration: false
+  - name: Cockroach
+    category: Databases
+    features:
+      throughput: true
+      persistence: false
+      consistency: true
+      beginner: false
+      neckbeard: true
+      lowops: true
+      encryption: false
+      collaboration: false
