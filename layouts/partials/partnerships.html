@@ -3,13 +3,6 @@
 {{ if $data.partnerships.partnerships.enable }}
 {{ with $data.partnerships.partnerships }}
 <div>
-    <div class="mt-9 text-center sm:mt-11 lg:mt-14">
-        <h3 class="font-bold text-xl sm:text-2xl lg:text-3xl">
-            <b class="text-[#1D65A6]">{{ with .title }} {{ index (split . " ") 0 | safeHTML }} {{ end }}</b>
-            {{ with .title }} {{ after (len (index (split . " ") 0)) . | safeHTML }} {{ end }}
-        </h3>
-      </div>
-    
       <ul class="flex mt-10 mx-auto justify-center space-x-20">
         {{ range .partner_item}}
             <li class="text-center">
