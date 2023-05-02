@@ -3,9 +3,9 @@
 {{ if $data.partnerships.partnerships.enable }}
 {{ with $data.partnerships.partnerships }}
 <div>
-      <ul class="flex mt-10 mx-auto justify-center space-x-20">
+      <ul class="sm:flex mt-10 mx-auto justify-center sm:space-x-24">
         {{ range .partner_item}}
-            <li class="text-center">
+            <li class="p-4 sm:p-0 text-center">
                 <img src="{{ .image }}" alt="{{ .name }}" class="h-24 mx-auto">
                 <p class="text-lg font-bold">{{ .name }}</p>
             </li>
