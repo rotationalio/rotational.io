@@ -10,23 +10,35 @@
     How does Ensign stack up to other, similar tools and products?
   <p>
 
-  <table>
+  <table class="table-auto border-collapse border border-slate-600 w-full text-md">
     <thead>
-      <tr>
-        <th>Feature</th>
+      <!-- TODO: not sure how to extract categories from the data yet -->
+      <tr class="bg-slate-400">
+        <th></th>
+        <th colspan="5" class="border bg-slate-400 border-slate-600 px-4 py-3 text-slate-200">Eventing Tools</th>
+        <th colspan="3" class="border bg-slate-400 border-slate-600 px-4 py-3 text-slate-200">Databases</th>
+      </tr>
+      <tr class="bg-slate-400">
+        <th class="text-left border bg-slate-400 border-slate-600 p-4 pl-8 py-3 text-slate-200">Feature</th>
         {{ range .projects }}
-        <th>{{ .name }}</th>
+        <th class="text-center border bg-slate-400 border-slate-600 px-3 py-3 text-slate-200">
+        {{ .name }}{{ if .company }}<br />
+        <span class="text-slate-700 text-sm">({{ .company }})</span>{{ end }}
+        </th>
         {{ end }}
       </tr>
     </thead>
     <tbody>
       {{ $projects := .projects }}
       {{ range .features }}
-      <tr>
-        <td>{{ .title | markdownify }}</td>
+      <tr class="bg-white">
+        <td class="text-left px-2 py-2 border border-slate-600">
+          {{ .title | markdownify }}<br />
+          <span class="text-sm">{{ .subtitle }}</span>
+        </td>
         {{ $id := .id }}
         {{ range $projects }}
-        <td>{{ if (index .features $id) }}✔{{ end }}</td>
+        <td class="text-center text-[#00743f] px-2 py-2 border border-slate-600">{{ if (index .features $id) }}✔{{ end }}</td>
         {{ end }}
       </tr>
       {{ end }}
