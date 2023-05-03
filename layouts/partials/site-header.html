@@ -1,3 +1,5 @@
+{{ partial "alerts.html" }}
+
 {{ if eq $.Page.Kind "home" }}
 <div class=" sm:bg-wavelg-pattern bg-wave-pattern bg-right-center sm:min-h-[691px] min-h-[480px] w-full ">
     <div
@@ -7,18 +9,22 @@
 
         <div class="relative max-w-7xl mx-auto flex items-center justify-between text-white px-4 sm:px-6 z-10">
             <div class="w-full sm:w-3/5 text-center sm:text-start text-3xl ">
-                {{ with .Params.headertext }}
+                {{ $headertext := .Params.headertext }}
+                {{ $headertextmore := .Params.headertextmore }}
+                {{ with $headertext }}
                 <p class="text-3xl xl:text-5xl md:text-4xl leading-snug sm:leading-tight md:leading-snug xl:leading-tight font-bold mt-6 sm:mt-20">
-                    {{ . }}
+                    {{ . | markdownify }}{{ if $headertextmore }}<br />{{ $headertextmore | markdownify }}{{ end }}
                 </p>
                 {{ end }}
 
-                {{ if .Params.headeraction }}
+                {{ if .Params.headeractions }}
                 <div class="mt-8 lg:mt-12">
-                    <a href="{{ .Params.headeractionlink }}"
-                        class="text-xs sm:text-lg font-semibold rounded-lg px-5 sm:px-12 py-3 sm:py-5 bg-[#192E5B] uppercase">{{
-                        .Params.headeraction }}
-                    </a>
+                  {{ range .Params.headeractions }}
+                  <a href="{{ .link }}"
+                    class="text-xs sm:text-lg font-semibold rounded-lg px-5 sm:px-12 py-3 sm:py-5 bg-[#192E5B] uppercase mr-3">{{
+                    .action }}
+                  </a>
+                  {{ end }}
                 </div>
                 {{ end }}
             </div>

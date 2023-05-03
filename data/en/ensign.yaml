@@ -2,34 +2,37 @@
 competition:
   enable: true
   features:
-  - id: throughput
-    title: Awesome Throughput &amp; Latency
-    subtitle: Super-duper fast!
   - id: persistence
     title: Change Data Capture &amp; Persistence
     subtitle: By default, replay all events from Day 1.
   - id: consistency
     title: Global Consistency
-    subtitle: All users can count on the same data, regardless of where they live.
+    subtitle: All users can count on the same order of operations, regardless of where they live.
   - id: beginner
     title: Beginner-Friendly
     subtitle: Quickstarts, SDKs, and templates.
   - id: neckbeard
     title: Neckbeard-Friendly
-    subtitle: Fine controls, transparency, &amp; granularity.
+    subtitle: Fine controls, transparency, and granularity.
   - id: lowops
     title: Low-Ops/No-Ops
     subtitle: Use it without a dedicated team to maintain.
+  - id: throughput
+    title: Maximum Throughput &amp; Latency
+    subtitle: Super-duper fast!
   - id: encryption
     title: End-to-end Encryption by Default
     subtitle: Only you can read your events.
   - id: collaboration
     title: Data Collaboration
     subtitle: Tools for teams working together.
+  - id: disttx
+    title: Distributed Transactions
+    subtitle: Relational database transactions that span the globe.
   projects:
   - name: Ensign
     features:
-      throughput: true
+      throughput: false
       persistence: true
       consistency: true
       beginner: true
@@ -37,6 +40,7 @@ competition:
       lowops: true
       encryption: true
       collaboration: true
+      disttx: false
   - name: Kafka
     company: Confluent
     category: Eventing Tools
@@ -49,11 +53,12 @@ competition:
       lowops: false
       encryption: false
       collaboration: false
+      disttx: false
   - name: PubSub
     company: Google
     category: Eventing Tools
     features:
-      throughput: true
+      throughput: false
       persistence: false
       consistency: false
       beginner: true
@@ -61,11 +66,12 @@ competition:
       lowops: true
       encryption: false
       collaboration: false
+      disttx: false
   - name: SQS
     company: Amazon
     category: Eventing Tools
     features:
-      throughput: true
+      throughput: false
       persistence: false
       consistency: false
       beginner: true
@@ -73,6 +79,7 @@ competition:
       lowops: true
       encryption: false
       collaboration: false
+      disttx: false
   - name: Redpanda
     category: Eventing Tools
     features:
@@ -84,11 +91,12 @@ competition:
       lowops: false
       encryption: false
       collaboration: false
+      disttx: false
   - name: Aurora
     company: Amazon
     category: Databases
     features:
-      throughput: true
+      throughput: false
       persistence: false
       consistency: true
       beginner: false
@@ -96,11 +104,12 @@ competition:
       lowops: true
       encryption: false
       collaboration: false
+      disttx: false
   - name: Spanner
     company: Google
     category: Databases
     features:
-      throughput: true
+      throughput: false
       persistence: false
       consistency: true
       beginner: false
@@ -108,10 +117,11 @@ competition:
       lowops: true
       encryption: false
       collaboration: false
+      disttx: true
   - name: Cockroach
     category: Databases
     features:
-      throughput: true
+      throughput: false
       persistence: false
       consistency: true
       beginner: false
@@ -119,3 +129,4 @@ competition:
       lowops: true
       encryption: false
       collaboration: false
+      disttx: true
