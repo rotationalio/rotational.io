@@ -1,0 +1,8 @@
+############################# Ensign Data ###################################
+notice:
+  enable: true
+  notice: "Join us for our upcoming webinar: **Introduction to Realtime Data APIs**"
+  action:
+    text: Register Today
+    link: "https://us06web.zoom.us/webinar/register/2616831385145/WN_8Aer58lgSDWShGPPp5nESg#/registration"
+  expires: 2023-05-16T16:00:00Z
