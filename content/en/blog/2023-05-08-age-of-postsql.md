@@ -37,7 +37,7 @@ You can usually observe this happening in your budget if you're looking close; o
 
 So what could we be doing differently? Rather than internalizing our frustrations with whatever tool(s) we initially selected (or more likely, inherited) and doubling down, we should look for tools that will actually help us solve our problem.
 
-Lean into a "PostSQL" solution earlier on, and without shame.
+In other words, lean into a "PostSQL" solution earlier on, and without shame.
 
 ## What is PostSQL?
 
