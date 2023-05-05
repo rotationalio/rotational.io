@@ -19,17 +19,17 @@ Does the data layer at your organization feel like a special kind of hell? Do yo
 
 For some reason, we are all quite insecure about our databases. I've worked on a lot of engineering teams from the public sector to enterprises to startups and this may be the one thing everyone has in common. What I have actually observed in practice is not a host of hot messes but instead a lot of creative blending of data storage, querying, and processing tools.
 
-Consider the 5 following hypothetical examples of hybrid data layers at different organizations:
+Consider the 5 following hypothetical/anonymized examples of hybrid data layers at different organizations:
 
 - **Enterprise A**, whose frontend and backend teams manage two different PostgreSQL databases and use Google PubSub to ferry data back and forth.
 - **Business B**, that uses RDS for secure storage, Redshift for querying, and Databricks for research and development.
-- **Company C**, which inherited a legacy MySQL Server database, that gets regular data dumps from it's third party partners into S3, and that uses Athena to materialize the bucket data as pseudo-SQL and Apache Superset to visualize it in a dashboard.
+- **Company C**, which inherited a legacy MySQL Server database, that gets regular data dumps from 3rd party partners into S3, and uses Athena to materialize the bucket data as pseudo-SQL and Apache Superset to visualize all of it together in a dashboard.
 - **Organization D**, that currently uses a CockroachDB instance deployed on Google Cloud to manage its transactional data and a DocumentDB instance on AWS to store more detailed data about customers and products.
 - **Startup E**, that's using a custom-sharded LevelDB instance for key-value customer data storage, distributed SQLite for in-app account management, and an event stream to quickly observe scaling events.
 
 Do any of these sound familiar? Are you a Company C? Have you worked for an Enterprise A? Stitching tools together is not a red flag, it's just the norm! (*Note: red flags to look out for are discussed later in this piece*)
 
-The challenge is this: as we stitch together more and more tools, we have to write more and more code to coordinate our data. Tech teams can leverage external APIs where available, but often need to write their own SDKs or at the very least engage in routine patching to maintain synchronization as the tools and APIs continue to evolve.
+The challenge is this: as we stitch together more and more tools, we have to write more and more code to coordinate our data. Tech teams can leverage external APIs where available, but often need to write their own SDKs or at the very least engage in routine patching to maintain synchronization as the tools and APIs continually evolve.
 
 As coordination code increases, bugs are introduced and our maintenance "surface area" gets bigger. This leads maintenance costs to increase even as, paradoxically, tech debt stays roughly level.
 
@@ -37,11 +37,11 @@ You can usually observe this happening in your budget if you're looking close; o
 
 So what could we be doing differently? Rather than internalizing our frustrations with whatever tool(s) we initially selected (or more likely, inherited) and doubling down, we should look for tools that will actually help us solve our problem.
 
-Lean into a PostSQL solution earlier on, and without shame.
+Lean into a "PostSQL" solution earlier on, and without shame.
 
 ## What is PostSQL?
 
-So what is a "PostSQL" database? A PostSQL database is one that embraces the specificity of a new data problem that's emerged sometime over the last 5-10 years. They often have eclectic features such as elements of both relational and NoSQL databases, or possibly a unique combination of NoSQL features, or else a hybrid object-oriented and functional perspective of data. They are not billed as one-size-fits-all tools, and take a non-dogmatic approach to comparing themselves to other tools and solutions.
+So what is PostSQL? A PostSQL database is one that embraces the specificity of a new data problem &mdash; probably one that's emerged over the last 5-10 years. They often have eclectic features such as elements of both relational and NoSQL databases, or a unique combination of NoSQL features, or else a hybrid object-oriented and functional perspective of data. They are not billed as one-size-fits-all tools, and take a non-dogmatic approach when comparing themselves to other tools and solutions.
 
 Here are a few examples:
 
@@ -52,7 +52,7 @@ Here are a few examples:
 
 
 ## Red Flags
-What are some of the signs to look out for that it might be time for a PostSQL solution?
+What are some of the signs to look out for that it might be time for a PostSQL solution rather than building (and forever maintaining) a homemade hybrid?
 
 ### 1. The tools you're using aren't working for what you need them to do
 For instance, maybe queries are fast, but writes/upserts are so slow that they're preventing you from launching a high value new feature.
