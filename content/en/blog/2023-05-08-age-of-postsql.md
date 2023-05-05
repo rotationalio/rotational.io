@@ -61,10 +61,10 @@ For instance, maybe queries are fast, but writes/upserts are so slow that they'r
 For instance, you're generating and applying unique identifiers, or having to devise ways of reconstructing history by putting changes to an object in chronological order.
 
 ### 3. You're doing things manually that eventing is good at
-For example, you need to copy data from location X to location Y. Bonus points if this happens periodically and you lay awake at night worrying something important has changed since the last batch.
+For example, you need to copy data from location X to location Y. Bonus points if this happens periodically and you lay awake at night worrying something important has changed since the last batch ETL.
 
 ### 4. The data analysts don't have a way to "talk back" to the application
-For example, your data-driven intelligence processes are orphaned and/or require someone to kick off a manual process. Alternatively, your data scientists are building models but don't feel confident navigating the MLOps.
+For example, your data-driven intelligence processes are orphaned and/or require someone to kick off a manual process. Alternatively, your data scientists are building models, but don't feel confident navigating the MLOps.
 
 
 ## Conclusion
@@ -73,8 +73,8 @@ For example, your data-driven intelligence processes are orphaned and/or require
 
 If your organization is either right on the verge or in the midst of some kind of conversion, migration, or upgrade of their data layer, ask yourself:
 
-- How hard will this be to hook up to our legacy stuff?
-- How much will it really cost me to keep it operational?
+- How hard will this tool be to hook up to our legacy stuff?
+- How much will it really cost me to keep the tool operational?
 - How many dedicated engineers are going to have to maintain it?
 
 We're often made to feel that our org's data is a special kind of hot mess. That we should have one, much cleaner data store that matches our platonic ideal of a relational (it's perfectly normalized) or NoSQL (it's perfected indexed) database. But if those ideals aren't serving your organization, it's time to let go of them.
