@@ -58,7 +58,7 @@ What are some of the signs to look out for that it might be time for a PostSQL s
 For instance, maybe queries are fast, but writes/upserts are so slow that they're preventing you from launching a high value new feature.
 
 ### 2. You're doing things manually that databases are good at
-For instance, you're generating and applying unique identifiers, or having to devise ways of putting changes to an object in chronological order.
+For instance, you're generating and applying unique identifiers, or having to devise ways of reconstructing history by putting changes to an object in chronological order.
 
 ### 3. You're doing things manually that eventing is good at
 For example, you need to copy data from location X to location Y. Bonus points if this happens periodically and you lay awake at night worrying something important has changed since the last batch.
