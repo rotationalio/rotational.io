@@ -29,26 +29,28 @@ Consider the 5 following hypothetical/anonymized examples of hybrid data layers 
 
 Do any of these sound familiar? Are you a Company C? Have you worked for an Enterprise A? Stitching tools together is not a red flag, it's just the norm! (*Note: red flags to look out for are discussed later in this piece*)
 
-The challenge is this: as we stitch together more and more tools, we have to write more and more code to coordinate our data. Tech teams can leverage external APIs where available, but often need to write their own SDKs or at the very least engage in routine patching to maintain synchronization as the tools and APIs continually evolve.
+The challenge is this: every tool comes with fixed, standing operational and maintenance costs. This is true of homemade hybrids as well as off-the-shelf and managed solutions. As we stitch together more and more tools, we have to write more and more code to coordinate our data. Tech teams can leverage external APIs where available, but often need to write their own SDKs or at the very least engage in routine patching to maintain synchronization as the tools and APIs continually evolve.
 
-As coordination code increases, bugs are introduced and our maintenance "surface area" gets bigger. This leads maintenance costs to increase even as, paradoxically, tech debt stays roughly level.
+As coordination code increases, bugs are introduced and our maintenance "surface area" gets bigger. This leads maintenance costs to increase even as, paradoxically, tech debt stays roughly level. You can usually observe this happening in your budget if you're looking close; operational costs spike and don't drop back down; your burn rates steadily rise.
 
-You can usually observe this happening in your budget if you're looking close; operational costs spike and don't drop back down; your burn rates steadily rise.
+You might guess that choosing a brand name cloud solution is the best way to minimize costs. However, research suggests that most companies don't actually get much of a return from commercial cloud.[^1] [^2] [^3] So instead of doubling down on overgeneralized commercial cloud solutions, or internalizing our frustrations with whatever homemade hybrid we've inherited, we should look for tools that will actually help us solve our problem.
 
-So what could we be doing differently? Rather than internalizing our frustrations with whatever tool(s) we initially selected (or more likely, inherited) and doubling down, we should look for tools that will actually help us solve our problem.
-
-In other words, lean into a "PostSQL" solution earlier on, and without shame.
+In other words, let's lean into "PostSQL" solutions earlier on, and without shame.
 
 ## What is PostSQL?
 
-So what is PostSQL? A PostSQL database is one that embraces the specificity of a new data problem &mdash; probably one that's emerged over the last 5-10 years. They often have eclectic features such as elements of both relational and NoSQL databases, or a unique combination of NoSQL features, or else a hybrid object-oriented and functional perspective of data. They are not billed as one-size-fits-all tools, and take a non-dogmatic approach when comparing themselves to other tools and solutions.
+So what is PostSQL? Well, it might look a little quirky at first.
+
+A PostSQL database is one that embraces the specificity of a new data problem &mdash; probably one that's emerged over the last 5-10 years. They often have eclectic features such as elements of both relational and NoSQL databases, or a unique combination of NoSQL features, or else a hybrid object-oriented and functional perspective of data. They are not billed as one-size-fits-all tools, and take a non-dogmatic approach when comparing themselves to other tools and solutions.
 
 Here are a few examples:
 
 - [DuckDB](https://duckdb.org/) is like a columnar SQLite for OLAP, and it's recently taken the Python/data science communities by storm. It's good at in-memory analytics, and you can interact with it like you'd use a Pandas dataframe.
 - [Tigerbeetle](https://tigerbeetle.com/) is a database for distributed financial transactions, and solves a lot of the practical problems (latency, byzantine attacks, etc) that have come out of the Blockchain movement.
 - [RisingWave](https://www.risingwave.dev/docs/current/intro/), currently in beta, is like a PostgreSQL for Kafka and Pulsar users. It offers a database for longterm topic storage, querying, and aggregation.
-- [Ensign](https://rotational.io/ensign/), also now in [free beta](https://rotational.app/register), offers fully managed eventing for data analytics, making it easier for teams to share data with less beaurocracy and publish data science outputs back to the application.
+- [Ensign](https://rotational.io/ensign/), also now in [free beta](https://rotational.app/register), features fully managed eventing for data analytics, making it easier for teams to share data with less beaurocracy and publish data science outputs back to the application. It also offers event persistence and end-to-end encryption by default.
+
+The main thing that distinguishes PostSQL solutions is that they're not only unapologetically unconventional, they also help solve very real, very timely problems  &mdash; performant and energy-efficient machine learning, strongly consistent high-speed transactions, event persistence, data privacy, and MLOps.
 
 
 ## Red Flags
@@ -71,16 +73,20 @@ For example, your data-driven intelligence processes are orphaned and/or require
 
 > Through a vicious circle of pure reason, skepsis itself becomes dogma. -Johann Georg Hamann
 
-If your organization is either right on the verge or in the midst of some kind of conversion, migration, or upgrade of their data layer, ask yourself:
+We're often made to feel that our org's data is a special kind of hot mess. That our problems could be solved by migrating to a data store that matches our platonic ideal of a relational (it's perfectly normalized) or NoSQL (it's perfected indexed) database. But if those ideals aren't serving your organization, it's time to let them go.
 
-- How hard will this tool be to hook up to our legacy stuff?
-- How much will it really cost me to keep the tool operational?
-- How many dedicated engineers are going to have to maintain it?
+If your organization is either on the verge or in the midst of a data layer upgrade, ask yourself two questions:
 
-We're often made to feel that our org's data is a special kind of hot mess. That we should have one, much cleaner data store that matches our platonic ideal of a relational (it's perfectly normalized) or NoSQL (it's perfected indexed) database. But if those ideals aren't serving your organization, it's time to let go of them.
+- How hard will this tool be to hook up to our legacy stuff? Your legacy stuff probably powers a lot of important functions and reports, and it may be harder to get rid of than you think. It may also still have utility, like serving as a sink or source in your new architecture.
+- How much will it really cost me to keep the tool operational and how many dedicated engineers are going to have to maintain it? It might seem safer to buy from a big box cloud vendor, but no tools come entirely free of operational costs (cloud vendor APIs are always changing too!) and it may be costly to customize a brand name solution to your business case.
+
+You may find that incorporating a niche "wedge" solution is the better bet.
 
 Messiness is the norm for data, not the exception. Let's stop searching for the "one true database" and instead, lean into the glorious messiness. Pick tools that honor the reality of your data and help you get the job done. We are all PostSQL now!
 
+[^1]: [McKinsey, Technology Trends Outlook 2022 Cloud and edge computing](https://www.mckinsey.com/~/media/mckinsey/business%20functions/mckinsey%20digital/our%20insights/the%20top%20trends%20in%20tech%202022/McKinsey-Tech-Trends-Outlook-2022-Cloud-Edge.pdf)
+[^2]: [Accenture, Closing the Datavalue Gap](https://www.accenture.com/_acnmedia/pdf-108/accenture-closing-data-value-gap-fixed.pdf)
+[^3]: [Deloitte, Tech Trends 2023](https://www2.deloitte.com/us/en/insights/focus/tech-trends.html#above-the-clouds)
 
 Photo via [Flickr Commons](https://flic.kr/p/2mN8Cfg) from Bervaz.
 
