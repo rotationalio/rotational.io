@@ -35,7 +35,7 @@ As coordination code increases, bugs are introduced and our maintenance "surface
 
 You might guess that choosing a brand name cloud solution is the best way to minimize costs. However, research suggests that most companies don't actually get much of a return from commercial cloud.[^1] [^2] [^3] So instead of doubling down on overgeneralized commercial cloud solutions, or internalizing our frustrations with whatever homemade hybrid we've inherited, we should look for tools that will actually help us solve our problem.
 
-In other words, let's lean into "PostSQL" solutions earlier on, and without shame.
+In other words, let's wedge in "PostSQL" solutions earlier on, and without shame.
 
 ## What is PostSQL?
 
