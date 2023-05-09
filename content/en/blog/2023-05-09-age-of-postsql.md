@@ -44,7 +44,7 @@ For instance, maybe queries are fast, but writes/upserts are so slow that they'r
 ### 2. You're doing things manually that databases are good at
 For instance, you're generating and applying unique identifiers, or having to devise ways of reconstructing history by putting changes to an object in chronological order.
 
-### 3. You're doing things manually that eventing is good at
+### 3. You're using batch ETL for a use case better served by eventing
 For example, you need to copy data from location X to location Y. Bonus points if this happens periodically and you lay awake at night worrying something important has changed since the last batch ETL.
 
 ### 4. The data analysts don't have a way to "talk back" to the application
