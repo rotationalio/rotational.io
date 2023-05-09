@@ -36,7 +36,7 @@ Consider the 5 following hypothetical/anonymized examples of hybrid data layers 
 Do any of these sound familiar? Are you a Company C? Have you worked for an Enterprise A? Stitching tools together is not a red flag, it's just the norm! There's no such thing as the "correct" architecture; it's purely a question of which data problems you are solving for.
 
 ## Red Flags
-So what are the red flags in homemade hybrids? Here are some of the signs that it's time to get a bit more curious about storage are your organization:
+So what are the red flags in homemade hybrids? Here are some of the signs that it's time to get a bit more curious about storage at your organization:
 
 ### 1. The tools you're using aren't working for what you need them to do
 For instance, maybe queries are fast, but writes/upserts are so slow that they're preventing you from launching a high value new feature. Or your message bus is crazy fast, but you actually care more about persisting event data than throughput.
