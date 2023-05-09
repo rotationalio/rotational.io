@@ -17,7 +17,13 @@ Does the data layer at your organization feel like a special kind of hell? Do yo
 
 ## Hot Mess or Homemade Hybrid?
 
-For some reason, we are all quite insecure about our databases. I've worked on a lot of engineering teams from the public sector to enterprises to startups and this may be the one thing everyone has in common. What I have actually observed in practice is not a host of hot messes but instead a lot of creative blending of data storage, querying, and processing tools.
+For some reason, we are all quite insecure about our databases. I've worked on a lot of engineering teams, from the public sector to enterprises to startups, and this may be the one thing everyone has in common. Why?
+
+As programmers, many of us feel a level of ambivalence about architecture. On one hand, are architectural decisions really our business? Do you need to care about the isolation levels of Kafka or the use cases of vector databases?
+
+So while don't fully understand the data tools we're using or how they measure up to other options, we also know architecture has a *huge* impact on us; it determines the success our software and ultimately even the organizations we work for. This ambivalence makes us assume we're doing things "wrong" and everyone else is it "right". SaaS and commercial cloud advertising has also gotten really good at tapping into this anxiety. But it might not be as bad as you think.
+
+Over the last decade I've allowed myself to get increasingly curious about data storage, and what I have actually observed at the organizations I've worked is not a pile of hot messes but a lot of "homemade hybrids" &mdash; creative blends of data storage, querying, and processing tools.
 
 Consider the 5 following hypothetical/anonymized examples of hybrid data layers at different organizations:
 
