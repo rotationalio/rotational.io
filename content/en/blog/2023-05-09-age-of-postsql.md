@@ -11,7 +11,7 @@ description: "Messiness is the norm for data, not the exception. Let's stop sear
 profile: img/team/rebecca-bilbro.png
 ---
 
-Does the data layer at your organization feel like a special kind of hell? Do you dream of a database that matches your platonic ideal of relational/NoSQL storage (perfectly normalized/indexed)? The truth is that we are all PostSQL now.
+Calling all programmers! It's time to get a bit more curious about data storage, because we're about to enter the age of PostSQL...
 
 <!--more-->
 
@@ -21,7 +21,7 @@ For some reason, we are all quite insecure about our databases. I've worked on a
 
 As programmers, many of us feel a level of ambivalence about architecture. On one hand, are architectural decisions really our business? Do you need to care about the isolation levels of Kafka or the use cases of vector databases?
 
-So while don't fully understand the data tools we're using or how they measure up to other options, we also know architecture has a *huge* impact on us; it determines the success of our software and ultimately even the organizations we work for. This ambivalence makes us assume we're doing things "wrong" and everyone else is doing it "right" (have you noticed how effectively SaaS and commercial cloud advertising has gotten at tapping into this anxiety??). But it might not be as bad as you think.
+So while we don't fully understand the data tools we're using or how they measure up to other options, we also know architecture has a *huge* impact on us; it determines the success of our software and ultimately even the organizations we work for. This ambivalence makes us assume we're doing things "wrong" and everyone else is doing it "right" (have you noticed how effectively SaaS and commercial cloud advertising has gotten at tapping into this anxiety??). But it might not be as bad as you think.
 
 Over the last decade I've allowed myself to get increasingly curious about data storage, and what I have actually observed at the organizations I've worked is not a pile of hot messes but a lot of "homemade hybrids" &mdash; creative blends of data storage, querying, and processing tools.
 
@@ -81,7 +81,7 @@ The main thing that distinguishes PostSQL solutions is that they're not only una
 
 > Through a vicious circle of pure reason, skepsis itself becomes dogma. -Johann Georg Hamann
 
-We're often made to feel that our org's data is a special kind of hot mess. That our problems could be solved by migrating to a data store that matches our platonic ideal of a relational (it's perfectly normalized) or NoSQL (it's perfected indexed) database. But if those ideals aren't serving your organization, it's time to let them go.
+We're often made to feel that our organization's data layer is a special kind of hell. That our problems could be solved by migrating to a data store that matches our platonic ideal of a relational (it's perfectly normalized) or NoSQL (it's perfected indexed) database. But if those ideals aren't serving your organization, it's time to let them go.
 
 Instead of doubling down on overgeneralized commercial cloud solutions, or internalizing our frustrations with whatever homemade hybrid we've inherited, we should look for tools that will actually help us solve our problem.
 
