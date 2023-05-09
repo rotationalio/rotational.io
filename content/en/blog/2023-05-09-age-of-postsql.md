@@ -21,7 +21,7 @@ For some reason, we are all quite insecure about our databases. I've worked on a
 
 As programmers, many of us feel a level of ambivalence about architecture. On one hand, are architectural decisions really our business? Do you need to care about the isolation levels of Kafka or the use cases of vector databases?
 
-So while don't fully understand the data tools we're using or how they measure up to other options, we also know architecture has a *huge* impact on us; it determines the success our software and ultimately even the organizations we work for. This ambivalence makes us assume we're doing things "wrong" and everyone else is it "right". SaaS and commercial cloud advertising has also gotten really good at tapping into this anxiety. But it might not be as bad as you think.
+So while don't fully understand the data tools we're using or how they measure up to other options, we also know architecture has a *huge* impact on us; it determines the success of our software and ultimately even the organizations we work for. This ambivalence makes us assume we're doing things "wrong" and everyone else is doing it "right" (have you noticed how effectively SaaS and commercial cloud advertising has gotten at tapping into this anxiety??). But it might not be as bad as you think.
 
 Over the last decade I've allowed myself to get increasingly curious about data storage, and what I have actually observed at the organizations I've worked is not a pile of hot messes but a lot of "homemade hybrids" &mdash; creative blends of data storage, querying, and processing tools.
 
@@ -33,15 +33,33 @@ Consider the 5 following hypothetical/anonymized examples of hybrid data layers 
 - **Organization D**, that currently uses a CockroachDB instance deployed on Google Cloud to manage its transactional data and a DocumentDB instance on AWS to store more detailed data about customers and products.
 - **Startup E**, that's using a custom-sharded LevelDB instance for key-value customer data storage, distributed SQLite for in-app account management, and an event stream to quickly observe scaling events.
 
-Do any of these sound familiar? Are you a Company C? Have you worked for an Enterprise A? Stitching tools together is not a red flag, it's just the norm! (*Note: red flags to look out for are discussed later in this piece*)
+Do any of these sound familiar? Are you a Company C? Have you worked for an Enterprise A? Stitching tools together is not a red flag, it's just the norm! There's no such thing as the "correct" architecture; it's purely a question of which data problems you are solving for.
+
+## Red Flags
+So what are the red flags in homemade hybrids? Here are some of the signs that it's time to get a bit more curious about storage are your organization:
+
+### 1. The tools you're using aren't working for what you need them to do
+For instance, maybe queries are fast, but writes/upserts are so slow that they're preventing you from launching a high value new feature. Or your message bus is crazy fast, but you actually care more about persisting event data than throughput.
+
+### 2. You're doing things manually that databases are good at
+For instance, you're generating and applying unique identifiers, or having to devise ways of reconstructing history by putting changes to an object in chronological order.
+
+### 3. You're doing things manually that eventing is good at
+For example, you need to copy data from location X to location Y. Bonus points if this happens periodically and you lay awake at night worrying something important has changed since the last batch ETL.
+
+### 4. The data analysts don't have a way to "talk back" to the application
+For example, your data-driven intelligence processes are orphaned and/or require someone to kick off a manual process. Alternatively, your data scientists are building models, but don't feel confident navigating the MLOps.
+
+## Maintenance Surface Area
 
 The challenge is this: every tool comes with fixed, standing operational and maintenance costs. This is true of homemade hybrids as well as off-the-shelf and managed solutions. As we stitch together more and more tools, we have to write more and more code to coordinate our data. Tech teams can leverage external APIs where available, but often need to write their own SDKs or at the very least engage in routine patching to maintain synchronization as the tools and APIs continually evolve.
 
 As coordination code increases, bugs are introduced and our maintenance "surface area" gets bigger. This leads maintenance costs to increase even as, paradoxically, tech debt stays roughly level. You can usually observe this happening in your budget if you're looking close; operational costs spike and don't drop back down; your burn rates steadily rise.
 
-You might guess that choosing a brand name cloud solution is the best way to minimize costs. However, research suggests that most companies don't actually get much of a return from commercial cloud.[^1] [^2] [^3] So instead of doubling down on overgeneralized commercial cloud solutions, or internalizing our frustrations with whatever homemade hybrid we've inherited, we should look for tools that will actually help us solve our problem.
+You might guess that choosing a brand name cloud solution is the best way to minimize costs. However, research suggests most companies don't actually get much of a return from commercial cloud.[^1] [^2] [^3]
 
-In other words, let's wedge in "PostSQL" solutions earlier on, and without shame.
+The trick is to minimize your maintenance surface area and pick tools geared towards the *specific issues* you're observing in your data layer, and that's what PostSQL is all about.
+
 
 ## What is PostSQL?
 
@@ -56,23 +74,7 @@ Here are a few examples:
 - [RisingWave](https://www.risingwave.dev/docs/current/intro/), currently in beta, is like a PostgreSQL for Kafka and Pulsar users. It offers a database for longterm topic storage, querying, and aggregation.
 - [Ensign](https://rotational.io/ensign/), also now in [free beta](https://rotational.app/register), features fully managed eventing for data analytics, making it easier for teams to share data with less bureaucracy and publish data science outputs back to the application. It also offers event persistence and end-to-end encryption by default.
 
-The main thing that distinguishes PostSQL solutions is that they're not only unapologetically unconventional, they also help solve very real, very timely problems  &mdash; performant and energy-efficient machine learning, strongly consistent high-speed transactions, event persistence, data privacy, and MLOps.
-
-
-## Red Flags
-What are some of the signs to look out for that it might be time for a PostSQL solution rather than building (and forever maintaining) a homemade hybrid?
-
-### 1. The tools you're using aren't working for what you need them to do
-For instance, maybe queries are fast, but writes/upserts are so slow that they're preventing you from launching a high value new feature.
-
-### 2. You're doing things manually that databases are good at
-For instance, you're generating and applying unique identifiers, or having to devise ways of reconstructing history by putting changes to an object in chronological order.
-
-### 3. You're doing things manually that eventing is good at
-For example, you need to copy data from location X to location Y. Bonus points if this happens periodically and you lay awake at night worrying something important has changed since the last batch ETL.
-
-### 4. The data analysts don't have a way to "talk back" to the application
-For example, your data-driven intelligence processes are orphaned and/or require someone to kick off a manual process. Alternatively, your data scientists are building models, but don't feel confident navigating the MLOps.
+The main thing that distinguishes PostSQL solutions is that they're not only unapologetically unconventional, they also help solve very real, very timely problems  &mdash; performant and energy-efficient machine learning, strongly consistent high-speed transactions, event persistence, data privacy, and MLOps. These are relatively new problems, and they're hard to solve with custom code or generic tools.
 
 
 ## Conclusion
@@ -81,14 +83,14 @@ For example, your data-driven intelligence processes are orphaned and/or require
 
 We're often made to feel that our org's data is a special kind of hot mess. That our problems could be solved by migrating to a data store that matches our platonic ideal of a relational (it's perfectly normalized) or NoSQL (it's perfected indexed) database. But if those ideals aren't serving your organization, it's time to let them go.
 
+Instead of doubling down on overgeneralized commercial cloud solutions, or internalizing our frustrations with whatever homemade hybrid we've inherited, we should look for tools that will actually help us solve our problem.
+
 If your organization is either on the verge or in the midst of a data layer upgrade, ask yourself two questions:
 
 - How hard will this tool be to hook up to our legacy stuff? Your legacy stuff probably powers a lot of important functions and reports, and it may be harder to get rid of than you think. It may also still have utility, like serving as a sink or source in your new architecture.
 - How much will it really cost me to keep the tool operational and how many dedicated engineers are going to have to maintain it? It might seem safer to buy from a big box cloud vendor, but no tools come entirely free of operational costs (cloud vendor APIs are always changing too!) and it may be costly to customize a brand name solution to your business case.
 
-You may find that incorporating a niche "wedge" solution is the better bet.
-
-Messiness is the norm for data, not the exception. Let's stop searching for the "one true database" and instead, lean into the glorious messiness. Pick tools that honor the reality of your data and help you get the job done. We are all PostSQL now!
+Messiness is the norm for data, not the exception. Let's stop searching for the "one true database" and instead pick tools that honor the reality of our data and help get the job done. Don't be afraid to get curious and lean into the PostSQL revolution!
 
 [^1]: [McKinsey, Technology Trends Outlook 2022 Cloud and edge computing](https://www.mckinsey.com/~/media/mckinsey/business%20functions/mckinsey%20digital/our%20insights/the%20top%20trends%20in%20tech%202022/McKinsey-Tech-Trends-Outlook-2022-Cloud-Edge.pdf)
 [^2]: [Accenture, Closing the Datavalue Gap](https://www.accenture.com/_acnmedia/pdf-108/accenture-closing-data-value-gap-fixed.pdf)
