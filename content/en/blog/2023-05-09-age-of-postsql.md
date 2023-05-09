@@ -54,11 +54,11 @@ For example, your data-driven intelligence processes are orphaned and/or require
 
 The challenge is this: every tool comes with fixed, standing operational and maintenance costs. This is true of homemade hybrids as well as off-the-shelf and managed solutions. As we stitch together more and more tools, we have to write more and more code to coordinate our data. Tech teams can leverage external APIs where available, but often need to write their own SDKs or at the very least engage in routine patching to maintain synchronization as the tools and APIs continually evolve.
 
-As coordination code increases, bugs are introduced and our maintenance "surface area" gets bigger. This leads maintenance costs to increase even as, paradoxically, tech debt stays roughly level. You can usually observe this happening in your budget if you're looking close; operational costs spike and don't drop back down; your burn rates steadily rise.
+As coordination code increases, bugs are introduced and our maintenance "surface area" gets bigger. This leads maintenance costs to increase even as, paradoxically, tech debt stays roughly level. You can usually observe this playing out in the organizational budget in real time, as operational costs spike and don't drop back down, and burn rates steadily rise.
 
-You might guess that choosing a brand name cloud solution is the best way to minimize costs. However, research suggests most companies don't actually get much of a return from commercial cloud.[^1] [^2] [^3]
+You might guess that choosing a brand name cloud solution is the best way to minimize costs. However, research [^1] [^2] [^3] suggests most companies don't actually get much of a return from commercial cloud. It's surprisingly tough to take a generic cloud solution and make it work really well for any non-trivial business problem.
 
-The trick is to minimize your maintenance surface area and pick tools geared towards the *specific issues* you're observing in your data layer, and that's what PostSQL is all about.
+So the trick is to minimize your maintenance surface area and pick tools geared towards the *specific issues* you're observing in your data layer, and that's what PostSQL is all about.
 
 
 ## What is PostSQL?
