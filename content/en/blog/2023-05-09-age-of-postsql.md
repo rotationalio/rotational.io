@@ -74,7 +74,7 @@ Here are a few examples:
 - [RisingWave](https://www.risingwave.dev/docs/current/intro/), currently in beta, is like a PostgreSQL for Kafka and Pulsar users. It offers a database for longterm topic storage, querying, and aggregation.
 - [Ensign](https://rotational.io/ensign/), also now in [free beta](https://rotational.app/register), features fully managed eventing for data analytics, making it easier for teams to share data with less bureaucracy and publish data science outputs back to the application. It also offers event persistence and end-to-end encryption by default.
 
-The main thing that distinguishes PostSQL solutions is that they're not only unapologetically unconventional, they also help solve very real, very timely problems  &mdash; performant and energy-efficient machine learning, strongly consistent high-speed transactions, event persistence, data privacy, and MLOps. These are relatively new problems, and they're hard to solve with custom code or generic tools.
+The main thing that distinguishes PostSQL solutions is that they're not only unapologetically unconventional, they also help solve very real, very timely problems. Think: performant and energy-efficient machine learning; strongly consistent high-speed transactions; event persistence; data privacy; realtime analytics; MLOps. These are relatively new problems, and they're still hard to solve.
 
 
 ## Conclusion
