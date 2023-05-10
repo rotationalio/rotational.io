@@ -70,7 +70,7 @@ A PostSQL database is one that embraces the specificity of a new data problem &m
 Here are a few examples:
 
 - [DuckDB](https://duckdb.org/) is like a columnar SQLite for OLAP, and it's recently taken the Python/data science communities by storm. It's good at in-memory analytics, and you can interact with it like you'd use a Pandas dataframe.
-- [TigerBeetle](https://tigerbeetle.com/) is a database for distributed financial transactions, and solves a lot of the critical safety problems (gray failure, latency, etc) that have come out of the DeFi movement.
+- [TigerBeetle](https://tigerbeetle.com/) is a database for distributed financial transactions, and solves a lot of the critical safety problems (gray failure, latency, etc) that the DeFi movement taught us to worry about.
 - [RisingWave](https://www.risingwave.dev/docs/current/intro/), currently in beta, is like a PostgreSQL for Kafka and Pulsar users. It offers a database for longterm topic storage, querying, and aggregation.
 - [Ensign](https://rotational.io/ensign/), also now in [free beta](https://rotational.app/register), features fully managed eventing for data analytics, making it easier for teams to share data with less bureaucracy and publish data science outputs back to the application. It also offers event persistence and end-to-end encryption by default.
 
