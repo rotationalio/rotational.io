@@ -36,6 +36,20 @@ $ yarn dev:hugo
 
 Note that the `-D` flag enables draft content, which is necessary to see any draft posts or content that you're writing. With the local server running, you can navigate to [http://localhost:1313/](http://localhost:1313/) to view the rendered website. Everytime you make changes in the repository, the website will be re-rendered and you can simply refersh the page to see it.
 
+To install or update dependencies before making front end changes:
+```
+$ yarn install
+```
+
+The Tailwind CSS library is used to add CSS styles to the site. Tailwind automatically builds an output.css file which is the main stylesheet for the website. 
+
+In a separate terminal window the following command will watch for any CSS changes and automatically rebuild the output.css file: 
+
+```
+$ yarn dev:css
+```
+
+
 ## Blog
 
 To create a new blog post, use the [`hugo new`](https://gohugo.io/commands/hugo_new/#readout) command as follows:
