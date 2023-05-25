@@ -21,6 +21,7 @@
     @apply mt-6 mr-8 w-full basis-1/2 rounded-lg border-red-500 px-7 py-4;
   }
 }
+
 body {
   font-family: "Montserrat", sans-serif;
 }
@@ -163,4 +164,27 @@ em {
     gap: 32px;
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
+}
+
+.home-intro p {
+  @apply mt-5;
+  @apply text-xl
+}
+
+.home-intro ul {
+  @apply mt-5;
+  @apply text-lg
+}
+
+.home-intro ul li {
+  @apply mt-1;
+  list-style-type: none;
+  list-style-position: inside;
+  text-indent: -1.25em;
+  padding-left: 1.25em;
+}
+
+.home-intro ul li::before {
+  content: "\2B23";
+  padding-right: .5em;
 }

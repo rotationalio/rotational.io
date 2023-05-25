@@ -119,3 +119,8 @@ URL = "mailto:info@rotational.io"
 image = "img/email.png"
 username = "Email"
 weight = 40
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true

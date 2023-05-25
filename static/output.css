@@ -1231,10 +1231,6 @@ video {
   margin-top: 5rem;
 }
 
-.mt-24 {
-  margin-top: 6rem;
-}
-
 .mt-28 {
   margin-top: 7rem;
 }
@@ -1903,6 +1899,10 @@ video {
   padding-right: 1rem;
 }
 
+.pt-10 {
+  padding-top: 2.5rem;
+}
+
 .pt-3 {
   padding-top: 0.75rem;
 }
@@ -2283,6 +2283,31 @@ em {
   }
 }
 
+.home-intro p {
+  margin-top: 1.25rem;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+.home-intro ul {
+  margin-top: 1.25rem;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+.home-intro ul li {
+  margin-top: 0.25rem;
+  list-style-type: none;
+  list-style-position: inside;
+  text-indent: -1.25em;
+  padding-left: 1.25em;
+}
+
+.home-intro ul li::before {
+  content: "\2B23";
+  padding-right: .5em;
+}
+
 .after\:absolute::after {
   content: var(--tw-content);
   position: absolute;
@@ -2367,10 +2392,6 @@ em {
 
   .sm\:mt-0 {
     margin-top: 0px;
-  }
-
-  .sm\:mt-10 {
-    margin-top: 2.5rem;
   }
 
   .sm\:mt-11 {
