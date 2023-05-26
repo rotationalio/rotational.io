@@ -1131,6 +1131,11 @@ video {
   margin-bottom: 0.5rem;
 }
 
+.my-5 {
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
 .my-8 {
   margin-top: 2rem;
   margin-bottom: 2rem;
@@ -1966,6 +1971,10 @@ video {
   text-align: center;
 }
 
+.align-middle {
+  vertical-align: middle;
+}
+
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
@@ -1979,6 +1988,11 @@ video {
 .text-4xl {
   font-size: 2.25rem;
   line-height: 2.5rem;
+}
+
+.text-5xl {
+  font-size: 3rem;
+  line-height: 1;
 }
 
 .text-base {
@@ -2429,6 +2443,10 @@ em {
   color: rgb(25 46 91 / var(--tw-text-opacity));
 }
 
+.ensign-content a.btn {
+  color: #FFFFFF;
+}
+
 .ensign-content .youtube {
   margin-top: 1.25rem;
   margin-bottom: 1.25rem;
@@ -2436,6 +2454,11 @@ em {
   padding-bottom: 56.25%;
   height: 0;
   overflow: hidden;
+}
+
+.ensigncoa img {
+  height: 4rem;
+  margin-top: -.5em;
 }
 
 .youtube iframe {
@@ -2541,6 +2564,11 @@ em {
     margin-bottom: 3rem;
   }
 
+  .sm\:my-8 {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+
   .sm\:mb-0 {
     margin-bottom: 0px;
   }
@@ -2639,6 +2667,16 @@ em {
   .sm\:px-6 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
+  }
+
+  .sm\:px-8 {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .sm\:py-4 {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
   }
 
   .sm\:py-5 {
@@ -2802,6 +2840,11 @@ em {
   .md\:text-base {
     font-size: 1rem;
     line-height: 1.5rem;
+  }
+
+  .md\:text-lg {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
   }
 
   .md\:text-sm {

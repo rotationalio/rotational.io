@@ -26,6 +26,16 @@ Ensign is built for a [PostSQL World](https://rotational.io/blog/age-of-postsql/
 
 ## Customize Data Flows for Your Use Cases
 
+{{< widefigure src="/img/ensign/architecture_visual.svg" alt="Visual Architecture">}}
+
 ## How Ensign Compares
 
 How does Ensign stack up to other, similar tools and products? Also, see [our technical comparison](/ensign/#the-ensign-difference).
+
+{{< widefigure src="/img/ensign/tco_comparison.png" alt="Total Cost of Ownership">}}
+
+{{< ensigncoa btnhref="https://calendly.com/edwin-r8l/discussion" btntext="Schedule" >}}
+Got questions? Schedule a friendly chat.
+{{< /ensigncoa >}}
+
+<!-- NOTE: Switch link at bottom of page is defined by frontmatter on the page. -->

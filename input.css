@@ -236,12 +236,21 @@ em {
   @apply hover:text-[#192e5b];
 }
 
+.ensign-content a.btn {
+  color: #FFFFFF;
+}
+
 .ensign-content .youtube {
   @apply my-5;
   position: relative;
   padding-bottom: 56.25%;
   height: 0;
   overflow: hidden;
+}
+
+.ensigncoa img {
+  @apply h-16;
+  margin-top: -.5em;
 }
 
 .youtube iframe {

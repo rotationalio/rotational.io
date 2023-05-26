@@ -1,0 +1,20 @@
+<div class="bg-[#E3E3E1] ensigncoa flex flex-wrap px-4 my-8 justify-between rounded-lg">
+  <div class="flex mt-2 sm:mt-5 align-middle">
+    {{ if .Get "iconimg" }}
+    {{ $image := .Get "iconimg" }}
+    <img src="{{ $image }}" alt="Sea Otter Icon" />
+    {{ else }}
+    <img src="/img/ensign/otter_data_scientist.png" alt="Sea Otter Icon" />
+    {{ end }}
+    <p class="mt-3 ml-5 text-5xl font-semibold">{{ .Inner }}</p>
+  </div>
+
+  {{ $href := .Get "btnhref" }}
+  {{ $text := .Get "btntext" }}
+  <div class="my-5 sm:my-8">
+    <a href="{{ $href }}" target="_blank"
+      class="btn uppercase text-xs md:text-lg font-semibold rounded-lg px-5 sm:px-8 py-3 sm:py-4 bg-[#192E5B] hover:bg-[#1D65A6]">
+      {{ $text }}
+    </a>
+  </div>
+</div>

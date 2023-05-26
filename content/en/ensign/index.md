@@ -21,6 +21,7 @@ Until now! :magic_wand: Let us show you the magic of integrating your data scien
 How does Ensign stack up to other, similar tools and products?
 
 <!-- Edit the competitive landscape table at data/en/ensign.yml -->
+{{< competitive-landscape >}}
 
 ## Built for the Modern Data Team
 
@@ -44,3 +45,9 @@ Whether you wear one hat or all the hats, the right tool can make a world of dif
 - Youtube Channel
 - Data Playground
 - Learn EnSQL
+
+{{< ensigncoa btnhref="https://rotational.app/register" btntext="Create Account" >}}
+Create your no-cost starter account today!
+{{< /ensigncoa >}}
+
+<!-- NOTE: Switch link at bottom of page is defined by frontmatter on the page. -->
