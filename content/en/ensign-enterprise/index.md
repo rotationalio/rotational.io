@@ -22,6 +22,8 @@ Wouldn’t it be nice to have way to break down data silos, connect teams, and h
 
 Ensign is built for a [PostSQL World](https://rotational.io/blog/age-of-postsql/) powered by secure event streams (logs) that provide security and flexibility.
 
+{{< youtube id="Jk-zGU_lG-c" autoplay="false" title="Ensign Explained" class="youtube" >}}
+
 ## Customize Data Flows for Your Use Cases
 
 ## How Ensign Compares
