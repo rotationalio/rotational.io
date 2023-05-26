@@ -1,7 +1,7 @@
 ---
 title: "Unlocking Real-Time Insights for Data-Driven Success"
 slug: "real-time-processing"
-date: "2023-05-26T07:22:43-04:00"
+date: "2023-05-26T09:00:00-04:00"
 draft: false
 image: img/blog/starburst.jpg
 photo_credit: Photo by Joshua Sortino on Unsplash
