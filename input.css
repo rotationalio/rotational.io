@@ -261,3 +261,9 @@ em {
   height: 100%;
   border: 0;
 }
+
+.ensign-content .vtriple {
+  @apply p-8;
+  @apply mb-8;
+  @apply rounded-lg;
+}

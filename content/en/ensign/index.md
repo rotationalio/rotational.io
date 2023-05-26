@@ -27,6 +27,43 @@ How does Ensign stack up to other, similar tools and products?
 
 Whether you wear one hat or all the hats, the right tool can make a world of difference.
 
+<!-- Different Hats Section with 3 Cards -->
+{{< triple >}}
+{{% vtriple color="#E3E3E1" %}}
+### Developers
+
+{{< figure src="/img/ensign/otter_developer.png" alt="Otter software developer face wearing glasses and a beret" >}}
+
+Quickly build event-driven APIs to leverage the publish-subscribe model for scalable and reliable microservices.
+
+{{< button href="https://ensign.rotational.dev/examples/developers/" text="Learn More">}}
+
+{{% /vtriple %}}
+
+{{% vtriple color="#E3E3E1" %}}
+### Data Scientists
+
+{{< figure src="/img/ensign/otter_data_scientist.png" alt="Otter data scientist face with a goatee" >}}
+
+Self-serve data and move from batch processing to real-time machine learning. Bonus:
+skip over all those MLOps headaches.
+
+{{< button href="https://ensign.rotational.dev/examples/data_scientists/" text="Learn More">}}
+
+{{% /vtriple %}}
+
+{{% vtriple color="#E3E3E1" %}}
+### DBAs/Data Engineers
+
+{{< figure src="/img/ensign/otter_data_engineer.png" alt="Otter data engineer face with earings, a pony tail, and a pencil behind the ear" >}}
+
+Let downstream consumers define their own data schemas rather than struggling to find a schema everyone can agree on.
+
+{{< button href="https://ensign.rotational.dev/examples/data_engineers/" text="Learn More">}}
+
+{{% /vtriple %}}
+{{< /triple >}}
+
 ## Join our Growing Community!
 
 ### Get Started
