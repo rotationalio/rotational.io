@@ -1841,6 +1841,11 @@ video {
   padding-bottom: 2.5rem;
 }
 
+.py-12 {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
 .py-14 {
   padding-top: 3.5rem;
   padding-bottom: 3.5rem;
@@ -2346,6 +2351,23 @@ em {
   margin: 0 auto;
 }
 
+.get-started h3 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: bold;
+}
+
+.get-started a {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  text-decoration-line: underline;
+}
+
+.get-started a:hover {
+  --tw-text-opacity: 1;
+  color: rgb(29 101 166 / var(--tw-text-opacity));
+}
+
 .after\:absolute::after {
   content: var(--tw-content);
   position: absolute;
@@ -2430,6 +2452,11 @@ em {
     margin-bottom: 0px;
   }
 
+  .sm\:my-12 {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+  }
+
   .sm\:mb-0 {
     margin-bottom: 0px;
   }
@@ -2440,10 +2467,6 @@ em {
 
   .sm\:mt-0 {
     margin-top: 0px;
-  }
-
-  .sm\:mt-10 {
-    margin-top: 2.5rem;
   }
 
   .sm\:mt-11 {

@@ -1,7 +1,7 @@
 ############################### cloud partnerships ############################
 partnerships:
   enable : true
-  title : Cloud Partners
+  title : On the Cloud
   partner_item :
     # partner_item loop
     - name : Google Cloud Partner

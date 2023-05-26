@@ -199,3 +199,14 @@ em {
   max-width: 400px;
   margin: 0 auto;
 }
+
+.get-started h3 {
+  @apply text-2xl;
+  font-weight: bold;
+}
+
+.get-started a {
+  @apply text-xl;
+  @apply underline;
+  @apply hover:text-[#1D65A6];
+}

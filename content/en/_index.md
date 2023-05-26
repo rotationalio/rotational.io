@@ -27,8 +27,12 @@ tech stack.
 <!-- Edit and add clients in data/en/clients.yml -->
 {{< clients >}}
 
+<!-- Ensign for Data Teams and Enterprise Section -->
+<!-- container double makes this a two column section with the specified bg color -->
 {{< container color="#E3E3E1" >}}
 {{< double >}}
+
+<!-- Ensign for Data Teams -->
 {{% vtriple %}}
 ### Ensign for Data Teams
 
@@ -41,6 +45,7 @@ streamline MLOps with no specialized skills.
 
 {{% /vtriple %}}
 
+<!-- Ensign for Enterprise -->
 {{% vtriple %}}
 ### Ensign for Enterprise
 
@@ -55,12 +60,27 @@ additional infra. Cloud, on prem, edge or hybrid.
 {{< /double >}}
 {{< /container >}}
 
-{{< container >}}
+<!-- Get Started section has custom CSS so needs to be in its own shortcode -->
+{{< get-started >}}
 
 ### Get Started
 
 {{< widefigure src="/img/get_started.png" alt="Getting Started Steps">}}
 
-[Curious? Check out the GitHub Repo.](https://github.com/rotational.io/ensign)
+[Curious? Check out the GitHub Repo.](https://github.com/rotationalio/ensign)
+
+{{< /get-started >}}
+
+<!-- On the Cloud section -->
+{{< container color="#ECF6FF" >}}
+
+{{< button href="https://rotational.app/register" text="Create Account">}}
+
+<!-- Data for cloud partners can be found at data/en/cloud.yml -->
+{{< clouds >}}
 
 {{< /container >}}
+
+
+
+<!-- NOTE: Recent Rotations is part of the template and is added after the content -->
