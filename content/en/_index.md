@@ -37,6 +37,9 @@ tech stack.
 
 Prototype with event-driven microservices, build realtime apps and analytics, and
 streamline MLOps with no specialized skills.
+
+{{< button href="/ensign/" text="Learn More">}}
+
 {{% /vtriple %}}
 
 {{% vtriple %}}
@@ -46,6 +49,9 @@ streamline MLOps with no specialized skills.
 
 Break down data silos and make data accessibility easy, secure, and compliant with no
 additional infra. Cloud, on prem, edge or hybrid.
+
+{{< button href="/ensign/" text="Learn More">}}
+
 {{% /vtriple %}}
 {{< /double >}}
 {{< /container >}}
