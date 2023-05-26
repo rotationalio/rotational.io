@@ -267,3 +267,21 @@ em {
   @apply mb-8;
   @apply rounded-lg;
 }
+
+.ensign-content ul {
+  @apply mb-5;
+}
+
+.ensign-content ul li {
+  @apply mt-1;
+  @apply lg:text-xl;
+  list-style-type: none;
+  list-style-position: inside;
+  text-indent: -1.25em;
+  padding-left: 1.25em;
+}
+
+.ensign-content ul li::before {
+  content: "\2B23";
+  padding-right: .5em;
+}

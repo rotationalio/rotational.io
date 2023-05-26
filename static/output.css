@@ -1270,6 +1270,14 @@ video {
   margin-top: 2.25rem;
 }
 
+.mr-10 {
+  margin-right: 2.5rem;
+}
+
+.mr-14 {
+  margin-right: 3.5rem;
+}
+
 .block {
   display: block;
 }
@@ -1412,6 +1420,10 @@ video {
 
 .max-w-xl {
   max-width: 36rem;
+}
+
+.flex-none {
+  flex: none;
 }
 
 .grow {
@@ -1933,6 +1945,10 @@ video {
 
 .pr-4 {
   padding-right: 1rem;
+}
+
+.pr-8 {
+  padding-right: 2rem;
 }
 
 .pt-10 {
@@ -2474,6 +2490,33 @@ em {
   padding: 2rem;
   margin-bottom: 2rem;
   border-radius: 0.5rem;
+}
+
+.ensign-content ul {
+  margin-bottom: 1.25rem;
+}
+
+.ensign-content ul li {
+  margin-top: 0.25rem;
+}
+
+@media (min-width: 1024px) {
+  .ensign-content ul li {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+}
+
+.ensign-content ul li {
+  list-style-type: none;
+  list-style-position: inside;
+  text-indent: -1.25em;
+  padding-left: 1.25em;
+}
+
+.ensign-content ul li::before {
+  content: "\2B23";
+  padding-right: .5em;
 }
 
 .after\:absolute::after {

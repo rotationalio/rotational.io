@@ -66,22 +66,28 @@ Let downstream consumers define their own data schemas rather than struggling to
 
 ## Join our Growing Community!
 
+{{% uneven %}}
+{{% skinnyright %}}
 ### Get Started
 
-- Create an account
+- [Create an account](https://rotational.app/register)
 - Invite teammates
 - Generate API keys
 - Setup topics
-- Use our developer-friendly SDKs
+- Use our [developer-friendly SDKs](https://ensign.rotational.dev/sdk/)
 
 ### Resources
 
-- Documentation
-- SDKs
-- GitHub Repo
-- Youtube Channel
-- Data Playground
-- Learn EnSQL
+- [Documentation](https://ensign.rotational.dev)
+- [SDKs](https://ensign.rotational.dev/sdk/)
+- [GitHub Repo](https://github.com/rotationalio/ensign)
+- [Youtube Channel](https://www.youtube.com/@rotationalio)
+- Data Playground (coming soon!)
+- Learn EnSQL (coming soon!)
+{{% /skinnyright %}}
+
+{{< comic >}}
+{{% /uneven %}}
 
 {{< ensigncoa btnhref="https://rotational.app/register" btntext="Create Account" >}}
 Create your no-cost starter account today!
