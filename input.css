@@ -188,3 +188,14 @@ em {
   content: "\2B23";
   padding-right: .5em;
 }
+
+.vtriple h3 {
+  @apply text-2xl;
+  font-weight: bold;
+}
+
+.vtriple p {
+  @apply text-xl;
+  max-width: 400px;
+  margin: 0 auto;
+}

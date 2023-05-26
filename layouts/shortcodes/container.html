@@ -1,3 +1,6 @@
-<div class="relative max-w-7xl mx-auto px-4 sm:px-6">
-  {{ .Inner }}
+{{ $color := .Get "color" }}
+{{ if $color }}<div style="background-color: {{ $color }}">{{ end }}
+<div class="relative max-w-7xl mx-auto px-4 sm:px-6 mt-10 py-10 text-center">
+  {{ .Inner | markdownify }}
 </div>
+{{ if $color }}</div>{{ end }}

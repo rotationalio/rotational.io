@@ -9,7 +9,8 @@ headeractions:
   link: "/ensign/"
 ---
 
-{{< home-intro image="img/global_data_blue_flow.png" >}}
+<!-- Home Intro is the first section on the webpage -->
+{{< home-intro image="img/global_data_blue_flow_clip.png" >}}
 **Ensign for Data Teams: Real-time Insights**
 
 Ensign is a cloud native, cloud agnostic, real-time data streaming platform built for
@@ -23,3 +24,38 @@ modern data teams.
 Get started in minutes with an API key and developer-friendly SDKs. Made to fit any
 tech stack.
 {{< /home-intro >}}
+
+<!-- Edit and add clients in data/en/clients.yml -->
+{{< clients >}}
+
+{{< container color="#E3E3E1" >}}
+{{< double >}}
+{{% vtriple %}}
+### Ensign for Data Teams
+
+{{< figure src="/img/three_otters.png" alt="Sea Otter Engineers" >}}
+
+Prototype with event-driven microservices, build realtime apps and analytics, and
+streamline MLOps with no specialized skills.
+{{% /vtriple %}}
+
+{{% vtriple %}}
+### Ensign for Enterprise
+
+{{< figure src="/img/globe.png" alt="Globe" >}}
+
+Break down data silos and make data accessibility easy, secure, and compliant with no
+additional infra. Cloud, on prem, edge or hybrid.
+{{% /vtriple %}}
+{{< /double >}}
+{{< /container >}}
+
+{{< container >}}
+
+### Get Started
+
+{{< widefigure src="/img/get_started.png" alt="Getting Started Steps">}}
+
+[Curious? Check out the GitHub Repo.](https://github.com/rotational.io/ensign)
+
+{{< /container >}}
