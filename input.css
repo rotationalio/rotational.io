@@ -210,3 +210,28 @@ em {
   @apply underline;
   @apply hover:text-[#1D65A6];
 }
+
+.ensign-content h2 {
+  @apply text-2xl;
+  @apply lg:text-3xl;
+  @apply font-bold;
+  @apply mb-2;
+}
+
+.ensign-content h3 {
+  @apply text-xl;
+  @apply lg:text-2xl;
+  @apply font-semibold;
+}
+
+.ensign-content p {
+  @apply mb-5;
+  @apply text-lg;
+  @apply lg:text-xl;
+}
+
+.ensign-content a {
+  color: #1d65a6;
+  @apply font-semibold;
+  @apply hover:text-[#192e5b];
+}

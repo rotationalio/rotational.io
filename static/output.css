@@ -1131,6 +1131,11 @@ video {
   margin-bottom: 0.5rem;
 }
 
+.my-8 {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
 .my-auto {
   margin-top: auto;
   margin-bottom: auto;
@@ -1158,10 +1163,6 @@ video {
 
 .mb-7 {
   margin-bottom: 1.75rem;
-}
-
-.ml-0 {
-  margin-left: 0px;
 }
 
 .ml-2 {
@@ -2017,6 +2018,10 @@ video {
   font-weight: 200;
 }
 
+.font-light {
+  font-weight: 300;
+}
+
 .font-normal {
   font-weight: 400;
 }
@@ -2368,6 +2373,62 @@ em {
   color: rgb(29 101 166 / var(--tw-text-opacity));
 }
 
+.ensign-content h2 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+@media (min-width: 1024px) {
+  .ensign-content h2 {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+}
+
+.ensign-content h2 {
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.ensign-content h3 {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+@media (min-width: 1024px) {
+  .ensign-content h3 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+}
+
+.ensign-content h3 {
+  font-weight: 600;
+}
+
+.ensign-content p {
+  margin-bottom: 1.25rem;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+@media (min-width: 1024px) {
+  .ensign-content p {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+}
+
+.ensign-content a {
+  color: #1d65a6;
+  font-weight: 600;
+}
+
+.ensign-content a:hover {
+  --tw-text-opacity: 1;
+  color: rgb(25 46 91 / var(--tw-text-opacity));
+}
+
 .after\:absolute::after {
   content: var(--tw-content);
   position: absolute;
@@ -2433,6 +2494,11 @@ em {
 
 .hover\:bg-opacity-50:hover {
   --tw-bg-opacity: 0.5;
+}
+
+.hover\:text-\[\#1D65A6\]:hover {
+  --tw-text-opacity: 1;
+  color: rgb(29 101 166 / var(--tw-text-opacity));
 }
 
 .hover\:text-slate-400:hover {
@@ -2764,12 +2830,16 @@ em {
     margin-top: 4rem;
   }
 
+  .lg\:mt-2 {
+    margin-top: 0.5rem;
+  }
+
   .lg\:mt-24 {
     margin-top: 6rem;
   }
 
-  .lg\:mt-44 {
-    margin-top: 11rem;
+  .lg\:mt-40 {
+    margin-top: 10rem;
   }
 
   .lg\:mt-7 {
@@ -2808,6 +2878,10 @@ em {
     width: 3rem;
   }
 
+  .lg\:w-2\/3 {
+    width: 66.666667%;
+  }
+
   .lg\:w-\[20ch\] {
     width: 20ch;
   }
@@ -2828,6 +2902,11 @@ em {
   .lg\:text-3xl {
     font-size: 1.875rem;
     line-height: 2.25rem;
+  }
+
+  .lg\:text-4xl {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
   }
 
   .lg\:text-5xl {
