@@ -2400,18 +2400,13 @@ em {
   background-color: rgb(29 101 166 / var(--tw-bg-opacity));
 }
 
-.hover\:bg-icon-hover:hover {
-  background-color: rgba(217, 217, 217, 0.4);
-}
-
 .hover\:bg-\[\#72A3C0\]:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(114 163 192 / var(--tw-bg-opacity));
 }
 
-.hover\:bg-\[\#2F4858\]:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(47 72 88 / var(--tw-bg-opacity));
+.hover\:bg-icon-hover:hover {
+  background-color: rgba(217, 217, 217, 0.4);
 }
 
 .hover\:bg-opacity-50:hover {
@@ -2447,6 +2442,10 @@ em {
     margin-top: 0px;
   }
 
+  .sm\:mt-10 {
+    margin-top: 2.5rem;
+  }
+
   .sm\:mt-11 {
     margin-top: 2.75rem;
   }
@@ -2467,16 +2466,8 @@ em {
     margin-top: 8rem;
   }
 
-  .sm\:mt-4 {
-    margin-top: 1rem;
-  }
-
   .sm\:mt-5 {
     margin-top: 1.25rem;
-  }
-
-  .sm\:mt-10 {
-    margin-top: 2.5rem;
   }
 
   .sm\:inline {

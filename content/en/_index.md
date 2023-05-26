@@ -11,15 +11,14 @@ headeractions:
 
 <!-- Home Intro is the first section on the webpage -->
 {{< home-intro image="img/global_data_blue_flow_clip.png" >}}
-**Ensign for Data Teams: Real-time Insights**
+**Disconnected Data Sources? Meet Real-time Insights**
 
-Ensign is a cloud native, cloud agnostic, real-time data streaming platform built for
-modern data teams.
+Ensign is a cloud native, cloud agnostic, real-time data streaming platform that seamlessly integrates your disconnected data.
 
-- Set up fast, secure, and automated data streams for rapid prototyping
-  and faster insights
-- Streamline ETL and MLOps
-- No specialized skills, infra, or surprise costs
+- Faster analytics that don't wait for data to accumulate
+- Build rapid prototypes in days rather than months
+- No cluster management or YAML editing required
+- Leverage the skills and infrastructure you *already have*
 
 Get started in minutes with an API key and developer-friendly SDKs. Made to fit any
 tech stack.
