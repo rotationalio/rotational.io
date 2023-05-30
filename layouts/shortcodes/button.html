@@ -1,0 +1,8 @@
+{{ $href := .Get "href" }}
+{{ $text := .Get "text" }}
+<div class="my-10 sm:my-12 text-white">
+  <a href="{{ $href }}"
+     class="btn uppercase text-xs sm:text-lg font-semibold rounded-lg px-5 sm:px-12 py-3 sm:py-5 bg-[#192E5B] hover:bg-[#1D65A6]">
+     {{ $text }}
+  </a>
+</div>

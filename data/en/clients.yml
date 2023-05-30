@@ -1,25 +1,33 @@
 ############################### clients ############################
 clients:
-  enable : true
-  title : Our Clients
-  clients_item :
-    - name : Tactile
-      image : img/clients/tactile.png
+  enable: true
+  title: Our Clients
+  show_title: false
+  clients_item:
+    - name: Ciphertrace
+      image: img/clients/ciphertrace.png
+      show: true
 
-    - name : Trisa
-      image : img/clients/trisa.png
+    - name: Tactile
+      image: img/clients/tactile.png
+      show: true
 
-    - name : 202 Group
-      image : img/clients/202group.png
+    - name: Trisa
+      image: img/clients/trisa.png
+      show: true
 
-    - name : Ciphertrace
-      image : img/clients/ciphertrace.png
+    - name: Qredo
+      image: img/clients/qredo.png
+      show: true
 
-    - name : Qredo
-      image : img/clients/qredo.png
+    - name: 202 Group
+      image: img/clients/202group.png
+      show: true
 
-    - name : AMG
-      image : img/clients/amg.png
+    - name: AMG
+      image: img/clients/amg.png
+      show: false
 
-    - name : University of Chicago
-      image : img/clients/uchicago.png
+    - name: University of Chicago
+      image: img/clients/uchicago.png
+      show: true

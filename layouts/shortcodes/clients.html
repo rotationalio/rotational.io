@@ -1,0 +1,26 @@
+{{ $data := index site.Data site.Language.Lang }}
+
+{{ if $data.clients.clients.enable }}
+{{ with $data.clients.clients }}
+<section>
+  <div class="relative max-w-7xl mt-20 mx-auto px-4 sm:px-6">
+    {{ if .show_title }}
+    <h2 class="font-bold text-2xl sm:text-4xl text-center mb-10">
+      <span>
+          {{ with .title }} {{ index (split . " ") 0 | safeHTML }} {{ end }}
+          <span class="text-[#1D65A6]">{{ with .title }} {{ after (len (index (split . " ") 0)) . | safeHTML }} {{ end }}</span>
+      </span>
+    </h2>
+    {{ end }}
+    <ul class="flex flex-wrap items-center">
+      {{ range .clients_item}}
+      {{ if .show }}
+      <li class="flex justify-center"><img class="mx-7 max-w-[180px]" src="{{ .image | absURL }}"
+              alt="{{ .name }}"></li>
+      {{ end }}
+      {{ end }}
+    </ul>
+  </div>
+</section>
+{{ end }}
+{{ end }}

@@ -1,0 +1,4 @@
+{{ $color := .Get "color" }}
+<div class="vtriple text-center" {{ if $color }}style="background-color: {{ $color }}"{{ end }}>
+  {{ .Inner  }}
+</div>

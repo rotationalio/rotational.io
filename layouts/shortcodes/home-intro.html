@@ -1,0 +1,14 @@
+{{ if .Inner }}
+<section class="home-intro pt-10">
+  <div class="relative max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="text-base">
+        {{ .Inner | markdownify }}
+      </div>
+      <div>
+        <img src='{{ .Get "image" }}' alt="image holder" class="h-auto md:h-[280px] lg:h-[380px]" />
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}

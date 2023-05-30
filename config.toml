@@ -4,9 +4,12 @@ themesDir = "themes/"
 title = "Rotational Labs"
 
 removePathAccents = true
+enableEmoji = true  # allow emojification of things like :heart:
 post_share = true   # Share button on individual posts
 paginate = "9"      # Number of posts per page in blog listing
 summaryLength = "1" # Length of excerpt for post descriptions
+
+
 
 ## Default Parameters
 [params]
@@ -119,3 +122,8 @@ URL = "mailto:info@rotational.io"
 image = "img/email.png"
 username = "Email"
 weight = 40
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
