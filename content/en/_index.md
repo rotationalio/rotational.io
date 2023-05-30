@@ -38,8 +38,7 @@ tech stack.
 
 {{< figure src="/img/three_otters.png" alt="Sea Otter Engineers" >}}
 
-Prototype with event-driven microservices, build realtime apps and analytics, and
-streamline MLOps with no specialized skills.
+Open-source tools to rapidly prototype new data pipelines, integrate realtime analytics, and get your data science predicting beyond the batch.
 
 {{< button href="/ensign/" text="Learn More">}}
 
@@ -51,9 +50,7 @@ streamline MLOps with no specialized skills.
 
 {{< figure src="/img/globe.png" alt="Globe" >}}
 
-Break down data silos and make data accessibility easy, secure, and compliant with no
-additional infra. Cloud, on prem, edge or hybrid.
-
+Cooperation-as-a-service. Break down data silos and build low-maintenance topologies tailored to your business. Cloud, on prem, edge or hybrid.
 {{< button href="/ensign-enterprise/" text="Learn More">}}
 
 {{% /vtriple %}}
