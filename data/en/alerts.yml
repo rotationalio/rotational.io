@@ -1,8 +1,8 @@
 ############################# Ensign Data ###################################
 notice:
   enable: true
-  notice: "Join us for our upcoming webinar: **Learning Distributed Systems from the Marvel Cinematic Universe**"
+  notice: "Join us for our upcoming webinar: **Asynchronous Data Science with PyEnsign**"
   action:
     text: Register Today
-    link: "https://us06web.zoom.us/webinar/register/8016842901755/WN_HpX6PeluR_-FuN6vKdH_jQ"
-  expires: 2023-05-30T16:00:00Z
+    link: "https://us06web.zoom.us/webinar/register/2916854635744/WN_JklI0k2WRq6jaAitXPp1Mg"
+  expires: 2023-06-20T16:00:00Z
