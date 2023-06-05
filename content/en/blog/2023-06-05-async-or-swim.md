@@ -1,8 +1,8 @@
 ---
-title: "Async or Swim: Navigating the Waters of Asynchronous Processing"
-slug: "async-or-swim-navigating-the-waters-of-asynchronous-processing"
-date: "2023-06-01T10:39:51-05:00"
-draft: true
+title: "Async or Swim: A Developer's Guide to Wading into Asynchronous Processing"
+slug: "async-or-swim"
+date: "2023-06-05T10:39:51-05:00"
+draft: false
 image: img/blog/mississippi.jpg
 photo_credit: Photo by USGS on Unsplash
 author: Patrick Deziel
@@ -11,15 +11,17 @@ category: Eventing, Golang
 description: "A technical dive into asynchronous processing in Go."
 ---
 
-The Go programming language provides powerful and bespoke tools for managing concurrency. But how do we utilize them effectively and unlock truly robust asynchronous code?
+The Go programming language provides powerful tools for managing concurrency, but robust asynchronous code requires us as developers to design around uncertain tasks and manifold queues. Step through an async codebase with us in this post!
 
 <!--more-->
 
 ## What's an Async Task?
 
-If you're a developer like me you try to avoid introducing concurrency when it's not necessary. Concurrency is a double-edged sword that enables things like vector processing on graphics cards and eventing systems but is notoriously difficult to understand, debug, and maintain. However if you're building services for users, being able to service simultaneous requests is absolutely necessary. Hopefully you're also using a database which is equipped to handle concurrent updates and resolve consistency issues.
+If you're a developer like me, you avoid introducing concurrency when it's not necessary.
 
-While building Ensign we needed a way to not just service user requests, but schedule tasks to happen "sometime in the near future". For example, if a user logs into the system, we want to update their `last_login` timestamp in a database. This doesn't need to happen immediately since it's not a critical step for giving a user access to the system, but it should happen _eventually_. In distributed systems terminology, eventual consistency.
+Concurrency is a double-edged sword that enables things like vector processing on graphics cards and eventing systems, but is **notoriously** difficult to understand, debug, and maintain. Unfortunately, if you're building services for users, being able to service simultaneous requests is unavoidable. Hopefully you're using a database equipped to handle concurrent updates and resolve consistency issues. (If you aren't sure, it may be time to [get a bit more familiar with your data layer.](https://rotational.io/blog/age-of-postsql/))
+
+While building [Ensign](https://rotational.app/register), we needed a way to not just service user requests, but schedule tasks to happen "sometime in the near future". For example, if a user logs into the system, we want to update their `last_login` timestamp in a database. This doesn't need to happen immediately since it's not a critical step for giving a user access to the system, but it should happen _eventually_. In distributed systems terminology, that's eventual consistency. (Looking for [an entertaining introduction to distributed systems?](https://youtu.be/69NHCONuCDU).)
 
 So let's build an asynchronous task manager in Go!
 
@@ -30,9 +32,9 @@ The task manager should provide an interface for the programmer to execute code 
 1. The amount of concurrency should be limited to avoid overloading the server.
 2. The number of tasks should be limited to avoid running up the memory usage.
 
-Fortunately Go has some great concurrency builtins which are probably why you're using Go in the first place. We can create a buffered channel which acts as a bounded queue - writing to the queue only blocks if the queue is full and reading from the queue only blocks if the queue is empty. This is similar to Python's `asyncio.Queue` but allows us to send "tasks" between go routines.
+Fortunately, Go has some great concurrency builtins, which are probably why you're using Go in the first place. We can create a buffered channel, which acts as a bounded queue &mdash; writing to the queue only blocks if the queue is full, and reading from the queue only blocks if the queue is empty. This is similar to Python's `asyncio.Queue` but allows us to send "tasks" between go routines.
 
-To limit the amount of concurrency we can employ a worker pool pattern and only run the configured number of worker routines. The job of a worker is to pull tasks off the queue and execute them. The beauty of Go channels is that we don't have to worry about synchronizing the workers with a global lock.
+To limit the amount of concurrency, we can employ a worker pool pattern and only run the configured number of worker routines. The job of a worker is to pull tasks off the queue and execute them. The beauty of Go channels is that we don't have to worry about synchronizing the workers with a global lock.
 
 {{<smallfigure src="/img/blog/2023-06-01-async-or-swim/minimal.png" alt="Minimal Task Workflow">}}
 
@@ -97,7 +99,7 @@ func TaskWorker(wg *sync.WaitGroup, queue <-chan *TaskHandler) {
 }
 ```
 
-Then all we have to do from application code is define and execute the task.
+Then all we have to do from the application code is define and execute the task!
 
 ```golang
 tasks := tasks.New(8, 64)
@@ -111,27 +113,28 @@ task := func(ctx context.Context) {
 }
 tasks.Queue(tasks.TaskFunc(task))
 ```
-Note: Passing in a context helps prevent tasks from running forever, assuming that the underlying code actually respects the context.
+
+*Note: Passing in a context helps prevent tasks from running forever, assuming that the underlying code actually respects the context.*
 
 ## If at first you don't succeed...
 
-This is certainly functional but sometimes we need a way to retry failing tasks. For example, sending an email is prone to intermittent failure since it relies on external systems. We might want to retry it a few times to ensure that users actually receive the email. A good retry mechanism also supports backoffs. If we retry the task immediately there's a good chance it will fail again, but if we wait some time there's a better chance that transient errors like network issues will be resolved (this is why you will see `CrashLoopBackoff` and `ImagePullBackoff` states for pods in k8s).
+The above is functional, but sometimes we need a way to retry failing tasks. For example, sending an email is prone to intermittent failure, since it relies on external systems. We might want to retry it a few times to ensure that users actually receive the email. A good retry mechanism also supports backoffs. If we retry the task immediately there's a good chance it will fail again, but if we wait for a bit, there's a better chance that transient errors like network issues will be resolved (this is why you will see `CrashLoopBackoff` and `ImagePullBackoff` states for pods in k8s).
 
-One solution is to have the workers be responsible for putting tasks back onto the queue if they need to be retried. However, consider the revised architecture diagram.
+One solution is to have the workers be responsible for putting tasks back onto the queue if they need to be retried. Maybe we want something like the below revised architecture diagram?
 
 {{<smallfigure src="/img/blog/2023-06-01-async-or-swim/retries.png" alt="Minimal Task Workflow">}}
 
-The fact that everything is writing back to the same queue is a red flag. Consider the case where the queue is already full with tasks from the application. Remember that buffered channels block on writes if the channel is full. If a worker needs to retry a task, it will be stuck trying to write to the queue. Even worse, if all workers are blocked then the application won't be able to queue new tasks and the system goes into full deadlock!
+Getting warmer, but the fact that everything is writing back to the same queue is a red flag. Consider the case where the queue is already full with tasks from the application. Remember that buffered channels block on writes if the channel is full. If a worker needs to retry a task, it will be stuck trying to write to the queue. Even worse, if all workers are blocked then the application won't be able to queue new tasks and the system goes into full deadlock!
 
-The solution is to introduce more control over the queue. We can create another go routine, a tick-based `TaskScheduler` which is responsible for scheduling both new and retryable tasks, and will work hard to avoid the deadlock situation. The improved architecture looks something like this:
+The solution is to introduce more control over the queue. We can create another go routine, a tick-based `TaskScheduler`, which is responsible for scheduling both new and retryable tasks, and will work hard to avoid the deadlock situation. The improved architecture looks something like this:
 
 {{<smallfigure src="/img/blog/2023-06-01-async-or-swim/scheduler.png" alt="Minimal Task Workflow">}}
 
-Note that there are now two queues, which help us distinguish between brand new tasks and scheduled tasks. This allows us to further isolate the responsibilities of the task scheduler and the workers. Although there is still some recursive madness, the scheduler has the ability to ensure that both queues remain unblocked.
+Note that there are now *two* queues, which help us distinguish between brand new tasks and scheduled tasks. This allows us to further isolate the responsibilities of the task scheduler and the workers. Although there is still some recursive madness, the scheduler has the ability to ensure that both queues remain unblocked.
 
 ## Task Scheduler
 
-The key to preventing deadlocks is to "hold" pending tasks in the scheduler. We don't want to put them on the queue if they aren't ready, since this creates the situation discussed previously. The pending tasks are actually another form of queue, but in this implementation it's unbounded to make sure the workers can make progress. Note: This means we have to be really careful to avoid leaking memory.
+The key to preventing deadlocks is to "hold" pending tasks in the scheduler. We don't want to put them on the queue if they aren't ready, since this creates the situation discussed previously. The pending tasks are actually another form of queue, but in this implementation it's unbounded to make sure the workers can make progress. *Note: This means we have to be **really careful** to avoid leaking memory.*
 
 ```golang
 func TaskScheduler(wg *sync.WaitGroup, queue <-chan *TaskHandler, tasks chan<- *TaskHandler, stop <-chan struct{}, interval time.Duration) {
@@ -283,6 +286,15 @@ func (tm *TaskManager) queueTask(handler *TaskHandler) error {
 }
 ```
 
-It can be hard to reason about asynchronous processing, but hopefully this example helps illustrate some of the hazards to watch out for, see the [Ensign repo](https://github.com/rotationalio/ensign/blob/main/pkg/utils/tasks) for the full implementation!
+
+## Final Thoughts
+
+There's just no doubt about it &mdash; it's hard to reason about asynchronous processing! No matter how senior you get, concurrency is hard.
+
+But being able to name your problem is most of the battle, and hopefully the example in this post helps illustrate some of the hazards to watch out for!
+
+Want more? Check out the [Ensign repo on GitHub](https://github.com/rotationalio/ensign/blob/main/pkg/utils/tasks)!
+
+*If you're looking to add more concurrency to your architecture, check out [Ensign](https://rotational.app/register/), a platform and community for developers building asynchronous apps.*
 
 Photo by [USGS](https://unsplash.com/@usgs) on [Unsplash](https://unsplash.com/photos/35Z2ylLRCO8)
