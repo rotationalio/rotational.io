@@ -1,0 +1,28 @@
+dataplayground:
+  enable : true
+
+  sources:
+    enable: true
+    producers:
+    - name: Finnhub
+      license: Free
+      type: Stock Market Data
+      description: Test
+      image: "img/horizontal-global-data-flow.png"
+      alt: 
+      link: https://finnhub.io/
+    - name: Finnhub
+      license: Free
+      type: Stock Market Data
+      description: Test
+      image: "img/horizontal-global-data-flow.png"
+      alt: 
+      link: https://finnhub.io/
+    - name: Finnhub
+      license: Free
+      type: Stock Market Data
+      description: Test
+      image: "img/horizontal-global-data-flow.png"
+      alt: 
+      link: https://finnhub.io/
+

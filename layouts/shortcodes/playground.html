@@ -1,0 +1,30 @@
+{{ $data := index site.Data site.Language.Lang }}
+
+{{ if $data.dataplayground.dataplayground.enable }}
+{{ with $data.dataplayground.dataplayground }}
+<section class="grid grid-cols-3 gap-8">
+        {{ if $data.dataplayground.dataplayground.sources.enable }}
+        {{ with $data.dataplayground.dataplayground.sources }}
+        {{ range .producers }}
+        <div class="border border-solid border-[#000000] rounded-xl">
+            <img src="{{ .image }}" alt="{{ .alt }}" />
+            <div class="py-3 bg-[#E66809] text-white text-center">{{ .type}}</div>
+            <div class="bg-[#ECF6FF]">
+                <div class="pt-6 ml-2">
+                    <div>
+                        <span class="font-bold">Producer:</span> {{ .name }}
+                    </div>
+                    <div>
+                        <span class="font-bold">License:</span> {{ .license }}
+                    </div>
+                </div>
+                <p class="ml-2">{{ .description}}</p>
+                <button class="bg-[#192E5B] py-6 mb-10 ml-10 w-1/2"><a href="{{ .link}}" target="_blank" class="text-white no-underline ">Learn More</a></button>
+            </div>
+        </div>
+    {{ end }}
+    {{ end }}
+    {{ end }}
+</section>
+{{ end }}
+{{ end }}
