@@ -1,8 +1,10 @@
 ---
 title: "{{ replaceRE "^[-0-9]{10}-" "" .Name | replaceRE "-" " " | title }}"
 slug: "{{ replaceRE "^[-0-9]{10}-" "" .Name }}"
+subtitle: "add subtitle here" 
 draft: true
 image: img/data-playground/
+link: "add github link"
 description: 'Add Description Here'
 license: "Add License Here"
 producer: "Add Producer Here"
@@ -11,7 +13,7 @@ api_type: "Add Api type Here"
 sdks: " Add sdk list seperate with comma"
 limits: "Add limits here"
 data: " Add data here"
-account_required: " Add required account"
+account_required: "Add required account"
 
 ---
 
