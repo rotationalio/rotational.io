@@ -1,14 +1,15 @@
 <div class="mb-6 border border-solid border-[#000000] rounded-xl bg-[#ECF6FF]">
-    <img src="{{ .Params.image | absURL }}" alt="{{ .alt }}" class="m-0 rounded-t-lg"/>
+    <img src="{{ .Params.image | absURL }}" alt="{{ .alt }}" class="m-0 rounded-t-lg" />
     <div class="py-4 bg-[#E66809] text-xl text-white text-center">
-        {{ .Params.type}}
+        {{ .Params.subtitle}}
     </div>
     <div class="mt-6 ml-4">
-        <div><span class="font-bold">Producer:</span> {{ .Params.name }}</div>
+        <div><span class="font-bold">Producer:</span> {{ .Params.producer_name }}</div>
         <div><span class="font-bold">License:</span> {{ .Params.license }}</div>
-        <p>{{ .Params.description}}</p>
+        <p>{{ .Params.summary}}</p>
     </div>
     <div class="pb-6 mt-4">
-        <button class="bg-[#192E5B] block mx-auto w-1/2 rounded-xl py-4 hover:bg-[#1D65A6]"><a href="{{.Permalink}}" class="text-white no-underline">Learn More</a></button>
+        <button class="bg-[#192E5B] block mx-auto w-1/2 rounded-xl py-4 hover:bg-[#1D65A6]"><a href="{{.Permalink}}"
+                class="text-white no-underline">Learn More</a></button>
     </div>
 </div>
