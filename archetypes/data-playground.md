@@ -1,23 +1,23 @@
 ---
 title: "{{ replaceRE "^[-0-9]{10}-" "" .Name | replaceRE "-" " " | title }}"
 slug: "{{ replaceRE "^[-0-9]{10}-" "" .Name }}"
-subtitle: "add subtitle here" 
+subtitle: "Add Data Type Here" 
 draft: true
-image: img/data-playground/
-link: "add github link"
-description: 'Add Description Here'
-summary: " Add summary here"
-license: "Add License Here"
-producer_name: "Add Producer name Here"
-producer_link: "Add Producer Link"
-api_key: "Add Api key Here"
-api_type: "Add Api type Here"
-sdks: " Add sdk list seperate with comma"
-limits: "Add limits here"
-data: " Add data here"
-account_required: "Add required account"
+image: img/data-playground/data-source-img.png
+summary: "Add Summary To Display On List Page Here"
+github_link: "https://github.com/rotationalio/[insert-link-here]"
+description: "Add About This Data Source Description Here"
+producer_name: "Add Producer Name Here"
+producer_link: "https://finnhub.io"
+data: "Add Details About the Data Provided Here"
+is_account_required: false
+license: "Add Data Source License Type Here (Ex. Free, Commercial)"
+is_api_key_required: false
+api_type: "Add API Type(s) Provided Here and Separate Multiple Types With A Comma"
+sdks: "Add Available SDKs Here and Separate Multiple SDKs With A Comma"
+limits: "Add API Limit Information Here, If Available"
 
 ---
 
-Add data products showcase 
+<!-- Add content for data playground here, including a table for data products if available -->
 
