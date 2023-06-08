@@ -127,3 +127,6 @@ weight = 40
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
+
+[taxonomies]
+	author = "authors"
