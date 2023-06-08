@@ -4,20 +4,20 @@ slug: "{{ replaceRE "^[-0-9]{10}-" "" .Name }}"
 subtitle: "add subtitle here" 
 draft: true
 image: img/data-playground/
-link: "add github link"
+link: "https://github.com/rotationalio/[insert-link-here]"
 description: 'Add Description Here'
 summary: " Add summary here"
 license: "Add License Here"
 producer_name: "Add Producer name Here"
-producer_link: "Add Producer Link"
-api_key: "Add Api key Here"
+producer_link: "Add Producer Link Here"
+is_api_key: false
 api_type: "Add Api type Here"
-sdks: " Add sdk list seperate with comma"
+sdks: " Add sdk list separate with comma"
 limits: "Add limits here"
 data: " Add data here"
-account_required: "Add required account"
+is_account_required: "Add required account"
 
 ---
 
-Add data products showcase 
+Add content for data playground here, including a table for data products showcase if available
 

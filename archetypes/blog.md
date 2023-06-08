@@ -2,7 +2,7 @@
 title: "{{ replaceRE "^[-0-9]{10}-" "" .Name | replaceRE "-" " " | title }}"
 slug: "{{ replaceRE "^[-0-9]{10}-" "" .Name }}"
 date: "{{ .Date }}"
-draft: true
+draft: false
 image: img/blog/
 photo_credit: "Add Photo Credits Here"
 author: Your Name
