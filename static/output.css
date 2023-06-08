@@ -1213,10 +1213,6 @@ video {
   margin-left: 1.5rem;
 }
 
-.mb-4 {
-  margin-bottom: 1rem;
-}
-
 .mt-5 {
   margin-top: 1.25rem;
 }
@@ -1261,16 +1257,16 @@ video {
   margin-right: 0.75rem;
 }
 
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
 .mb-7 {
   margin-bottom: 1.75rem;
 }
 
 .mr-14 {
   margin-right: 3.5rem;
-}
-
-.mb-2 {
-  margin-bottom: 0.5rem;
 }
 
 .block {
@@ -2915,6 +2911,11 @@ em {
   .md\:text-sm {
     font-size: 0.875rem;
     line-height: 1.25rem;
+  }
+
+  .md\:text-xl {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
   }
 
   .md\:text-4xl {
