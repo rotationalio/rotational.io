@@ -1,0 +1,26 @@
+{{ define "title" }}
+{{ .Title }} &ndash; {{ .Site.Title }}
+{{ end }}
+
+{{ define "main" }}
+<section class="max-w-7xl mx-auto my-8 px-4">
+    <h2 class="font-bold text-4xl mb-6">Welcome to our Data Playground!</h2>
+    <p class="text-xl mb-6">Our Data Playground is a safe space to explore, experiment, and collaborate. We've curated a variety of data sources, examples, and sample code to help get you started.</p>
+    <p class="text-xl mb-6">Like all playgrounds, we have a few rules:</p>
+    <ul class="text-xl">
+        <li class="pb-2">1. <span class="font-bold">Experiment:</span> Have fun experimenting. Don't worry, <span class="font-bold text-[#1D65A6]">you won't break anything.</span></li>
+        <li class="pb-2">2. <span class="font-bold">Collaborate:</span> Make friends. Set up new projects with them. We're all in this together.</li>
+        <li>3. <span class="font-bold">Share:</span> Excited about something you've built? Let us know and we'll showcase it!</li>
+    </ul>
+    <div class="mt-8">
+        <ul class="md:grid grid-cols-3 gap-8">
+            {{ $paginator := .Paginate .Data.Pages }}
+            {{ range $paginator.Pages }}
+            <li>
+                {{ .Render "playground-cards" }}
+            </li>
+            {{ end }}
+        </ul>
+    </div>
+</section>
+{{ end }}
