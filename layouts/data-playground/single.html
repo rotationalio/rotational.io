@@ -2,8 +2,11 @@
 {{ .Title }} &ndash; {{ .Site.Title }}
 {{ end }}
 
-{{ define "main" }}
-
+{{ define "header" }}
+<div class="relative bg-[#1D65A6]">
+    {{ partial "site-nav.html" . }}
+</div>
+{{ end }}
 <div class="max-w-7xl mx-auto px-4 relative">
 
 </div>
