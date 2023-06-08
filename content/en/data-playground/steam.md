@@ -1,6 +1,6 @@
 ---
-title: "Finnhub"
-slug: "finnhub"
+title: "Steam"
+slug: "steam"
 subtitle: "Stock Market Data" 
 draft: true
 image: img/data-playground/finnhub.png
@@ -11,12 +11,12 @@ license: Free
 producer_name: FinnHub
 producer_link: https://finnhub.io/
 api_key: Yes
-api_type: REST, WebSocket
+api_type: REST, Websocket
 sdks: Go
 limits: N/A
 data: Stock prices, company profiles, company & market news
 account_required: Yes
-weight: 1
+weight: 3
 ---
 
 Add data products showcase 

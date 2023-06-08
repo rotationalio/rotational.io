@@ -1,6 +1,6 @@
 ---
-title: "Finnhub"
-slug: "finnhub"
+title: "US Geological"
+slug: "us-geological"
 subtitle: "Stock Market Data" 
 draft: true
 image: img/data-playground/finnhub.png
@@ -16,7 +16,7 @@ sdks: Go
 limits: N/A
 data: Stock prices, company profiles, company & market news
 account_required: Yes
-weight: 1
+weight: 4
 ---
 
 Add data products showcase 
