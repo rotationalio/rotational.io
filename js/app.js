@@ -200,3 +200,15 @@ ensignForm?.addEventListener('submit', (event) => {
       ensignAlertEl.style.display = 'block';
     });
 });
+
+// open tooltip on mouseover
+const tooltip = document.getElementById('tooltip');
+const tooltipText = document.getElementById('tooltip-text');
+
+tooltip?.addEventListener('mouseover', () => {
+  tooltipText.style.display = 'block';
+});
+
+tooltip?.addEventListener('mouseout', () => {
+  tooltipText.style.display = 'none';
+});
