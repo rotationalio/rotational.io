@@ -19,11 +19,15 @@
             <h3 class="text-lg">{{.Params.subtitle}}</h3>
         </div>
         <div>
-            <button onclick="window.location.href='{{.Params.github_link}}'"
-                class="bg-black font-bold px-8 py-4 rounded-lg text-sm text-white  md:text-base flex place-content-center gap-4 hover:bg-neutral-900">
-                Get Started
-                <img src="img/data-playground/github.png" alt="github icon" height="24" width="24">
-            </button>
+            <a href="{{.Params.github_link}}" target="_blank"
+                class="bg-black font-bold  px-3 sm:px-8 py-4 rounded-md text-sm text-white  md:text-base flex place-content-center gap-4 hover:bg-neutral-900">
+                <span class="text-sm sm:text-base">
+                    Get Started
+                </span>
+                <span class="hidden sm:flex">
+                    <img src="img/data-playground/github.png" alt="github icon" height="24" width="24">
+                </span>
+            </a>
 
         </div>
 
