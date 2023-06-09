@@ -210,5 +210,5 @@ tooltip?.addEventListener('mouseover', () => {
 });
 
 tooltip?.addEventListener('mouseout', () => {
-  tooltipText.style.display = 'hidden';
+  tooltipText.style.display = 'none';
 });
