@@ -2,7 +2,7 @@
 title: "Dc Metro"
 slug: "dc-metro"
 subtitle: "Stock Market Data" 
-draft: true
+draft: false
 image: img/data-playground/finnhub.png
 summary: Connect to stock market data and start experimenting with financial models and apps.
 github_link: "github.com"

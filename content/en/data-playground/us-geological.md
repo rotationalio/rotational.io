@@ -2,7 +2,7 @@
 title: "US Geological"
 slug: "us-geological"
 subtitle: "Stock Market Data" 
-draft: true
+draft: false
 image: img/data-playground/finnhub.png
 link: "github.com"
 description: FinnHub provides real-time stock market data. Note that the stock market is closed during certain times of days and days of the week.
