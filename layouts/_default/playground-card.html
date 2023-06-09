@@ -1,5 +1,5 @@
 <div class="my-6 border border-solid border-[#000000] rounded-xl bg-[#ECF6FF]">
-    <img src="{{ .Params.image | absURL }}" alt="" class="m-0 rounded-t-lg w-full"/>
+    <img src="{{ .Params.image | absURL }}" alt="" class="m-0 rounded-t-lg w-full" />
     <div class="py-4 bg-[#E66809] text-xl text-white text-center">
         {{ .Params.subtitle}}
     </div>
@@ -9,6 +9,7 @@
         <p class="mt-4">{{ .Params.summary}}</p>
     </div>
     <div class="pb-6 mt-8">
-        <button class="bg-[#192E5B] block mx-auto w-1/2 rounded-xl py-4 hover:bg-[#1D65A6]"><a href="{{.Permalink}}" class="text-white no-underline">Learn More</a></button>
+        <button class="bg-[#192E5B] block mx-auto w-1/2 rounded-xl py-4 hover:bg-[#1D65A6]"><a href="{{.Permalink}}"
+                class="text-white no-underline">Learn More</a></button>
     </div>
 </div>

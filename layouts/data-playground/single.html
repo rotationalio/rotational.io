@@ -2,10 +2,144 @@
 {{ .Title }} &ndash; {{ .Site.Title }}
 {{ end }}
 
+{{ define "header" }}
+<div class="relative bg-[#1D65A6]">
+    {{ partial "site-nav.html" . }}
+</div>
+{{ end }}
+
 {{ define "main" }}
 
 <div class="max-w-7xl mx-auto px-4 relative">
 
-</div>
+    <div class="w-full bg-[#F5F5F5] flex justify-between my-5 place-items-center h-36 px-10">
 
-{{ end }}
+        <div class="flex flex-col font-bold ">
+            <h2 class="text-xl">{{.Params.title}}</h2>
+            <h3 class="text-lg">{{.Params.subtitle}}</h3>
+        </div>
+        <div>
+            <a href="{{.Params.github_link}}" target="_blank"
+                class="bg-black font-bold px-3 sm:px-6 py-4 rounded-md text-sm text-white  md:text-base flex items-center gap-4 hover:bg-neutral-900">
+                <span class="text-sm sm:text-base">
+                    Get Started
+                </span>
+                <span class="hidden sm:flex">
+                    <img src="img/data-playground/github.png" alt="github icon" height="36" width="36">
+                </span>
+            </a>
+
+        </div>
+
+    </div>
+
+    <div class="w-full flex justify-between px-10">
+
+        <div class="w-1/2 ">
+            <div class="flex flex-col my-4">
+                <p class="text-xl font-bold mb-5">About This Data Source</p>
+                <p class="text-base">
+
+                    {{ .Params.description}}
+                </p>
+            </div>
+            <div class="flex flex-col my-4">
+                <p class="text-lg font-bold">Producer</p>
+                <p class="text-base">
+                    <a class="cursor-pointer underline" href="{{.Params.producer_link}}">
+                        {{ .Params.producer_name}}
+                </p>
+                </a>
+            </div>
+            <div class="flex flex-col my-4">
+                <p class="text-lg font-bold">Data</p>
+                <p class="text-base">{{ .Params.data }}</p>
+            </div>
+            <div class="flex flex-col my-4">
+                <p class="text-lg font-bold">Account Required</p>
+                <p class="text-base">
+                    {{ if eq .Params.account_required "true"
+                    }}
+                    Yes
+                    {{
+                    else
+                    }}
+                    No
+                    {{
+                    end
+                    }}
+                </p>
+            </div>
+            <div class="flex flex-col my-4">
+                <div class="flex flex-row gap-2 ">
+                    <p class="text-lg font-bold">License</p>
+                    <p data-attr="tooltip" id="tooltip" class="h-6">
+                        <img src="img/data-playground/tooltip.svg" alt="tooltip" width="24" height="24">
+                    </p>
+                    {{ if .Params.license_warning }}
+                    <div id="tooltip-text"
+                        class="hidden bg-neutral-200 text-black text-sm rounded-lg p-2 absolute ml-20">
+                        <p class="text-xs font-semibold">Warning</p>
+                        <p>
+                            {{ .Params.license_warning }}
+                        </p>
+                    </div>
+
+                    {{ end }}
+
+
+                </div>
+                <p class="text-base"> {{.Params.license}}</p>
+            </div>
+            <div class="flex flex-col my-4">
+                <p class="text-lg font-bold">API Key</p>
+                <p class="text-base">
+                    {{ if eq .Params.api_key "true"
+                    }}
+                    Yes
+                    {{
+                    else
+                    }}
+                    No
+                    {{
+                    end
+                    }}
+                </p>
+            </div>
+            <div class="flex flex-col my-4">
+                <p class="text-lg font-bold">API Type</p>
+                <p class="text-base">
+                    {{ .Params.api_type }}
+                </p>
+            </div>
+            <div class="flex flex-col my-4">
+                <p class="text-lg font-bold">SDKS</p>
+                <p class="text-base">
+                    {{ .Params.sdks }}
+                </p>
+            </div>
+            <div class="flex flex-col my-4">
+                <p class="text-lg font-bold">Limits</p>
+                <p class="text-base">
+                    {{ .Params.limits }}
+                </p>
+            </div>
+
+            <!--     code snippets block -->
+            <div>
+
+            </div>
+
+        </div>
+
+
+
+    </div>
+    <div class="w-full px-10 text-xl font-bold mt-5">
+        <h2 class="text-xl">Data Products Showcase</h2>
+        <article class="prose">
+            {{ .Content | safeHTML }}
+        </article>
+    </div>
+
+    {{ end }}

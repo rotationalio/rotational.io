@@ -12,6 +12,7 @@ producer_link: "https://finnhub.io"
 data: "Add Details About the Data Provided Here"
 is_account_required: false
 license: "Add Data Source License Type Here (Ex. Free, Commercial)"
+license_warning: "Add License description if applicable"
 is_api_key_required: false
 api_type: "Add API Type(s) Provided Here and Separate Multiple Types With A Comma"
 sdks: "Add Available SDKs Here and Separate Multiple SDKs With A Comma"
