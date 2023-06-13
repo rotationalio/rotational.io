@@ -267,15 +267,3 @@ function getSelectedLicense() {
 }
 });
 };
-
-
-
-
-
-
-
-
-
-
-
-
