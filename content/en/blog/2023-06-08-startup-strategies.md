@@ -30,7 +30,7 @@ Who says you can’t write release notes in your changelog that users will enjoy
 
 Want to be inspired by some great release notes?
 - [Slack](https://slack.com/release-notes/mac) delivers wry change summaries that are accessible to non-technical users.
-- [Tumbler](https://www.buzinga.com.au/buzz/app-release-notes/) includes playful narratives of how bugs were detected.
+- [Tumblr](https://www.buzinga.com.au/buzz/app-release-notes/) includes playful narratives of how bugs were detected.
 
 
 ## Prioritize Empathy
