@@ -17,15 +17,31 @@
             showcase it!</li>
     </ul>
     {{ partial "search.html" .}}
-    <div>
-        <ul class="md:grid grid-cols-3 gap-8">
-            {{ $paginator := .Paginate .Data.Pages }}
-            {{ range $paginator.Pages.ByWeight }}
-            <li>
-                {{ .Render "playground-card" }}
-            </li>
-            {{ end }}
-        </ul>
+    <div class="flex">
+        <div class="flex">
+            <!-- <input type="search" placeholder="Enter search term" class="h-10 w-64"> -->
+        </div>
+        <div>
+            <label for="filter" class="font-bold">Filter: </label>
+            <select id="source-license" class="bg-[#D9D9D9] h-10" oninput="getSelectedLicense()">
+                <option value="All">All</option>
+                <option value="Free">Free</option>
+                <option value="Free for non-commercial use">Free for non-commercial use</option>
+                <option value="Commercial">Commercial</option>
+            </select>
+        </div>
+    </div>
+    <div id="all-license">
+        {{ partial "playground/all.html" . }}
+    </div>
+    <div id="free-license" class="hidden">
+        {{ partial "playground/free.html" . }}
+    </div>
+    <div id="non-commercial-license" class="hidden">
+        {{ partial "playground/non-commercial.html" . }}
+    </div>
+    <div id="commercial-license" class="hidden">
+        {{ partial "playground/commercial.html" . }}
     </div>
 </section>
 {{ end }}
