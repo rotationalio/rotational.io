@@ -267,36 +267,75 @@ function getSelectedLicense() {
 });
 };
 
-// Add an event listener to the search form to get the search term input
-// by the user after clicking the search button.
+// Fetch the index.json file from the static folder. This contains all the data we need to search through.
+let pagesIndex, searchIndex;
+async function initSearchIndex() {
+  try {
+    const res = await fetch("/index.json");
+    pagesIndex = await res.json();
+    searchIndex = lunr(function () {
+      this.field("content");
+      this.field("tag");
+      this.ref("uri");
+      pagesIndex.forEach((page) => this.add(page));
+    });
+  } catch (e) {
+    console.log(e);
+  }
+}
+
+initSearchIndex();
+
+// Add an event listener to the search form to get the search after the 
+// user clicks the search button.
 const searchForm = document.getElementById('search-form');
-searchForm.addEventListener('submit', (e) => {
-  e.preventDefault();
-  const searchInput = document.getElementById('source-search');
-  const searchValue = searchInput.value;
-  console.log(searchValue);
+const term = searchForm.addEventListener('submit', (e) => {
+  handleSearchQuery(e);
 });
 
-// Fetch the index.json file from the static folder. This contains all the data we need to search through.
-fetch('/index.json')
-  .then((response) => response.json())
-  .then((data) => {
-    data.forEach((source) => {
-      // Initialize lunr and create an index of the data.
-      const idx = lunr(function () {
-        this.ref('uri');
-        this.field('content');
-        this.field('tags');
-        this.add(source);
-      });
-      console.log(idx);
-      const searchInput = document.getElementById('source-search');
-      const searchValue = searchInput.value;
-      idx.search(searchValue).forEach((result) => {
-        const item = data.find((item) => item.uri === result.ref);
-        console.log("item", item);
-      });
-    }
-    );
-  });
+function handleSearchQuery(e) {
+  e.preventDefault();
+  const query = document.getElementById('source-search').value.trim();
+  console.log(query)
+  if(!query) {
+    // Add div below the search box to display a message to the user.
+    console.log('Please enter a search term.');
+    return;
+  }
 
+  const results = searchSite(query);
+  if(!results.length) {
+    // Add div below the search box to display a message to the user.
+    console.log('No results found.');
+    return;
+  }
+}
+
+function searchSite(query) {
+  const ogQuery = query;
+  query = getLunarSearchQuery(query);
+  let results = searchIndex.search(query);
+  console.log(results)
+  return results.length ? results : query !== ogQuery ? getSearchResults(ogQuery) : [];
+}
+
+function getSearchResults(query) {
+  return searchIndex.search(query).map((hit) => {
+    if (hit.ref == "undefined") return [];
+    let pageMatch = pagesIndex.filter((page) => page.href === hit.ref)[0];
+    pageMatch.score = hit.score;
+    return [pageMatch];
+  });
+}
+
+function getLunarSearchQuery(query) {
+  const searchTerms = query.split(' ');
+  if(searchTerms.length === 1) {
+    return query;
+  }
+  query = ""  
+  for (const term of searchTerms) {
+    query += `+${term} `;
+  }
+  return query.trim();
+}
