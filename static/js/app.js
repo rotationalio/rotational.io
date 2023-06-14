@@ -212,3 +212,36 @@ tooltip?.addEventListener('mouseover', () => {
 tooltip?.addEventListener('mouseout', () => {
   tooltipText.style.display = 'none';
 });
+
+// Add an event listener to the search form to get the search term input
+// by the user after clicking the search button.
+const searchForm = document.getElementById('search-form');
+searchForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const searchInput = document.getElementById('source-search');
+  const searchValue = searchInput.value;
+  console.log(searchValue);
+});
+
+// Fetch the index.json file from the static folder. This contains all the data we need to search through.
+fetch('/index.json')
+  .then((response) => response.json())
+  .then((data) => {
+    data.forEach((source) => {
+      // Initialize lunr and create an index of the data.
+      const idx = lunr(function () {
+        this.ref('uri');
+        this.field('content');
+        this.field('tags');
+        this.add(source);
+      });
+      console.log(idx);
+      const searchInput = document.getElementById('source-search');
+      const searchValue = searchInput.value;
+      idx.search(searchValue).forEach((result) => {
+        const item = data.find((item) => item.uri === result.ref);
+        console.log("item", item);
+      });
+    }
+    );
+  });

@@ -16,6 +16,7 @@
         <li>3. <span class="font-bold">Share:</span> Excited about something you've built? Let us know and we'll
             showcase it!</li>
     </ul>
+    {{ partial "search.html" .}}
     <div>
         <ul class="md:grid grid-cols-3 gap-8">
             {{ $paginator := .Paginate .Data.Pages }}
