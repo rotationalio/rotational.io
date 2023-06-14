@@ -212,3 +212,58 @@ tooltip?.addEventListener('mouseover', () => {
 tooltip?.addEventListener('mouseout', () => {
   tooltipText.style.display = 'none';
 });
+
+
+// getSelectedLicense gets the value of a data source license type from the select dropdown menu
+// and displays the div for the selected license type and hides the others.
+function getSelectedLicense() {
+// Get value of the license type selected from the dropdown menu
+  const licenseType = document.getElementById('source-license');
+  let licenseTypeValue = licenseType.value;
+
+ // Get the div elements for each license type.
+  all = document.getElementById('all-license');
+  free = document.getElementById('free-license');
+  nonCommercial = document.getElementById('non-commercial-license');
+  commercial = document.getElementById('commercial-license');
+  
+  // Add on change event listener to the license type dropdown.
+  licenseType.addEventListener('change', (e) => {
+    licenseTypeValue = e.target.value;
+
+  // Display the div for the selected license type and hide the others.
+  switch (licenseTypeValue) {
+    case 'Free': {
+    free.style.display = 'grid';
+    all.style.display = 'none';
+    nonCommercial.style.display = 'none';
+    commercial.style.display = 'none';
+  }
+  break;
+
+  case 'Free for non-commercial use': {
+    nonCommercial.style.display = 'grid';
+    free.style.display = 'none';
+    all.style.display = 'none';
+    commercial.style.display = 'none';
+  }
+  break;
+
+  case 'Commercial': {
+    commercial.style.display = 'grid';
+    all.style.display = 'none';
+    free.style.display = 'none';
+    nonCommercial.style.display = 'none';
+  }
+  break;
+
+  default: {
+    all.style.display = 'grid';
+    free.style.display = 'none';
+    nonCommercial.style.display = 'none';
+    commercial.style.display = 'none';
+  }
+  break;
+}
+});
+};
