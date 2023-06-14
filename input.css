@@ -20,7 +20,12 @@
   .input-sl {
     @apply mt-6 mr-8 w-full basis-1/2 rounded-lg border-red-500 px-7 py-4;
   }
+
+  .gist {
+   
+  }
 }
+
 
 body {
   font-family: "Montserrat", sans-serif;
