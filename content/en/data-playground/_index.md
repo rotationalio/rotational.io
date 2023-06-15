@@ -5,4 +5,6 @@ headertext: "Data Playground"
 subheadertext: "Streaming data sources and examples for your apps, models, and services"
 noicon: true
 type: "data-playground"
+is_search_enabled: true
+is_filter_enabled: true
 ---

@@ -9,10 +9,9 @@ async function initSearchIndex() {
       this.field("tags");
       this.ref("uri");
       pagesIndex.forEach((page) => this.add(page));
-      console.log("pagesIndex", pagesIndex);
     });
   } catch (e) {
-    console.log(e);
+    console.error(e);
   }
 }
 

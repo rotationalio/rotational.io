@@ -17,10 +17,18 @@
             showcase it!</li>
     </ul>
 
-    {{ partial "search.html" .}}
+    <div class="md:flex md:justify-between">
+        {{ if .Params.is_search_enabled}}
+        {{ partial "search.html" .}}
+        {{ end }}
+
+        {{ if .Params.is_filter_enabled}}
+        {{ partial "filter.html" .}}
+        {{ end }}
+    </div>
     {{ partial "search-results.html" .}}
 
-    <div id="all-license">
+    <div id="all-license" class="mt-4">
         {{ partial "playground/all.html" . }}
     </div>
     <div id="free-license" class="hidden">
