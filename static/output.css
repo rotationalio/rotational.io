@@ -1287,16 +1287,16 @@ video {
   margin-top: -0px;
 }
 
-.mr-14 {
-  margin-right: 3.5rem;
-}
-
 .mt-\[0\.75rem\] {
   margin-top: 0.75rem;
 }
 
 .mr-\[0\.75rem\] {
   margin-right: 0.75rem;
+}
+
+.mr-14 {
+  margin-right: 3.5rem;
 }
 
 .block {
