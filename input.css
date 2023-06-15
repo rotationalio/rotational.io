@@ -20,15 +20,63 @@
   .input-sl {
     @apply mt-6 mr-8 w-full basis-1/2 rounded-lg border-red-500 px-7 py-4;
   }
+
+
 }
+
+
 
 body {
   font-family: "Montserrat", sans-serif;
 }
 
-/* .art-s p:nth-of-type(2) {
-   color: red;
-} */
+
+@media screen and (min-width: 900px) {
+pre {
+  min-height: 200px !important;
+  max-height: 600px !important;
+  overflow-y: auto !important;
+}
+}
+  
+pre {
+
+  padding: 0.50rem !important;
+}
+
+
+
+.highlight pre {
+  /* Avoid pushing up the copy buttons */
+  margin-top: 0;
+  border-radius: 3px;
+  padding: 10px;
+  overflow-x: auto;
+  font-size: 0.9em;
+}
+
+.highlight pre code {
+  /* Otherwise, overflow text hits the edge of the block */
+  margin-right: 8px;
+  display: inline-block;
+}
+
+/* Lines that are highlighted */
+.highlight pre code > span[style*="display:block;"] {
+  margin-left: -10px;
+  padding-left: 5px;
+  border-left: 5px solid #ee7f2d;
+}
+
+.tab-item {
+  display: none;
+}
+.tab-item.active {
+  display: block;
+}
+.tab-button.active {
+  font-weight: bold;
+}
 /* Add a black background color to the top navigation */
 .topnav {
   /* background-color: #333; */
