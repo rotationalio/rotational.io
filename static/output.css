@@ -1443,6 +1443,10 @@ video {
   width: 1080px;
 }
 
+.w-64 {
+  width: 16rem;
+}
+
 .max-w-7xl {
   max-width: 80rem;
 }
@@ -1830,6 +1834,11 @@ video {
 .bg-red-500 {
   --tw-bg-opacity: 1;
   background-color: rgb(239 68 68 / var(--tw-bg-opacity));
+}
+
+.bg-\[\#D9D9D9\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(217 217 217 / var(--tw-bg-opacity));
 }
 
 .bg-hexagon {
