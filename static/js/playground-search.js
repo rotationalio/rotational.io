@@ -36,6 +36,7 @@ function handleSearchQuery(e) {
   
   const noResults = document.getElementById('no-results');
   const searchResults = document.getElementById('search-results');
+  const header = document.getElementById('search-results-header');
 
   if(!query) {
     noResults.innerText = ''
@@ -48,9 +49,11 @@ function handleSearchQuery(e) {
     noResults.style.display = 'block'
     searchResults.style.display = 'none'
     searchResults.innerHTML = ''
+    header.style.display = 'none';
   }else {
     noResults.style.display = 'none'
     searchResults.style.display = 'block'
+    header.style.display = 'block';
   }
 }
 
@@ -82,8 +85,15 @@ function displaySearchResult(results) {
       data = splitContent(page.content);
       if(result.ref === page.uri) {
         // Create a li element for each search result and display the title and description.
+        header = document.getElementById('search-results-header');
+        header.style.display = 'block';
         searchResults.insertAdjacentHTML('beforeend', 
-        `<li class="search-result-item"><a href="/data-playground/${page.uri}"><span>${data.title}</span><p>${data.description}</p></a></li>`
+        `<li class="search-result-item">
+            <a href="/data-playground/${page.uri}">
+              <span>${data.title}</span>
+              <p>${data.description}</p>
+            </a>
+          </li>`
         );
       }
     });
