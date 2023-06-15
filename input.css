@@ -75,6 +75,23 @@ body {
   background: #ecf6ff;
 }
 
+
+/* Style the data-playground search results. */
+.search-result-item {
+  background-color: white;
+  border: 1px solid black;
+  padding-left: 0.5rem;
+}
+
+.search-result-item span {
+  font-weight: bold;
+}
+
+
+.search-result-item:hover {
+  background-color: #ecf6ff;
+}
+
 blockquote {
   font-weight: 600 !important;
 }
