@@ -1,6 +1,6 @@
 ---
-title: "{{ replaceRE "^[-0-9]{10}-" "" .Name | replaceRE "-" " " | title }}"
-slug: "{{ replaceRE "^[-0-9]{10}-" "" .Name }}"
+title: "Test 2"
+slug: "test-2"
 subtitle: "Add Data Type Here" 
 draft: true
 image: img/data-playground/data-source-img.png
@@ -19,7 +19,6 @@ sdks: "Add Available SDKs Here and Separate Multiple SDKs With A Comma"
 limits: "Add API Limit Information Here, If Available"
 
 ---
-
 
 {{% data-playground-wrapper %}} 
   <!-- the data playground wrapper includes :

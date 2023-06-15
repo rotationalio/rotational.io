@@ -18,6 +18,7 @@
             <h2 class="text-2xl">{{.Params.title}}</h2>
             <h3 class="text-lg">{{.Params.subtitle}}</h3>
         </div>
+
         <div>
             <a href="{{.Params.github_link}}" target="_blank"
                 class="bg-black font-bold px-3 sm:px-6 py-4 rounded-md text-sm text-white  md:text-base flex items-center gap-4 hover:bg-neutral-900">
@@ -128,46 +129,7 @@
 
 
         </div>
-        <!--     code snippets block -->
-        <div class="flex-1" id="code-snippets">
-            <div class="tab-list">
-                <ul class="flex flex-wrap text-sm font-medium text-center text-gray-500 border-b border-gray-200 ">
-                    <li class="mr-2">
-                        <a href="#" aria-current="page"
-                            class="inline-block p-4 text-blue-600 bg-gray-100 rounded-t-lg active">Go</a>
-                    </li>
-                    <li class="mr-2">
-                        <a href="#" class="inline-block p-4 rounded-t-lg hover:text-gray-600 hover:bg-gray-50">Java</a>
-                    </li>
-                    <li class="mr-2">
-                        <a href="#"
-                            class="inline-block p-4 rounded-t-lg hover:text-gray-600 hover:bg-gray-50 ">Python</a>
-                    </li>
-
-                </ul>
-            </div>
+        {{ .Content | safeHTML }}
 
 
-            <div id="tab-content" class="max-w-md">
-                <script src="https://gist.github.com/masskoder/d948a345a33f564960dbb586611e919b.js"></script>
-            </div>
-
-            <div id="tab-content" class="max-w-md">
-                <script src="https://gist.github.com/cktricky/5623966"></script>
-            </div>
-
-
-
-        </div>
-
-
-
-    </div>
-    <div class="w-full px-10 text-xl font-bold mt-5">
-        <h2 class="text-xl">Data Products Showcase</h2>
-        <article class="prose">
-            {{ .Content | safeHTML }}
-        </article>
-    </div>
-
-    {{ end }}
+        {{ end }}

@@ -1,0 +1,10 @@
+{{ $parent := .Parent }}
+{{ if $parent }}
+{{ $name := trim (.Get "name") " " }}
+{{ if not (.Parent.Scratch.Get "tabs") }}
+{{ $parent.Scratch.Set "tabs" slice }}
+{{ end }}
+{{ with .Inner }}
+{{ $parent.Scratch.Add "tabs" (dict "name" $name "content" .) }}
+{{ end }}
+{{ end }}
