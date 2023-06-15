@@ -1,13 +1,14 @@
 ---
 title: "Steam"
 slug: "steam"
-subtitle: "Steam Game and Player Data" 
+subtitle: "Game Reviews" 
 draft: false
 image: img/data-playground/steam.png
-link: "https://github.com/rotationalio/data-playground/tree/main/steam"
-description: The Steam API allows users to fetch statistics for individual games, data about users or news feeds for game updates. All of this can be brought to bear to create powerful analytics on top of video game data made seamless using Ensign.
-summary: Connect to steam game and player data and start experimenting with models and apps.
+github_link: "https://github.com/rotationalio/data-playground/tree/main/steam"
+description: The Steam API allows users to fetch statistics for individual games, data about users, or news feeds for game updates. All of this can be brought to bear to create powerful analytics on top of video game data made seamless using Ensign.
+summary: Connect to Steam's game and player data and start experimenting with models and apps.
 license: Free
+license_warning: Please review terms and conditions. Access to data sources can change.
 producer_name: Steam
 producer_link: https://steam.io/
 is_api_key_required: true
@@ -15,7 +16,7 @@ api_type: REST
 sdks: N/A
 limits: 100,000 API calls per day
 data: Game data and player stats
-account_required: No
+is_account_required: false
 weight: 3
 ---
 

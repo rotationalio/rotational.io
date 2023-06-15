@@ -59,7 +59,7 @@
             <div class="flex flex-col my-4">
                 <p class="text-lg font-bold">Account Required</p>
                 <p class="text-base">
-                    {{ if eq .Params.account_required "true"
+                    {{ if .Params.is_account_required
                     }}
                     Yes
                     {{
@@ -95,7 +95,7 @@
             <div class="flex flex-col my-4">
                 <p class="text-lg font-bold">API Key</p>
                 <p class="text-base">
-                    {{ if eq .Params.api_key "true"
+                    {{ if .Params.is_api_key_required
                     }}
                     Yes
                     {{
