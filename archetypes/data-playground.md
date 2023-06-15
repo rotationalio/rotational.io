@@ -19,13 +19,8 @@ sdks: "Add Available SDKs Here and Separate Multiple SDKs With A Comma"
 limits: "Add API Limit Information Here, If Available"
 
 ---
-
-
 {{% data-playground-wrapper %}} 
-  <!-- the data playground wrapper includes :
-    * Top : the header component ()
-    * left : the data source detail component
-     -->
+
 {{% data-playground-code-tabs %}}
 {{% data-playground-code-tab tabIndex="python" name="Python"  %}}
 ```python

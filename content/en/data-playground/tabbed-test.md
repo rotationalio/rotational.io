@@ -1,6 +1,6 @@
 ---
-title: "Test 2"
-slug: "test-2"
+title: "Tabbed Test"
+slug: "tabbed-test"
 subtitle: "Add Data Type Here" 
 draft: true
 image: img/data-playground/data-source-img.png
@@ -19,12 +19,8 @@ sdks: "Add Available SDKs Here and Separate Multiple SDKs With A Comma"
 limits: "Add API Limit Information Here, If Available"
 
 ---
-
 {{% data-playground-wrapper %}} 
-  <!-- the data playground wrapper includes :
-    * Top : the header component ()
-    * left : the data source detail component
-     -->
+
 {{% data-playground-code-tabs %}}
 {{% data-playground-code-tab tabIndex="python" name="Python"  %}}
 ```python
