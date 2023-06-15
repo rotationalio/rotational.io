@@ -1,0 +1,32 @@
+[
+    {
+        "uri": "/dc-metro",
+        "content": "---\ntitle: \"Dc Metro\"\nslug: \"dc-metro\"\nsubtitle: \"Stock Market Data\" \ndraft: false\nimage: img/data-playground/finnhub.png\nsummary: Connect to stock market data and start experimenting with financial models and apps.\ngithub_link: \"github.com\"\ndescription: FinnHub provides real-time stock market data. Note that the stock market is closed during certain times of days and days of the week.\nproducer_name: FinnHub\nproducer_link: https://finnhub.io/\ndata: Stock prices, company profiles, company & market news\nisaccountrequired: false\nlicense: Free\nlicense_warning: Please review terms and conditions Access to data sources can change.\nisapikey_required: false\napi_type: REST, Websocket\nsdks: Go\nlimits: N/A\nweight: 5\n---\n\nAdd data products showcase \n\n",
+        "tags": []
+    },
+    {
+        "uri": "/finnhub",
+        "content": "---\ntitle: \"Finnhub\"\nslug: \"finnhub\"\nsubtitle: \"Stock Market Data\" \ndraft: false\nimage: img/data-playground/finnhub.png\nlink: \"github.com\"\ndescription: FinnHub provides real-time stock market data. Note that the stock market is closed during certain times of days and days of the week.\nsummary: Connect to stock market data and start experimenting with financial models and apps.\nlicense: Free\nproducer_name: FinnHub\nproducer_link: https://finnhub.io/\napi_key: Yes\napi_type: REST, WebSocket\nsdks: Go\nlimits: N/A\ndata: Stock prices, company profiles, company & market news\naccount_required: Yes\nweight: 1\n---\n\nAdd data products showcase \n\n",
+        "tags": []
+    },
+    {
+        "uri": "/noaa",
+        "content": "---\ntitle: \"Noaa\"\nslug: \"noaa\"\nsubtitle: \"Stock Market Data\" \ndraft: false\nimage: img/data-playground/finnhub.png\nlink: \"github.com\"\ndescription: FinnHub provides real-time stock market data. Note that the stock market is closed during certain times of days and days of the week.\nsummary: Connect to stock market data and start experimenting with financial models and apps.\nlicense: Free\nproducer_name: FinnHub\nproducer_link: https://finnhub.io/\napi_key: Yes\napi_type: REST, Websocket\nsdks: Go\nlimits: N/A\ndata: Stock prices, company profiles, company & market news\naccount_required: Yes\nweight: 2\n---\n\nAdd data products showcase \n\n",
+        "tags": []
+    },
+    {
+        "uri": "/opensky",
+        "content": "---\ntitle: \"Opensky\"\nslug: \"opensky\"\nsubtitle: \"Stock Market Data\" \ndraft: false\nimage: img/data-playground/finnhub.png\nlink: \"github.com\"\ndescription: FinnHub provides real-time stock market data. Note that the stock market is closed during certain times of days and days of the week.\nsummary: Connect to stock market data and start experimenting with financial models and apps.\nlicense: Free\nproducer_name: FinnHub\nproducer_link: https://finnhub.io/\napi_key: Yes\napi_type: REST, Websocket\nsdks: Go\nlimits: N/A\ndata: Stock prices, company profiles, company & market news\naccount_required: Yes\nweight: 6\n---\n\nAdd data products showcase \n\n",
+        "tags": []
+    },
+    {
+        "uri": "/steam",
+        "content": "---\ntitle: \"Steam\"\nslug: \"steam\"\nsubtitle: \"Stock Market Data\" \ndraft: false\nimage: img/data-playground/finnhub.png\nlink: \"github.com\"\ndescription: FinnHub provides real-time stock market data. Note that the stock market is closed during certain times of days and days of the week.\nsummary: Connect to stock market data and start experimenting with financial models and apps.\nlicense: Free\nproducer_name: FinnHub\nproducer_link: https://finnhub.io/\napi_key: Yes\napi_type: REST, Websocket\nsdks: Go\nlimits: N/A\ndata: Stock prices, company profiles, company & market news\naccount_required: Yes\nweight: 3\n---\n\nAdd data products showcase \n\n",
+        "tags": []
+    },
+    {
+        "uri": "/us-geological",
+        "content": "---\ntitle: \"US Geological\"\nslug: \"us-geological\"\nsubtitle: \"Stock Market Data\" \ndraft: false\nimage: img/data-playground/finnhub.png\nlink: \"github.com\"\ndescription: FinnHub provides real-time stock market data. Note that the stock market is closed during certain times of days and days of the week.\nsummary: Connect to stock market data and start experimenting with financial models and apps.\nlicense: Free\nproducer_name: FinnHub\nproducer_link: https://finnhub.io/\napi_key: Yes\napi_type: REST, WebSocket\nsdks: Go\nlimits: N/A\ndata: Stock prices, company profiles, company & market news\naccount_required: Yes\nweight: 4\n---\n\nAdd data products showcase \n\n",
+        "tags": []
+    }
+]
