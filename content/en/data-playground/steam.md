@@ -6,7 +6,7 @@ draft: false
 image: img/data-playground/steam.png
 github_link: "https://github.com/rotationalio/data-playground/tree/main/steam"
 description: The Steam API allows users to fetch statistics for individual games, data about users, or news feeds for game updates. All of this can be brought to bear to create powerful analytics on top of video game data made seamless using Ensign.
-summary: Connect to Steam's game and player data and start experimenting with models and apps.
+summary: Connect to game review data and start experimenting with game review models and apps.
 license: Free
 license_warning: Please review terms and conditions. Access to data sources can change.
 producer_name: Steam
