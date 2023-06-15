@@ -275,9 +275,10 @@ async function initSearchIndex() {
     pagesIndex = await res.json();
     searchIndex = lunr(function () {
       this.field("content");
-      this.field("tag");
+      this.field("tags");
       this.ref("uri");
       pagesIndex.forEach((page) => this.add(page));
+      console.log("pagesIndex", pagesIndex);
     });
   } catch (e) {
     console.log(e);
@@ -288,8 +289,9 @@ initSearchIndex();
 
 // Add an event listener to the search form to get the search after the 
 // user clicks the search button.
+// Refactor the code below.
 const searchForm = document.getElementById('search-form');
-const term = searchForm.addEventListener('submit', (e) => {
+ searchForm.addEventListener('input', (e) => {
   handleSearchQuery(e);
 });
 
@@ -299,6 +301,7 @@ function handleSearchQuery(e) {
   console.log(query)
   if(!query) {
     // Add div below the search box to display a message to the user.
+    searchResults = document.getElementById('search-results').innerText = 'No search results found.'
     console.log('Please enter a search term.');
     return;
   }
@@ -306,17 +309,17 @@ function handleSearchQuery(e) {
   const results = searchSite(query);
   if(!results.length) {
     // Add div below the search box to display a message to the user.
-    console.log('No results found.');
+    searchResults = document.getElementById('search-results').innerText = 'No search results found.'
     return;
   }
 }
 
 function searchSite(query) {
-  const ogQuery = query;
   query = getLunarSearchQuery(query);
   let results = searchIndex.search(query);
-  console.log(results)
-  return results.length ? results : query !== ogQuery ? getSearchResults(ogQuery) : [];
+  displaySearchResult(results);
+  console.log("results", results)
+  return results ? results : [];
 }
 
 function getSearchResults(query) {
@@ -339,3 +342,35 @@ function getLunarSearchQuery(query) {
   }
   return query.trim();
 }
+
+// If the result ref matches the pageIndex uri, display the content in a li element in the search results div.
+function displaySearchResult(results) {
+  const searchResults = document.getElementById('search-results');
+  results.forEach((result) => {
+    pagesIndex.forEach((page) => {
+      console.log("page", page.content)
+      test = splitContent(page.content);
+      console.log("test", test.title)
+      if(result.ref === page.uri) {
+        let li = document.createElement('li');
+        li.innerHTML = `<a href="">${test.title}</a>`;
+        searchResults.appendChild(li);
+      }
+    });
+  }
+  )
+}
+
+// Split the content by the newline character and store the content in an object that will be used to display the search results.
+function splitContent(content) {
+  ctx = content.split('\n');
+  const objFields = {};
+  console.log("objFields", objFields)
+  for (const field of ctx) {
+    const fieldSplit = field.split(':');
+    objFields[fieldSplit[0]] = fieldSplit[1];
+  }
+  return objFields;
+}
+
+
