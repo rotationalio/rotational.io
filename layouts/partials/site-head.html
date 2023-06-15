@@ -8,13 +8,15 @@
 <meta name="twitter:image" content="{{ . | absURL }}" />
 {{ end }}
 {{ with .Params.Title }}
- <meta property="og:title" content="{{ . }}" />
- <meta name="twitter:title" content="{{ . }}" />
+<meta property="og:title" content="{{ . }}" />
+<meta name="twitter:title" content="{{ . }}" />
 {{ end }}
-<meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{ with site.Params.description }}{{ . }}{{ end }}{{ end }}" />
-<meta name="twitter:description" content="{{ with .Description }}{{ . }}{{ else }}{{ with site.Params.description }}{{ . }}{{ end }}{{ end }}" />
+<meta property="og:description"
+  content="{{ with .Description }}{{ . }}{{ else }}{{ with site.Params.description }}{{ . }}{{ end }}{{ end }}" />
+<meta name="twitter:description"
+  content="{{ with .Description }}{{ . }}{{ else }}{{ with site.Params.description }}{{ . }}{{ end }}{{ end }}" />
 {{ with site.Params.author }}
-	<meta name="author" content="{{ . }}">
+<meta name="author" content="{{ . }}">
 {{ end }}
 
 <base href="{{ .Site.BaseURL }}">
@@ -29,8 +31,11 @@
 <link rel="stylesheet" href="{{ .link | absURL }}">
 {{ end }}
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css">
+
 {{ "<!-- fonts -->" | safeHTML }}
 <link href="{{.Site.Params.googleFonts}}" rel="stylesheet">
+
 
 {{ "<!-- styles -->" | safeHTML }}
 
@@ -42,7 +47,7 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id={{ .Site.Params.googleAnalytics }}"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
+  function gtag() { dataLayer.push(arguments); }
   gtag('js', new Date());
   gtag('config', '{{ .Site.Params.googleAnalytics }}');
 </script>
@@ -53,8 +58,8 @@
 
 <script src="https://www.google.com/recaptcha/enterprise.js?render={{.Site.Params.g_recaptcha_key}}"></script>
 <script>
-  grecaptcha.enterprise.ready(function() {
-    grecaptcha.enterprise.execute('{{ .Site.Params.recaptchaKey }}', {action: 'homepage'}).then(function(token) {
+  grecaptcha.enterprise.ready(function () {
+    grecaptcha.enterprise.execute('{{ .Site.Params.recaptchaKey }}', { action: 'homepage' }).then(function (token) {
       // Add your logic to submit to your backend server here.
     });
   });

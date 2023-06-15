@@ -1,0 +1,10 @@
+<ul class="github-api">
+    {{ $url := .Get "url" }}
+    {{ range getJSON $url }}
+    {{ $p := . }}
+    <li>
+        {{ $p }}
+    </li>
+    {{/* {{ $p }} */}}
+    {{ end }}
+</ul>

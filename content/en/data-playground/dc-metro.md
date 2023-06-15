@@ -19,6 +19,35 @@ sdks: Go
 limits: N/A
 weight: 5
 ---
+{{% data-playground-wrapper %}}
 
-Add data products showcase 
+{{% data-playground-code-tabs %}}
+{{% data-playground-code-tab tabIndex="python" name="Python"  %}}
 
+```python
+      def example(name):
+      print(f"example, {name}!")
+```
+
+{{% /data-playground-code-tab %}}
+
+{{% data-playground-code-tab tabIndex="go" name="Go"  %}}
+
+```go {linenos=table,hl_lines=[1,"3-4"]}
+package main
+import "fmt"
+func main() {
+    fmt.Println("hello world")
+}
+```
+
+{{% /data-playground-code-tab %}}
+{{% /data-playground-code-tabs %}}
+
+{{% /data-playground-wrapper %}}
+
+{{% data-playground-content %}}
+
+<!-- Add content for data playground here, including a table for data products if available -->
+
+{{% /data-playground-content %}}
