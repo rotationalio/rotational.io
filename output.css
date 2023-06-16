@@ -1347,6 +1347,10 @@ video {
   height: 2.5rem;
 }
 
+.h-60 {
+  height: 15rem;
+}
+
 .h-16 {
   height: 4rem;
 }
@@ -1405,6 +1409,10 @@ video {
 
 .w-full {
   width: 100%;
+}
+
+.w-11\/12 {
+  width: 91.666667%;
 }
 
 .w-1\/2 {
@@ -1626,6 +1634,10 @@ video {
 
 .rounded-full {
   border-radius: 9999px;
+}
+
+.rounded-\[9px\] {
+  border-radius: 9px;
 }
 
 .rounded-xl {
