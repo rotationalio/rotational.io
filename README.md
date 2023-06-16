@@ -234,7 +234,33 @@ Next, update the following fields:
 `sdks`,
 `limits`
 
-Once the data source is updated and ready to be added to the website, be sure to change `draft` to `true`.
+After updating the fields listed above, content added for the new data source should be added to the `static/index.json` file to update the search index.
+To update the `static/index.json` file, use the following command:
+
+```
+$ yarn index
+```
+
+After running the command, you should see that the `static/index.json` file has been updated and should include the following for the new data source:
+```
+ {
+        "uri": "/data-source-slug",
+        "content": "Data source content",
+        "tags": []
+  },
+```
+
+The `static/index.json` file will include content from the `/_index.md` file. This should be removed from the `static/index.json` file so that users will not see results from the page as it does not contain searchable content.
+
+```
+    {
+        "uri": "/_index",
+        "content": "index content",
+        "tags": []
+    },
+```
+
+Once the new data source is updated and ready to be added to the website, be sure to change `draft` to `true`.
 ## Acknowledgements
 
 We couldn't do what we do without the contributions of others, so we want to acknowledge and thank them for their efforts. Our website uses the following open source tools and royalty-free media:
