@@ -184,6 +184,57 @@ $ ./bin/publish.sh
 
 Please note that this will require all changes to be committed before using it.
 
+## Data Playground
+
+To add a new data source to the Data Playground, use the hugo new command as follows:
+
+```
+$ hugo new data-playground/$data-source-name.md
+```
+
+This will create a new file in the `content/en/data-playground/` directory that you may open and edit. When creating a new data source,, Hugo uses the `archetypes/data-playground.md` template file and generates the following frontmatter:
+
+```
+---
+title: "New Data Source"
+slug: "new-data-source"
+subtitle: "Add Data Type Here" 
+draft: true
+image: img/data-playground/data-source-img.png
+summary: "Add Summary To Display On List Page Here"
+github_link: "https://github.com/rotationalio/[insert-link-here]"
+description: "Add About This Data Source Description Here"
+producer_name: "Add Producer Name Here"
+producer_link: "https://producer-website.com"
+data: "Add Details About the Data Provided Here"
+is_account_required: false
+license: "Add Data Source License Type Here (Ex. Free, Commercial)"
+license_warning: Please review terms and conditions. Access to data sources can change.
+is_api_key_required: false
+api_type: "Add API Type(s) Provided Here and Separate Multiple Types With A Comma"
+sdks: "Add Available SDKs Here and Separate Multiple SDKs With A Comma"
+limits: "Add API Limit Information Here, If Available"
+
+---
+```
+
+Next, update the following fields:
+`subtitle`,
+`image`,
+`summary`,
+`github_link`,
+`description`,
+`producer_name`,
+`producer_link`,
+`data`,
+`is_account_required`,
+`license`,
+`is_api_key_required`,
+`api_type`,
+`sdks`,
+`limits`
+
+Once the data source is updated and ready to be added to the website, be sure to change `draft` to `true`.
 ## Acknowledgements
 
 We couldn't do what we do without the contributions of others, so we want to acknowledge and thank them for their efforts. Our website uses the following open source tools and royalty-free media:
