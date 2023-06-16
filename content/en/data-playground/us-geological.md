@@ -8,15 +8,15 @@ github_link: "https://github.com/rotationalio/data-playground/tree/main/usgs"
 description: US Geological provides reports on earthquakes and their impact.
 summary: Connect to earthquake data and start experimenting with geological models and apps.
 license: Free
-license_warning: Please review terms and conditions Access to data sources can change.
+license_warning: Please review terms and conditions. Access to data sources can change.
 producer_name: US Geological
 producer_link: "https://earthquake.usgs.gov/fdsnws/event/1/"
-is_api_key_required: true
+is_api_key_required: false
 api_type: REST
 sdks: N/A
-limits: N/A
+limits: None
 data: Earthquake data
-account_required: false
+is_account_required: false
 weight: 4
 ---
 
