@@ -21,6 +21,8 @@
 {{ with $title }}<meta property="og:title" content="{{ . }}" />{{ end }}
 {{ with $description }}<meta property="og:description" content="{{ . }}"  />{{ end }}
 {{ with $image }}<meta property="og:image" content="{{ . | absURL }}" />{{ end }}
+{{ if $title }}<meta property="og:url" content="{{ .Permalink }}" />{{ end }}
+{{ if $title }}<meta property="og:type" content="website" />{{ end }}
 
 {{ "<!-- Twitter Metadata -->" | safeHTML }}
 {{ with $title }}<meta name="twitter:title" content="{{ . }}" />{{ end }}
@@ -31,6 +33,8 @@
 {{ "<!-- Favicon and Iconography -->" | safeHTML }}
 <link rel="shortcut icon" href="{{ `img/favicon.png` | absURL }}" type="image/x-icon">
 <link rel="icon" href="{{ `img/favicon.png` | absURL }}" type="image/x-icon">
+
+{{/* TODO: Site Manifest and Apple Icons */}}
 
 {{ if site.Params.plugins.css }}
 {{- "<!-- Plugins -->" | safeHTML -}}
