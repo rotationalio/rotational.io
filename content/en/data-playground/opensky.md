@@ -25,7 +25,7 @@ weight: 6
 {{% data-playground-code-tab tabIndex="python" name="Python"  %}}
 
 ```python
-      def example(name):
+def example(name):
       print(f"example, {name}!")
 ```
 
