@@ -1475,6 +1475,10 @@ video {
   max-width: 180px;
 }
 
+.max-w-md {
+  max-width: 28rem;
+}
+
 .flex-1 {
   flex: 1 1 0%;
 }
@@ -2367,6 +2371,21 @@ pre {
   /* Avoid pushing up the copy buttons */
   margin-top: 0;
   border-radius: 3px;
+  overflow-x: auto;
+  font-size: 0.9em;
+  max-width: 520px !important;
+}
+
+@media screen and (max-width: 900px) {
+  .highlight pre {
+    max-width: 33%  !important;
+  }
+}
+
+.highlight pre {
+  /* Avoid pushing up the copy buttons */
+  margin-top: 0;
+  border-radius: 3px;
   padding: 10px;
   overflow-x: auto;
   font-size: 0.9em;
@@ -3038,12 +3057,12 @@ em {
     margin-top: 3.5rem;
   }
 
-  .md\:ml-2 {
-    margin-left: 0.5rem;
-  }
-
   .md\:mr-2 {
     margin-right: 0.5rem;
+  }
+
+  .md\:ml-2 {
+    margin-left: 0.5rem;
   }
 
   .md\:mt-10 {
