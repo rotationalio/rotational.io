@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <html lang="{{ with site.LanguageCode }}{{ . }}{{ else }}en-us{{ end }}">
-
 <head>
   {{ block "head" . }}{{ partial "site-head.html" .}}{{ end }}
 </head>
-
 <body class="bg-hexagon bg-center bg-contain">
 
   {{ block "header" . }}{{ partial "site-header.html" .}}{{ end }}
@@ -17,5 +15,4 @@
   {{ block "scripts" . }}{{ partial "site-scripts.html" . }}{{ end }}
 
 </body>
-
 </html>

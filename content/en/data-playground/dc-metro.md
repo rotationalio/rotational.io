@@ -1,22 +1,22 @@
 ---
-title: "Dc Metro"
+title: "DC Metro"
 slug: "dc-metro"
-subtitle: "Stock Market Data" 
+subtitle: "Public Transport Data" 
 draft: false
-image: img/data-playground/finnhub.png
-summary: Connect to stock market data and start experimenting with financial models and apps.
-github_link: "github.com"
-description: FinnHub provides real-time stock market data. Note that the stock market is closed during certain times of days and days of the week.
-producer_name: FinnHub
-producer_link: https://finnhub.io/
-data: Stock prices, company profiles, company & market news
+image: img/data-playground/dc-metro.png
+summary: Connect to DC Metro public transport data and start experimenting with scheduling models and apps.
+github_link: https://github.com/rotationalio/data-playground/tree/main/wmata
+description: DC WMATA provides public transportation data such as real-time bus and rail predictions. 
+producer_name: DC WMATA
+producer_link: https://developer.wmata.com/docs/services/gtfs/operations/bus-gtfs-static
+data: Bus & train trip updates, alerts, and vehicle positions.
 is_account_required: false
 license: Free
-license_warning: Please review terms and conditions Access to data sources can change.
-is_api_key_required: false
-api_type: REST, Websocket
-sdks: Go
-limits: N/A
+license_warning: Please review terms and conditions. Access to data sources can change.
+is_api_key_required: true
+api_type: GTFS protocol buffers
+sdks: N/A
+limits: None
 weight: 5
 ---
 {{% data-playground-wrapper %}}
@@ -26,7 +26,7 @@ weight: 5
 
 ```python
       def example(name):
-      print(f"example, {name}!")
+            print(f"example, {name}!")
 ```
 
 {{% /data-playground-code-tab %}}
