@@ -27,7 +27,7 @@ weight: 3
 
 ```python
 def example(name):
-    print(f"example, {name}!")
+      print(f"example, {name}!")
 ```
 
 {{% /data-playground-code-tab %}}
