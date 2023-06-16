@@ -1,10 +1,5 @@
 [
     {
-        "uri": "/_index",
-        "content": "---\ndate: 2023-06-07T12:01:28-04:00\ntitle: \"Data Playground\"\nheadertext: \"Data Playground\"\nsubheadertext: \"Streaming data sources and examples for your apps, models, and services\"\nnoicon: true\ntype: \"data-playground\"\nissearchenabled: true\nisfilterenabled: true\n---",
-        "tags": []
-    },
-    {
         "uri": "/dc-metro",
         "content": "---\ntitle: \"DC Metro\"\nslug: \"dc-metro\"\nsubtitle: \"Public Transport Data\"\ndraft: false\nimage: img/data-playground/dc-metro.png\nsummary: Connect to DC Metro public transport data and start experimenting with scheduling models and apps.\ngithub_link: https://github.com/rotationalio/data-playground/tree/main/wmata\ndescription: DC WMATA provides public transportation data such as real-time bus and rail predictions.\nproducer_name: DC WMATA\nproducer_link: https://developer.wmata.com/docs/services/gtfs/operations/bus-gtfs-static\ndata: Bus & train trip updates, alerts, and vehicle positions.\nisaccountrequired: false\nlicense: Free\nlicense_warning: Please review terms and conditions. Access to data sources can change.\nisapikey_required: true\napi_type: GTFS protocol buffers\nsdks: N/A\nlimits: None\nweight: 5\n---\n{{% data-playground-wrapper %}}\n\n{{% data-playground-code-tabs %}}\n{{% data-playground-code-tab tabIndex=\"python\" name=\"Python\"  %}}\n\ndef example():\n      print(\"Code snippet coming soon!\")\n\n{{% /data-playground-code-tab %}}\n\n{{% data-playground-code-tab tabIndex=\"go\" name=\"Go\"  %}}\n\npackage main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Code snippet coming soon!\")\n}\n\n{{% /data-playground-code-tab %}}\n{{% /data-playground-code-tabs %}}\n\n{{% /data-playground-wrapper %}}\n\n{{% data-playground-content %}}\n\n!-- Add content for data playground here, including a table for data products if available --\n\n{{% /data-playground-content %}}\n",
         "tags": []
