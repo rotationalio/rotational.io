@@ -14,9 +14,11 @@ summaryLength = "1" # Length of excerpt for post descriptions
 ## Default Parameters
 [params]
 # Metadata
-logo = "images/assets/logos/logo.png"
-description = "Navigating data across time and space."
-author = "Rotational Labs, LLC"
+logo = "img/rotational-small.png"
+description = "Rotational Labs is a data streaming company that helps data teams and organizations put data in motion, no matter where data lives. Our flagship product, Ensign, is a real-time data streaming platform that allows you to easily connect data sources, build real-time machine-learning models and applications, and automate workflows. Ensign is cloud agnostic, requires no overhead, and fits into any tech stack."
+keywords = "Rotational Labs,Ensign,Cloud-native,Real-time data streaming platform,Data collaboration,Data automation,Rapid prototyping,Real-time machine learning,Real-time data analytics,Real-time applications,Data streams,Event streams,Event-sourcing databaseEvent log"
+author = "Rotational Labs, Inc."
+image = "img/rotational-gophercon.webp"
 googleAnalytics = "" # Google Analytics ID (set $HUGO_PARAMS_GOOGLEANALYTICS)
 recaptchaKey = "" # Google reCAPTCHA key (set $HUGO_PARAMS_RECAPTCHAKEY)
 
@@ -30,8 +32,16 @@ blog = "/blog/:slug/"
 
 ## CSS Plugins
 [[params.plugins.css]]
+# Font Awesome
 link = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
 
+[[params.plugins.css]]
+# Flowbite
+link = "https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css"
+
+[[params.plugins.css]]
+# HighlightJS
+link = "https://unpkg.com/@highlightjs/cdn-assets/styles/default.min.css"
 
 ## English Navigation
 [[Languages.en.menu.main]]
