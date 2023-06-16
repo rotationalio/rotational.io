@@ -1,7 +1,7 @@
 ---
 title: "US Geological"
 slug: "us-geological"
-subtitle: "Earthquake Data" 
+subtitle: "Earthquake Data"
 draft: false
 image: img/data-playground/us-geological.png
 github_link: "https://github.com/rotationalio/data-playground/tree/main/usgs"
@@ -26,19 +26,21 @@ weight: 4
 {{% data-playground-code-tab tabIndex="python" name="Python"  %}}
 
 ```python
-def example(name):
-      print(f"example, {name}!")
+def example():
+      print("Code snippet coming soon!")
 ```
 
 {{% /data-playground-code-tab %}}
 
 {{% data-playground-code-tab tabIndex="go" name="Go"  %}}
 
-```go {linenos=table,hl_lines=[1,"3-4"]}
+```golang
 package main
+
 import "fmt"
+
 func main() {
-    fmt.Println("hello world")
+    fmt.Println("Code snippet coming soon!")
 }
 ```
 

@@ -1,12 +1,12 @@
 ---
 title: "DC Metro"
 slug: "dc-metro"
-subtitle: "Public Transport Data" 
+subtitle: "Public Transport Data"
 draft: false
 image: img/data-playground/dc-metro.png
 summary: Connect to DC Metro public transport data and start experimenting with scheduling models and apps.
 github_link: https://github.com/rotationalio/data-playground/tree/main/wmata
-description: DC WMATA provides public transportation data such as real-time bus and rail predictions. 
+description: DC WMATA provides public transportation data such as real-time bus and rail predictions.
 producer_name: DC WMATA
 producer_link: https://developer.wmata.com/docs/services/gtfs/operations/bus-gtfs-static
 data: Bus & train trip updates, alerts, and vehicle positions.
@@ -25,19 +25,21 @@ weight: 5
 {{% data-playground-code-tab tabIndex="python" name="Python"  %}}
 
 ```python
-def example(name):
-      print(f"example, {name}!")
+def example():
+      print("Code snippet coming soon!")
 ```
 
 {{% /data-playground-code-tab %}}
 
 {{% data-playground-code-tab tabIndex="go" name="Go"  %}}
 
-```go {linenos=table,hl_lines=[1,"3-4"]}
+```golang
 package main
+
 import "fmt"
+
 func main() {
-    fmt.Println("hello world")
+    fmt.Println("Code snippet coming soon!")
 }
 ```
 

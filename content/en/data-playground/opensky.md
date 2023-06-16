@@ -1,11 +1,11 @@
 ---
 title: "Opensky"
 slug: "opensky"
-subtitle: "Flight Data" 
+subtitle: "Flight Data"
 draft: false
 image: img/data-playground/opensky.png
 github_link: https://github.com/rotationalio/data-playground/tree/main/opensky
-description: OpenSky provides flight data by aircraft along with arrivals and departures by airport. 
+description: OpenSky provides flight data by aircraft along with arrivals and departures by airport.
 summary: Connect to flight data and start experimenting with aviation models and apps.
 license: Free
 producer_name: OpenSky
@@ -25,19 +25,21 @@ weight: 6
 {{% data-playground-code-tab tabIndex="python" name="Python"  %}}
 
 ```python
-def example(name):
-      print(f"example, {name}!")
+def example():
+    print("Code snippet coming soon!")
 ```
 
 {{% /data-playground-code-tab %}}
 
 {{% data-playground-code-tab tabIndex="go" name="Go"  %}}
 
-```go {linenos=table,hl_lines=[1,"3-4"]}
+```golang
 package main
+
 import "fmt"
+
 func main() {
-    fmt.Println("hello world")
+    fmt.Println("Code snippet coming soon!")
 }
 ```
 

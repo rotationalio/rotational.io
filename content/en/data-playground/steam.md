@@ -1,7 +1,7 @@
 ---
 title: "Steam"
 slug: "steam"
-subtitle: "Game Reviews" 
+subtitle: "Game Reviews"
 draft: false
 image: img/data-playground/steam.png
 github_link: "https://github.com/rotationalio/data-playground/tree/main/steam"
@@ -23,18 +23,11 @@ weight: 3
 {{% data-playground-wrapper %}}
 
 {{% data-playground-code-tabs %}}
-{{% data-playground-code-tab tabIndex="python" name="Python"  %}}
 
-```python
-def example(name):
-      print(f"example, {name}!")
-```
-
-{{% /data-playground-code-tab %}}
 
 {{% data-playground-code-tab tabIndex="go" name="Go"  %}}
 
-```go {linenos=table,hl_lines=[1,"3-4"]}
+```golang
 package main
 
 import (
@@ -124,6 +117,14 @@ func main() {
 	fmt.Println(reviews.Reviews[0].Review)
 }
 
+```
+
+{{% /data-playground-code-tab %}}
+{{% data-playground-code-tab tabIndex="python" name="Python"  %}}
+
+```python
+def example():
+      print("Code snippet coming soon!")
 ```
 
 {{% /data-playground-code-tab %}}
