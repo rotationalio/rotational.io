@@ -1,6 +1,6 @@
 {{- with .Inner }}{{ end -}}
 {{- $groupId := .Get "id" | default "default" -}}
-<div class="tab-container min-h-full max-w-md">
+<div class="tab-container">
     <div class="tab-nav flex flex-wrap text-sm font-medium text-center text-gray-500 border-b border-gray-200 ">
         {{- range $idx, $tab := .Scratch.Get "tabs" -}}
         <button onclick="switchTab('{{ $groupId }}','{{ .name }}')" data-tab-item="{{ .name }}"
@@ -11,7 +11,7 @@
     </div>
     <div class="tab-content -mt-0">
         <button id="copy-code-button"
-            class="copy-code-button absolute text-white text-xs right-[3.5rem] bg-red-500 p-1 hover:text-red-700 [&.active]:bg-green-600 mt-[0.75rem] mr-[0.75rem]">
+            class="copy-code-button absolute text-white text-xs right-[2.5rem] sm:right-[3.5rem] bg-red-500 p-1 hover:text-red-700 [&.active]:bg-green-600 mt-[0.75rem] mr-[1.75rem] sm:mr-[0.75rem]">
             Copy
         </button>
 

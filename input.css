@@ -30,17 +30,28 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 
+.tab-content {
+  overflow: auto; /* Enable horizontal scrolling if necessary */
+}
+
+/* Adjust the styling for Hugo highlight code blocks within the container */
+.tab-content pre {
+  max-width: 100%; /* Ensure the code block doesn't exceed the container's width */
+  white-space: pre-wrap; /* Preserve line breaks within code blocks */
+  max-height: 500px;
+}
 
 @media screen and (min-width: 900px) {
-pre {
-  min-height: 200px !important;
-  max-height: 600px !important;
-  overflow-y: auto !important;
-}
+  pre {
+    min-height: 200px !important;
+    max-height: 600px !important;
+    max-width: 300px;
+    overflow-y: auto !important;
+  }
 }
   
 pre {
-
+  max-height: 400px !important;
   padding: 0.50rem !important;
 }
 
@@ -53,11 +64,6 @@ pre {
   max-width: 520px !important;
 }
 
-@media screen and (max-width: 900px) {
-  .highlight pre {
-    max-width: 33%  !important;
-  }
-}
 
 
 

@@ -1073,8 +1073,8 @@ video {
   right: 0px;
 }
 
-.right-\[3\.5rem\] {
-  right: 3.5rem;
+.right-\[2\.5rem\] {
+  right: 2.5rem;
 }
 
 .isolate {
@@ -1299,8 +1299,8 @@ video {
   margin-top: 0.75rem;
 }
 
-.mr-\[0\.75rem\] {
-  margin-right: 0.75rem;
+.mr-\[1\.75rem\] {
+  margin-right: 1.75rem;
 }
 
 .mr-14 {
@@ -1399,10 +1399,6 @@ video {
   min-height: 480px;
 }
 
-.min-h-full {
-  min-height: 100%;
-}
-
 .w-10 {
   width: 2.5rem;
 }
@@ -1473,10 +1469,6 @@ video {
 
 .max-w-\[180px\] {
   max-width: 180px;
-}
-
-.max-w-md {
-  max-width: 28rem;
 }
 
 .flex-1 {
@@ -2355,34 +2347,38 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 
+.tab-content {
+  overflow: auto;
+  /* Enable horizontal scrolling if necessary */
+}
+
+/* Adjust the styling for Hugo highlight code blocks within the container */
+
+.tab-content pre {
+  max-width: 100%;
+  /* Ensure the code block doesn't exceed the container's width */
+  white-space: pre-wrap;
+  /* Preserve line breaks within code blocks */
+  max-height: 500px;
+}
+
 @media screen and (min-width: 900px) {
   pre {
     min-height: 200px !important;
     max-height: 600px !important;
+    max-width: 300px;
     overflow-y: auto !important;
   }
 }
 
 pre {
+  max-height: 400px !important;
   padding: 0.50rem !important;
 }
 
 .highlight pre {
   /* Avoid pushing up the copy buttons */
-  margin-top: 0;
-  border-radius: 3px;
-  overflow-x: auto;
-  font-size: 0.9em;
   max-width: 520px !important;
-}
-
-@media screen and (max-width: 900px) {
-  .highlight pre {
-    max-width: 33%  !important;
-  }
-}
-
-.highlight pre {
   /* Avoid pushing up the copy buttons */
   margin-top: 0;
   border-radius: 3px;
@@ -2851,6 +2847,10 @@ em {
 }
 
 @media (min-width: 640px) {
+  .sm\:right-\[3\.5rem\] {
+    right: 3.5rem;
+  }
+
   .sm\:my-0 {
     margin-top: 0px;
     margin-bottom: 0px;
@@ -2902,6 +2902,10 @@ em {
     margin-left: 5rem;
   }
 
+  .sm\:mr-\[0\.75rem\] {
+    margin-right: 0.75rem;
+  }
+
   .sm\:inline {
     display: inline;
   }
@@ -2940,6 +2944,10 @@ em {
 
   .sm\:flex-row {
     flex-direction: row;
+  }
+
+  .sm\:gap-8 {
+    gap: 2rem;
   }
 
   .sm\:space-x-24 > :not([hidden]) ~ :not([hidden]) {
