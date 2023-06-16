@@ -8,11 +8,11 @@ summary: "Add Summary To Display On List Page Here"
 github_link: "https://github.com/rotationalio/[insert-link-here]"
 description: "Add About This Data Source Description Here"
 producer_name: "Add Producer Name Here"
-producer_link: "https://finnhub.io"
+producer_link: "https://producer-website.com"
 data: "Add Details About the Data Provided Here"
 is_account_required: false
 license: "Add Data Source License Type Here (Ex. Free, Commercial)"
-license_warning: "Add License description if applicable"
+license_warning: Please review terms and conditions. Access to data sources can change.
 is_api_key_required: false
 api_type: "Add API Type(s) Provided Here and Separate Multiple Types With A Comma"
 sdks: "Add Available SDKs Here and Separate Multiple SDKs With A Comma"
