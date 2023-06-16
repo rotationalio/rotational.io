@@ -1,21 +1,21 @@
 ---
 title: "Opensky"
 slug: "opensky"
-subtitle: "Stock Market Data" 
+subtitle: "Flight Data" 
 draft: false
-image: img/data-playground/finnhub.png
-link: "github.com"
-description: FinnHub provides real-time stock market data. Note that the stock market is closed during certain times of days and days of the week.
-summary: Connect to stock market data and start experimenting with financial models and apps.
+image: img/data-playground/opensky.png
+github_link: https://github.com/rotationalio/data-playground/tree/main/opensky
+description: OpenSky provides flight data by aircraft along with arrivals and departures by airport. 
+summary: Connect to flight data and start experimenting with aviation models and apps.
 license: Free
-producer_name: FinnHub
-producer_link: https://finnhub.io/
-api_key: Yes
-api_type: REST, Websocket
-sdks: Go
-limits: N/A
-data: Stock prices, company profiles, company & market news
-account_required: Yes
+producer_name: OpenSky
+producer_link: https://openskynetwork.github.io/opensky-api/
+is_api_key_required: false
+api_type: REST
+sdks: Python API, Java API
+limits: 400 API credits per day and 4,000 API credits per day for OpenSky users
+data: Flight data, arrivals, departures, aircraft trajectory
+is_account_required: false
 weight: 6
 ---
 
@@ -25,7 +25,7 @@ weight: 6
 {{% data-playground-code-tab tabIndex="python" name="Python"  %}}
 
 ```python
-      def example(name):
+def example(name):
       print(f"example, {name}!")
 ```
 
