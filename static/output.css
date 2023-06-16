@@ -3038,12 +3038,12 @@ em {
     margin-top: 3.5rem;
   }
 
-  .md\:ml-2 {
-    margin-left: 0.5rem;
-  }
-
   .md\:mr-2 {
     margin-right: 0.5rem;
+  }
+
+  .md\:ml-2 {
+    margin-left: 0.5rem;
   }
 
   .md\:mt-10 {
