@@ -235,7 +235,7 @@ Next, update the following fields:
 `limits`
 
 After updating the fields listed above, content added for the new data source should be added to the `static/index.json` file to update the search index.
-To update the `static/index.json` file, use the following command:
+To create an updated `static/index.json` file, use the following command:
 
 ```
 $ yarn index
@@ -250,7 +250,7 @@ After running the command, you should see that the `static/index.json` file has 
   },
 ```
 
-The `static/index.json` file will include content from the `/_index.md` file. This should be removed from the `static/index.json` file so that users will not see results from the page as it does not contain searchable content.
+Delete the JSON for `/_index` starting on line 2 of the `static/index.json` file. It should appears as follows:
 
 ```
     {
