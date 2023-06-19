@@ -38,9 +38,13 @@ function handleSearchQuery(e) {
   const header = document.getElementById('search-results-header');
 
   if(!query) {
-    noResults.innerText = ''
+    noResults.style.display = 'none'
+    searchResults.style.display = 'none'
+    header.style.display = 'none';
     return;
   }
+
+
   const results = searchSite(query);
   
   if(!results.length) {
@@ -96,7 +100,7 @@ function displaySearchResult(results) {
         );
         // Remove the search results when the user clicks outside of the search results.
         document.addEventListener('click', (e) => {
-          if(e.target.id !== 'playground-search-term') {
+          if(e.target.id !== 'search-results') {
             searchResults.innerHTML = '';
             document.getElementById('search-results-header').style.display = 'none';
             document.getElementById('playground-search-term').value = '';
