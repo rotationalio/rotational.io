@@ -38,7 +38,7 @@ function handleSearchQuery(e) {
   const header = document.getElementById('search-results-header');
 
   if(!query) {
-    noResults.style.display = 'none'
+    noResults.innerText = ''
     searchResults.style.display = 'none'
     header.style.display = 'none';
     return;
