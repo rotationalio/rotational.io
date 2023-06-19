@@ -94,6 +94,14 @@ function displaySearchResult(results) {
             </a>
           </li>`
         );
+        // Remove the search results when the user clicks outside of the search results.
+        document.addEventListener('click', (e) => {
+          if(e.target.id !== 'playground-search-term') {
+            searchResults.innerHTML = '';
+            document.getElementById('search-results-header').style.display = 'none';
+            document.getElementById('playground-search-term').value = '';
+          }
+        });
       }
     });
   }
