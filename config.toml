@@ -52,10 +52,10 @@ url = 'https://rotational.app'
 weight = 1
 
 [[Languages.en.menu.main]]
-identifier = 'services'
-pageRef = 'services'
-name = 'Services'
-url = '/services'
+identifier = 'playground'
+pageRef = 'playground'
+name = 'Data Playground'
+url = '/data-playground'
 weight = 2
 
 [[Languages.en.menu.main]]
@@ -79,12 +79,6 @@ name = 'About'
 url = '/about'
 weight = 5
 
-[[Languages.en.menu.main]]
-identifier = 'contact'
-pageRef = 'contact'
-name = 'Contact Us'
-url = '/contact'
-weight = 50
 
 [[Languages.en.menu.main]]
 identifier = 'login'
@@ -93,7 +87,7 @@ name = 'Login'
 url = 'https://rotational.app'
 weight = 60
 
-## English Langauge
+## English Language
 [Languages.en]
 languageName = "En"
 languageCode = "en-us"
