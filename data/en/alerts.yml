@@ -1,8 +1,8 @@
 ############################# Ensign Data ###################################
 notice:
   enable: true
-  notice: "Join us for our upcoming webinar: **Asynchronous Data Science with PyEnsign**"
+  notice: "Register for Professor Bengfort's Upcoming Tutorial!"
   action:
-    text: Register Today
-    link: "https://us06web.zoom.us/webinar/register/2916854635744/WN_JklI0k2WRq6jaAitXPp1Mg"
-  expires: 2023-06-20T16:00:00Z
+    text: MLOps 101 - Managing Models with Event Streams
+    link: "https://us06web.zoom.us/webinar/register/9516871922745/WN_eliftxwjS8eFMk8wvjHP-Q"
+  expires: 2023-07-11T16:00:00Z
