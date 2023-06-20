@@ -137,3 +137,9 @@ def example():
 <!-- Add content for data playground here, including a table for data products if available -->
 
 {{% /data-playground-content %}}
+
+{{% coming-soon %}}
+
+Coming soon!
+
+{{% /coming-soon %}}
