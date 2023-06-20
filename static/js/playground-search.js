@@ -39,8 +39,12 @@ function handleSearchQuery(e) {
 
   if(!query) {
     noResults.innerText = ''
+    searchResults.style.display = 'none'
+    header.style.display = 'none';
     return;
   }
+
+
   const results = searchSite(query);
   
   if(!results.length) {
@@ -94,6 +98,14 @@ function displaySearchResult(results) {
             </a>
           </li>`
         );
+        // Remove the search results when the user clicks outside of the search results.
+        document.addEventListener('click', (e) => {
+          if(e.target.id !== 'search-results') {
+            searchResults.innerHTML = '';
+            document.getElementById('search-results-header').style.display = 'none';
+            document.getElementById('playground-search-term').value = '';
+          }
+        });
       }
     });
   }

@@ -215,4 +215,9 @@ def example():
 
 {{% /data-playground-content %}}
 
+{{% coming-soon %}}
+
+Coming soon!
+
+{{% /coming-soon %}}
 
