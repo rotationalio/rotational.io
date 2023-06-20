@@ -140,14 +140,6 @@ pre {
   text-align: right;
 }
 
-/* Get background for Ensign Developer Experience section to span the full width */
-.experience-background {
-  margin: 0 -62.5rem;
-  padding: 0.25rem 62.5rem;
-  background: #ecf6ff;
-}
-
-
 /* Style the data-playground search results. */
 .search-result-item {
   background-color: white;
@@ -162,6 +154,12 @@ pre {
 
 .search-result-item:hover {
   background-color: #ecf6ff;
+}
+
+/* Style the data showcase table. */
+.finnhub-showcase {
+  border: solid 1px rgb(71 85 105);
+  padding: 8px 16px;
 }
 
 blockquote {
