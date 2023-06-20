@@ -1,7 +1,7 @@
 <ul class="md:grid grid-cols-3 gap-8">
     {{ $paginator := .Paginate .Data.Pages }}
     {{ range $paginator.Pages.ByWeight }}
-    {{ if eq .Params.license "Free for non-commercial use" }}
+    {{ if in .Params.license "Free for non-commercial use" }}
     <li>
         {{ .Render "playground-card" }}
     </li>
