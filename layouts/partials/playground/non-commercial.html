@@ -1,10 +1,11 @@
-<ul class="md:grid grid-cols-3 gap-8">
+<!-- <ul class="md:grid grid-cols-3 gap-8">
     {{ $paginator := .Paginate .Data.Pages }}
     {{ range $paginator.Pages.ByWeight }}
-    {{ if eq .Params.license "Free for non-commercial use" }}
+    {{ if in .Params.license "Free for non-commercial use" }}
     <li>
         {{ .Render "playground-card" }}
     </li>
     {{ end }}
     {{ end }}
-</ul>
+</ul> -->
+<p class="text-center mt-10">There are no free for non-commercial use data sources to show at this time.</p>
