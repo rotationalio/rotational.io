@@ -54,3 +54,9 @@ func main() {
 
 {{% /data-playground-content %}}
 
+{{% coming-soon %}}
+
+Coming soon!
+
+{{% /coming-soon %}}
+
