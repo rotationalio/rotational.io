@@ -60,9 +60,10 @@ function handleSearchQuery(e) {
   }
 }
 
-// searchSite takes the search query and returns the results.
+// searchSite takes the search query and returns the results. Fuzziness is added to the query
+// to allow for typos in the search query. The edit distance is represented by ~1.
 function searchSite(query) {
-  query = getLunarSearchQuery(query);
+  query = getLunarSearchQuery(query + '~1');
   let results = searchIndex.search(query);
   displaySearchResult(results);
   return results ? results : [];
@@ -108,6 +109,13 @@ function displaySearchResult(results) {
         });
       }
     });
+
+    // Remove the search results from the page when the user types a change in the search query and display the new results.
+    document.getElementById('playground-search-term').addEventListener('input', (e) => {
+      searchResults.innerHTML = '';
+      document.getElementById('search-results-header').style.display = 'none';
+    }
+    );
   }
   )
 }
