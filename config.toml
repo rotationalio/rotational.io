@@ -9,6 +9,7 @@ post_share = true   # Share button on individual posts
 paginate = "9"      # Number of posts per page in blog listing
 summaryLength = "1" # Length of excerpt for post descriptions
 enableRobotsTXT = true
+rssLimit = 20
 
 ## Default Parameters
 [params]
@@ -104,7 +105,7 @@ languageCode = "en-us"
 contentDir = "content/en"
 weight = 1
 home = "Home"
-copyright = "Copyright &copy; {year} Rotational Labs, Inc &middot; All Rights Reserved"
+copyright = "Copyright &copy; Rotational Labs, Inc. 2021&ndash;{year} &middot; All Rights Reserved"
 contactFormSuccessTitle = "Message sent!"
 contactFormSuccessMessage = "Thank you for your interest in Rotational Labs! Please expect a response within one business day. If you need immediate assistance, please email support@rotational.io."
 newsletterFormSuccessMessage = "Thank you for your interest!"
@@ -158,7 +159,8 @@ weight = 40
     tabWidth = 4
 
 [outputs]
-home = ["HTML", "humanstxt"]
+home = ["HTML", "humanstxt", "RSS"]
+posts = ["HTML", "RSS"]
 
 [outputFormats.humanstxt]
 baseName = "humans"

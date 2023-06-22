@@ -35,9 +35,12 @@
 <link rel="shortcut icon" href="{{ `img/favicon.png` | absURL }}" type="image/x-icon">
 <link rel="icon" href="{{ `img/favicon.png` | absURL }}" type="image/x-icon">
 
+{{ "<!-- RSS Feeds -->" | safeHTML }}
+<link rel="alternate" type="application/rss+xml" href="{{.Site.BaseURL }}/index.xml" title="Recent Rotations of the Rotational Labs Blog">
+
 {{/* TODO: Site Manifest and Apple Icons */}}
 
-{{ if site.Params.plugins.css }}
+{{- if site.Params.plugins.css -}}
 {{- "<!-- Plugins -->" | safeHTML -}}
 {{ range site.Params.plugins.css }}
 <link rel="stylesheet" href="{{ .link | absURL }}">{{ end }}
