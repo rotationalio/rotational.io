@@ -10,7 +10,6 @@ paginate = "9"      # Number of posts per page in blog listing
 summaryLength = "1" # Length of excerpt for post descriptions
 enableRobotsTXT = true
 
-
 ## Default Parameters
 [params]
 # Metadata
@@ -157,3 +156,11 @@ weight = 40
     noHl = false
     style = 'monokai'
     tabWidth = 4
+
+[outputs]
+home = ["HTML", "humanstxt"]
+
+[outputFormats.humanstxt]
+baseName = "humans"
+isPlainText = true
+mediaType = "text/plain"

@@ -16,6 +16,7 @@
 {{ with $author }}<meta name="author" content="{{ . }}">{{ end }}
 {{ with $description }}<meta name="description" content="{{ . }}">{{ end }}
 {{ with $keywords }}<meta name="keywords" content="{{ . }}">{{ end }}
+<link type="text/plain" rel="author" href="{{ "humans.txt" | absURL }}" />
 
 {{ "<!-- OpenGraph Metadata -->" | safeHTML }}
 {{ with $title }}<meta property="og:title" content="{{ . }}" />{{ end }}
