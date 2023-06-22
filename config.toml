@@ -19,6 +19,7 @@ description = "Rotational Labs is a data streaming company that helps data teams
 keywords = "Rotational Labs,Ensign,Cloud-native,Real-time data streaming platform,Data collaboration,Data automation,Rapid prototyping,Real-time machine learning,Real-time data analytics,Real-time applications,Data streams,Event streams,Event-sourcing databaseEvent log"
 author = "Rotational Labs, Inc."
 image = "img/rotational-gophercon.webp"
+copyright = "Copyright &copy; Rotational Labs, Inc. 2021&ndash;{year} &middot; All Rights Reserved"
 googleAnalytics = "" # Google Analytics ID (set $HUGO_PARAMS_GOOGLEANALYTICS)
 recaptchaKey = "" # Google reCAPTCHA key (set $HUGO_PARAMS_RECAPTCHAKEY)
 
