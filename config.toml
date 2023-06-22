@@ -8,7 +8,7 @@ enableEmoji = true  # allow emojification of things like :heart:
 post_share = true   # Share button on individual posts
 paginate = "9"      # Number of posts per page in blog listing
 summaryLength = "1" # Length of excerpt for post descriptions
-
+enableRobotsTXT = true
 
 
 ## Default Parameters
