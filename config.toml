@@ -160,7 +160,7 @@ weight = 40
 
 [outputs]
 home = ["HTML", "humanstxt", "RSS"]
-posts = ["HTML", "RSS"]
+blog = ["HTML", "RSS"]
 
 [outputFormats.humanstxt]
 baseName = "humans"
