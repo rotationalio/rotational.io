@@ -108,7 +108,7 @@ weight = 1
 [Languages.en.params]
 home = "Home"
 copyright = "Copyright &copy; Rotational Labs, Inc. 2021&ndash;{year} &middot; All Rights Reserved"
-contactFormSuccessTitle = "Message sent!"
+contactFormSuccessTitle = "Your message has been sent successfully!"
 contactFormSuccessMessage = "Thank you for your interest in Rotational Labs! Please expect a response within one business day. If you need immediate assistance, please email support@rotational.io."
 newsletterFormSuccessMessage = "Thank you for your interest!"
 ensignFormErrorTitle=""
