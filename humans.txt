@@ -1,0 +1,67 @@
+/* TEAM */
+
+
+Founder/CEO: Benjamin Bengfort
+Bio: https://rotational.io/bio/benjamin-bengfort
+
+Founder/CTO: Rebecca Bilbro
+Bio: https://rotational.io/bio/rebecca-bilbro
+
+Founder/COO: Edwin Schmierer
+Bio: https://rotational.io/bio/edwin-schmierer
+
+Distributed Systems Engineer: Patrick Deziel
+Bio: https://rotational.io/bio/patrick-deziel
+
+Distributed Systems Engineer: Prema Roman
+Bio: https://rotational.io/bio/prema-roman
+
+Project Management Support: Beci Lambrecht
+Bio: https://rotational.io/bio/beci-lambrecht
+
+Jr Distributed Systems Engineer: Daniel Sollis
+Bio: https://rotational.io/bio/daniel-sollis
+
+Software Engineer: Karen Belita
+Bio: https://rotational.io/bio/karen-belita
+
+Senior Front-end Engineer: Cletus Razakou
+Bio: https://rotational.io/bio/cletus-razakou
+
+Jr Distributed Systems Engineer: Danielle Maxwell
+Bio: https://rotational.io/bio/danielle-maxwell
+
+Technical Advisor: Pete Keleher
+Bio: https://rotational.io/bio/pete-keleher
+
+Data Science Intern: Aatmaj Janardanan
+Bio: https://rotational.io/bio/aatmaj-janardanan
+
+Technical Writing Intern: Natasha White
+Bio: https://rotational.io/bio/natasha-white
+
+Open Source Contributor: Nabiha Naqvie
+Bio: https://rotational.io/bio/nabiha-naqvie
+
+Open Source Contributor: Tianshu Li
+Bio: https://rotational.io/bio/tianshu-li
+
+Front-end Engineer: Elysee Bleu
+Bio: https://rotational.io/bio/elysee-bleu
+
+
+
+/* SITE */
+
+Last update: 2023-06-23
+Site name: Rotational Labs
+URL: https://rotational.io/
+CMS: Hugo
+Host: GitHub Pages
+Language: En
+Doctype: HTML5
+Standards: HTML5, CSS3, Open Graph protocol, Schema.org
+Components: Hugo, FontAwesome, Flowbite, HighlightJS, Lunr.js
+IDE: VSCode, Atom, Vim, MacVim
+
+[Credit for this page: http://humanstxt.org/]
