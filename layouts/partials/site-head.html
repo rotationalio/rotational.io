@@ -16,6 +16,7 @@
 {{ with $author }}<meta name="author" content="{{ . }}">{{ end }}
 {{ with $description }}<meta name="description" content="{{ . }}">{{ end }}
 {{ with $keywords }}<meta name="keywords" content="{{ . }}">{{ end }}
+<link type="text/plain" rel="author" href="{{ "humans.txt" | absURL }}" />
 
 {{ "<!-- OpenGraph Metadata -->" | safeHTML }}
 {{ with $title }}<meta property="og:title" content="{{ . }}" />{{ end }}
@@ -34,9 +35,12 @@
 <link rel="shortcut icon" href="{{ `img/favicon.png` | absURL }}" type="image/x-icon">
 <link rel="icon" href="{{ `img/favicon.png` | absURL }}" type="image/x-icon">
 
+{{ "<!-- RSS Feeds -->" | safeHTML }}
+<link rel="alternate" type="application/rss+xml" href="{{.Site.BaseURL }}/index.xml" title="Recent Rotations of the Rotational Labs Blog">
+
 {{/* TODO: Site Manifest and Apple Icons */}}
 
-{{ if site.Params.plugins.css }}
+{{- if site.Params.plugins.css -}}
 {{- "<!-- Plugins -->" | safeHTML -}}
 {{ range site.Params.plugins.css }}
 <link rel="stylesheet" href="{{ .link | absURL }}">{{ end }}
@@ -71,6 +75,8 @@
 </script>
 {{ end }}
 
-{{ "<!-- Required Initialization Scripts -->" | safeHTML }}
-<script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/lunr/lunr.js"></script>
+{{ if site.Params.plugins.js }}
+{{- "<!-- Javascript Plugins and Initialization Scripts -->" | safeHTML -}}
+{{ range site.Params.plugins.js }}
+<script src="{{ .link }}" {{ if .crossorigin }}crossorigin="{{ .crossorigin }}"{{ end }}></script>{{ end }}
+{{ end }}

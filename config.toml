@@ -8,8 +8,8 @@ enableEmoji = true  # allow emojification of things like :heart:
 post_share = true   # Share button on individual posts
 paginate = "9"      # Number of posts per page in blog listing
 summaryLength = "1" # Length of excerpt for post descriptions
-
-
+enableRobotsTXT = true
+rssLimit = 20
 
 ## Default Parameters
 [params]
@@ -19,6 +19,7 @@ description = "Rotational Labs is a data streaming company that helps data teams
 keywords = "Rotational Labs,Ensign,Cloud-native,Real-time data streaming platform,Data collaboration,Data automation,Rapid prototyping,Real-time machine learning,Real-time data analytics,Real-time applications,Data streams,Event streams,Event-sourcing databaseEvent log"
 author = "Rotational Labs, Inc."
 image = "img/rotational-gophercon.webp"
+copyright = "Copyright &copy; Rotational Labs, Inc. 2021&ndash;{year} &middot; All Rights Reserved"
 googleAnalytics = "" # Google Analytics ID (set $HUGO_PARAMS_GOOGLEANALYTICS)
 recaptchaKey = "" # Google reCAPTCHA key (set $HUGO_PARAMS_RECAPTCHAKEY)
 
@@ -42,6 +43,16 @@ link = "https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css"
 [[params.plugins.css]]
 # HighlightJS
 link = "https://unpkg.com/@highlightjs/cdn-assets/styles/default.min.css"
+
+## JavaScript Plugins
+[[params.plugins.js]]
+# Font Awesome
+link = "https://kit.fontawesome.com/2c36e9b7b1.js"
+crossorigin = "anonymous"
+
+[[params.plugins.js]]
+# Lunr
+link = "https://unpkg.com/lunr/lunr.js"
 
 ## English Navigation
 [[Languages.en.menu.main]]
@@ -93,12 +104,13 @@ languageName = "En"
 languageCode = "en-us"
 contentDir = "content/en"
 weight = 1
+
+[Languages.en.params]
 home = "Home"
-copyright = "Copyright &copy; {year} Rotational Labs, Inc &middot; All Rights Reserved"
-contactFormSuccessTitle = "Message sent!"
+copyright = "Copyright &copy; Rotational Labs, Inc. 2021&ndash;{year} &middot; All Rights Reserved"
+contactFormSuccessTitle = "Your message has been sent successfully!"
 contactFormSuccessMessage = "Thank you for your interest in Rotational Labs! Please expect a response within one business day. If you need immediate assistance, please email support@rotational.io."
 newsletterFormSuccessMessage = "Thank you for your interest!"
-
 ensignFormErrorTitle=""
 ensignFormErrorMessage="Your request didn't go through, please try again. If you need immediate assistance, please email support@rotational.io. "
 
@@ -146,3 +158,12 @@ weight = 40
     noHl = false
     style = 'monokai'
     tabWidth = 4
+
+[outputs]
+home = ["HTML", "humanstxt", "RSS"]
+blog = ["HTML", "RSS"]
+
+[outputFormats.humanstxt]
+baseName = "humans"
+isPlainText = true
+mediaType = "text/plain"
