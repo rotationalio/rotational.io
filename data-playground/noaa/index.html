@@ -8,8 +8,224 @@
 <a href=/about/>About</a>
 <a href=https://rotational.app>Login</a>
 <a class=icon onclick=openMobNav()><i class="fa fa-bars"></i></a></div></nav></div><main><div class="max-w-7xl mx-auto px-4 relative"><div class="w-full bg-[#ECF6FF] flex justify-between my-10 place-items-center h-36 px-10"><div class="flex flex-col font-bold"><h2 class=text-2xl>NOAA</h2><h3 class=text-lg>Weather Data</h3></div><div><a href=https://github.com/rotationalio/data-playground/tree/main/weather target=_blank class="bg-black font-bold px-3 sm:px-6 py-4 rounded-md text-sm text-white md:text-base flex items-center gap-4 hover:bg-neutral-900"><span class="text-sm sm:text-base">Get Started</span>
-<span class="hidden sm:flex"><img src=img/data-playground/github.png alt="github icon" height=36 width=36></span></a></div></div><div class="w-full flex flex-col gap-4 sm:gap-8 sm:flex-row justify-between px-10"><div class=w-1/2><div class="flex flex-col my-4"><p class="text-xl font-bold mb-5">About This Data Source</p><p class=text-base>The National Oceanic and Atmospheric Administration's (NOAA's) National Weather Service offers critical real-time data. Get forecasts, alerts, observations, and other weather data.</p></div><div class="flex flex-col my-4"><p class="text-lg font-bold">Producer</p><p class=text-base><a class="cursor-pointer underline" href=https://api.weather.gov>NOAA</p></a></div><div class="flex flex-col my-4"><p class="text-lg font-bold">Data</p><p class=text-base>Weather forecasts, alerts, and observations</p></div><div class="flex flex-col my-4"><p class="text-lg font-bold">Account Required</p><p class=text-base>No</p></div><div class="flex flex-col my-4"><div class="flex flex-row gap-2"><p class="text-lg font-bold">License</p><p data-attr=tooltip id=tooltip class=h-6><img src=img/data-playground/tooltip.svg alt=tooltip width=24 height=24></p><div id=tooltip-text class="hidden bg-neutral-200 text-black text-sm rounded-lg p-2 absolute ml-20"><p class="text-xs font-semibold">Warning</p><p>Please review terms and conditions. Access to data sources can change.</p></div></div><p class=text-base>Free</p></div><div class="flex flex-col my-4"><p class="text-lg font-bold">API Key</p><p class=text-base>No</p></div><div class="flex flex-col my-4"><p class="text-lg font-bold">API Type</p><p class=text-base>REST, JSON-LD, GeoJSON, OXML</p></div><div class="flex flex-col my-4"><p class="text-lg font-bold">SDKS</p><p class=text-base>N/A</p></div><div class="flex flex-col my-4"><p class="text-lg font-bold">Limits</p><p class=text-base>The rate limit is not public information, but allows a generous amount for typical use. If the rate limit is exceeded, the request will return with an error, and may be retried after the limit clears (typically within 5 seconds). Proxies are more likely to reach the limit, whereas requests directly from clients are not likely.</p></div></div><div class=flex-1 id=code-snippets><div class=tab-container><div class="tab-nav flex flex-wrap text-sm font-medium text-center text-gray-500 border-b border-gray-200"><button onclick='switchTab("default","Go")' data-tab-item=Go data-tab-group=default class='tab-button active inline-block p-4 bg-gray-100 [&.active]:bg-[#192E5B] [&.active]:text-white rounded-t-lg'>Go</button><button onclick='switchTab("default","Python")' data-tab-item=Python data-tab-group=default class='tab-button inline-block p-4 bg-gray-100 [&.active]:bg-[#192E5B] [&.active]:text-white rounded-t-lg'>Python</button></div><div class="tab-content -mt-0"><button id=copy-code-button class="copy-code-button absolute text-white text-xs right-[2.5rem] sm:right-[3.5rem] bg-red-500 p-1 hover:text-red-700 [&.active]:bg-green-600 mt-[0.75rem] mr-[1.75rem] sm:mr-[0.75rem]">
-Copy</button><div data-tab-item=Go data-tab-group=default class='tab-item active'><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-go data-lang=go><span style=display:flex><span><span style=color:#f92672>package</span> <span style=color:#a6e22e>main</span>
+<span class="hidden sm:flex"><img src=img/data-playground/github.png alt="github icon" height=36 width=36></span></a></div></div><div class="w-full flex flex-col gap-4 sm:gap-8 sm:flex-row justify-between px-10"><div class=w-1/2><div class="flex flex-col my-4"><p class="text-xl font-bold mb-5">About This Data Source</p><p class=text-base>The National Oceanic and Atmospheric Administration's (NOAA's) National Weather Service offers critical real-time data. Get forecasts, alerts, observations, and other weather data.</p></div><div class="flex flex-col my-4"><p class="text-lg font-bold">Producer</p><p class=text-base><a class="cursor-pointer underline" href=https://www.weather.gov/documentation/services-web-api>NOAA</p></a></div><div class="flex flex-col my-4"><p class="text-lg font-bold">Data</p><p class=text-base>Weather forecasts, alerts, and observations</p></div><div class="flex flex-col my-4"><p class="text-lg font-bold">Account Required</p><p class=text-base>No</p></div><div class="flex flex-col my-4"><div class="flex flex-row gap-2"><p class="text-lg font-bold">License</p><p data-attr=tooltip id=tooltip class=h-6><img src=img/data-playground/tooltip.svg alt=tooltip width=24 height=24></p><div id=tooltip-text class="hidden bg-neutral-200 text-black text-sm rounded-lg p-2 absolute ml-20"><p class="text-xs font-semibold">Warning</p><p>Please review terms and conditions. Access to data sources can change.</p></div></div><p class=text-base>Free</p></div><div class="flex flex-col my-4"><p class="text-lg font-bold">API Key</p><p class=text-base>No</p></div><div class="flex flex-col my-4"><p class="text-lg font-bold">API Type</p><p class=text-base>REST, JSON-LD, GeoJSON, OXML</p></div><div class="flex flex-col my-4"><p class="text-lg font-bold">SDKS</p><p class=text-base>N/A</p></div><div class="flex flex-col my-4"><p class="text-lg font-bold">Limits</p><p class=text-base>The rate limit is not public information, but allows a generous amount for typical use. If the rate limit is exceeded, the request will return with an error, and may be retried after the limit clears (typically within 5 seconds). Proxies are more likely to reach the limit, whereas requests directly from clients are not likely.</p></div></div><div class=flex-1 id=code-snippets><div class=tab-container><div class="tab-nav flex flex-wrap text-sm font-medium text-center text-gray-500 border-b border-gray-200"><button onclick='switchTab("default","Python")' data-tab-item=Python data-tab-group=default class='tab-button active inline-block p-4 bg-gray-100 [&.active]:bg-[#192E5B] [&.active]:text-white rounded-t-lg'>Python</button><button onclick='switchTab("default","Go")' data-tab-item=Go data-tab-group=default class='tab-button inline-block p-4 bg-gray-100 [&.active]:bg-[#192E5B] [&.active]:text-white rounded-t-lg'>Go</button></div><div class="tab-content -mt-0"><button id=copy-code-button class="copy-code-button absolute text-white text-xs right-[2.5rem] sm:right-[3.5rem] bg-red-500 p-1 hover:text-red-700 [&.active]:bg-green-600 mt-[0.75rem] mr-[1.75rem] sm:mr-[0.75rem]">
+Copy</button><div data-tab-item=Python data-tab-group=default class='tab-item active'><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>import</span> json
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> asyncio
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> warnings
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> datetime <span style=color:#f92672>import</span> datetime
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> requests
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> pyensign.events <span style=color:#f92672>import</span> Event
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> pyensign.ensign <span style=color:#f92672>import</span> Ensign
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># TODO Python&gt;3.10 needs to ignore DeprecationWarning: There is no current event loop</span>
+</span></span><span style=display:flex><span>warnings<span style=color:#f92672>.</span>filterwarnings(<span style=color:#e6db74>&#34;ignore&#34;</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># TODO: replace with YOU - your email and app details :)</span>
+</span></span><span style=display:flex><span>ME <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;(https://rotational.io/data-playground/noaa/, weather@rotational.io)&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># TODO: these are memorable for ME. Replace with the locations of interest to YOU</span>
+</span></span><span style=display:flex><span>LOCS <span style=color:#f92672>=</span> {
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#34;north_pole&#34;</span>: {
+</span></span><span style=display:flex><span>        <span style=color:#e6db74>&#34;lat&#34;</span>: <span style=color:#e6db74>&#34;64.7511&#34;</span>,
+</span></span><span style=display:flex><span>        <span style=color:#e6db74>&#34;long&#34;</span>: <span style=color:#e6db74>&#34;-147.3494&#34;</span>
+</span></span><span style=display:flex><span>    },
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#34;cafe_du_monde&#34;</span>: {
+</span></span><span style=display:flex><span>        <span style=color:#e6db74>&#34;lat&#34;</span>: <span style=color:#e6db74>&#34;29.957684&#34;</span>,
+</span></span><span style=display:flex><span>        <span style=color:#e6db74>&#34;long&#34;</span>: <span style=color:#e6db74>&#34;-90.061892&#34;</span>
+</span></span><span style=display:flex><span>    },
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>WeatherPublisher</span>:
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#34;&#34;&#34;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    WeatherPublisher queries an API for weather updates and publishes events to Ensign.
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    &#34;&#34;&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>def</span> __init__(self, topic<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;noaa-reports-json&#34;</span>, interval<span style=color:#f92672>=</span><span style=color:#ae81ff>60</span>, locations<span style=color:#f92672>=</span>LOCS, user<span style=color:#f92672>=</span>ME):
+</span></span><span style=display:flex><span>        <span style=color:#e6db74>&#34;&#34;&#34;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>        Initialize a WeatherPublisher by specifying a topic, locations, and other user-
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>        defined parameters.
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>        Parameters
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>        ----------
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>        topic : string, default: &#34;noaa-reports-json&#34;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            The name of the topic you wish to publish to. If the topic doesn&#39;t yet
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            exist, Ensign will create it for you. Tips on topic naming conventions can
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            be found at https://ensign.rotational.dev/getting-started/topics/
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>        interval : int, default: 60
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            The number of seconds to wait between API calls so that you do not anger
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            the weather API gods
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>        locations : dict
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            A dictionary expressing the locations to retrieve weather details for.
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            Note that these should all be in the USA since NOAA is located in the US :)
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>        user : str
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            When querying the NOAA API, as a courtesy, they like you to identify your
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            app and contact info (aka User Agent details)
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>        &#34;&#34;&#34;</span>
+</span></span><span style=display:flex><span>        self<span style=color:#f92672>.</span>topic <span style=color:#f92672>=</span> topic
+</span></span><span style=display:flex><span>        self<span style=color:#f92672>.</span>interval <span style=color:#f92672>=</span> interval
+</span></span><span style=display:flex><span>        self<span style=color:#f92672>.</span>locations <span style=color:#f92672>=</span> locations
+</span></span><span style=display:flex><span>        self<span style=color:#f92672>.</span>url <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;https://api.weather.gov/points/&#34;</span>
+</span></span><span style=display:flex><span>        self<span style=color:#f92672>.</span>user <span style=color:#f92672>=</span> {<span style=color:#e6db74>&#34;User-Agent&#34;</span>: user}
+</span></span><span style=display:flex><span>        self<span style=color:#f92672>.</span>datatype <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;application/json&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#75715e># NOTE: If you need a client_id and client_secret, register for a free account</span>
+</span></span><span style=display:flex><span>        <span style=color:#75715e># at: https://rotational.app/register</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#75715e># Start a connection to the Ensign server. If you do not supply connection</span>
+</span></span><span style=display:flex><span>        <span style=color:#75715e># details, PyEnsign will read them from your environment variables.</span>
+</span></span><span style=display:flex><span>        self<span style=color:#f92672>.</span>ensign <span style=color:#f92672>=</span> Ensign()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#75715e># Alternatively you can supply `client_id` &amp; `client_secret` as string args, eg</span>
+</span></span><span style=display:flex><span>        <span style=color:#75715e># self.ensign = Ensign(client_id=&#34;your_client_id&#34;, client_secret=&#34;your_secret&#34;)</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>async</span> <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>print_ack</span>(self, ack):
+</span></span><span style=display:flex><span>        <span style=color:#e6db74>&#34;&#34;&#34;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>        Enable the Ensign server to notify the Publisher the event has been acknowledged
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>        This is optional for you, but can be very helpful for communication in
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>        asynchronous contexts!
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>        &#34;&#34;&#34;</span>
+</span></span><span style=display:flex><span>        ts <span style=color:#f92672>=</span> datetime<span style=color:#f92672>.</span>fromtimestamp(
+</span></span><span style=display:flex><span>            ack<span style=color:#f92672>.</span>committed<span style=color:#f92672>.</span>seconds <span style=color:#f92672>+</span> ack<span style=color:#f92672>.</span>committed<span style=color:#f92672>.</span>nanos <span style=color:#f92672>/</span> <span style=color:#ae81ff>1e9</span>)
+</span></span><span style=display:flex><span>        print(<span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;Event committed at </span><span style=color:#e6db74>{</span>ts<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>async</span> <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>print_nack</span>(self, nack):
+</span></span><span style=display:flex><span>        <span style=color:#e6db74>&#34;&#34;&#34;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>        Enable the Ensign server to notify the Publisher the event has NOT been
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>        acknowledged
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>        This is optional for you, but can be very helpful for communication in
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>        asynchronous contexts!
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>        &#34;&#34;&#34;</span>
+</span></span><span style=display:flex><span>        print(<span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;Event was not committed with error </span><span style=color:#e6db74>{</span>nack<span style=color:#f92672>.</span>code<span style=color:#e6db74>}</span><span style=color:#e6db74>: </span><span style=color:#e6db74>{</span>nack<span style=color:#f92672>.</span>error<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>compose_query</span>(self, location):
+</span></span><span style=display:flex><span>        <span style=color:#e6db74>&#34;&#34;&#34;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>        Combine the base URI with the lat/long query params
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>        Parameters
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>        ----------
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>        location : dict
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            A dictionary expressing a location to retrieve weather details for.
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            Note that it should all be in the USA since NOAA is located in the US :)
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            For example: {&#34;lat&#34;: &#34;64.7511&#34;, &#34;long&#34;: &#34;-147.3494&#34;}
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>        &#34;&#34;&#34;</span>
+</span></span><span style=display:flex><span>        lat <span style=color:#f92672>=</span> location<span style=color:#f92672>.</span>get(<span style=color:#e6db74>&#34;lat&#34;</span>, <span style=color:#66d9ef>None</span>)
+</span></span><span style=display:flex><span>        long <span style=color:#f92672>=</span> location<span style=color:#f92672>.</span>get(<span style=color:#e6db74>&#34;long&#34;</span>, <span style=color:#66d9ef>None</span>)
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> lat <span style=color:#f92672>is</span> <span style=color:#66d9ef>None</span> <span style=color:#f92672>or</span> long <span style=color:#f92672>is</span> <span style=color:#66d9ef>None</span>:
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>raise</span> <span style=color:#a6e22e>Exception</span>(<span style=color:#e6db74>&#34;unable to parse latitude/longitude from location&#34;</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> self<span style=color:#f92672>.</span>url <span style=color:#f92672>+</span> lat <span style=color:#f92672>+</span> <span style=color:#e6db74>&#34;,&#34;</span> <span style=color:#f92672>+</span> long
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>run</span>(self):
+</span></span><span style=display:flex><span>        <span style=color:#e6db74>&#34;&#34;&#34;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>        Run the publisher forever.
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>        &#34;&#34;&#34;</span>
+</span></span><span style=display:flex><span>        asyncio<span style=color:#f92672>.</span>get_event_loop()<span style=color:#f92672>.</span>run_until_complete(self<span style=color:#f92672>.</span>recv_and_publish())
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>async</span> <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>recv_and_publish</span>(self):
+</span></span><span style=display:flex><span>        <span style=color:#e6db74>&#34;&#34;&#34;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>        At some interval (`self.interval`), ping the api.weather.com to get
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>        weather reports for the `self.locations`.
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>        NOTE: this requires 2 calls to the NOAA API, per location:
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            - the first request provides a lat/long and retrieves forecast URL
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            - the second request provides the forecast URL and gets forecast details
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>        Publish report data to the `self.topic`
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>        &#34;&#34;&#34;</span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>await</span> self<span style=color:#f92672>.</span>ensign<span style=color:#f92672>.</span>ensure_topic_exists(self<span style=color:#f92672>.</span>topic)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>while</span> <span style=color:#66d9ef>True</span>:
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>for</span> location <span style=color:#f92672>in</span> self<span style=color:#f92672>.</span>locations<span style=color:#f92672>.</span>values():
+</span></span><span style=display:flex><span>                <span style=color:#75715e># Note that we&#39;re making a different API call for each location</span>
+</span></span><span style=display:flex><span>                <span style=color:#75715e># TODO: can these be bundled so that we can make fewer calls?</span>
+</span></span><span style=display:flex><span>                query <span style=color:#f92672>=</span> self<span style=color:#f92672>.</span>compose_query(location)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>                <span style=color:#75715e># If successful, the initial response returns a link you can use to</span>
+</span></span><span style=display:flex><span>                <span style=color:#75715e># retrieve the full hourly forecast</span>
+</span></span><span style=display:flex><span>                response <span style=color:#f92672>=</span> requests<span style=color:#f92672>.</span>get(query)<span style=color:#f92672>.</span>json()
+</span></span><span style=display:flex><span>                forecast_url <span style=color:#f92672>=</span> self<span style=color:#f92672>.</span>parse_forecast_link(response)
+</span></span><span style=display:flex><span>                forecast <span style=color:#f92672>=</span> requests<span style=color:#f92672>.</span>get(forecast_url)<span style=color:#f92672>.</span>json()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>                <span style=color:#75715e># After we retrieve and unpack the full hourly forecast, we can publish</span>
+</span></span><span style=display:flex><span>                <span style=color:#75715e># each period of the forecast as a new event</span>
+</span></span><span style=display:flex><span>                events <span style=color:#f92672>=</span> self<span style=color:#f92672>.</span>unpack_noaa_response(forecast)
+</span></span><span style=display:flex><span>                <span style=color:#66d9ef>for</span> event <span style=color:#f92672>in</span> events:
+</span></span><span style=display:flex><span>                    <span style=color:#66d9ef>await</span> self<span style=color:#f92672>.</span>ensign<span style=color:#f92672>.</span>publish(
+</span></span><span style=display:flex><span>                        self<span style=color:#f92672>.</span>topic,
+</span></span><span style=display:flex><span>                        event,
+</span></span><span style=display:flex><span>                        on_ack<span style=color:#f92672>=</span>self<span style=color:#f92672>.</span>print_ack,
+</span></span><span style=display:flex><span>                        on_nack<span style=color:#f92672>=</span>self<span style=color:#f92672>.</span>print_nack,
+</span></span><span style=display:flex><span>                    )
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>await</span> asyncio<span style=color:#f92672>.</span>sleep(self<span style=color:#f92672>.</span>interval)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>parse_forecast_link</span>(self, message):
+</span></span><span style=display:flex><span>        <span style=color:#e6db74>&#34;&#34;&#34;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>        Parse a preliminary forecast response from the NOAA API to get a forecast URL
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>        Parameters
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>        ----------
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>        message : dict
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            JSON formatted response from the NOAA API containing a forecast URL
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>        Returns
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>        -------
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>        forecast_link : string
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            Specific API-generated URL with the link to get the detailed forecast for
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            the requested location
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>        &#34;&#34;&#34;</span>
+</span></span><span style=display:flex><span>        properties <span style=color:#f92672>=</span> message<span style=color:#f92672>.</span>get(<span style=color:#e6db74>&#34;properties&#34;</span>, <span style=color:#66d9ef>None</span>)
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> properties <span style=color:#f92672>is</span> <span style=color:#66d9ef>None</span>:
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>raise</span> <span style=color:#a6e22e>Exception</span>(<span style=color:#e6db74>&#34;unexpected response from api call, no properties&#34;</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        forecast_link <span style=color:#f92672>=</span> properties<span style=color:#f92672>.</span>get(<span style=color:#e6db74>&#34;forecast&#34;</span>, <span style=color:#66d9ef>None</span>)
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> forecast_link <span style=color:#f92672>is</span> <span style=color:#66d9ef>None</span>:
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>raise</span> <span style=color:#a6e22e>Exception</span>(<span style=color:#e6db74>&#34;unexpected response from api call, no forecast&#34;</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> forecast_link
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>unpack_noaa_response</span>(self, message):
+</span></span><span style=display:flex><span>        <span style=color:#e6db74>&#34;&#34;&#34;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>        Convert a message from the NOAA API to potentially multiple Ensign events,
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>        and yield each.
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>        Parameters
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>        ----------
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>        message : dict
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            JSON formatted response from the NOAA API containing forecast details
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>        &#34;&#34;&#34;</span>
+</span></span><span style=display:flex><span>        properties <span style=color:#f92672>=</span> message<span style=color:#f92672>.</span>get(<span style=color:#e6db74>&#34;properties&#34;</span>, <span style=color:#66d9ef>None</span>)
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> properties <span style=color:#f92672>is</span> <span style=color:#66d9ef>None</span>:
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>raise</span> <span style=color:#a6e22e>Exception</span>(<span style=color:#e6db74>&#34;unexpected response from forecast request, no properties&#34;</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        periods <span style=color:#f92672>=</span> properties<span style=color:#f92672>.</span>get(<span style=color:#e6db74>&#34;periods&#34;</span>, <span style=color:#66d9ef>None</span>)
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> periods <span style=color:#f92672>is</span> <span style=color:#66d9ef>None</span>:
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>raise</span> <span style=color:#a6e22e>Exception</span>(<span style=color:#e6db74>&#34;unexpected response from forecast request, no periods&#34;</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>for</span> period <span style=color:#f92672>in</span> periods:
+</span></span><span style=display:flex><span>            <span style=color:#75715e># There&#39;s a lot available! For this example, we&#39;ll just parse out a few</span>
+</span></span><span style=display:flex><span>            <span style=color:#75715e># fields from the NOAA API response:</span>
+</span></span><span style=display:flex><span>            data <span style=color:#f92672>=</span> {
+</span></span><span style=display:flex><span>                <span style=color:#e6db74>&#34;name&#34;</span>: period<span style=color:#f92672>.</span>get(<span style=color:#e6db74>&#34;name&#34;</span>, <span style=color:#66d9ef>None</span>),
+</span></span><span style=display:flex><span>                <span style=color:#e6db74>&#34;summary&#34;</span>: period<span style=color:#f92672>.</span>get(<span style=color:#e6db74>&#34;shortForecast&#34;</span>, <span style=color:#66d9ef>None</span>),
+</span></span><span style=display:flex><span>                <span style=color:#e6db74>&#34;temperature&#34;</span>: period<span style=color:#f92672>.</span>get(<span style=color:#e6db74>&#34;temperature&#34;</span>, <span style=color:#66d9ef>None</span>),
+</span></span><span style=display:flex><span>                <span style=color:#e6db74>&#34;units&#34;</span>: period<span style=color:#f92672>.</span>get(<span style=color:#e6db74>&#34;temperatureUnit&#34;</span>, <span style=color:#66d9ef>None</span>),
+</span></span><span style=display:flex><span>                <span style=color:#e6db74>&#34;daytime&#34;</span>: period<span style=color:#f92672>.</span>get(<span style=color:#e6db74>&#34;isDaytime&#34;</span>, <span style=color:#66d9ef>None</span>),
+</span></span><span style=display:flex><span>                <span style=color:#e6db74>&#34;start&#34;</span>: period<span style=color:#f92672>.</span>get(<span style=color:#e6db74>&#34;startTime&#34;</span>, <span style=color:#66d9ef>None</span>),
+</span></span><span style=display:flex><span>                <span style=color:#e6db74>&#34;end&#34;</span>: period<span style=color:#f92672>.</span>get(<span style=color:#e6db74>&#34;endTime&#34;</span>, <span style=color:#66d9ef>None</span>),
+</span></span><span style=display:flex><span>            }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>yield</span> Event(json<span style=color:#f92672>.</span>dumps(data)<span style=color:#f92672>.</span>encode(<span style=color:#e6db74>&#34;utf-8&#34;</span>), mimetype<span style=color:#f92672>=</span>self<span style=color:#f92672>.</span>datatype)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>if</span> __name__ <span style=color:#f92672>==</span> <span style=color:#e6db74>&#34;__main__&#34;</span>:
+</span></span><span style=display:flex><span>    publisher <span style=color:#f92672>=</span> WeatherPublisher()
+</span></span><span style=display:flex><span>    publisher<span style=color:#f92672>.</span>run()
+</span></span></code></pre></div></div><div data-tab-item=Go data-tab-group=default class=tab-item><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-go data-lang=go><span style=display:flex><span><span style=color:#f92672>package</span> <span style=color:#a6e22e>main</span>
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span><span style=color:#f92672>import</span> (
 </span></span><span style=display:flex><span>	<span style=color:#e6db74>&#34;bytes&#34;</span>
@@ -175,8 +391,6 @@ Copy</button><div data-tab-item=Go data-tab-group=default class='tab-item active
 </span></span><span style=display:flex><span><span style=color:#66d9ef>func</span> (<span style=color:#a6e22e>s</span> <span style=color:#f92672>*</span><span style=color:#a6e22e>Weather</span>) <span style=color:#a6e22e>SetBaseURL</span>(<span style=color:#a6e22e>u</span> <span style=color:#f92672>*</span><span style=color:#a6e22e>url</span>.<span style=color:#a6e22e>URL</span>) {
 </span></span><span style=display:flex><span>	<span style=color:#a6e22e>s</span>.<span style=color:#a6e22e>baseURL</span> = <span style=color:#a6e22e>u</span>
 </span></span><span style=display:flex><span>}
-</span></span></code></pre></div></div><div data-tab-item=Python data-tab-group=default class=tab-item><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>example</span>():
-</span></span><span style=display:flex><span>    print(<span style=color:#e6db74>&#34;Code snippet coming soon!&#34;</span>)
 </span></span></code></pre></div></div></div></div></div></div><div class="w-full px-10 text-xl font-bold mt-5"><h2 class=text-xl>Data Products Showcase</h2><article class=prose></article></div><div class="mt-2 ml-10"><p>Coming soon!</p></div></main><div id=footerBackground><footer class="bg-hero-footer bg-cover"><div class="pt-[350px] font-extralight text-white"><div class="max-w-7xl mx-auto px-6"><div class="max-[650px]:text-center sm:grid grid-cols-4"><div><a href=/><img src=img/footer-otter.png alt class="mx-auto mt-28 sm:mt-0"></a></div><div class="my-10 sm:my-0"><h5 class=mb-3>PRODUCT</h5><ul><li class=pb-3><a href=https://rotational.app target=_blank class=font-bold>Ensign</a></li><li class=pb-3><a href=https://ensign.rotational.dev/getting-started/ target=_blank class=font-bold>Documentation</a></li><li class=pb-3><a href=https://ensign.rotational.dev/sdk/ target=_blank class=font-bold>SDKs</a></li></ul></div><div class="mb-10 sm:mb-0"><h5 class=mb-3>COMPANY</h5><ul><li class=pb-3><a href=/services class=font-bold>Services</a></li><li class=pb-3><a href=/blog class=font-bold>Blog</a></li><li class=pb-3><a href=/opensource class=font-bold>Open Source</a></li><li class=pb-3><a href=/about class=font-bold>About</a></li><li class=pb-3><a href=/contact class=font-bold>Contact Us</a></li></ul></div><div><h5 class=mb-3>INFORMATION</h5><ul><li class=pb-3><a href=/privacy class=font-bold>Privacy</a></li><li class=pb-3><a href=/terms class=font-bold>Terms</a></li></ul></div></div><div class="max-w-7xl sm:flex justify-between border-t py-6 mt-12 sm:mt-32"><div class="mx-auto xl:ml-5 sm:mt-0 mt-8"><div><ul class="mx-auto grid grid-cols-2 gap-x-20 md:gap-x-32 lg:grid-cols-4 xl:ml-20"><li class="pb-8 mt-1"><a href=https://twitter.com/rotationalio class="flex items-center p-2 hover:rounded-full hover:bg-icon-hover" target=_blank><img src=img/footer/twitter.svg alt class=scale-75>
 <span class=ml-4>Twitter</span></a></li><li class="pb-8 mt-1"><a href=https://github.com/rotationalio class="flex items-center p-2 hover:rounded-full hover:bg-icon-hover" target=_blank><img src=img/footer/github.svg alt class=scale-[.8]>
 <span class=ml-4>GitHub</span></a></li><li class=pb-8><a href=https://www.linkedin.com/company/rotational class="flex items-center p-2 hover:rounded-full hover:bg-icon-hover" target=_blank><img src=img/footer/linkedin.svg alt class=scale-75>
