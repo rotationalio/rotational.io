@@ -127,7 +127,7 @@ class WeatherPublisher:
         Parameters
         ----------
         location : dict
-            A dictionary expressing a locations to retrieve weather details for.
+            A dictionary expressing a location to retrieve weather details for.
             Note that it should all be in the USA since NOAA is located in the US :)
             For example: {"lat": "64.7511", "long": "-147.3494"}
         """
