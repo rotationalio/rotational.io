@@ -41,7 +41,7 @@ function handleSearchQuery(e) {
     searchResults.innerHTML = '';
     header.style.display = 'none';
     searchSuggestions.innerHTML = '';
-    searchSuggestionList.style.display = 'none';
+    return;
   }
 
   const results = searchSite(query);
@@ -57,7 +57,6 @@ function searchSite(query) {
   query = getLunarSearchQuery(query);
   searchSuggestions(query);
   let results = searchIndex.search(query);
-  
   return results ? results : [];
 }
 
@@ -135,27 +134,25 @@ function searchSuggestions(query) {
       if(description.includes(queryLower)) {
         const words = description.split(' ');
         // Remove any duplicate words.
-        const uniqueWords = [...new Set(words)]
-        const wordList = []
-          // Remove stop words from the list that will be displayed to the user.
-          const stopWords = ['the', 'and', 'of', 'for', 'in', 'their', 'with', 'to', 'start', 'this', 'is', 'be', 'can', 'or', 'about', 'on', 'such', 'as', 'an', 'by', 'it', 'that', 'from', 'at', 'are', 'its', 'they', 'which', 'have', 'has', 'been', 'but', 'also', 'not', 'these', 'will', 'you', 'your', 'we', 'our', 'us', 'if', 'when', 'where', 'who', 'what', 'why', 'how', 'into', 'use', 'used', 'used.', 'used,', 'used:', 'used;', 'used!', 'used?', 'used/', 'used\\', 'used(', 'used)', 'used{', 'used}', 'used[', 'used]', 'used<', 'used>', 'used|', 'used=', 'used+', 'used-', 'used_', 'used*', 'used&', 'used^', 'used%', 'used$', 'used#', 'used@', 'used~', 'used`', 'used\'', 'used\"', 'used;', 'used:', 'used?', 'used!', 'used.', 'used,', 'used '];
-          wordList.map((word) => {
-            if(!stopWords.includes(word)) {
-              wordList.push(word);
-            }
-          });
-  
+        const uniqueWords = [...new Set(words)];
+        const wordList = [];
         for (const word of uniqueWords) {
           if(word.includes(queryLower)) {
             wordList.push(word);
           }
         }
+
+        // Remove words we don't want to display to the user.
+        const stopWords = ['their', 'with', 'start', 'this', 'about', 'such', 'that', 'from', 'they', 'which', 'have', 'been', 'also', 'these', 'will', 'your', 'when', 'where', 'what', 'into', 'use', 'used', 'and'];
+        const filteredWordList = wordList.filter((word) => word.length > 3 && !stopWords.includes(word));
+
         // Display the list of words to the user.
         searchSuggestions.innerHTML = '';
-        wordList.forEach((word) => {
+        filteredWordList.forEach((word) => {
           searchSuggestions.insertAdjacentHTML('beforeend', `<li class="search-suggestion-item">${word}</li>`);
         }
         );
+        
         // If the user clicks on a word, replace the query with the word the user has selected.
         const searchSuggestionItems = document.querySelectorAll('.search-suggestion-item');
         searchSuggestionItems.forEach((item) => {

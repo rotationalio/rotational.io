@@ -1793,6 +1793,11 @@ video {
   border-color: rgb(229 231 235 / var(--tw-border-opacity));
 }
 
+.border-b-black {
+  --tw-border-opacity: 1;
+  border-bottom-color: rgb(0 0 0 / var(--tw-border-opacity));
+}
+
 .bg-\[\#ECF6FF\] {
   --tw-bg-opacity: 1;
   background-color: rgb(236 246 255 / var(--tw-bg-opacity));
@@ -2490,12 +2495,13 @@ pre {
 }
 
 .search-result-item:hover, .search-suggestion-item:hover {
-  background-color: #ecf6ff;
+  background-color: #B3B3B3;
 }
 
 .search-suggestion-item {
-  background-color: white;
-  padding-left: 0.5rem;
+  width: 20rem;
+  background-color:#D9D9D9;
+  padding: 0.5rem;
 }
 
 /* Style the data showcase table. */
