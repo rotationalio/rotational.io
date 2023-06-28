@@ -232,7 +232,7 @@ function switchTab(groupId, name) {
   );
 }
 
-// getSelectedLicense gets the value of a data source license type from the select dropdown menu
+/* // getSelectedLicense gets the value of a data source license type from the select dropdown menu
 // and displays the div for the selected license type and hides the others.
 function getSelectedLicense() {
   // Get value of the license type selected from the dropdown menu
@@ -288,4 +288,69 @@ function getSelectedLicense() {
         break;
     }
   });
-}
+} */
+
+const licenseType = document.getElementById('source-license');
+  // Get the div elements for each license type.
+  all = document.getElementById('all-license');
+  free = document.getElementById('free-license');
+  nonCommercial = document.getElementById('non-commercial-license');
+  commercial = document.getElementById('commercial-license');
+  filteredPlayground = document.getElementById('filtered-playground');
+
+licenseType.addEventListener('change', (e) => {
+  let licenseTypeValue = e.target.value;
+  console.log('licenseTypeValue', licenseTypeValue);
+
+  // Add "+" before non-commercial to inform lunr that it is a required term
+  // to obtain an exact match.
+  if (licenseTypeValue === 'Free for non-commercial use') {
+    licenseTypeValue = 'Free for +non-commercial use';
+  }
+
+  let results = searchIndex.search(licenseTypeValue);
+  console.log('results', results);
+
+  if (results.length === 0 && licenseTypeValue !== 'All') {
+
+    // Remove "+" before non-commercial to display text as it appears in the dropdown menu.
+    if (licenseTypeValue === 'Free for +non-commercial use') {
+      licenseTypeValue = 'Free for non-commercial use';
+    }
+
+    text = document.getElementById('test');
+    text.innerText = `There are no ${licenseTypeValue} data sources available.`
+    nonCommercial.style.display = 'block';
+    all.style.display = 'none';
+    filteredPlayground.style.display = 'none';
+  }
+
+  // Lunr returns 0 results for 'All' so we need to handle that case separately.
+  if (results.length === 0 && licenseTypeValue === 'All') {
+    all.style.display = 'grid';
+    nonCommercial.style.display = 'none';
+    filteredPlayground.style.display = 'none';
+  }
+
+  // Display results for the selected license type and hide the others.
+  if (results.length > 0) {
+    results.forEach((result) => {
+      pagesIndex.forEach((page) => {
+        data = splitContent(page.content);
+        if(result.ref === page.uri) {
+          document.getElementById('filtered-playground').style.display = 'grid';
+          imgSrc = data.image.replace('imgdata-playground', '').trim();
+          console.log('imgSrc', imgSrc);
+          document.getElementById('card-image').src = `img/data-playground/${imgSrc}`;
+          document.getElementById('card-subtitle').innerText = data.subtitle;
+          document.getElementById('producer-name').innerText = data.producer_name
+          document.getElementById('license').innerText = data.license;
+          document.getElementById('summary').innerText = data.summary;
+          document.getElementById('link').href = `/data-playground/${page.uri}`
+          all.style.display = 'none';
+          nonCommercial.style.display = 'none';
+        }
+      });
+    });
+  }
+});
