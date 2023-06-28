@@ -151,9 +151,13 @@ pre {
   font-weight: bold;
 }
 
-
-.search-result-item:hover {
+.search-result-item:hover, .search-suggestion-item:hover {
   background-color: #ecf6ff;
+}
+
+.search-suggestion-item {
+  background-color: white;
+  padding-left: 0.5rem;
 }
 
 /* Style the data showcase table. */
