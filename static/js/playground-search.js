@@ -60,7 +60,7 @@ function searchSite(query) {
   return results ? results : [];
 }
 
-// This gets the correct search term. Need to display the results after user clicks the search button.
+// Get the search term when the user clicks the search button.
 searchButton = document.getElementById('search-submit');
 searchButton.addEventListener('click', (e) => {
   e.preventDefault();
@@ -119,10 +119,7 @@ function splitContent(content) {
 }
 
 
-// Get the search term provided by a user on input. Check the description and title of each data source
-// and return a list of words that match the pattern of the query. If the user has typed a word
-// that is not in the description or title, do not return a list of words. If the user selects a word
-// from the list, the search term will be replaced with the word the user has selected.
+// Provide a list of search term suggestions from the search index as the users inputs a search query.
 function searchSuggestions(query) {
     const searchInput = document.getElementById('playground-search-term');
     const searchSuggestions = document.getElementById('search-suggestions');
