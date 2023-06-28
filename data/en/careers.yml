@@ -4,14 +4,6 @@ careers:
   title: Rotational Careers
   subtitle: We value diversity of experience, empathy, and impact. We hire for “add”, not “fit”.
   careers_item:
-    - name: Senior Distributed Systems Engineer
-      description: We're looking for senior software engineers who are excited about distributed systems and want to build the next-generation of cloud native solutions (full-time, fully remote).
-      link: "/pdf/jobs/senior_distributed_systems_engineer.pdf"
-
-    - name: Distributed Systems Engineer
-      description: Join us to help build next generation globally distributed systems and work in a curiosity-driven environment that prioritizes respect and excellence (full-time, fully remote).
-      link: "/pdf/jobs/distributed_systems_engineer.pdf"
-
     - name: Vice President of Sales
       description:  Ready to take the helm of a product sales team? We see you! Help us identify leads and introduce them to all we have to offer, convert users into customers, and build lasting and meaningful relationships (full time, fully remote).
       link: "/pdf/jobs/vp_of_sales.pdf"
