@@ -290,16 +290,17 @@ function getSelectedLicense() {
   });
 } */
 
-const licenseType = document.getElementById('source-license');
+function filterByLicense() {
+  const licenseType = document.getElementById('source-license');
+  let licenseTypeValue = licenseType.value;
+
   // Get the div elements for each license type.
   all = document.getElementById('all-license');
-  free = document.getElementById('free-license');
   nonCommercial = document.getElementById('non-commercial-license');
-  commercial = document.getElementById('commercial-license');
   filteredPlayground = document.getElementById('filtered-playground');
 
 licenseType.addEventListener('change', (e) => {
-  let licenseTypeValue = e.target.value;
+  licenseTypeValue = e.target.value;
   console.log('licenseTypeValue', licenseTypeValue);
 
   // Add "+" before non-commercial to inform lunr that it is a required term
@@ -309,7 +310,6 @@ licenseType.addEventListener('change', (e) => {
   }
 
   let results = searchIndex.search(licenseTypeValue);
-  console.log('results', results);
 
   if (results.length === 0 && licenseTypeValue !== 'All') {
 
@@ -329,28 +329,70 @@ licenseType.addEventListener('change', (e) => {
   if (results.length === 0 && licenseTypeValue === 'All') {
     all.style.display = 'grid';
     nonCommercial.style.display = 'none';
-    filteredPlayground.style.display = 'none';
+    filteredPlayground.style.innerHTML = '';
   }
 
   // Display results for the selected license type and hide the others.
   if (results.length > 0) {
     results.forEach((result) => {
-      pagesIndex.forEach((page) => {
+      pagesIndex.map((page) => {
         data = splitContent(page.content);
         if(result.ref === page.uri) {
-          document.getElementById('filtered-playground').style.display = 'grid';
+          sourceCard = document.getElementById('source-card-test');
           imgSrc = data.image.replace('imgdata-playground', '').trim();
-          console.log('imgSrc', imgSrc);
-          document.getElementById('card-image').src = `img/data-playground/${imgSrc}`;
-          document.getElementById('card-subtitle').innerText = data.subtitle;
-          document.getElementById('producer-name').innerText = data.producer_name
-          document.getElementById('license').innerText = data.license;
-          document.getElementById('summary').innerText = data.summary;
-          document.getElementById('link').href = `/data-playground/${page.uri}`
-          all.style.display = 'none';
-          nonCommercial.style.display = 'none';
+          lowerCaseLicenseTypeValue = licenseTypeValue.toLowerCase();
+          
+          sourceCard.insertAdjacentHTML('beforeend', `
+          <li class="source-card-${lowerCaseLicenseTypeValue}>
+          <div my-6 border border-solid border-[#000000] rounded-[9px] bg-[#ECF6FF]">
+          <img src="img/data-playground/${imgSrc}" alt="" class="m-0 rounded-t-lg h-60 w-full" />
+          <div class="py-4 bg-[#E66809] text-xl text-white text-center">${data.subtitle}</div>
+          <div class="mt-6 ml-4">
+              <div>
+              <span class="font-bold">Producer:</span> 
+              <span class="source-producer-name">${data.producer_name}</span> 
+              </div>
+              <div>
+              <span class="font-bold">License:</span> 
+              <span class="source-license">${data.license}</span>
+              </div>
+              <p class="mt-4 w-11/12">${data.summary}</p>
+          </div>
+          <div class="pb-6 mt-8">
+              <button class="bg-[#192E5B] block mx-auto w-1/2 rounded-xl py-4 hover:bg-[#1D65A6]">
+                  <a id="link" href="/data-playground/${page.uri}" class="text-white no-underline block">
+                    Learn More
+                  </a>
+              </button>
+          </div>
+          </div>
+          </li>
+          `);
+
+
+          freeCard = document.getElementsByClassName('source-card-free');
+          nonCommercialCard = document.getElementsByClassName('source-card-non-commercial');
+          commercialCard = document.getElementsByClassName('source-card-commercial');
+
+          if (licenseTypeValue === 'Commercial') {
+            commercialCard.style.display = 'grid';
+            nonCommercial.style.display = 'none';
+            // Loop through all cards with class name source-card-free and hide them.
+            for (let i = 0; i < free.length; i++) {
+              freeCard[i].remove();
+            }
+          }
+
+          if (licenseTypeValue === 'Free') {
+            // Loop through all cards with class name source-card-free and hide them.
+            for (let i = 0; i < commercial.length; i++) {
+              commercialCard[i].style.display = 'none';
+            }
+          }
+
         }
       });
     });
   }
 });
+}
