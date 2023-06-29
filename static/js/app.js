@@ -232,7 +232,7 @@ function switchTab(groupId, name) {
   );
 }
 
-/* // getSelectedLicense gets the value of a data source license type from the select dropdown menu
+// getSelectedLicense gets the value of a data source license type from the select dropdown menu
 // and displays the div for the selected license type and hides the others.
 function getSelectedLicense() {
   // Get value of the license type selected from the dropdown menu
@@ -244,10 +244,37 @@ function getSelectedLicense() {
   free = document.getElementById('free-license');
   nonCommercial = document.getElementById('non-commercial-license');
   commercial = document.getElementById('commercial-license');
+  noLicenseResults = document.getElementById('no-license-results');
 
   // Add on change event listener to the license type dropdown.
   licenseType.addEventListener('change', (e) => {
     licenseTypeValue = e.target.value;
+    
+  // Add "+" before non-commercial to make the term required when searching lunr.
+  if (licenseTypeValue === 'Free for non-commercial use') {
+    licenseTypeValue = 'Free for +non-commercial use';
+  }
+
+  let results = searchIndex.search(licenseTypeValue);
+
+  if (results.length === 0 && licenseTypeValue !== 'All') {
+    
+    noLicenseResults.style.display = 'block';
+    all.style.display = 'none';
+    free.style.display = 'none';
+    commercial.style.display = 'none';
+    nonCommercial.style.display = 'none';
+  }
+
+  // 'All' is not listed as license type in the data source pages so lunr
+  // 0 results when it is selected by users.
+  if (results.length === 0 && licenseTypeValue === 'All') {
+    all.style.display = 'grid';
+    free.style.display = 'none';
+    nonCommercial.style.display = 'none';
+    commercial.style.display = 'none';
+    noLicenseResults.style.display = 'none';
+  }
 
     // Display the div for the selected license type and hide the others.
     switch (licenseTypeValue) {
@@ -257,6 +284,7 @@ function getSelectedLicense() {
           all.style.display = 'none';
           nonCommercial.style.display = 'none';
           commercial.style.display = 'none';
+          noLicenseResults.style.display = 'none';
         }
         break;
 
@@ -266,6 +294,7 @@ function getSelectedLicense() {
           free.style.display = 'none';
           all.style.display = 'none';
           commercial.style.display = 'none';
+          noLicenseResults.style.display = 'none';
         }
         break;
 
@@ -275,124 +304,9 @@ function getSelectedLicense() {
           all.style.display = 'none';
           free.style.display = 'none';
           nonCommercial.style.display = 'none';
-        }
-        break;
-
-      default:
-        {
-          all.style.display = 'grid';
-          free.style.display = 'none';
-          nonCommercial.style.display = 'none';
-          commercial.style.display = 'none';
+          noLicenseResults.style.display = 'none';
         }
         break;
     }
   });
-} */
-
-function filterByLicense() {
-  const licenseType = document.getElementById('source-license');
-  let licenseTypeValue = licenseType.value;
-
-  // Get the div elements for each license type.
-  all = document.getElementById('all-license');
-  nonCommercial = document.getElementById('non-commercial-license');
-  filteredPlayground = document.getElementById('filtered-playground');
-
-licenseType.addEventListener('change', (e) => {
-  licenseTypeValue = e.target.value;
-  console.log('licenseTypeValue', licenseTypeValue);
-
-  // Add "+" before non-commercial to inform lunr that it is a required term
-  // to obtain an exact match.
-  if (licenseTypeValue === 'Free for non-commercial use') {
-    licenseTypeValue = 'Free for +non-commercial use';
-  }
-
-  let results = searchIndex.search(licenseTypeValue);
-
-  if (results.length === 0 && licenseTypeValue !== 'All') {
-
-    // Remove "+" before non-commercial to display text as it appears in the dropdown menu.
-    if (licenseTypeValue === 'Free for +non-commercial use') {
-      licenseTypeValue = 'Free for non-commercial use';
-    }
-
-    text = document.getElementById('test');
-    text.innerText = `There are no ${licenseTypeValue} data sources available.`
-    nonCommercial.style.display = 'block';
-    all.style.display = 'none';
-    filteredPlayground.style.display = 'none';
-  }
-
-  // Lunr returns 0 results for 'All' so we need to handle that case separately.
-  if (results.length === 0 && licenseTypeValue === 'All') {
-    all.style.display = 'grid';
-    nonCommercial.style.display = 'none';
-    filteredPlayground.style.innerHTML = '';
-  }
-
-  // Display results for the selected license type and hide the others.
-  if (results.length > 0) {
-    results.forEach((result) => {
-      pagesIndex.map((page) => {
-        data = splitContent(page.content);
-        if(result.ref === page.uri) {
-          sourceCard = document.getElementById('source-card-test');
-          imgSrc = data.image.replace('imgdata-playground', '').trim();
-          lowerCaseLicenseTypeValue = licenseTypeValue.toLowerCase();
-          
-          sourceCard.insertAdjacentHTML('beforeend', `
-          <li class="source-card-${lowerCaseLicenseTypeValue}>
-          <div my-6 border border-solid border-[#000000] rounded-[9px] bg-[#ECF6FF]">
-          <img src="img/data-playground/${imgSrc}" alt="" class="m-0 rounded-t-lg h-60 w-full" />
-          <div class="py-4 bg-[#E66809] text-xl text-white text-center">${data.subtitle}</div>
-          <div class="mt-6 ml-4">
-              <div>
-              <span class="font-bold">Producer:</span> 
-              <span class="source-producer-name">${data.producer_name}</span> 
-              </div>
-              <div>
-              <span class="font-bold">License:</span> 
-              <span class="source-license">${data.license}</span>
-              </div>
-              <p class="mt-4 w-11/12">${data.summary}</p>
-          </div>
-          <div class="pb-6 mt-8">
-              <button class="bg-[#192E5B] block mx-auto w-1/2 rounded-xl py-4 hover:bg-[#1D65A6]">
-                  <a id="link" href="/data-playground/${page.uri}" class="text-white no-underline block">
-                    Learn More
-                  </a>
-              </button>
-          </div>
-          </div>
-          </li>
-          `);
-
-
-          freeCard = document.getElementsByClassName('source-card-free');
-          nonCommercialCard = document.getElementsByClassName('source-card-non-commercial');
-          commercialCard = document.getElementsByClassName('source-card-commercial');
-
-          if (licenseTypeValue === 'Commercial') {
-            commercialCard.style.display = 'grid';
-            nonCommercial.style.display = 'none';
-            // Loop through all cards with class name source-card-free and hide them.
-            for (let i = 0; i < free.length; i++) {
-              freeCard[i].remove();
-            }
-          }
-
-          if (licenseTypeValue === 'Free') {
-            // Loop through all cards with class name source-card-free and hide them.
-            for (let i = 0; i < commercial.length; i++) {
-              commercialCard[i].style.display = 'none';
-            }
-          }
-
-        }
-      });
-    });
-  }
-});
 }

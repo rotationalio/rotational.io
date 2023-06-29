@@ -34,10 +34,6 @@
     <div id="all-license" class="mt-4">
         {{ partial "playground/all.html" . }}
     </div>
-        
-    <div id="filtered-playground" class="hidden mt-4">
-        {{ partial "playground/filtered-playground.html" . }}
-    </div>
 
     <div id="free-license" class="hidden mt-4">
         {{ partial "playground/free.html" . }}
@@ -48,5 +44,10 @@
     <div id="commercial-license" class="hidden mt-4">
         {{ partial "playground/commercial.html" . }}
     </div>
+
+    <div id="no-license-results" class="hidden mt-4">
+        <p class="text-center mt-10">No results found for the selected license type.</p>
+    </div>
+
 </section>
 {{ end }}
