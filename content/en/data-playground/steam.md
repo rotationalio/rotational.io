@@ -34,7 +34,7 @@ def example(name):
 
 {{% data-playground-code-tab tabIndex="go" name="Go"  %}}
 
-```go {linenos=table,hl_lines=[1,"3-4"]}
+```go 
 package main
 
 import (
