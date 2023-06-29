@@ -1,13 +1,13 @@
-/* global clipboard */
-/* eslint-disable no-console */
-
 function addCopyButtons(clipboard) {
   document.querySelectorAll('pre > code').forEach(function (codeBlock) {
-    // add the copy button to the code block
-    console.log('codeBlock', codeBlock);
+    var button = document.createElement('button');
+    button.className =
+      'copy-code-button absolute text-white text-xs right-[3.5rem] bg-red-500 p-1 hover:text-red-700 [&.active]:bg-green-600 mt-[0.75rem] mr-[0.75rem]';
+    button.type = 'button';
+    button.innerText = 'Copy';
 
     button.addEventListener('click', function () {
-      clipboard.writeText(codeBlock.textContent).then(
+      clipboard.writeText(codeBlock.innerText).then(
         function () {
           button.blur();
 
@@ -44,7 +44,6 @@ if (navigator && navigator.clipboard) {
     'https://cdnjs.cloudflare.com/ajax/libs/clipboard-polyfill/2.7.0/clipboard-polyfill.promise.js';
   script.integrity = 'sha256-waClS2re9NUbXRsryKoof+F9qc1gjjIhc2eT7ZbIv94=';
   script.crossOrigin = 'anonymous';
-
   script.onload = function () {
     addCopyButtons(clipboard);
   };
