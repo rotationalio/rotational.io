@@ -21,11 +21,8 @@ initSearchIndex();
 const searchForm = document.getElementById('playground-search-form');
 searchForm.addEventListener('input', (e) => {
   handleSearchQuery(e);
-});
-
-// Prevent the form from submitting when the user presses the enter key or clicks the submit button.
-searchForm.addEventListener('submit', (e) => {
-  e.preventDefault();
+  searchResults = document.getElementById('search-results');
+  searchResults.innerHTML = '';
 });
 
 // handleSearchQuery gets the value of the search query input by the user and calls the searchSite function.
@@ -36,37 +33,41 @@ function handleSearchQuery(e) {
   const noResults = document.getElementById('no-results');
   const searchResults = document.getElementById('search-results');
   const header = document.getElementById('search-results-header');
+  const searchSuggestions = document.getElementById('search-suggestions');
+  const searchSuggestionList = document.getElementById('search-suggestion-item');
 
   if(!query) {
     noResults.innerText = ''
-    searchResults.style.display = 'none'
+    searchResults.innerHTML = '';
     header.style.display = 'none';
+    searchSuggestions.innerHTML = '';
     return;
   }
-
 
   const results = searchSite(query);
   
   if(!results.length) {
-    noResults.innerText = 'No search results found.'
     noResults.style.display = 'block'
-    searchResults.style.display = 'none'
-    searchResults.innerHTML = ''
     header.style.display = 'none';
-  }else {
-    noResults.style.display = 'none'
-    searchResults.style.display = 'block'
-    header.style.display = 'block';
   }
 }
 
 // searchSite takes the search query and returns the results.
 function searchSite(query) {
   query = getLunarSearchQuery(query);
+  searchSuggestions(query);
   let results = searchIndex.search(query);
-  displaySearchResult(results);
   return results ? results : [];
 }
+
+// Get the search term when the user clicks the search button.
+searchButton = document.getElementById('search-submit');
+searchButton.addEventListener('click', (e) => {
+  e.preventDefault();
+  const term = document.getElementById('playground-search-term').value.trim();
+  let results = searchIndex.search(term);
+  displaySearchResult(results);
+});
 
 // getLunarSearchQuery takes the search query and returns a query that can be used by lunr.
 function getLunarSearchQuery(query) {
@@ -98,14 +99,6 @@ function displaySearchResult(results) {
             </a>
           </li>`
         );
-        // Remove the search results when the user clicks outside of the search results.
-        document.addEventListener('click', (e) => {
-          if(e.target.id !== 'search-results') {
-            searchResults.innerHTML = '';
-            document.getElementById('search-results-header').style.display = 'none';
-            document.getElementById('playground-search-term').value = '';
-          }
-        });
       }
     });
   }
@@ -115,8 +108,8 @@ function displaySearchResult(results) {
 // Split the content by the newline character and store the content in an object 
 // to make displaying the search results easier.
 function splitContent(content) {
-  // Remove forward slashes and double quotes from the content.
-  const data = content.replace(/\/|"/g, '').split('\n');
+  // Remove forward slashes, double quotes, commas and periods from the content.
+  const data = content.replace(/\/|\"|\,|\./g, '').split('\n');
   const dataObj = {};
   for (const item of data) {
     const fieldSplit = item.split(':');
@@ -124,3 +117,48 @@ function splitContent(content) {
   }
   return dataObj;
 }
+
+
+// Provide a list of search term suggestions from the search index as the users inputs a search query.
+function searchSuggestions(query) {
+    const searchInput = document.getElementById('playground-search-term');
+    const searchSuggestions = document.getElementById('search-suggestions');
+    pagesIndex.forEach((page) => {
+      const data = splitContent(page.content);
+      const description = data.description.toLowerCase();
+      const queryLower = query.toLowerCase();
+
+      if(description.includes(queryLower)) {
+        const words = description.split(' ');
+        // Remove any duplicate words.
+        const uniqueWords = [...new Set(words)];
+        const wordList = [];
+        for (const word of uniqueWords) {
+          if(word.includes(queryLower)) {
+            wordList.push(word);
+          }
+        }
+
+        // Remove words we don't want to display to the user.
+        const stopWords = ['their', 'with', 'start', 'this', 'about', 'such', 'that', 'from', 'they', 'which', 'have', 'been', 'also', 'these', 'will', 'your', 'when', 'where', 'what', 'into', 'use', 'used', 'and'];
+        const filteredWordList = wordList.filter((word) => word.length > 3 && !stopWords.includes(word));
+
+        // Display the list of words to the user.
+        searchSuggestions.innerHTML = '';
+        filteredWordList.forEach((word) => {
+          searchSuggestions.insertAdjacentHTML('beforeend', `<li class="search-suggestion-item">${word}</li>`);
+        }
+        );
+        
+        // If the user clicks on a word, replace the query with the word the user has selected.
+        const searchSuggestionItems = document.querySelectorAll('.search-suggestion-item');
+        searchSuggestionItems.forEach((item) => {
+          item.addEventListener('click', (e) => {
+            searchInput.value = e.target.innerText;
+            searchSuggestions.innerHTML = '';
+          });
+        }
+        );
+      }
+    });
+  }
