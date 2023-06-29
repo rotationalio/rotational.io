@@ -244,10 +244,37 @@ function getSelectedLicense() {
   free = document.getElementById('free-license');
   nonCommercial = document.getElementById('non-commercial-license');
   commercial = document.getElementById('commercial-license');
+  noLicenseResults = document.getElementById('no-license-results');
 
   // Add on change event listener to the license type dropdown.
   licenseType.addEventListener('change', (e) => {
     licenseTypeValue = e.target.value;
+    
+  // Add "+" before non-commercial to make the term required when searching lunr.
+  if (licenseTypeValue === 'Free for non-commercial use') {
+    licenseTypeValue = 'Free for +non-commercial use';
+  }
+
+  let results = searchIndex.search(licenseTypeValue);
+
+  if (results.length === 0 && licenseTypeValue !== 'All') {
+    
+    noLicenseResults.style.display = 'block';
+    all.style.display = 'none';
+    free.style.display = 'none';
+    commercial.style.display = 'none';
+    nonCommercial.style.display = 'none';
+  }
+
+  // 'All' is not listed as license type in the data source pages so lunr
+  // 0 results when it is selected by users.
+  if (results.length === 0 && licenseTypeValue === 'All') {
+    all.style.display = 'grid';
+    free.style.display = 'none';
+    nonCommercial.style.display = 'none';
+    commercial.style.display = 'none';
+    noLicenseResults.style.display = 'none';
+  }
 
     // Display the div for the selected license type and hide the others.
     switch (licenseTypeValue) {
@@ -257,6 +284,7 @@ function getSelectedLicense() {
           all.style.display = 'none';
           nonCommercial.style.display = 'none';
           commercial.style.display = 'none';
+          noLicenseResults.style.display = 'none';
         }
         break;
 
@@ -266,6 +294,7 @@ function getSelectedLicense() {
           free.style.display = 'none';
           all.style.display = 'none';
           commercial.style.display = 'none';
+          noLicenseResults.style.display = 'none';
         }
         break;
 
@@ -275,15 +304,7 @@ function getSelectedLicense() {
           all.style.display = 'none';
           free.style.display = 'none';
           nonCommercial.style.display = 'none';
-        }
-        break;
-
-      default:
-        {
-          all.style.display = 'grid';
-          free.style.display = 'none';
-          nonCommercial.style.display = 'none';
-          commercial.style.display = 'none';
+          noLicenseResults.style.display = 'none';
         }
         break;
     }
