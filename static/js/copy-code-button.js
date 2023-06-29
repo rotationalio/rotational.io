@@ -2,8 +2,6 @@
 /* eslint-disable no-console */
 
 function addCopyButtons(clipboard) {
-  const button = getElementById('copy-code-button');
-
   document.querySelectorAll('pre > code').forEach(function (codeBlock) {
     // add the copy button to the code block
     console.log('codeBlock', codeBlock);
