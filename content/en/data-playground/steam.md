@@ -27,7 +27,7 @@ weight: 3
 
 {{% data-playground-code-tab tabIndex="go" name="Go"  %}}
 
-```go
+```golang
 package main
 
 import (

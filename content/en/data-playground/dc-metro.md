@@ -33,7 +33,7 @@ def example():
 
 {{% data-playground-code-tab tabIndex="go" name="Go"  %}}
 
-```go
+```golang
 package main
 
 import "fmt"
