@@ -5,7 +5,8 @@
     "dev": "run-p dev:*",
     "build:css": "NODE_ENV=production npx tailwindcss -i input.css -o static/output.css -m",
     "build:hugo": "hugo",
-    "build": "run-s build:*"
+    "build": "run-s build:*",
+    "index": "hugo-lunr -i \"content/en/data-playground/*.md\" -o static/index.json"
   },
   "devDependencies": {
     "npm-run-all": "^4.1.5",
@@ -14,6 +15,7 @@
     "tailwindcss": "^3.1.8"
   },
   "dependencies": {
-    "@tailwindcss/typography": "^0.5.7"
+    "@tailwindcss/typography": "^0.5.7",
+    "hugo-lunr": "^0.0.4"
   }
 }

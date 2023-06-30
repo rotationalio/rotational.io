@@ -1,61 +1,82 @@
+
 <meta charset="UTF-8">
+<title>{{ block "title" . }}{{ .Site.Title }}{{ with .Params.Title }} | {{ . }}{{ end }}{{ end }}</title>
+<base href="{{ .Site.BaseURL }}" target="_self">
 
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="twitter:card" content="summary">
-{{ with .Params.Image }}
-<meta property="og:image" content="{{ . | absURL }}" />
-<meta name="twitter:image" content="{{ . | absURL }}" />
-{{ end }}
-{{ with .Params.Title }}
- <meta property="og:title" content="{{ . }}" />
- <meta name="twitter:title" content="{{ . }}" />
-{{ end }}
-<meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{ with site.Params.description }}{{ . }}{{ end }}{{ end }}" />
-<meta name="twitter:description" content="{{ with .Description }}{{ . }}{{ else }}{{ with site.Params.description }}{{ . }}{{ end }}{{ end }}" />
-{{ with site.Params.author }}
-	<meta name="author" content="{{ . }}">
-{{ end }}
 
-<base href="{{ .Site.BaseURL }}">
-<title>{{ block "title" . }}{{ .Site.Title }} {{ with .Params.Title }} | {{ . }}{{ end }}{{ end }}</title>
+{{- $title := .Params.Title -}}{{ if not .Params.Title }}{{ $title = .Site.Title }}{{ end }}
+{{- $description := .Params.description -}}{{ if not .Params.description }}{{ $description = .Site.Params.description }}{{ end }}
+{{- $author := .Params.author -}}{{ if not .Params.author }}{{ $author = .Site.Params.author }}{{ end }}
+{{- $keywords := .Params.keywords -}}{{ if not .Params.keywords }}{{ $keywords = .Site.Params.keywords }}{{ end }}
+{{- $image := .Params.Image -}}{{ if not .Params.Image }}{{ $image = .Site.Params.image }}{{ end }}
 
-{{ "<!--Favicon-->" | safeHTML }}
+{{ "<!-- Document Metadata -->" | safeHTML }}
+{{ with $author }}<meta name="author" content="{{ . }}">{{ end }}
+{{ with $description }}<meta name="description" content="{{ . }}">{{ end }}
+{{ with $keywords }}<meta name="keywords" content="{{ . }}">{{ end }}
+<link type="text/plain" rel="author" href="{{ "humans.txt" | absURL }}" />
+
+{{ "<!-- OpenGraph Metadata -->" | safeHTML }}
+{{ with $title }}<meta property="og:title" content="{{ . }}" />{{ end }}
+{{ with $description }}<meta property="og:description" content="{{ . }}"  />{{ end }}
+{{ with $image }}<meta property="og:image" content="{{ . | absURL }}" />{{ end }}
+{{ if $title }}<meta property="og:url" content="{{ .Permalink }}" />{{ end }}
+{{ if $title }}<meta property="og:type" content="website" />{{ end }}
+
+{{ "<!-- Twitter Metadata -->" | safeHTML }}
+{{ with $title }}<meta name="twitter:title" content="{{ . }}" />{{ end }}
+{{ if $title }}<meta name="twitter:card" content="summary">{{ end }}
+{{ with $description }}<meta name="twitter:description" content="{{ . }}" />{{ end }}
+{{ with $image }}<meta name="twitter:image" content="{{ . | absURL }}" />{{ end }}
+
+{{ "<!-- Favicon and Iconography -->" | safeHTML }}
 <link rel="shortcut icon" href="{{ `img/favicon.png` | absURL }}" type="image/x-icon">
 <link rel="icon" href="{{ `img/favicon.png` | absURL }}" type="image/x-icon">
 
-{{ "<!-- plugins -->" | safeHTML }}
+{{ "<!-- RSS Feeds -->" | safeHTML }}
+<link rel="alternate" type="application/rss+xml" href="{{.Site.BaseURL }}/index.xml" title="Recent Rotations of the Rotational Labs Blog">
+
+{{/* TODO: Site Manifest and Apple Icons */}}
+
+{{- if site.Params.plugins.css -}}
+{{- "<!-- Plugins -->" | safeHTML -}}
 {{ range site.Params.plugins.css }}
-<link rel="stylesheet" href="{{ .link | absURL }}">
+<link rel="stylesheet" href="{{ .link | absURL }}">{{ end }}
 {{ end }}
 
-{{ "<!-- fonts -->" | safeHTML }}
+{{ "<!-- Fonts -->" | safeHTML }}
 <link href="{{.Site.Params.googleFonts}}" rel="stylesheet">
-
-{{ "<!-- styles -->" | safeHTML }}
 
 {{"<!-- Main Stylesheet -->"|safeHTML}}
 <link rel="stylesheet" href="{{ `output.css` | absURL }}" media="screen">
 
-{{ if .Site.Params.googleAnalytics }}
+{{- if .Site.Params.googleAnalytics -}}
 {{ "<!-- Google Analytics -->" | safeHTML }}
 <script async src="https://www.googletagmanager.com/gtag/js?id={{ .Site.Params.googleAnalytics }}"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
+  function gtag() { dataLayer.push(arguments); }
   gtag('js', new Date());
   gtag('config', '{{ .Site.Params.googleAnalytics }}');
 </script>
 {{ end }}
-{{ "<!-- Font Awesome -->" | safeHTML }}
-<script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
 
-
-<script src="https://www.google.com/recaptcha/enterprise.js?render={{.Site.Params.g_recaptcha_key}}"></script>
+{{- if .Site.Params.recaptchaKey -}}
+{{ "<!-- Google RECAPTCHA -->" | safeHTML }}
+<script src="https://www.google.com/recaptcha/enterprise.js?render={{.Site.Params.recaptchaKey}}"></script>
 <script>
-  grecaptcha.enterprise.ready(function() {
-    grecaptcha.enterprise.execute('{{ .Site.Params.recaptchaKey }}', {action: 'homepage'}).then(function(token) {
+  grecaptcha.enterprise.ready(function () {
+    grecaptcha.enterprise.execute('{{ .Site.Params.recaptchaKey }}', { action: 'homepage' }).then(function (token) {
       // Add your logic to submit to your backend server here.
     });
   });
 </script>
+{{ end }}
+
+{{ if site.Params.plugins.js }}
+{{- "<!-- Javascript Plugins and Initialization Scripts -->" | safeHTML -}}
+{{ range site.Params.plugins.js }}
+<script src="{{ .link }}" {{ if .crossorigin }}crossorigin="{{ .crossorigin }}"{{ end }}></script>{{ end }}
+{{ end }}
