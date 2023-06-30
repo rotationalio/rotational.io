@@ -51,23 +51,17 @@ body {
 }
   
 pre {
-  max-height: 400px !important;
-  padding: 0.50rem !important;
+
+  padding: 1rem !important;
 }
 
-.highlight pre {
-  /* Avoid pushing up the copy buttons */
-  margin-top: 0;
-  border-radius: 3px;
-  overflow-x: auto;
-  font-size: 0.9em;
-  max-width: 520px !important;
+div.highlight {
+  max-width: 553px;
 }
-
-
-
-
-
+div.highlight pre {
+  white-space: pre-wrap;
+  word-break: break-word;
+}
 
 
 .highlight pre {
@@ -77,6 +71,7 @@ pre {
   padding: 10px;
   overflow-x: auto;
   font-size: 0.9em;
+  max-width: 553px; /* define the max-width of the container to avoid having extendable container */
 }
 
 .highlight pre code {

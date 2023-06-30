@@ -10,17 +10,19 @@
         {{- end -}}
     </div>
     <div class="tab-content -mt-0">
-        <button id="copy-code-button"
-            class="copy-code-button absolute text-white text-xs right-[2.5rem] sm:right-[3.5rem] bg-red-500 p-1 hover:text-red-700 [&.active]:bg-green-600 mt-[0.75rem] mr-[1.75rem] sm:mr-[0.75rem]">
-            Copy
-        </button>
 
         {{- range $idx, $tab := .Scratch.Get "tabs" -}}
+
         <div data-tab-item="{{ .name }}" data-tab-group="{{ $groupId }}"
             class='tab-item {{ cond (eq $idx 0) "active" "" }}'>
+            <button id="copy-code-button"
+                class="copy-code-button absolute text-white text-xs right-[3.5rem] bg-red-500 p-1 hover:text-red-700 [&.active]:bg-green-600 mt-[0.75rem] mr-[0.75rem]">
+                Copy
+            </button>
             {{ .content }}
         </div>
         {{- end -}}
     </div>
+
 
 </div>
