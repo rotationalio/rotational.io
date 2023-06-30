@@ -23,15 +23,17 @@ limits: "Add API Limit Information Here, If Available"
 
 {{% data-playground-code-tabs %}}
 {{% data-playground-code-tab tabIndex="python" name="Python"  %}}
+
 ```python
       def example(name):
       print(f"example, {name}!")
 ```
+
 {{% /data-playground-code-tab %}}
 
 {{% data-playground-code-tab tabIndex="go" name="Go"  %}}
 
-```go 
+```go {linenos=table,hl_lines=[1,"3-4"]}
 package main
 import "fmt"
 func main() {

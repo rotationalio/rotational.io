@@ -33,7 +33,7 @@ weight: 6
 
 {{% data-playground-code-tab tabIndex="go" name="Go"  %}}
 
-```go 
+```go {linenos=table,hl_lines=[1,"3-4"]}
 package main
 import "fmt"
 func main() {

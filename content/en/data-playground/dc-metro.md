@@ -33,7 +33,7 @@ weight: 5
 
 {{% data-playground-code-tab tabIndex="go" name="Go"  %}}
 
-```go 
+```go
 package main
 import "fmt"
 func main() {
