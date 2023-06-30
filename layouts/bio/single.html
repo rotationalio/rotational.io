@@ -44,7 +44,9 @@ relative bg-[#1D65A6]">
         <div class="mt-9 sm:mt-11 lg:mt-14">
             <ul class="b-card">
 
-
+                {{ range .Param "authors" }}
+                {{ . }}
+                {{ end }}
 
             </ul>
 
