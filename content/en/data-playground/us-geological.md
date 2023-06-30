@@ -1,21 +1,22 @@
 ---
 title: "US Geological"
 slug: "us-geological"
-subtitle: "Stock Market Data" 
+subtitle: "Earthquake Data"
 draft: false
-image: img/data-playground/finnhub.png
-link: "github.com"
-description: FinnHub provides real-time stock market data. Note that the stock market is closed during certain times of days and days of the week.
-summary: Connect to stock market data and start experimenting with financial models and apps.
+image: img/data-playground/us-geological.png
+github_link: "https://github.com/rotationalio/data-playground/tree/main/usgs"
+description: US Geological provides information about earthquakes and their impact.
+summary: Connect to earthquake data and start experimenting with geological models and apps.
 license: Free
-producer_name: FinnHub
-producer_link: https://finnhub.io/
-api_key: Yes
-api_type: REST, WebSocket
-sdks: Go
-limits: N/A
-data: Stock prices, company profiles, company & market news
-account_required: Yes
+license_warning: Please review terms and conditions. Access to data sources can change.
+producer_name: US Geological
+producer_link: "https://earthquake.usgs.gov/fdsnws/event/1/"
+is_api_key_required: false
+api_type: REST
+sdks: N/A
+limits: None
+data: Earthquake data
+is_account_required: false
 weight: 4
 ---
 
@@ -25,19 +26,21 @@ weight: 4
 {{% data-playground-code-tab tabIndex="python" name="Python"  %}}
 
 ```python
-      def example(name):
-      print(f"example, {name}!")
+def example():
+      print("Code snippet coming soon!")
 ```
 
 {{% /data-playground-code-tab %}}
 
 {{% data-playground-code-tab tabIndex="go" name="Go"  %}}
 
-```go {linenos=table,hl_lines=[1,"3-4"]}
+```golang
 package main
+
 import "fmt"
+
 func main() {
-    fmt.Println("hello world")
+    fmt.Println("Code snippet coming soon!")
 }
 ```
 
@@ -51,3 +54,9 @@ func main() {
 <!-- Add content for data playground here, including a table for data products if available -->
 
 {{% /data-playground-content %}}
+
+{{% coming-soon %}}
+
+Coming soon!
+
+{{% /coming-soon %}}

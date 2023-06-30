@@ -1,6 +1,6 @@
 {{- with .Inner }}{{ end -}}
 {{- $groupId := .Get "id" | default "default" -}}
-<div class="tab-container min-h-full">
+<div class="tab-container">
     <div class="tab-nav flex flex-wrap text-sm font-medium text-center text-gray-500 border-b border-gray-200 ">
         {{- range $idx, $tab := .Scratch.Get "tabs" -}}
         <button onclick="switchTab('{{ $groupId }}','{{ .name }}')" data-tab-item="{{ .name }}"
@@ -10,7 +10,6 @@
         {{- end -}}
     </div>
     <div class="tab-content -mt-0">
-
 
         {{- range $idx, $tab := .Scratch.Get "tabs" -}}
 

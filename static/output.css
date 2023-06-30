@@ -1073,6 +1073,10 @@ video {
   right: 0px;
 }
 
+.right-\[2\.5rem\] {
+  right: 2.5rem;
+}
+
 .right-\[3\.5rem\] {
   right: 3.5rem;
 }
@@ -1291,12 +1295,20 @@ video {
   margin-bottom: 1.75rem;
 }
 
+.ml-10 {
+  margin-left: 2.5rem;
+}
+
 .-mt-0 {
   margin-top: -0px;
 }
 
 .mt-\[0\.75rem\] {
   margin-top: 0.75rem;
+}
+
+.mr-\[1\.75rem\] {
+  margin-right: 1.75rem;
 }
 
 .mr-\[0\.75rem\] {
@@ -1345,6 +1357,10 @@ video {
 
 .h-10 {
   height: 2.5rem;
+}
+
+.h-60 {
+  height: 15rem;
 }
 
 .h-16 {
@@ -1399,16 +1415,16 @@ video {
   min-height: 480px;
 }
 
-.min-h-full {
-  min-height: 100%;
-}
-
 .w-10 {
   width: 2.5rem;
 }
 
 .w-full {
   width: 100%;
+}
+
+.w-11\/12 {
+  width: 91.666667%;
 }
 
 .w-1\/2 {
@@ -1622,6 +1638,10 @@ video {
   border-left-width: calc(2px * calc(1 - var(--tw-divide-x-reverse)));
 }
 
+.overflow-auto {
+  overflow: auto;
+}
+
 .truncate {
   overflow: hidden;
   text-overflow: ellipsis;
@@ -1630,6 +1650,10 @@ video {
 
 .rounded-full {
   border-radius: 9999px;
+}
+
+.rounded-\[9px\] {
+  border-radius: 9px;
 }
 
 .rounded-xl {
@@ -1775,6 +1799,11 @@ video {
 .border-gray-200 {
   --tw-border-opacity: 1;
   border-color: rgb(229 231 235 / var(--tw-border-opacity));
+}
+
+.border-b-black {
+  --tw-border-opacity: 1;
+  border-bottom-color: rgb(0 0 0 / var(--tw-border-opacity));
 }
 
 .bg-\[\#ECF6FF\] {
@@ -2351,10 +2380,26 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 
+.tab-content {
+  overflow: auto;
+  /* Enable horizontal scrolling if necessary */
+}
+
+/* Adjust the styling for Hugo highlight code blocks within the container */
+
+.tab-content pre {
+  max-width: 100%;
+  /* Ensure the code block doesn't exceed the container's width */
+  white-space: pre-wrap;
+  /* Preserve line breaks within code blocks */
+  max-height: 500px;
+}
+
 @media screen and (min-width: 900px) {
   pre {
     min-height: 200px !important;
     max-height: 600px !important;
+    max-width: 300px;
     overflow-y: auto !important;
   }
 }
@@ -2453,14 +2498,6 @@ div.highlight pre {
   text-align: right;
 }
 
-/* Get background for Ensign Developer Experience section to span the full width */
-
-.experience-background {
-  margin: 0 -62.5rem;
-  padding: 0.25rem 62.5rem;
-  background: #ecf6ff;
-}
-
 /* Style the data-playground search results. */
 
 .search-result-item {
@@ -2473,8 +2510,21 @@ div.highlight pre {
   font-weight: bold;
 }
 
-.search-result-item:hover {
-  background-color: #ecf6ff;
+.search-result-item:hover, .search-suggestion-item:hover {
+  background-color: #B3B3B3;
+}
+
+.search-suggestion-item {
+  width: 20rem;
+  background-color:#D9D9D9;
+  padding: 0.5rem;
+}
+
+/* Style the data showcase table. */
+
+.finnhub-showcase {
+  border: solid 1px rgb(71 85 105);
+  padding: 8px 16px;
 }
 
 blockquote {
@@ -2843,6 +2893,10 @@ em {
 }
 
 @media (min-width: 640px) {
+  .sm\:right-\[3\.5rem\] {
+    right: 3.5rem;
+  }
+
   .sm\:my-0 {
     margin-top: 0px;
     margin-bottom: 0px;
@@ -2892,6 +2946,10 @@ em {
 
   .sm\:ml-20 {
     margin-left: 5rem;
+  }
+
+  .sm\:mr-\[0\.75rem\] {
+    margin-right: 0.75rem;
   }
 
   .sm\:inline {
