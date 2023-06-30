@@ -6,6 +6,8 @@ draft: false
 image: img/blog/watermill.jpg
 photo_credit: Photo by Terence Mangram on Flickr Commons
 author: Prema Roman
+authors: 
+  - Prema Roman
 category: Microservices, Eventing
 profile: img/team/prema-roman.png
 description: "An introduction to using the Watermill API to enable rapid prototyping for event-driven architectures."

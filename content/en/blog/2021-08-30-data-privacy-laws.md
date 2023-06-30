@@ -5,6 +5,8 @@ date: 2021-08-31T17:32:47-04:00
 draft: false
 image: img/blog/islands.jpg
 author: Edwin Schmierer
+authors: 
+  - Edwin Schmierer
 category: "Data Privacy"
 description: "We look at the state of play in data privacy regulations and how business and tech leaders can adapt."
 profile: img/team/edwin-schmierer.png

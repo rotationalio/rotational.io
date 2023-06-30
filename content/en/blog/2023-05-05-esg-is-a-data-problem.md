@@ -5,6 +5,8 @@ date: "2023-05-05T14:09:40-04:00"
 draft: false
 image: img/blog/light-through-trees.jpg
 author: "Edwin Schmierer"
+authors: 
+  - Edwin Schmierer
 profile: img/team/edwin-schmierer.png
 category: ESG, Ensign, Eventing
 photo_credit: Christian Buehner via Unsplash

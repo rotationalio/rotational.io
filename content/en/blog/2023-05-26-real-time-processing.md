@@ -6,6 +6,8 @@ draft: false
 image: img/blog/starburst.jpg
 photo_credit: Photo by Joshua Sortino on Unsplash
 author: Faraz Rahman
+authors: 
+  - Faraz Rahman
 profile: img/butterfly.png
 category: Eventing, AI/ML
 description: "A data product manager shares tips for achieving success with streaming data."

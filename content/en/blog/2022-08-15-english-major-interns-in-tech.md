@@ -4,6 +4,8 @@ slug: "english-major-interns-in-tech"
 date: "2022-08-15T06:10:14-04:00"
 draft: false
 author: Natasha White
+authors: 
+  - Natasha White
 image: img/blog/paths.jpg
 category: Technology
 description: "Over the course of the past few months, I’ve had the pleasure of interning at Rotational as a technical writer. I’m excited to share a little bit about my experience and provide some insight from the perspective of someone who is entering the world of distributed systems for the first time."

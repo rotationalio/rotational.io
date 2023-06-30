@@ -4,6 +4,8 @@ slug: "webassembly-the-future-of-computing"
 date: "2022-09-27T08:51:27-04:00"
 draft: false
 author: Danielle Maxwell
+authors: 
+  - Danielle Maxwell
 image: img/blog/rocket.jpeg
 category: WASM
 description: "Learn about WebAssembly, how it is currently transforming web development, and why its future is bright."

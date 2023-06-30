@@ -5,6 +5,8 @@ date: "2021-10-21T20:25:35-04:00"
 draft: false
 image: img/blog/hubble_tarantula_nebula.jpg
 author: Rebecca Bilbro
+authors: 
+  - Rebecca Bilbro
 category: i18n
 description: "Many tech projects do not translate their docs, often at the expense of reaching a more global userbase. In this post we explore why."
 profile: img/team/rebecca-bilbro.png

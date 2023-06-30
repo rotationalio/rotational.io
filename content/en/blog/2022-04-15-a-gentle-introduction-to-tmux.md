@@ -5,6 +5,8 @@ date: "2022-04-15T09:41:51-07:00"
 draft: false
 image: img/blog/2022-04-15-a-gentle-introduction-to-tmux/muxing.jpg
 author: Daniel Sollis
+authors: 
+  - Daniel Sollis
 category: Programming
 description: "Tmux is an extremely powerful terminal solution for Unix-like operating systems, but it has a steep learning curve. In this post we'll go over some Tmux basics and make it a little less daunting to get started."
 profile: img/team/daniel-sollis.png

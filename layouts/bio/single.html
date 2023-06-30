@@ -39,18 +39,5 @@ relative bg-[#1D65A6]">
         </div>
     </div>
 
-    <div class="mt-16">
-        <h1 class="text-xl font-bold text-sky-900 my-2 md:my-4 ">Articles by {{ .Params.name }} </h1>
-        <div class="mt-9 sm:mt-11 lg:mt-14">
-            <ul class="b-card">
-                {{ range .Data.Pages }}
-                <li class="mt-6 sm:mt-0 h-auto">
-                    {{ .Render "article" }}
-                </li>
-                {{ end }}
-            </ul>
 
-
-        </div>
-    </div>
     {{ end }}

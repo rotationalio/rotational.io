@@ -5,6 +5,8 @@ date: 2021-06-10T17:20:00Z
 category: UX, Technology
 image: img/blog/2021-06-10-ux-whats-missing/window.jpg
 author: Rebecca Bilbro
+authors: 
+  - Rebecca Bilbro
 profile: img/team/rebecca-bilbro.png
 ---
 

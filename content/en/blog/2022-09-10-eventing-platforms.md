@@ -4,6 +4,8 @@ slug: "eventing-platforms"
 date: "2022-09-10T12:28:08-04:00"
 draft: false
 author: Rebecca Bilbro
+authors: 
+  - Rebecca Bilbro
 image: img/blog/herd.jpg
 category: Microservices, Eventing
 description: "In this post we'll explore some of the types of eventing platforms and discuss why it's not about deciding which is objectively the 'best', but about knowing how to select the best tool for a given context."

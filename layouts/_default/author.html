@@ -1,0 +1,26 @@
+<div class="max-w-7xl mx-auto px-4 my-auto relative">
+    <div class="flex basis-3 items-start py-4 md:p-16 flex-col md:flex-row">
+        <div class="w-full md:w-1/2">
+            <div class="">
+                <img src="{{ .Params.profile | absURL}}" alt="" class='rounded-t-xl covatar w-full object-cover' />
+            </div>
+            <div class="mt-4 w-full md:mt-8">
+                <h1 class="text-base font-semibold text-sky-800">{{ .Params.field }}</h1>
+                <h1 class="mt-2 text-2xl font-bold text-black md:mt-4">{{ .Params.name }}</h1>
+                <h1 class="mt-2 text-base text-gray-400 md:mt-4">{{ .Params.designation }}</h1>
+            </div>
+        </div>
+        <div class="flex flex-col md:pl-5 w-full md:w-1/2">
+            <h1 class="text-xl font-bold text-sky-900 my-2 md:my-4 ">Bio</h1>
+            <div class="w-full mx-auto prose prose-blue">{{ .Content | safeHTML }}</div>
+            <ul class="mt-4 flex w-full gap-8 md:mt-6">
+                {{ range .Params.social }}
+                <li><a href="{{ .link | absURL }}" target="_blank"
+                        class="flex w-16 h-16 items-center  rounded-lg bg-sky-900 text-white">
+                        <i class="fab {{ .icon }} text-2xl mx-auto"></i>
+                    </a></li>
+                {{ end }}
+
+            </ul>
+        </div>
+    </div>

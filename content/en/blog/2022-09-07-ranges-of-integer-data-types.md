@@ -4,6 +4,8 @@ slug: "ranges-of-integer-data-types"
 date: "2022-09-07T09:40:12-05:00"
 draft: false
 author: Benjamin Bengfort
+authors: 
+  - Benjamin Bengfort
 image: img/blog/num215.jpg
 category: Golang, Programming
 profile: img/team/benjamin-bengfort.png

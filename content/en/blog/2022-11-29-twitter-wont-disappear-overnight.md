@@ -5,6 +5,8 @@ date: "2022-11-29T16:52:09-05:00"
 draft: false
 image: img/blog/2022-11-29-storm-clouds.jpg
 author: "Edwin Schmierer"
+authors: 
+  - Edwin Schmierer
 profile: img/team/edwin-schmierer.png
 category: "Distributed Systems"
 photo_credit: Photo by Drew Hays on Unsplash

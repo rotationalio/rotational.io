@@ -4,7 +4,10 @@ slug: "go-serialization-formats"
 date: "2022-12-05T10:27:11-05:00"
 draft: false
 image: img/blog/serialization.png
-author: Daniel Sollis & Danielle Maxwell
+author: Danielle Maxwell
+authors: 
+  - Danielle Maxwell
+  - Daniel Sollis
 category: "Serialization"
 photo_credit: Photo by Rickie-Tom Schünemann on Unsplash
 description: "In this post we’ll go over a few important serialization formats along with their pros and cons to help you determine the best choice for your situation."

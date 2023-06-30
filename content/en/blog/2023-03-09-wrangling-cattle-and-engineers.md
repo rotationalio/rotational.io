@@ -6,6 +6,8 @@ draft: false
 image: img/blog/home-on-the-range.jpg
 photo_credit: Photo by Amaury Laporte on Flickr Commons
 author: "Beci Lambrecht"
+authors: 
+  - Beci Lambrecht
 category: "Project Management"
 profile: img/team/beci-lambrecht.png
 description: "Wrangling cattle and doing technical project management are strangely similar."
