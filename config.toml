@@ -153,3 +153,16 @@ weight = 40
     lineNoStart = 1
     lineNos = false
     lineNumbersInTable = false
+    noClasses = true
+    noHl = false
+    style = 'monokai'
+    tabWidth = 4
+
+[outputs]
+home = ["HTML", "humanstxt", "RSS"]
+blog = ["HTML", "RSS"]
+
+[outputFormats.humanstxt]
+baseName = "humans"
+isPlainText = true
+mediaType = "text/plain"
