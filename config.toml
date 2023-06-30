@@ -129,6 +129,6 @@ weight = 40
       unsafe = true
 
 [taxonomies]
-	author = "bio"
+	author = "authors"
 	tag = "tags"
 	category = "categories"
