@@ -262,7 +262,6 @@ func main() {
 
 <!-- Flowchart for ensign and finnhub -->
 {{< widefigure src="/img/data-playground/finnhub_flowchart.png" alt="Finnhub integration with Ensign">}}
-
 {{% data-playground-content %}}
 
 <!-- Add content for data playground here, including a table for data products if available -->
