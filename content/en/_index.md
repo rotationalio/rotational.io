@@ -36,7 +36,7 @@ tech stack.
 {{% vtriple %}}
 ### Ensign for Data Teams
 
-{{< figure src="/img/three_otters.png" alt="Sea Otter Engineers" >}}
+{{< figure src="/img/three_otters_new.png" alt="Sea Otter Engineers" >}}
 
 Open-source tools to rapidly prototype new data pipelines, integrate realtime analytics, and get your data science predicting beyond the batch.
 
