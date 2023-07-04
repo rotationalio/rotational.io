@@ -255,10 +255,12 @@ func main() {
 ```
 {{% /data-playground-code-tab %}}
 
-
 {{% /data-playground-code-tabs %}}
 
 {{% /data-playground-wrapper %}}
+
+<!-- Flowchart for ensign and finnhub -->
+{{< widefigure src="/img/data-playground/finnhub_flowchart.png" alt="Finnhub integration with Ensign">}}
 
 {{% data-playground-content %}}
 
