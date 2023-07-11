@@ -1,8 +1,8 @@
 ############################# Ensign Data ###################################
 notice:
   enable: true
-  notice: "Register for Professor Bengfort's Upcoming Tutorial!"
+  notice: "Streaming NLP Analytics Made Easy Using LLMs and PyEnsign"
   action:
-    text: MLOps 101 - Managing Models with Event Streams
-    link: "https://us06web.zoom.us/webinar/register/9516871922745/WN_eliftxwjS8eFMk8wvjHP-Q"
-  expires: 2023-07-11T16:00:00Z
+    text: Join Our Next Tutorial!
+    link: "https://us06web.zoom.us/webinar/register/2916872874412/WN__wRimyONS6mnwONKMYhasg"
+  expires: 2023-08-02T16:00:00Z
