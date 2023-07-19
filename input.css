@@ -42,7 +42,7 @@ body {
 }
 
 @media screen and (min-width: 900px) {
-  pre {
+  .tab-content pre {
     min-height: 200px !important;
     max-height: 600px !important;
     max-width: 300px;
@@ -50,7 +50,7 @@ body {
   }
 }
   
-pre {
+.tab-content pre {
 
   padding: 1rem !important;
 }
