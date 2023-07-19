@@ -42,22 +42,20 @@ body {
 }
 
 @media screen and (min-width: 900px) {
-  .tab-content pre {
+  pre {
     min-height: 200px !important;
     max-height: 600px !important;
-    max-width: 300px;
     overflow-y: auto !important;
+  }
+  .tab-content pre {
+    max-width: 300px; /* Applies max to width to code snippets in data playground */
   }
 }
   
-.tab-content pre {
-
+pre {
   padding: 1rem !important;
 }
 
-div.highlight {
-  max-width: 553px;
-}
 div.highlight pre {
   white-space: pre-wrap;
   word-break: break-word;
@@ -71,7 +69,10 @@ div.highlight pre {
   padding: 10px;
   overflow-x: auto;
   font-size: 0.9em;
-  max-width: 553px; /* define the max-width of the container to avoid having extendable container */
+}
+
+.tab-container pre {
+  max-width: 553px; /* define the max-width of the data playground container to avoid having extendable container */
 }
 
 .highlight pre code {
