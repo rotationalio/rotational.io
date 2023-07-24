@@ -33,6 +33,14 @@
 
     </div>
 
+    {{ if .Params.diagram_image }}
+    
+    <div class="mb-12">
+        <img src="{{.Params.diagram_image}}" alt="{{.Params.diagram_alt}}" class="mx-auto px-6 w-[1200px]">
+    </div>
+
+    {{ end }}
+
 
     <div class="w-full flex flex-col gap-4 sm:gap-8 sm:flex-row justify-between px-10">
 
