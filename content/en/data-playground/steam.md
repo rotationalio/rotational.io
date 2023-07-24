@@ -17,6 +17,8 @@ sdks: N/A
 limits: 100,000 API calls per day
 data: Game data and player stats
 is_account_required: false
+diagram_image:
+diagram_alt:
 weight: 3
 ---
 
