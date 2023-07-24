@@ -17,7 +17,8 @@ is_api_key_required: false
 api_type: "Add API Type(s) Provided Here and Separate Multiple Types With A Comma"
 sdks: "Add Available SDKs Here and Separate Multiple SDKs With A Comma"
 limits: "Add API Limit Information Here, If Available"
-
+diagram_image: img/data-playground/data-source-diagram.png
+diagram_alt: "Alt text for data source diagram image."
 ---
 {{% data-playground-wrapper %}} 
 

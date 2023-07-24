@@ -17,6 +17,8 @@ sdks: N/A
 limits: None
 data: Earthquake data, with magnitudes, locations, and more
 is_account_required: false
+diagram_image:
+diagram_alt:
 weight: 4
 ---
 
