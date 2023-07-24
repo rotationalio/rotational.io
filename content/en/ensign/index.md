@@ -1,7 +1,7 @@
 ---
 date: 2022-12-15T10:09:42Z
 title: "Ensign for Data Teams"
-headertext: "Ensign for Data Teams"
+headertext: "Data Science 2.0"
 subheadertext: "Streaming Predictions for Realtime Models"
 noicon: true
 type: "ensign"

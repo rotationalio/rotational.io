@@ -137,7 +137,7 @@ And we have a label stream and metrics that allow us to say if we have enough da
 ## Let’s Tackle the Model Deployment Gap Together
 Models get deployed when we design systems that align with our organization’s existing communication structure, as data flows. By leveraging data flows in our analytical processes, we can build models that are more compatible with the rest of the application. And when we do that, more models will get into production (hopefully a lot more than 13%)!
 
-Ready to take the next step? [Sign up for our MLOps 201: Getting Started webinar](https://forms.gle/WwG2kvKRNh8gt1qk6).
+Ready to take the next step? [Sign up for our MLOps 201: Getting Started webinar](https://us06web.zoom.us/webinar/register/2116897931538/WN_S9Zeid3ARJCKGlbEFR4fqQ).
 
 Ready to experiment with data streams and change data capture? Check out our [data playground](https://rotational.io/data-playground/) and [create an Ensign account](https://rotational.app/register/) today!
 
