@@ -1,7 +1,7 @@
 ---
 date: 2023-02-09T10:21:41-06:00
-headertext: Real-time data collaboration,
-headertextmore: no matter where your data lives.
+headertext: Ingest. Train. Deploy.
+headertextmore: Repeat.
 headeractions:
 - action: Create an Account
   link: "https://rotational.app/register"
@@ -34,7 +34,7 @@ tech stack.
 
 <!-- Ensign for Data Teams -->
 {{% vtriple %}}
-### Ensign for Data Teams
+### Data Science 2.0
 
 {{< figure src="/img/three_otters_new.png" alt="Sea Otter Engineers" >}}
 
