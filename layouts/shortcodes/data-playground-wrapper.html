@@ -1,5 +1,5 @@
-<div class="flex-1" id="code-snippets">
-    {{ .Inner }}
+<div class="flex-1 bg-black text-white">
+   <p class="mt-14 text-center font-semibold"> {{ .Inner | markdownify | safeHTML}}</p>
 </div>
 
 </div>
