@@ -24,7 +24,15 @@ weight: 4
 
 {{% data-playground-wrapper %}}
 
-Coming soon - Data sample
+```bash
+New earthquake report received: {'magnitude': 1.8, 'place': '83 km NW of Karluk, Alaska', 'time': 1688153699651, 'updated': 1688153851807, 'article_link': 'https://earthquake.usgs.gov/earthquakes/eventpage/ak0238bnsgtv', 'type': 'earthquake', 'rms': 0.49, 'gap': None}
+
+New earthquake report received: {'magnitude': 1.09, 'place': '4km ENE of Home Gardens, CA', 'time': 1688153196420, 'updated': 1688153416447, 'article_link': 'https://earthquake.usgs.gov/earthquakes/eventpage/ci40500808', 'type': 'earthquake', 'rms': 0.3, 'gap': 74}
+
+New earthquake report received: {'magnitude': 1.21, 'place': '6 km ENE of Drumright, Oklahoma', 'time': 1688152513740, 'updated': 1688152999250, 'article_link': 'https://earthquake.usgs.gov/earthquakes/eventpage/ok2023msir', 'type': 'quarry blast', 'rms': 0.35, 'gap': 132}
+
+New earthquake report received: {'magnitude': 2.47, 'place': '3 km WSW of La Parguera, Puerto Rico', 'time': 1688151658770, 'updated': 1688152327360, 'article_link': 'https://earthquake.usgs.gov/earthquakes/eventpage/pr71415303', 'type': 'earthquake', 'rms': 0.09, 'gap': 237}
+```
 
 {{% /data-playground-wrapper %}}
 

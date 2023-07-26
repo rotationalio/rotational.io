@@ -24,7 +24,13 @@ weight: 1
 
 {{% data-playground-wrapper %}}
 
-Coming soon - Data sample
+```json
+{"symbol": "AMZN", "time": "12:18:03", "price": "127.88", "price_pred": "183.5796"}
+
+{"symbol": "AAPL", "time": "12:18:03", "price": "189.36", "price_pred": "181.8145"}
+
+{"symbol": "MSFT", "time": "12:18:03", "price": "334.71", "price_pred": "180.2801"}
+```
 
 {{% /data-playground-wrapper %}}
 

@@ -24,7 +24,17 @@ weight: 3
 
 {{% data-playground-wrapper %}}
 
-Coming soon - Data sample
+```bash
+New steam report received: {'game': 'The Murder Hotel Demo', 'id': 2484850, 'count': 42}
+
+New steam report received: {'game': 'Fantasy Grounds - FG Grasslands Map Pack', 'id': 2484870, 'count': 1}
+
+New steam report received: {'game': 'Phantom Peak', 'id': 2484240, 'count': 42}
+
+New steam report received: {'game': 'Jolly Putt - Mini Golf & Arcade', 'id': 2484340, 'count': 42}
+
+New steam report received: {'game': 'Fat Rat Pinball', 'id': 2484420, 'count': 42}
+```
 
 {{% /data-playground-wrapper %}}
 

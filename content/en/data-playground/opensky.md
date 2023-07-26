@@ -23,7 +23,13 @@ weight: 6
 
 {{% data-playground-wrapper %}}
 
-Coming soon - Data sample
+```bash
+Received flight vector: {'icao24': 'a11d08', 'callsign': 'N171BL  ', 'origin_country': 'United States', 'time_position': 1687890269, 'last_contact': 1687890269, 'longitude': -77.8813, 'latitude': 35.8695, 'geo_altitude': 68.58, 'on_ground': False, 'velocity': 44.38, 'true_track': 214.61, 'vertical_rate': -3.9, 'sensors': None, 'barometric_altitude': 160.02, 'transponder_code': None, 'special_purpose_indicator': False, 'position_source': 0, 'category': 0}
+
+Received flight vector: {'icao24': '4b1902', 'callsign': 'SWR86   ', 'origin_country': 'Switzerland', 'time_position': 1687890269, 'last_contact': 1687890269, 'longitude': -62.009, 'latitude': 48.1098, 'geo_altitude': 11468.1, 'on_ground': False, 'velocity': 224.51, 'true_track': 251.98, 'vertical_rate': 0.0, 'sensors': None, 'barometric_altitude': 10972.8, 'transponder_code': None, 'special_purpose_indicator': False, 'position_source': 0, 'category': 1}
+
+Received flight vector: {'icao24': 'e94c88', 'callsign': 'BOV709  ', 'origin_country': 'Bolivia', 'time_position': 1687890270, 'last_contact': 1687890270, 'longitude': -58.5902, 'latitude': -34.7019, 'geo_altitude': 5905.5, 'on_ground': False, 'velocity': 175.39, 'true_track': 337.95, 'vertical_rate': 12.03, 'sensors': None, 'barometric_altitude': 5775.96, 'transponder_code': '0330', 'special_purpose_indicator': False, 'position_source': 0, 'category': 0}
+```
 
 {{% /data-playground-wrapper %}}
 

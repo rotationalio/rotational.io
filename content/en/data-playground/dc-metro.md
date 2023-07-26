@@ -23,7 +23,17 @@ weight: 5
 ---
 {{% data-playground-wrapper %}}
 
-Coming soon - Data sample
+```bash
+New metro report received: {'incident_id': '001E815C-4A62-47EE-843D-5F0B788C799C', 'incident_type': 'Alert', 'routes_affected': ['P12'], 'description': 'Due to an accident at Addison Rd Station, buses may experience delays.', 'date_updated': '2023-07-03T13:43:14'}
+
+New metro report received: {'incident_id': '38102CBA-04FA-4D88-B9B8-41E9D2549C73', 'incident_type': 'Alert', 'routes_affected': ['32'], 'description': 'Due to an accident on Pennsylvania Ave SE at 6th St, buses may experience delays.', 'date_updated': '2023-07-03T13:20:19'}
+
+New metro report received: {'incident_id': '03EF58CA-4C96-477B-B0F8-E0B5EA2179D5', 'incident_type': 'Alert', 'routes_affected': ['32', '33', '36'], 'description': 'Buses are detouring, due to the DC 4th of July Celebration. More info at \nhttps://buseta.wmata.com', 'date_updated': '2023-07-03T06:15:34'}
+
+New metro report received: {'incident_id': 'C83592B3-8399-4426-8568-FFCA1E5B3D9D', 'incident_type': 'Alert', 'routes_affected': ['W4'], 'description': 'Due to a mechanical issue at Anacostia Station on the W4 route, buses may experience delays.', 'date_updated': '2023-07-03T13:07:18'}
+
+New metro report received: {'incident_id': '7B640278-9219-430F-A59C-81C5F7BDE5EA', 'incident_type': 'Alert', 'routes_affected': ['F4'], 'description': 'Due to a mechanical issue on Riggs Rd at East West Hwy on the F4 Route, buses are experiencing delays.', 'date_updated': '2023-07-03T12:18:34'}
+```
 
 {{% /data-playground-wrapper %}}
 

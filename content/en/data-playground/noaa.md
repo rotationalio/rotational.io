@@ -24,7 +24,15 @@ weight: 2
 
 {{% data-playground-wrapper %}}
 
-Coming soon - Data sample
+```bash
+New weather report received: {'name': 'This Afternoon', 'summary': 'Mostly Cloudy', 'temperature': 71, 'units': 'F', 'daytime': True, 'start': '2023-06-26T14:00:00-08:00', 'end': '2023-06-26T18:00:00-08:00'}
+
+New weather report received: {'name': 'Tonight', 'summary': 'Mostly Cloudy then Isolated Rain Showers', 'temperature': 51, 'units': 'F', 'daytime': False, 'start': '2023-06-26T18:00:00-08:00', 'end': '2023-06-27T06:00:00-08:00'}
+
+New weather report received: {'name': 'Tuesday', 'summary': 'Isolated Rain Showers', 'temperature': 73, 'units': 'F', 'daytime': True, 'start': '2023-06-27T06:00:00-08:00', 'end': '2023-06-27T18:00:00-08:00'}
+
+New weather report received: {'name': 'Tuesday Night', 'summary': 'Mostly Cloudy', 'temperature': 52, 'units': 'F', 'daytime': False, 'start': '2023-06-27T18:00:00-08:00', 'end': '2023-06-28T06:00:00-08:00'}
+```
 
 {{% /data-playground-wrapper %}}
 
