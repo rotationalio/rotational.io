@@ -23,96 +23,18 @@ weight: 5
 ---
 {{% data-playground-wrapper %}}
 
-{{% data-playground-code-tabs %}}
-{{% data-playground-code-tab tabIndex="python" name="Python"  %}}
+Sample data returned by `Subscriber`:
+```bash
+New metro report received: {'incident_id': '001E815C-4A62-47EE-843D-5F0B788C799C', 'incident_type': 'Alert', 'routes_affected': ['P12'], 'description': 'Due to an accident at Addison Rd Station, buses may experience delays.', 'date_updated': '2023-07-03T13:43:14'}
 
-```python
-"""
-Note: this assumes you also have a MetroPublisher ;)
-Feel free to use the publisher here:
-https://github.com/rotationalio/data-playground/tree/main/wmata/python
-"""
-import json
-import asyncio
-import warnings
+New metro report received: {'incident_id': '38102CBA-04FA-4D88-B9B8-41E9D2549C73', 'incident_type': 'Alert', 'routes_affected': ['32'], 'description': 'Due to an accident on Pennsylvania Ave SE at 6th St, buses may experience delays.', 'date_updated': '2023-07-03T13:20:19'}
 
-from pyensign.ensign import Ensign
-from pyensign.api.v1beta1.ensign_pb2 import Nack
+New metro report received: {'incident_id': '03EF58CA-4C96-477B-B0F8-E0B5EA2179D5', 'incident_type': 'Alert', 'routes_affected': ['32', '33', '36'], 'description': 'Buses are detouring, due to the DC 4th of July Celebration. More info at \nhttps://buseta.wmata.com', 'date_updated': '2023-07-03T06:15:34'}
 
-# TODO Python>3.10 needs to ignore DeprecationWarning: There is no current event loop
-warnings.filterwarnings("ignore")
+New metro report received: {'incident_id': 'C83592B3-8399-4426-8568-FFCA1E5B3D9D', 'incident_type': 'Alert', 'routes_affected': ['W4'], 'description': 'Due to a mechanical issue at Anacostia Station on the W4 route, buses may experience delays.', 'date_updated': '2023-07-03T13:07:18'}
 
-
-class MetroSubscriber:
-    """
-    MetroSubscriber subscribes to an Ensign stream that the MetroPublisher is
-    writing new metro reports to at some regular interval.
-    """
-
-    def __init__(self, topic="metro-updates-json"):
-        """
-        Initialize the MetroSubscriber, which will allow a data consumer to
-        subscribe to the topic that the publisher is writing metro updates to
-
-        Parameters
-        ----------
-        topic : string, default: "metro-updates-json"
-            The name of the topic you wish to subscribe to.
-        """
-        self.topic = topic
-        self.ensign = Ensign()
-
-    def run(self):
-        """
-        Run the subscriber forever.
-        """
-        asyncio.get_event_loop().run_until_complete(self.subscribe())
-
-    async def handle_event(self, event):
-        """
-        Decode and ack the event.
-        """
-        try:
-            data = json.loads(event.data)
-        except json.JSONDecodeError:
-            print("Received invalid JSON in event payload:", event.data)
-            await event.nack(Nack.Code.UNKNOWN_TYPE)
-            return
-
-        print("New metro report received:", data)
-        await event.ack()
-
-    async def subscribe(self):
-        """
-        Subscribe to the metro topic and parse the events.
-        """
-        id = await self.ensign.topic_id(self.topic)
-        await self.ensign.subscribe(id, on_event=self.handle_event)
-        await asyncio.Future()
-
-
-if __name__ == "__main__":
-    subscriber = MetroSubscriber()
-    subscriber.run()
-
+New metro report received: {'incident_id': '7B640278-9219-430F-A59C-81C5F7BDE5EA', 'incident_type': 'Alert', 'routes_affected': ['F4'], 'description': 'Due to a mechanical issue on Riggs Rd at East West Hwy on the F4 Route, buses are experiencing delays.', 'date_updated': '2023-07-03T12:18:34'}
 ```
-
-{{% /data-playground-code-tab %}}
-
-{{% data-playground-code-tab tabIndex="go" name="Go"  %}}
-
-```golang
-package main
-
-import "fmt"
-
-func main() {
-    fmt.Println("Code snippet coming soon!")
-}
-```
-
-{{% /data-playground-code-tab %}}
-{{% /data-playground-code-tabs %}}
 
 {{% /data-playground-wrapper %}}
 
