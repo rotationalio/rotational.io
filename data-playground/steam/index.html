@@ -8,162 +8,16 @@
 <a href=/about/>About</a>
 <a href=https://rotational.app>Login</a>
 <a class=icon onclick=openMobNav()><i class="fa fa-bars"></i></a></div></nav></div><main><div class="max-w-7xl mx-auto px-4 relative"><div class="w-full bg-[#ECF6FF] flex justify-between my-10 place-items-center h-36 px-10"><div class="flex flex-col font-bold"><h2 class=text-2xl>Steam</h2><h3 class=text-lg>Game Reviews</h3></div><div><a href=https://github.com/rotationalio/data-playground/tree/main/steam target=_blank class="bg-black font-bold px-3 sm:px-6 py-4 rounded-md text-sm text-white md:text-base flex items-center gap-4 hover:bg-neutral-900"><span class="text-sm sm:text-base">Get Started</span>
-<span class="hidden sm:flex"><img src=img/data-playground/github.png alt="github icon" height=36 width=36></span></a></div></div><div class="w-full flex flex-col gap-4 sm:gap-8 sm:flex-row justify-between px-10"><div class=w-1/2><div class="flex flex-col my-4"><p class="text-xl font-bold mb-5">About This Data Source</p><p class=text-base>The Steam API allows users to fetch statistics for individual games, data about users, or news feeds for game updates. All of this can be brought to bear to create powerful analytics on top of video game data made seamless using Ensign.</p></div><div class="flex flex-col my-4"><p class="text-lg font-bold">Producer</p><p class=text-base><a class="cursor-pointer underline" href=https://steam.io/>Steam</p></a></div><div class="flex flex-col my-4"><p class="text-lg font-bold">Data</p><p class=text-base>Game data and player stats</p></div><div class="flex flex-col my-4"><p class="text-lg font-bold">Account Required</p><p class=text-base>No</p></div><div class="flex flex-col my-4"><div class="flex flex-row gap-2"><p class="text-lg font-bold">License</p><p data-attr=tooltip id=tooltip class=h-6><img src=img/data-playground/tooltip.svg alt=tooltip width=24 height=24></p><div id=tooltip-text class="hidden bg-neutral-200 text-black text-sm rounded-lg p-2 absolute ml-20"><p class="text-xs font-semibold">Warning</p><p>Please review terms and conditions. Access to data sources can change.</p></div></div><p class=text-base>Free</p></div><div class="flex flex-col my-4"><p class="text-lg font-bold">API Key</p><p class=text-base>Yes</p></div><div class="flex flex-col my-4"><p class="text-lg font-bold">API Type</p><p class=text-base>REST</p></div><div class="flex flex-col my-4"><p class="text-lg font-bold">SDKS</p><p class=text-base>N/A</p></div><div class="flex flex-col my-4"><p class="text-lg font-bold">Limits</p><p class=text-base>100,000 API calls per day</p></div></div><div class=flex-1 id=code-snippets><div class=tab-container><div class="tab-nav flex flex-wrap text-sm font-medium text-center text-gray-500 border-b border-gray-200"><button onclick='switchTab("default","Python")' data-tab-item=Python data-tab-group=default class='tab-button active inline-block p-4 bg-gray-100 [&.active]:bg-[#192E5B] [&.active]:text-white rounded-t-lg'>Python</button><button onclick='switchTab("default","Go")' data-tab-item=Go data-tab-group=default class='tab-button inline-block p-4 bg-gray-100 [&.active]:bg-[#192E5B] [&.active]:text-white rounded-t-lg'>Go</button></div><div class="tab-content -mt-0"><div data-tab-item=Python data-tab-group=default class='tab-item active'><button id=copy-code-button class="copy-code-button absolute text-white text-xs right-[3.5rem] bg-red-500 p-1 hover:text-red-700 [&.active]:bg-green-600 mt-[0.75rem] mr-[0.75rem]">
-Copy</button><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#e6db74>&#34;&#34;&#34;
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>Note: this assumes you also have a SteamPublisher ;)
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>Feel free to use the publisher here:
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>https://github.com/rotationalio/data-playground/tree/main/steam/python
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>&#34;&#34;&#34;</span>
-</span></span><span style=display:flex><span><span style=color:#f92672>import</span> json
-</span></span><span style=display:flex><span><span style=color:#f92672>import</span> asyncio
-</span></span><span style=display:flex><span><span style=color:#f92672>import</span> warnings
+<span class="hidden sm:flex"><img src=img/data-playground/github.png alt="github icon" height=36 width=36></span></a></div></div><div class="w-full flex flex-col gap-4 sm:gap-8 sm:flex-row justify-between px-10"><div class=w-1/2><div class="flex flex-col my-4"><p class="text-xl font-bold mb-5">About This Data Source</p><p class=text-base>The Steam API allows users to fetch statistics for individual games, data about users, or news feeds for game updates. All of this can be brought to bear to create powerful analytics on top of video game data made seamless using Ensign.</p></div><div class="flex flex-col my-4"><p class="text-lg font-bold">Producer</p><p class=text-base><a class="cursor-pointer underline" href=https://steam.io/>Steam</p></a></div><div class="flex flex-col my-4"><p class="text-lg font-bold">Data</p><p class=text-base>Game data and player stats</p></div><div class="flex flex-col my-4"><p class="text-lg font-bold">Account Required</p><p class=text-base>No</p></div><div class="flex flex-col my-4"><div class="flex flex-row gap-2"><p class="text-lg font-bold">License</p><p data-attr=tooltip id=tooltip class=h-6><img src=img/data-playground/tooltip.svg alt=tooltip width=24 height=24></p><div id=tooltip-text class="hidden bg-neutral-200 text-black text-sm rounded-lg p-2 absolute ml-20"><p class="text-xs font-semibold">Warning</p><p>Please review terms and conditions. Access to data sources can change.</p></div></div><p class=text-base>Free</p></div><div class="flex flex-col my-4"><p class="text-lg font-bold">API Key</p><p class=text-base>Yes</p></div><div class="flex flex-col my-4"><p class="text-lg font-bold">API Type</p><p class=text-base>REST</p></div><div class="flex flex-col my-4"><p class="text-lg font-bold">SDKS</p><p class=text-base>N/A</p></div><div class="flex flex-col my-4"><p class="text-lg font-bold">Limits</p><p class=text-base>100,000 API calls per day</p></div></div><div class="flex-1 mt-4"><p>Sample data returned by <code>Subscriber</code>:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>New steam report received: <span style=color:#f92672>{</span><span style=color:#e6db74>&#39;game&#39;</span>: <span style=color:#e6db74>&#39;The Murder Hotel Demo&#39;</span>, <span style=color:#e6db74>&#39;id&#39;</span>: 2484850, <span style=color:#e6db74>&#39;count&#39;</span>: 42<span style=color:#f92672>}</span>
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#f92672>from</span> pyensign.ensign <span style=color:#f92672>import</span> Ensign
-</span></span><span style=display:flex><span><span style=color:#f92672>from</span> pyensign.api.v1beta1.ensign_pb2 <span style=color:#f92672>import</span> Nack
+</span></span><span style=display:flex><span>New steam report received: <span style=color:#f92672>{</span><span style=color:#e6db74>&#39;game&#39;</span>: <span style=color:#e6db74>&#39;Fantasy Grounds - FG Grasslands Map Pack&#39;</span>, <span style=color:#e6db74>&#39;id&#39;</span>: 2484870, <span style=color:#e6db74>&#39;count&#39;</span>: 1<span style=color:#f92672>}</span>
 </span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>New steam report received: <span style=color:#f92672>{</span><span style=color:#e6db74>&#39;game&#39;</span>: <span style=color:#e6db74>&#39;Phantom Peak&#39;</span>, <span style=color:#e6db74>&#39;id&#39;</span>: 2484240, <span style=color:#e6db74>&#39;count&#39;</span>: 42<span style=color:#f92672>}</span>
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e># TODO Python&gt;3.10 needs to ignore DeprecationWarning: There is no current event loop</span>
-</span></span><span style=display:flex><span>warnings<span style=color:#f92672>.</span>filterwarnings(<span style=color:#e6db74>&#34;ignore&#34;</span>)
+</span></span><span style=display:flex><span>New steam report received: <span style=color:#f92672>{</span><span style=color:#e6db74>&#39;game&#39;</span>: <span style=color:#e6db74>&#39;Jolly Putt - Mini Golf &amp; Arcade&#39;</span>, <span style=color:#e6db74>&#39;id&#39;</span>: 2484340, <span style=color:#e6db74>&#39;count&#39;</span>: 42<span style=color:#f92672>}</span>
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>SteamSubscriber</span>:
-</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#34;&#34;&#34;
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>    SteamSubscriber reads from the topic that the SteamPublisher is writing to.
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>    &#34;&#34;&#34;</span>
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>def</span> __init__(self, topic<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;steam-stats-json&#34;</span>):
-</span></span><span style=display:flex><span>        <span style=color:#e6db74>&#34;&#34;&#34;
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>        Parameters
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>        ----------
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>        topic : string, default: &#34;steam-stats-json&#34;
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>            The name of the topic you wish to publish to. If the topic doesn&#39;t yet
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>            exist, Ensign will create it for you. Tips on topic naming conventions can
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>            be found at https://ensign.rotational.dev/getting-started/topics/
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>        &#34;&#34;&#34;</span>
-</span></span><span style=display:flex><span>        self<span style=color:#f92672>.</span>topic <span style=color:#f92672>=</span> topic
-</span></span><span style=display:flex><span>        self<span style=color:#f92672>.</span>ensign <span style=color:#f92672>=</span> Ensign()
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>run</span>(self):
-</span></span><span style=display:flex><span>        <span style=color:#e6db74>&#34;&#34;&#34;
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>        Run the subscriber forever.
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>        &#34;&#34;&#34;</span>
-</span></span><span style=display:flex><span>        asyncio<span style=color:#f92672>.</span>get_event_loop()<span style=color:#f92672>.</span>run_until_complete(self<span style=color:#f92672>.</span>subscribe())
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>async</span> <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>handle_event</span>(self, event):
-</span></span><span style=display:flex><span>        <span style=color:#e6db74>&#34;&#34;&#34;
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>        Decode and ack the event.
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>        &#34;&#34;&#34;</span>
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>try</span>:
-</span></span><span style=display:flex><span>            data <span style=color:#f92672>=</span> json<span style=color:#f92672>.</span>loads(event<span style=color:#f92672>.</span>data)
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>except</span> json<span style=color:#f92672>.</span>JSONDecodeError:
-</span></span><span style=display:flex><span>            print(<span style=color:#e6db74>&#34;Received invalid JSON in event payload:&#34;</span>, event<span style=color:#f92672>.</span>data)
-</span></span><span style=display:flex><span>            <span style=color:#66d9ef>await</span> event<span style=color:#f92672>.</span>nack(Nack<span style=color:#f92672>.</span>Code<span style=color:#f92672>.</span>UNKNOWN_TYPE)
-</span></span><span style=display:flex><span>            <span style=color:#66d9ef>return</span>
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>        print(<span style=color:#e6db74>&#34;New steam report received:&#34;</span>, data)
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>await</span> event<span style=color:#f92672>.</span>ack()
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>async</span> <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>subscribe</span>(self):
-</span></span><span style=display:flex><span>        <span style=color:#e6db74>&#34;&#34;&#34;
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>        Subscribe to SteamPublisher events from Ensign
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>        &#34;&#34;&#34;</span>
-</span></span><span style=display:flex><span>        id <span style=color:#f92672>=</span> <span style=color:#66d9ef>await</span> self<span style=color:#f92672>.</span>ensign<span style=color:#f92672>.</span>topic_id(self<span style=color:#f92672>.</span>topic)
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>await</span> self<span style=color:#f92672>.</span>ensign<span style=color:#f92672>.</span>subscribe(id, on_event<span style=color:#f92672>=</span>self<span style=color:#f92672>.</span>handle_event)
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>await</span> asyncio<span style=color:#f92672>.</span>Future()
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>if</span> __name__ <span style=color:#f92672>==</span> <span style=color:#e6db74>&#34;__main__&#34;</span>:
-</span></span><span style=display:flex><span>    subscriber <span style=color:#f92672>=</span> SteamSubscriber()
-</span></span><span style=display:flex><span>    subscriber<span style=color:#f92672>.</span>run()
-</span></span></code></pre></div></div><div data-tab-item=Go data-tab-group=default class=tab-item><button id=copy-code-button class="copy-code-button absolute text-white text-xs right-[3.5rem] bg-red-500 p-1 hover:text-red-700 [&.active]:bg-green-600 mt-[0.75rem] mr-[0.75rem]">
-Copy</button><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-golang data-lang=golang><span style=display:flex><span><span style=color:#f92672>package</span> <span style=color:#a6e22e>main</span>
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#f92672>import</span> (
-</span></span><span style=display:flex><span>	<span style=color:#e6db74>&#34;encoding/json&#34;</span>
-</span></span><span style=display:flex><span>	<span style=color:#e6db74>&#34;fmt&#34;</span>
-</span></span><span style=display:flex><span>	<span style=color:#e6db74>&#34;net/http&#34;</span>
-</span></span><span style=display:flex><span>)
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>type</span> <span style=color:#a6e22e>SteamApps</span> <span style=color:#66d9ef>struct</span> {
-</span></span><span style=display:flex><span>	<span style=color:#a6e22e>AppList</span> <span style=color:#66d9ef>struct</span> {
-</span></span><span style=display:flex><span>		<span style=color:#a6e22e>Apps</span> []<span style=color:#a6e22e>SteamApp</span>
-</span></span><span style=display:flex><span>	}
-</span></span><span style=display:flex><span>}
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>type</span> <span style=color:#a6e22e>SteamApp</span> <span style=color:#66d9ef>struct</span> {
-</span></span><span style=display:flex><span>	<span style=color:#a6e22e>AppId</span> <span style=color:#66d9ef>uint64</span>
-</span></span><span style=display:flex><span>	<span style=color:#a6e22e>Name</span>  <span style=color:#66d9ef>string</span>
-</span></span><span style=display:flex><span>}
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>type</span> <span style=color:#a6e22e>AppReviews</span> <span style=color:#66d9ef>struct</span> {
-</span></span><span style=display:flex><span>	<span style=color:#a6e22e>Success</span>      <span style=color:#66d9ef>int</span>
-</span></span><span style=display:flex><span>	<span style=color:#a6e22e>QuerySummary</span> <span style=color:#a6e22e>QuerySummary</span>
-</span></span><span style=display:flex><span>	<span style=color:#a6e22e>Reviews</span>      []<span style=color:#a6e22e>Review</span>
-</span></span><span style=display:flex><span>}
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>type</span> <span style=color:#a6e22e>QuerySummary</span> <span style=color:#66d9ef>struct</span> {
-</span></span><span style=display:flex><span>	<span style=color:#a6e22e>NumberReviews</span>          <span style=color:#66d9ef>int</span>
-</span></span><span style=display:flex><span>	<span style=color:#a6e22e>ReviewScore</span>            <span style=color:#66d9ef>int</span>
-</span></span><span style=display:flex><span>	<span style=color:#a6e22e>ReviewScoreDescription</span> <span style=color:#66d9ef>string</span>
-</span></span><span style=display:flex><span>	<span style=color:#a6e22e>TotalPositive</span>          <span style=color:#66d9ef>int</span>
-</span></span><span style=display:flex><span>	<span style=color:#a6e22e>TotalNegative</span>          <span style=color:#66d9ef>int</span>
-</span></span><span style=display:flex><span>	<span style=color:#a6e22e>TotalReviews</span>           <span style=color:#66d9ef>int</span>
-</span></span><span style=display:flex><span>}
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>type</span> <span style=color:#a6e22e>Review</span> <span style=color:#66d9ef>struct</span> {
-</span></span><span style=display:flex><span>	<span style=color:#a6e22e>ID</span>                <span style=color:#66d9ef>string</span>
-</span></span><span style=display:flex><span>	<span style=color:#a6e22e>Author</span>            <span style=color:#a6e22e>Author</span>
-</span></span><span style=display:flex><span>	<span style=color:#a6e22e>Language</span>          <span style=color:#66d9ef>string</span>
-</span></span><span style=display:flex><span>	<span style=color:#a6e22e>Review</span>            <span style=color:#66d9ef>string</span>
-</span></span><span style=display:flex><span>	<span style=color:#a6e22e>TimeCreated</span>       <span style=color:#66d9ef>int64</span>
-</span></span><span style=display:flex><span>	<span style=color:#a6e22e>TimeUpdated</span>       <span style=color:#66d9ef>int64</span>
-</span></span><span style=display:flex><span>	<span style=color:#a6e22e>VotedUp</span>           <span style=color:#66d9ef>bool</span>
-</span></span><span style=display:flex><span>	<span style=color:#a6e22e>VotesUp</span>           <span style=color:#66d9ef>int</span>
-</span></span><span style=display:flex><span>	<span style=color:#a6e22e>VotesDown</span>         <span style=color:#66d9ef>int</span>
-</span></span><span style=display:flex><span>	<span style=color:#a6e22e>VotesFunny</span>        <span style=color:#66d9ef>int</span>
-</span></span><span style=display:flex><span>	<span style=color:#a6e22e>WeightedVoteScore</span> <span style=color:#66d9ef>string</span>
-</span></span><span style=display:flex><span>	<span style=color:#a6e22e>CommentCount</span>      <span style=color:#a6e22e>json</span>.<span style=color:#a6e22e>RawMessage</span>
-</span></span><span style=display:flex><span>	<span style=color:#a6e22e>SteamPurchase</span>     <span style=color:#66d9ef>bool</span>
-</span></span><span style=display:flex><span>	<span style=color:#a6e22e>ReceivedForFree</span>   <span style=color:#66d9ef>bool</span>
-</span></span><span style=display:flex><span>	<span style=color:#a6e22e>EarlyAccess</span>       <span style=color:#66d9ef>bool</span>
-</span></span><span style=display:flex><span>}
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>type</span> <span style=color:#a6e22e>Author</span> <span style=color:#66d9ef>struct</span> {
-</span></span><span style=display:flex><span>	<span style=color:#a6e22e>UserID</span>               <span style=color:#66d9ef>string</span>
-</span></span><span style=display:flex><span>	<span style=color:#a6e22e>NumberGamesOwned</span>     <span style=color:#66d9ef>int</span>
-</span></span><span style=display:flex><span>	<span style=color:#a6e22e>NumberReviews</span>        <span style=color:#66d9ef>int</span>
-</span></span><span style=display:flex><span>	<span style=color:#a6e22e>PlayTimeForever</span>      <span style=color:#66d9ef>int</span>
-</span></span><span style=display:flex><span>	<span style=color:#a6e22e>PlaytimeLastTwoWeeks</span> <span style=color:#66d9ef>int</span>
-</span></span><span style=display:flex><span>	<span style=color:#a6e22e>LastPlayed</span>           <span style=color:#66d9ef>int64</span>
-</span></span><span style=display:flex><span>}
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>func</span> <span style=color:#a6e22e>main</span>() {
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>var</span> <span style=color:#a6e22e>err</span> <span style=color:#66d9ef>error</span>
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>var</span> <span style=color:#a6e22e>response</span> <span style=color:#f92672>*</span><span style=color:#a6e22e>http</span>.<span style=color:#a6e22e>Response</span>
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>if</span> <span style=color:#a6e22e>response</span>, <span style=color:#a6e22e>err</span> = <span style=color:#a6e22e>http</span>.<span style=color:#a6e22e>Get</span>(<span style=color:#e6db74>&#34;https://api.steampowered.com/ISteamApps/GetAppList/v2/&#34;</span>); <span style=color:#a6e22e>err</span> <span style=color:#f92672>!=</span> <span style=color:#66d9ef>nil</span> {
-</span></span><span style=display:flex><span>		<span style=color:#a6e22e>fmt</span>.<span style=color:#a6e22e>Println</span>(<span style=color:#a6e22e>err</span>)
-</span></span><span style=display:flex><span>		<span style=color:#66d9ef>return</span>
-</span></span><span style=display:flex><span>	}
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>defer</span> <span style=color:#a6e22e>response</span>.<span style=color:#a6e22e>Body</span>.<span style=color:#a6e22e>Close</span>()
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>var</span> <span style=color:#a6e22e>apps</span> <span style=color:#a6e22e>SteamApps</span>
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>if</span> <span style=color:#a6e22e>response</span>.<span style=color:#a6e22e>StatusCode</span> <span style=color:#f92672>!=</span> <span style=color:#ae81ff>200</span> {
-</span></span><span style=display:flex><span>		<span style=color:#a6e22e>fmt</span>.<span style=color:#a6e22e>Println</span>(<span style=color:#e6db74>&#34;status code&#34;</span>, <span style=color:#a6e22e>response</span>.<span style=color:#a6e22e>StatusCode</span>)
-</span></span><span style=display:flex><span>		<span style=color:#66d9ef>return</span>
-</span></span><span style=display:flex><span>	}
-</span></span><span style=display:flex><span>	<span style=color:#a6e22e>json</span>.<span style=color:#a6e22e>NewDecoder</span>(<span style=color:#a6e22e>response</span>.<span style=color:#a6e22e>Body</span>).<span style=color:#a6e22e>Decode</span>(<span style=color:#f92672>&amp;</span><span style=color:#a6e22e>apps</span>)
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>var</span> <span style=color:#a6e22e>reviews</span> <span style=color:#a6e22e>AppReviews</span>
-</span></span><span style=display:flex><span>	<span style=color:#a6e22e>url</span> <span style=color:#f92672>:=</span> <span style=color:#e6db74>&#34;https://store.steampowered.com/appreviews/413150?json=1&#39;&#34;</span>
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>if</span> <span style=color:#a6e22e>response</span>, <span style=color:#a6e22e>err</span> = <span style=color:#a6e22e>http</span>.<span style=color:#a6e22e>Get</span>(<span style=color:#a6e22e>url</span>); <span style=color:#a6e22e>err</span> <span style=color:#f92672>!=</span> <span style=color:#66d9ef>nil</span> {
-</span></span><span style=display:flex><span>		<span style=color:#a6e22e>fmt</span>.<span style=color:#a6e22e>Println</span>(<span style=color:#a6e22e>err</span>)
-</span></span><span style=display:flex><span>		<span style=color:#66d9ef>return</span>
-</span></span><span style=display:flex><span>	}
-</span></span><span style=display:flex><span>	<span style=color:#a6e22e>json</span>.<span style=color:#a6e22e>NewDecoder</span>(<span style=color:#a6e22e>response</span>.<span style=color:#a6e22e>Body</span>).<span style=color:#a6e22e>Decode</span>(<span style=color:#f92672>&amp;</span><span style=color:#a6e22e>reviews</span>)
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>	<span style=color:#a6e22e>fmt</span>.<span style=color:#a6e22e>Println</span>(len(<span style=color:#a6e22e>reviews</span>.<span style=color:#a6e22e>Reviews</span>))
-</span></span><span style=display:flex><span>	<span style=color:#a6e22e>fmt</span>.<span style=color:#a6e22e>Println</span>(<span style=color:#a6e22e>reviews</span>.<span style=color:#a6e22e>Reviews</span>[<span style=color:#ae81ff>0</span>].<span style=color:#a6e22e>Review</span>)
-</span></span><span style=display:flex><span>}
-</span></span></code></pre></div></div></div></div></div></div><div class="w-full px-10 text-xl font-bold mt-5"><h2 class=text-xl>Data Products Showcase</h2><article class=prose></article></div><div class="mt-2 ml-10"><p>Coming soon!</p></div><script src=https://rotational.io/js/copy-code-button.js></script></main><div id=footerBackground><footer class="bg-hero-footer bg-cover"><div class="pt-[350px] font-extralight text-white"><div class="max-w-7xl mx-auto px-6"><div class="max-[650px]:text-center sm:grid grid-cols-4"><div><a href=/><img src=img/footer-otter.png alt class="mx-auto mt-28 sm:mt-0"></a></div><div class="my-10 sm:my-0"><h5 class=mb-3>PRODUCT</h5><ul><li class=pb-3><a href=https://rotational.app target=_blank class=font-bold>Ensign</a></li><li class=pb-3><a href=https://ensign.rotational.dev/getting-started/ target=_blank class=font-bold>Documentation</a></li><li class=pb-3><a href=https://ensign.rotational.dev/sdk/ target=_blank class=font-bold>SDKs</a></li></ul></div><div class="mb-10 sm:mb-0"><h5 class=mb-3>COMPANY</h5><ul><li class=pb-3><a href=/services class=font-bold>Services</a></li><li class=pb-3><a href=/blog class=font-bold>Blog</a></li><li class=pb-3><a href=/opensource class=font-bold>Open Source</a></li><li class=pb-3><a href=/about class=font-bold>About</a></li><li class=pb-3><a href=/contact class=font-bold>Contact Us</a></li></ul></div><div><h5 class=mb-3>INFORMATION</h5><ul><li class=pb-3><a href=/privacy class=font-bold>Privacy</a></li><li class=pb-3><a href=/terms class=font-bold>Terms</a></li></ul></div></div><div class="max-w-7xl sm:flex justify-between border-t py-6 mt-12 sm:mt-32"><div class="mx-auto xl:ml-5 sm:mt-0 mt-8"><div><ul class="mx-auto grid grid-cols-2 gap-x-20 md:gap-x-32 lg:grid-cols-4 xl:ml-20"><li class="pb-8 mt-1"><a href=https://twitter.com/rotationalio class="flex items-center p-2 hover:rounded-full hover:bg-icon-hover" target=_blank><img src=img/footer/twitter.svg alt class=scale-75>
+</span></span><span style=display:flex><span>New steam report received: <span style=color:#f92672>{</span><span style=color:#e6db74>&#39;game&#39;</span>: <span style=color:#e6db74>&#39;Fat Rat Pinball&#39;</span>, <span style=color:#e6db74>&#39;id&#39;</span>: 2484420, <span style=color:#e6db74>&#39;count&#39;</span>: 42<span style=color:#f92672>}</span>
+</span></span></code></pre></div></div></div><div class="w-full px-10 text-xl font-bold mt-5"><h2 class=text-xl>Data Products Showcase</h2><article class=prose></article></div><div class="mt-2 ml-10"><p>Coming soon!</p></div></main><div id=footerBackground><footer class="bg-hero-footer bg-cover"><div class="pt-[350px] font-extralight text-white"><div class="max-w-7xl mx-auto px-6"><div class="max-[650px]:text-center sm:grid grid-cols-4"><div><a href=/><img src=img/footer-otter.png alt class="mx-auto mt-28 sm:mt-0"></a></div><div class="my-10 sm:my-0"><h5 class=mb-3>PRODUCT</h5><ul><li class=pb-3><a href=https://rotational.app target=_blank class=font-bold>Ensign</a></li><li class=pb-3><a href=https://ensign.rotational.dev/getting-started/ target=_blank class=font-bold>Documentation</a></li><li class=pb-3><a href=https://ensign.rotational.dev/sdk/ target=_blank class=font-bold>SDKs</a></li></ul></div><div class="mb-10 sm:mb-0"><h5 class=mb-3>COMPANY</h5><ul><li class=pb-3><a href=/services class=font-bold>Services</a></li><li class=pb-3><a href=/blog class=font-bold>Blog</a></li><li class=pb-3><a href=/opensource class=font-bold>Open Source</a></li><li class=pb-3><a href=/about class=font-bold>About</a></li><li class=pb-3><a href=/contact class=font-bold>Contact Us</a></li></ul></div><div><h5 class=mb-3>INFORMATION</h5><ul><li class=pb-3><a href=/privacy class=font-bold>Privacy</a></li><li class=pb-3><a href=/terms class=font-bold>Terms</a></li></ul></div></div><div class="max-w-7xl sm:flex justify-between border-t py-6 mt-12 sm:mt-32"><div class="mx-auto xl:ml-5 sm:mt-0 mt-8"><div><ul class="mx-auto grid grid-cols-2 gap-x-20 md:gap-x-32 lg:grid-cols-4 xl:ml-20"><li class="pb-8 mt-1"><a href=https://twitter.com/rotationalio class="flex items-center p-2 hover:rounded-full hover:bg-icon-hover" target=_blank><img src=img/footer/twitter.svg alt class=scale-75>
 <span class=ml-4>Twitter</span></a></li><li class="pb-8 mt-1"><a href=https://github.com/rotationalio class="flex items-center p-2 hover:rounded-full hover:bg-icon-hover" target=_blank><img src=img/footer/github.svg alt class=scale-[.8]>
 <span class=ml-4>GitHub</span></a></li><li class=pb-8><a href=https://www.linkedin.com/company/rotational class="flex items-center p-2 hover:rounded-full hover:bg-icon-hover" target=_blank><img src=img/footer/linkedin.svg alt class=scale-75>
 <span class="mt-2 ml-4">LinkedIn</span></a></li><li class="pb-8 mt-2"><a href=mailto:info@rotational.io class="flex items-center p-2 hover:rounded-full hover:bg-icon-hover" target=_blank><img src=img/footer/email.svg alt class=scale-[.8]>
