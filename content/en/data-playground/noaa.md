@@ -24,6 +24,7 @@ weight: 2
 
 {{% data-playground-wrapper %}}
 
+Sample data returned by `Subscriber`:
 ```bash
 New weather report received: {'name': 'This Afternoon', 'summary': 'Mostly Cloudy', 'temperature': 71, 'units': 'F', 'daytime': True, 'start': '2023-06-26T14:00:00-08:00', 'end': '2023-06-26T18:00:00-08:00'}
 

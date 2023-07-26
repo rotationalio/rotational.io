@@ -24,6 +24,7 @@ weight: 1
 
 {{% data-playground-wrapper %}}
 
+Sample data returned by `Subscriber`:
 ```json
 {"symbol": "AMZN", "time": "12:18:03", "price": "127.88", "price_pred": "183.5796"}
 

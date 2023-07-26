@@ -24,6 +24,7 @@ weight: 3
 
 {{% data-playground-wrapper %}}
 
+Sample data returned by `Subscriber`:
 ```bash
 New steam report received: {'game': 'The Murder Hotel Demo', 'id': 2484850, 'count': 42}
 

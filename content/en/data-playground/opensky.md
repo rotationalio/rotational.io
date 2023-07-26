@@ -23,6 +23,7 @@ weight: 6
 
 {{% data-playground-wrapper %}}
 
+Sample data returned by `Subscriber`:
 ```bash
 Received flight vector: {'icao24': 'a11d08', 'callsign': 'N171BL  ', 'origin_country': 'United States', 'time_position': 1687890269, 'last_contact': 1687890269, 'longitude': -77.8813, 'latitude': 35.8695, 'geo_altitude': 68.58, 'on_ground': False, 'velocity': 44.38, 'true_track': 214.61, 'vertical_rate': -3.9, 'sensors': None, 'barometric_altitude': 160.02, 'transponder_code': None, 'special_purpose_indicator': False, 'position_source': 0, 'category': 0}
 

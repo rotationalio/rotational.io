@@ -24,6 +24,7 @@ weight: 4
 
 {{% data-playground-wrapper %}}
 
+Sample data returned by `Subscriber`:
 ```bash
 New earthquake report received: {'magnitude': 1.8, 'place': '83 km NW of Karluk, Alaska', 'time': 1688153699651, 'updated': 1688153851807, 'article_link': 'https://earthquake.usgs.gov/earthquakes/eventpage/ak0238bnsgtv', 'type': 'earthquake', 'rms': 0.49, 'gap': None}
 
