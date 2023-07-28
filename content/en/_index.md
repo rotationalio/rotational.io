@@ -10,7 +10,7 @@ headeractions:
 ---
 
 <!-- Home Intro is the first section on the webpage -->
-{{< home-intro image="img/global_data_blue_flow_clip.png" >}}
+{{< home-intro image="img/space_enson_events.png" >}}
 **Disconnected Data Sources? Meet Real-time Insights**
 
 Ensign is a cloud native, cloud agnostic, real-time data streaming platform that seamlessly integrates your disconnected data.
