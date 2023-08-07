@@ -5,7 +5,7 @@ subtitle: "Earthquake Alerts"
 draft: false
 image: img/data-playground/us-geological.png
 github_link: "https://github.com/rotationalio/data-playground/tree/main/earthquakes"
-description: Natural disasters are the biggest threat for most industries -- from shipping disruptions that impact the supply chain, to data center losses that cause catastrophic data loss. And unfortunately, due to climate change, natural disasters are on the rise. The U.S. Geological Survey provides the latest alerts as well as detailed information about earthquakes and their impacts. Use Ensign with this data source to generate a time-series dataset that you could to build ecological impact models or for strategic and/or disaster planning in your industry.
+description: Natural disasters are the biggest threat for most industries -- from shipping disruptions that impact the supply chain, to data center losses that cause catastrophic data loss. And unfortunately, due to climate change, natural disasters are on the rise. The U.S. Geological Survey provides the latest alerts as well as detailed information about earthquakes and their impacts. Use Ensign with this data source to generate a time-series dataset that you could use to build ecological impact models or for strategic and/or disaster planning in your industry.
 summary: Connect to earthquake data and start experimenting with geological models and apps.
 license: Free
 license_warning: Please review terms and conditions. Access to data sources can change.

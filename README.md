@@ -49,24 +49,6 @@ In a separate terminal window the following command will watch for any CSS chang
 $ yarn dev:css
 ```
 
-## Data Playground
-
-If you add a source to the Data Playground, remember to run the indexing command to ensure it shows up in the search functionality:
-
-```
-$ yarn index
-```
-
-**REMEMBER** after running this command, please go to `static/index.json` and delete lines 2-6 so they don't get added/committed:
-
-```json
-    {
-        "uri": "/_index",
-        "content": "---\ndate: 2023-06-07T12:01:28-04:00\ntitle: \"Data Playground\"\nheadertext: \"The Data Playground\"\nsubheadertext: \"Streaming data sources and examples for your apps, models, and services\"\nnoicon: true\ntype: \"data-playground\"\nissearchenabled: false\nisfilterenabled: true\n---",
-        "tags": []
-    },
-```
-
 ## Blog
 
 To create a new blog post, use the [`hugo new`](https://gohugo.io/commands/hugo_new/#readout) command as follows:
@@ -231,7 +213,9 @@ is_api_key_required: false
 api_type: "Add API Type(s) Provided Here and Separate Multiple Types With A Comma"
 sdks: "Add Available SDKs Here and Separate Multiple SDKs With A Comma"
 limits: "Add API Limit Information Here, If Available"
-
+diagram_image:
+diagram_alt:
+weight:
 ---
 ```
 
@@ -249,7 +233,10 @@ Next, update the following fields:
 `is_api_key_required`,
 `api_type`,
 `sdks`,
-`limits`
+`limits`,
+`diagram_image`,
+`diagram_alt`,
+`weight`
 
 After updating the fields listed above, content added for the new data source should be added to the `static/index.json` file to update the search index.
 To create an updated `static/index.json` file, use the following command:
@@ -278,6 +265,8 @@ Delete the JSON for `/_index` starting on line 2 of the `static/index.json` file
 ```
 
 Once the new data source is updated and ready to be added to the website, be sure to change `draft` to `true`.
+
+
 ## Acknowledgements
 
 We couldn't do what we do without the contributions of others, so we want to acknowledge and thank them for their efforts. Our website uses the following open source tools and royalty-free media:
