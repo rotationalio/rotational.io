@@ -30,7 +30,6 @@ team:
         - icon : "ti-github" # themify icon pack : https://themify.me/themify-icons
           link : "https://github.com/rebeccabilbro"
       bioLink : bio/rebecca-bilbro
-
     # team member loop
     - name : Edwin Schmierer
       image : img/team/edwin-schmierer.png
@@ -44,6 +43,15 @@ team:
         - icon : "ti-github" # themify icon pack : https://themify.me/themify-icons
           link : "https://github.com/eschmier"
       bioLink : bio/edwin-schmierer
+    # team member loop
+    - name : Amanda Stanley
+      image : img/team/amanda-stanley.png
+      designation : Head of Growth
+      content : Product Marketing Advisor
+      social :
+        - icon : "ti-linkedin" # themify icon pack : https://themify.me/themify-icons
+          link : "https://www.linkedin.com/in/stanleyamandak/"
+      bioLink: 'bio/amanda-stanley'
     # team member loop
     - name : Patrick Deziel
       image : img/team/patrick-deziel.png
