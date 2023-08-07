@@ -5,7 +5,7 @@ subtitle: "Earthquake Alerts"
 draft: false
 image: img/data-playground/us-geological.png
 github_link: "https://github.com/rotationalio/data-playground/tree/main/earthquakes"
-description: The U.S. Geological Survey provides the latest alerts as well as detailed information about earthquakes and their impacts.
+description: Natural disasters are the biggest threat for most industries -- from shipping disruptions that impact the supply chain, to data center losses that cause catastrophic data loss. And unfortunately, due to climate change, natural disasters are on the rise. The U.S. Geological Survey provides the latest alerts as well as detailed information about earthquakes and their impacts. Use Ensign with this data source to generate a time-series dataset that you could use to build ecological impact models or for strategic and/or disaster planning in your industry.
 summary: Connect to earthquake data and start experimenting with geological models and apps.
 license: Free
 license_warning: Please review terms and conditions. Access to data sources can change.
@@ -19,12 +19,12 @@ data: Earthquake data, with magnitudes, locations, and more
 is_account_required: false
 diagram_image:
 diagram_alt:
-weight: 4
+weight: 3
 ---
 
 {{% data-playground-wrapper %}}
 
-Sample data returned by `Subscriber`:
+<a href="https://github.com/rotationalio/data-playground/tree/main/earthquakes" class="text-[#1D65A6] font-bold underline">Click here</a> for the code to get data such as:
 ```bash
 New earthquake report received: {'magnitude': 1.8, 'place': '83 km NW of Karluk, Alaska', 'time': 1688153699651, 'updated': 1688153851807, 'article_link': 'https://earthquake.usgs.gov/earthquakes/eventpage/ak0238bnsgtv', 'type': 'earthquake', 'rms': 0.49, 'gap': None}
 

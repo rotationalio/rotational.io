@@ -12,7 +12,7 @@ switch:
 
 ## Think Outside the Batch
 
-Batches are great, but **the world is moving towards bigger training datasets and faster analytics** that need event streams. Even though Kafka is really powerful, most of us still dont' feel like eventing is for us. :confused:
+Batches are great, but **the world is moving towards bigger training datasets and faster analytics** that need event streams. Even though Kafka is really powerful, most of us still don't feel like eventing is for us. :confused:
 
 Until now! :magic_wand: Let us show you the magic of integrating your data science foo with real-time streams. Ensign simplifies streaming ETLs, helps with data sharing, captures chronological changes to all data objects so you get change vectors in addition to static snapshots. From delivering rapid analytics to building and deploying real-time models, Ensign makes it fast, easy, and fun.
 

@@ -41,14 +41,13 @@ To install or update dependencies before making front end changes:
 $ yarn install
 ```
 
-The Tailwind CSS library is used to add CSS styles to the site. Tailwind automatically builds an output.css file which is the main stylesheet for the website. 
+The Tailwind CSS library is used to add CSS styles to the site. Tailwind automatically builds an output.css file which is the main stylesheet for the website.
 
-In a separate terminal window the following command will watch for any CSS changes and automatically rebuild the output.css file: 
+In a separate terminal window the following command will watch for any CSS changes and automatically rebuild the output.css file:
 
 ```
 $ yarn dev:css
 ```
-
 
 ## Blog
 
@@ -198,7 +197,7 @@ This will create a new file in the `content/en/data-playground/` directory that 
 ---
 title: "New Data Source"
 slug: "new-data-source"
-subtitle: "Add Data Type Here" 
+subtitle: "Add Data Type Here"
 draft: true
 image: img/data-playground/data-source-img.png
 summary: "Add Summary To Display On List Page Here"
@@ -214,7 +213,9 @@ is_api_key_required: false
 api_type: "Add API Type(s) Provided Here and Separate Multiple Types With A Comma"
 sdks: "Add Available SDKs Here and Separate Multiple SDKs With A Comma"
 limits: "Add API Limit Information Here, If Available"
-
+diagram_image:
+diagram_alt:
+weight:
 ---
 ```
 
@@ -232,7 +233,10 @@ Next, update the following fields:
 `is_api_key_required`,
 `api_type`,
 `sdks`,
-`limits`
+`limits`,
+`diagram_image`,
+`diagram_alt`,
+`weight`
 
 After updating the fields listed above, content added for the new data source should be added to the `static/index.json` file to update the search index.
 To create an updated `static/index.json` file, use the following command:
@@ -261,6 +265,8 @@ Delete the JSON for `/_index` starting on line 2 of the `static/index.json` file
 ```
 
 Once the new data source is updated and ready to be added to the website, be sure to change `draft` to `true`.
+
+
 ## Acknowledgements
 
 We couldn't do what we do without the contributions of others, so we want to acknowledge and thank them for their efforts. Our website uses the following open source tools and royalty-free media:

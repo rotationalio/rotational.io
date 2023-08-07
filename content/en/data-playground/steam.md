@@ -5,7 +5,7 @@ subtitle: "Game Reviews"
 draft: false
 image: img/data-playground/steam.png
 github_link: "https://github.com/rotationalio/data-playground/tree/main/steam"
-description: The Steam API allows users to fetch statistics for individual games, data about users, or news feeds for game updates. All of this can be brought to bear to create powerful analytics on top of video game data made seamless using Ensign.
+description: The global gaming market size was valued at USD 249.55 billion in 2022 and is anticipated to grow from USD 281.77 billion in 2023 to USD 665.77 billion by 2030. Are you curious to dip into the stream of gamer data to get a better sense of what's coming next in the gaming world? The Steam API allows users to fetch statistics for individual games, data about users, or news feeds for game updates. Use Ensign with this data source to generate a time-series dataset that you could add to create powerful analytics on top of video game data and inform machine learning models about game popularity and community.
 summary: Connect to game review data and start experimenting with game review models and apps.
 license: Free
 license_warning: Please review terms and conditions. Access to data sources can change.
@@ -19,12 +19,12 @@ data: Game data and player stats
 is_account_required: false
 diagram_image:
 diagram_alt:
-weight: 3
+weight: 4
 ---
 
 {{% data-playground-wrapper %}}
 
-Sample data returned by `Subscriber`:
+<a href="https://github.com/rotationalio/data-playground/tree/main/steam" class="text-[#1D65A6] font-bold underline">Click here</a> for the code to get data such as:
 ```bash
 New steam report received: {'game': 'The Murder Hotel Demo', 'id': 2484850, 'count': 42}
 
