@@ -6,10 +6,10 @@ draft: false
 image: img/data-playground/dc-metro.png
 summary: Connect to DC Metro public transport data and start experimenting with scheduling models and apps.
 github_link: https://github.com/rotationalio/data-playground/tree/main/wmata
-description: DC WMATA provides public transportation data such as real-time bus and rail predictions.
+description: The capital of the United States is the District of Columbia, also known as Washington, DC. Over 20 million people travel to the DC every year, and it has an extensive subway system that locals call "Metro". The Metro gets a lot of traffic, including from locals, but also from large numbers of tourists from around the world. Transportation data often displays very interesting temporal patterns that are impossible to capture without a time series dataset. Think that might be useful for something you're researching? The District of Columbia's transportation authority (WMATA) provides public transportation data such as real-time bus and rail predictions. Use Ensign with this data source to extrapolate a time series dataset to detect seasonal and other patterns.
 producer_name: Washington Metro Area Transit Authority (WMATA)
 producer_link: https://developer.wmata.com/
-data: Bus & train trip updates, alerts, and vehicle positions.
+data: Bus & train trip updates, alerts, delays, and vehicle positions.
 is_account_required: true
 license: Free
 license_warning: Please review terms and conditions. Access to data sources can change.
@@ -23,7 +23,7 @@ weight: 5
 ---
 {{% data-playground-wrapper %}}
 
-Sample data returned by `Subscriber`:
+**[Click here](https://github.com/rotationalio/data-playground/tree/main/wmata)** for the code to get data such as:
 ```bash
 New metro report received: {'incident_id': '001E815C-4A62-47EE-843D-5F0B788C799C', 'incident_type': 'Alert', 'routes_affected': ['P12'], 'description': 'Due to an accident at Addison Rd Station, buses may experience delays.', 'date_updated': '2023-07-03T13:43:14'}
 

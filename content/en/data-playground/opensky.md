@@ -5,7 +5,7 @@ subtitle: "Flight Data"
 draft: false
 image: img/data-playground/opensky.png
 github_link: https://github.com/rotationalio/data-playground/tree/main/opensky
-description: OpenSky provides flight data by aircraft along with arrivals and departures by airport.
+description: During the initial novel Coronavirus lockdowns that cities imposed, flight activity decreased by 96%. Several years later, it is still in the process of recovering. Will the travel industry recover from the pandemic? And if so, when? Can flight patterns today be used to predict travel behavior for next year? If you work in Tourism or an adjacent industry, and you aren't already paying attention to patterns in flight activity, you might be interested in this dataset! OpenSky provides flight data by aircraft along with arrivals and departures by airport. Use Ensign with this data source to generate a time-series dataset that you could add as a feature for machine learning models, financial planning, and strategy.
 summary: Connect to flight data and start experimenting with aviation models and apps.
 license: Free
 producer_name: OpenSky
@@ -23,7 +23,7 @@ weight: 6
 
 {{% data-playground-wrapper %}}
 
-Sample data returned by `Subscriber`:
+**[Click here](https://github.com/rotationalio/data-playground/tree/main/opensky)** for the code to get data such as:
 ```bash
 Received flight vector: {'icao24': 'a11d08', 'callsign': 'N171BL  ', 'origin_country': 'United States', 'time_position': 1687890269, 'last_contact': 1687890269, 'longitude': -77.8813, 'latitude': 35.8695, 'geo_altitude': 68.58, 'on_ground': False, 'velocity': 44.38, 'true_track': 214.61, 'vertical_rate': -3.9, 'sensors': None, 'barometric_altitude': 160.02, 'transponder_code': None, 'special_purpose_indicator': False, 'position_source': 0, 'category': 0}
 
