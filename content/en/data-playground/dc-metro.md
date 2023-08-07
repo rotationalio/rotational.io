@@ -23,7 +23,7 @@ weight: 5
 ---
 {{% data-playground-wrapper %}}
 
-**[Click here](https://github.com/rotationalio/data-playground/tree/main/wmata)** for the code to get data such as:
+<a href="https://github.com/rotationalio/data-playground/tree/main/wmata" class="text-[#1D65A6] font-bold underline">Click here</a> for the code to get data such as:
 ```bash
 New metro report received: {'incident_id': '001E815C-4A62-47EE-843D-5F0B788C799C', 'incident_type': 'Alert', 'routes_affected': ['P12'], 'description': 'Due to an accident at Addison Rd Station, buses may experience delays.', 'date_updated': '2023-07-03T13:43:14'}
 

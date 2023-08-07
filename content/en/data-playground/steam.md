@@ -24,7 +24,7 @@ weight: 4
 
 {{% data-playground-wrapper %}}
 
-**[Click here](https://github.com/rotationalio/data-playground/tree/main/steam)** for the code to get data such as:
+<a href="https://github.com/rotationalio/data-playground/tree/main/steam" class="text-[#1D65A6] font-bold underline">Click here</a> for the code to get data such as:
 ```bash
 New steam report received: {'game': 'The Murder Hotel Demo', 'id': 2484850, 'count': 42}
 
