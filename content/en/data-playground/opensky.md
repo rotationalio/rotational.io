@@ -16,8 +16,8 @@ sdks: Python API, Java API
 limits: 400 API credits per day and 4,000 API credits per day for OpenSky users
 data: Flight data, arrivals, departures, aircraft trajectory
 is_account_required: false
-diagram_image:
-diagram_alt:
+diagram_image: /img/data-playground/opensky-eda.png
+diagram_alt: Event-Driven Data Science Use Case with Ensign and OpenSky
 weight: 6
 ---
 

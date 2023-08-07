@@ -17,8 +17,8 @@ sdks: N/A
 limits: None
 data: Earthquake data, with magnitudes, locations, and more
 is_account_required: false
-diagram_image:
-diagram_alt:
+diagram_image: /img/data-playground/earthquakes-eda.png
+diagram_alt: Event-Driven Data Science Use Case with Ensign and USGS
 weight: 4
 ---
 

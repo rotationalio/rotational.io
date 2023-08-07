@@ -17,8 +17,8 @@ sdks: Python, Go
 limits: "60 API calls/minute for the free tier. Other pricing plans available."
 data: Stock prices, company profiles, company & market news
 is_account_required: true
-diagram_image: /img/data-playground/finnhub_flowchart.png
-diagram_alt: Finnhub integration with Ensign.
+diagram_image: /img/data-playground/finnhub-eda.png
+diagram_alt: Event-Driven Data Science Use Case with Ensign and Finnhub
 weight: 1
 ---
 
