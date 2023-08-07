@@ -41,14 +41,31 @@ To install or update dependencies before making front end changes:
 $ yarn install
 ```
 
-The Tailwind CSS library is used to add CSS styles to the site. Tailwind automatically builds an output.css file which is the main stylesheet for the website. 
+The Tailwind CSS library is used to add CSS styles to the site. Tailwind automatically builds an output.css file which is the main stylesheet for the website.
 
-In a separate terminal window the following command will watch for any CSS changes and automatically rebuild the output.css file: 
+In a separate terminal window the following command will watch for any CSS changes and automatically rebuild the output.css file:
 
 ```
 $ yarn dev:css
 ```
 
+## Data Playground
+
+If you add a source to the Data Playground, remember to run the indexing command to ensure it shows up in the search functionality:
+
+```
+$ yarn index
+```
+
+**REMEMBER** after running this command, please go to `static/index.json` and delete lines 2-6 so they don't get added/committed:
+
+```json
+    {
+        "uri": "/_index",
+        "content": "---\ndate: 2023-06-07T12:01:28-04:00\ntitle: \"Data Playground\"\nheadertext: \"The Data Playground\"\nsubheadertext: \"Streaming data sources and examples for your apps, models, and services\"\nnoicon: true\ntype: \"data-playground\"\nissearchenabled: false\nisfilterenabled: true\n---",
+        "tags": []
+    },
+```
 
 ## Blog
 
@@ -198,7 +215,7 @@ This will create a new file in the `content/en/data-playground/` directory that 
 ---
 title: "New Data Source"
 slug: "new-data-source"
-subtitle: "Add Data Type Here" 
+subtitle: "Add Data Type Here"
 draft: true
 image: img/data-playground/data-source-img.png
 summary: "Add Summary To Display On List Page Here"
