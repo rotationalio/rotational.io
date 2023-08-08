@@ -17,8 +17,8 @@ is_api_key_required: true
 api_type: JSON, GTFS protocol buffers
 sdks: N/A
 limits: The default tier (free) is rate-limited to 10 calls/second and 50,000 calls per day.
-diagram_image:
-diagram_alt:
+diagram_image: /img/data-playground/wmata-eda.png
+diagram_alt: Event-Driven Data Science Use Case with Ensign and WMATA
 weight: 5
 ---
 {{% data-playground-wrapper %}}

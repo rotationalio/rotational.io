@@ -17,8 +17,8 @@ sdks: N/A
 limits: 100,000 API calls per day
 data: Game data and player stats
 is_account_required: false
-diagram_image:
-diagram_alt:
+diagram_image: /img/data-playground/steam-eda.png
+diagram_alt: Event-Driven Data Science Use Case with Ensign and Steam
 weight: 4
 ---
 
