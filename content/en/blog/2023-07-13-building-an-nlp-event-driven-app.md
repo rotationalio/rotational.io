@@ -42,15 +42,15 @@ class BaleenSubscriber:
     Implementing an event-driven Natural Language Processing tool that
     does streaming HTML parsing, entity extraction, and sentiment analysis
     """
-    def __init__(self, topic="documents", client_id=ENSIGN_CLIENT_ID, client_secret=ENSIGN_CLIENT_SECRET):
+    def __init__(self, topic="documents", ensign_creds=""):
         """
-        Initialize the BaleenSubscriber, which will allow a data consumer
+        Initilaize the BaleenSubscriber, which will allow a data consumer
         to subscribe to the topic that the publisher is pushing articles
         """
+
         self.topic = topic
         self.ensign = Ensign(
-            client_id=client_id,
-            client_secret=client_secret
+            cred_path=ensign_creds
         )
 ```
 
@@ -62,8 +62,8 @@ The next step was to add a `subscribe` method to access the topic stream (I'll d
        Subscribe to the article and parse the events.
        """
        id = await self.ensign.topic_id(self.topic)
-       await self.ensign.subscribe(id, on_event=self.handle_event)
-       await asyncio.Future()
+       async for event in self.ensign.subscribe(id):
+           await self.handle_event(event)
 ```
 
 And another method to run the subscribe method in a continuous loop:
@@ -73,7 +73,7 @@ And another method to run the subscribe method in a continuous loop:
         """
         Run the subscriber forever.
         """
-        asyncio.get_event_loop().run_until_complete(self.subscribe())
+        asyncio.run(self.subscribe())
 ```
 
 At the beginning, I couldn't see any data being fetched from Baleen while using the `Subscriber`. After investigating the issue, we discovered that Baleen was publishing Ensign events in `msgpack` format (because it leverages the [Watermill](https://rotational.io/blog/prototyping-eda-with-watermill/) API on the backend) rather than the `json` format I was expecting.
@@ -95,8 +95,12 @@ Now I could add my text analytics method to the `BaleenSubscriber` class, which 
 ```python
     async def handle_event(self,event):
         """
-        Unpacking of the event message and working on the article content
+        Decode and ack the event.
+        ----------------
+        Unpacking of the event message and working on the article content for
+        NLP Magic
         """
+
         try:
             data = msgpack.unpackb(event.data)
         except json.JSONDecodeError:
@@ -105,8 +109,7 @@ Now I could add my text analytics method to the `BaleenSubscriber` class, which 
             return
 
         # Parsing the content using BeautifulSoup
-        soup = BeautifulSoup(data['content'], 'html.parser')
-
+        soup = BeautifulSoup(data[b'content'], 'html.parser')
         # Finding all the 'p' tags in the parsed content
         paras = soup.find_all('p')
         score = []
