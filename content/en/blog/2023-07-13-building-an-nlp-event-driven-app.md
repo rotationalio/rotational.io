@@ -42,19 +42,19 @@ class BaleenSubscriber:
     Implementing an event-driven Natural Language Processing tool that
     does streaming HTML parsing, entity extraction, and sentiment analysis
     """
-    def __init__(self, topic="documents", ensign_creds=""):
+    def __init__(self, topic="documents"):
         """
-        Initilaize the BaleenSubscriber, which will allow a data consumer
-        to subscribe to the topic that the publisher is pushing articles
+        Initialize the BaleenSubscriber, which will allow a data consumer
+        to subscribe to the topic where the publisher is pushing articles
         """
 
         self.topic = topic
-        self.ensign = Ensign(
-            cred_path=ensign_creds
-        )
+        self.ensign = Ensign()
 ```
 
-The next step was to add a `subscribe` method to access the topic stream (I'll describe the `handle_event` method shortly!):
+If you don't provide an argument to the line `self.ensign = Ensign()`, PyEnsign will read the credentials (`ENSIGN_CLIENT_ID` and `ENSIGN_CLIENT_SECRET`) from your environment. Alternatively you can supply them as string args: `self.ensign = Ensign(client_id="your_client_id", client_secret="your_secret")`, or use another method you prefer.
+
+The next step was to add a `subscribe` method to access the topic stream (I'll describe the `parse_event` method shortly!):
 
 ```python
     async def subscribe(self):
@@ -63,7 +63,7 @@ The next step was to add a `subscribe` method to access the topic stream (I'll d
        """
        id = await self.ensign.topic_id(self.topic)
        async for event in self.ensign.subscribe(id):
-           await self.handle_event(event)
+           await self.parse_event(event)
 ```
 
 And another method to run the subscribe method in a continuous loop:
@@ -93,18 +93,17 @@ With the help of the msgpack library, we could now process the Watermill message
 Now I could add my text analytics method to the `BaleenSubscriber` class, which does all of the data science steps:
 
 ```python
-    async def handle_event(self,event):
+    async def parse_event(self,event):
         """
         Decode and ack the event.
         ----------------
-        Unpacking of the event message and working on the article content for
-        NLP Magic
+        Decode the msgpack payload, in preparation for applying our NLP "magic"
         """
 
         try:
             data = msgpack.unpackb(event.data)
         except json.JSONDecodeError:
-            print("Received invalid JSON in event payload:", event.data)
+            print("Received invalid msgpack data in event payload:", event.data)
             await event.nack(Nack.Code.UNKNOWN_TYPE)
             return
 
