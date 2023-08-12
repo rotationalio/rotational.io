@@ -235,7 +235,7 @@ That's it! You can watch the video [here](https://www.youtube.com/watch?v=7hXMpw
 
 As you've seen in this post, you can start incrementally delivering insights to your organization without needing to resort to purchasing a pricey proprietary solution, or waiting to accumulate a trillion rows of data. Using the bootstrapping pattern and open source, Python-friendly resources like HuggingFace and Ensign, you can empower your roadmap &mdash; you’re set up to implement your own custom LLM by simply swapping out the data and model (no tech debt required).
 
-Ready to take the next step? [Sign up for MLOps 201: Data Flows for Real Time Model Inferencing webinar](https://us06web.zoom.us/webinar/register/3016915923116/WN_wipD3P6PSj24FQDvfP2XhA).
+Ready to take the next step? [Sign up for MLOps 201: Data Flows for Real Time Model Inferencing (webinar)](https://us06web.zoom.us/webinar/register/3016915923116/WN_wipD3P6PSj24FQDvfP2XhA).
 
 Ready to experiment with data streams and change data capture? Check out [The Data Playground](https://rotational.io/data-playground/) and set up your own [free Ensign account](https://rotational.app/register/).
 

@@ -1,5 +1,5 @@
 ---
-title: "Using River and VowpalWabbit to Build Real-Time Machine Learning Models"
+title: "Using River and Vowpal Wabbit to Build Real-Time Machine Learning Models"
 slug: "realtime-machine-learning"
 date: "2023-08-11T15:19:00-04:00"
 draft: false
@@ -8,10 +8,10 @@ photo_credit: Photo by Navi on Unsplash
 author: Prema Roman
 profile: img/team/prema-roman.png
 category: NLP, AI/ML, Eventing
-description: "It's time to rethink how machine learning is done.  Switching to real-time machine learning enables companies to easily adapt in a world where change is the only constant."
+description: "It's time to rethink how machine learning is done. Switching to real-time machine learning enables companies to easily adapt in a world where change is the only constant."
 ---
 
-Real-time ML models continually learn on new data as soon as it arrives, so they're less susceptible to concept drift and data drift. Read on to learn how to use River and VowpalWabbit to build real-time models in Python.
+Real-time ML models continually learn on new data as soon as it arrives, so they're less susceptible to concept drift and data drift. Read on to learn how to use River and Vowpal Wabbit to build real-time models in Python.
 
 <!--more-->
 
@@ -20,7 +20,7 @@ Let's think through a modern machine learning use case: You want to build a reco
 
 Perhaps you answered that you'd build a collaborative filter, using similarities between users to make recommendations. Perhaps you said you'd use a time series model and model user behavior over time.
 
-There's not necessarily a "wrong" or a "right" answer, but consider this &mdash; any model trained on a batch of historic user data will be "frozen" at that point in time. Whether that was a point in time when our target user was disproportionately interested in cats, or a point in time when all eyes all over the world were captivated by a single, history-making video. In the context of most of our everyday applications, new things are happening in a near-constant stream. That means any sufficiently big batch of data you can accumulate probably contains instances whose relevance to current user behavior has organically decayed over time, or unseated by a seismic cultural event.
+There's not necessarily a "wrong" or a "right" answer, but consider this &mdash; any model trained on a batch of historic user data will be "frozen" at that point in time. Whether that was a point in time when our target user was disproportionately interested in cats, or a point in time when all eyes all over the world were captivated by a single, history-making video. In the context of most of our everyday applications, new things are happening in a near-constant stream. That means any sufficiently big batch of data you can accumulate probably contains instances whose relevance to current user behavior has organically decayed over time, or been unseated by a seismic cultural event.
 
 You might assume that moving from more traditional batch models to real-time models would mean higher ops/infrastructure costs at your org. But paradoxically, training and deploying real-time models is often *less* costly. Since real-time models learn from one data element at a time, there is no need for expensive hardware with a lot of memory. The other benefit is that since the model is continually learning (and in effect re-training) on new information as it arrives, there is no need for a team to constantly retrain on new batches, test and compare, and finally swap out models during each retraining cycle.
 
@@ -135,5 +135,9 @@ For a deeper dive into real-time machine learning, check out the following resou
 - [Vowpal Wabbit Tutorial on Kaggle](https://www.kaggle.com/code/kashnitsky/topic-8-online-learning-and-vowpal-wabbit#3.2.-News.-Multiclass-classification)
 - [Streaming 101: The world beyond batch](https://www.oreilly.com/radar/the-world-beyond-batch-streaming-101/)
 
+Ready to take the next step? [Sign up for MLOps 201: Data Flows for Real Time Model Inferencing (webinar)](https://us06web.zoom.us/webinar/register/3016915923116/WN_wipD3P6PSj24FQDvfP2XhA).
 
+Ready to experiment with data streams and change data capture? Check out [The Data Playground](https://rotational.io/data-playground/) and set up your own [free Ensign account](https://rotational.app/register/).
+
+***
 Photo by [Navi](https://unsplash.com/@navi_photography) on [Unsplash](https://unsplash.com/photos/HeoATyJ1DFQ)
