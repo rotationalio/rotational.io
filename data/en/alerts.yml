@@ -1,8 +1,8 @@
 ############################# Ensign Data ###################################
 notice:
   enable: true
-  notice: "Getting Started with Streaming Data Science: Detecting Earthquakes in Realtime"
+  notice: "MLOps 201: Data Flows for Real-Time Model Inferencing"
   action:
     text: Join Our Next Tutorial!
-    link: "https://us06web.zoom.us/webinar/register/WN_S9Zeid3ARJCKGlbEFR4fqQ"
-  expires: 2023-08-15T16:00:00Z
+    link: "https://us06web.zoom.us/webinar/register/9016909894097/WN_wipD3P6PSj24FQDvfP2XhA"
+  expires: 2023-09-05T16:00:00Z
