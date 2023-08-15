@@ -34,7 +34,7 @@ How does Ensign stack up to other, similar tools and products? Also, see [our te
 
 {{< widefigure src="/img/ensign/tco_comparison.png" alt="Total Cost of Ownership">}}
 
-{{< ensigncoa btnhref="https://calendly.com/edwin-r8l/discussion" btntext="Schedule" >}}
+{{< ensigncoa btnhref="https://calendar.app.google/mURnKSUa3h3grbE39" btntext="Schedule" >}}
 Got questions? Schedule a friendly chat.
 {{< /ensigncoa >}}
 
