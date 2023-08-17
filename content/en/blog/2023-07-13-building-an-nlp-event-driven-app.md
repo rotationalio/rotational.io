@@ -257,4 +257,5 @@ Want to try your hand at an event-driven data science project? Check out the [Da
 
 If you're looking to start your first event-driven app, check out [Ensign](https://rotational.app/register/), a platform and community for data scientists working on event-driven projects.
 
+***
 Photo by [Zion National Park](https://www.flickr.com/photos/zionnps/) on [Flickr Commons](https://flic.kr/p/auFchv).
