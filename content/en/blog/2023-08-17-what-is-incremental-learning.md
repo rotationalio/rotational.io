@@ -150,7 +150,9 @@ Ready to experiment with data streams and change data capture? Check out [The Da
 
 ## References
 
-
+- https://www.cs.waikato.ac.nz/~abifet/MOA/StreamMining.pdf
+- https://kvirajdatt.medium.com/incremental-machine-learning-for-streaming-data-with-river-part-1-f0131459e85b
+- https://riverml.xyz/0.18.0/examples/batch-to-online/
 
 
 
