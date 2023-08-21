@@ -94,17 +94,6 @@ team:
           link : "https://github.com/DanielSollis"
       bioLink: 'bio/daniel-sollis'
     # team member loop
-    - name : Karen Belita
-      image : img/team/karen-belita.png
-      designation : Software Engineer
-      content : DevOps Specialist
-      social :
-        - icon : "ti-linkedin" # themify icon pack : https://themify.me/themify-icons
-          link : "https://www.linkedin.com/in/karenbelita/"
-        - icon : "ti-github" # themify icon pack : https://themify.me/themify-icons
-          link : "https://github.com/kbelita"
-      bioLink: 'bio/karen-belita'
-    # team member loop
     - name : Cletus Razakou
       image : img/team/cletus-razakou.png
       designation : Senior Front-end Engineer
@@ -133,11 +122,12 @@ team:
         - icon : "ti-linkedin" # themify icon pack : https://themify.me/themify-icons
           link : "https://www.linkedin.com/in/pete-keleher-a03639b"
       bioLink: 'bio/pete-keleher'
+
     # team member loop
     - name : Aatmaj Janardanan
       image : img/team/aatmaj-janardanan.png
-      designation : Data Science Intern
-      content : Machine Learning Specialist
+      designation : Summer 2023 Intern
+      content : Data Science Specialist
       social :
         - icon : "ti-linkedin" # themify icon pack : https://themify.me/themify-icons
           link : "https://www.linkedin.com/in/aatmaj-janardanan-104216140/"
@@ -147,8 +137,8 @@ team:
     # team member loop
     - name : Natasha White
       image : img/team/natasha-white.png
-      designation : Technical Writing Intern
-      content : Documentation Specialist
+      designation : Summer 2022 Intern
+      content : Technical Writing Specialist
       social :
         - icon : "ti-github" # themify icon pack : https://themify.me/themify-icons
           link : "https://github.com/nwhite222"
@@ -164,6 +154,17 @@ team:
         - icon : "ti-github" # themify icon pack : https://themify.me/themify-icons
           link : "https://github.com/nabihanaqvie"
       bioLink: 'bio/nabiha-naqvie'
+      # team member loop
+    - name : Karen Belita
+      image : img/team/karen-belita.png
+      designation : Open Source Contributor
+      content : MLOps Specialist
+      social :
+        - icon : "ti-linkedin" # themify icon pack : https://themify.me/themify-icons
+          link : "https://www.linkedin.com/in/karenbelita/"
+        - icon : "ti-github" # themify icon pack : https://themify.me/themify-icons
+          link : "https://github.com/kbelita"
+      bioLink: 'bio/karen-belita'
     # team member loop
     - name : Tianshu Li
       image : img/team/tianshu-li.png
@@ -178,7 +179,7 @@ team:
     # team member loop
     - name : Elysee Bleu
       image : img/team/elysee-bleu.png
-      designation : Front-end Engineer
+      designation : Open Source Contributor
       content : React.js Specialist
       social :
         - icon : "ti-github" # themify icon pack : https://themify.me/themify-icons
