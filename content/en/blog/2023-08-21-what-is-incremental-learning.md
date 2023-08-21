@@ -1,7 +1,7 @@
 ---
 title: "What is Incremental Machine Learning?"
 slug: "what-is-incremental-machine-learning"
-date: "2023-08-17T17:18:11-04:00"
+date: "2023-08-21T10:17:03-04:00"
 draft: false
 image: img/blog/festival-lights.jpg
 photo_credit: Photo by Viaggio Routard via Flickr Commons
@@ -11,7 +11,7 @@ category: NLP, AI/ML, Eventing
 description: "Incremental learning, and other real time machine learning techniques, are an excellent addition to the standard data science toolkit."
 ---
 
-Most of us got into data science because it's exciting (if chaotic) and there's a constant stream of new ideas, which is thrilling (if intimidating). But if learning is about keeping up, why can't our ML models keep up?
+Most of us got into data science because it's exciting (if chaotic) and there's a constant stream of new ideas, which is thrilling (if intimidating). But if learning is all about keeping up, why can't our models do it?
 
 <!--more-->
 
@@ -150,9 +150,9 @@ Ready to experiment with data streams and change data capture? Check out [The Da
 
 ## References
 
-- https://www.cs.waikato.ac.nz/~abifet/MOA/StreamMining.pdf
-- https://kvirajdatt.medium.com/incremental-machine-learning-for-streaming-data-with-river-part-1-f0131459e85b
-- https://riverml.xyz/0.18.0/examples/batch-to-online/
+- Albert Bifet and Richard Kirkby [Data Stream Mining: A Practical Approach](https://www.cs.waikato.ac.nz/~abifet/MOA/StreamMining.pdf), *August 2009*.
+- Virajdatt Kohir [Incremental Machine Learning for Streaming data with River: Part 1](https://kvirajdatt.medium.com/incremental-machine-learning-for-streaming-data-with-river-part-1-f0131459e85b), *May 2022*.
+- River 0.18.0 Documentation [From batch to online/stream](https://riverml.xyz/0.18.0/examples/batch-to-online/), *retrieved August 2023*.
 
 
 
