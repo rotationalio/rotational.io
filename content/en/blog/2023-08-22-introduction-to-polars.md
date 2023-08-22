@@ -1,7 +1,7 @@
 ---
 title: "Intro to Polars: A Pandas Alternative for Efficiently Working with Large Datasets"
 slug: "introduction-to-polars"
-date: "2023-08-22T14:13:11-04:00"
+date: "2023-08-22T09:32:37-04:00"
 draft: false
 image: img/blog/2023-08-18-introduction-to-polars/polar-bears-unsplash.jpg
 photo_credit: Photo by Hans-Jurgen Mager on Unsplash
