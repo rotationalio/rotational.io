@@ -36,7 +36,7 @@ tech stack.
 {{% vtriple %}}
 ### Data Science 2.0
 
-{{< figure src="/img/three_otters_new.png" alt="Sea Otter Engineers" >}}
+{{< figure src="/img/ensign_developers.png" alt="Sea Otter Engineers" >}}
 
 Open-source tools to rapidly prototype new data pipelines, integrate realtime analytics, and get your data science predicting beyond the batch.
 
@@ -48,7 +48,7 @@ Open-source tools to rapidly prototype new data pipelines, integrate realtime an
 {{% vtriple %}}
 ### Ensign for Enterprise
 
-{{< figure src="/img/globe.png" alt="Globe" >}}
+{{< figure src="/img/ensign_enterprise.png" alt="Sea Otter Product Managers" >}}
 
 Cooperation-as-a-service. Break down data silos and build low-maintenance topologies tailored to your business. Cloud, on prem, edge or hybrid.
 {{< button href="/ensign-enterprise/" text="Learn More">}}
