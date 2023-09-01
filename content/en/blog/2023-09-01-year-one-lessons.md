@@ -17,15 +17,15 @@ description: After spending my first year as a junior developer at Rotational La
 
 While casually browsing social media, I often come across posts devoted to junior developers. Many are focused on sharing tips for how to get that first job. Lately, I’ve noticed an increase in messaging aimed at answering the questions that juniors may have *after* securing their first programming gig.
 
-Last year, I joined Rotational Labs, with the title of Junior Distributed Systems Engineer. I'm guessing there are a lot of other junior devs out there celebrating similar milestones; if so, congratulations to you as well. But I've decided to gear this post is more towards those of you out there just finishing up that bootcamp, or getting ready to graduate from college, and wondering what comes next.
+Last year, I joined Rotational Labs, with the title of Junior Distributed Systems Engineer. I'm guessing there are a lot of other junior devs out there celebrating similar milestones; if so, congratulations to you as well. But I've decided to gear this post more towards those of you out there just finishing up that bootcamp, or getting ready to graduate from college, and wondering what comes next.
 
 Going from learning to code via the [100 Devs](https://www.linkedin.com/company/100devs/) bootcamp to working professionally at a startup has required me to learn and grow a lot over the past year. I'd like to share some of the lessons I've learned. Hopefully, they may be helpful to others who are just starting out.
 
-### Pair Programming / Co-Working Has Not Let Me Down
+### Pair Programming / Coworking Has Not Let Me Down
 
-Rotational Labs is totally remote, but we frequently cowork and pair program together using video conferencing and tools like [VSCode Liveshare](https://code.visualstudio.com/learn/collaboration/live-share).
+Rotational Labs is totally remote, but we frequently co-work and pair program together using video conferencing and tools like [VSCode Liveshare](https://code.visualstudio.com/learn/collaboration/live-share).
 
-Looking back, I'm realizing that every time I’ve pair programmed or co-worked, I’ve gained a considerable amount of knowledge. It was a bit of surprise given how I felt about the practice the first few times.
+Looking back, I realize that every time I’ve pair programmed or co-worked, I’ve gained a considerable amount of knowledge. It was a bit of a surprise given how I felt about the practice the first few times.
 
 In the beginning, I’ll admit to feeling more like an observer during pair programming sessions. It was like I was trying to soak up what others were saying or writing. However, over time, it has helped me gain more confidence in asking questions and sharing my opinions or ideas whether while coding together or during other meetings.
 
@@ -37,7 +37,7 @@ Of all 365 days of my first year as a junior developer, two days deserve special
 
 This may not seem like a big deal, but previously I'd only ever searched for features and settings to resolve minor annoyances when I was just learning how to code. I didn’t see a need to use certain features especially since I was working on projects alone or with small groups where the codebase was just as small.
 
-But the more practice you get with coding, the more tiny annoyances you'll start to notice, and the more curious you should get about other plugings and shortcuts and small customizations that would make something you do often even *slightly* more convenient or comfortable.
+But the more practice you get with coding, the more tiny annoyances you'll start to notice, and the more curious you should get about other plugins and shortcuts and small customizations that would make something you do often even *slightly* more convenient or comfortable.
 
 In the end, what I’ve learned is the importance of truly getting to know the tools I’m using and how to utilize them to my benefit. It’s impossible to learn every little thing, but taking time to play around with settings could truly make a big difference to your developer experience.
 
@@ -45,7 +45,7 @@ In the end, what I’ve learned is the importance of truly getting to know the t
 
 In the beginning, code reviews were very uncomfortable.
 
-I actually didn't mind getting feedback from other folks on the team to my code, but I would get a nervous whenever I was asked to do a code review for someone else. What if I missed something? Would the team realize how terrible I am at coding?
+I actually didn't mind getting feedback from other folks on the team about my code, but I would get nervous whenever I was asked to do a code review for someone else. What if I missed something? Would the team realize how terrible I am at coding?
 
 These days, the anxiousness and misplaced thoughts are gone. They've been replaced with a realization that I might see a package I'm not familiar with, or an approach I'd not thought of before, that could unlock a problem I've been attempting to resolve.
 
@@ -55,7 +55,7 @@ Another benefit is that code reviews have helped me become more comfortable with
 
 Before joining Rotational, I had no experience with Golang and what was this Docker thing I kept hearing about? Though I was experienced with JavaScript and React, I still needed to take a deeper dive into both. Oh and did I mention that I had 0 idea of what a distributed system was before the recruitment process began?
 
-Even before I finished my coding bootcamp, I had gathered that continuous learning was just part of being a developer. It was clear that things move fast in this field, and it wouldn't be enough to learn a few tools and then coast on that forever. However, I found myself internally putting pressure on myself to learn all of the things. I’d tell myself that I’d need to spend a good majority of my time after work “catching up” on what I didn’t know.
+Even before I finished my coding bootcamp, I had gathered that continuous learning was just part of being a developer. It was clear that things move fast in this field, and it wouldn't be enough to learn a few tools and then coast on that forever. However, I found myself internally putting pressure on myself to learn all of the things. I’d tell myself that I’d need to spend a good majority of my time after work "catching up" on what I didn’t know.
 
 To be honest, this didn’t work because I still had other important stuff to do outside of work. Not only that, but I just needed to spend more time away from the computer screen. Now, I’m not saying that devs shouldn’t use their non-work time to study. In fact, I still do it. The only difference now is that I don’t get upset with myself if I don’t.
 
