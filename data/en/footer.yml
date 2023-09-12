@@ -22,19 +22,15 @@ footer:
       link: /services
     - name: Blog
       link: /blog
-    - name: Open Source
-      link: /opensource
     - name: About
       link: /about
-    - name: Contact Us
-      link: /contact
 
-#Information
+#Community
   info:
     enable: true
-    title: INFORMATION
+    title: COMMUNITY
     info_items:
-    - name: Privacy
-      link: /privacy
-    - name: Terms
-      link: /terms
+    - name: Data Playground
+      link: /data-playground
+    - name: Open Source
+      link: /opensource
