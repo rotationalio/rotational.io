@@ -6,7 +6,7 @@ draft: false
 image: img/blog/ripe-pears.jpg
 author: "Edwin Schmierer"
 profile: img/team/edwin-schmierer.png
-category: Eventing, Flexstreams
+tags: Eventing, Flexstreams
 photo_credit: Photo by Oleksandr K (oleksandr_k) via Flickr Commons
 description: "In this post we consider what it takes to maximize the value of your data in a business context."
 ---

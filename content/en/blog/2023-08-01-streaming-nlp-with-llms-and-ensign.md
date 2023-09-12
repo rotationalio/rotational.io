@@ -7,7 +7,7 @@ image: img/blog/egret-and-buffalo.jpg
 photo_credit: Photo by Francesco Veronesi via Flickr Commons
 author: Rotational Labs
 profile: img/butterfly.png
-category: MLOps, Eventing, AI/ML
+tags: MLOps, Eventing, AI/ML
 description: "Walk through the end-to-end process of building a streaming sentiment analysis application using a HuggingFace LLM and Ensign for real time predictions."
 ---
 

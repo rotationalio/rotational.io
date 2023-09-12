@@ -5,7 +5,7 @@ date: 2021-11-14T10:40:29-04:00
 draft: false
 image: img/blog/predicting-stars.jpg
 author: Nabiha Naqvie
-category: AI/ML
+tags: AI/ML
 description: "Modern sentiment analysis requires both creativity and elbow grease. In this post, we explore a project to understand Amazon reviews and predict start ratings using open source sentiment analyzers and MongoDB."
 profile: img/team/nabiha-naqvie.png
 ---
@@ -34,7 +34,7 @@ As a first time user, I had to learn that there were two components of using the
 
 ## Data Wrangling
 
-The data was thoroughly cleaned, particularly tokenizing and lemmatizing the review text, and multiple binary categories were added for Exploratory Data Analysis (EDA). An example of binary categories was to divide the star ratings into positive (1) or negative (0). Once the data was prepared, we conducted initial feature analysis, where both sentiment analyzers scored higher than the other features. The data sets were split into train, validate, and test sets at a 60/20/20 split. The addition of a validation test set allowed us to test for overfitting for the dependent variables used in the VADER and Five Emotions models. The data sets were randomized at various stages to ensure that any review order in the initial data set was overcome. After the team decided on which variables to include in the models, the splits were changed to a train/test set with an 80/20 split.
+The data was thoroughly cleaned, particularly tokenizing and lemmatizing the review text, and multiple binary tags were added for Exploratory Data Analysis (EDA). An example of binary tags was to divide the star ratings into positive (1) or negative (0). Once the data was prepared, we conducted initial feature analysis, where both sentiment analyzers scored higher than the other features. The data sets were split into train, validate, and test sets at a 60/20/20 split. The addition of a validation test set allowed us to test for overfitting for the dependent variables used in the VADER and Five Emotions models. The data sets were randomized at various stages to ensure that any review order in the initial data set was overcome. After the team decided on which variables to include in the models, the splits were changed to a train/test set with an 80/20 split.
 
 ## Model Selection
 

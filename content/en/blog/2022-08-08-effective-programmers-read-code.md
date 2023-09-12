@@ -5,7 +5,7 @@ date: "2022-08-08T08:10:14-04:00"
 draft: false
 author: Benjamin Bengfort
 image: img/blog/blazes.jpg
-category: Programming
+tags: Programming
 description: "While we often think ourselves as authors of code we probably spend more time reading code than writing it. Changing our mindset to think of ourselves as avid code readers will make us more effective programmers."
 profile: img/team/benjamin-bengfort.png
 ---

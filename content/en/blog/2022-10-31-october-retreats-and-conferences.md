@@ -6,7 +6,7 @@ draft: false
 image: img/blog/2022-10-31-willis-tower.jpg
 author: "Benjamin Bengfort"
 profile: img/team/benjamin-bengfort.png
-category: News, Company
+tags: News, Company
 photo_credit: Photo by Cody Engel on Unsplash
 description: "October was a big month for Rotational; we had our second annual team retreat in Chicago and attended GopherCon and KubeCon!"
 ---

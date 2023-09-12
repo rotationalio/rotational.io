@@ -4,8 +4,8 @@ slug: "hello-world"
 date: "2021-01-21T16:20:18-04:00"
 draft: false
 image: img/blog/2021-01-21-hello-world/gulfatnight.jpg
-author: Benjamin Bengfort
-category: "Distributed Systems"
+authors: Benjamin Bengfort
+tags: "Distributed Systems"
 description: "Hello World! We're Rotational Labs."
 profile: img/team/benjamin-bengfort.png
 ---

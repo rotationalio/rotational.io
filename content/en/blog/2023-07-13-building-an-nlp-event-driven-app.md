@@ -7,7 +7,7 @@ image: img/blog/victory.jpg
 photo_credit: Photo by Zion National Park via Flickr Commons
 author: Aatmaj Janardanan
 profile: img/team/aatmaj-janardanan.png
-category: NLP, AI/ML, Eventing
+tags: NLP, AI/ML, Eventing
 description: "Rotational's summer intern shares challenges and victories encountered when developing his first event-driven data science app!"
 ---
 

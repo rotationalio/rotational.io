@@ -6,7 +6,7 @@ draft: false
 image_webp: img/blog/2021-03-24-project-planning-with-block-based-dependencies/2021-03-24-blocks-dependencies.png
 image: img/blog/2021-03-24-project-planning-with-block-based-dependencies/2021-03-24-blocks-dependencies.png
 author: Benjamin Bengfort
-category: "Project Management"
+tags: "Project Management"
 description: "A temporal block based dependency method for planning complex projects."
 profile: img/team/benjamin-bengfort.png
 

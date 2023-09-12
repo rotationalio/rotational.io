@@ -5,7 +5,7 @@ date: "2023-05-09T09:44:57-04:00"
 draft: false
 image: img/blog/postmodern.jpg
 author: Rebecca Bilbro
-category: Databases, Eventing
+tags: Databases, Eventing
 photo_credit: Photo by Bervaz via Flickr Commons
 description: "Messiness is the norm for data, not the exception. Let's stop searching for the 'one true' database and just pick tools that help us get the job done."
 profile: img/team/rebecca-bilbro.png

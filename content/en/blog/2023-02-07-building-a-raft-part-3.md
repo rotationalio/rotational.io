@@ -5,7 +5,7 @@ date: "2023-02-14T12:24:32-05:00"
 draft: false
 image: img/blog/2023-02-07-building-a-raft-part-3/otterRaftThree.png
 author: "Daniel Sollis"
-category: "Distributed Systems"
+tags: "Distributed Systems"
 profile: img/team/daniel-sollis.png
 description: "In the third and final part of our series on the Raft consensus algorithm we'll wrap up by going over leader election."
 ---

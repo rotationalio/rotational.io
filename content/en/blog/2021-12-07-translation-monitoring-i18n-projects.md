@@ -5,7 +5,7 @@ date: 2021-12-07T19:25:35+08:00
 draft: false
 image: img/blog/translations.jpeg
 author: Tianshu Li
-category: i18n
+tags: i18n
 description: "I18n projects are hard to manage when apps and docs both get updated continuously. In this post we introduce a new tool to ease the pains of monitoring and make it easier to stay in sync with international audiences."
 profile: img/team/tianshu-li.png
 ---

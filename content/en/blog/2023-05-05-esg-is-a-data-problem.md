@@ -6,7 +6,7 @@ draft: false
 image: img/blog/light-through-trees.jpg
 author: "Edwin Schmierer"
 profile: img/team/edwin-schmierer.png
-category: ESG, Ensign, Eventing
+tags: ESG, Ensign, Eventing
 photo_credit: Christian Buehner via Unsplash
 description: "ESG mandates will impose data synthesis challenges on publicly traded companies. Ensign -- a secure data collaboration platform -- is poised to help."
 ---

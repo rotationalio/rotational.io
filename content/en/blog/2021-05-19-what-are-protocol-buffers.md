@@ -5,7 +5,7 @@ date: "2021-05-19T11:05:32-04:00"
 draft: false
 image: img/blog/2021-05-19-what-are-protocol-buffers/migration.jpg
 author: Rebecca Bilbro
-category: gRPC
+tags: gRPC
 description: "Protocol buffers are a method for serializing data to efficiently send between programs. In this post, we'll explore some use cases for protobufs and learn the syntax."
 profile: img/team/rebecca-bilbro.png
 ---
@@ -80,7 +80,7 @@ Here's where protocol buffers come in!
 
 ## Anatomy of a Protobuf
 
-Of the serialization methods described earlier in this post, [protocol buffers](https://developers.google.com/protocol-buffers) ("protobufs") fall into the binary format category. They were originally developed for internal use at Google to serialize data into a dense binary format. Protobufs start with a strictly defined structure, which is then compiled into code that can be used to write to and read from that structure. This compact method is ideal for sending data between programs.
+Of the serialization methods described earlier in this post, [protocol buffers](https://developers.google.com/protocol-buffers) ("protobufs") fall into the binary format tags. They were originally developed for internal use at Google to serialize data into a dense binary format. Protobufs start with a strictly defined structure, which is then compiled into code that can be used to write to and read from that structure. This compact method is ideal for sending data between programs.
 
 Let's consider an example of how protocol buffers might play a role in a machine learning (ML) application. Imagine that our application functions as a sort of "conductor" for the end-to-end ML application: it trains models, compares the results, and stores the best ones for downstream use. We need a protocol buffer file that defines a generic model message for the system to pass around internally.
 

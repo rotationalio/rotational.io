@@ -1,9 +1,7 @@
-{{ define "main" }}
-  <h1>Posts</h1>
-  {{ range .Pages }}
-    <article>
-      <h2>{{ .Title }}</h2>
-      {{ .Content }}
-    </article>
+<ul>
+  {{ range .Data.Pages }}
+  <li>
+    <a href="{{.RelPermalink}}">{{ .Title }}</a>
+  </li>
   {{ end }}
-{{ end }}
+</ul>
