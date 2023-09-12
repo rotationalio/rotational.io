@@ -17,9 +17,11 @@
                   {{ $headertext := .Params.headertext }}
                   {{ $headertextmore := .Params.headertextmore }}
                   {{ with $headertext }}
-                  <p class="text-3xl xl:text-5xl md:text-4xl leading-snug sm:leading-tight md:leading-snug xl:leading-tight font-bold mt-6 sm:mt-20">
-                      {{ . | markdownify }}{{ if $headertextmore }}<br />{{ $headertextmore | markdownify }}{{ end }}
+                  <p class="leading-snug sm:leading-tight md:leading-snug xl:leading-tight font-bold mt-6 sm:mt-20">
+                      {{ . | markdownify }}
                   </p>
+                  {{ if $headertextmore }}
+                  <p class="mt-6 text-sm md:text-xl">{{ $headertextmore | markdownify }}{{ end }}</p>
                   {{ end }}
 
                   {{ if .Params.headeractions }}

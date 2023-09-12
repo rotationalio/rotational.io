@@ -10,15 +10,17 @@
 {{ with $data.contact.contact }}
 <div class="max-w-7xl mx-auto px-4 relative">
     <div class="">
-        <div class="text-center mt-9 sm:mt-11 lg:mt-14">
-            <h3 class="font-bold text-xl sm:text-2xl lg:text-3xl">
-                <b class="text-[#1D65A6]">{{ with .title }} {{ index (split . " ") 0 | safeHTML }} {{ end }}</b>
-                {{ with .title }} {{ after (len (index (split . " ") 0)) . | safeHTML }} {{ end }}
-            </h3>
+        <div class="md:w-1/2 lg:w-2/3">
+            <div class="text-center mt-9 sm:mt-11 lg:mt-14">
+                <h3 class="font-bold text-xl sm:text-2xl lg:text-3xl">
+                    <b class="text-[#1D65A6]">{{ with .title }} {{ index (split . " ") 0 | safeHTML }} {{ end }}</b>
+                    {{ with .title }} {{ after (len (index (split . " ") 0)) . | safeHTML }} {{ end }}
+                </h3>
+            </div>
+            <p class="mt-4 text-base mx-auto text-center sm:mt-5 lg:mt-7 lg:text-lg max-w-2xl">
+                {{ .subtitle}}
+            </p>
         </div>
-        <p class="mt-4 text-base mx-auto text-center sm:mt-5 lg:mt-7 lg:text-lg max-w-2xl">
-            {{ .subtitle}}
-        </p>
         <div class="md:flex mt-10 font-normal">
             {{ if $data.contact.contact.contact_form.enable }}
             {{ with $data.contact.contact.contact_form }}
