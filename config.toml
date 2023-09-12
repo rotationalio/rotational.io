@@ -81,7 +81,7 @@ identifier = 'contact'
 pageRef = 'contact'
 name = 'Request a Demo'
 url = '/contact'
-weight = 3
+weight = 4
 
 
 [[Languages.en.menu.main]]
