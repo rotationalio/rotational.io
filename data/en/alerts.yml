@@ -1,8 +1,8 @@
 ############################# Ensign Data ###################################
 notice:
   enable: true
-  notice: "MLOps 201: Data Flows for Real-Time Model Inferencing"
+  notice: "PubSub for Newbies: Making Sense of Real Time Data"
   action:
     text: Join Our Next Tutorial!
-    link: "https://us06web.zoom.us/webinar/register/9016909894097/WN_wipD3P6PSj24FQDvfP2XhA"
-  expires: 2023-09-05T16:00:00Z
+    link: "https://us06web.zoom.us/webinar/register/5816938481626/WN_EKILz2JHTzS0ImFYRJnf6g"
+  expires: 2023-10-03T16:00:00Z
