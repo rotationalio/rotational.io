@@ -63,40 +63,33 @@ url = 'https://rotational.app'
 weight = 1
 
 [[Languages.en.menu.main]]
-identifier = 'playground'
-pageRef = 'playground'
-name = 'Data Playground'
-url = '/data-playground'
-weight = 2
-
-[[Languages.en.menu.main]]
-identifier = 'opensource'
-pageRef = 'opensource'
-name = 'Open Source'
-url = '/opensource'
-weight = 3
-
-[[Languages.en.menu.main]]
 identifier = 'blog'
 pageRef = 'blog'
 name = 'Blog'
 url = '/blog'
-weight = 4
+weight = 2
 
 [[Languages.en.menu.main]]
 identifier = 'about'
 pageRef = 'about'
 name = 'About'
 url = '/about'
-weight = 5
+weight = 3
+
+[[Languages.en.menu.main]]
+identifier = 'contact'
+pageRef = 'contact'
+name = 'Request a Demo'
+url = '/contact'
+weight = 3
 
 
 [[Languages.en.menu.main]]
 identifier = 'login'
 pageRef = 'login'
-name = 'Login'
+name = 'Get Ensign Free'
 url = 'https://rotational.app'
-weight = 60
+weight = 5
 
 ## English Language
 [Languages.en]
