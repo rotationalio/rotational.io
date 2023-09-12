@@ -88,7 +88,7 @@ weight = 4
 identifier = 'login'
 pageRef = 'login'
 name = 'Get Ensign Free'
-url = 'https://rotational.app'
+url = 'https://rotational.app/register'
 weight = 5
 
 ## English Language
