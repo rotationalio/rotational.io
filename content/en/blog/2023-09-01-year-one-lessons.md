@@ -7,7 +7,7 @@ image: img/blog/2023-09-01-year-one-lessons/fireworks.jpg
 photo_credit: Photo by DESIGNECOLOGIST on Unsplash
 authors: Danielle Maxwell
 profile: img/team/danielle-maxwell.png
-tags: ["Programming", "Career"]
+tags: ['Programming', 'Career']
 description: After spending my first year as a junior developer at Rotational Labs, it's time to reflect on some lessons learned along the way.
 ---
 

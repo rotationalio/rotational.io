@@ -5,7 +5,7 @@ date: "2023-05-26T09:00:00-04:00"
 draft: false
 image: img/blog/starburst.jpg
 photo_credit: Photo by Joshua Sortino on Unsplash
-authors: Faraz Rahman
+author: Faraz Rahman
 profile: img/butterfly.png
 tags: ['Eventing', 'AI/ML']
 description: "A data product manager shares tips for achieving success with streaming data."
