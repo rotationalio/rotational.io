@@ -38,14 +38,31 @@ New weather report received: {'name': 'Tuesday Night', 'summary': 'Mostly Cloudy
 {{% /data-playground-wrapper %}}
 
 {{% data-playground-content %}}
-
-<!-- Add content for data playground here, including a table for data products if available -->
-
+<!-- section left blank -->
 {{% /data-playground-content %}}
 
-{{% coming-soon %}}
-
-Coming soon!
-
-{{% /coming-soon %}}
-
+<section class="ml-10">
+    <table class="table-auto border border-collapse border-slate-600 text-md mt-2 overflow-auto">
+        <thead class="bg-[#1D65A6] text-white text-left">
+            <tr>
+                <th class="finnhub-showcase">Creator</th>
+                <th class="finnhub-showcase">Description</th>
+                <th class="finnhub-showcase">Event Data</th>
+                <th class="finnhub-showcase">URL</th>
+                <th class="finnhub-showcase">GitHub</th>
+                <th class="finnhub-showcase">Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="finnhub-showcase">Benjamin Bengfort</td>
+                <td class="finnhub-showcase">Uses the NOAA API to generate alerts for weather conditions in a particular region.</td>
+                <td class="finnhub-showcase">Weather Alerts</td>
+                <td class="finnhub-showcase">&mdash;</td>
+                <td class="finnhub-showcase underline">
+                    <a href="https://github.com/bbengfort/noaalert" target="_blank">https://github.com/bbengfort/noaalert</a></td>
+                <td class="finnhub-showcase">2023-08-18</td>
+            </tr>
+        </tbody>
+    </table>
+</section>
