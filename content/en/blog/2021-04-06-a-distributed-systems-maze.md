@@ -5,7 +5,7 @@ date: "2021-04-06T13:49:57-04:00"
 draft: false
 image: img/blog/2021-04-06-a-distributed-systems-maze/maze.jpg
 author: Benjamin Bengfort
-tags: "Distributed Systems"
+tags: ['Distributed Systems']
 description: "Distributed systems jargon can feel like a maze that your constantly lost in. In this post we try to see our way clear with a maze metaphor to understand why coordination is necessary, and difficult."
 profile: img/team/benjamin-bengfort.png
 ---

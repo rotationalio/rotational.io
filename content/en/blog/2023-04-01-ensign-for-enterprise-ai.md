@@ -6,7 +6,7 @@ draft: false
 image: img/blog/bridgerace.jpg
 author: "Edwin Schmierer"
 profile: img/team/edwin-schmierer.png
-tags: AI/Automation
+tags: ['AI/Automation']
 photo_credit: Metropolitan Transportation Authority via Flickr Commons
 description: "Everyone is gearing up to win the AI/automation race. Who will win?"
 ---

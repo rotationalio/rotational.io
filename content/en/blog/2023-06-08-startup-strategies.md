@@ -7,7 +7,7 @@ image: img/blog/balloons.jpg
 photo_credit: Photo by Patrick Down on Flickr Commons
 author: Beci Lambrecht
 profile: img/team/beci-lambrecht.png
-tags: Startups
+tags: ['Startups']
 description: "What does it feel like to work at a startup?"
 ---
 

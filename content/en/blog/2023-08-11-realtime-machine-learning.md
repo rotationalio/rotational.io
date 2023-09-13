@@ -7,7 +7,7 @@ image: img/blog/2023-08-07-realtime-machine-learning/bird-fly-unsplash.jpg
 photo_credit: Photo by Navi on Unsplash
 author: Prema Roman
 profile: img/team/prema-roman.png
-tags: NLP, AI/ML, Eventing
+tags: ['NLP', 'AI/ML', 'Eventing']
 description: "It's time to rethink how machine learning is done. Switching to real-time machine learning enables companies to easily adapt in a world where change is the only constant."
 ---
 

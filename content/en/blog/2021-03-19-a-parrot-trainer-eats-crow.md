@@ -5,7 +5,7 @@ date: "2021-03-19T08:42:21-04:00"
 draft: false
 image: img/blog/2021-03-19-a-parrot-trainer-eats-crow/parrots.jpg
 author: Rebecca Bilbro
-tags: AI/ML
+tags: ['AI/ML']
 description: "Models trained on massive datasets using millions of parameters can both have low bias and also be very biased - what can we in the ML community do about this?"
 profile: img/team/rebecca-bilbro.png
 ---

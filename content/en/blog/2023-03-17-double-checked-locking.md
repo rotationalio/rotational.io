@@ -5,7 +5,7 @@ date: "2023-03-17T12:31:07-05:00"
 draft: false
 image: img/blog/clover-blanket.jpg
 author: Benjamin Bengfort & Prema Roman
-tags: "Concurrency"
+tags: ['Concurrency']
 profile: img/butterfly.png
 photo_credit: "Photo by Timothy Dykes on Unsplash"
 description: "Double-checked locking is a common mechanism to avoid race conditions when using read and write locks. This is the first in a series of posts about concurrency patterns in Go!"

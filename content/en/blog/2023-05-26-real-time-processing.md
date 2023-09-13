@@ -5,9 +5,9 @@ date: "2023-05-26T09:00:00-04:00"
 draft: false
 image: img/blog/starburst.jpg
 photo_credit: Photo by Joshua Sortino on Unsplash
-author: Faraz Rahman
+authors: Faraz Rahman
 profile: img/butterfly.png
-tags: Eventing, AI/ML
+tags: ['Eventing', 'AI/ML']
 description: "A data product manager shares tips for achieving success with streaming data."
 ---
 Profitable businesses rely on their own data to grow, make smart choices, and delight their customers. Easier said than done! While a batched approach can provided limited success, real-time data analytics often give better ROI.

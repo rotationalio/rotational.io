@@ -5,7 +5,7 @@ date: "2023-03-28T13:29:11-04:00"
 draft: false
 image: img/blog/2023-03-08-mocking-the-universe/monkey-in-mirror.jpg
 author: Daniel Sollis
-tags: Golang, Programming, Testing, gRPC
+tags: ['Golang', 'Programming', 'Testing', 'gRPC']
 profile: img/team/daniel-sollis.png
 description: "Mocking can be an easy way to get around gRPC connections when testing."
 ---
