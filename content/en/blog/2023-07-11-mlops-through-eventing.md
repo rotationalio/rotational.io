@@ -7,7 +7,7 @@ image: img/blog/airshow.jpg
 photo_credit: Photo by Johannes Tandl via Flickr Commons
 author: Rotational Labs
 profile: img/butterfly.png
-tags: ['MLOps', 'Eventing', 'AI/ML']
+tags: ['MLOps', 'Eventing', 'AI', 'ML']
 description: "If MLOps is an afterthought in your usual ML workflow, its time to start thinking in events."
 ---
 

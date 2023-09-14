@@ -1484,14 +1484,6 @@ video {
   width: 1080px;
 }
 
-.w-3\/4 {
-  width: 75%;
-}
-
-.w-2\/3 {
-  width: 66.666667%;
-}
-
 .max-w-7xl {
   max-width: 80rem;
 }
@@ -2187,10 +2179,6 @@ video {
 
 .text-center {
   text-align: center;
-}
-
-.text-start {
-  text-align: start;
 }
 
 .align-middle {
@@ -3126,38 +3114,6 @@ em {
     width: 33.333333%;
   }
 
-  .md\:w-2\/3 {
-    width: 66.666667%;
-  }
-
-  .md\:w-1\/4 {
-    width: 25%;
-  }
-
-  .md\:w-2\/5 {
-    width: 40%;
-  }
-
-  .md\:w-2\/4 {
-    width: 50%;
-  }
-
-  .md\:w-3\/5 {
-    width: 60%;
-  }
-
-  .md\:w-\[55\&\] {
-    width: 55&;
-  }
-
-  .md\:w-\[55\%\] {
-    width: 55%;
-  }
-
-  .md\:w-\[50\%\] {
-    width: 50%;
-  }
-
   .md\:max-w-sm {
     max-width: 24rem;
   }
@@ -3227,10 +3183,6 @@ em {
     padding-bottom: 1.25rem;
   }
 
-  .md\:text-start {
-    text-align: start;
-  }
-
   .md\:text-base {
     font-size: 1rem;
     line-height: 1.5rem;
@@ -3246,19 +3198,9 @@ em {
     line-height: 1.75rem;
   }
 
-  .md\:text-3xl {
-    font-size: 1.875rem;
-    line-height: 2.25rem;
-  }
-
   .md\:text-lg {
     font-size: 1.125rem;
     line-height: 1.75rem;
-  }
-
-  .md\:text-2xl {
-    font-size: 1.5rem;
-    line-height: 2rem;
   }
 
   .md\:leading-snug {
@@ -3343,12 +3285,12 @@ em {
     width: 20ch;
   }
 
-  .lg\:w-\[94\%\] {
-    width: 94%;
-  }
-
   .lg\:w-2\/3 {
     width: 66.666667%;
+  }
+
+  .lg\:w-\[94\%\] {
+    width: 94%;
   }
 
   .lg\:w-12 {
