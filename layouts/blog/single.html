@@ -25,9 +25,15 @@
         {{ with .Title }} {{ after (len (index (split . " ") 0)) . | safeHTML }} {{ end }}
       </h3>
       <div class="flex justify-center items-center mt-4 mb-6">
-        <img src="{{ .Params.profile }}" alt="" class="border-4 border-white rounded-full h-11 drop-shadow-lg"><span
-          class="ml-3">{{ .Params.author }} |
-          {{ dateFormat "Monday, Jan 2, 2006" .Date }} | {{ delimit .Params.tags ", " }}</span>
+        <img src="{{ .Params.profile }}" alt="" class="border-4 border-white rounded-full h-11 drop-shadow-lg">
+        <div class="flex">
+          <span class="ml-3 blog-date">{{ .Params.author }} | {{ dateFormat "Monday, Jan 2, 2006" .Date }} |</span>
+          <ul class="flex ml-1">
+            {{ range .Params.tags }}
+            <li class="blog-tag"><a href="/tags/{{ . | urlize }}"> {{ . }}</a></li>
+            {{ end }}
+          </ul>
+        </div>
       </div>
       <article class="max-w-[800px] mx-auto prose">
         {{ .Content | safeHTML }}
