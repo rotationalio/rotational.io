@@ -1168,6 +1168,29 @@ video {
   margin-bottom: 0.75rem;
 }
 
+.mx-4 {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.mx-20 {
+  margin-left: 5rem;
+  margin-right: 5rem;
+}
+
+.mx-16 {
+  margin-left: 4rem;
+  margin-right: 4rem;
+}
+
+.ml-10 {
+  margin-left: 2.5rem;
+}
+
+.mt-2 {
+  margin-top: 0.5rem;
+}
+
 .mt-3 {
   margin-top: 0.75rem;
 }
@@ -1186,10 +1209,6 @@ video {
 
 .mt-12 {
   margin-top: 3rem;
-}
-
-.mt-2 {
-  margin-top: 0.5rem;
 }
 
 .mt-9 {
@@ -1300,10 +1319,6 @@ video {
   margin-bottom: 1.75rem;
 }
 
-.ml-10 {
-  margin-left: 2.5rem;
-}
-
 .-mt-0 {
   margin-top: -0px;
 }
@@ -1318,6 +1333,10 @@ video {
 
 .mr-14 {
   margin-right: 3.5rem;
+}
+
+.mb-2 {
+  margin-bottom: 0.5rem;
 }
 
 .block {
@@ -1484,12 +1503,28 @@ video {
   width: 1080px;
 }
 
-.w-3\/4 {
-  width: 75%;
+.w-5 {
+  width: 1.25rem;
 }
 
-.w-2\/3 {
-  width: 66.666667%;
+.w-\[10\%\] {
+  width: 10%;
+}
+
+.w-\[50\%\] {
+  width: 50%;
+}
+
+.w-\[20\%\] {
+  width: 20%;
+}
+
+.w-\[25\%\] {
+  width: 25%;
+}
+
+.w-\[15\%\] {
+  width: 15%;
 }
 
 .max-w-7xl {
@@ -1655,6 +1690,14 @@ video {
   border-left-width: calc(2px * calc(1 - var(--tw-divide-x-reverse)));
 }
 
+.self-center {
+  align-self: center;
+}
+
+.self-baseline {
+  align-self: baseline;
+}
+
 .overflow-auto {
   overflow: auto;
 }
@@ -1687,6 +1730,10 @@ video {
 
 .rounded-md {
   border-radius: 0.375rem;
+}
+
+.rounded-2xl {
+  border-radius: 1rem;
 }
 
 .rounded-t-xl {
@@ -1763,6 +1810,11 @@ video {
   border-style: solid;
 }
 
+.border-slate-600 {
+  --tw-border-opacity: 1;
+  border-color: rgb(71 85 105 / var(--tw-border-opacity));
+}
+
 .border-\[\#000000\] {
   --tw-border-opacity: 1;
   border-color: rgb(0 0 0 / var(--tw-border-opacity));
@@ -1793,11 +1845,6 @@ video {
   border-color: rgb(25 46 91 / var(--tw-border-opacity));
 }
 
-.border-slate-600 {
-  --tw-border-opacity: 1;
-  border-color: rgb(71 85 105 / var(--tw-border-opacity));
-}
-
 .border-red-500 {
   --tw-border-opacity: 1;
   border-color: rgb(239 68 68 / var(--tw-border-opacity));
@@ -1823,6 +1870,11 @@ video {
   border-bottom-color: rgb(0 0 0 / var(--tw-border-opacity));
 }
 
+.bg-\[\#1D65A6\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(29 101 166 / var(--tw-bg-opacity));
+}
+
 .bg-\[\#ECF6FF\] {
   --tw-bg-opacity: 1;
   background-color: rgb(236 246 255 / var(--tw-bg-opacity));
@@ -1836,11 +1888,6 @@ video {
 .bg-\[\#192E5B\] {
   --tw-bg-opacity: 1;
   background-color: rgb(25 46 91 / var(--tw-bg-opacity));
-}
-
-.bg-\[\#1D65A6\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(29 101 166 / var(--tw-bg-opacity));
 }
 
 .bg-sky-900 {
@@ -1906,6 +1953,20 @@ video {
 .bg-red-500 {
   --tw-bg-opacity: 1;
   background-color: rgb(239 68 68 / var(--tw-bg-opacity));
+}
+
+.bg-orange-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(249 115 22 / var(--tw-bg-opacity));
+}
+
+.bg-\[rgb\(236\2c 246\2c 255\)\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(236 246 255 / var(--tw-bg-opacity));
+}
+
+.bg-\[\$ECF6FF\] {
+  background-color: $ECF6FF;
 }
 
 .bg-hexagon {
@@ -2189,8 +2250,8 @@ video {
   text-align: center;
 }
 
-.text-start {
-  text-align: start;
+.align-baseline {
+  vertical-align: baseline;
 }
 
 .align-middle {
@@ -3126,38 +3187,6 @@ em {
     width: 33.333333%;
   }
 
-  .md\:w-2\/3 {
-    width: 66.666667%;
-  }
-
-  .md\:w-1\/4 {
-    width: 25%;
-  }
-
-  .md\:w-2\/5 {
-    width: 40%;
-  }
-
-  .md\:w-2\/4 {
-    width: 50%;
-  }
-
-  .md\:w-3\/5 {
-    width: 60%;
-  }
-
-  .md\:w-\[55\&\] {
-    width: 55&;
-  }
-
-  .md\:w-\[55\%\] {
-    width: 55%;
-  }
-
-  .md\:w-\[50\%\] {
-    width: 50%;
-  }
-
   .md\:max-w-sm {
     max-width: 24rem;
   }
@@ -3227,10 +3256,6 @@ em {
     padding-bottom: 1.25rem;
   }
 
-  .md\:text-start {
-    text-align: start;
-  }
-
   .md\:text-base {
     font-size: 1rem;
     line-height: 1.5rem;
@@ -3246,19 +3271,9 @@ em {
     line-height: 1.75rem;
   }
 
-  .md\:text-3xl {
-    font-size: 1.875rem;
-    line-height: 2.25rem;
-  }
-
   .md\:text-lg {
     font-size: 1.125rem;
     line-height: 1.75rem;
-  }
-
-  .md\:text-2xl {
-    font-size: 1.5rem;
-    line-height: 2rem;
   }
 
   .md\:leading-snug {
@@ -3343,12 +3358,12 @@ em {
     width: 20ch;
   }
 
-  .lg\:w-\[94\%\] {
-    width: 94%;
-  }
-
   .lg\:w-2\/3 {
     width: 66.666667%;
+  }
+
+  .lg\:w-\[94\%\] {
+    width: 94%;
   }
 
   .lg\:w-12 {
