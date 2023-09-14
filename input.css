@@ -379,6 +379,5 @@ em {
 }
 
 .blog-tag:first-child::before {
-  display: hide;
   content: '';
 }
