@@ -27,7 +27,7 @@
       <div class="flex justify-center items-center mt-4 mb-6">
         <img src="{{ .Params.profile }}" alt="" class="border-4 border-white rounded-full h-11 drop-shadow-lg"><span
           class="ml-3">{{ .Params.author }} |
-          {{ dateFormat "Monday, Jan 2, 2006" .Date }} | {{ .Params.category }}</span>
+          {{ dateFormat "Monday, Jan 2, 2006" .Date }} | {{ delimit .Params.tags ", " }}</span>
       </div>
       <article class="max-w-[800px] mx-auto prose">
         {{ .Content | safeHTML }}

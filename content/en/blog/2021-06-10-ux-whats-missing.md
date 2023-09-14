@@ -2,7 +2,7 @@
 title: "Why UX Will Get Worse Before it Gets Better"
 slug: "ux-whats-missing"
 date: 2021-06-10T17:20:00Z
-category: UX, Technology
+tags: ['UX', 'Technology']
 image: img/blog/2021-06-10-ux-whats-missing/window.jpg
 author: Rebecca Bilbro
 profile: img/team/rebecca-bilbro.png

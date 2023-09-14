@@ -5,7 +5,7 @@ date: "2021-04-27T11:24:40-04:00"
 draft: false
 image: img/blog/2021-04-27-cant-read-wont-buy/streetblur.jpg
 author: Rebecca Bilbro
-category: i18n
+tags: ['i18n']
 description: "In this post we'll explore some of the drawbacks of using only English as a sales medium, check out some creative solutions, identify some areas of caution, and consider what this all means to the future of global app development."
 profile: img/team/rebecca-bilbro.png
 ---

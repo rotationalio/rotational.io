@@ -5,7 +5,7 @@ date: "2021-05-02T14:24:33-04:00"
 draft: false
 image: img/blog/2021-05-02-contexts-in-go-microservice-chains/arboreal.jpg
 author: Benjamin Bengfort
-category: Microservices, Golang, Programming
+tags: ['Microservices', 'Golang', 'Programming']
 description: "Contexts are a critical part of services implemented in Golang, but although we see them often in server interfaces, they can be a bit mysterious to developers implementing request handlers. In this post, we look at a specific example where contexts shine: handlers that have to call multiple internal microservices to serve their response."
 profile: img/team/benjamin-bengfort.png
 ---

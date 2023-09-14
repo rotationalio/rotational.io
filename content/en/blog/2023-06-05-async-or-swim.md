@@ -7,7 +7,7 @@ image: img/blog/mississippi.jpg
 photo_credit: Photo by USGS on Unsplash
 author: Patrick Deziel
 profile: img/team/patrick-deziel.png
-category: Eventing, Golang
+tags: ['Eventing', 'Golang']
 description: "A technical dive into asynchronous processing in Go."
 ---
 

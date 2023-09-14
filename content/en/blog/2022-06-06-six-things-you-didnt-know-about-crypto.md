@@ -5,7 +5,7 @@ date: "2022-06-06T09:53:22-05:00"
 draft: false
 author: Edwin Schmierer & Rebecca Bilbro
 image: img/blog/viking_runes.jpg
-category: Crypto
+tags: ['Crypto']
 description: "This post describes some of the most important facts about cryptocurrency that people don't often understand -- including crypto people!"
 profile: img/butterfly.png
 ---

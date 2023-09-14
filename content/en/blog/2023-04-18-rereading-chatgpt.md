@@ -5,7 +5,7 @@ date: "2023-04-18T09:38:32-04:00"
 draft: false
 image: img/blog/power-lines.jpg
 author: Jennifer Lieberman
-category: AI/ML, Automation
+tags: ['AI/ML', 'Automation']
 profile: img/butterfly.png
 description: "A Humanities professor offers some unexpected new perspectives on ChatGPT inspired by the American Realism literary tradition."
 ---

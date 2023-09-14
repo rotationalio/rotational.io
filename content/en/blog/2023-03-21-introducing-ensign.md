@@ -6,7 +6,7 @@ draft: false
 image: img/blog/supernova.jpg
 author: "Edwin Schmierer"
 profile: img/team/edwin-schmierer.png
-category: News, Company, Eventing
+tags: ['News', 'Company', 'Eventing']
 photo_credit: Photo by Smithsonian Institution via Flickr Commons
 description: "Introducing Rotational's flagship product, Ensign, a managed eventing tool for data scientists, data engineers, and app developers!"
 ---

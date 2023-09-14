@@ -5,7 +5,7 @@ date: "2022-12-05T10:27:11-05:00"
 draft: false
 image: img/blog/serialization.png
 author: Daniel Sollis & Danielle Maxwell
-category: "Serialization"
+tags: ['Serialization']
 photo_credit: Photo by Rickie-Tom Schünemann on Unsplash
 description: "In this post we’ll go over a few important serialization formats along with their pros and cons to help you determine the best choice for your situation."
 profile: img/butterfly.png

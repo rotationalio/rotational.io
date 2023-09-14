@@ -5,7 +5,7 @@ date: 2021-10-01T16:32:47-04:00
 draft: false
 image: img/blog/whispering_wheat.jpg
 author: Edwin Schmierer
-category: Security
+tags: ['Security']
 description: "Shhh..there's a better way to share secrets. Introducing Whisper, our secret-sharing utility."
 profile: img/team/edwin-schmierer.png
 ---

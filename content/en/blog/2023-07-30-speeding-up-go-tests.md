@@ -7,7 +7,7 @@ image: img/blog/footrace.jpg
 photo_credit: "Photo by Braden Collum on Unsplash"
 author: Benjamin Bengfort
 profile: img/team/benjamin-bengfort.png
-category: "Golang"
+tags: ['Golang']
 description: "By using parallel and short modes with Go tests, we can improve our local test speed and save longer running tests for CI."
 ---
 

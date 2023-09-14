@@ -7,7 +7,7 @@ image: img/blog/festival-lights.jpg
 photo_credit: Photo by Viaggio Routard via Flickr Commons
 author: Aatmaj Janardanan
 profile: img/team/aatmaj-janardanan.png
-category: NLP, AI/ML, Eventing
+tags: ['NLP', 'AI/ML', 'Eventing']
 description: "Incremental learning, and other real time machine learning techniques, are an excellent addition to the standard data science toolkit."
 ---
 

@@ -5,7 +5,7 @@ date: "2023-01-10T09:55:04-05:00"
 draft: false
 image: img/blog/2023-01-10-building-a-raft-part-2/otterRaftTwo.png
 author: "Daniel Sollis"
-category: "Distributed Systems"
+tags: ['Distributed Systems']
 profile: img/team/daniel-sollis.png
 description: "In the second part of our series on the Raft consensus algorithm we'll be covering log replication."
 ---

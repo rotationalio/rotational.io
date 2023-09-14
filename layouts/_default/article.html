@@ -4,7 +4,7 @@
     <div class="bg-[#ECF6FF] rounded-b-xl ">
 
         <div class="px-6 pt-4">
-            <h4 class="text-base font-bold text-[#1D65A6]">{{ .Params.category }}</h4>
+            <h4 class="text-base font-bold text-[#1D65A6]">{{ delimit .Params.tags ", " }}</h4>
             <h3 class="text-xl font-extrabold mt-3 "><a class="block h-24" href="{{ .Permalink }}">{{ .Title }}</a>
             </h3>
             <div class='art-s'>
