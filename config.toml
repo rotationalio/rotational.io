@@ -59,7 +59,7 @@ link = "https://unpkg.com/lunr/lunr.js"
 identifier = 'Ensign'
 pageRef = 'ensign'
 name = 'Ensign'
-url = 'https://rotational.app'
+url = '/ensign'
 weight = 1
 
 [[Languages.en.menu.main]]
