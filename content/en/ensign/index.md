@@ -16,6 +16,8 @@ Using [Ensign](https://rotational.app/) to turn your model into an API is the ea
 
 {{< figure src="/img/ensign/model_api_use_case.png" alt="A high-level illustation that shows how Ensign can be used to register requests for predictions from multiple applications, to route inputs to the model, and to route model predictions back to the user." >}}
 
+To learn more about this use case, check out [MLOps 201: Asynchronous Inference](https://youtu.be/w69glRpOBD4?si=PWUwRpXrnYGhwntb) for details and code in Python.
+
 
 ## Use Case 2: Bootstrap an LLM with Transfer Learning
 
@@ -25,14 +27,18 @@ Using [Ensign](https://rotational.app/) and HuggingFace, you can start increment
 
 {{< figure src="/img/ensign/llm_use_case.png" alt="A high-level illustration of how to use Ensign to ingest training data for transfer learning and to route that training data either to a Hugging Face model trainer or the bootstrapped Hugging Face model, or both." >}}
 
+To learn more about this use case, check out this guide to [Streaming NLP Analytics Made Easy](https://rotational.io/blog/streaming-nlp-with-llms-and-ensign/) for more details and code in Python.
+
+
 ## Use Case 3: Transform Static Data into Change Flows
 
 RESTful data APIs are a great way to source data, but most give only a snapshot of the current state of the data.  Most applications require more information; such as longitudinal or seasonal patterns, updates on what new instances have been introduced to the dataset since the last pull, or flags for things that have been removed.
 
-Using [Ensign](https://rotational.app/), you can transform a static data source (like an external data API) into a time-series dataset to be used for machine learning and real-time analytics. Check out more examples of open data sources that can be transformed into real-time sources on [The Data Playground](https://rotational.io/data-playground).
+Using [Ensign](https://rotational.app/), you can transform a static data source (like an external data API) into a time-series dataset to be used for machine learning and real-time analytics.
 
 {{< figure src="/img/ensign/cdc_use_case.png" alt="A high-level illustration of how to transform a static data source into a time-series dataset to be used for machine learning and real-time analytics." >}}
 
+Check out more examples of open data sources that can be transformed into real-time sources on [The Data Playground](https://rotational.io/data-playground).
 
 ## The Ensign Difference
 
