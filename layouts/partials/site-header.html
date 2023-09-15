@@ -51,6 +51,9 @@
                     {{ with .Params.headertext }}
                     <h3 class="font-bold text-3xl lg:text-5xl">{{ . }}</h3>
                     {{ end }}
+                    {{ if not .Params.headertext }}
+                    <h3 class="font-bold text-3xl lg:text-5xl">{{ .Title }}</h3>
+                    {{ end }}
                     {{ if not .Params.noicon }}
                     <img src="../img/butterfly.png" class="h-8 lg:h-12 ml-2 lg:ml-3 w-8 lg:w-12" />
                     {{ end }}
