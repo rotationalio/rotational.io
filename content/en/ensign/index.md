@@ -1,8 +1,7 @@
 ---
 date: 2022-12-15T10:09:42Z
-title: "Ensign for Data Teams"
-headertext: "Data Science 2.0"
-subheadertext: "Streaming Predictions for Realtime Models"
+title: "Ensign Use Cases"
+headertext: "Ensign Use Cases"
 noicon: true
 type: "ensign"
 switch:
@@ -10,11 +9,30 @@ switch:
     text: "Learn about Ensign for Enterprise"
 ---
 
-## Think Outside the Batch
+## Use Case 1: Turn Your Model into an API
+Data science teams are realizing that they must be in charge of deploying and managing their models. Sound controversial? Check out [this article](https://venturebeat.com/ai/why-do-87-of-data-science-projects-never-make-it-into-production/) about why 87% of data science projects never make it to production.
 
-Batches are great, but **the world is moving towards bigger training datasets and faster analytics** that need event streams. Even though Kafka is really powerful, most of us still don't feel like eventing is for us. :confused:
+Using [Ensign](https://rotational.app/) to turn your model into an API is the easiest way for a data science team to get a trained model into production. Ensign can be used to register requests for predictions from multiple applications, to route those inputs to the trained model, and to return model predictions back to the user.
 
-Until now! :magic_wand: Let us show you the magic of integrating your data science foo with real-time streams. Ensign simplifies streaming ETLs, helps with data sharing, captures chronological changes to all data objects so you get change vectors in addition to static snapshots. From delivering rapid analytics to building and deploying real-time models, Ensign makes it fast, easy, and fun.
+{{< figure src="/img/ensign/model_api_use_case.png" alt="A high-level illustation that shows how Ensign can be used to register requests for predictions from multiple applications, to route inputs to the model, and to route model predictions back to the user." >}}
+
+
+## Use Case 2: Bootstrap an LLM with Transfer Learning
+
+Large language models (LLMs) are powerful but tricky. What if blackbox models like ChatGPT don't work for your use case? What if you don't have enough data to train a model from scratch?
+
+Using [Ensign](https://rotational.app/) and HuggingFace, you can start incrementally delivering insights to your organization **now**. Ensign can be used to ingest training data for transfer learning and to route that training data either to a Hugging Face model trainer or the bootstrapped Hugging Face model (or to both).
+
+{{< figure src="/img/ensign/llm_use_case.png" alt="A high-level illustration of how to use Ensign to ingest training data for transfer learning and to route that training data either to a Hugging Face model trainer or the bootstrapped Hugging Face model, or both." >}}
+
+## Use Case 3: Transform Static Data into Change Flows
+
+RESTful data APIs are a great way to source data, but most give only a snapshot of the current state of the data.  Most applications require more information; such as longitudinal or seasonal patterns, updates on what new instances have been introduced to the dataset since the last pull, or flags for things that have been removed.
+
+Using [Ensign](https://rotational.app/), you can transform a static data source (like an external data API) into a time-series dataset to be used for machine learning and real-time analytics. Check out more examples of open data sources that can be transformed into real-time sources on [The Data Playground](https://rotational.io/data-playground).
+
+{{< figure src="/img/ensign/cdc_use_case.png" alt="A high-level illustration of how to transform a static data source into a time-series dataset to be used for machine learning and real-time analytics." >}}
+
 
 ## The Ensign Difference
 
@@ -82,8 +100,8 @@ Let downstream consumers define their own data schemas rather than struggling to
 - [SDKs](https://ensign.rotational.dev/sdk/)
 - [GitHub Repo](https://github.com/rotationalio/ensign)
 - [Youtube Channel](https://www.youtube.com/@rotationalio)
-- Data Playground (coming soon!)
-- Learn EnSQL (coming soon!)
+- [Data Playground](https://rotational.io/data-playground/)
+- [Learn EnSQL](https://ensign.rotational.dev/ensql/)
 {{% /skinnyright %}}
 
 {{< comic >}}
