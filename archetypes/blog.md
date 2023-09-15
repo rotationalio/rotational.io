@@ -7,7 +7,7 @@ image: img/blog/
 photo_credit: "Add Photo Credits Here"
 author: Your Name
 profile: img/team/your-name.png
-category: "Add Category Here"
+tags: ['Add Tag 1 Here', 'Add Tag 2 Here']
 description: "Add Description Here"
 ---
 

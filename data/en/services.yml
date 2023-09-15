@@ -3,8 +3,7 @@ services:
   enable : true
   title : Consulting Services
   subtitle: |
-    Building secure, performant, and scalable applications and data products is hard. We
-    want to make it easier and less costly.
+    "Rotational Labs has been a true partner to us -- from helping us realize and deploy our ambitious visions for next-gen supply chain analytics, to empowering our technical team with the skills and ability to maintain our products and services long-term." - Sebastian Sobolev, BlueVoyant Group
   approach:
     enable : true
     title: Our Value
