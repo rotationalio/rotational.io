@@ -1168,6 +1168,11 @@ video {
   margin-bottom: 0.75rem;
 }
 
+.mx-20 {
+  margin-left: 5rem;
+  margin-right: 5rem;
+}
+
 .ml-10 {
   margin-left: 2.5rem;
 }
@@ -1208,16 +1213,12 @@ video {
   margin-top: 2rem;
 }
 
-.mb-6 {
-  margin-bottom: 1.5rem;
-}
-
 .ml-3 {
   margin-left: 0.75rem;
 }
 
-.ml-1 {
-  margin-left: 0.25rem;
+.mb-6 {
+  margin-bottom: 1.5rem;
 }
 
 .mb-3 {
@@ -1282,6 +1283,10 @@ video {
 
 .mt-16 {
   margin-top: 4rem;
+}
+
+.ml-1 {
+  margin-left: 0.25rem;
 }
 
 .mb-10 {
