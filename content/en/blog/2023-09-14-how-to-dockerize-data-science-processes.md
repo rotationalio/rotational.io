@@ -8,10 +8,10 @@ photo_credit: "Photo by Venti Views on Unsplash"
 author: Benjamin Bengfort
 profile: img/team/benjamin-bengfort.png
 tags: ["Docker", "Data Science", "Python"]
-description: "Docker is a useful tool for containerizing long running jobs and services but most devops tutorials focus on web apps and microservices. Data scientists need containers that have a different set of scientific and numeric computing dependencies for data transformations, ETLs, inferencing, and other statistical analysis. This post contains a Python Dockerfile that you can use as a reference for creating your own data science Dockerfile processes and commands."
+description: "Docker is good for containerizing jobs and services, but most tutorials focus on web apps and microservices. This post is for data scientists! It contains a Python Dockerfile to use as a reference when creating your containers with scientific and numeric computing dependencies for data transformations, ETLs, inferencing, and other statistical analyses."
 ---
 
-Docker containers are an incredibly useful mechanism for deploying long running applications and services on Kubernetes clusters. Unfortunately most tutorials focus on web applications and microservices whereas data scientists are thinking about long running processes that perform data transformations (ETLs), make inferences, or other jobs that require a different set of dependencies than web development does. In this post, we'll discuss the best way to create Python based Docker containers for data science purposes.
+Docker is great, but most tutorials are geared toward devOps users, not data scientists. If you're building long-running processes for NLP, ML, or generative AI, here's a blueprint for Python Docker containers for data science!
 
 <!--more-->
 
