@@ -4,7 +4,7 @@
     <div class="bg-[#ECF6FF] rounded-b-xl ">
 
         <div class="px-6 pt-4">
-            <ul class="flex">
+            <ul class="flex flex-wrap">
                 {{ range .Params.tags }}
                     <li class="blog-tag text-base font-bold text-[#1D65A6]">
                         <a href="/tags/{{ . | urlize }}">{{ . }}</a>
