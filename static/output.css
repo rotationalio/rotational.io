@@ -2825,7 +2825,7 @@ em {
 }
 
 .blog-tag::before {
-  content: '| ';
+  content: ',\00a0';
 }
 
 .blog-tag:first-child::before {
