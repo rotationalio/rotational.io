@@ -15,7 +15,7 @@
         </div>
     </div>
     <div>
-        <div class="sm:grid grid-cols-3 gap-8 sm:mt-16">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 sm:mt-16">
             {{ range first 3 (where site.RegularPages "Section" "==" "blog")}}
             <div class="mt-6 ">
                 {{ .Render "article"}}
