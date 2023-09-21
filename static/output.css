@@ -1133,6 +1133,11 @@ video {
   margin-bottom: 0.5rem;
 }
 
+.my-4 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
 .mx-2 {
   margin-left: 0.5rem;
   margin-right: 0.5rem;
@@ -1146,11 +1151,6 @@ video {
 .my-10 {
   margin-top: 2.5rem;
   margin-bottom: 2.5rem;
-}
-
-.my-4 {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
 }
 
 .mx-7 {
@@ -1217,10 +1217,6 @@ video {
   margin-left: 0.75rem;
 }
 
-.mb-6 {
-  margin-bottom: 1.5rem;
-}
-
 .mb-3 {
   margin-bottom: 0.75rem;
 }
@@ -1239,6 +1235,10 @@ video {
 
 .mr-9 {
   margin-right: 2.25rem;
+}
+
+.mb-6 {
+  margin-bottom: 1.5rem;
 }
 
 .mr-4 {
@@ -1325,16 +1325,8 @@ video {
   margin-right: 3.5rem;
 }
 
-.ml-12 {
-  margin-left: 3rem;
-}
-
-.ml-14 {
-  margin-left: 3.5rem;
-}
-
-.ml-16 {
-  margin-left: 4rem;
+.mb-8 {
+  margin-bottom: 2rem;
 }
 
 .block {
@@ -1613,10 +1605,6 @@ video {
   align-items: center;
 }
 
-.justify-start {
-  justify-content: flex-start;
-}
-
 .justify-center {
   justify-content: center;
 }
@@ -1680,14 +1668,6 @@ video {
 
 .whitespace-nowrap {
   white-space: nowrap;
-}
-
-.whitespace-pre {
-  white-space: pre;
-}
-
-.whitespace-pre-line {
-  white-space: pre-line;
 }
 
 .rounded-full {
@@ -2908,16 +2888,6 @@ em {
   }
 }
 
-@media (min-width: 300px) {
-  .min-\[300px\]\:grid {
-    display: grid;
-  }
-
-  .min-\[300px\]\:grid-cols-3 {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-}
-
 @media (min-width: 640px) {
   .sm\:my-0 {
     margin-top: 0px;
@@ -2970,10 +2940,6 @@ em {
     margin-left: 5rem;
   }
 
-  .sm\:ml-0 {
-    margin-left: 0px;
-  }
-
   .sm\:inline {
     display: inline;
   }
@@ -3008,10 +2974,6 @@ em {
 
   .sm\:grid-cols-7 {
     grid-template-columns: repeat(7, minmax(0, 1fr));
-  }
-
-  .sm\:grid-cols-2 {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .sm\:flex-row {
@@ -3108,24 +3070,6 @@ em {
   }
 }
 
-@media (min-width: 650px) {
-  .min-\[650px\]\:grid-cols-3 {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-}
-
-@media (min-width: 700px) {
-  .min-\[700px\]\:grid-cols-3 {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-}
-
-@media (min-width: 750px) {
-  .min-\[750px\]\:grid-cols-3 {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-}
-
 @media (min-width: 768px) {
   .md\:my-4 {
     margin-top: 1rem;
@@ -3170,10 +3114,6 @@ em {
 
   .md\:mt-10 {
     margin-top: 2.5rem;
-  }
-
-  .md\:ml-0 {
-    margin-left: 0px;
   }
 
   .md\:flex {
@@ -3298,12 +3238,6 @@ em {
   }
 }
 
-@media (min-width: 800px) {
-  .min-\[800px\]\:grid-cols-3 {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-}
-
 @media (min-width: 1024px) {
   .lg\:mt-14 {
     margin-top: 3.5rem;
@@ -3393,12 +3327,12 @@ em {
     width: 3rem;
   }
 
-  .lg\:grid-cols-4 {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-
   .lg\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .lg\:grid-cols-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
   .lg\:px-12 {
