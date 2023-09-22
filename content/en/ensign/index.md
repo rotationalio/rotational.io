@@ -9,10 +9,14 @@ switch:
     text: "Learn about Ensign for Enterprise"
 ---
 
-{{< usecase-double color="#E3E3E1" >}}
+{{< usecase-double color="#ECF6FF" >}}
 
 {{% usecase %}}
+
+{{% usecase-header %}}
 ## Turn Your Model into an API
+
+{{% /usecase-header %}}
 
 Data science teams are realizing that they must be in charge of deploying and managing their models. Sound controversial? Check out [this article](https://venturebeat.com/ai/why-do-87-of-data-science-projects-never-make-it-into-production/) about why 87% of data science projects never make it to production.
 
@@ -26,10 +30,14 @@ To learn more about this use case, check out [MLOps 201: Asynchronous Inference]
 
 {{< /usecase-double >}}
 
-{{< usecase-double color="#E3E3E1" >}}
+{{< usecase-double color="#ECF6FF" >}}
 
 {{% usecase %}}
+
+{{% usecase-header %}}
 ## Bootstrap an LLM with Transfer Learning
+
+{{% /usecase-header %}}
 
 Large language models (LLMs) are powerful but tricky. What if blackbox models like ChatGPT don't work for your use case? What if you don't have enough data to train a model from scratch?
 
@@ -39,14 +47,18 @@ To learn more about this use case, check out this guide to [Streaming NLP Analyt
 
 {{% /usecase %}}
 
-{{< figure src="/img/ensign/llm_use_case.png" alt="A high-level illustration of how to use Ensign to ingest training data for transfer learning and to route that training data either to a Hugging Face model trainer or the bootstrapped Hugging Face model, or both." >}}
+{{< widefigure src="/img/ensign/llm_use_case.png" alt="A high-level illustration of how to use Ensign to ingest training data for transfer learning and to route that training data either to a Hugging Face model trainer or the bootstrapped Hugging Face model, or both." >}}
 
 {{< /usecase-double >}}
 
 
-{{< usecase-double color="#E3E3E1" >}}
+{{< usecase-double color="#ECF6FF" >}}
 {{% usecase %}}
+
+{{% usecase-header %}}
 ## Transform Static Data into Change Flows
+
+{{% /usecase-header %}}
 
 RESTful data APIs are a great way to source data, but most give only a snapshot of the current state of the data.  Most applications require more information; such as longitudinal or seasonal patterns, updates on what new instances have been introduced to the dataset since the last pull, or flags for things that have been removed.
 
@@ -56,7 +68,7 @@ Check out more examples of open data sources that can be transformed into real-t
 
 {{% /usecase %}}
 
-{{< figure src="/img/ensign/cdc_use_case.png" alt="A high-level illustration of how to transform a static data source into a time-series dataset to be used for machine learning and real-time analytics." >}}
+{{< widefigure src="/img/ensign/cdc_use_case.png" alt="A high-level illustration of how to transform a static data source into a time-series dataset to be used for machine learning and real-time analytics." >}}
 
 {{< /usecase-double >}}
 
