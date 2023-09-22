@@ -26,7 +26,7 @@ To learn more about this use case, check out [MLOps 201: Asynchronous Inference]
 
 {{% /usecase %}}
 
-{{< figure src="/img/ensign/model_api_use_case.png" alt="A high-level illustation that shows how Ensign can be used to register requests for predictions from multiple applications, to route inputs to the model, and to route model predictions back to the user." >}}
+{{< usecase-image src="/img/ensign/model_api_use_case.png" alt="A high-level illustation that shows how Ensign can be used to register requests for predictions from multiple applications, to route inputs to the model, and to route model predictions back to the user." >}}
 
 {{< /usecase-double >}}
 
@@ -47,7 +47,7 @@ To learn more about this use case, check out this guide to [Streaming NLP Analyt
 
 {{% /usecase %}}
 
-{{< widefigure src="/img/ensign/llm_use_case.png" alt="A high-level illustration of how to use Ensign to ingest training data for transfer learning and to route that training data either to a Hugging Face model trainer or the bootstrapped Hugging Face model, or both." >}}
+{{< usecase-image src="/img/ensign/llm_use_case.png" alt="A high-level illustration of how to use Ensign to ingest training data for transfer learning and to route that training data either to a Hugging Face model trainer or the bootstrapped Hugging Face model, or both." >}}
 
 {{< /usecase-double >}}
 
@@ -68,7 +68,7 @@ Check out more examples of open data sources that can be transformed into real-t
 
 {{% /usecase %}}
 
-{{< widefigure src="/img/ensign/cdc_use_case.png" alt="A high-level illustration of how to transform a static data source into a time-series dataset to be used for machine learning and real-time analytics." >}}
+{{< usecase-image src="/img/ensign/cdc_use_case.png" alt="A high-level illustration of how to transform a static data source into a time-series dataset to be used for machine learning and real-time analytics." >}}
 
 {{< /usecase-double >}}
 
@@ -88,7 +88,7 @@ Whether you wear one hat or all the hats, the right tool can make a world of dif
 {{% vtriple color="#E3E3E1" %}}
 ### Developers
 
-{{< figure src="/img/ensign/otter_developer.png" alt="Otter software developer face wearing glasses and a beret" >}}
+{{< usecase-image src="/img/ensign/otter_developer.png" alt="Otter software developer face wearing glasses and a beret" >}}
 
 Quickly build event-driven APIs to leverage the publish-subscribe model for scalable and reliable microservices.
 
