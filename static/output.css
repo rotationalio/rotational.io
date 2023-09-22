@@ -3415,6 +3415,10 @@ em {
     height: 400px;
   }
 
+  .lg\:h-\[350px\] {
+    height: 350px;
+  }
+
   .lg\:w-1\/2 {
     width: 50%;
   }
