@@ -92,7 +92,7 @@ Whether you wear one hat or all the hats, the right tool can make a world of dif
 
 Quickly build event-driven APIs to leverage the publish-subscribe model for scalable and reliable microservices.
 
-{{< button href="https://ensign.rotational.dev/examples/developers/" text="Learn More">}}
+{{< button href="https://ensign.rotational.dev/" text="Learn More">}}
 
 {{% /vtriple %}}
 
