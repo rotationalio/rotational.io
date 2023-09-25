@@ -1,4 +1,4 @@
 {{ $color := .Get "color" }}
-<div class="grid md:grid-cols-2 items-center sm:gap-8 my-8 pt-8 px-8 pb-4 rounded-xl" {{ if $color }}style="background-color: {{ $color }}"{{ end }}>
+<div class="grid lg:grid-cols-2 items-center sm:gap-8 my-8 pt-8 px-8 pb-4 rounded-xl" {{ if $color }}style="background-color: {{ $color }}"{{ end }}>
     {{ .Inner }}
 </div>
