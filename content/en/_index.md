@@ -10,26 +10,44 @@ headeractions:
 ---
 
 <!-- Ensign features -->
-{{< triple >}}
-{{% vtriple %}}
-**Go beyond exploratory analysis to build a data science project architecture on Ensign streams**
+{{< features-triple >}}
+{{% features-div %}}
+
+{{% header %}}
+Go beyond exploratory analysis to build a data science project architecture on Ensign streams
+{{% /header %}}
+
+{{% para %}}
 From 0 to deployment in 3 months
+{{% /para %}}
 
-{{% /vtriple %}}
+{{% /features-div %}}
 
-{{% vtriple %}}
-**Transform your models into APIs with Ensign's asynchronous inference engine**
+{{% features-div %}}
+
+{{% header %}}
+Transform your models into APIs with Ensign's asynchronous inference engine
+{{% /header %}}
+
+{{% para %}}
 From trained model to deployment in 2 weeks
+{{% /para %}}
 
-{{% /vtriple %}}
+{{% /features-div %}}
 
-{{% vtriple %}}
-**Take control of your own data ingestion with Ensign's data storage and sharing features**
+{{% features-div %}}
+
+{{% header %}}
+Take control of your own data ingestion with Ensign's data storage and sharing features
+{{% /header %}}
+
+{{% para %}}
 Get the data you need to get started today
+{{% /para %}}
 
-{{% /vtriple %}}
+{{% /features-div %}}
 
-{{< /triple >}}
+{{< /features-triple >}}
 
 <!-- Home Intro section -->
 {{< home-intro image="img/space_enson_events.png" >}}
