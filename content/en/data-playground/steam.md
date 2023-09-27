@@ -25,6 +25,7 @@ weight: 4
 {{% data-playground-wrapper %}}
 
 <a href="https://github.com/rotationalio/data-playground/tree/main/steam" class="text-[#1D65A6] font-bold underline">Click here</a> for the code to get data such as:
+{{< data-playground-code-fence >}}
 ```bash
 New steam report received: {'game': 'The Murder Hotel Demo', 'id': 2484850, 'count': 42}
 
@@ -36,6 +37,7 @@ New steam report received: {'game': 'Jolly Putt - Mini Golf & Arcade', 'id': 248
 
 New steam report received: {'game': 'Fat Rat Pinball', 'id': 2484420, 'count': 42}
 ```
+{{< /data-playground-code-fence >}}
 
 {{% /data-playground-wrapper %}}
 

@@ -1185,6 +1185,10 @@ video {
   margin-top: 0.75rem;
 }
 
+.mt-8 {
+  margin-top: 2rem;
+}
+
 .mt-6 {
   margin-top: 1.5rem;
 }
@@ -1207,10 +1211,6 @@ video {
 
 .mt-14 {
   margin-top: 3.5rem;
-}
-
-.mt-8 {
-  margin-top: 2rem;
 }
 
 .ml-3 {
@@ -2102,8 +2102,8 @@ video {
   padding-top: 1rem;
 }
 
-.pb-4 {
-  padding-bottom: 1rem;
+.pb-2 {
+  padding-bottom: 0.5rem;
 }
 
 .pb-6 {
@@ -2140,10 +2140,6 @@ video {
 
 .pl-10 {
   padding-left: 2.5rem;
-}
-
-.pb-2 {
-  padding-bottom: 0.5rem;
 }
 
 .pb-3 {
@@ -2186,8 +2182,8 @@ video {
   padding-top: 2.5rem;
 }
 
-.pb-48 {
-  padding-bottom: 12rem;
+.pb-4 {
+  padding-bottom: 1rem;
 }
 
 .text-left {
@@ -2410,10 +2406,6 @@ video {
   transition-duration: 150ms;
 }
 
-.\[mailto\:support\@rotational\.io\] {
-  mailto: support@rotational.io;
-}
-
 body {
   font-family: "Montserrat", sans-serif;
 }
@@ -2434,7 +2426,7 @@ body {
 }
 
 @media screen and (min-width: 900px) {
-  pre {
+  .data-playground-code pre {
     min-height: 200px !important;
     max-height: 600px !important;
     overflow-y: auto !important;
@@ -2448,14 +2440,12 @@ body {
 
 pre {
   padding: 1rem !important;
+  background-color: rgb(39, 40, 34) !important;
 }
 
-div.highlight pre {
+.data-playground-code pre {
   white-space: pre-wrap;
   word-break: break-word;
-}
-
-.highlight pre {
   /* Avoid pushing up the copy buttons */
   margin-top: 0;
   border-radius: 3px;
@@ -2469,7 +2459,7 @@ div.highlight pre {
   /* define the max-width of the data playground container to avoid having extendable container */
 }
 
-.highlight pre code {
+.data-playground-code.highlight pre code {
   /* Otherwise, overflow text hits the edge of the block */
   margin-right: 8px;
   display: inline-block;
@@ -2477,7 +2467,7 @@ div.highlight pre {
 
 /* Lines that are highlighted */
 
-.highlight pre code > span[style*="display:block;"] {
+.data-playground-code.highlight pre code > span[style*="display:block;"] {
   margin-left: -10px;
   padding-left: 5px;
   border-left: 5px solid #ee7f2d;

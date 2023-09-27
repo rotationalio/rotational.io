@@ -24,6 +24,8 @@ weight: 1
 
 {{% data-playground-wrapper %}}
 <a href="https://github.com/rotationalio/data-playground/tree/main/finnhub" class="text-[#1D65A6] font-bold underline">Click here</a> for the code to get data such as:
+
+{{< data-playground-code-fence >}}
 ```json
 {"symbol": "AMZN", "time": "12:18:03", "price": "127.88", "price_pred": "183.5796"}
 
@@ -31,6 +33,7 @@ weight: 1
 
 {"symbol": "MSFT", "time": "12:18:03", "price": "334.71", "price_pred": "180.2801"}
 ```
+{{< /data-playground-code-fence >}}
 
 {{% /data-playground-wrapper %}}
 
