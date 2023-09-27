@@ -2426,7 +2426,7 @@ body {
 }
 
 @media screen and (min-width: 900px) {
-  pre {
+  .data-playground-code pre {
     min-height: 200px !important;
     max-height: 600px !important;
     overflow-y: auto !important;
@@ -2440,14 +2440,12 @@ body {
 
 pre {
   padding: 1rem !important;
+  background-color: rgb(39, 40, 34) !important;
 }
 
-div.highlight pre {
+.data-playground-code pre {
   white-space: pre-wrap;
   word-break: break-word;
-}
-
-.highlight pre {
   /* Avoid pushing up the copy buttons */
   margin-top: 0;
   border-radius: 3px;
@@ -2461,7 +2459,7 @@ div.highlight pre {
   /* define the max-width of the data playground container to avoid having extendable container */
 }
 
-.highlight pre code {
+.data-playground-code.highlight pre code {
   /* Otherwise, overflow text hits the edge of the block */
   margin-right: 8px;
   display: inline-block;
@@ -2469,7 +2467,7 @@ div.highlight pre {
 
 /* Lines that are highlighted */
 
-.highlight pre code > span[style*="display:block;"] {
+.data-playground-code.highlight pre code > span[style*="display:block;"] {
   margin-left: -10px;
   padding-left: 5px;
   border-left: 5px solid #ee7f2d;
@@ -3160,10 +3158,6 @@ em {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
-  .md\:grid-cols-none {
-    grid-template-columns: none;
-  }
-
   .md\:flex-row {
     flex-direction: row;
   }
@@ -3182,10 +3176,6 @@ em {
 
   .md\:gap-8 {
     gap: 2rem;
-  }
-
-  .md\:gap-0 {
-    gap: 0px;
   }
 
   .md\:gap-x-32 {
@@ -3359,10 +3349,6 @@ em {
     gap: 0px;
   }
 
-  .lg\:gap-2 {
-    gap: 0.5rem;
-  }
-
   .lg\:px-12 {
     padding-left: 3rem;
     padding-right: 3rem;
@@ -3419,10 +3405,6 @@ em {
 
   .xl\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  .xl\:gap-0 {
-    gap: 0px;
   }
 
   .xl\:leading-tight {

@@ -25,6 +25,8 @@ weight: 2
 {{% data-playground-wrapper %}}
 
 <a href="https://github.com/rotationalio/data-playground/tree/main/weather" class="text-[#1D65A6] font-bold underline">Click here</a> for the code to get data such as:
+
+{{< data-playground-code-fence >}}
 ```bash
 New weather report received: {'name': 'This Afternoon', 'summary': 'Mostly Cloudy', 'temperature': 71, 'units': 'F', 'daytime': True, 'start': '2023-06-26T14:00:00-08:00', 'end': '2023-06-26T18:00:00-08:00'}
 
@@ -34,6 +36,7 @@ New weather report received: {'name': 'Tuesday', 'summary': 'Isolated Rain Showe
 
 New weather report received: {'name': 'Tuesday Night', 'summary': 'Mostly Cloudy', 'temperature': 52, 'units': 'F', 'daytime': False, 'start': '2023-06-27T18:00:00-08:00', 'end': '2023-06-28T06:00:00-08:00'}
 ```
+{{< /data-playground-code-fence >}}
 
 {{% /data-playground-wrapper %}}
 
