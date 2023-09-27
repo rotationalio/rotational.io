@@ -24,6 +24,7 @@ weight: 5
 {{% data-playground-wrapper %}}
 
 <a href="https://github.com/rotationalio/data-playground/tree/main/wmata" class="text-[#1D65A6] font-bold underline">Click here</a> for the code to get data such as:
+{{< data-playground-code-fence >}}
 ```bash
 New metro report received: {'incident_id': '001E815C-4A62-47EE-843D-5F0B788C799C', 'incident_type': 'Alert', 'routes_affected': ['P12'], 'description': 'Due to an accident at Addison Rd Station, buses may experience delays.', 'date_updated': '2023-07-03T13:43:14'}
 
@@ -35,6 +36,7 @@ New metro report received: {'incident_id': 'C83592B3-8399-4426-8568-FFCA1E5B3D9D
 
 New metro report received: {'incident_id': '7B640278-9219-430F-A59C-81C5F7BDE5EA', 'incident_type': 'Alert', 'routes_affected': ['F4'], 'description': 'Due to a mechanical issue on Riggs Rd at East West Hwy on the F4 Route, buses are experiencing delays.', 'date_updated': '2023-07-03T12:18:34'}
 ```
+{{< /data-playground-code-fence >}}
 
 {{% /data-playground-wrapper %}}
 

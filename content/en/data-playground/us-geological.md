@@ -25,6 +25,8 @@ weight: 3
 {{% data-playground-wrapper %}}
 
 <a href="https://github.com/rotationalio/data-playground/tree/main/earthquakes" class="text-[#1D65A6] font-bold underline">Click here</a> for the code to get data such as:
+
+{{< data-playground-code-fence >}}
 ```bash
 New earthquake report received: {'magnitude': 1.8, 'place': '83 km NW of Karluk, Alaska', 'time': 1688153699651, 'updated': 1688153851807, 'article_link': 'https://earthquake.usgs.gov/earthquakes/eventpage/ak0238bnsgtv', 'type': 'earthquake', 'rms': 0.49, 'gap': None}
 
@@ -34,6 +36,7 @@ New earthquake report received: {'magnitude': 1.21, 'place': '6 km ENE of Drumri
 
 New earthquake report received: {'magnitude': 2.47, 'place': '3 km WSW of La Parguera, Puerto Rico', 'time': 1688151658770, 'updated': 1688152327360, 'article_link': 'https://earthquake.usgs.gov/earthquakes/eventpage/pr71415303', 'type': 'earthquake', 'rms': 0.09, 'gap': 237}
 ```
+{{< /data-playground-code-fence >}}
 
 {{% /data-playground-wrapper %}}
 
