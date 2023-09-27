@@ -9,8 +9,31 @@ headeractions:
   link: "/ensign/"
 ---
 
-<!-- Home Intro is the first section on the webpage -->
+<!-- Ensign features -->
+{{< triple >}}
+{{% vtriple %}}
+**Go beyond exploratory analysis to build a data science project architecture on Ensign streams**
+From 0 to deployment in 3 months
+
+{{% /vtriple %}}
+
+{{% vtriple %}}
+**Transform your models into APIs with Ensign's asynchronous inference engine**
+From trained model to deployment in 2 weeks
+
+{{% /vtriple %}}
+
+{{% vtriple %}}
+**Take control of your own data ingestion with Ensign's data storage and sharing features**
+Get the data you need to get started today
+
+{{% /vtriple %}}
+
+{{< /triple >}}
+
+<!-- Home Intro section -->
 {{< home-intro image="img/space_enson_events.png" >}}
+
 **Disconnected Data Sources? Meet Real-time Insights**
 
 Ensign is a cloud native, cloud agnostic, real-time data streaming platform that seamlessly integrates your disconnected data.

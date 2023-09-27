@@ -1185,6 +1185,10 @@ video {
   margin-top: 0.75rem;
 }
 
+.mt-8 {
+  margin-top: 2rem;
+}
+
 .mt-6 {
   margin-top: 1.5rem;
 }
@@ -1207,10 +1211,6 @@ video {
 
 .mt-14 {
   margin-top: 3.5rem;
-}
-
-.mt-8 {
-  margin-top: 2rem;
 }
 
 .ml-3 {
@@ -2102,8 +2102,8 @@ video {
   padding-top: 1rem;
 }
 
-.pb-4 {
-  padding-bottom: 1rem;
+.pb-2 {
+  padding-bottom: 0.5rem;
 }
 
 .pb-6 {
@@ -2140,10 +2140,6 @@ video {
 
 .pl-10 {
   padding-left: 2.5rem;
-}
-
-.pb-2 {
-  padding-bottom: 0.5rem;
 }
 
 .pb-3 {
@@ -2186,8 +2182,8 @@ video {
   padding-top: 2.5rem;
 }
 
-.pb-48 {
-  padding-bottom: 12rem;
+.pb-4 {
+  padding-bottom: 1rem;
 }
 
 .text-left {
@@ -2408,10 +2404,6 @@ video {
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
-}
-
-.\[mailto\:support\@rotational\.io\] {
-  mailto: support@rotational.io;
 }
 
 body {
