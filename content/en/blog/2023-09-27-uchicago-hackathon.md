@@ -23,7 +23,7 @@ The objective is to challenge students to "think beyond the batch" by tapping in
 
 The hackathon will take place online from October 10 to October 18. Winners will be announced October 25.
 
-*Are you a student, faculty member or administrator interested in partnering with us for a hackathon? Drop us a line at [support@rotational.io](support@rotational.io).*
+*Are you a student, faculty member or administrator interested in partnering with us for a hackathon? Drop us a line at [support@rotational.io](mailto:support@rotational.io).*
 
 
 ***

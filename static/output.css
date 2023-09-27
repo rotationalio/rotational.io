@@ -2102,8 +2102,8 @@ video {
   padding-top: 1rem;
 }
 
-.pb-2 {
-  padding-bottom: 0.5rem;
+.pb-4 {
+  padding-bottom: 1rem;
 }
 
 .pb-6 {
@@ -2140,6 +2140,10 @@ video {
 
 .pl-10 {
   padding-left: 2.5rem;
+}
+
+.pb-2 {
+  padding-bottom: 0.5rem;
 }
 
 .pb-3 {
@@ -2182,8 +2186,8 @@ video {
   padding-top: 2.5rem;
 }
 
-.pb-4 {
-  padding-bottom: 1rem;
+.pb-48 {
+  padding-bottom: 12rem;
 }
 
 .text-left {
@@ -2404,6 +2408,10 @@ video {
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
+}
+
+.\[mailto\:support\@rotational\.io\] {
+  mailto: support@rotational.io;
 }
 
 body {
@@ -3160,10 +3168,6 @@ em {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
-  .md\:grid-cols-none {
-    grid-template-columns: none;
-  }
-
   .md\:flex-row {
     flex-direction: row;
   }
@@ -3182,10 +3186,6 @@ em {
 
   .md\:gap-8 {
     gap: 2rem;
-  }
-
-  .md\:gap-0 {
-    gap: 0px;
   }
 
   .md\:gap-x-32 {
@@ -3359,10 +3359,6 @@ em {
     gap: 0px;
   }
 
-  .lg\:gap-2 {
-    gap: 0.5rem;
-  }
-
   .lg\:px-12 {
     padding-left: 3rem;
     padding-right: 3rem;
@@ -3419,10 +3415,6 @@ em {
 
   .xl\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  .xl\:gap-0 {
-    gap: 0px;
   }
 
   .xl\:leading-tight {
