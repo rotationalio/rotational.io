@@ -1,5 +1,6 @@
 ---
 date: 2023-02-09T10:21:41-06:00
+header: Ensign
 headertext: Database meets streaming for data scientists.
 headertextmore: Build real-time data products without breaking Prod or learning DevOps. Ensign is a database-meets-event-streaming platform for data science teams that want to get their data moving and their models into production.
 headeractions:
@@ -11,41 +12,41 @@ headeractions:
 
 <!-- Ensign features -->
 {{< features-triple >}}
-{{% features-div %}}
+{{% features %}}
 
-{{% header %}}
+{{% features-header %}}
 Go beyond exploratory analysis to build a data science project architecture on Ensign streams
-{{% /header %}}
+{{% /features-header %}}
 
-{{% para %}}
+{{% features-text %}}
 From 0 to deployment in 3 months
-{{% /para %}}
+{{% /features-text %}}
 
-{{% /features-div %}}
+{{% /features %}}
 
-{{% features-div %}}
+{{% features %}}
 
-{{% header %}}
+{{% features-header %}}
 Transform your models into APIs with Ensign's asynchronous inference engine
-{{% /header %}}
+{{% /features-header %}}
 
-{{% para %}}
+{{% features-text %}}
 From trained model to deployment in 2 weeks
-{{% /para %}}
+{{% /features-text %}}
 
-{{% /features-div %}}
+{{% /features %}}
 
-{{% features-div %}}
+{{% features %}}
 
-{{% header %}}
+{{% features-header %}}
 Take control of your own data ingestion with Ensign's data storage and sharing features
-{{% /header %}}
+{{% /features-header %}}
 
-{{% para %}}
+{{% features-text %}}
 Get the data you need to get started today
-{{% /para %}}
+{{% /features-text %}}
 
-{{% /features-div %}}
+{{% /features %}}
 
 {{< /features-triple >}}
 
