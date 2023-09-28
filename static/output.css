@@ -1163,14 +1163,14 @@ video {
   margin-bottom: 1.25rem;
 }
 
-.my-3 {
-  margin-top: 0.75rem;
-  margin-bottom: 0.75rem;
-}
-
 .mx-4 {
   margin-left: 1rem;
   margin-right: 1rem;
+}
+
+.my-3 {
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
 }
 
 .mx-20 {
@@ -1330,10 +1330,6 @@ video {
   margin-right: 3.5rem;
 }
 
-.mb-2 {
-  margin-bottom: 0.5rem;
-}
-
 .block {
   display: block;
 }
@@ -1428,10 +1424,6 @@ video {
 
 .h-\[100px\] {
   height: 100px;
-}
-
-.h-28 {
-  height: 7rem;
 }
 
 .max-h-\[136px\] {
@@ -1927,11 +1919,6 @@ video {
   background-color: rgb(239 68 68 / var(--tw-bg-opacity));
 }
 
-.bg-red-700 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(185 28 28 / var(--tw-bg-opacity));
-}
-
 .bg-hexagon {
   background-image: url('/img/tileable-hexagon.png');
 }
@@ -2201,16 +2188,12 @@ video {
   padding-right: 1rem;
 }
 
-.pt-10 {
-  padding-top: 2.5rem;
-}
-
 .pb-4 {
   padding-bottom: 1rem;
 }
 
-.pt-1 {
-  padding-top: 0.25rem;
+.pt-10 {
+  padding-top: 2.5rem;
 }
 
 .text-left {
@@ -2219,10 +2202,6 @@ video {
 
 .text-center {
   text-align: center;
-}
-
-.text-justify {
-  text-align: justify;
 }
 
 .align-middle {
@@ -2995,18 +2974,6 @@ em {
     height: 3.5rem;
   }
 
-  .sm\:h-44 {
-    height: 11rem;
-  }
-
-  .sm\:h-48 {
-    height: 12rem;
-  }
-
-  .sm\:h-56 {
-    height: 14rem;
-  }
-
   .sm\:min-h-\[691px\] {
     min-height: 691px;
   }
@@ -3123,11 +3090,6 @@ em {
     margin-bottom: 1rem;
   }
 
-  .md\:mx-4 {
-    margin-left: 1rem;
-    margin-right: 1rem;
-  }
-
   .md\:mt-8 {
     margin-top: 2rem;
   }
@@ -3168,10 +3130,6 @@ em {
     margin-top: 2.5rem;
   }
 
-  .md\:mt-2 {
-    margin-top: 0.5rem;
-  }
-
   .md\:flex {
     display: flex;
   }
@@ -3186,38 +3144,6 @@ em {
 
   .md\:h-\[280px\] {
     height: 280px;
-  }
-
-  .md\:h-28 {
-    height: 7rem;
-  }
-
-  .md\:h-32 {
-    height: 8rem;
-  }
-
-  .md\:h-36 {
-    height: 9rem;
-  }
-
-  .md\:h-40 {
-    height: 10rem;
-  }
-
-  .md\:h-44 {
-    height: 11rem;
-  }
-
-  .md\:h-\[200px\] {
-    height: 200px;
-  }
-
-  .md\:h-60 {
-    height: 15rem;
-  }
-
-  .md\:h-24 {
-    height: 6rem;
   }
 
   .md\:w-1\/2 {
@@ -3399,14 +3325,6 @@ em {
     height: 380px;
   }
 
-  .lg\:h-24 {
-    height: 6rem;
-  }
-
-  .lg\:h-20 {
-    height: 5rem;
-  }
-
   .lg\:w-1\/2 {
     width: 50%;
   }
@@ -3491,10 +3409,6 @@ em {
 
   .xl\:grid {
     display: grid;
-  }
-
-  .xl\:h-20 {
-    height: 5rem;
   }
 
   .xl\:w-\[96\%\] {
