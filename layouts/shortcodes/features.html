@@ -1,0 +1,4 @@
+{{ $color := .Get "color" }}
+<div class="pb-4" {{ if $color }}style="background-color: {{ $color }}"{{ end }}>
+  {{ .Inner  }}
+</div>

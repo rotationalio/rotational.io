@@ -1163,6 +1163,11 @@ video {
   margin-bottom: 1.25rem;
 }
 
+.mx-4 {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
 .my-3 {
   margin-top: 0.75rem;
   margin-bottom: 0.75rem;
@@ -1423,6 +1428,11 @@ video {
 
 .max-h-\[136px\] {
   max-height: 136px;
+}
+
+.max-h-fit {
+  max-height: -moz-fit-content;
+  max-height: fit-content;
 }
 
 .min-h-\[480px\] {
@@ -2178,12 +2188,12 @@ video {
   padding-right: 1rem;
 }
 
-.pt-10 {
-  padding-top: 2.5rem;
-}
-
 .pb-4 {
   padding-bottom: 1rem;
+}
+
+.pt-10 {
+  padding-top: 2.5rem;
 }
 
 .text-left {
