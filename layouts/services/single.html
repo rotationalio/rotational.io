@@ -9,10 +9,7 @@
 {{ if $data.services.services.enable }}
 {{ with $data.services.services }}
 <div class="max-w-7xl mx-auto px-4 relative">
-    <h2 class="text-lg sm:text-xl lg:text-2xl mt:12 lg:mt-24">
-        <b class="text-[#1D65A6]">{{ with .subtitle }} {{ index (split . " ") 0 | safeHTML }} {{ end }}</b>
-        {{ with .subtitle }} {{ after (len (index (split . " ") 0)) . | safeHTML }} {{ end }}
-    </h2>
+        {{ partial "services-testimonial.html" .}}
     <div class="">
         {{ if .approach.enable }}
         <div class="flex items-center mt-9 sm:mt-11 lg:mt-14">
