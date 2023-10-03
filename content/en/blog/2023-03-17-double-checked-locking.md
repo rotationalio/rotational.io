@@ -4,7 +4,7 @@ slug: "double-checked-locking"
 date: "2023-03-17T12:31:07-05:00"
 draft: false
 image: img/blog/clover-blanket.jpg
-author: Benjamin Bengfort & Prema Roman
+authors: ['Benjamin Bengfort', 'Prema Roman']
 tags: ['Concurrency']
 profile: img/butterfly.png
 photo_credit: "Photo by Timothy Dykes on Unsplash"

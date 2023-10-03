@@ -5,7 +5,7 @@ date: "2023-07-30T09:39:09-05:00"
 draft: false
 image: img/blog/footrace.jpg
 photo_credit: "Photo by Braden Collum on Unsplash"
-author: Benjamin Bengfort
+authors: [Benjamin Bengfort]
 profile: img/team/benjamin-bengfort.png
 tags: ['Golang']
 description: "By using parallel and short modes with Go tests, we can improve our local test speed and save longer running tests for CI."

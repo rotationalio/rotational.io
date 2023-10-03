@@ -5,7 +5,7 @@ date: "2023-06-05T10:39:51-05:00"
 draft: false
 image: img/blog/mississippi.jpg
 photo_credit: Photo by USGS on Unsplash
-author: Patrick Deziel
+authors: [Patrick Deziel]
 profile: img/team/patrick-deziel.png
 tags: ['Eventing', 'Golang']
 description: "A technical dive into asynchronous processing in Go."

@@ -5,7 +5,7 @@ date: "2023-03-09T16:11:27-05:00"
 draft: false
 image: img/blog/home-on-the-range.jpg
 photo_credit: Photo by Amaury Laporte on Flickr Commons
-author: "Beci Lambrecht"
+authors: ["Beci Lambrecht"]
 tags: ['Project Management']
 profile: img/team/beci-lambrecht.png
 description: "Wrangling cattle and doing technical project management are strangely similar."

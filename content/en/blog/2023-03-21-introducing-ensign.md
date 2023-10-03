@@ -4,7 +4,7 @@ slug: "introducing-ensign"
 date: "2023-03-21T10:32:35-04:00"
 draft: false
 image: img/blog/supernova.jpg
-author: "Edwin Schmierer"
+authors: ["Edwin Schmierer"]
 profile: img/team/edwin-schmierer.png
 tags: ['News', 'Company', 'Eventing']
 photo_credit: Photo by Smithsonian Institution via Flickr Commons

@@ -5,7 +5,7 @@ date: "2023-08-01T12:56:58-04:00"
 draft: false
 image: img/blog/egret-and-buffalo.jpg
 photo_credit: Photo by Francesco Veronesi via Flickr Commons
-author: Rotational Labs
+authors: [Rotational Labs]
 profile: img/butterfly.png
 tags: ['MLOps', 'Eventing', 'AI', 'ML']
 description: "Walk through the end-to-end process of building a streaming sentiment analysis application using a HuggingFace LLM and Ensign for real time predictions."

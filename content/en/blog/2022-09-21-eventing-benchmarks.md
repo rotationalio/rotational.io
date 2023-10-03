@@ -3,7 +3,7 @@ title: "An Eventing Benchmark Bake-Off"
 slug: "eventing-benchmarks"
 date: "2022-09-10T12:28:08-04:00"
 draft: true
-author: Rebecca Bilbro
+authors: [Rebecca Bilbro]
 image: img/blog/pastries.jpg
 tags: ['Microservices', 'Eventing', 'Programming']
 photo_credit: George Tan via Flickr Commons

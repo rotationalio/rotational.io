@@ -4,7 +4,7 @@ slug: "data-curation-baleen"
 date: 2022-01-13T11:37:43-05:00
 draft: false
 image: img/blog/whale.jpg
-author: Nabiha Naqvie
+authors: [Nabiha Naqvie]
 tags: ['Data Engineering']
 description: "Recent developments in Artificial Intelligence (AI) and Natural Language Processing (NLP) indicate a growing need for better mechanisms for collecting curated datasets, and introduces a new open source tool for this purpose."
 profile: img/team/nabiha-naqvie.png

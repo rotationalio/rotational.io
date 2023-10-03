@@ -5,7 +5,7 @@ date: "2023-08-22T09:32:37-04:00"
 draft: false
 image: img/blog/2023-08-18-introduction-to-polars/polar-bears-unsplash.jpg
 photo_credit: Photo by Hans-Jurgen Mager on Unsplash
-author: Prema Roman
+authors: [Prema Roman]
 profile: img/team/prema-roman.png
 tags: ['Python', 'Data']
 description: "Love Pandas? Check out this overview of Polars - the new high-performance Python data processing library."

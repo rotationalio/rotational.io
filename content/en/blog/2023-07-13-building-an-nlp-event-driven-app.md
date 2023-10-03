@@ -5,7 +5,7 @@ date: "2023-07-13T16:45:10-04:00"
 draft: false
 image: img/blog/victory.jpg
 photo_credit: Photo by Zion National Park via Flickr Commons
-author: Aatmaj Janardanan
+authors: [Aatmaj Janardanan]
 profile: img/team/aatmaj-janardanan.png
 tags: ['NLP', 'AI', 'ML', 'Eventing']
 description: "Rotational's summer intern shares challenges and victories encountered when developing his first event-driven data science app!"

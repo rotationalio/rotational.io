@@ -4,7 +4,7 @@ slug: "mastering-the-art-of-data-freshness"
 date: "2023-03-24T10:34:25-04:00"
 draft: false
 image: img/blog/ripe-pears.jpg
-author: "Edwin Schmierer"
+authors: ["Edwin Schmierer"]
 profile: img/team/edwin-schmierer.png
 tags: ['Eventing', 'Flexstreams']
 photo_credit: Photo by Oleksandr K (oleksandr_k) via Flickr Commons
