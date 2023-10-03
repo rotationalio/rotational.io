@@ -5,7 +5,7 @@ date: "2023-05-23T13:24:42-04:00"
 draft: false
 image: img/blog/2023-05-29/puzzle-pieces.jpg
 photo_credit: Photo by Hans-Peter Gauster via Unsplash
-author: Danielle Maxwell
+authors: [Danielle Maxwell]
 profile: img/team/danielle-maxwell.png
 tags: ['Frontend', 'Microfrontend']
 description: "Micro-frontends could be the ideal solution if your monolithic frontend is causing growing pains."

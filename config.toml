@@ -163,5 +163,3 @@ mediaType = "text/plain"
 [taxonomies]
   tag = 'tags'
   author = 'authors'
-
-disableKinds = ["taxonomyTerm"]

@@ -39,8 +39,21 @@ relative bg-[#1D65A6]">
             </ul>
         </div>
     </div>
-    <div>
-        <h2 class="text-xl font-bold text-sky-900 my-2 md:my-4 ">Blog Posts</h2>
+    <div class="mt-8 md:mt-0 md:ml-16">
+        <h2 class="text-xl font-bold text-sky-900 sm:mb-8">Blog Posts Written by {{ with .Params.name }} {{ index (split . " ") 0 | safeHTML }} {{ end }}</h2>
+        <ul class="grid md:grid-cols-2 xl:grid-cols-3 gap-6 md:gap-8">
+            {{ $paginator := .Paginate .Data.Pages }}
+            {{ range $paginator.Pages }}
+            <li class="mt-6 sm:mt-0 h-auto">
+                {{ .Render "article" }}
+            </li>
+            {{ end }}
+
+        </ul>
+
+
+        {{ partial "paginator.html" . }}
+
     </div>
 </div>
 {{ end }}

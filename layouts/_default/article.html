@@ -23,7 +23,9 @@
         <div class="flex justify-between items-center px-6 py-3 border-t mt-6">
             <div class="flex items-center">
                 <img src="{{ .Params.profile }}" alt="" class="rounded-full h-10 w-10">
-                <span class="ml-4 font-extralight">{{ .Params.author }}</span>
+                {{ range .Params.authors }}
+                <span class="ml-4 font-extralight"><a href="/authors/{{ . | urlize }}">{{ . }}</a></span>
+                {{ end }}
             </div>
             <div class="font-extralight">
                 {{ dateFormat "Jan 2, 2006" .Date }}

@@ -112,7 +112,7 @@ team:
           link : "https://www.linkedin.com/in/daniellemaxwell"
         - icon : "ti-github" # themify icon pack : https://themify.me/themify-icons
           link : "https://github.com/daniellemaxwell"
-      bioLink: 'bio/danielle-maxwell'
+      bioLink: 'authors/danielle-maxwell'
     # team member loop
     - name : Pete Keleher
       image : img/team/pete-keleher.png
