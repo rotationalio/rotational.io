@@ -159,3 +159,9 @@ blog = ["HTML", "RSS"]
 baseName = "humans"
 isPlainText = true
 mediaType = "text/plain"
+
+[taxonomies]
+  tag = 'tags'
+  author = 'authors'
+
+disableKinds = ["taxonomyTerm"]
