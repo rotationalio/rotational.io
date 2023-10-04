@@ -15,9 +15,14 @@ relative bg-[#1D65A6]">
 
 <div class="max-w-7xl mx-auto px-4 my-auto relative">
     <div class="flex basis-3 items-start py-4 md:p-16 flex-col md:flex-row">
+        {{ if .Params.name }}
         <div class="w-full md:w-1/2">
             <div class="">
+                {{ if .Params.profile }}
                 <img src="{{ .Params.profile | absURL}}" alt="" class='rounded-t-xl covatar w-full object-cover' />
+                {{ else }}
+                <img src="/img/butterfly.png" alt=""  />
+                {{ end }}
             </div>
             <div class="mt-4 w-full md:mt-8">
                 <h1 class="text-base font-semibold text-sky-800">{{ .Params.field }}</h1>
@@ -38,11 +43,19 @@ relative bg-[#1D65A6]">
                 {{ end }}
             </ul>
         </div>
+        
     </div>
+    {{ end }}
+    
+    {{ if .Data.Pages }}
     <div class="mt-8 md:mt-0 md:ml-16">
+        {{ if .Params.name }}
         <h2 class="text-xl font-bold text-sky-900 sm:mb-8">Blog Posts Written by {{ with .Params.name }} {{ index (split . " ") 0 | safeHTML }} {{ end }}</h2>
+        {{ else }}
+        <h2 class="text-xl font-bold text-sky-900 sm:mb-8">Blog Posts Written by {{ .Title }} </h2>
+        {{ end }}
         <ul class="grid md:grid-cols-2 xl:grid-cols-3 gap-6 md:gap-8">
-            {{ $paginator := .Paginate .Data.Pages }}
+            {{ $paginator := .Paginate .Data.Pages 6 }}
             {{ range $paginator.Pages }}
             <li class="mt-6 sm:mt-0 h-auto">
                 {{ .Render "article" }}
@@ -51,9 +64,9 @@ relative bg-[#1D65A6]">
 
         </ul>
 
-
         {{ partial "paginator.html" . }}
 
     </div>
+    {{ end }}
 </div>
 {{ end }}
