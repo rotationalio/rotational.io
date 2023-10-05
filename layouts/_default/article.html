@@ -21,10 +21,13 @@
         </div>
 
         <div class="flex justify-between items-center px-6 py-3 border-t mt-6">
-            <div class="flex items-center">
-                <img src="{{ .Params.profile }}" alt="" class="rounded-full h-10 w-10">
+            <div>
+                {{ $profile := .Params.profile }}
                 {{ range .Params.authors }}
-                <span class="ml-4 font-extralight"><a href="/authors/{{ . | urlize }}">{{ . }}</a></span>
+                <a href="/authors/{{ . | urlize }}" class="flex items-center">
+                    <img src="{{ $profile }}" alt="" class="rounded-full h-10 w-10">
+                    <span class="ml-4 font-extralight">{{ . }}</span>
+                </a>
                 {{ end }}
             </div>
             <div class="font-extralight">
