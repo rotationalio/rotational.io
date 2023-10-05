@@ -26,11 +26,17 @@
       </h3>
       <div class="flex flex-wrap justify-center items-center my-4">
         {{ $profile := .Params.profile }}
+        {{ if eq (len .Params.authors) 1}}
         {{ range .Params.authors }}
         <a href="/authors/{{ . | urlize }}" class="flex justify-center items-center">
           <img src="{{ $profile }}" alt="" class="border-4 border-white rounded-full h-11 drop-shadow-lg">
             <span class="ml-3 blog-date">{{ . }} {{ end }} | {{ dateFormat "Monday, Jan 2, 2006" .Date }} |&nbsp; </span>
         </a>
+        {{ else }}
+        <img src="{{ .Params.profile }}" alt="" class="border-4 border-white rounded-full h-11 drop-shadow-lg">
+        {{ range .Params.authors }}
+        <span class="ml-3 blog-date"><a href="/authors/{{ . | urlize }}">{{ . }}</a> {{ end }} | {{ dateFormat "Monday, Jan 2, 2006" .Date }} |&nbsp; </span>
+        {{ end }}
           <ul class="flex whitespace-nowrap">
             {{ range .Params.tags }}
             <li class="blog-tag"><a href="/tags/{{ . | urlize }}"> {{ . }}</a></li>
@@ -57,13 +63,20 @@
       <div class="lg:w-1/2 text-center">
         <h2 class="text-lg text-[#1D65A6] font-bold mb-3">
           {{ i18n "writtenBy" }}:</h2>
-        <div>
+        <div class="flex items-center">
           {{ $profile := .Params.profile }}
+          {{ if eq (len .Params.authors) 1}}
           {{ range .Params.authors }}
           <a href="/authors/{{ . | urlize }}" class="flex items-center justify-center">
           <img src="{{ $profile }}" alt="" class="border-4 border-white rounded-full drop-shadow-lg w-14 h-14">
           <span class="lg:w-[20ch] mx-2">{{ . }}</span>
           </a>
+          {{ end }}
+          {{ else }}
+          <img src="{{ $profile }}" alt="" class="border-4 border-white rounded-full drop-shadow-lg w-14 h-14">
+          {{ range .Params.authors }}
+          <span class="lg:w-[20ch] mx-2"><a href="/authors/{{ . | urlize }}">{{ . }}</a></span>
+          {{ end }}
           {{ end }}
         </div>
       </div>
