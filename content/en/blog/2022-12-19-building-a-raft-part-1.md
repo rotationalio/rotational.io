@@ -4,7 +4,7 @@ slug: "building-a-raft-part-1"
 date: "2022-12-19T17:14:04-05:00"
 draft: false
 image: img/blog/2022-12-19-building-a-raft-part-1/otterRaftOne.png
-author: "Daniel Sollis"
+authors: [Daniel Sollis]
 tags: ['Distributed Systems']
 profile: img/team/daniel-sollis.png
 description: "In the first part of our series on the Raft consensus algorithm we'll give an overview and introduction of the algorithm."

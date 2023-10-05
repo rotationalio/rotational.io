@@ -3,7 +3,7 @@ title: "Marshaling Go Enums to and from JSON"
 slug: "marshaling-go-enums-to-and-from-json"
 date: "2022-05-26T08:50:04-05:00"
 draft: false
-author: Benjamin Bengfort
+authors: [Benjamin Bengfort]
 image: img/blog/fireworks_star.jpg
 tags: ['Golang', 'Programming']
 description: "How to customize JSON serialization for your data types while avoiding pointer and receiver problems -- a story in three parts."

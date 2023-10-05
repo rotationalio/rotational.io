@@ -3,7 +3,7 @@ title: "Transparently Mocking gRPC Services"
 slug: "transparently-mocking-grpc-services"
 date: "2022-07-08T09:32:01-04:00"
 draft: false
-author: Patrick Deziel
+authors: [Patrick Deziel]
 image: img/blog/blue_laser.jpg
 tags: ['gRPC', 'Mocks', 'Programming']
 photo_credit: JJ Ying via Unsplash

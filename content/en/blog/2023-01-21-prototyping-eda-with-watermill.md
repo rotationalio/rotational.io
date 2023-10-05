@@ -5,7 +5,7 @@ date: "2023-01-21T11:13:46-05:00"
 draft: false
 image: img/blog/watermill.jpg
 photo_credit: Photo by Terence Mangram on Flickr Commons
-author: Prema Roman
+authors: [Prema Roman]
 tags: ['Microservices', 'Eventing']
 profile: img/team/prema-roman.png
 description: "An introduction to using the Watermill API to enable rapid prototyping for event-driven architectures."

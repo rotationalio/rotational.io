@@ -4,7 +4,7 @@ slug: "disrupt-managed-services"
 date: "2022-12-23T11:43:15-05:00"
 draft: false
 image: img/blog/dandelion.jpg
-author: Rebecca Bilbro
+authors: [Rebecca Bilbro]
 tags: ['Managed Services']
 photo_credit: Photo by unbekannt270 from Flickr
 description: "In this post, we introduce three trends that are poised to disrupt managed service offerings in 2023 and beyond."

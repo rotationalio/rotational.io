@@ -5,7 +5,7 @@ date: "2021-03-24T07:49:48-04:00"
 draft: false
 image_webp: img/blog/2021-03-24-project-planning-with-block-based-dependencies/2021-03-24-blocks-dependencies.png
 image: img/blog/2021-03-24-project-planning-with-block-based-dependencies/2021-03-24-blocks-dependencies.png
-author: Benjamin Bengfort
+authors: [Benjamin Bengfort]
 tags: ['Project Management']
 description: "A temporal block based dependency method for planning complex projects."
 profile: img/team/benjamin-bengfort.png

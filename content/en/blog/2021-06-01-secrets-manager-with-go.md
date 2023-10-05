@@ -4,7 +4,7 @@ slug: "secrets-manager-with-go"
 date: "2021-06-01T08:26:38-04:00"
 draft: false
 image: img/blog/2021-06-01-secrets-manager-with-go/doorknocker.jpg
-author: Rebecca Bilbro
+authors: [Rebecca Bilbro]
 tags: ['Security', 'Golang', 'Programming']
 description: "In this post, we'll dive into Google's Secret Manager service, walk through the setup steps, and explore some Go code to interact with the API."
 profile: img/team/rebecca-bilbro.png

@@ -4,7 +4,7 @@ slug: "october-retreats-and-conferences"
 date: "2022-10-31T13:32:04-05:00"
 draft: false
 image: img/blog/2022-10-31-willis-tower.jpg
-author: "Benjamin Bengfort"
+authors: [Benjamin Bengfort]
 profile: img/team/benjamin-bengfort.png
 tags: ['News', 'Company']
 photo_credit: Photo by Cody Engel on Unsplash

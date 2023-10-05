@@ -3,7 +3,7 @@ title: "Five Technologies Quietly Transforming the Web"
 slug: "five-technologies-quietly-transforming-the-web"
 date: "2022-06-27T13:00:01-04:00"
 draft: false
-author: Edwin Schmierer
+authors: [Edwin Schmierer]
 image: img/blog/dawn.jpg
 tags: ['WASM', 'AI', 'ML', 'gRPC', 'Microservices']
 description: "This post describes five technologies - new and old - that are transforming the web and becoming the foundation for next-generation applications."

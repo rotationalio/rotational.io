@@ -5,7 +5,7 @@ date: "2023-09-14T11:52:15-05:00"
 draft: false
 image: img/blog/2023-09-14-dockerize-data-science/container.webp
 photo_credit: "Photo by Venti Views on Unsplash"
-author: Benjamin Bengfort
+authors: [Benjamin Bengfort]
 profile: img/team/benjamin-bengfort.png
 tags: ["Docker", "Data Science", "Python"]
 description: "Docker is good for containerizing jobs and services, but most tutorials focus on web apps and microservices. This post is for data scientists! It contains a Python Dockerfile to use as a reference when creating your containers with scientific and numeric computing dependencies for data transformations, ETLs, inferencing, and other statistical analyses."

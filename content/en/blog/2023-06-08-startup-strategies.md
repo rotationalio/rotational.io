@@ -5,7 +5,7 @@ date: "2023-06-08T19:15:26-04:00"
 draft: false
 image: img/blog/balloons.jpg
 photo_credit: Photo by Patrick Down on Flickr Commons
-author: Beci Lambrecht
+authors: [Beci Lambrecht]
 profile: img/team/beci-lambrecht.png
 tags: ['Startups']
 description: "What does it feel like to work at a startup?"

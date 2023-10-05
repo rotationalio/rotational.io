@@ -3,7 +3,7 @@ title: "Documenting a gRPC API with OpenAPI"
 slug: "documenting-grpc-with-openapi"
 date: 2021-02-12T17:45:35Z
 image: img/blog/2021-02-12-grpc-openapi-docs/gateway.jpg
-author: Benjamin Bengfort
+authors: [Benjamin Bengfort]
 tags: ['gRPC', 'Programming', 'Golang']
 description: "Using grpc-gateway and Swagger"
 profile: img/team/benjamin-bengfort.png

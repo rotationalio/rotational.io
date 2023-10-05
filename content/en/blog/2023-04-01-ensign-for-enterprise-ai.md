@@ -4,7 +4,7 @@ slug: "ensign-for-enterprise-ai"
 date: "2023-04-01T07:29:49-04:00"
 draft: false
 image: img/blog/bridgerace.jpg
-author: "Edwin Schmierer"
+authors: ["Edwin Schmierer"]
 profile: img/team/edwin-schmierer.png
 tags: ['AI', 'Automation']
 photo_credit: Metropolitan Transportation Authority via Flickr Commons

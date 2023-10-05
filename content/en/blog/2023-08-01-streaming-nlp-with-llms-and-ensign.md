@@ -5,7 +5,7 @@ date: "2023-08-01T12:56:58-04:00"
 draft: false
 image: img/blog/egret-and-buffalo.jpg
 photo_credit: Photo by Francesco Veronesi via Flickr Commons
-author: Rotational Labs
+authors: [Rotational Labs]
 profile: img/butterfly.png
 tags: ['MLOps', 'Eventing', 'AI', 'ML']
 description: "Walk through the end-to-end process of building a streaming sentiment analysis application using a HuggingFace LLM and Ensign for real time predictions."
@@ -21,7 +21,7 @@ Sound familiar? This is for anyone out there who knows they have a good use case
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/7hXMpwS86Ro?start=331" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-🎥 You can also watch an [on-demand recording of this tutorial](https://www.youtube.com/watch?v=7hXMpwS86Ro&t=331s), delivered by Rotational Labs Distributed Systems Engineer, [Prema Roman](https://rotational.io/bio/prema-roman/).
+🎥 You can also watch an [on-demand recording of this tutorial](https://www.youtube.com/watch?v=7hXMpwS86Ro&t=331s), delivered by Rotational Labs Distributed Systems Engineer, [Prema Roman](https://rotational.io/authors/prema-roman/).
 
 😎 Just here for Prema's code? [Here's the repo](https://github.com/rotationalio/huggingface-example)!
 

@@ -5,7 +5,7 @@ date: "2023-09-27T08:04:58-07:00"
 draft: false
 image: img/blog/autumn_leaves.jpg
 photo_credit: "Hiro via Flickr Commons"
-author: "Edwin Schmierer"
+authors: ["Edwin Schmierer"]
 profile: img/team/edwin-schmierer.png
 tags: ["Hackathon", "Data Science", "Python"]
 description: "Rotational Labs is excited to announce our partnership and hackathon with the University of Chicago Data Science Institute! "
