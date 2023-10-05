@@ -2,55 +2,55 @@
 
 
 Founder/CEO: Benjamin Bengfort
-Bio: https://rotational.io/bio/benjamin-bengfort
+Bio: https://rotational.io/authors/benjamin-bengfort
 
 Founder/CTO: Rebecca Bilbro
-Bio: https://rotational.io/bio/rebecca-bilbro
+Bio: https://rotational.io/authors/rebecca-bilbro
 
 Founder/COO: Edwin Schmierer
-Bio: https://rotational.io/bio/edwin-schmierer
+Bio: https://rotational.io/authors/edwin-schmierer
 
 Head of Growth: Amanda Stanley
-Bio: https://rotational.io/bio/amanda-stanley
+Bio: https://rotational.io/authors/amanda-stanley
 
 Distributed Systems Engineer: Patrick Deziel
-Bio: https://rotational.io/bio/patrick-deziel
+Bio: https://rotational.io/authors/patrick-deziel
 
 Distributed Systems Engineer: Prema Roman
-Bio: https://rotational.io/bio/prema-roman
+Bio: https://rotational.io/authors/prema-roman
 
 Project Management Support: Beci Lambrecht
-Bio: https://rotational.io/bio/beci-lambrecht
+Bio: https://rotational.io/authors/beci-lambrecht
 
 Jr Distributed Systems Engineer: Daniel Sollis
-Bio: https://rotational.io/bio/daniel-sollis
+Bio: https://rotational.io/authors/daniel-sollis
 
 Senior Front-end Engineer: Cletus Razakou
-Bio: https://rotational.io/bio/cletus-razakou
+Bio: https://rotational.io/authors/cletus-razakou
 
 Jr Distributed Systems Engineer: Danielle Maxwell
-Bio: https://rotational.io/bio/danielle-maxwell
+Bio: https://rotational.io/authors/danielle-maxwell
 
 Technical Advisor: Pete Keleher
-Bio: https://rotational.io/bio/pete-keleher
+Bio: https://rotational.io/authors/pete-keleher
 
 Summer 2023 Intern: Aatmaj Janardanan
-Bio: https://rotational.io/bio/aatmaj-janardanan
+Bio: https://rotational.io/authors/aatmaj-janardanan
 
 Summer 2022 Intern: Natasha White
-Bio: https://rotational.io/bio/natasha-white
+Bio: https://rotational.io/authors/natasha-white
 
 Open Source Contributor: Nabiha Naqvie
-Bio: https://rotational.io/bio/nabiha-naqvie
+Bio: https://rotational.io/authors/nabiha-naqvie
 
 Open Source Contributor: Karen Belita
-Bio: https://rotational.io/bio/karen-belita
+Bio: https://rotational.io/authors/karen-belita
 
 Open Source Contributor: Tianshu Li
-Bio: https://rotational.io/bio/tianshu-li
+Bio: https://rotational.io/authors/tianshu-li
 
 Open Source Contributor: Elysee Bleu
-Bio: https://rotational.io/bio/elysee-bleu
+Bio: https://rotational.io/authors/elysee-bleu
 
 
 
