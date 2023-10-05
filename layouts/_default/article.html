@@ -22,9 +22,19 @@
 
         <div class="flex justify-between items-center px-6 py-3 border-t mt-6">
             <div class="flex items-center">
+                {{ $profile := .Params.profile }}
+                {{ if eq (len .Params.authors) 1}}
+                {{ range .Params.authors }}
+                <a href="/authors/{{ . | urlize }}" class="flex items-center">
+                    <img src="{{ $profile }}" alt="" class="rounded-full h-10 w-10">
+                    <span class="ml-4 font-extralight">{{ . }}</span>
+                </a>
+                {{ end }}
+                {{ else }}
                 <img src="{{ .Params.profile }}" alt="" class="rounded-full h-10 w-10">
                 {{ range .Params.authors }}
                 <span class="ml-4 font-extralight"><a href="/authors/{{ . | urlize }}">{{ . }}</a></span>
+                {{ end }}
                 {{ end }}
             </div>
             <div class="font-extralight">
