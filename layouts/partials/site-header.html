@@ -17,13 +17,13 @@
                 {{ $header := .Params.header }}
                 {{ with $header }}
                 <div class="mt-6 sm:mt-20">
-                    <h1 class="font-bold text-5xl">{{ . | markdownify }}</h1>
+                    <h1 class="font-bold text-3xl md:text-5xl">{{ . | markdownify }}</h1>
                 </div>
                 {{ end}}
                   {{ $headertext := .Params.headertext }}
                   {{ $headertextmore := .Params.headertextmore }}
                   {{ with $headertext }}
-                  <p class="mt-6 leading-snug sm:leading-tight md:leading-snug xl:leading-tight font-bold">
+                  <p class="mt-6 leading-snug sm:leading-tight md:leading-snug xl:leading-tight text-xl md:text-3xl font-bold">
                       {{ . | markdownify }}
                   </p>
                   {{ if $headertextmore }}
