@@ -14,5 +14,6 @@ social :
   - name : "github"
     link: 'https://github.com/bbengfort'
     icon: 'fa-github'
+aliases: /bio/benjamin-bengfort
 ---
 Dr. Benjamin Bengfort is co-founder and CEO of Rotational Labs. Benjamin is an experienced systems engineer, programmer and data scientist. Driven by a desire to build large systems with many users that have a global impact, he takes pride in solutions where many small interactions combine to create complex dynamics. As the CEO of Rotational Labs, his goal is to apply advanced distributed computing, networking, open source software, education, and machine learning to solutions that allow us to collaborate more effectively around the world to solve big problems.

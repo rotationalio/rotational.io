@@ -11,5 +11,6 @@ social :
   - name : "github"
     link: 'https://github.com/tl6kk'
     icon: 'fa-github'
+aliases: /bio/tianshu-li
 ---
 Tianshu Li is a data scientist and NLP specialist with a PhD in Systems Engineering and an enduring curiosity for learning, open source, and new culinary adventures.
