@@ -1,4 +1,5 @@
 ---
+title: Daniel Sollis
 name: "Daniel Sollis"
 slug: "daniel-sollis"
 profile: img/team/daniel-sollis.png

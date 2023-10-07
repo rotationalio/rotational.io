@@ -1,4 +1,5 @@
 ---
+title: Aatmaj Janardanan
 name: "Aatmaj Janardanan"
 slug: "aatmaj-janardanan"
 profile: img/team/aatmaj-janardanan.png

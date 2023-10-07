@@ -1,4 +1,5 @@
 ---
+title: Natasha White
 name: "Natasha White"
 slug: "natasha-white"
 profile: img/team/natasha-white.png

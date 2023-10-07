@@ -1,4 +1,5 @@
 ---
+title: Patrick Deziel
 name: "Patrick Deziel"
 slug: "patrick-deziel"
 profile: img/team/patrick-deziel.png

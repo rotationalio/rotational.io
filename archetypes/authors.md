@@ -1,0 +1,22 @@
+---
+title: Your Name
+name: "Your Name"
+slug: "firstName-lastName"
+profile: img/team/firstName-lastName.png
+designation : Your Job Title
+field: Your Specialty
+# If you would like to not include any social media links, delete lines 8 - 17. 
+# If you would like to not include a specific social media type, delete the "name", "link", and "icon"
+social :
+  - name : "linkedin"
+    link: 'Link to Your LinkedIn Profile'
+    icon: 'fa-linkedin-in'
+  - name : "twitter"
+    link : "Link to Your Twitter Profile"
+    icon: 'fa-twitter'
+  - name : "github"
+    link: 'Link to Your GitHub Profile'
+    icon: 'fa-github'
+---
+
+<!--Write a brief 1-2 sentence bio/personal description below-->

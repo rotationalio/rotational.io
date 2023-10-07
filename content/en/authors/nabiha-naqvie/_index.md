@@ -1,4 +1,5 @@
 ---
+title: Nabiha Naqvie
 name: "Nabiha Naqvie"
 slug: "nabiha-naqvie"
 profile: img/team/nabiha-naqvie.png

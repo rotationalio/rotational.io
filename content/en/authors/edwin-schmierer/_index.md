@@ -1,4 +1,5 @@
 ---
+title: Edwin Schmierer
 name: "Edwin Schmierer"
 slug: "edwin-schmierer"
 profile: img/team/edwin-schmierer.png
