@@ -1,4 +1,5 @@
 ---
+title: Beci Lambrecht
 name: "Beci Lambrecht"
 slug: "beci-lambrecht"
 profile: img/team/beci-lambrecht.png

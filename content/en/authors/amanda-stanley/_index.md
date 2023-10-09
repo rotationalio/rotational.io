@@ -1,4 +1,5 @@
 ---
+title: Amanda Stanley
 name: "Amanda Stanley"
 slug: "amanda-stanley"
 profile: img/team/amanda-stanley.png

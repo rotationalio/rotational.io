@@ -1,4 +1,5 @@
 ---
+title: Elysee Bleu
 name: "Elysee Bleu"
 slug: "elysee-bleu"
 profile: img/team/elysee-bleu.png

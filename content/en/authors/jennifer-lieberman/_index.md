@@ -1,4 +1,5 @@
 ---
+title: Jennifer Lieberman
 name: "Jennifer Lieberman"
 slug: "jennifer-lieberman"
 designation : Contributing Author
