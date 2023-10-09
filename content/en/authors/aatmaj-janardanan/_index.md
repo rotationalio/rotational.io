@@ -12,5 +12,6 @@ social :
   - name : "github"
     link: 'https://github.com/Aatmaj1'
     icon: 'fa-github'
+aliases: /bio/aatmaj-janardanan
 ---
 Aatmaj Janardanan is a passionate data scientist on a mission to extract meaningful insights from complex datasets.
