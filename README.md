@@ -142,7 +142,7 @@ a specific file
 
 e.g:  $ hugo new blog/YYYY-MM-DD-title-of-blog.md  "to create blog post"
         Or
-      $ hugo new authors/firstname-lastname/._index.md  "to create a new author".
+      $ hugo new authors/firstname-lastname/_index.md  "to create a new author".
 
 
 Can be useful: you can create blog subfolder by typing :
