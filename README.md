@@ -75,14 +75,14 @@ date: "2021-03-20T11:45:48-04:00"
 draft: true
 image_webp: images/blog/
 image: images/blog/
-author: Your Name
+authors: Your Name
 description : "Add Description Here"
 ---
 ```
 
 The next steps are as follows:
 
-1. Update the `author` and `description` fields.
+1. Update the `authors` and `description` fields.
 2. Find a blog image from [Unsplash](https://unsplash.com/collections/63030615/rotational-website) and add to `image_webp` and `image` fields.
 3. Write the blog post!
 
@@ -91,29 +91,32 @@ The next steps are as follows:
 To create a new author, use the [`hugo new`](https://gohugo.io/commands/hugo_new/#readout) command as follows:
 
 ```
-$ hugo new author/firstname-lastname.md
+$ hugo new authors/firstname-lastname/_index.md
 ```
 
 > **NOTE**: ensure that these commands are run in the root of the project.
 
-This will create a new file in the `content/en/author` directory (English is the default language for our site) that you can open and begin to edit. When creating new blog content, Hugo uses the `archetypes/author.md` template file and generates the following [frontmatter](https://gohugo.io/content-management/front-matter#readout):
+This will create a new file in the `content/en/authors` directory (English is the default language for our site) that you can open and begin to edit. When creating new author, Hugo uses the `archetypes/authors.md` template file and generates the following [frontmatter](https://gohugo.io/content-management/front-matter#readout):
 
 ```
 ---
-title: "" # Your full name
-image: "" # Note if left empty, the Gravatar from your email will be used
-email: ""
-social:
-  - icon : "ti-linkedin" # themify icon pack : https://themify.me/themify-icons
-    link : "https://www.linkedin.com/in/" # Linkedin
-  - icon : "ti-twitter-alt" # themify icon pack : https://themify.me/themify-icons
-    link : "https://twitter.com/" # Twitter
-  - icon : "ti-github" # themify icon pack : https://themify.me/themify-icons
-    link : "https://github/com/" # Github
+title: "Your Name"
+name: "Your Name"
+slug: "firstName-lastName"
+profile: img/team/firstName-lastName.png
+designation : Your Job Title
+field: Your Specialty
+social :
+  - name : "linkedin"
+    link: 'Link to Your LinkedIn Profile'
+    icon: 'fa-linkedin-in'
+  - name : "twitter"
+    link : "Link to Your Twitter Profile"
+    icon: 'fa-twitter'
+  - name : "github"
+    link: 'Link to Your GitHub Profile'
+    icon: 'fa-github'
 ---
-
-<!--Write your job title or function below, should be one line-->
-
 
 <!--Write a brief 1-2 sentence bio/personal description below-->
 
@@ -121,9 +124,12 @@ social:
 
 The next steps are as follows:
 
-1. Update the `title`, `email`, and socials `link` fields.
-2. Add your image link to `image` field or leave empty to use email gravatar
-3. Write your function at Rotational and then description of you
+1. Add your image link to the `profile` field.
+2. Update the `designation` and `field` fields with your function at Rotational.
+3. Add your `social` media profile `link` for LinkedIn, Twitter, and GitHub.
+4. Write a brief description about yourself.
+
+**Note**: If you would like to not include any social media links, delete the entire `social` field. If you would like to not include a link to a specific social media site, delete the `name`, `link`, and `icon` fields.
 
 ## hugo new command
 
@@ -136,14 +142,12 @@ a specific file
 
 e.g:  $ hugo new blog/YYYY-MM-DD-title-of-blog.md  "to create blog post"
         Or
-      $ hugo new author/firstname-lastname.md  "to create new author".
+      $ hugo new authors/firstname-lastname/_index.md  "to create a new author".
 
 
-Can be useful: you can create blog or author subfolder by typing :
+Can be useful: you can create blog subfolder by typing :
 
        $ hugo new blog/subfolder/YYYY-MM-DD-title-of-blog.md
-          Or
-       $ hugo new author/subfolder/firstname-lastname.md
 
 ## WebP
 

@@ -1,5 +1,6 @@
 ---
-name: "Tianshu Li"
+title: Tianshu Li
+ame: "Tianshu Li"
 slug: "tianshu-li"
 profile: img/team/tianshu-li.png
 designation : Open Source Contributor

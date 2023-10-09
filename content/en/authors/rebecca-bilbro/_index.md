@@ -1,4 +1,5 @@
 ---
+title: Rebecca Bilbro, Ph.D
 name: "Rebecca Bilbro, Ph.D"
 slug: "rebecca-bilbro"
 profile: img/team/rebecca-bilbro.png

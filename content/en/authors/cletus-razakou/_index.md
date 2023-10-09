@@ -1,4 +1,5 @@
 ---
+title: Cletus Razakou
 name: "Cletus Razakou"
 slug: "cletus-razakou"
 profile: img/team/cletus-razakou.png

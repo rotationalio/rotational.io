@@ -1,4 +1,5 @@
 ---
+title: Pete Keleher
 name: "Pete Keleher"
 slug: "pete-keleher"
 profile: img/team/pete-keleher.png

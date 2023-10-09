@@ -1,4 +1,5 @@
 ---
+title: Benjamin Bengfort, Ph.D.
 name: "Benjamin Bengfort, Ph.D. "
 slug: "benjamin-bengfort"
 profile: img/team/benjamin-bengfort.png

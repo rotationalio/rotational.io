@@ -1,4 +1,5 @@
 ---
+title: Danielle Maxwell
 name: "Danielle Maxwell"
 slug: "danielle-maxwell"
 profile: img/team/danielle-maxwell.png

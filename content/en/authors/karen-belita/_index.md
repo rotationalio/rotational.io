@@ -1,4 +1,5 @@
 ---
+title: Karen Belita
 name: "Karen Belita"
 slug: "karen-belita"
 profile: img/team/karen-belita.png
