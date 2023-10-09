@@ -1,7 +1,7 @@
 ---
-title: Your Name
-name: "Your Name"
-slug: "firstName-lastName"
+title: "{{ replaceRE "^[-0-9]{10}-" "" .Name | replaceRE "-" " " | title }}"
+name: "{{ replaceRE "^[-0-9]{10}-" "" .Name | replaceRE "-" " " | title }}"
+slug: "{{ replaceRE "^[-0-9]{10}-" "" .Name }}"
 profile: img/team/firstName-lastName.png
 designation : Your Job Title
 field: Your Specialty
@@ -9,13 +9,13 @@ field: Your Specialty
 # If you would like to not include a specific social media type, delete the "name", "link", and "icon"
 social :
   - name : "linkedin"
-    link: 'Link to Your LinkedIn Profile'
+    link: 'Add Link to Your LinkedIn Profile'
     icon: 'fa-linkedin-in'
   - name : "twitter"
-    link : "Link to Your Twitter Profile"
+    link : "Add Link to Your Twitter Profile"
     icon: 'fa-twitter'
   - name : "github"
-    link: 'Link to Your GitHub Profile'
+    link: 'Add Link to Your GitHub Profile'
     icon: 'fa-github'
 ---
 

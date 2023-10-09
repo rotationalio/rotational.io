@@ -100,6 +100,7 @@ This will create a new file in the `content/en/authors` directory (English is th
 
 ```
 ---
+title: "Your Name"
 name: "Your Name"
 slug: "firstName-lastName"
 profile: img/team/firstName-lastName.png
@@ -123,11 +124,10 @@ social :
 
 The next steps are as follows:
 
-1. Update the `name` and `slug` fields.
-2. Add your image link to the `profile` field.
-3. Update the `designation` and `field` fields with your function at Rotational.
-4. Add your `social` media profile `link` for LinkedIn, Twitter, and GitHub.
-5. Write a brief description about yourself.
+1. Add your image link to the `profile` field.
+2. Update the `designation` and `field` fields with your function at Rotational.
+3. Add your `social` media profile `link` for LinkedIn, Twitter, and GitHub.
+4. Write a brief description about yourself.
 
 **Note**: If you would like to not include any social media links, delete the entire `social` field. If you would like to not include a link to a specific social media site, delete the `name`, `link`, and `icon` fields.
 
