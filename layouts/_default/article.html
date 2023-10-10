@@ -32,9 +32,11 @@
                 {{ end }}
                 {{ else }}
                 <img src="{{ .Params.profile }}" alt="" class="rounded-full h-10 w-10">
-                {{ range .Params.authors }}
-                <span class="ml-4 font-extralight"><a href="/authors/{{ . | urlize }}">{{ . }}</a></span>
-                {{ end }}
+                <ul class="flex flex-wrap ml-4">
+                    {{ range .Params.authors }}
+                    <li class="list-multi-author font-extralight"><a href="/authors/{{ . | urlize }}">{{ . }}</a></li>
+                    {{ end }}
+                </ul>
                 {{ end }}
             </div>
             <div class="font-extralight">
