@@ -382,3 +382,15 @@ em {
 .blog-tag:first-child::before {
   content: '';
 }
+
+.list-multi-author::after {
+  content: '\00a0&';
+}
+
+.single-multi-author::after {
+  content: '\00a0&\00a0';
+}
+
+.list-multi-author:last-child::after, .single-multi-author:last-child::after {
+  content: '';
+}
