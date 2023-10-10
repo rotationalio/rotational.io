@@ -1138,6 +1138,11 @@ video {
   margin-bottom: 1rem;
 }
 
+.mx-2 {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
 .my-8 {
   margin-top: 2rem;
   margin-bottom: 2rem;
@@ -1171,16 +1176,6 @@ video {
 .mx-20 {
   margin-left: 5rem;
   margin-right: 5rem;
-}
-
-.mx-2 {
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
-}
-
-.mx-10 {
-  margin-left: 2.5rem;
-  margin-right: 2.5rem;
 }
 
 .ml-10 {
@@ -1460,6 +1455,10 @@ video {
   width: 50%;
 }
 
+.w-56 {
+  width: 14rem;
+}
+
 .w-16 {
   width: 4rem;
 }
@@ -1498,10 +1497,6 @@ video {
 
 .w-\[1080px\] {
   width: 1080px;
-}
-
-.w-\[20ch\] {
-  width: 20ch;
 }
 
 .max-w-7xl {
@@ -3379,10 +3374,6 @@ em {
 
   .lg\:w-1\/2 {
     width: 50%;
-  }
-
-  .lg\:w-\[24ch\] {
-    width: 24ch;
   }
 
   .lg\:w-\[20ch\] {
