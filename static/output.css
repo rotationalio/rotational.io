@@ -2375,19 +2375,9 @@ video {
   color: rgb(29 102 166 / var(--tw-text-opacity));
 }
 
-.text-\[\#DB3B00\] {
-  --tw-text-opacity: 1;
-  color: rgb(219 59 0 / var(--tw-text-opacity));
-}
-
 .text-\[\#A32C00\] {
   --tw-text-opacity: 1;
   color: rgb(163 44 0 / var(--tw-text-opacity));
-}
-
-.text-\[\#802200\] {
-  --tw-text-opacity: 1;
-  color: rgb(128 34 0 / var(--tw-text-opacity));
 }
 
 .underline {
