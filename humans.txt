@@ -56,7 +56,7 @@ Bio: https://rotational.io/authors/elysee-bleu
 
 /* SITE */
 
-Last update: 2023-10-10
+Last update: 2023-10-16
 Site name: Rotational Labs
 URL: https://rotational.io/
 CMS: Hugo
