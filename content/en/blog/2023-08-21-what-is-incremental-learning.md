@@ -144,7 +144,8 @@ Together, these concepts form a symbiotic relationship, enhancing responsiveness
 
 In a world where data never stops flowing, real-time analytics and incremental models are our compass, guiding us towards intelligent, adaptable solutions. May this exploration inspire you to embrace the future, armed with knowledge and ready for discovery.
 
-Ready to take the next step? [Sign up for MLOps 201: Data Flows for Real Time Model Inferencing (webinar)](https://us06web.zoom.us/webinar/register/3016915923116/WN_wipD3P6PSj24FQDvfP2XhA).
+Ready to take the next step? Check out [MLOps 201: Data Flows for Real Time Model Inferencing](https://youtu.be/w69glRpOBD4?si=7V6vYUZa3uPBbXXy).
+
 
 Ready to experiment with data streams and change data capture? Check out [The Data Playground](https://rotational.io/data-playground/) and set up your own [free Ensign account](https://rotational.app/register/).
 

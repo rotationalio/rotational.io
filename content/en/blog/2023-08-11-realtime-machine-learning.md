@@ -135,7 +135,7 @@ For a deeper dive into real-time machine learning, check out the following resou
 - [Vowpal Wabbit Tutorial on Kaggle](https://www.kaggle.com/code/kashnitsky/topic-8-online-learning-and-vowpal-wabbit#3.2.-News.-Multiclass-classification)
 - [Streaming 101: The world beyond batch](https://www.oreilly.com/radar/the-world-beyond-batch-streaming-101/)
 
-Ready to take the next step? [Sign up for MLOps 201: Data Flows for Real Time Model Inferencing (webinar)](https://us06web.zoom.us/webinar/register/3016915923116/WN_wipD3P6PSj24FQDvfP2XhA).
+Ready to take the next step? Check out [MLOps 201: Data Flows for Real Time Model Inferencing](https://youtu.be/w69glRpOBD4?si=7V6vYUZa3uPBbXXy).
 
 Ready to experiment with data streams and change data capture? Check out [The Data Playground](https://rotational.io/data-playground/) and set up your own [free Ensign account](https://rotational.app/register/).
 
