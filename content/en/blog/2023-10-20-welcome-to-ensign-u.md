@@ -11,7 +11,7 @@ tags: ['Python', 'Eventing', 'ML']
 description: "Your end-to-end curriculum for getting started with Ensign, a database-meets-event-streaming platform for data science teams."
 ---
 
-Like any new tool that solves a tough challenge, Ensign takes a little time to learn. Once you do, it will open up a world of possibility for teams building data applications. Check out our step-by-step guide to getting started!
+Like any new tool, Ensign takes a little time to learn. But take it from us (a bunch of seasoned data science experts) -- it will open up a new world of data science applications for you. Check out this beginner-friendly introduction!
 
 <!--more-->
 
