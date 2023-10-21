@@ -59,7 +59,7 @@ Here’s where you need to [create an account](https://rotational.app/register/)
 - [Create a project](https://youtu.be/VskNgAVMORQ?si=POcN898B0MpQDsCW): A project is a collection of topics and will serve as your data repository for streaming events.
 - [Name your topics](https://www.youtube.com/watch?v=1XuVPl_Ki4U): A topic is a log of events that contain information you’re interested in.
 - [Generate API keys](https://youtu.be/KMejrUIouMw): Use your API keys to connect your data source to your topic.
-- [Safely use your keys](https://youtu.be/EEpIDkKJopY?si=MrdLtH2TqiYq2kqH): Establish a client connection to the Ensign server by passing in the ClientSecret and ClientID from your API keys, either via environment variables or a gitignored file inside the repo.
+- [Connect using your API keys](https://youtu.be/EEpIDkKJopY?si=MrdLtH2TqiYq2kqH): Establish a client connection to the Ensign server by passing in the ClientSecret and ClientID from your API keys, either via environment variables or a gitignored file inside the repo.
 
 ## Step 5. Install PyEnsign
 
