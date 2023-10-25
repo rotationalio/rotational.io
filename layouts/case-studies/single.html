@@ -1,0 +1,27 @@
+{{ define "title" }}
+{{ .Title }} &ndash; {{ .Site.Title }}
+{{ end }}
+
+{{ define "main" }}
+<section class="max-w-7xl mx-auto px-4 relative mt-8 mb-24">
+    <div class="mt-8">
+        <div class="mb-8">
+            <h2 class="font-bold text-xl sm:text-2xl lg:text-3xl mb-4">Problem</h2>
+            <p>{{ .Params.problem }}</p>
+        </div>
+        <div class="mb-8">
+            <h2 class="font-bold text-xl sm:text-2xl lg:text-3xl mb-4">Approach</h2>
+            <p>{{ .Params.approach }}</p>
+        </div>
+        <div class="mb-8">
+            <h2 class="font-bold text-xl sm:text-2xl lg:text-3xl mb-4">Result</h2>
+            <p>{{ .Params.result }}</p>
+        </div>
+    </div>
+
+    <div class="md:flex md:space-x-5 items-center pl-2 py-5 rounded-lg bg-[#F5F5F5]">
+        <p class="pb-6 md:pb-0 font-bold md:text-xl">Schedule your no-cost, risk-free consultation.</p>
+        <a href="/contact" class="border rounded-lg text-white font-bold bg-[#1D65A6] p-2.5">Schedule Consultation</a>
+    </div>
+</section>
+{{ end }}

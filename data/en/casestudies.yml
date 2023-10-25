@@ -1,0 +1,15 @@
+############################# Case Studies Data ###################################
+casestudies:
+  enable: true
+  title: Case Studies
+  subtitle: With deep industry and government experience, we can deliver on your most important priorities.
+  studies:
+  - client_name: BlueVoyant
+    summary: Are your analysts tired of manually searching for needles in the haystack of your data? Find out how we achieved 90% automation in the weekly review of news articles for our client with a custom solution powered by a domain-specific classification model.
+    link: case-studies/blue-voyant
+  - client_name: TRISA
+    summary: Do you have to move private customer data between data systems? Learn how we implemented a secure peer-to-peer protocol for personally-identifiable and sensitive financial information that fulfills compliance requirements in over 20 jurisdictions worldwide.
+    link: case-studies/trisa
+  - client_name: Mastercard
+    summary: Struggling to monetize your custom analytics, data, and models? Read on to see how we developed a customer-facing anti-money laundering application to productionalize our client's proprietary models and generate revenue.
+    link: case-studies/mastercard
