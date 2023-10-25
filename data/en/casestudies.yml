@@ -9,6 +9,7 @@ casestudies:
     link: case-studies/blue-voyant
   - client_name: TRISA
     summary: Do you have to move private customer data between data systems? Learn how we implemented a secure peer-to-peer protocol for personally-identifiable and sensitive financial information that fulfills compliance requirements in over 20 jurisdictions worldwide.
+    link: case-studies/trisa
   - client_name: Mastercard
-    summary: Magna fermentum iaculis eu non diam phasellus. Mi eget mauris pharetra et ultrices. Amet mauris commodo quis imperdiet. Mi ipsum faucibus vitae aliquet nec ullamcorper sit amet.
+    summary: Struggling to monetize your custom analytics, data, and models? Read on to see how we developed a customer-facing anti-money laundering application to productionalize our client's proprietary models and generate revenue.
     link: case-studies/mastercard
