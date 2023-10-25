@@ -8,8 +8,7 @@ casestudies:
     summary: Are your analysts tired of manually searching for needles in the haystack of your data? Find out how we achieved 90% automation in the weekly review of news articles for our client with a custom solution powered by a domain-specific classification model.
     link: case-studies/blue-voyant
   - client_name: TRISA
-    summary: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    link: case-studies/trisa
+    summary: Do you have to move private customer data between data systems? Learn how we implemented a secure peer-to-peer protocol for personally-identifiable and sensitive financial information that fulfills compliance requirements in over 20 jurisdictions worldwide.
   - client_name: Mastercard
     summary: Magna fermentum iaculis eu non diam phasellus. Mi eget mauris pharetra et ultrices. Amet mauris commodo quis imperdiet. Mi ipsum faucibus vitae aliquet nec ullamcorper sit amet.
     link: case-studies/mastercard
