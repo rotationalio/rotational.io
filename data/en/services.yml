@@ -14,34 +14,6 @@ services:
       privacy regulations.
   services:
     enable : true
-    title: Our Expertise
-    description: |
-      Moving from request-response to publish-subscribe has never been easier and can
-      open a realm of possibility.
-
-      Contact us if you're thinking about how to:
-    items:
-    - name: Enhance DataOps
-      details:
-      - title: Leverage data from legacy systems
-      - title: Synchronize databases across regions
-      - title: Optimize cloud resources and spend
-      - title: Implement disaster recovery
-      - title: Move data out of silos
-    - name: Build Event-Driven Applications
-      details:
-      - title: Rapidly prototype apps and features
-      - title: Stay compliant with privacy regulations
-      - title: Ensure end-to-end data cryptography
-      - title: Untangle micro-service hairballs
-      - title: Multi-app integration
-    - name: Empower Machine Learning
-      details:
-      - title: Give data scientists access to real data
-      - title: Enable rich experiementation
-      - title: Build reinforcement learning systems
-      - title: Real-time data analytics
-      - title: Historical queries and CDC
   partners:
     enable: true
     title: We Meet Our Clients Where They Are
