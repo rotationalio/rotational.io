@@ -42,6 +42,20 @@ services:
       - title: Build reinforcement learning systems
       - title: Real-time data analytics
       - title: Historical queries and CDC
+  partners:
+    enable: true
+    title: We Meet Our Clients Where They Are
+    description: We have experience working in cloud, hybrid, and on-prem environments.
+    partner:
+      - name: Google Cloud Partner
+        logo: img/partners/googlecloud.png
+      - name: Amazon Web Services (AWS)
+        logo: img/partners/aws.png
+      - name: Microsoft Azure
+        logo: img/partners/azure.png
+      - name: Linode - Akamai Connected Cloud Partner
+        logo: img/partners/linode.png
   action:
     enable: true
-    description: What's blocking your growth? Drop us a line for a friendly chat. We'll make it worth your while.
+    description: Schedule your no-cost, risk-free consultation.
+    button_text: Schedule Consultation

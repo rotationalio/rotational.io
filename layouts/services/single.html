@@ -9,7 +9,6 @@
 {{ if $data.services.services.enable }}
 {{ with $data.services.services }}
 <div class="max-w-7xl mx-auto px-4 relative">
-        {{ partial "services-testimonial.html" .}}
     <div class="">
         {{ if .approach.enable }}
         <div class="flex items-center mt-9 sm:mt-11 lg:mt-14">
@@ -27,6 +26,24 @@
         <div class="mt-4 text-base sm:mt-5 lg:mt-7 lg:text-lg">
           {{ .services.description | markdownify }}
         </div>
+
+        {{ partial "services-testimonial.html" .}}
+
+        {{ if .partners.enable }}
+        {{ with .partners }}
+        <section class="mt-9">
+            <h2 class="mb-4 font-bold text-xl sm:text-2xl lg:text-3xl">{{ .title }}</h2>
+            <p class="mt-6 md:text-xl">{{ .description }}</p>
+            <ul class="grid items-center space-y-8 md:grid-cols-4 md:space-y-0 mt-6">
+                {{ range .partner }}
+                <li>
+                    <img src="{{ .logo }}" alt="{{ .name }}" class="h-20 mx-auto md:h-24" />
+                </li>
+                {{ end }}
+            </ul>
+        </section>
+        {{ end }}
+        {{ end }}
 
         <div class="hidden mt-10 md:hidden md:mt-10 lg:block lg:mt-14" data-pg-collapsed>
             <div class="grid grid-cols-3 rounded-tl text-xl">
@@ -72,7 +89,6 @@
         </div>
         {{ end }}
 
-        <!-- Case Studies -->
         {{ if $data.casestudies.casestudies.enable }}
         {{ with $data.casestudies.casestudies }}
         <section class="my-8 ">
@@ -98,12 +114,18 @@
                     
         </section>
         {{ end }}
-        {{ end }}        
-      
-      <div class="mt-11 text-center md:mt-14 lg:mt-16">
-            <a href="/contact" class="bg-[#192E5B] px-8 py-4 rounded-lg text-sm text-white uppercase md:text-base"> {{
-                i18n "contactUs" }} </a>
-        </div>
+        {{ end }}  
+        
+        {{ if .action.enable }}
+        {{ with .action }}
+        <section class="mt-6 md:flex md:space-x-5 items-center pl-4 py-6 rounded-lg bg-[#F5F5F5]">
+            <p class="pb-6 md:pb-0 font-bold md:text-xl">{{ .description }}</p>
+            <div>
+                <a href="/contact" class="bg-[#1D65A6] p-4 rounded-lg font-bold text-[#FCFCFC] md:text-base">{{ .button_text }}</a>
+            </div>
+        </section>
+        {{ end }}
+        {{ end }}
     </div>
 </div>
 {{ end }}
