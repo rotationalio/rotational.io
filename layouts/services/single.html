@@ -16,6 +16,33 @@
         </div>
         <p class="mt-4 text-base sm:mt-5 lg:mt-7 lg:text-xl">{{ .approach.description | markdownify }}</p>
         {{ end }}
+        
+        {{ if $data.wheelhouse.wheelhouse.enable}}
+        {{ with $data.wheelhouse.wheelhouse }}
+        <section class="mt-9">
+            <h2 class="mb-4 font-bold text-xl sm:text-2xl lg:text-3xl">{{ .title }}</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 sm:mt-8 text-center">
+                {{ range .experience }}
+                <div class="bg-[#E3E3E1] pb-4 rounded-md">
+                    <div class="md:h-44 lg:h-60">
+                        <h4 class="text-center text-lg md:text-xl font-bold my-6">{{ .area }}</h4>
+                        <p class="md:text-lg mx-4 pb-4">{{ .description }}</p>
+                    </div>
+                    <ul class="flex justify-center mx-2 gap-x-4 my-6 lg:my-0 lg:mb-6">
+                        {{ range .specialists }}
+                        <li>
+                            <a href="{{ .link }}">
+                                <img src="{{ .image }}" class="w-auto h-[92px]" />
+                            </a>
+                        </li>
+                        {{ end }}
+                    </ul>
+                </div>
+                {{ end }}
+            </div>
+        </section>
+        {{ end }}
+        {{ end }}        
 
         {{ partial "services-testimonial.html" .}}
 
@@ -76,5 +103,4 @@
 </div>
 {{ end }}
 {{ end }}
-
 {{ end }}
