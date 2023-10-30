@@ -9,73 +9,35 @@
 {{ if $data.services.services.enable }}
 {{ with $data.services.services }}
 <div class="max-w-7xl mx-auto px-4 relative">
-        {{ partial "services-testimonial.html" .}}
     <div class="">
         {{ if .approach.enable }}
         <div class="flex items-center mt-9 sm:mt-11 lg:mt-14">
             <h3 class="font-bold text-xl sm:text-2xl lg:text-3xl">{{ .approach.title }}</h3>
-            <img src="img/butterfly.png" class="h-6 ml-3 w-6" />
         </div>
-        <p class="mt-4 text-base sm:mt-5 lg:mt-7 lg:text-lg">{{ .approach.description | markdownify }}</p>
+        <p class="mt-4 text-base sm:mt-5 lg:mt-7 lg:text-xl">{{ .approach.description | markdownify }}</p>
         {{ end }}
 
-        {{ if .services.enable }}
-        <div class="flex items-center mt-9 sm:mt-11 lg:mt-14">
-            <h3 class="font-bold text-xl sm:text-2xl lg:text-3xl">{{ .services.title }}</h3>
-            <img src="img/butterfly.png" class="h-6 ml-3 w-6" />
-        </div>
-        <div class="mt-4 text-base sm:mt-5 lg:mt-7 lg:text-lg">
-          {{ .services.description | markdownify }}
-        </div>
+        {{ partial "services-testimonial.html" .}}
 
-        <div class="hidden mt-10 md:hidden md:mt-10 lg:block lg:mt-14" data-pg-collapsed>
-            <div class="grid grid-cols-3 rounded-tl text-xl">
-                {{ range .services.items }}
-                <div
-                    class="bg-[#192E5B] border-gray-500 border-solid divide-x-2 font-bold py-6  row-span-1 text-center text-white">
-                    {{ .name }}
-                </div>
+        {{ if .partners.enable }}
+        {{ with .partners }}
+        <section class="my-9 lg:my-14">
+            <h2 class="mb-4 font-bold text-xl sm:text-2xl lg:text-3xl">{{ .title }}</h2>
+            <p class="mt-6 md:text-xl">{{ .description }}</p>
+            <ul class="grid items-center space-y-8 md:grid-cols-4 md:space-y-0 mt-6">
+                {{ range .partner }}
+                <li>
+                    <img src="{{ .logo }}" alt="{{ .name }}" class="h-20 mx-auto md:h-24" />
+                </li>
                 {{ end }}
-            </div>
-
-            <div class="bg-[#E8EDF7] px-5 py-6">
-                <ul class="grid grid-cols-3">
-                    {{ range .services.items }}
-                    <li data-pg-collapsed>
-                        {{ range .details }}
-                        <div class="flex items-center mb-7">
-                            <span class="bg-[#1D65A6] h-4 rounded-full w-4"></span>
-                            <span class="ml-4 mr-3 text-lg">{{ .title }}</span>
-                        </div>
-                        {{ end }}
-                    </li>
-                    {{ end }}
-                </ul>
-            </div>
-        </div>
-        <div data-pg-collapsed class="lg:hidden mt-6">
-            {{ range .services.items }}
-            <div class="mt-6 " data-pg-collapsed>
-                <div
-                    class="bg-[#192E5B] border-gray-500 border-solid divide-x-2 font-bold py-6 rounded-t-2xl row-span-1 text-center text-white">
-                    {{ .name }}</div>
-                <div class="bg-[#E8EDF7] p-5 rounded-b-2xl">
-                    {{ range .details }}
-                    <div class="flex items-center mb-4">
-                        <div class="bg-[#1D65A6] h-3 rounded-full w-3"></div>
-                        <span class="ml-2 mr-2 text-base">{{ .title }}</span>
-                    </div>
-                    {{ end }}
-                </div>
-            </div>
-            {{ end }}
-        </div>
+            </ul>
+        </section>
+        {{ end }}
         {{ end }}
 
-        <!-- Case Studies -->
         {{ if $data.casestudies.casestudies.enable }}
         {{ with $data.casestudies.casestudies }}
-        <section class="my-8 ">
+        <section class="my-9 lg:my-14">
             <h2 class="mb-4 font-bold text-xl sm:text-2xl lg:text-3xl">{{ .title }}</h2>
             <p class="md:text-xl">{{ .subtitle }}</p>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8 text-center">
@@ -98,12 +60,18 @@
                     
         </section>
         {{ end }}
-        {{ end }}        
-      
-      <div class="mt-11 text-center md:mt-14 lg:mt-16">
-            <a href="/contact" class="bg-[#192E5B] px-8 py-4 rounded-lg text-sm text-white uppercase md:text-base"> {{
-                i18n "contactUs" }} </a>
-        </div>
+        {{ end }}  
+        
+        {{ if .action.enable }}
+        {{ with .action }}
+        <section class="my-9 lg:my-14 md:flex md:space-x-5 items-center pl-4 py-6 rounded-lg bg-[#F5F5F5]">
+            <p class="pb-6 md:pb-0 font-bold md:text-xl">{{ .description }}</p>
+            <div>
+                <a href="{{ .schedule_link }}" target="_blank" class="bg-[#1D65A6] p-4 rounded-lg font-bold text-[#FCFCFC] md:text-base">{{ .button_text }}</a>
+            </div>
+        </section>
+        {{ end }}
+        {{ end }}
     </div>
 </div>
 {{ end }}
