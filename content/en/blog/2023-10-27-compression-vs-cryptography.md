@@ -34,6 +34,10 @@ Encryption first then compression (and its inverse operation) is almost 1.5x fas
 
 ## Methodology
 
+In order to simulate a real-world use case, the benchmarks were applied to JSON formatted data of NOAA weather alerts that is 1,096,280 bytes and compressed to 143,277 bytes using the default compression level.
+
+All of the code used to implement cryptography and compression on the dataset can be found [in this Gist](https://gist.github.com/bbengfort/6b6c7957380ec3cda22ea36b21e2d4f2). Benchmarks were implemented with the Go testing benchmarks and the output on my MacBook Pro with an Apple M1 Max chip and 64GB of memory was as follows:
+
 ```
 goos: darwin
 goarch: arm64
@@ -48,6 +52,100 @@ BenchmarkPressCrypt/PressCrypt-10         	      32	  36019805 ns/op	 1707577 B/
 BenchmarkPressCrypt/DepressCrypt-10       	     393	   2998849 ns/op	 8607411 B/op	     101 allocs/op
 ```
 
+<small>Benchmark results for `Best Compression`</small>
+
+If you see any reason that our benchmark methodology or implementations of encryption or compression might have skewed our results -- please let us know! If your advice leads to an improvement in performance, we'll happily send you a t-shirt!
+
 ### Encryption/Decryption
 
+For our encryption methodology, we used [AES-GCM](https://en.wikipedia.org/wiki/Galois/Counter_Mode) with a 256 bit block size. We generated a single, 32-byte key at the start of the benchmarks, and used the same key across all benchmarks. For each benchmark, we did generate a 12 byte nonce and append the nonce to the encrypted data.
+
+The `Encrypt` function was implemented as follows:
+
+```golang
+func Encrypt(plaintext []byte) ([]byte, error) {
+	block, err := aes.NewCipher(key)
+	if err != nil {
+		return nil, err
+	}
+
+	gcm, err := cipher.NewGCM(block)
+	if err != nil {
+		return nil, err
+	}
+
+	nonce := make([]byte, 12)
+	if _, err := rand.Read(nonce); err != nil {
+		return nil, err
+	}
+
+	ciphertext := gcm.Seal(nil, nonce, plaintext, nil)
+	ciphertext = append(ciphertext, nonce...)
+	return ciphertext, nil
+}
+```
+
+Both encryption and decyprtion used Golang standard library packages, including [`crypto/aes`](https://pkg.go.dev/crypto/aes) and [`crypto/cipher`](https://pkg.go.dev/crypto/cipher). No third party libraries were used.
+
+The `Decrypt` function was implemented as follows:
+
+```golang
+func Decrypt(ciphertext []byte) ([]byte, error) {
+	block, err := aes.NewCipher(key)
+	if err != nil {
+		return nil, err
+	}
+
+	gcm, err := cipher.NewGCM(block)
+	if err != nil {
+		return nil, err
+	}
+
+	plaintext, err := gcm.Open(nil, ciphertext[len(ciphertext)-12:], ciphertext[:len(ciphertext)-12], nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return plaintext, nil
+}
+```
+
 ### Compression/Decompression
+
+We used the Golang standard library [`compress/gzip`](https://pkg.go.dev/compress/gzip) for compression. The `flate` package used by `gzip` has different options for compression including `gzip.BestSpeed` and `gzip.BestCompression` -- we benchmarked on both of these extremes rather than using `gzip.DefaultCompression` to see the range of performance provided by `gzip`. It turns out that even using `gzip.BestSpeed` -- compression performance is still significantly less than the performance of symmetric cryptography.
+
+The `Compress` function was implemented as follows:
+
+```golang
+func Compress(data []byte) ([]byte, error) {
+	buf := &bytes.Buffer{}
+	archive, _ := gzip.NewWriterLevel(buf, gzip.BestCompression)
+	if _, err := archive.Write(data); err != nil {
+		return nil, err
+	}
+
+	if err := archive.Close(); err != nil {
+		return nil, err
+	}
+
+	return buf.Bytes(), nil
+}
+```
+
+The `gzip` package in Golang expects to be reading/writing to a file-like object. To implement our methods which must return byte arrays, we used a `bytes.Buffer` as our intermediate object that implemented `io.WriteCloser` and `io.ReadCloser`.
+
+The `Decompress` function was implemented as follows:
+
+```golang
+func Decompress(data []byte) ([]byte, error) {
+	buf := bytes.NewBuffer(data)
+	archive, err := gzip.NewReader(buf)
+	if err != nil {
+		return nil, err
+	}
+	defer archive.Close()
+	return io.ReadAll(archive)
+}
+```
+
+The `PressCrypt`, `CryptPress`, `DepressCrypt`, and `DecryptPress` functions simply used the above functions in differing orders. The input to each of these functions was the byte array of JSON data loaded from the fixture data and the output was the encrypted/compressed data (or an error).
