@@ -67,7 +67,7 @@
         <section class="my-9 lg:my-14 md:flex md:space-x-5 items-center pl-4 py-6 rounded-lg bg-[#F5F5F5]">
             <p class="pb-6 md:pb-0 font-bold md:text-xl">{{ .description }}</p>
             <div>
-                <a href="/contact" class="bg-[#1D65A6] p-4 rounded-lg font-bold text-[#FCFCFC] md:text-base">{{ .button_text }}</a>
+                <a href="{{ .schedule_link }}" target="_blank" class="bg-[#1D65A6] p-4 rounded-lg font-bold text-[#FCFCFC] md:text-base">{{ .button_text }}</a>
             </div>
         </section>
         {{ end }}

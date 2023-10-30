@@ -31,3 +31,4 @@ services:
     enable: true
     description: Schedule your no-cost, risk-free consultation.
     button_text: Schedule Consultation
+    schedule_link: https://calendar.google.com/calendar/appointments/schedules/AcZssZ3_x6bpRYnW_3BAgE00aGKr3wnBv9dOVW8xFlnL1PbZ6agn4xeYOpNSDjYceczGe77R7gaJw5Tb
