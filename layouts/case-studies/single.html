@@ -21,7 +21,12 @@
 
     <div class="md:flex md:space-x-5 items-center pl-2 py-5 rounded-lg bg-[#F5F5F5]">
         <p class="pb-6 md:pb-0 font-bold md:text-xl">Schedule your no-cost, risk-free consultation.</p>
-        <a href="/contact" class="border rounded-lg text-white font-bold bg-[#1D65A6] p-2.5">Schedule Consultation</a>
+        {{ $data := index site.Data site.Language.Lang }}
+        {{ if $data.services.services.action.enable }}
+        {{ with $data.services.services.action }}
+        <a href="{{ .schedule_link }}" target="_blank" class="border rounded-lg text-white font-bold bg-[#1D65A6] p-2.5">Schedule Consultation</a>
+        {{ end }}
+        {{ end }}
     </div>
 </section>
 {{ end }}

@@ -1,0 +1,15 @@
+############################# Products ###################################
+products:
+  enable: true
+  title: Products
+  subtitle: With deep industry and government experience, we can deliver on your most important priorities.
+  products:
+    - product_name: Ensign
+      description: Ensign is a database-meets-event-streaming platform for data science teams that want to get their data moving and their models into production.
+      link: /ensign
+    - product_name: Yellowbrick
+      description: Yellowbrick is an open source project built using Python that extends the scikit-learn API with visual analysis and diagnostic tools. The Yellowbrick library is a diagnostic visualization platform for machine learning.
+      link: https://www.scikit-yb.org/en/latest/index.html
+    - product_name: Baleen
+      description: Baleen is an automated ingestion service of RSS feeds to construct a corpus for NLP research.
+      link: https://github.com/rotationalio/baleen
