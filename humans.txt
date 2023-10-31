@@ -10,11 +10,11 @@ Bio: https://rotational.io/authors/rebecca-bilbro
 Founder/COO: Edwin Schmierer
 Bio: https://rotational.io/authors/edwin-schmierer
 
-Head of Growth: Amanda Stanley
-Bio: https://rotational.io/authors/amanda-stanley
-
 Distributed Systems Engineer: Patrick Deziel
 Bio: https://rotational.io/authors/patrick-deziel
+
+Jr Distributed Systems Engineer: Danielle Maxwell
+Bio: https://rotational.io/authors/danielle-maxwell
 
 Distributed Systems Engineer: Prema Roman
 Bio: https://rotational.io/authors/prema-roman
@@ -22,14 +22,8 @@ Bio: https://rotational.io/authors/prema-roman
 Project Management Support: Beci Lambrecht
 Bio: https://rotational.io/authors/beci-lambrecht
 
-Jr Distributed Systems Engineer: Daniel Sollis
-Bio: https://rotational.io/authors/daniel-sollis
-
-Senior Front-end Engineer: Cletus Razakou
-Bio: https://rotational.io/authors/cletus-razakou
-
-Jr Distributed Systems Engineer: Danielle Maxwell
-Bio: https://rotational.io/authors/danielle-maxwell
+Head of Growth: Amanda Stanley
+Bio: https://rotational.io/authors/amanda-stanley
 
 Technical Advisor: Pete Keleher
 Bio: https://rotational.io/authors/pete-keleher
@@ -46,11 +40,17 @@ Bio: https://rotational.io/authors/nabiha-naqvie
 Open Source Contributor: Karen Belita
 Bio: https://rotational.io/authors/karen-belita
 
-Open Source Contributor: Tianshu Li
-Bio: https://rotational.io/authors/tianshu-li
+Open Source Contributor: Daniel Sollis
+Bio: https://rotational.io/authors/daniel-sollis
+
+Open Source Contributor: Cletus Razakou
+Bio: https://rotational.io/authors/cletus-razakou
 
 Open Source Contributor: Elysee Bleu
 Bio: https://rotational.io/authors/elysee-bleu
+
+Open Source Contributor: Tianshu Li
+Bio: https://rotational.io/authors/tianshu-li
 
 
 
