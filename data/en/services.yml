@@ -1,17 +1,14 @@
 ############################# Services ###################################
 services:
   enable : true
-  title : Consulting Services
-  subtitle: |
-    "Rotational Labs has been a true partner to us -- from helping us realize and deploy our ambitious visions for next-gen supply chain analytics, to empowering our technical team with the skills and ability to maintain our products and services long-term." - Sebastian Sobolev, BlueVoyant Group
+  title : Services
   approach:
     enable : true
-    title: Our Value
+    title: What You See Is What You Get
     description: |
-      We work with our clients to leverage **event-driven microservices** to deliver rich,
-      personalized user experiences, real-time business insights, and streamlined machine
-      learning operations. We also help our customers future proof and stay compliant with
-      privacy regulations.
+      We're **a proven team of senior data scientists and engineers** ready to tackle complex data and machine learning projects 
+      in government or commercial markets. We deliver solutions through advisory, software engineering, and data science services. 
+      We scope, sequence, and budget projects for client success.
   services:
     enable : true
   partners:
