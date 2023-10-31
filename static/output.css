@@ -3203,6 +3203,14 @@ em {
     height: 280px;
   }
 
+  .md\:h-60 {
+    height: 15rem;
+  }
+
+  .md\:h-72 {
+    height: 18rem;
+  }
+
   .md\:w-1\/2 {
     width: 50%;
   }
@@ -3419,8 +3427,20 @@ em {
     height: 15rem;
   }
 
+  .lg\:h-44 {
+    height: 11rem;
+  }
+
   .lg\:h-\[380px\] {
     height: 380px;
+  }
+
+  .lg\:h-52 {
+    height: 13rem;
+  }
+
+  .lg\:h-56 {
+    height: 14rem;
   }
 
   .lg\:w-1\/2 {
@@ -3512,6 +3532,14 @@ em {
 
   .xl\:grid {
     display: grid;
+  }
+
+  .xl\:h-56 {
+    height: 14rem;
+  }
+
+  .xl\:h-64 {
+    height: 16rem;
   }
 
   .xl\:w-\[96\%\] {
