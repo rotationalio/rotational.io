@@ -1,23 +1,23 @@
 ---
 title: "Compression vs Cryptography: What Comes First?"
 slug: "compression-vs-cryptography"
-date: "2023-10-27T17:44:44-04:00"
+date: "2023-10-31T10:44:44-04:00"
 draft: false
 image: img/blog/espresso-press.jpg
 photo_credit: "Photo by charlesdeluvio on Unsplash"
 authors: ['Benjamin Bengfort']
 profile: img/team/benjamin-bengfort.png
 tags: ['Compression', 'Cryptography', 'Benchmarks']
-description: "Data encryption and compression are heavyweight algorithms whose performance is mission critical; but when applying both simultaneously -- which should come first? The answer surprised me!"
+description: "Data encryption and compression are heavyweight algorithms whose performance is mission critical; but when applying both simultaneously, which should come first? The answer surprised me!"
 ---
 
 Data encryption and compression are heavyweight algorithms that must be used with care in performance intensive applications; but when applying both mechanics to the same data, which should come first?
 
 <!--more-->
 
-At Rotational, we routinely use encryption and compression to guarantee privacy and maximize storage. Before applying data to the Ensign log, your events must be both encrypted and compressed -- which led me to the question; which operation should I apply first to ensure that Ensign is as performant as possible? The answer surprised me.
+At Rotational, we routinely use encryption and compression to guarantee privacy and maximize storage. Before applying data to the Ensign [log](https://ensign.rotational.dev/system/broker/), your events must be both encrypted and compressed &mdash; which led me to the question; which operation should I apply first to ensure [Ensign](https://rotational.app/) is as performant as possible? The answer surprised me.
 
-For whatever reason, I had it in my head that cryptography was a heavier weight algorithm than compression and that any cryptographic algorithm would take a large number of CPU cycles. I reasoned, therefore that compression should be applied first -- minimizing the amount of cryptographic work that had to be performed. To be sure, I wrote some [benchmarks in Go](https://gist.github.com/bbengfort/6b6c7957380ec3cda22ea36b21e2d4f2) and was suprised to discover:
+For whatever reason, I had it in my head that cryptography was a heavier-weight algorithm than compression, and that any cryptographic algorithm would take a large number of CPU cycles. I reasoned, therefore, that compression should be applied first -- minimizing the amount of cryptographic work required. To be sure, I wrote some [benchmarks in Go](https://gist.github.com/bbengfort/6b6c7957380ec3cda22ea36b21e2d4f2) and was surprised to discover:
 
 > Encryption should be applied before compression for maximum performance.
 
@@ -30,7 +30,7 @@ The results from my benchmark show the performance as the average number of nano
 3. `CryptPress` and `DecryptPress`: applies cryptography first, then compression (the inverse operation decompresses first, then decrypts).
 4. `PressCrypt` and `DepressCrypt`: applies compression first, then cryptography (the inverse operation decrypts first, then decompresses).
 
-Encryption first then compression (and its inverse operation) is almost 1.5x faster than applying compression first! In high performance applications, this is a significant and meaningful difference!
+Encryption first then compression (and its inverse operation) is almost 1.5x faster than applying compression first! In high performance applications, this is a **significant and meaningful** difference.
 
 ## Methodology
 
@@ -54,11 +54,10 @@ BenchmarkPressCrypt/DepressCrypt-10       	     393	   2998849 ns/op	 8607411 B/
 
 <small>Benchmark results for `Best Compression`</small>
 
-If you see any reason that our benchmark methodology or implementations of encryption or compression might have skewed our results -- please let us know! If your advice leads to an improvement in performance, we'll happily send you a t-shirt!
 
 ### Encryption/Decryption
 
-For our encryption methodology, we used [AES-GCM](https://en.wikipedia.org/wiki/Galois/Counter_Mode) with a 256 bit block size. We generated a single, 32-byte key at the start of the benchmarks, and used the same key across all benchmarks. For each benchmark, we did generate a 12 byte nonce and append the nonce to the encrypted data.
+For our encryption methodology, we used [AES-GCM](https://en.wikipedia.org/wiki/Galois/Counter_Mode) with a 256 bit block size. We generated a single, 32-byte key at the start of the benchmarks, and used the same key across all benchmarks. For each benchmark, we generated a 12 byte nonce and appended the nonce to the encrypted data.
 
 The `Encrypt` function was implemented as follows:
 
@@ -85,7 +84,7 @@ func Encrypt(plaintext []byte) ([]byte, error) {
 }
 ```
 
-Both encryption and decyprtion used Golang standard library packages, including [`crypto/aes`](https://pkg.go.dev/crypto/aes) and [`crypto/cipher`](https://pkg.go.dev/crypto/cipher). No third party libraries were used.
+Both encryption and decryption used Golang standard library packages, including [`crypto/aes`](https://pkg.go.dev/crypto/aes) and [`crypto/cipher`](https://pkg.go.dev/crypto/cipher). No third party libraries were used.
 
 The `Decrypt` function was implemented as follows:
 
@@ -149,3 +148,14 @@ func Decompress(data []byte) ([]byte, error) {
 ```
 
 The `PressCrypt`, `CryptPress`, `DepressCrypt`, and `DecryptPress` functions simply used the above functions in differing orders. The input to each of these functions was the byte array of JSON data loaded from the fixture data and the output was the encrypted/compressed data (or an error).
+
+## Conclusion
+
+There are two major takeaways here for other teams out there working to maximize performance for high-throughput data systems and applications, and here they are:
+
+1. **Apply encryption *before* compression.**
+2. **Test your assumptions &mdash; they might be slowing you down!**
+
+We hope this post inspires you to do both!
+
+Have any thoughts on our benchmark methodology or implementations of encryption or compression? Please let us know! If your advice leads to an improvement in performance, we'll happily send you a t-shirt 😀👕
