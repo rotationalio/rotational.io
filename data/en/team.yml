@@ -44,15 +44,6 @@ team:
           link : "https://github.com/eschmier"
       bioLink : authors/edwin-schmierer
     # team member loop
-    - name : Amanda Stanley
-      image : img/team/amanda-stanley.png
-      designation : Head of Growth
-      content : Product Marketing Advisor
-      social :
-        - icon : "ti-linkedin" # themify icon pack : https://themify.me/themify-icons
-          link : "https://www.linkedin.com/in/stanleyamandak/"
-      bioLink: 'authors/amanda-stanley'
-    # team member loop
     - name : Patrick Deziel
       image : img/team/patrick-deziel.png
       designation : Distributed Systems Engineer
@@ -65,6 +56,17 @@ team:
         - icon : "ti-github" # themify icon pack : https://themify.me/themify-icons
           link : "https://github.com/pdeziel"
       bioLink: 'authors/patrick-deziel'
+    # team member loop
+    - name : Danielle Maxwell
+      image : img/team/danielle-maxwell.png
+      designation : Jr Distributed Systems Engineer
+      content : WebAssembly Specialist
+      social :
+        - icon : "ti-linkedin" # themify icon pack : https://themify.me/themify-icons
+          link : "https://www.linkedin.com/in/daniellemaxwell"
+        - icon : "ti-github" # themify icon pack : https://themify.me/themify-icons
+          link : "https://github.com/daniellemaxwell"
+      bioLink: 'authors/danielle-maxwell'
     # team member loop
     - name : Prema Roman
       image : img/team/prema-roman.png
@@ -83,36 +85,14 @@ team:
       content : Certified PMP & Agile Specialist
       bioLink: 'authors/beci-lambrecht'
     # team member loop
-    - name : Daniel Sollis
-      image : img/team/daniel-sollis.png
-      designation : Jr Distributed Systems Engineer
-      content : Architecture Specialist
+    - name : Amanda Stanley
+      image : img/team/amanda-stanley.png
+      designation : Head of Growth
+      content : Product Marketing Advisor
       social :
         - icon : "ti-linkedin" # themify icon pack : https://themify.me/themify-icons
-          link : "https://www.linkedin.com/in/daniel-sollis-67481114a/"
-        - icon : "ti-github" # themify icon pack : https://themify.me/themify-icons
-          link : "https://github.com/DanielSollis"
-      bioLink: 'authors/daniel-sollis'
-    # team member loop
-    - name : Cletus Razakou
-      image : img/team/cletus-razakou.png
-      designation : Senior Front-end Engineer
-      content : React.js Specialist
-      social :
-        - icon : "ti-github" # themify icon pack : https://themify.me/themify-icons
-          link : "https://github.com/masskoder"
-      bioLink: 'authors/cletus-razakou'
-    # team member loop
-    - name : Danielle Maxwell
-      image : img/team/danielle-maxwell.png
-      designation : Jr Distributed Systems Engineer
-      content : WebAssembly Specialist
-      social :
-        - icon : "ti-linkedin" # themify icon pack : https://themify.me/themify-icons
-          link : "https://www.linkedin.com/in/daniellemaxwell"
-        - icon : "ti-github" # themify icon pack : https://themify.me/themify-icons
-          link : "https://github.com/daniellemaxwell"
-      bioLink: 'authors/danielle-maxwell'
+          link : "https://www.linkedin.com/in/stanleyamandak/"
+      bioLink: 'authors/amanda-stanley'
     # team member loop
     - name : Pete Keleher
       image : img/team/pete-keleher.png
@@ -122,7 +102,6 @@ team:
         - icon : "ti-linkedin" # themify icon pack : https://themify.me/themify-icons
           link : "https://www.linkedin.com/in/pete-keleher-a03639b"
       bioLink: 'authors/pete-keleher'
-
     # team member loop
     - name : Aatmaj Janardanan
       image : img/team/aatmaj-janardanan.png
@@ -166,6 +145,35 @@ team:
           link : "https://github.com/kbelita"
       bioLink: 'authors/karen-belita'
     # team member loop
+    - name : Daniel Sollis
+      image : img/team/daniel-sollis.png
+      designation : Open Source Contributor
+      content : Distributed Systems Engineer
+      social :
+        - icon : "ti-linkedin" # themify icon pack : https://themify.me/themify-icons
+          link : "https://www.linkedin.com/in/daniel-sollis-67481114a/"
+        - icon : "ti-github" # themify icon pack : https://themify.me/themify-icons
+          link : "https://github.com/DanielSollis"
+      bioLink: 'authors/daniel-sollis'
+    # team member loop
+    - name : Cletus Razakou
+      image : img/team/cletus-razakou.png
+      designation : Open Source Contributor
+      content : React.js Specialist
+      social :
+        - icon : "ti-github" # themify icon pack : https://themify.me/themify-icons
+          link : "https://github.com/masskoder"
+      bioLink: 'authors/cletus-razakou'
+    # team member loop
+    - name : Elysee Bleu
+      image : img/team/elysee-bleu.png
+      designation : Open Source Contributor
+      content : React.js Specialist
+      social :
+        - icon : "ti-github" # themify icon pack : https://themify.me/themify-icons
+          link : "https://github.com/elysee15"
+      bioLink: 'authors/elysee-bleu'
+    # team member loop
     - name : Tianshu Li
       image : img/team/tianshu-li.png
       designation : Open Source Contributor
@@ -176,12 +184,3 @@ team:
         - icon : "ti-github" # themify icon pack : https://themify.me/themify-icons
           link : "https://github.com/tl6kk"
       bioLink: 'authors/tianshu-li'
-    # team member loop
-    - name : Elysee Bleu
-      image : img/team/elysee-bleu.png
-      designation : Open Source Contributor
-      content : React.js Specialist
-      social :
-        - icon : "ti-github" # themify icon pack : https://themify.me/themify-icons
-          link : "https://github.com/elysee15"
-      bioLink: 'authors/elysee-bleu'
