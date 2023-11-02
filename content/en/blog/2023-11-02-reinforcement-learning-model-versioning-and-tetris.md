@@ -1,23 +1,23 @@
 ---
 title: "Reinforcement Learning, Model Versioning... and Tetris"
 slug: "reinforcement-learning-model-versioning-and-tetris"
-date: "2023-10-31T12:17:37-05:00"
-draft: true
+date: "2023-11-02T11:46:04-04:00"
+draft: false
 image: img/blog/gameboy.jpg
 photo_credit: "Photo by Ravi Palwe on Unsplash"
 authors: ['Patrick Deziel']
 profile: img/team/patrick-deziel.png
-tags: ['Reinforcement Learning', 'AI', 'Ensign', 'Python']
-description: "Reinforcement learning can be an effective alternative to supervised learning, but how do you keep track of all the models you're building?"
+tags: ['Reinforcement Learning', 'AI', 'Python']
+description: "If you're looking for clever ways to automate decision making at work, don't forget about reinforcement learning! RL is much more flexible than manually writing out a ton rules in your code, and it can uncover novel insights that supervised machine learning models cannot."
 ---
 
-Reinforcement learning can be an effective alternative to supervised learning, but how do you keep track of all the models you're building? In this post we will build a RL agent that learns to play Tetris by itself.
+Every time I'm writing complex rules in my code, I remember there's a machine learning technique for this: Reinforcement Learning. RL models are able to learn the optimal rules given predefined rewards. Read on to learn how!
 
 <!--more-->
 
 ## Reinforcement Learning
 
-Reinforcement learning is a branch of machine learning where the goal is to train an intelligent agent to take actions in an environment in order to maximize a "reward". RL has famously been used to defeat the best human players in [Go](https://deepmind.google/technologies/alphago/)(the board game, not the programming language), but the approach is generic enough to extend to domains beyond gaming (robotics, natural language processing, etc.).
+Reinforcement learning is a branch of machine learning where the goal is to train an intelligent agent to take actions in an environment in order to maximize a "reward". RL has famously been used to defeat the best human players in [Go](https://deepmind.google/technologies/alphago/) (the board game, not the programming language), but the approach is generic enough to extend to domains beyond gaming (robotics, natural language processing, etc.).
 
 In this post we will explore creating a RL agent of our own to play Tetris. If you just want the code, you can check out the repo [here](https://github.com/pdeziel/ai-tetris).
 
@@ -34,7 +34,9 @@ This is a Python project with some dependencies:
 
 ## Going to the Gym
 
-To build our agent we will use [gymnasium](https://gymnasium.farama.org/) which is from the organization behind ChatGPT. The training loop will look something like this:
+To build our agent we will use [gymnasium](https://gymnasium.farama.org/), an open source (MIT License) Python package from the same organization behind ChatGPT.
+
+Our training loop will look something like this:
 
 !["RL Workflow"](/img/blog/2023-10-31-reinforcement-learning-model-versioning-and-tetris/workflow.png)
 
@@ -102,7 +104,7 @@ def step(self, action):
     if observation[0].sum() >= len(observation[0]):
         # Game over
         return observation, -100, True, False, {}
-    
+
     # Set reward equal to difference between current and previous score
     total_score = self.get_total_score(observation)
     reward = total_score - self.current_score
@@ -222,7 +224,7 @@ class AgentTrainer:
 
         model_name = model.__class__.__name__
         policy_name = model.policy.__class__.__name__
-        
+
         if self.ensign:
             await self.ensign.ensure_topic_exists(self.model_topic)
 
@@ -245,7 +247,7 @@ class AgentTrainer:
                 model.save(buffer)
                 model_event = Event(buffer.getvalue(), "application/octet-stream", schema_name=model_name, schema_version=model_version, meta={"agent_id": str(self.agent_id), "model": model_name, "policy": policy_name, "trained_at": session_end.isoformat(), "train_seconds": str(duration.total_seconds())})
                 await self.ensign.publish(self.model_topic, model_event)
-            
+
             if self.model_dir:
                 model.save(os.path.join(self.model_dir, "{}_{}.zip".format(model_name, session_end.strftime("%Y%m%d-%H%M%S"))))
 
@@ -360,7 +362,11 @@ PPO v0.1.0: Seed: 80484, Steps: 589, Score: 64
 
 ## What Next?
 
-Now that we have an RL framework, we should be able to experiment a lot more quickly. Here are some things we could try:
+So, if you're looking for clever ways to automate decision making at work, don't forget about reinforcement learning! Just like Tetris, it might take a bit of practice to get the hang of. But once you've added RL to your toolkit, you'll see that it's a much more flexible (and often less bug-prone) method compared to manually writing out a ton rules in your code. Even better, RL can uncover novel insights that supervised machine learning models cannot, thanks to tricks like the [explore/exploit algorithm](https://en.wikipedia.org/wiki/Multi-armed_bandit).
+
+The best way to get good at RL? Get some practice objectively defining your reward (or punishment), and experiment with different policies and algorithms. Using the RL framework in our Tetris example, you should be able to do that a lot more quickly!
+
+Here are some things you could try next:
 
 - Experiment with different RL models and policies
 - Create a more nuanced reward function that rewards shorter-term actions (e.g. minimize the number of "holes" in the board)
