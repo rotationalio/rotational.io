@@ -1,6 +1,6 @@
 ---
-title: "Reinforcement Learning, Model Versioning... and Tetris"
-slug: "reinforcement-learning-model-versioning-and-tetris"
+title: "Reinforcement Learning, Automation... and Tetris"
+slug: "reinforcement-learning-automation-and-tetris"
 date: "2023-11-02T11:46:04-04:00"
 draft: false
 image: img/blog/gameboy.jpg
