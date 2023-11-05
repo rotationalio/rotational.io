@@ -15,11 +15,17 @@ Data encryption and compression are heavyweight algorithms that must be used wit
 
 <!--more-->
 
+**Editor's note: the original version of this blog post had a different result, but thanks to Michael Andersen and Ori Bernstein and an [excellent discussion on LinkedIn](https://www.linkedin.com/feed/update/urn:li:activity:7125171935449157633/) I've updated this post.**
+
 At Rotational, we routinely use encryption and compression to guarantee privacy and maximize storage. Before applying data to the Ensign [log](https://ensign.rotational.dev/system/broker/), your events must be both encrypted and compressed &mdash; which led me to the question; which operation should I apply first to ensure [Ensign](https://rotational.app/) is as performant as possible? The answer surprised me.
 
-For whatever reason, I had it in my head that cryptography was a heavier-weight algorithm than compression, and that any cryptographic algorithm would take a large number of CPU cycles. I reasoned, therefore, that compression should be applied first -- minimizing the amount of cryptographic work required. To be sure, I wrote some [benchmarks in Go](https://gist.github.com/bbengfort/6b6c7957380ec3cda22ea36b21e2d4f2) and was surprised to discover:
+> Compression should be applied before encryption otherwise compression will do nothing.
 
-> Encryption should be applied before compression for maximum performance.
+For whatever reason, I had it in my head that cryptography was a heavier-weight algorithm than compression, and that any cryptographic algorithm would take a large number of CPU cycles. I reasoned, therefore, that compression should be applied first -- minimizing the amount of cryptographic work required. To be sure, I wrote some [benchmarks in Go](https://gist.github.com/bbengfort/6b6c7957380ec3cda22ea36b21e2d4f2) and was surprised to discover that actually modern CPUs handle encryption very effectively and compression is the heavier-weight operation.
+
+_However, pure throughput is not the only measure of performance_. My original blog post created some surprise on LinkedIn because experts in cryptography noted that compression should have no effect on ciphertext, otherwise it would [violate semantic security](https://en.wikipedia.org/wiki/Semantic_security). It is possible that encypting before compression is faster because no compression is possible. When you compare [data compression ratios](https://en.wikipedia.org/wiki/Data_compression_ratio), it is clear that you _must apply compression before encryption otherwise compression will have no effect_.
+
+!["Data Compression Results"](/img/blog/2023-10-27-compression-vs-cryptography/cryptpress_compression.png)
 
 !["Benchmark Results"](/img/blog/2023-10-27-compression-vs-cryptography/cryptpress_results.png)
 
@@ -30,13 +36,23 @@ The results from my benchmark show the performance as the average number of nano
 3. `CryptPress` and `DecryptPress`: applies cryptography first, then compression (the inverse operation decompresses first, then decrypts).
 4. `PressCrypt` and `DepressCrypt`: applies compression first, then cryptography (the inverse operation decrypts first, then decompresses).
 
-Encryption first then compression (and its inverse operation) is almost 1.5x faster than applying compression first! In high performance applications, this is a **significant and meaningful** difference.
+Encryption first then compression (and its inverse operation) is almost 1.5x faster than applying compression. However, the result is no compression of the data and in order to reduce your data storage size, you must compress first.
 
 ## Methodology
 
 In order to simulate a real-world use case, the benchmarks were applied to JSON formatted data of NOAA weather alerts that is 1,096,280 bytes and compressed to 143,277 bytes using the default compression level.
 
 All of the code used to implement cryptography and compression on the dataset can be found [in this Gist](https://gist.github.com/bbengfort/6b6c7957380ec3cda22ea36b21e2d4f2). Benchmarks were implemented with the Go testing benchmarks and the output on my MacBook Pro with an Apple M1 Max chip and 64GB of memory was as follows:
+
+```
+goos: darwin
+goarch: arm64
+pkg: github.com/bbengfort/cryptpress
+BenchmarkCompressionRatio/PressCrypt-10         	     207	   5616484 ns/op	  40.26 MB/s	         7.671 CR	 2248271 B/op	      40 allocs/op
+BenchmarkCompressionRatio/CryptPress-10         	     346	   3441644 ns/op	 504.06 MB/s	         0.9999 CR	 9758259 B/op	      34 allocs/op
+```
+
+<small>Benchmark results for `Compression Ratios (CR)`</small>
 
 ```
 goos: darwin
@@ -153,8 +169,8 @@ The `PressCrypt`, `CryptPress`, `DepressCrypt`, and `DecryptPress` functions sim
 
 There are two major takeaways here for other teams out there working to maximize performance for high-throughput data systems and applications, and here they are:
 
-1. **Apply encryption *before* compression.**
-2. **Test your assumptions &mdash; they might be slowing you down!**
+1. **Apply compression *before* encryption.**
+2. **Test your assumptions &mdash; they might be slowing you down or tripping you up!**
 
 We hope this post inspires you to do both!
 
