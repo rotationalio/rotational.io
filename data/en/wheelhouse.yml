@@ -1,6 +1,5 @@
 wheelhouse:
   enable: true
-  title: Our Wheelhouse
   experience:
     - area: Data Science & Data Engineering
       description: From exploratory data analysis to data pipelines and model evaluation, we help organizations maximize ROI on data science investments.

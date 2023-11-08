@@ -4,7 +4,7 @@ services:
   title : Services
   approach:
     enable : true
-    title: What You See Is What You Get
+    title: We Accelerate Your Growth
     description: |
       We're **a proven team of senior data scientists and engineers** ready to tackle complex data and machine learning projects 
       in government or commercial markets. We deliver solutions through advisory, software engineering, and data science services. 
@@ -18,12 +18,16 @@ services:
     partner:
       - name: Google Cloud Partner
         logo: img/partners/googlecloud.png
+        link: https://cloud.google.com/
       - name: Amazon Web Services (AWS)
         logo: img/partners/aws.png
+        link: https://aws.amazon.com/
       - name: Microsoft Azure
         logo: img/partners/azure.png
+        link: https://azure.microsoft.com/
       - name: Linode - Akamai Connected Cloud Partner
         logo: img/partners/linode.png
+        link: https://www.linode.com/
   action:
     enable: true
     description: Schedule your no-cost, risk-free consultation.

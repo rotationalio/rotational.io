@@ -9,7 +9,7 @@
 {{ if $data.services.services.enable }}
 {{ with $data.services.services }}
 <div class="max-w-7xl mx-auto px-4 relative">
-    <div class="">
+    <div>
         {{ if .approach.enable }}
         <div class="flex items-center mt-9 sm:mt-11 lg:mt-14">
             <h3 class="font-bold text-xl sm:text-2xl lg:text-3xl">{{ .approach.title }}</h3>
@@ -19,8 +19,7 @@
         
         {{ if $data.wheelhouse.wheelhouse.enable}}
         {{ with $data.wheelhouse.wheelhouse }}
-        <section class="mt-9 lg:my-14">
-            <h2 class="mb-4 font-bold text-xl sm:text-2xl lg:text-3xl">{{ .title }}</h2>
+        <section class="mt-9">
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 sm:mt-8 text-center">
                 {{ range .experience }}
                 <div class="bg-[#E3E3E1] pb-4 rounded-md">
@@ -54,7 +53,9 @@
             <ul class="grid items-center space-y-8 md:grid-cols-4 md:space-y-0 mt-6">
                 {{ range .partner }}
                 <li>
-                    <img src="{{ .logo }}" alt="{{ .name }}" class="h-20 mx-auto md:h-24" />
+                    <a href="{{ .link }}" target="_blank">
+                        <img src="{{ .logo }}" alt="{{ .name }}" class="h-20 mx-auto md:h-24" />
+                    </a>
                 </li>
                 {{ end }}
             </ul>
