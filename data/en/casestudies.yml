@@ -2,14 +2,17 @@
 casestudies:
   enable: true
   title: Case Studies
-  subtitle: With deep industry and government experience, we can deliver on your most important priorities.
+  subtitle: Read our success stories to learn how we've helped accelerate clients from both the public and private sectors.
   studies:
   - client_name: BlueVoyant
     summary: Automate with LLMs
     link: case-studies/blue-voyant
+    image: img/clients/202group.png
   - client_name: TRISA
     summary: Be Globally Compliant
     link: case-studies/trisa
+    image: img/clients/trisa.png
   - client_name: Mastercard
     summary: Productionalize Your Analytics
     link: case-studies/mastercard
+    image: img/clients/ciphertrace.png
