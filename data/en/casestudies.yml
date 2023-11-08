@@ -11,7 +11,7 @@ casestudies:
   - client_name: TRISA
     summary: Be Globally Compliant
     link: case-studies/trisa
-    image: img/clients/trisa.png
+    image: img/clients/trisa-transparent.png
   - client_name: Mastercard
     summary: Productionalize Your Analytics
     link: case-studies/mastercard
