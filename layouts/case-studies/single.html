@@ -26,12 +26,12 @@
 
         </section>
 
-        <section class="mb-8 p-12 bg-[#1D65A6] flex flex-col rounded-[50%] w-80 h-80 mx-auto text-center text-white">
+        <section class="mb-8 p-12 bg-[#1D65A6] flex flex-col rounded-[50%] w-96 h-96 mx-auto text-center text-white">
             <span class="text-7xl font-bold">{{ .Params.stat }}</span>
             {{ if .Params.icon }}
             <i class="fa {{ .Params.icon }} mt-6 text-6xl" aria-hidden="true"></i>
             {{ end }}
-            <p class="mt-6 text-xl">{{ .Params.stat_text }}</p>
+            <p class="mt-6 text-2xl">{{ .Params.stat_text }}</p>
         </section>
     </div>
 
