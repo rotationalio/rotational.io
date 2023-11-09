@@ -1447,6 +1447,22 @@ video {
   height: 100px;
 }
 
+.h-64 {
+  height: 16rem;
+}
+
+.h-72 {
+  height: 18rem;
+}
+
+.h-96 {
+  height: 24rem;
+}
+
+.h-56 {
+  height: 14rem;
+}
+
 .max-h-\[136px\] {
   max-height: 136px;
 }
@@ -1514,6 +1530,18 @@ video {
 
 .w-\[1080px\] {
   width: 1080px;
+}
+
+.w-64 {
+  width: 16rem;
+}
+
+.w-\[300px\] {
+  width: 300px;
+}
+
+.w-96 {
+  width: 24rem;
 }
 
 .max-w-7xl {
@@ -1634,6 +1662,14 @@ video {
 
 .justify-between {
   justify-content: space-between;
+}
+
+.justify-around {
+  justify-content: space-around;
+}
+
+.justify-evenly {
+  justify-content: space-evenly;
 }
 
 .gap-8 {
