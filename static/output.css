@@ -1319,10 +1319,6 @@ video {
   margin-top: 0.25rem;
 }
 
-.mt-7 {
-  margin-top: 1.75rem;
-}
-
 .mr-1 {
   margin-right: 0.25rem;
 }
@@ -1662,6 +1658,10 @@ video {
 
 .gap-1 {
   gap: 0.25rem;
+}
+
+.gap-5 {
+  gap: 1.25rem;
 }
 
 .gap-x-20 {
