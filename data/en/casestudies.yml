@@ -2,14 +2,17 @@
 casestudies:
   enable: true
   title: Case Studies
-  subtitle: With deep industry and government experience, we can deliver on your most important priorities.
+  subtitle: Read our success stories to learn how we've helped accelerate clients from both the public and private sectors.
   studies:
   - client_name: BlueVoyant
-    summary: Are your analysts tired of manually searching for needles in the haystack of your data? Find out how we achieved 90% automation in the weekly review of news articles for our client with a custom solution powered by a domain-specific classification model.
+    summary: Automate with LLMs
     link: case-studies/blue-voyant
+    image: img/clients/202group.png
   - client_name: TRISA
-    summary: Do you have to move private customer data between data systems? Learn how we implemented a secure peer-to-peer protocol for personally-identifiable and sensitive financial information that fulfills compliance requirements in over 20 jurisdictions worldwide.
+    summary: Be Globally Compliant
     link: case-studies/trisa
+    image: img/clients/trisa-transparent.png
   - client_name: Mastercard
-    summary: Struggling to monetize your custom analytics, data, and models? Read on to see how we developed a customer-facing anti-money laundering application to productionalize our client's proprietary models and generate revenue.
+    summary: Productionalize Your Analytics
     link: case-studies/mastercard
+    image: img/clients/ciphertrace.png
