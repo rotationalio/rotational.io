@@ -68,25 +68,32 @@
         <section class="my-9 lg:my-14">
             <h2 class="mb-4 font-bold text-xl sm:text-2xl lg:text-3xl">{{ .title }}</h2>
             <p class="md:text-xl">{{ .subtitle }}</p>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8 text-center">
+            <section class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8 text-center">
                 {{ range .studies }}
-                <div class="bg-[#1D65A6] pb-4 rounded-md text-[#FCFCFC]">
-                    <div>
-                        <h4 class="text-lg md:text-xl font-bold my-6">{{ .client_name}}</h4>
-                        <p class="md:text-lg mx-4 pb-4 md:pb-0 md:h-72 xl:h-64">{{ .summary }}</p>
-                    </div>
-                    <a href="{{ .link }}" class="flex justify-center items-center md:text-lg font-bold">
-                        <span class="mr-1">
-                            Learn More 
+                <a href="{{ .link }}">
+                    <div class="bg-[#E3E3E1] pb-4 rounded-md">
+                        <div class="md:h-72 mb-8 md:mb-4">
+                            <h4 class="text-lg md:text-xl font-bold py-6">{{ .summary}}</h4>
+                            <div class="md:h-36 inline-flex items-center mb-6 md:mb-3">
+                                <img src="{{ .image }}" alt="" class="mx-auto" />
+                            </div>
+                            <p class="md:text-xl font-semibold">{{ .client_name }}</p>
+                        </div>
+                        <span class="flex justify-center items-center md:text-lg font-bold">
+                            <span class="mr-1">
+                                Learn More 
+                            </span>
+                            <i class="fa fa-chevron-right"></i>
+                            <i class="fa fa-chevron-right"></i>
                         </span>
-                        <img src="img/arrow-right.png"/>
-                        <img src="img/arrow-right.png" />
-                    </a>
-                </div>
+                    </div>
+                </a>
                 {{ end }}
-            </div>
-                    
+
+            </section>
+
         </section>
+
         {{ end }}
         {{ end }}
         
@@ -106,8 +113,8 @@
                         <span class="mr-1">
                             Learn More 
                         </span>
-                        <img src="img/arrow-right.png" />
-                        <img src="img/arrow-right.png" />
+                        <i class="fa fa-chevron-right"></i>
+                        <i class="fa fa-chevron-right"></i>
                     </a>
                 </div>
                 {{ end }}
