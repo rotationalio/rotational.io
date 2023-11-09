@@ -8,7 +8,7 @@
         <p class="text-[#192E5B] text-xl text-center px-10 py-6 italic font-semibold">{{ .Params.description }}</p>
     </section>
     <div class="grid md:grid-cols-2 items-center mt-8">
-        <div>
+        <section>
             <section class="mb-8">
                 <h2 class="font-bold text-xl sm:text-2xl lg:text-3xl mb-4">Problem</h2>
                 <p>{{ .Params.problem }}</p>
@@ -24,7 +24,7 @@
                 <p>{{ .Params.result }}</p>
             </section>
 
-        </div>
+        </section>
 
         <section class="mb-8 p-12 bg-[#1D65A6] flex flex-col rounded-[50%] w-80 h-80 mx-auto text-center text-white">
             <span class="text-7xl font-bold">{{ .Params.stat }}</span>
@@ -35,7 +35,7 @@
         </section>
     </div>
 
-    <div class="md:flex md:space-x-5 items-center pl-2 py-5 rounded-lg bg-[#F5F5F5]">
+    <section class="md:flex md:space-x-5 items-center pl-2 py-5 rounded-lg bg-[#F5F5F5]">
         <p class="pb-6 md:pb-0 font-bold md:text-xl">Schedule your no-cost, risk-free consultation.</p>
         {{ $data := index site.Data site.Language.Lang }}
         {{ if $data.services.services.action.enable }}
@@ -43,6 +43,6 @@
         <a href="{{ .schedule_link }}" target="_blank" class="border rounded-lg text-white font-bold bg-[#1D65A6] p-2.5">Schedule Consultation</a>
         {{ end }}
         {{ end }}
-    </div>
+    </section>
 </section>
 {{ end }}
