@@ -270,6 +270,41 @@ Delete the JSON for `/_index` starting on line 2 of the `static/index.json` file
 
 Once the new data source is updated and ready to be added to the website, be sure to change `draft` to `true`.
 
+## Case Studies
+
+To add a new case study page, use the hugo new command as follows:
+
+```
+$ hugo new case-studies/$case-study-name.md
+```
+
+This will create a new file in the `content/en/case-studies/` directory that you may open and edit. When creating a new data source,, Hugo uses the `archetypes/case-studies.md` template file and generates the following frontmatter:
+
+```
+---
+title: "New Case Study"
+slug: "new-case-study"
+noicon: true
+description: Briefly introduce the client's problem and solution here
+problem: "Describe client's problem here"
+approach: "Describe Rotational's approach to solve client's problem"
+result: "Describe result after providing solution to client's problem"
+stat: "Add a numerical stat about the case study here. (Ex. 85%)"
+stat_text: "Add text to be included with the numerical stat" 
+icon: "Add Font Awesome icon here. Icons may be found at the following site: https://fontawesome.com/v4/icons/"
+---
+```
+
+Next, update the following fields:
+`description`,
+`problem`,
+`approach`,
+`result`,
+`stat`,
+`stat_text`,
+`icon`
+
+Please note that `stat`, `stat_text`, and `icon` will update the visual element displayed on the right side of each case study page.
 
 ## Acknowledgements
 
