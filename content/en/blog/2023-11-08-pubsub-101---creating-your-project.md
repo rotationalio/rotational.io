@@ -2,9 +2,9 @@
 title: "PubSub 101 - Creating Your Project"
 slug: "pubsub-101---creating-your-project"
 date: "2023-11-08T09:30:29-06:00"
-draft: true
-image: /img/blog/2023-11-08-pubsub-101---creating-your-project/flight_tracker.png
-photo_credit: ""
+draft: false
+image: /img/blog/2023-11-08-pubsub-101---creating-your-project/boat-frame.jpg
+photo_credit: "Photo by Waldviertler via Wikimedia Commons"
 authors: ['Patrick Deziel']
 profile: img/team/patrick-deziel.png
 tags: ['Ensign', 'PubSub 101']
@@ -99,7 +99,7 @@ Permission                 |  Description
 
 ### Important: Save your key
 
-The `Client ID` and `Client Secret` defines your API key, you will need both to access your topics. The `Client ID` is a 32-character string that identifies the API key within Ensign. The `Client Secret` is a 65-character string which is like a password that grants you access to 
+The `Client ID` and `Client Secret` defines your API key, you will need both to access your topics. The `Client ID` is a 32-character string that identifies the API key within Ensign. The `Client Secret` is a 65-character string which is like a password that grants you access to
 
 Once you've selected permissions and created your key, you should immediately save your `Client ID` and `Client Secret` to a safe place. From the confirmation window can either copy them individually or download them as a JSON file to your computer. Make sure to save them before closing the window, otherwise you won't be able to access the `Client Secret` again.
 
@@ -107,6 +107,15 @@ Once you've selected permissions and created your key, you should immediately sa
 
 If you lose your API key it's not a big deal. You can create a new one at any time from the dashboard. In fact, rotating your keys on a regular basis by deleting the old ones and creating new ones is a good security practice!
 
-## To be continued...
+## Next Steps
+
+Congratulations on setting up your project! Your Ensign dashboard should look something like this:
+
+!["API Key"](/img/blog/2023-11-08-pubsub-101---creating-your-project/flight_tracker.png)
 
 In the next module, you'll use your API key to stream data to Ensign!
+
+*Note: If you get stuck anywhere, don't stress! You can always reach out to us for help at support@rotational.io*
+
+***
+Photo by [Waldviertler](https://de.wikipedia.org/wiki/Benutzer:Waldviertler) via [Wikimedia Commons](https://en.m.wikipedia.org/wiki/File:Samos_Agios_Isidoros_002.jpg).
