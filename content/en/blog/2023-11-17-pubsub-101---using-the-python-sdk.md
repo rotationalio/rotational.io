@@ -1,9 +1,9 @@
 ---
-title: "PubSub 101 - Using the Python Sdk"
+title: "PubSub 101 - Using the PyEnsign SDK"
 slug: "pubsub-101---using-the-python-sdk"
-date: "2023-11-09T13:50:23-06:00"
-draft: true
-image: img/blog/python.png
+date: "2023-11-17T08:05:14-05:00"
+draft: false
+image: img/blog/python_otter.png
 photo_credit: ""
 authors: ['Patrick Deziel']
 profile: img/team/patrick-deziel.png
@@ -13,6 +13,7 @@ description: "In this module you will install the Python SDK and stream some dat
 
 The Python SDK is the most popular way to use Ensign. In this module you will write some Python code to publish data to your project.
 
+If you missed the first post of this series and want to learn how to create a free Ensign account and set up a new project, check that out [here](https://rotational.io/blog/pubsub-101---creating-your-project/)!
 <!--more-->
 
 ## Step 1: Install PyEnsign
@@ -23,9 +24,9 @@ The Python SDK is the most popular way to use Ensign. In this module you will wr
 
 _Note: PyEnsign is currently compatible with Python versions 3.9, 3.10, and 3.11_
 
-## Step 2: Authentication
+## Step 2: Connecting to the Ensign Server
 
-In order to create a PyEnsign client you need to provide the credentials to your project. This is where your API key comes in. If you don't have an API key, you can create one here. Remember that there are two components to the API key, the `Client ID` and `Client Secret`.
+Writing and reading data from your topics will require an open connection to the Ensign server, otherwise known as a _client_. To create a PyEnsign client you need to provide the credentials to your [project](https://rotational.io/blog/pubsub-101---creating-your-project/). This is where your API key comes in. If you don't have an API key, you can create one [in the Ensign dashboard](https://rotational.app/). Remember that there are two components to the API key, the `Client ID` and `Client Secret`.
 
 The recommended way to provide your credentials is to set them in the `ENSIGN_CLIENT_ID` and `ENSIGN_CLIENT_SECRET` environment variables. If you're in a bash or shell-based terminal you can do the following:
 
@@ -55,15 +56,15 @@ Alternatively, you can provide your credentials from a JSON file.
 > ensign = Ensign(cred_path="creds.json")
 ```
 
-If you're in a dev environment, you can provide your credentials as keyword arguments. This is not recommended in production code because it exposes your keys!
+If you're in a dev environment, you can provide your credentials as keyword arguments. *Note: This is not recommended in production code because it exposes your keys!*
 
 ```python
 > ensign = Ensign(client_id="VgIimFHcluODgetZuApkfYrGiMFbyZkX", client_secret="1FFSRLP4giJcZkItam7anoADS2HQ9N97UQhbZq0JwJ5H8P98yADM84xZm2wHMr18")
 ```
 
-## Step 3: Using the client
+## Step 3: Using Your Client Connection
 
-The PyEnsign client is asynchronous. This means that you can use the client concurrently without having to worry about contention or managing multiple threads. However, it also means that you must use `async/await` syntax when calling the client methods. If you are unfamiliar with `asyncio` it's recommended that you take a look at the documentation [here](https://docs.python.org/3/library/asyncio.html).
+The PyEnsign client is asynchronous. This means that you can use your client connecting to read and write to your topics concurrently without having to worry about contention or managing multiple threads. However, it also means that you must use `async/await` syntax when calling the client methods. If you are unfamiliar with `asyncio`, I recommend checking out the documentation [here](https://docs.python.org/3/library/asyncio.html).
 
 Once you've created a client, make sure you have a topic to publish to. The `get_topics()` method will list the available topics in your project.
 
@@ -107,13 +108,13 @@ modified {
 ]
 ```
 
-_Pro Tip: In a Python notebook (e.g. Jupyter), you don't need the `asyncio` overhead so `await ensign.get_topics()` should be sufficient._
+_Pro Tip: If you're in a Python notebook (e.g. Jupyter) using `await ensign.get_topics()` should be sufficient._
 
-If you don't have any topics, you can create one from the project page on the [Ensign dashboard](https://rotational.app) or with `ensign.create_topic()`
+If you don't have any topics, you can create one from the project page on the [Ensign dashboard](https://rotational.app) or with `ensign.create_topic()`.
 
 ## Step 4: Hello World
 
-Now that you have an authenticated client and a topic, you can start streaming data to your project. In Ensign, data exists as an ordered sequence of `Events`. Every Event must have a binary payload (`bytes` in Python) and a mimetype indicating how the event data was encoded. The most common encoding is JSON.
+Now that you have an authenticated client and a topic, you can start writing data to your project. In Ensign, data exists as an ordered sequence of serialized `Events`. Every event must have a binary payload (`bytes` in Python) and a mimetype indicating how the event data should be decoded. The most common encoding is JSON, but events can be anything &mdash; including pickle files, vectors, or just plain text.
 
 The `publish()` method lets you publish one or more events to a topic. Try it out!
 
@@ -130,7 +131,7 @@ The `publish()` method lets you publish one or more events to a topic. Try it ou
 >> asyncio.run(publish())
 ```
 
-_Pro Tip: `wait_for_ack()` will block until Ensign acknowledges the event. After that point, the Event is guaranteed to be published into the global event log._
+_Pro Tip: `wait_for_ack()` will block until Ensign acknowledges the event. After that point, the Event is guaranteed to be published into your topic._
 
 If you navigate to your topic in the [Ensign dashboard](https://rotational.app), you should see both events published to topic. You can also run an enSQL query to see the data that you just published.
 
