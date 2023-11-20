@@ -13,8 +13,9 @@ description: "In this module you will install the Python SDK and stream some dat
 
 The Python SDK is the most popular way to use Ensign. In this module you will write some Python code to publish data to your project.
 
-If you missed the first post of this series and want to learn how to create a free Ensign account and set up a new project, check that out [here](https://rotational.io/blog/pubsub-101---creating-your-project/)!
 <!--more-->
+
+If you missed the first post of this series and want to learn how to create a free Ensign account and set up a new project, check that out [here](https://rotational.io/blog/pubsub-101---creating-your-project/)!
 
 ## Step 1: Install PyEnsign
 
