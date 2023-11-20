@@ -15,13 +15,13 @@ Python may be the 2nd best language for everything, but it's a favorite of data 
 
 <!--more-->
 
-In this post we'll see how to combine the streaming database [Ensign](https://rotational.io/ensign/) with the new Python library [Streamlit](https://streamlit.io) to build a customer-facing, interactive, data-intensive applications easier than ever, no Javascript or database experience required.
+In this post we'll see how to combine the streaming database [Ensign](https://rotational.io/ensign/) with the new Python library [Streamlit](https://streamlit.io) to build customer-facing, interactive, data-intensive applications easier than ever, with no Javascript or database experience required.
 
-Just here for the code? Check out this [repo](https://github.com/rotationalio/ensign-examples/blob/main/python/stock_market_trades) for the full code example!
+Just here for the code? Check out this [repo](https://github.com/rotationalio/ensign-examples/blob/main/python/stock_market_trades) for the full example.
 
 ## Tools Should Let You Do What *You* Do Best
 
-There's a lot to learn when you decide to become a data scientist &mdash; from data ingestion to wrangling to modeling and evaluation, and a host of new tasks related to application development, such as containerization and orchestration, MLOps, and observability.
+There's a lot to learn when you decide to become a data scientist &mdash; from data ingestion to wrangling to modeling and evaluation, and a host of "data science 2.0" tasks related to application development, such as containerization and orchestration, MLOps, and observability.
 
 It can be overwhelming.
 
@@ -34,7 +34,7 @@ The end result? We data scientists can focus on what **we** do best: working wit
 
 ## Getting Started
 
-As with trying anything new for the first time, it is best to start small and work your way up. In this tutorial we will show you how you can build a simple stock market chart that displays prices in real-time.  You can then expand on this tutorial to perform more complex data transformations and analytics, and build more sophisticated dashboards.
+In this tutorial we'll start small by building a simple stock market chart that displays prices in real-time.  You can then expand on this tutorial to perform more complex data transformations and analytics, and build more sophisticated dashboards.
 
 ### Step 1: Get an API Key from Finnhub
 First, you will need to get a Finnhub API key from [FinnHub](https://finnhub.io).  Finnhub provides RESTful APIs and websocket for stocks, currency, and crypto. Once you have your Finnhub key, add it as an environment variable as follows:
@@ -52,7 +52,7 @@ export ENSIGN_CLIENT_SECRET="your client secret here"
 ```
 
 ### Step 3: Create and activate a virtual environment
-Creating a virtual environment is very straightforward.  Run the following on the command line:
+Run the following on the command line to create a fresh new Python virtual environment:
 
 ```bash
 virtualenv venv
@@ -60,7 +60,7 @@ source venv/bin/activate
 ```
 
 ### Step 4: Install the requirements
-In order to run the code, the following libraries are required:
+In order to run the code, the following Python libraries are required:
 
 - `websockets`: Used to connect to the FinnHub API
 - `streamlit`: Used to build the web application
@@ -74,14 +74,14 @@ pip install -r requirements.txt
 ## Working with Ensign
 The idea behind working with Ensign is as follows:
 
-- You write code that **publishes** data to a topic.  If you are a data engineer, this is the equivalent of creating an ETL job that pulls data from an API and inserts it into a table.
+- You write code that **publishes** data to a topic.  This is the equivalent of the data engineer's task of creating an ETL job that pulls data from an API and inserts it into a table.
 - You write code that **subscribes** to the same topic.  If you are a data analyst or a data scientist, this is the equivalent of querying a table to get the data that you need for your analytics or machine learning project.
 
 The Ensign database provides some powerful advantages:
 
 - There is no need to define a schema ahead of time like you need to in a relational database.
-- You can store data in many common formats such as JSON, Avro, Parquet, even Pickle!  This gives you the ability to version control models with ease!
-- You can perfrom real-time analytics - and it is easier than you think!
+- You can store data in many common formats such as CSV, JSON, Avro, and Parquet. You can even store Pickles, which gives you the ability to version control models with ease!
+- You can perform real-time analytics - and it is easier than you think!
 - There is no custom tooling required.  Once you set up an Ensign account and download your API keys, you can install and use `pyensign` just like you would any standard Python library to write and run your code.
 
 ## Building the application
