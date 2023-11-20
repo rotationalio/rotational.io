@@ -113,7 +113,7 @@ Congratulations on setting up your project! Your Ensign dashboard should look so
 
 !["API Key"](/img/blog/2023-11-08-pubsub-101---creating-your-project/flight_tracker.png)
 
-In the next module, you'll use your API key to stream data to Ensign!
+In the [next module](https://rotational.io/blog/pubsub-101---using-the-python-sdk), you'll use your API key to stream data to Ensign!
 
 *Note: If you get stuck anywhere, don't stress! You can always reach out to us for help at support@rotational.io*
 
