@@ -19,6 +19,9 @@ services:
       - quote: The Rotational team has been an exceptional development partner for TRISA. They've realized our vision of turning the TRISA white paper into a robust security infrastructure, open source software and trusted compliance protocol. They excel at taking ideas and making them real.
         quotee: John Jefferies, Chairperson
         client_name: TRISA Board of Directors
+      - quote: Rotational has been an invaluable development partner in our journey to meet FATF Travel Rule compliance. Their keen understanding of our infrastructure and product vision enabled them to design a solution that aligned with our time and budget constraints, helping Qredo achieve its goal of becoming a leader in secure, compliant cross-chain digital asset management.
+        quotee: Benjamin Whitby, Strategic Partnerships and Regulatory Affairs
+        client_name: Qredo
   services:
     enable : true
   partners:
