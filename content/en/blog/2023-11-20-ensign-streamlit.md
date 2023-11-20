@@ -1,7 +1,7 @@
 ---
-title: "How to build real-time web data applications with ease using Ensign and Streamlit"
+title: "Building Real-Time Apps in Python with Ensign and Streamlit"
 slug: "ensign-streamlit"
-date: "2023-11-10T10:56:58-05:00"
+date: "2023-11-20T12:00:55-05:00"
 draft: false
 image: img/blog/2023-11-22-ensign-streamlit/stock-price.jpg
 photo_credit: "Photo by Markus Spiske on Unsplash"
@@ -11,34 +11,47 @@ tags: ['Python', 'Data']
 description: "If you want to build data web applications but have struggled with HTML and Javascript, Ensign and Streamlit is a powerful combination of tools that enable you to build an application in minutes!"
 ---
 
-As data professionals, we recognize that the most powerful way to communicate insights gathered from data is to present it through data visualization.  However, it means that we need a way to present these visualizations in the form of web applications, which requires a whole new set of skills.  Fortunately, with the help of [Ensign](https://rotational.io/ensign/) and [Streamlit](https://streamlit.io), building these applications is now easier than ever.
+Python may be the 2nd best language for everything, but it's a favorite of data scientists worldwide, and delivers a world of functionality. Did you know you can even build customer-facing AI/ML apps with Python now? Learn how...
 
 <!--more-->
 
-Ensign is a database purpose-built for creating real-time data applications without the need for DevOps experience.  Streamlit is a python library that enables you to build data web applications without the need for learning HTML and Javascript.  The end result?  You can focus on what you do best: work with data to deliver insights.  
+In this post we'll see how to combine the streaming database [Ensign](https://rotational.io/ensign/) with the new Python library [Streamlit](https://streamlit.io) to build a customer-facing, interactive, data-intensive applications easier than ever, no Javascript or database experience required.
 
-As with trying anything new for the first time, it is best to start small and work your way up.  In this tutorial we will show you how you can build a simple stock market chart that displays prices in real-time.  You can then expand on this tutorial to perform more complex data transformations and analytics and build more sophisticated dashboards.
+Just here for the code? Check out this [repo](https://github.com/rotationalio/ensign-examples/blob/main/python/stock_market_trades) for the full code example!
 
-The following [repo](https://github.com/rotationalio/ensign-examples/blob/main/python/stock_market_trades) contains the full code example.
+## Tools Should Let You Do What *You* Do Best
+
+There's a lot to learn when you decide to become a data scientist &mdash; from data ingestion to wrangling to modeling and evaluation, and a host of new tasks related to application development, such as containerization and orchestration, MLOps, and observability.
+
+It can be overwhelming.
+
+The only way to stay afloat is to identify tasks you can delegate, whether to another teammate (less and less likely these days, with the recent tech layoffs 😢) or to some tool or managed solution (as long as it doesn't break the budget). If you're on a small, scrappy team and you know Python, here are two tools you can't afford to ignore:
+
+1. [Ensign](https://ensign.rotational.dev/) is a database purpose-built for creating real-time data applications without the need for devOps experience.
+2. [Streamlit](https://streamlit.io) is a Python library that enables you to build data-intensive web applications without the need to learn HTML and Javascript.
+
+The end result? We data scientists can focus on what **we** do best: working with data to deliver insights and stimulate growth.
 
 ## Getting Started
 
+As with trying anything new for the first time, it is best to start small and work your way up. In this tutorial we will show you how you can build a simple stock market chart that displays prices in real-time.  You can then expand on this tutorial to perform more complex data transformations and analytics, and build more sophisticated dashboards.
+
 ### Step 1: Get an API Key from Finnhub
-First, you will need to get an API key from [FinnHub](https://finnhub.io).  Finnhub provides RESTful APIs and websocket for stocks, currency, and crypto.  Add the key as an environment variable as follows:
+First, you will need to get a Finnhub API key from [FinnHub](https://finnhub.io).  Finnhub provides RESTful APIs and websocket for stocks, currency, and crypto. Once you have your Finnhub key, add it as an environment variable as follows:
 
 ```bash
 export FINNHUB_API_KEY="your key here"
 ```
 
 ### Step 2: Create a free Ensign account
-Create a free Ensign account at [rotational.app](https://rotational.app).  Check out this step-by-step [tutorial](https://rotational.io/blog/pubsub-101---creating-your-project/) on how to set it up.  At the end of the tutorial, you will have downloaded API keys, which you will also need to add as environment variables.
+Create a free Ensign account at [rotational.app](https://rotational.app).  Check out this step-by-step [tutorial](https://rotational.io/blog/pubsub-101---creating-your-project/) on how to set it up.  At the end of the tutorial, you will have downloaded your Ensign API keys, which you will also need to add as environment variables.
 
 ```bash
 export ENSIGN_CLIENT_ID="your client id here"
 export ENSIGN_CLIENT_SECRET="your client secret here"
 ```
 
-### Step 3: Create and activate a virtual envrironment
+### Step 3: Create and activate a virtual environment
 Creating a virtual environment is very straightforward.  Run the following on the command line:
 
 ```bash
@@ -59,7 +72,7 @@ pip install -r requirements.txt
 ```
 
 ## Working with Ensign
-The idea behind working with Ensign is as follows: 
+The idea behind working with Ensign is as follows:
 
 - You write code that **publishes** data to a topic.  If you are a data engineer, this is the equivalent of creating an ETL job that pulls data from an API and inserts it into a table.
 - You write code that **subscribes** to the same topic.  If you are a data analyst or a data scientist, this is the equivalent of querying a table to get the data that you need for your analytics or machine learning project.
@@ -82,23 +95,26 @@ The application consists of two major components:
 
 We will create the following global variables:
 
-- `topic`: The topic that will store the stock price data
-- `ensign`: The Ensign client - used to connect to the Ensign server to publish and subscribe to topics.
-- `symbols`: List of symbols for which we will collect prices.
-- `df`: A pandas dataframe that will be used to generate the line chart.
-
 ```python
-topic = "trades"
-ensign = Ensign()
-symbols = ["AAPL", "META", "NFLX", "AMZN", "GOOGL"]
-df = pd.DataFrame(columns=["symbol", "time", "price"])
+# The topic that will store the stock price data
+TOPIC = "trades"
+
+# The Ensign client -- used to connect to the
+# Ensign server to publish and subscribe to topics
+ENSIGN = Ensign()
+
+# List of symbols for which we will collect prices
+SYMBOLS = ["AAPL", "META", "NFLX", "AMZN", "GOOGL"]
+
+# A pandas dataframe that will be used to generate the line chart
+DF = pd.DataFrame(columns=["symbol", "time", "price"])
 ```
 
 ### Create the publisher
 
 As you can see below, with just a few lines of code, you can set up a websocket connection to the FinnHub API to receive stock market prices that you encode as JSON before publishing to the `trades` topic.
 
-The `uri` parameter is websocket url used to connect to FinnHub.  Once you establish the connection with the FinnHub server and send the list of symbols that you want to get prices for, the server will send prices through this connection as they become available.  
+The `uri` parameter is websocket url used to connect to FinnHub.  Once you establish the connection with the FinnHub server and send the list of symbols that you want to get prices for, the server will send prices through this connection as they become available.
 
 ```python
 async def recv_and_publish(uri):
@@ -110,7 +126,7 @@ async def recv_and_publish(uri):
             # establish connection with the FinnHub
             async with websockets.connect(uri) as websocket:
                 # send the symbols you would like the prices for
-                for symbol in symbols:
+                for symbol in SYMBOLS:
                     await websocket.send(
                         f'{{"type":"subscribe","symbol":"{symbol}"}}'
                     )
@@ -121,24 +137,28 @@ async def recv_and_publish(uri):
                     # convert the message to an Ensign event
                     for event in message_to_events(json.loads(message)):
                         # publish the event to the topic
-                        await ensign.publish(
-                            topic, event, on_ack=handle_ack, on_nack=handle_nack
+                        await ENSIGN.publish(
+                            TOPIC, event, on_ack=handle_ack, on_nack=handle_nack
                         )
-            
+
         except websockets.exceptions.ConnectionClosedError as e:
             print(f"Websocket connection closed: {e}")
             continue
 ```
 
-Let's examine the call to `publish` in further detail.  
+Let's examine the call to `publish` in further detail.
 
 ```python
-await ensign.publish(topic, event, on_ack=handle_ack, on_nack=handle_nack)
+await ENSIGN.publish(TOPIC, event, on_ack=handle_ack, on_nack=handle_nack)
 ```
 
-Here the Ensign client is asynchronously sending an event to the Ensign server (the function call is preceded with the `await` keyword).  In synchronous communication between clients and servers, it is expected that a call to a function will return immediately, but in this example, it is not necessary, and in fact, the client can perform other work while waiting.  Note the `on_ack` and `on_nack` parameters.  In asynchronous communication, clients need to know if the server received their messages.  The `on_ack` parameter is an optional parameter that the client can specify to invoke a method when the server sends an `ack` message.  Similarly, if there was an issue on the server side in receiving or processing the message, the server will send a `nack` message, which can then trigger a method to be called when the `nack` response is received by the client.
+Here the Ensign client is asynchronously sending an event to the Ensign server (the function call is preceded with the `await` keyword).
 
-The following code snippet shows how to convert a message from the FinnHub API into an Ensign event.  This is pretty straightforward.  The price, symbol, timestamp, and volume data is extracted from the message and converted into a JSON object.  Note the use of the `mimetype` parameter.  This is important as subscribers need to know the mimetype in order to be able to decode and parse the event.
+In synchronous communication between clients and servers, it is expected that a call to a function will return immediately, but in this example, it is not necessary, and in fact, the client can perform other work while waiting.
+
+In asynchronous communication, clients need to know if the server received their messages. The `on_ack` parameter is an optional parameter that the client can specify to invoke a method when the server sends an `ack` message. Similarly, if there was an issue on the server side in receiving or processing the message, the server will send a `nack` message, which can then trigger a method to be called when the `nack` response is received by the client.
+
+The following code snippet shows how to convert a message from the FinnHub API into an Ensign event. The price, symbol, timestamp, and volume data is extracted from the message and converted into a JSON object.  Note the use of the `mimetype` parameter.  This is important as subscribers need to know the mimetype in order to be able to decode and parse the event.
 
 ```python
 def message_to_events(message):
@@ -166,15 +186,17 @@ def message_to_events(message):
 
 ### Create the subscriber
 
-In the following method, we set up the Ensign client to subscribe to the `trades` topic.  As soon as a new event arrives in the topic, the event gets converted into a dictionary object that is then loaded into a pandas dataframe.  This dataframe gets passed to plotly to create a plotly `fig` object on which a line chart is drawn.  The chart is rendered by calling `st.write(fig)`.  For those who have used Matplotlib, this should look familiar.   
+In the following method, we set up the Ensign client to subscribe to the `trades` topic.
+
+As soon as a new event arrives in the topic, the event gets converted into a dictionary object that is then loaded into a pandas dataframe.  This dataframe gets passed to plotly to create a plotly `fig` object on which a line chart is drawn.  Finally, the chart is rendered by calling `st.write(fig)`.
 
 ```python
 async def subscribe():
-    """ 
+    """
     Subscribe to topic and populate line chart in a Streamlit app
     """
-    async for event in ensign.subscribe(topic):
-        global df
+    async for event in ENSIGN.subscribe(topic):
+        global DF
         data = json.loads(event.data)
         # convert unix epoch to datetime
         timestamp = get_timestamp(data["timestamp"])
@@ -183,15 +205,18 @@ async def subscribe():
         message["time"] = timestamp.strftime("%H:%M:%S")
         message["price"] = str(data["price"])
         # add new data to dataframe
-        df = pd.concat([df, pd.DataFrame([message])], ignore_index=True)
+        DF = pd.concat([DF, pd.DataFrame([message])], ignore_index=True)
         # Create a plotly line chart
-        fig = px.line(df, x="time", y="price", color="symbol", markers=True)
+        fig = px.line(DF, x="time", y="price", color="symbol", markers=True)
         # Add the figure to the container
         st.write(fig)
 ```
 
 ### Combining the publish and subscribe functions
-Since the publisher and subscriber components are independent of each other, we will use the `asyncio` library to run them asynchronously.  We will first grab the Finnhub API key and add it to the websocket URL to call the API.  Next we will use `asyncio.create_task` to create the publish and subscribe tasks.  We will then run both of these tasks concurrently using `asyncio.gather`.
+
+Since the publisher and subscriber components are independent of each other, we will use the `asyncio` library to run them asynchronously.
+
+We will first grab the Finnhub API key and add it to the websocket URL to call the API.  Next we will use `asyncio.create_task` to create the publish and subscribe tasks.  We will then run both of these tasks concurrently using `asyncio.gather`.
 
 ```python
 async def main():
@@ -212,7 +237,7 @@ We start by creating an empty streamlit container by calling `with st.empty`.  T
 ```python
 if __name__ == "__main__":
     # Start with an empty container
-    with st.empty(): 
+    with st.empty():
         # Create an event loop that will be used to run the publish and subscribe tasks
         loop = asyncio.new_event_loop()
         asyncio.set_event_loop(loop)
@@ -226,4 +251,4 @@ if __name__ == "__main__":
 ```
 
 ### Conclusion
-As this post demonstrates, all it takes is a few lines of Python code to get a real-time web application up and running.  There is no need to learn new programming languages or to set up complicated DevOps infrastructure.  This frees up your time to focus on the most important aspect of your job: *converting data into dollars$$*.
+As this post demonstrates, all it takes is a few lines of Python code to get a real-time web application up and running! There is no need to learn new programming languages or to set up complicated DevOps infrastructure.  This frees up your time to focus on the most important aspect of your job: *converting data into dollars$$*.
