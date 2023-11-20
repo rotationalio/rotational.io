@@ -251,4 +251,4 @@ if __name__ == "__main__":
 ```
 
 ### Conclusion
-As this post demonstrates, all it takes is a few lines of Python code to get a real-time web application up and running! There is no need to learn new programming languages or to set up complicated DevOps infrastructure.  This frees up your time to focus on the most important aspect of your job: *converting data into dollars$$*.
+As this post demonstrates, all it takes is a few lines of Python code to get a real-time web application up and running! There is no need to learn new programming languages or to set up complicated DevOps infrastructure.  This frees up your time to focus on the most important aspect of your job: *converting data into dollars.* 🤑
