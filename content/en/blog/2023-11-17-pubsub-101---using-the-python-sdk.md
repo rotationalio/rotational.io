@@ -76,37 +76,7 @@ Once you've created a client, make sure you have a topic to publish to. The `get
 >>   print(await ensign.get_topics())
 >>
 >> asyncio.run(main())
-[id: "\001\212u\037\035a\351\355j\177\275\247\3469Q\350"
-project_id: "\001\212u\036\274\302\013VDy\243\t^kX\257"
-name: "my-topic"
-deduplication {
-  strategy: NONE
-  offset: OFFSET_EARLIEST
-}
-created {
-  seconds: 1694182088
-  nanos: 33849169
-}
-modified {
-  seconds: 1695659671
-  nanos: 738504138
-}
-, id: "\001\212\204\265\375\230\210~\206\341}\377Z\346o\254"
-project_id: "\001\212u\036\274\302\013VDy\243\t^kX\257"
-name: "my-other-topic"
-deduplication {
-  strategy: NONE
-  offset: OFFSET_EARLIEST
-}
-created {
-  seconds: 1694443634
-  nanos: 72367968
-}
-modified {
-  seconds: 1695659671
-  nanos: 740859516
-}
-]
+[Topic(id=01HFT1FK687DSK7YSF3Q6WQYGT, name=my-topic, ), Topic(id=01HFT1FTNMAAD1B9DG8AB9V1ZD, name=my-other-topic, )]
 ```
 
 _Pro Tip: If you're in a Python notebook (e.g. Jupyter) using `await ensign.get_topics()` should be sufficient._
