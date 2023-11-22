@@ -110,4 +110,4 @@ If you navigate to your topic in the [Ensign dashboard](https://rotational.app),
 
 ## To be continued...
 
-In the next module, you'll learn how to create useful data flows with multiple `topics` to solve a real-world problem.
+In the [next module](https://rotational.io/blog/pubsub-101---creating-data-flows-with-topics/), you'll learn how to create useful data flows with multiple `topics` to solve a real-world problem.

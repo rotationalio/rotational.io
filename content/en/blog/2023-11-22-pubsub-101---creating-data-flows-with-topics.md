@@ -1,31 +1,36 @@
 ---
 title: "PubSub 101 - Creating Data Flows With Topics"
 slug: "pubsub-101---creating-data-flows-with-topics"
-date: "2023-11-20T16:05:55-06:00"
-draft: true
+date: "2023-11-22T11:12:07-05:00"
+draft: false
 image: img/blog/waterfall.jpg
 photo_credit: "Photo by Jérôme Prax on Unsplash"
 authors: ['Patrick Deziel']
 profile: img/team/patrick-deziel.png
 tags: ['Ensign', 'Data Streaming', 'PubSub 101']
-description: "In this module you will create custom data streams to solve a real-world problem."
+description: "In this module you will create custom data streams to solve a real-world, real-time analytics problem."
 ---
 
-The core part of data streaming with Ensign is `topics`. In this module you will learn how to create useful data streams to solve a real-world problem.
+If you struggle to build analytics and models that keep up with changing data, it might be because you haven't yet learned to think about data in terms of `topics`. In this module, learn how by solving a real-world, real-time problem!
 
 <!--more-->
 
-## Relational vs. Eventing Databases
+Check out [Part One](https://rotational.io/blog/pubsub-101---creating-your-project/) and [Part Two](https://rotational.io/blog/pubsub-101---using-the-python-sdk/) of this series if you missed them!
 
-Relational databases like postgres or sqlite usually only expose the current state of the world to applications. But what if you want the state of the database at any point in time? The answer is Change Data Capture (CDC), which lets you capture the individual changes to the database over time, and it's a fundamental component in Event-Driven Architectures.
+## How Relational Databases Cause Model Drift
 
-In an event-driven database, the CDC log is directly exposed to applications. This comes with some useful features, like being able to reconstruct the state of the database at any point in time, or reprocess previously consumed data in the exact same order that it was produced for reproducibility.
+Our favorite SQL databases (PostgreSQL, sqlite, DuckDB, etc) are fantastic for working with tabular data, but at best they only tell us the current state of our data. But what if our analytics need to model how that data is changing over time (e.g. model drift, concept drift, data drift)? What if we need to compare the current state of our data to what it looked like this time last year?
 
-Some traditional databases do give applications access to the CDC log for data streaming use cases, but event-driven databases are designed for data streaming at the outset.
+If you find yourself asking the above questions, it's a good sign that you might benefit from reframing your thinking from the **static perspective** of data (aka "snapshots") to a **streaming perspective**.
 
-## How to think about topics
+You can encourage this reframing using a technique called **change data capture** (CDC), which is a method for capturing the individual changes to a database over time.
 
-An Ensign `topic` is a globally ordered and globally distributed stream of `events`. They are somewhat analagous to the concept of tables in a relational database, however there are a few important differences:
+[Ensign](https://ensign.rotational.dev/) is a great way to instrument change data capture, since it can be used to reconstruct the state of your relational database at any point in time, reprocess previously consumed data in the exact same order that it was produced (for model reproducibility), or identify data drift in real-time.
+
+
+## How to Think in Topics
+
+An Ensign `topic` is a globally ordered and globally distributed stream of `events`. They are somewhat analogous to the concept of tables in a relational database, however there are a few important differences:
 
 Property | Tables                                  |  Topics
 ---------|-----------------------------------------|-----------------------------------------------
@@ -40,6 +45,8 @@ If we were to redesign this as an event-driven architecture, we might include a 
 Here, the `topics` track the _changes_ to the products and inventory rather than just the current state of the inventory.
 
 ## Designing Data Flows
+
+Now let's return to our flight-tracking project from [Part One](https://rotational.io/blog/pubsub-101---creating-your-project/) of this course.
 
 Suppose we want to track aircraft flights in the hopes of building a real-time model to predict flight delays. One of the first steps is to think about what kinds of data will be flowing through the application.
 
