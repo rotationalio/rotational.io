@@ -1690,11 +1690,6 @@ video {
        column-gap: 1rem;
 }
 
-.gap-x-5 {
-  -moz-column-gap: 1.25rem;
-       column-gap: 1.25rem;
-}
-
 .space-y-8 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 0;
   margin-top: calc(2rem * calc(1 - var(--tw-space-y-reverse)));
@@ -2903,6 +2898,27 @@ em {
 .ensign-content ul li::before {
   content: "\2B23";
   padding-right: .5em;
+}
+
+.ensign-u h3 {
+  margin-top: 12px;
+}
+
+.ensign-u p, li {
+  font-size: 1.25rem;
+  line-height: 2rem;
+}
+
+.ensign-u ol, #pre-reqs + ul {
+  margin-bottom: 24px;
+}
+
+#what-you-dont-need + ul {
+  margin-bottom: 32px;
+}
+
+.ensign-u li::marker {
+  color: black;
 }
 
 .blog-tag::before {

@@ -69,6 +69,11 @@
                 <p class="text-2xl lg:text-4xl mt-1 lg:mt-2 font-extralight">{{ . }}</p>
                 {{ end }}
                 {{ end }}
+                {{ if .Params.moresubheadertext }}
+                {{ with .Params.moresubheadertext }}
+                <p class="text-2xl lg:text-4xl mt-1 lg:mt-2 font-extralight">{{ . }}</p>
+                {{ end }}
+                {{ end }}
             </div>
         </div>
     </div>
