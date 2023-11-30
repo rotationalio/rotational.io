@@ -17,11 +17,12 @@ If you're ready to learn how to work with streaming data using [Ensign](/ensign/
 
 This [free, structured curriculum](/blog/welcome-to-ensign-u/) is guaranteed to get you experimenting and building fast so you're ready to bring these skills to your next project, job, or technical interview. Each module takes 30 minutes or less!
 
+## Featured Modules
+
 {{< ensign-u-double color="#ECF6FF" >}}
 
 {{% ensign-u-module %}}
 
-## Featured Modules
 ### The Basics of PubSub
 
 - [1.0 PubSub 101: Creating Your Project](/blog/pubsub-101---creating-your-project/)
