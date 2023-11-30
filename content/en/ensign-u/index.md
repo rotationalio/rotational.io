@@ -2,8 +2,8 @@
 date: 2023-11-28T22:30:12-05:00
 title: "Ensign U"
 headertext: Ensign U
-subheadertext: "Learn New Skills To Advance"
-moresubheadertext: "Your Career & Set You Apart"
+subheadertext: "Learn Ensign and Level Up with"
+moresubheadertext: "Free Training to Advance your Career"
 noicon: true
 type: ensign-u
 ---
@@ -11,13 +11,32 @@ type: ensign-u
 
 ## Welcome to Ensign U!
 
-Like any new service, [Ensign](/ensign/) takes a little time to learn. But if you do, you’ll gain valuable new skills and new possibilities. [We created a structured curriculum](/blog/welcome-to-ensign-u/) to get you experimenting, building, and deploying fast. Each module takes 30 minutes or less.
+The demand for data professionals with streaming skills is at an all-time high.
 
-### Ensign U is for you if you want to:
+If you're ready to learn how to work with streaming data using [Ensign](/ensign/), you've come to the right place.
 
-1. Move beyond the batch and learn how to work with real-time data
-2. Get more models into production faster
-3. Turn data into dollars (for yourself or your org)
+This [free, structured curriculum](/blog/welcome-to-ensign-u/) is guaranteed to get you experimenting and building fast so you're ready to bring these skills to your next project, job, or technical interview. Each module takes 30 minutes or less!
+
+{{< ensign-u-double color="#ECF6FF" >}}
+
+{{% ensign-u-module %}}
+
+## Featured Modules
+### The Basics of PubSub
+
+- [1.0 PubSub 101: Creating Your Project](/blog/pubsub-101---creating-your-project/)
+- [1.1 PubSub 101: Using the Python SDK](/blog/pubsub-101---using-the-python-sdk/)
+- [1.2 PubSub 101: Creating Data Flows with Topics](/blog/pubsub-101---creating-data-flows-with-topics/)
+- 1.3 PubSub 101: Creating a Real-Time Publisher (Coming soon!)
+- 1.4 PubSub 101: Creating a Real-Time Publisher (Coming soon!)
+
+{{% /ensign-u-module %}}
+
+{{< /ensign-u-double >}}
+
+## Is Ensign U Right for Me?
+
+Ensign U is designed to be beginner-friendly! If you ever get stuck, feel free to reach out to us at [support@rotational.io](mailto:support@rotational.io).
 
 ### Pre-reqs:
 - Some familiarity with Python &nbsp;:snake:
@@ -29,21 +48,6 @@ Like any new service, [Ensign](/ensign/) takes a little time to learn. But if yo
 - A cloud provider &nbsp;:cloud:
 - DevOps experience &nbsp;:infinity:
 
-{{< ensign-u-double color="#ECF6FF" >}}
-
-{{% ensign-u-module %}}
-
-### Module 1 - The Basics of PubSub
-
-- [1.0 PubSub 101: Creating Your Project](/blog/pubsub-101---creating-your-project/)
-- [1.1 PubSub 101: Using the Python SDK](/blog/pubsub-101---using-the-python-sdk/)  
-- [1.2 PubSub 101: Creating Data Flows with Topics](/blog/pubsub-101---creating-data-flows-with-topics/)
-- 1.3 PubSub 101: Creating a Real-Time Publisher (Coming soon!)
-- 1.4 PubSub 101: Creating a Real-Time Publisher (Coming soon!)
-
-{{% /ensign-u-module %}}
-
-{{< /ensign-u-double >}}
 
 {{% /ensign-u-container %}}
 
