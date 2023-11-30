@@ -375,6 +375,27 @@ em {
   padding-right: .5em;
 }
 
+.ensign-u h3 {
+  margin-top: 12px;
+}
+
+.ensign-u p, li {
+  font-size: 1.25rem;
+  line-height: 2rem;
+}
+
+.ensign-u ol, #pre-reqs + ul {
+  margin-bottom: 24px;
+}
+
+#what-you-dont-need + ul {
+  margin-bottom: 32px;
+}
+
+.ensign-u li::marker {
+  color: black;
+}
+
 .blog-tag::before {
   content: ', ';
 }
