@@ -28,7 +28,7 @@ This [free, structured curriculum](/blog/welcome-to-ensign-u/) is guaranteed to 
 - [1.0 PubSub 101: Creating Your Project](/blog/pubsub-101---creating-your-project/)
 - [1.1 PubSub 101: Using the Python SDK](/blog/pubsub-101---using-the-python-sdk/)
 - [1.2 PubSub 101: Creating Data Flows with Topics](/blog/pubsub-101---creating-data-flows-with-topics/)
-- 1.3 PubSub 101: Creating a Real-Time Publisher (Coming soon!)
+- [1.3 PubSub 101: Creating a Real-Time Publisher](/blog/pubsub-101---creating-a-publisher/)
 - 1.4 PubSub 101: Creating a Real-Time Subscriber (Coming soon!)
 
 {{% /ensign-u-module %}}
