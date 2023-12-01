@@ -66,7 +66,12 @@
                 </div>
                 {{ if .Params.subheadertext }}
                 {{ with .Params.subheadertext }}
-                <p class="text-2xl lg:text-4xl mt-1 lg:mt-2 font-extralight">{{ . }}</p>
+                <p class="hidden sm:block text-2xl lg:text-4xl mt-1 lg:mt-2 font-extralight">{{ . }}</p>
+                {{ end }}
+                {{ end }}
+                {{ if .Params.moresubheadertext }}
+                {{ with .Params.moresubheadertext }}
+                <p class="hidden sm:block text-2xl lg:text-4xl mt-1 lg:mt-2 font-extralight">{{ . }}</p>
                 {{ end }}
                 {{ end }}
             </div>

@@ -30,6 +30,8 @@ footer:
     enable: true
     title: COMMUNITY
     info_items:
+    - name: Ensign U
+      link: /ensign-u
     - name: Data Playground
       link: /data-playground
     - name: Open Source
