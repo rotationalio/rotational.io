@@ -62,4 +62,4 @@ One advantage of event-driven architectures is that the topics are completely de
 
 ## To be continued...
 
-In the next module, you'll create a real-time publisher to query an API and publish flight data to Ensign!
+In the [next module](/blog/pubsub-101---creating-a-publisher/), you'll create a real-time publisher to query an API and publish flight data to Ensign!

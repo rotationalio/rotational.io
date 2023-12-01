@@ -2,46 +2,45 @@
 title: "PubSub 101 - Creating a Publisher"
 slug: "pubsub-101---creating-a-publisher"
 date: "2023-11-28T09:25:01-06:00"
-draft: true
+draft: false
 image: img/blog/press.jpg
 photo_credit: "Photo by Bank Phrom on Unsplash"
 authors: ['Patrick Deziel']
 profile: img/team/patrick-deziel.png
-tags: ['Ensign', 'Publisher', 'PubSub 101']
+tags: ['Ensign', 'Ingestion', 'PubSub 101']
 description: "In this module you will create a real-time publisher that queries an API and publishes flight data to Ensign."
 ---
 
-One of the first steps in every data science or machine learning project is data ingestion. In this module, you will create a publisher to ingest real-time data into Ensign.
+One of the first steps in every data science or machine learning project is data ingestion. In this module, you will use Python to create a publisher to ingest real-time data into Ensign.
 
 <!--more-->
 
-Check out the previous modules in this series if you haven't already!
+Check out the previous modules in this series if you haven't already! [Module 1](https://rotational.io/blog/pubsub-101---creating-your-project/) shows how to set up your Ensign project, [Module 2](https://rotational.io/blog/pubsub-101---using-the-python-sdk/) gets you started with the PyEnsign SDK, and [Module 3](https://rotational.io/blog/pubsub-101---creating-data-flows-with-topics/) helps you create your first topic.
 
-[Part One](https://rotational.io/blog/pubsub-101---creating-your-project/)
-[Part Two](https://rotational.io/blog/pubsub-101---using-the-python-sdk/)
-[Part Three](https://rotational.io/blog/pubsub-101---creating-data-flows-with-topics/)
+Want to skip to the full code example for this module? You can find it [here](https://github.com/rotationalio/ensign-examples/tree/main/courses/pubsub_101/module_4_creating_a_publisher).
+
 
 ## What is a Publisher?
 
-In Ensign, a publisher is just a piece of code that writes data as a series of `events` to one or more `topics`. If you followed along with [Part Two](https://rotational.io/blog/pubsub-101---using-the-python-sdk/), congrats! You've already written your first publisher. In practice, publishers can be a bit more involved and have a variety of purposes. Here are a few examples of the different types of publishers that you could write for Ensign:
+In Ensign, a publisher is a little piece of code that writes data as a series of `events` to one or more `topics`. If you followed along with [Module 2](https://rotational.io/blog/pubsub-101---using-the-python-sdk/), congrats! You've already written your first publisher. In practice, publishers can do a lot of ingestion-related work on your behalf for a variety of purposes. Here are a few examples of the different types of publishers that you could write for Ensign:
 
-1. Poll a REST API of weather data and publish JSON weather updates to a topic.
+1. Poll a REST API of weather data every 5 minutes and publish JSON weather updates to a topic.
 2. Subscribe to a websocket API for stock trades and publish real-time ticker prices to a topic for data visualization.
 3. Publish web requests and errors from your backend server(s) so you can monitor user activity on your web application.
 4. Process video frames from a security camera feed and publish an event when a figure is detected.
 5. Subscribe to an Ensign topic containing user reviews and publish sentiment scores to another topic.
 
-Let's return to the flight tracker example and write some code to publish real-time flight updates.
+Let's return to our flight tracker example that we've been working on through the last few modules and write some code to publish real-time flight updates.
 
 ## Creating a Flights Publisher
 
-Recall the data flows design we created in [Part Three](https://rotational.io/blog/pubsub-101---creating-data-flows-with-topics/).
+Recall the data flows design we created in [Module 3](https://rotational.io/blog/pubsub-101---creating-data-flows-with-topics/). In this module we will write the Python code that reads from the flights API and publishes updates to the `flight-updates` topic.
 
 !["Data Flows"](/img/blog/2023-11-20-pubsub-101---creating-data-flows-with-topics/topics.png)
 
-For now we will write the Python code that reads from the flights API and publishes updates to the `flight-updates` topic. To obtain access to real-time flight data, you will need to create an OpenSky network account (at the time of writing it's free) by registering [here](https://opensky-network.org/index.php?option=com_users&view=registration). Once you have a username/password for API access you can proceed.
+⚠️ WARNING: To obtain access to real-time flight data, you will need to create an OpenSky network account (at the time of writing it's free) by registering [here](https://opensky-network.org/index.php?option=com_users&view=registration). Please do that first before moving on to the next section!
 
-We could write the HTTP requests directly, but to make our lives easier we'll use the [python-opensky](https://github.com/joostlek/python-opensky) library, so go ahead and install that now.
+Now that you've registered for your OpenSky username and password, we're ready to proceed. We could write the HTTP requests directly, but to make our lives easier we'll use the [python-opensky](https://github.com/joostlek/python-opensky) library, so go ahead and install that now.
 
 ```
 $ pip install async-timeout
@@ -196,7 +195,7 @@ if __name__ == "__main__":
     publisher.run()
 ```
 
-If you need to look at the complete code, it's available [here](https://github.com/rotationalio/ensign-examples/courses/pubsub_101/module_4_creating_a_publisher).
+If you need to look at the complete code, it's available [here](https://github.com/rotationalio/ensign-examples/tree/main/courses/pubsub_101/module_4_creating_a_publisher).
 
 ## Running the Publisher
 
