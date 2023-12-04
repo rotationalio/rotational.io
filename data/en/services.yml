@@ -24,11 +24,11 @@ services:
         client_name: Qredo
   services:
     enable : true
-  partners:
+  cloud_partners:
     enable: true
     title: We Meet Our Clients Where They Are
     description: We have experience working in cloud, hybrid, and on-prem environments.
-    partner:
+    cloud_partner:
       - name: Google Cloud Partner
         logo: img/partners/googlecloud.png
         link: https://cloud.google.com/
@@ -41,6 +41,13 @@ services:
       - name: Linode - Akamai Connected Cloud Partner
         logo: img/partners/linode.png
         link: https://www.linode.com/
+  partners:
+    enable: true
+    title: Partners
+    description: We are proud to partner with Approachable Geek to deliver consumer-facing mobile and web apps powered by our machine learning and data science models.
+    partner_name: Approachable Geek
+    partner_logo: img/partners/approachable_geek.png
+    partner_link: https://approachablegeek.com/
   action:
     enable: true
     description: Schedule your no-cost, risk-free consultation.
