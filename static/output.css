@@ -2904,7 +2904,7 @@ em {
   margin-top: 12px;
 }
 
-.ensign-u > p, .ensign-u > li {
+.ensign-u > p, .ensign-u > ul > li, .ensign-u > ol > li {
   font-size: 1.25rem;
   line-height: 2rem;
 }
