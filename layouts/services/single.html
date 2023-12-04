@@ -120,7 +120,7 @@
         {{ with .partners }}
         <section class="my-9 lg:my-14">
             <h2 class="mb-4 font-bold text-xl sm:text-2xl lg:text-3xl">{{ .title }}</h2>
-            <p class="mt-6 md:text-xl">{{ .description }}</p>
+            <p class="mt-6 md:text-xl">{{ .description | markdownify }}</p>
             <a href="{{ .partner_link }}" target="_blank" class="">
                 <img src="{{ .partner_logo }}" alt="{{ .partner_name }}" class="mt-6 w-56 md:w-80 mx-auto" />
             </a>

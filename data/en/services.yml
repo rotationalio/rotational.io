@@ -44,7 +44,7 @@ services:
   partners:
     enable: true
     title: Partners
-    description: We are proud to partner with Approachable Geek to deliver consumer-facing mobile and web apps powered by our machine learning and data science models.
+    description: We are proud to partner with [**Approachable Geek**](https://approachablegeek.com/) to deliver consumer-facing mobile and web apps powered by our machine learning and data science models.
     partner_name: Approachable Geek
     partner_logo: img/partners/approachable_geek.png
     partner_link: https://approachablegeek.com/

@@ -1451,10 +1451,6 @@ video {
   height: 100px;
 }
 
-.h-56 {
-  height: 14rem;
-}
-
 .max-h-\[136px\] {
   max-height: 136px;
 }
@@ -1526,14 +1522,6 @@ video {
 
 .w-\[1080px\] {
   width: 1080px;
-}
-
-.w-64 {
-  width: 16rem;
-}
-
-.w-48 {
-  width: 12rem;
 }
 
 .max-w-7xl {
@@ -1706,10 +1694,6 @@ video {
   --tw-space-y-reverse: 0;
   margin-top: calc(2rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(2rem * var(--tw-space-y-reverse));
-}
-
-.self-center {
-  align-self: center;
 }
 
 .overflow-auto {
