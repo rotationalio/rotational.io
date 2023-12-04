@@ -2900,16 +2900,16 @@ em {
   padding-right: .5em;
 }
 
-.ensign-u h3 {
+.ensign-u > h3 {
   margin-top: 12px;
 }
 
-.ensign-u p, li {
+.ensign-u > p, .ensign-u > ul > li, .ensign-u > ol > li {
   font-size: 1.25rem;
   line-height: 2rem;
 }
 
-.ensign-u ol, #pre-reqs + ul {
+.ensign-u > ol, #pre-reqs + ul {
   margin-bottom: 24px;
 }
 
@@ -2917,7 +2917,7 @@ em {
   margin-bottom: 32px;
 }
 
-.ensign-u li::marker {
+.ensign-u ul > li::marker {
   color: black;
 }
 
