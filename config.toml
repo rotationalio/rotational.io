@@ -168,3 +168,4 @@ mediaType = "text/plain"
 [taxonomies]
   tag = 'tags'
   author = 'authors'
+  category = 'categories'
