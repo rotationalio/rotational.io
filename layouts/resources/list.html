@@ -1,0 +1,56 @@
+{{ define "title" }}
+{{ .Title }} &ndash; {{ .Site.Title }}
+{{ end }}
+
+{{ define "main" }}
+<div class="relative max-w-7xl mx-auto px-4 sm:px-2">
+    <div class="mt-9 sm:mt-11 lg:mt-14">
+        <ul class="grid md:grid-cols-2 xl:grid-cols-3 gap-6 md:gap-8">
+            {{ $paginator := .Paginate .Data.Pages }}
+            {{ range $paginator.Pages }}
+            <li class="mt-6 sm:mt-0 h-auto">
+                <div class="article ">
+                    <a class="block" href="{{ .Permalink }}">
+                        <img src="{{ .Params.image | absURL }}" alt="" class="rounded-t-xl object-cover" style="height:212px; width:100%"></a>
+                    <div class="bg-[#ECF6FF] rounded-b-xl ">
+                
+                        <div class="px-6 pt-4">
+                            <ul class="flex">
+                                {{ range .Params.resources }}
+                                    <li class="text-base font-bold text-[#1D65A6]">
+                                        <a href="/resources/{{ . | urlize }}">{{ . }}</a>
+                                    </li> 
+                                {{ end }}
+                            </ul>
+                            {{ range .Params.categories }}
+                            <span class="inline-block bg-[#1D65A6] rounded-full px-3 py-1 text-sm font-semibold text-white mr-2 mb-2">
+                                <a href="/categories/{{ . | urlize }}" class="text-sm">{{ . }}</a>
+                            </span>
+                            {{ end }}
+                            <h3 class="text-xl font-extrabold mt-3 pb-3"><a class="block" href="{{ .Permalink }}">{{ .Params.name }}</a>
+                            </h3>
+                            <p class="text-sm text-[#A32C00] font-semibold">{{ .Params.event_date }}</p>
+                            <p class="mt-3 text-base">{{ .Params.summary }}</p>
+                            <div class="mt-6">
+                                {{ range .Params.events }}
+                                <span class="inline-block bg-[#1D65A6] rounded-full px-3 py-1 text-sm font-semibold text-white mr-2 mb-2">
+                                    <a href="events/{{ . | urlize }}">{{ . }}</a>
+                                </span>
+                                {{ end }}
+                            </div>
+                            <div class="mt-3">
+                                {{ range .Params.topics }}
+                                <span class="inline-block bg-[#A32C00] rounded-full px-3 py-1 text-sm font-semibold text-white mr-2 mb-2">
+                                    <a href="/topics/{{ . | urlize }}">{{ . }}</a>
+                                </span>
+                                {{ end }}
+                            </div>
+                        </div>
+            </li>
+            {{ end }}
+
+        </ul>
+
+    </div>
+</div>
+{{ end }}
