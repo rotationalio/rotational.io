@@ -169,3 +169,6 @@ mediaType = "text/plain"
   tag = 'tags'
   author = 'authors'
   category = 'categories'
+  presenter = 'presenters'
+  event = 'events'
+  topic = 'topics'
