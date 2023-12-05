@@ -65,13 +65,13 @@
           {{ end }}
           {{ end }}
 
-        {{ if .partners.enable }}
-        {{ with .partners }}
+        {{ if .cloud_partners.enable }}
+        {{ with .cloud_partners }}
         <section class="my-9 lg:my-14">
             <h2 class="mb-4 font-bold text-xl sm:text-2xl lg:text-3xl">{{ .title }}</h2>
             <p class="mt-6 md:text-xl">{{ .description }}</p>
             <ul class="grid items-center space-y-8 md:grid-cols-4 md:space-y-0 mt-6">
-                {{ range .partner }}
+                {{ range .cloud_partner }}
                 <li>
                     <a href="{{ .link }}" target="_blank">
                         <img src="{{ .logo }}" alt="{{ .name }}" class="h-20 mx-auto md:h-24" />
@@ -92,12 +92,11 @@
                 {{ range .studies }}
                 <a href="{{ .link }}">
                     <div class="bg-[#E3E3E1] pb-4 rounded-md">
-                        <div class="md:h-72 mb-8 md:mb-4">
+                        <div class="mb-4 md:mb-4">
                             <h4 class="text-lg md:text-xl font-bold py-6">{{ .summary}}</h4>
                             <div class="md:h-36 inline-flex items-center mb-6 md:mb-3">
                                 <img src="{{ .image }}" alt="" class="mx-auto" />
                             </div>
-                            <p class="md:text-xl font-semibold">{{ .client_name }}</p>
                         </div>
                         <span class="flex justify-center items-center md:text-lg font-bold">
                             <span class="mr-1">
@@ -114,6 +113,18 @@
 
         </section>
 
+        {{ end }}
+        {{ end }}
+
+        {{ if .partners.enable }}
+        {{ with .partners }}
+        <section class="my-9 lg:my-14">
+            <h2 class="mb-4 font-bold text-xl sm:text-2xl lg:text-3xl">{{ .title }}</h2>
+            <p class="mt-6 md:text-xl">{{ .description | markdownify }}</p>
+            <a href="{{ .partner_link }}" target="_blank" class="">
+                <img src="{{ .partner_logo }}" alt="{{ .partner_name }}" class="mt-6 w-56 md:w-80 mx-auto" />
+            </a>
+        </section>
         {{ end }}
         {{ end }}
         
