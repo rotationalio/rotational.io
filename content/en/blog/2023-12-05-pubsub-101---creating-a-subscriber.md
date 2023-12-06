@@ -47,6 +47,10 @@ $ pip install river
 The subscriber configuration is a bit simpler than the publisher because the data source will be coming from an Ensign topic. We just need to include which topic to consume the flights updates from and which topics to publish the models and arrival predictions to.
 
 ```python
+import json
+import pickle
+import asyncio
+from pyensign.events import Event
 from pyensign.ensign import Ensign
 from river import compose, linear_model, preprocessing
 
