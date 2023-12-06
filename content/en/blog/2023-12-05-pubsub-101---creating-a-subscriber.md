@@ -2,7 +2,7 @@
 title: "PubSub 101 - Creating a Subscriber"
 slug: "pubsub-101---creating-a-subscriber"
 date: "2023-12-05T15:22:27-06:00"
-draft: true
+draft: false
 image: img/blog/newspaper.jpg
 photo_credit: "Photo by Roman Kraft on Unsplash"
 authors: ['Patrick Deziel']
@@ -11,7 +11,7 @@ tags: ['Ensign', 'Online Learning', 'PubSub 101']
 description: "In this module you will create a subscriber that reads real-time flight data and trains an online ML model."
 ---
 
-With the prevalence of LLMs and learning techniques like Retrieval Augmented Generation (RAG), online models have never been more relevant. In order to build an online model, you need a subscriber! In this module, you will write some Python code that interprets real-time data and builds an adaptive online model.
+With the rise of LLMs and Retrieval Augmented Generation (RAG), online models have never been more relevant. Here's how to write some Python code to interpret real-time data and build your own adaptive online model.
 
 <!--more-->
 
@@ -21,7 +21,7 @@ If you just want the full code example for this module, you can find it [here](h
 
 ## Ensign Subscribers
 
-In Ensign, a subscriber is just a piece of code that listens on one or more `topics` for `events`. The subscriber decides what to do with each `event`, by updating internal state, logging it, or persisting it to storage, or performing some processing and publishing a secondary event to a different topic. Here are a few examples of different types of subscribers that you could write using Ensign.
+In Ensign, a subscriber is just a piece of code that listens on one or more `topics` for `events`. The subscriber decides what to do with each `event` -- whether to log it, or persist it to storage, or perform some processing and publish a transformation of the event to a different topic. Here are a few examples of different types of subscribers you could write using Ensign.
 
 1. Subscribe to a topic with weather updates and display weather notifications to users.
 2. Subscribe to a topic with stock trades and train an online model to predict future price movement.
@@ -55,7 +55,12 @@ from pyensign.ensign import Ensign
 from river import compose, linear_model, preprocessing
 
 class FlightsSubscriber:
-    def __init__(self, flights_topic="flight-positions", models_topic="arrival-models", predictions_topic="arrival-predictions"):
+    def __init__(
+       self,
+       flights_topic="flight-positions",
+       models_topic="arrival-models",
+       predictions_topic="arrival-predictions"
+    ):
         self.flight_topic = flights_topic
         self.models_topic = models_topic
         self.predictions_topic = predictions_topic
@@ -108,7 +113,7 @@ In the main subscribe loop, the process will wait for a new event on the stream.
             callsign = vector["callsign"].strip()
             if self.callsign == "":
                 self.callsign = callsign
-            
+
             if self.callsign == callsign:
                 # Get the true velocity and the prediction
                 velocity, velocity_pred = self.predict_velocity(vector)
@@ -118,8 +123,18 @@ In the main subscribe loop, the process will wait for a new event on the stream.
                     "predicted_velocity": velocity_pred,
                     "true_velocity": velocity,
                 }
-                pred_event = Event(data=json.dumps(pred_data).encode("utf-8"), mimetype="application/json", schema_name="VelocityPrediction", schema_version="0.1.0")
-                model_event = Event(data=pickle.dumps(self.model), mimetype="application/python-pickle",  schema_name="VelocityModel", schema_version="0.1.0")
+                pred_event = Event(
+                    data=json.dumps(pred_data).encode("utf-8"),
+                    mimetype="application/json",
+                    schema_name="VelocityPrediction",
+                    schema_version="0.1.0"
+                )
+                model_event = Event(
+                    data=pickle.dumps(self.model),
+                    mimetype="application/python-pickle",
+                    schema_name="VelocityModel",
+                    schema_version="0.1.0"
+                )
 
                 await self.ensign.publish(self.predictions_topic, pred_event)
                 await self.ensign.publish(self.models_topic, model_event)
