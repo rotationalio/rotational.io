@@ -4,7 +4,7 @@
     </a>
     <div class="bg-[#ECF6FF] rounded-b-xl">
         <section class="px-6 pt-4">
-            <p class="mt-3 pb-3 text-base text-[#A32C00] font-semibold">{{ .Params.event_date }}</p>
+            <p class="mt-3 pb-3 text-base text-[#A32C00] font-semibold">{{ dateFormat "Jan 2, 2006" .Params.event_date }}</p>
             <h3 class="text-xl font-extrabold pb-3">
                 <a class="block" href="{{ .Permalink }}">{{ .Params.name }}</a>
             </h3>

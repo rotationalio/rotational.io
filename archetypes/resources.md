@@ -10,7 +10,7 @@ description: "Write the event's description"
 events: ['Podcast', 'Webinar', 'Conference Talk']
 registration_link: https://link-to-register-for-event.com
 call_to_action: "Write call to action for upcoming event"
-video_link: youtube.com/link-to-video
+video_link: youtube.com/link-to-video (If using YouTube, use the embed URL listed after src.)
 audio_link: https://link-to-audio-source.com
 categories: ['Video', 'Audio']
 presenters: ['Presenter Name 1', 'Presenter Name 2']
