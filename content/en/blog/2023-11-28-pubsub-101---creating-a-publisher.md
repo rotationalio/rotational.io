@@ -242,4 +242,4 @@ How do we know if it worked? The easiest way is to open the [project dashboard](
 
 ## To be continued...
 
-Now that you have a flights publisher, in the next module you'll write a subscriber to consume the flight updates in real time!
+Now that you have a flights publisher, in the [next module](/blog/pubsub-101---creating-a-subscriber/) you'll write a subscriber to consume the flight updates in real time!
