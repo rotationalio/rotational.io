@@ -1,0 +1,17 @@
+{{ range .Params.categories }}
+<li class="inline-block bg-[#1D65A6] rounded-full px-3 py-1 text-sm font-semibold text-white mr-2 mb-2">
+    <a href="categories/{{ . | urlize }}">{{ . }}</a>
+</li>
+{{ end }}
+
+{{ range .Params.events }}
+<li class="inline-block bg-[#1D65A6] rounded-full px-3 py-1 text-sm font-semibold text-white mr-2 mb-2">
+    <a href="events/{{ . | urlize }}">{{ . }}</a>
+</li>
+{{ end }}
+
+{{ range .Params.topics }}
+<li class="inline-block bg-[#1D65A6] rounded-full px-3 py-1 text-sm font-semibold text-white mr-2 mb-2">
+    <a href="/topics/{{ . | urlize }}">{{ . }}</a>
+</li>
+{{ end }}
