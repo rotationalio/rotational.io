@@ -1,0 +1,13 @@
+{{ define "main" }}
+<div class="relative max-w-7xl mx-auto px-4 sm:px-6">
+  <div class="mt-9 sm:mt-11 lg:mt-14">
+    <ul class="b-card">
+      {{ range .Site.Taxonomies.events }}
+      <li class="mx-20 mb-4 py-4 rounded-xl bg-[#1D65A6] text-white text-center font-semibold">
+        <a href="{{ .Page.Permalink }}" class="block">{{ .Page.Title }}</a>
+      </li>
+      {{ end }}
+    </ul>
+  </div>
+</div>
+{{ end }}
