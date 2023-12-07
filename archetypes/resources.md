@@ -9,6 +9,7 @@ name: "Write the name or title of the event"
 description: "Write the event's description"
 events: ['Podcast', 'Webinar', 'Conference Talk']
 registration_link: https://link-to-register-for-event.com
+call_to_action: "Write call to action for upcoming event"
 video_link: youtube.com/link-to-video
 audio_link: https://link-to-audio-source.com
 categories: ['Video', 'Audio']
