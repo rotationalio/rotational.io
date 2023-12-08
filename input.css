@@ -14,9 +14,6 @@
   .blog-img img {
     @apply h-96 overflow-hidden;
   }
-  .art-s p:nth-of-type(2) {
-    @apply h-36 overflow-hidden;
-  }
   .input-sl {
     @apply mt-6 mr-8 w-full basis-1/2 rounded-lg border-red-500 px-7 py-4;
   }
