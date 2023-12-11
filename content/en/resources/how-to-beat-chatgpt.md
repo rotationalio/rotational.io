@@ -3,8 +3,8 @@ title: "How to Beat Chatgpt"
 slug: "how-to-beat-chatgpt"
 draft: false
 is_upcoming: false
-event_date: "October 26, 2023"
-image: "img/rotational-gophercon.jpg"
+event_date: "2023-10-26"
+image: "img/resources/how-to-beat-chatgpt.webp"
 name: "How to Beat ChatGPT: Build Your Own Domain-specific LLM"
 description: "Learn how to create your own domain-specific LLM."
 events: ['Tutorial']

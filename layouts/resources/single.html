@@ -39,7 +39,7 @@
         <section class="mt-9 mb-14 p-8 text-center bg-[#E8EFF6] mx-auto max-w-[800px] rounded-lg">
             <section class="mb-6">
                 <h2 class="mb-3 font-bold text-xl sm:text-2xl lg:text-3xl"><span class="text-[#1D65A6]">About</span> This Event</h2>
-                <span >{{ .Params.event_date }}</span>
+                <span >{{ dateFormat "Jan 2, 2006" .Params.event_date }}</span>
             </section>
             <h3 class="mt-3 font-bold text-lg sm:text-xl lg:text-2xl">Featuring</h3>
             <ul class="mt-6 flex justify-center gap-8">
