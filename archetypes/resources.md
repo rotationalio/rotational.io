@@ -2,7 +2,6 @@
 title: "{{ replaceRE "^[-0-9]{10}-" "" .Name | replaceRE "-" " " | title }}"
 slug: "{{ replaceRE "^[-0-9]{10}-" "" .Name }}"
 draft: false
-is_upcoming: false
 event_date: "YYYY-MM-DD"
 image: "img/resources/event-image.png"
 name: "Write the name or title of the event"

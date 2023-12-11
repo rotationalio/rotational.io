@@ -12,7 +12,7 @@
 
 <div class="relative max-w-7xl mx-auto px-4">
     <div class="mt-14">
-        <h1 class="mb-8 font-bold text-xl text-center sm:text-2xl lg:text-3xl">
+        <h1 class="resource-header mb-8 font-bold text-xl text-center sm:text-2xl lg:text-3xl">
             <span class="text-[#1D65A6]">{{ with .Params.name }} {{ index (split . " ") 0 | safeHTML }} {{end }}</span>
               {{ with .Params.name }} {{ after (len (index (split . " ") 0)) . | safeHTML }} {{ end }}
         </h1>
@@ -27,16 +27,9 @@
         </div>
         {{ end }}
 
-        <section class="mt-10 text-center">
-            <p class="mt-8 mb-4 text-lg">{{ .Params.description | markdownify }}</p>
+        <section class="resource-description mt-6 mb-14 text-lg px-10">{{ .Params.description | .RenderString }}</section>
 
-            {{ if .Params.registration_link }}
-            <a href="{{ .Params.registration_link }}" target="_blank" class="font-bold text-xl text-[#1D65A6]">{{ .Params.call_to_action }}</a>
-            {{ end }}
-
-        </section>
-
-        <section class="mt-9 mb-14 p-8 text-center bg-[#E8EFF6] mx-auto max-w-[800px] rounded-lg">
+        <section class="mb-14 p-8 text-center bg-[#E8EFF6] mx-auto max-w-[800px] rounded-lg">
             <section class="mb-6">
                 <h2 class="mb-3 font-bold text-xl sm:text-2xl lg:text-3xl"><span class="text-[#1D65A6]">About</span> This Event</h2>
                 <span >{{ dateFormat "Jan 2, 2006" .Params.event_date }}</span>

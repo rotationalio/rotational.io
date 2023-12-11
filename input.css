@@ -412,3 +412,18 @@ em {
 .list-multi-author:last-child::after, .single-multi-author:last-child::after {
   content: '';
 }
+
+/* Resource page styles */
+
+.resource-header {
+  text-wrap: balance;
+}
+
+.resource-description > p:not(:only-of-type) {
+  padding-top: 1.5rem;
+}
+
+.resource-description li {
+  list-style-type: disc;
+  list-style-position: inside;
+}
