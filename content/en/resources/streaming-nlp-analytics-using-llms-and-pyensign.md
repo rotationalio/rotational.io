@@ -1,5 +1,5 @@
 ---
-title: "Streaming Nlp Analytics Using Llms and Pyensign"
+title: "Streaming NLP Analytics Using LLMs and PyEnsign"
 slug: "streaming-nlp-analytics-using-llms-and-pyensign"
 draft: false
 event_date: "2023-08-01"
