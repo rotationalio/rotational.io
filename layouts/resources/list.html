@@ -6,16 +6,13 @@
 <div class="relative max-w-7xl mx-auto px-4 sm:px-2">
     <section class="mt-9 sm:mt-11 lg:mt-14">
         <ul class="grid md:grid-cols-2 xl:grid-cols-3 gap-6 md:gap-8">
-            {{ $paginator := .Paginate .Data.Pages }}
-            {{ range $paginator.Pages }}
+            {{ range .Data.Pages }}
             <li class="mt-6 sm:mt-0 h-auto">
                {{ .Render "resource" }}
             </li>
             {{ end }}
 
         </ul>
-
-        {{ partial "paginator.html" . }}
 
     </section>
 </div>

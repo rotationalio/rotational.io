@@ -1143,6 +1143,11 @@ video {
   margin-right: 0.5rem;
 }
 
+.mx-20 {
+  margin-left: 5rem;
+  margin-right: 5rem;
+}
+
 .my-8 {
   margin-top: 2rem;
   margin-bottom: 2rem;
@@ -1176,11 +1181,6 @@ video {
 .my-3 {
   margin-top: 0.75rem;
   margin-bottom: 0.75rem;
-}
-
-.mx-20 {
-  margin-left: 5rem;
-  margin-right: 5rem;
 }
 
 .ml-10 {
@@ -2976,6 +2976,10 @@ em {
 
 .list-multi-author:last-child::after, .single-multi-author:last-child::after {
   content: '';
+}
+
+.resource-header {
+  text-wrap: balance;
 }
 
 .hover\:rounded-full:hover {

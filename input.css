@@ -415,3 +415,7 @@ em {
 .list-multi-author:last-child::after, .single-multi-author:last-child::after {
   content: '';
 }
+
+.resource-header {
+  text-wrap: balance;
+}

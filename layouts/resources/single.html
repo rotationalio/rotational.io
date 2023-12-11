@@ -12,7 +12,7 @@
 
 <div class="relative max-w-7xl mx-auto px-4">
     <div class="mt-14">
-        <h1 class="mb-8 font-bold text-xl text-center sm:text-2xl lg:text-3xl">
+        <h1 class="resource-header mb-8 font-bold text-xl text-center sm:text-2xl lg:text-3xl">
             <span class="text-[#1D65A6]">{{ with .Params.name }} {{ index (split . " ") 0 | safeHTML }} {{end }}</span>
               {{ with .Params.name }} {{ after (len (index (split . " ") 0)) . | safeHTML }} {{ end }}
         </h1>
@@ -27,8 +27,8 @@
         </div>
         {{ end }}
 
-        <section class="mt-10 text-center">
-            <p class="mt-8 mb-4 text-lg">{{ .Params.description }}</p>
+        <section class="reousce-description mt-10 text-center">
+            <section class="mt-8 mb-4 text-lg">{{ .Params.description | .RenderString }}</section>
 
             {{ if .Params.registration_link }}
             <a href="{{ .Params.registration_link }}" target="_blank" class="font-bold text-xl text-[#1D65A6]">{{ .Params.call_to_action }}</a>
