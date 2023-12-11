@@ -2,9 +2,8 @@
 title: "Mlops 101 Managing Models With Event Streams"
 slug: "mlops-101-managing-models-with-event-streams"
 draft: false
-is_upcoming: false
 event_date: "2023-07-11"
-image: "event-image.png"
+image: "img/resources/webinars/mlops-101-managing-models-with-event-streams.webp"
 name: "MLOps 101: A Fresh Approach to Managing Models with Event Streams "
 description: |
     In data science, it's important to be able to reproduce and understand our results. However, storing and managing our data can be challenging, especially when using relational databases. These databases are great for everyday operations, but can make it difficult to reproduce our work accurately.

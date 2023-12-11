@@ -2,9 +2,8 @@
 title: "Asynchronous Data Science With Pyensign"
 slug: "asynchronous-data-science-with-pyensign"
 draft: false
-is_upcoming: false
 event_date: "2023-06-20"
-image: "event-image.png"
+image: "img/resources/webinars/asynchronous-data-science.webp"
 name: "Asynchronous Data Science with PyEnsign"
 description: |
     Join us to learn about PyEnsign, our Python SDK that makes asynchronous data science easy and fun. This 1-hour tutorial requires no prior knowledge of streaming data or eventing systems, though it’s helpful to have some familiarity with Python.

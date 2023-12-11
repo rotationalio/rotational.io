@@ -1,14 +1,13 @@
 ---
-title: "Learning Distributed Systems With Mcu"
+title: "Learning Distributed Systems With MCU"
 slug: "learning-distributed-systems-with-mcu"
 draft: false
-is_upcoming: false
 event_date: "2023-05-30"
-image: "event-image.png"
+image: "img/resources/webinars/learn-distributed-system-with-mcu.webp"
 name: "Learning Distributed Systems with the Marvel Cinematic Universe (MCU)"
 description: |
     Curious about distributed systems and looking for an easy way to get the basics? Not quite sure yet if distributed systems are relevant to what you're working on?
-
+    
     You're in luck! We have a fun, entertaining, and super hero-filled learning session just for you! :)
 
     If the Multiverse Saga has taught us anything so far, it's that we're all living in a distributed system -- it's about time for you to learn how the rules work!
@@ -19,7 +18,7 @@ description: |
     - Consistency
     - Fault Tolerance
     - Consensus
-    - and more!"
+    - and more!
 events: ['Webinar']
 registration_link:
 call_to_action:

@@ -2,9 +2,8 @@
 title: "Intro to Realtime Data Apis"
 slug: "intro-to-realtime-data-apis"
 draft: false
-is_upcoming: false
 event_date: "2023-05-16"
-image: "event-image.png"
+image: "img/resources/webinars/intro-to-realtime-data-apis.webp"
 name: "Intro to Realtime Data APIs"
 description: |
     Wish you had a better handle on how to use realtime data?

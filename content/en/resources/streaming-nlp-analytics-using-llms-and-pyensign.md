@@ -2,9 +2,8 @@
 title: "Streaming Nlp Analytics Using Llms and Pyensign"
 slug: "streaming-nlp-analytics-using-llms-and-pyensign"
 draft: false
-is_upcoming: false
 event_date: "2023-08-01"
-image: "event-image.png"
+image: "img/resources/webinars/streaming-nlp-analytics-using-llms-and-pyensign.webp"
 name: "Streaming NLP Analytics Made Easy Using LLMs and PyEnsign"
 description: |
     Learn how to leverage the power of LLMs with PyEnsign, an open source data streaming tool and event-sourcing database, to take your Natural Language Processing (NLP) analytics out of the sandbox and into deployment. With PyEnsign, you can effortlessly interact with data streams to build models and analytics that can actually get used by customers and people at your organization.

@@ -27,16 +27,9 @@
         </div>
         {{ end }}
 
-        <section class="reousce-description mt-10 text-center">
-            <section class="mt-8 mb-4 text-lg">{{ .Params.description | .RenderString }}</section>
+        <section class="resource-description mt-6 mb-14 text-lg px-10">{{ .Params.description | .RenderString }}</section>
 
-            {{ if .Params.registration_link }}
-            <a href="{{ .Params.registration_link }}" target="_blank" class="font-bold text-xl text-[#1D65A6]">{{ .Params.call_to_action }}</a>
-            {{ end }}
-
-        </section>
-
-        <section class="mt-9 mb-14 p-8 text-center bg-[#E8EFF6] mx-auto max-w-[800px] rounded-lg">
+        <section class="mb-14 p-8 text-center bg-[#E8EFF6] mx-auto max-w-[800px] rounded-lg">
             <section class="mb-6">
                 <h2 class="mb-3 font-bold text-xl sm:text-2xl lg:text-3xl"><span class="text-[#1D65A6]">About</span> This Event</h2>
                 <span >{{ dateFormat "Jan 2, 2006" .Params.event_date }}</span>
