@@ -30,7 +30,7 @@ This [free, structured curriculum](/blog/welcome-to-ensign-u/) is guaranteed to 
 - [1.2 PubSub 101: Creating Data Flows with Topics](/blog/pubsub-101---creating-data-flows-with-topics/)
 - [1.3 PubSub 101: Creating a Real-Time Publisher](/blog/pubsub-101---creating-a-publisher/)
 - [1.4 PubSub 101: Creating a Real-Time Subscriber](/blog/pubsub-101---creating-a-subscriber/)
-- [1.5 PubSub 101: Querying Topics with SQL]((/blog/pubsub-101---querying-topics/))
+- [1.5 PubSub 101: Querying Topics with SQL](/blog/pubsub-101---querying-topics/)
 
 {{% /ensign-u-module %}}
 
