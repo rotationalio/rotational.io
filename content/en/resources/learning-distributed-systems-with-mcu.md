@@ -1,5 +1,5 @@
 ---
-title: "Learning Distributed Systems With MCU"
+title: "Learning Distributed Systems With the MCU"
 slug: "learning-distributed-systems-with-mcu"
 draft: false
 event_date: "2023-05-30"

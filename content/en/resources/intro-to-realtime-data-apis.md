@@ -1,5 +1,5 @@
 ---
-title: "Intro to Realtime Data Apis"
+title: "Intro to Realtime Data APIs"
 slug: "intro-to-realtime-data-apis"
 draft: false
 event_date: "2023-05-16"

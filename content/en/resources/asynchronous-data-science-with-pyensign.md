@@ -1,5 +1,5 @@
 ---
-title: "Asynchronous Data Science With Pyensign"
+title: "Asynchronous Data Science With PyEnsign"
 slug: "asynchronous-data-science-with-pyensign"
 draft: false
 event_date: "2023-06-20"

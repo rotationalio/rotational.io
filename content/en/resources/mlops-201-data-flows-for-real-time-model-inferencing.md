@@ -1,5 +1,5 @@
 ---
-title: "Mlops 201 Data Flows for Real Time Model Inferencing"
+title: "MlOps 201 Data Flows for Real Time Model Inferencing"
 slug: "mlops-201-data-flows-for-real-time-model-inferencing"
 draft: false
 event_date: "2023-09-12"

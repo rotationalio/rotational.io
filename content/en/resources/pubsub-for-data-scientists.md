@@ -1,5 +1,5 @@
 ---
-title: "Pubsub for Data Scientists"
+title: "PubSub for Data Scientists"
 slug: "pubsub-for-data-scientists"
 draft: false
 event_date: "2023-10-03"

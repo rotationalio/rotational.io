@@ -1,5 +1,5 @@
 ---
-title: "Mlops 101 Managing Models With Event Streams"
+title: "MlOps 101 Managing Models With Event Streams"
 slug: "mlops-101-managing-models-with-event-streams"
 draft: false
 event_date: "2023-07-11"
