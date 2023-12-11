@@ -182,4 +182,4 @@ If you're looking for a challenge, tinker with the model and try to improve it! 
 
 ## To be continued...
 
-In the next module, you'll learn how to query historical data from a topic stream using SQL.
+In the [next module](/blog/pubsub-101---querying-topics/), you'll learn how to query historical data from a topic stream using SQL.

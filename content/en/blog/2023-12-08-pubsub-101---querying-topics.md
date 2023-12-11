@@ -1,47 +1,43 @@
 ---
-title: "PubSub 101 - Querying Topics"
+title: "PubSub 101 - Querying Topics with SQL"
 slug: "pubsub-101---querying-topics"
 date: "2023-12-08T14:09:46-06:00"
-draft: true
+draft: false
 image: img/blog/otter_investigator.png
-photo_credit: "Add Photo Credits Here"
+photo_credit: "Pangstu"
 authors: ['Patrick Deziel']
 profile: img/team/patrick-deziel.png
 tags: ['Ensign', 'enSQL', 'PubSub 101']
-description: "In this module you will query Ensign to re-process events in a data stream. Woah, time travel!"
+description: "In this module you will query your Ensign topics using SQL-like syntax to get historic events. Great Scott, it's time travel!"
 ---
 
-Real-time data streams are powerful, but sometimes you need to convert the stream into a batch or replay parts of the stream. Here's how to write customized SQL to more deeply understand and interact with your data.
+Real-time data streams are powerful, but sometimes you need to convert the stream into a batch or replay parts of the stream. Here's how to write customized SQL to more deeply understand and interact with your historic data.
 
 <!--more-->
 
-This module assumes that you've already created a topic and published some data to it. If you haven't already, take a look at the previous [modules](https://rotational.io/tags/pubsub-101) to make sure you have a topic to work with!
+*Heads Up: This module assumes you've already created a topic and published some data to it.*
 
-In [Module 1](https://rotational.io/blog/pubsub-101---creating-your-project/) you created an Ensign project.
-
-In [Module 2](https://rotational.io/blog/pubsub-101---using-the-python-sdk/) you learned how to use the PyEnsign SDK.
-
-In [Module 3](https://rotational.io/blog/pubsub-101---creating-data-flows-with-topics/) you created your first topic.
-
-In [Module 4](https://rotational.io/blog/pubsub-101---creating-a-publisher/) you created a real-time publisher.
-
-In [Module 5](https://rotational.io/blog/pubsub-101---creating-a-subscriber/) you created a real-time subscriber.
+If you haven't already, take a look at the previous [modules](https://rotational.io/tags/pubsub-101) to make sure you have a topic and some data to work with! Using the previous modules, you'll [create an Ensign project](https://rotational.io/blog/pubsub-101---creating-your-project/), get familiar with the [PyEnsign SDK](https://rotational.io/blog/pubsub-101---using-the-python-sdk/) and [create your first topic](https://rotational.io/blog/pubsub-101---creating-data-flows-with-topics/), and finally [build a publisher](https://rotational.io/blog/pubsub-101---creating-a-publisher/) and [run a subscriber](https://rotational.io/blog/pubsub-101---creating-a-subscriber/) to make sure you've got some data in your topic ready to go for this module.
 
 ## Event Persistence
 
 You already know that Ensign can stream `events` for you through the use of `publishers` and `subscribers`. Pure stateless processing is sometimes all you need. However, in many cases you need to see what was published in the past, in order to recover from unexpected failure, perform historical or trend analytics, or debug asynchronous workflows.
 
-By default Ensign persists **all of the events** that have been published to all of your `topics`. This makes it possible to both retrieve any previous `event` or replay a _stream of events_ from any point in time (woah, time travel!).
+By default Ensign persists **all of the events** that have been published to all of your `topics`. This makes it possible to both retrieve any previous `event` or replay a _stream of events_ from any point in time (That means you're a time traveler! Great Scott!).
 
 ## enSQL
 
-Ensign implements a specific query language called enSQL. enSQL shares a lot of syntax with classical SQL except that it lets you query Ensign `topics` over specific windows of time. Similar to how you can query over `tables` in relational databases, in Ensign you can query over `topics`. The diagram below summarizes the basic syntax.
+Ensign implements a specific query language with the [same syntax as classical SQL](https://ensign.rotational.dev/ensql/syntax/) except that it lets you query Ensign `topics` over specific windows of time. We call it enSQL. Similar to how you can query over `tables` in relational databases, with enSQL you can query over `topics`.
+
+Here's a visual representation of the basic syntax:
 
 !["enSQL Syntax"](/img/blog/2023-12-08-pubsub-101---querying-topics/syntax.png)
 
+If you want, check out the [full documentation](https://ensign.rotational.dev/ensql/) about enSQL syntax and query operators.
+
 ## Your First Query
 
-Let's return to the flight tracker project and see if we can run some queries. Consider the query below.
+Let's return to the flight tracker project we've been working on in the last few [modules](https://rotational.io/tags/pubsub-101) and see if we can run some queries. Consider the query below.
 
 ```sql
 SELECT * FROM flight-positions
@@ -55,7 +51,7 @@ Note that the events are returned in the order that they were published, startin
 
 Of course, you can also run queries directly from Python SDK. With the pyensign client, the `query()` function returns a cursor to fetch events with `fetchone()`, `fetchmany()`, and `fetchall()`, similar to how you would process query results with a database adapter like psycopg2.
 
-*Retrieving the first event*
+### Retrieve the First Event from Your Topic
 ```python
 ensign = Ensign()
 cursor = await ensign.query("SELECT * FROM flight-positions")
@@ -74,7 +70,7 @@ Event:
 
 _Pro Tip: If you are running into async errors with the code, you can run it in a Python notebook to avoid writing the `asyncio` boilerplate_
 
-*Retrieving the first three events*
+### Retrieve the First `n` Events from Your Topic
 
 ```python
 cursor = await ensign.query("SELECT * FROM flight-positions")
@@ -107,7 +103,9 @@ Event:
 	created: 2023-11-29 15:37:57
 ```
 
-You can also iterate over the cursor iself to asynchronously retrieve the stream of events, which is like subscribing at a previous point in time.
+### Retrieve All Events from Your Topic
+
+You can also iterate over the cursor itself to asynchronously retrieve the stream of events, which is like subscribing at a previous point in time.
 
 ```python
 cursor = await ensign.query("SELECT * FROM flight-positions")
@@ -226,4 +224,6 @@ Name: count, dtype: int64
 
 ## Back to the Future
 
-Congrats for getting through all the modules! Now that you've created a project with pub/sub dataflows, hopefully the idea of creating real-time applications seems more achievable. Don't hesitate to reach out to support@rotational.io if you have further questions.
+⭐🎉⭐  Congrats on completing PubSub101!  ⭐🎉⭐
+
+Now that you've created a project with pub/sub dataflows, there's nothing stopping you from creating real-time applications. We can't wait to see what you do with Ensign! Don't hesitate to reach out to support@rotational.io if you have further questions.
