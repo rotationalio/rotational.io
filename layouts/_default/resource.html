@@ -1,5 +1,5 @@
 <section>
-    <!-- Display register now button if the event date is in the future. -->
+    <!-- Display registration button and navigate user to registration page if the event date is in the future. -->
    {{ $now := time.Now }}
     {{ $eventDate := time.AsTime .Params.event_date}}
     {{ if $eventDate.After $now}}
