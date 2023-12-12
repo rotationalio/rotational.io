@@ -1892,6 +1892,11 @@ video {
   background-color: rgb(25 46 91 / var(--tw-bg-opacity));
 }
 
+.bg-\[\#238553\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(35 133 83 / var(--tw-bg-opacity));
+}
+
 .bg-sky-900 {
   --tw-bg-opacity: 1;
   background-color: rgb(12 74 110 / var(--tw-bg-opacity));
@@ -2083,6 +2088,16 @@ video {
   padding-bottom: 1rem;
 }
 
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.py-2 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
 .px-3 {
   padding-left: 0.75rem;
   padding-right: 0.75rem;
@@ -2091,11 +2106,6 @@ video {
 .py-1 {
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
-}
-
-.px-4 {
-  padding-left: 1rem;
-  padding-right: 1rem;
 }
 
 .px-2 {
@@ -2116,11 +2126,6 @@ video {
 .py-2\.5 {
   padding-top: 0.625rem;
   padding-bottom: 0.625rem;
-}
-
-.py-2 {
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
 }
 
 .px-14 {
@@ -2291,6 +2296,11 @@ video {
   line-height: 1.75rem;
 }
 
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
 .text-sm {
   font-size: 0.875rem;
   line-height: 1.25rem;
@@ -2299,11 +2309,6 @@ video {
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
-}
-
-.text-lg {
-  font-size: 1.125rem;
-  line-height: 1.75rem;
 }
 
 .text-7xl {
@@ -2980,6 +2985,21 @@ em {
 
 .list-multi-author:last-child::after, .single-multi-author:last-child::after {
   content: '';
+}
+
+/* Resource page styles */
+
+.resource-header {
+  text-wrap: balance;
+}
+
+.resource-description > p:not(:only-of-type) {
+  padding-top: 1.5rem;
+}
+
+.resource-description li {
+  list-style-type: disc;
+  list-style-position: inside;
 }
 
 .hover\:rounded-full:hover {
