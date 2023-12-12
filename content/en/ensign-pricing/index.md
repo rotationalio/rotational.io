@@ -36,7 +36,7 @@ Use our [Data Playground](/data-playground) to get started.
 *Data only available for 3 months
 
 ### Connectors:
-- PostGres
+- PostgreSQL
 
 <!-- Button -->
 {{< sanbox-pricing-bttn href="https://rotational.app/register" text="Start" >}}
@@ -65,7 +65,7 @@ Bring your own data source and we’ll work with you.
 - E2E Encryption
 
 ### Connectors:
-- PostGres
+- PostgreSQL
 - MySQL
 
 {{< price-contact-bttn text="Contact" >}}
@@ -94,7 +94,7 @@ Bring your own data sources and we’ll work with you.
 - E2E Encryption
 
 ### Connectors:
-- PostGres
+- PostgreSQL
 - MySQL
 - MS SQL Server
 - Snowflake
@@ -120,7 +120,7 @@ Bring your own data sources and we’ll work with you.
 ### Includes:
 - Unlimited Projects
 - Unlimited Topics
-- 1,024 GB data storage
+- 1024 GB data storage
 - Unlimited members
 - Dedicated support
 - 9 Tenants
@@ -129,7 +129,7 @@ Bring your own data sources and we’ll work with you.
 - BYOK
 
 ### Connectors:
-- PostGres
+- PostgreSQL
 - MySQL
 - MS SQL Server
 - Snowflake
