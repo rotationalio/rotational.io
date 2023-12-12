@@ -12,7 +12,7 @@ Get started in our sandbox environment. Upgrade when you’re ready. We grow whe
 
 <!-- Price Grid -->
 
-{{< quadruple >}}
+{{< quadruple id="ensign-pricing-grid" >}}
 
 {{% price-grid %}}
 
@@ -23,6 +23,23 @@ Easy, no cost, low stakes way to experiment.
 Free forever
 
 Use our [Data Playground](/data-playground) to get started.
+
+**Includes**
+- Unlimited projects
+- Unlimited topics
+- 5 GB data*
+- 2 team members
+- Helpdesk support
+- 1 Tenant
+- 1 Region
+
+*Data only available for 3 months
+
+**Connectors:**
+- PostGres
+
+<!-- Button -->
+{{< sanbox-pricing-bttn href="https://rotational.app/register" text="Start" color="#37A36E" hoverColor="#37A36E">}}
 
 {{% /price-grid %}}
 

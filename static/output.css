@@ -1962,6 +1962,15 @@ video {
   background-color: rgb(239 68 68 / var(--tw-bg-opacity));
 }
 
+.bg-\[\$color\] {
+  background-color: $color;
+}
+
+.bg-\[\#37A36E\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(55 163 110 / var(--tw-bg-opacity));
+}
+
 .bg-hexagon {
   background-image: url('/img/tileable-hexagon.png');
 }

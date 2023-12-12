@@ -1,0 +1,10 @@
+{{ $href := .Get "href" }}
+{{ $text := .Get "text" }}
+{{ $color := .Get "color" }}
+{{ $hoverColor := .Get "hoverColor" }}
+<div class="my-4">
+    <a href="{{ $href }}" target="_blank" class="font-semibold text-white text-lg rounded px-3 py-1 bg-[{{$color}}] hover-[{{$hoverColor}}]">
+        {{ $text }}
+   </a>
+</div>
+
