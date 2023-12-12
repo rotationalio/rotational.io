@@ -1342,6 +1342,10 @@ video {
   margin-right: 0.75rem;
 }
 
+.mt-auto {
+  margin-top: auto;
+}
+
 .mr-14 {
   margin-right: 3.5rem;
 }
@@ -1645,6 +1649,10 @@ video {
 
 .items-start {
   align-items: flex-start;
+}
+
+.items-end {
+  align-items: flex-end;
 }
 
 .items-center {
@@ -1967,13 +1975,14 @@ video {
   background-color: rgb(239 68 68 / var(--tw-bg-opacity));
 }
 
-.bg-\[\$color\] {
-  background-color: $color;
-}
-
 .bg-\[\#37A36E\] {
   --tw-bg-opacity: 1;
   background-color: rgb(55 163 110 / var(--tw-bg-opacity));
+}
+
+.bg-\[\#BF5708\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(191 87 8 / var(--tw-bg-opacity));
 }
 
 .bg-hexagon {
@@ -2999,6 +3008,34 @@ em {
 
 .resource-description li {
   list-style-type: disc;
+  list-style: inside;
+}
+
+/* Ensign Pricing page styles */
+
+.price-grid-item h2 {
+  font-size: large;
+  font-weight: 700;
+  text-align: center;
+}
+
+.price-grid-item h3 {
+  margin-top: 1rem;
+  font-weight: 700;
+}
+
+.price-grid-item p > a {
+  color: #1d65a6;
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+.price-grid-item p {
+  padding-top: 1rem;
+}
+
+.price-grid-item > ul > li {
+  list-style-type: disc;
   list-style-position: inside;
 }
 
@@ -3023,6 +3060,36 @@ em {
 .hover\:bg-\[\#72A3C0\]:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(114 163 192 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-\[\#E66809\]:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(230 104 9 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-\[\#F7954A\]:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(247 149 74 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-\[\#3BB077\]:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(59 176 119 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-\[\#F68128\]:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(246 129 40 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-\[\#39AC75\]:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(57 172 117 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-\[\#3CB47A\]:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(60 180 122 / var(--tw-bg-opacity));
 }
 
 .hover\:bg-opacity-50:hover {
@@ -3144,6 +3211,10 @@ em {
 
   .sm\:w-3\/5 {
     width: 60%;
+  }
+
+  .sm\:w-1\/3 {
+    width: 33.333333%;
   }
 
   .sm\:grid-cols-7 {
@@ -3350,6 +3421,10 @@ em {
     width: 20rem;
   }
 
+  .md\:w-3\/4 {
+    width: 75%;
+  }
+
   .md\:max-w-sm {
     max-width: 24rem;
   }
@@ -3384,6 +3459,10 @@ em {
 
   .md\:gap-8 {
     gap: 2rem;
+  }
+
+  .md\:gap-4 {
+    gap: 1rem;
   }
 
   .md\:gap-x-32 {
