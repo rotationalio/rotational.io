@@ -425,5 +425,33 @@ em {
 
 .resource-description li {
   list-style-type: disc;
+  list-style: inside;
+}
+
+/* Ensign Pricing page styles */
+
+.price-grid-item h2 {
+  font-size: large;
+  font-weight: 700;
+  text-align: center;
+}
+
+.price-grid-item h3 {
+  margin-top: 1rem;
+  font-weight: 700;
+}
+
+.price-grid-item p > a {
+  color: #1d65a6;
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+.price-grid-item p {
+  padding-top: 1rem;
+}
+
+.price-grid-item > ul > li {
+  list-style-type: disc;
   list-style-position: inside;
 }

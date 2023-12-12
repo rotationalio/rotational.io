@@ -1,0 +1,17 @@
+{{ define "title" }}
+    {{ .Title }} &ndash; {{ .Site.Title }}
+{{ end }}
+
+{{ define "header" }}
+<div class="relative bg-[#1D65A6]">
+    {{ partial "site-nav.html" . }}
+</div>
+{{ end }}
+
+{{ define "main" }}
+<div class="max-w-7xl mx-auto my-8 px-4">
+  <div class="mt-14">
+    {{ .Content | .RenderString }}
+  </div>
+</div>
+{{ end }}
