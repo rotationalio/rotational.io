@@ -20,7 +20,8 @@ type: ensign-pricing
 
 Easy, no cost, low stakes way to experiment.
 
-{{< price-text text="Free Forever" >}}
+{{< price-text text="$0.00/mo" >}}
+Free forever
 
 Use our [Data Playground](/data-playground) to get started.
 
@@ -173,3 +174,5 @@ Looking for a faster and more cost-effective method to collaborate and move data
 {{% /vtriple %}}
 
 {{< /vpc-triple >}}
+
+{{< price-contact-modal >}}
