@@ -1,7 +1,7 @@
 ---
 title: "Ensign Pricing"
 date: 2023-12-11T17:17:02-05:00
-draft: true
+draft: false
 noicon: true
 type: ensign-pricing
 ---
