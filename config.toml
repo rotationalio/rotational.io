@@ -109,8 +109,8 @@ copyright = "Copyright &copy; Rotational Labs, Inc. 2021&ndash;{year} &middot; A
 contactFormSuccessTitle = "Your message has been sent successfully!"
 contactFormSuccessMessage = "Thank you for your interest in Rotational Labs! Please expect a response within one business day. If you need immediate assistance, please email support@rotational.io."
 newsletterFormSuccessMessage = "Thank you for your interest!"
-ensignFormErrorTitle=""
-ensignFormErrorMessage="Your request didn't go through, please try again. If you need immediate assistance, please email support@rotational.io. "
+priceContactFormSuccessMessage = "Thank you for your interest in Ensign! We will contact you soon."
+contactFormErrorMessage = "Your request did not go through, please try again. If you need immediate assistance, please email support@rotational.io. "
 
 [params.socials]
 [params.socials.twitter]
