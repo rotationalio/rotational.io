@@ -57,9 +57,7 @@ link = "https://unpkg.com/lunr/lunr.js"
 ## English Navigation
 [[Languages.en.menu.main]]
 identifier = 'Ensign'
-pageRef = 'ensign'
 name = 'Ensign'
-url = '/ensign'
 weight = 1
 
 [[Languages.en.menu.main]]
@@ -95,6 +93,24 @@ pageRef = 'login'
 name = 'Get Ensign Free'
 url = 'https://rotational.app/register'
 weight = 6
+
+[[Languages.en.menu.main]]
+name = 'Ensign for Data Teams'
+pageRef = '/ensign'
+parent = 'Ensign'
+weight = 1
+
+[[Languages.en.menu.main]]
+name = 'Ensign for Enterprise'
+pageRef = '/ensign-enterprise'
+parent = 'Ensign'
+weight = 2
+
+[[Languages.en.menu.main]]
+name = 'Pricing'
+pageRef = '/ensign-pricing'
+parent = 'Ensign'
+weight = 3
 
 ## English Language
 [Languages.en]

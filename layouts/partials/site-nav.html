@@ -2,15 +2,26 @@
     <a href="/" class="">
         <img src="img/logo.png" alt="Rotational Lab logo" class="h-14 w-auto sm:h-14">
     </a>
-    <div class="topnav" id="myTopnav">
+    <ul class="topnav" id="myTopnav">
         {{ $currentPage := . }}
         {{ range .Site.Menus.main }}
-        <a class=" {{ if $currentPage.IsMenuCurrent " main" . }}active{{ end }}" href="{{ .URL }}">
-            {{ .Name }}
-        </a>
+        <li class="flex">
+            <a id="{{ .Name}}-link" class=" {{ if $currentPage.IsMenuCurrent " main" . }}active{{ end }}" href="{{ .URL }}">
+                {{ .Name }}
+            </a>
+            {{ if .HasChildren }}
+            <button type="button" title="Open Ensign menu" onclick="showEnsignMenu()" id="ensign-carat-up"><i class="fa fa-caret-down -ml-4 mt-2 text-[#192E5B] lg:text-white" aria-hidden="true"></i></button>
+            <button type="button" title="Close Ensign menu" onclick="hideEnsignMenu()" id="ensign-carat-down" class="hidden"><i class="fa fa-caret-up -ml-4 mt-2 text-[#192E5B] lg:text-white" aria-hidden="true"></i></button>
+            <ul id="ensign-children" class="hidden absolute mt-10 bg-white lg:bg-transparent">
+                {{ range .Children }}
+                <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+                {{ end }}
+            </ul>
+            {{ end }}
+        </li>
         {{ end }}
         <a class="icon" onclick="openMobNav()">
             <i class="fa fa-bars"></i>
         </a>
-    </div>
+    </ul>
 </nav>

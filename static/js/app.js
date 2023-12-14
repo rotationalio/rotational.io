@@ -377,3 +377,22 @@ priceContactForm?.addEventListener('submit', (event) => {
       return response.json();
     })
 });
+
+// Toggle Ensign drop-down menu when user clicks the carat button.
+function showEnsignMenu() {
+  const ensignMenu = document.getElementById('ensign-children');
+  const ensignCaratUp = document.getElementById('ensign-carat-up');
+  const ensignCaratDown = document.getElementById('ensign-carat-down');
+  ensignMenu.classList.remove('hidden');
+  ensignCaratUp.classList.add('hidden');
+  ensignCaratDown.classList.remove('hidden');
+}
+
+function hideEnsignMenu() {
+  const ensignMenu = document.getElementById('ensign-children');
+  const ensignCaratUp = document.getElementById('ensign-carat-up');
+  const ensignCaratDown = document.getElementById('ensign-carat-down');
+  ensignMenu.classList.add('hidden');
+  ensignCaratUp.classList.remove('hidden');
+  ensignCaratDown.classList.add('hidden');
+}
