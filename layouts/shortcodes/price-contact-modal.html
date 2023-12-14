@@ -1,0 +1,51 @@
+<div id="price-contact-modal" tabindex="-1" aria-hidden="true" class="hidden overscroll-contain overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+  <div class="relative m-auto p-4 w-full max-w-md max-h-full">
+
+    <!-- Modal content -->
+    <div class="relative pb-4 md:pb-5 bg-white rounded-lg shadow">
+
+      <!-- Modal header -->
+      <div class="flex justify-between mt-20 p-4 md:p-5 rounded-t">
+        <div>
+          <h3 class="pt-1 text-xl font-semibold">
+            Let's Talk!
+          </h3>
+          <p class="pt-4">Just the basic details first before we dive into your specialized needs and uses cases.</p>
+        </div>
+        <button type="button" id="close-modal-bttn" class="end-2.5 text-gray-600 bg-transparent hover:bg-gray-200 hover:text-gray-600 text-sm w-8 h-8 inline-flex justify-center items-center">
+          <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+          </svg>
+          <span class="sr-only">Close modal</span>
+        </button>
+      </div>
+
+      <!-- Modal confirmation message -->
+      <div id="price-contact-confirmation" class="hidden bg-teal-100 border-t-4 border-teal-500 rounded-b text-teal-900 px-4 py-3 shadow-md"></div>
+
+      <!-- Modal form -->
+      <div class="px-4 md:px-5">
+        <form action="contact" method="post" id="price-contact-form">
+          <label for="first_name" class="price-label">First Name (required)</label>
+          <input type="text" name="first_name" id="first_name" required class="price-input">
+          
+          <label for="last_name" class="price-label">Last Name (required)</label>
+          <input type="text" name="last_name" id="last_name" required class="price-input">
+          
+          <label for="email" class="price-label">Work Email Address (required)</label>
+          <input type="text" name="email" id="email" required class="price-input">
+           
+          <label for="message" class="price-label">Brief Description of Use Case and Data Source (optional)</label>
+          <textarea type="text" name="message" id="message" placeholder="e.g. Accelerate data pipelines for supply chain with. Using PostgreSQL." class="price-input"></textarea>
+           
+          <div class="flex justify-center">
+            <button type="submit" class="w-1/2 mx-auto text-white bg-[#1D65A6] hover:bg-[#192E5B] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal overlay -->
+<div id="price-modal-overlay" class="hidden fixed top-0 left-0 right-0 bottom-0 bg-black/50"></div>
