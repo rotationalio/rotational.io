@@ -350,7 +350,7 @@ priceContactForm?.addEventListener('submit', (event) => {
   const data = Object.fromEntries(formData);
 
   const formattedData = {
-    data,
+    ...data,
     lists: [
       '4ada7d4b-e0a7-4017-8b9d-4db172b5be64',
       '54b7fc6a-db4b-491b-b6ff-4348c15072bc',
