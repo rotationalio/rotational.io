@@ -21,7 +21,14 @@
       </div>
 
       <!-- Modal confirmation message -->
-      <div id="price-contact-confirmation" class="hidden bg-teal-100 border-t-4 border-teal-500 rounded-b text-teal-900 px-4 py-3 shadow-md"></div>
+      <div id="price-contact-confirmation" class="hidden bg-[#EBF5FF] border-t-4 border-[#1E429F] rounded-b text-[#1E429F] p-4 mb-4 shadow-md">
+        <p class="font-bold">{{site.Params.contactFormSuccessTitle}} </p>
+        <p class="text-sm">{{site.Params.priceContactFormSuccessMessage}}</p>
+      </div>
+
+      <div id="price-contact-error" class="hidden bg-red-200 border-t-4 border-red-600 text-red-900 rounded-b p-4 mb-4 shadow-md">
+        <p class="text-sm">{{site.Params.contactFormErrorMessage}}</p>
+      </div>
 
       <!-- Modal form -->
       <div class="px-4 md:px-5">

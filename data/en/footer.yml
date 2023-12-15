@@ -8,10 +8,15 @@ footer:
     product_items:
     - name: Ensign
       link: https://rotational.app
-    - name: Documentation
+    - name: Pricing
+      link: /ensign-pricing
+    - name: Docs
       link: https://ensign.rotational.dev/getting-started/
     - name: SDKs
       link: https://ensign.rotational.dev/sdk/
+    - name: Status
+      link: https://status.rotational.dev/
+
 
 #Company
   company:
