@@ -123,6 +123,8 @@ pre {
   float: left;
   color: #f2f2f2;
   text-align: center;
+  margin-top: -8px;
+  margin-left: 4px;
   padding: 14px 0px;
   text-decoration: none;
   font-size: 17px;
@@ -197,7 +199,7 @@ pre {
     color: #192e5b;
   }
 
-  #ensign-children {
+  #ensign-menu-children {
     background-color: white;
     margin-top: -10px;
   }
@@ -209,10 +211,14 @@ pre {
     font-weight: 600;
   }
 
-  #ensign-children {
+  #ensign-menu-children {
     display: none;
     position: absolute;
     margin-left: 16px;
+  }
+
+  #close-ensign-menu {
+    display: none;
   }
 }
 
@@ -221,7 +227,7 @@ pre {
     display: none !important;
   }
 
-  #ensign-children {
+  #ensign-menu-children {
     display: block;
     padding-top: 10px;
     padding-left: 16px;

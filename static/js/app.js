@@ -382,18 +382,18 @@ priceContactForm?.addEventListener('submit', (event) => {
 
 
 function showEnsignMenu() {
-  const ensignMenu = document.getElementById('ensign-children');
-  const openEnsignMenu = document.getElementById('ensign-caret-down');
-  const closeEnsignMenu = document.getElementById('ensign-caret-up');
+  const ensignMenu = document.getElementById('ensign-menu-children');
+  const openEnsignMenu = document.getElementById('open-ensign-menu');
+  const closeEnsignMenu = document.getElementById('close-ensign-menu');
   ensignMenu.style.display = 'block';
   openEnsignMenu.style.display = 'none';
   closeEnsignMenu.style.display = 'inline-block';
 }
 
 function hideEnsignMenu() {
-  const ensignMenu = document.getElementById('ensign-children');
-  const openEnsignMenu = document.getElementById('ensign-caret-down');
-  const closeEnsignMenu = document.getElementById('ensign-caret-up');
+  const ensignMenu = document.getElementById('ensign-menu-children');
+  const openEnsignMenu = document.getElementById('open-ensign-menu');
+  const closeEnsignMenu = document.getElementById('close-ensign-menu');
   ensignMenu.style.display = 'none';
   openEnsignMenu.style.display = 'inline-block';
   closeEnsignMenu.style.display = 'none';
