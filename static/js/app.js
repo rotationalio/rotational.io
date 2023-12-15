@@ -348,9 +348,11 @@ priceContactForm?.addEventListener('submit', (event) => {
   // TODO: Create function to handle formatting form data.
   const formData = new FormData(priceContactForm);
   const data = Object.fromEntries(formData);
+  const { subscribe, ...rest } = data;
 
   const formattedData = {
-    data,
+    subscribe: true,
+    ...rest,
     lists: [
       '4ada7d4b-e0a7-4017-8b9d-4db172b5be64',
       '54b7fc6a-db4b-491b-b6ff-4348c15072bc',
@@ -370,10 +372,23 @@ priceContactForm?.addEventListener('submit', (event) => {
         priceContactForm.reset();
 
         // Hide the price contact form submission confirmation message after 10 seconds.
-        setTimeout(() => {
-          priceContactConfirmation.classList.add('hidden');
-        }, 10000);
+        setMessageTimeOut(priceContactConfirmation);
+      }else {
+        const priceContactError = document.getElementById('price-contact-error');
+        priceContactError.classList.add('hidden');
+        priceContactForm.reset();
+
+        // Hide the price contact form error message after 10 seconds.
+        setMessageTimeOut(priceContactError, 10000);
       }
       return response.json();
     })
 });
+
+// Hide contact form submission or error message after 10 seconds.
+// TODO: Use this function for all contact form submission messages.
+function setMessageTimeOut(element, timeLimit) {
+  setTimeout(() => {
+    element.classList.add('hidden');
+  }, timeLimit || 10000);
+}
