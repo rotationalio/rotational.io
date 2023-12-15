@@ -152,6 +152,11 @@ pre {
   text-align: right;
 }
 
+.ensign-menu {
+  display: flex;
+  padding: 14px 16px 0px 16px;
+}
+
 /* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
 @media screen and (max-width: 910px) {
   .topnav.responsive {
@@ -166,7 +171,7 @@ pre {
   .topnav.responsive .icon {
     border-radius: 0 !important;
   }
-  .topnav.responsive a, .topnav.responsive span/* , #ensign-caret-down, #ensign-caret-up */ {
+  .topnav.responsive a, .topnav.responsive span {
     float: none;
     display: block;
     text-align: left;
@@ -195,13 +200,13 @@ pre {
     display: block;
   }
 
-  .fa-caret-down, .fa-caret-up {
-    color: #192e5b;
-  }
-
   #ensign-menu-children {
     background-color: white;
     margin-top: -10px;
+  }
+
+  .fa-caret-down, .fa-caret-up {
+    color: #192e5b;
   }
 }
 

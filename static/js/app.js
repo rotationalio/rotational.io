@@ -378,16 +378,14 @@ priceContactForm?.addEventListener('submit', (event) => {
     })
 });
 
-// Toggle Ensign drop-down menu when user clicks the carat button.
-
-
+// Toggles the Ensign menu on screens bigger than 600px.
 function showEnsignMenu() {
   const ensignMenu = document.getElementById('ensign-menu-children');
   const openEnsignMenu = document.getElementById('open-ensign-menu');
   const closeEnsignMenu = document.getElementById('close-ensign-menu');
   ensignMenu.style.display = 'block';
   openEnsignMenu.style.display = 'none';
-  closeEnsignMenu.style.display = 'inline-block';
+  closeEnsignMenu.style.display = 'block';
 }
 
 function hideEnsignMenu() {
@@ -395,6 +393,6 @@ function hideEnsignMenu() {
   const openEnsignMenu = document.getElementById('open-ensign-menu');
   const closeEnsignMenu = document.getElementById('close-ensign-menu');
   ensignMenu.style.display = 'none';
-  openEnsignMenu.style.display = 'inline-block';
+  openEnsignMenu.style.display = 'block';
   closeEnsignMenu.style.display = 'none';
 }
