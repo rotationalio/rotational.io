@@ -1362,6 +1362,10 @@ video {
   margin-top: 0.25rem;
 }
 
+.-mt-2 {
+  margin-top: -0.5rem;
+}
+
 .mb-14 {
   margin-bottom: 3.5rem;
 }
@@ -1388,10 +1392,6 @@ video {
 
 .mr-14 {
   margin-right: 3.5rem;
-}
-
-.-ml-4 {
-  margin-left: -1rem;
 }
 
 .block {
@@ -2359,6 +2359,10 @@ video {
   padding-right: 1rem;
 }
 
+.pt-\[14px\] {
+  padding-top: 14px;
+}
+
 .pb-\[56\.25\%\] {
   padding-bottom: 56.25%;
 }
@@ -2587,11 +2591,6 @@ video {
   color: rgb(75 85 99 / var(--tw-text-opacity));
 }
 
-.text-blue-600 {
-  --tw-text-opacity: 1;
-  color: rgb(37 99 235 / var(--tw-text-opacity));
-}
-
 .underline {
   text-decoration-line: underline;
 }
@@ -2741,6 +2740,15 @@ pre {
   font-size: 17px;
 }
 
+.fa-caret-down, .fa-caret-up {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 0px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
 /* Change the color of links on hover */
 
 .topnav a:hover {
@@ -2764,6 +2772,88 @@ pre {
   border-radius: 8px;
   width: 100%;
   text-align: right;
+}
+
+/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
+
+@media screen and (max-width: 910px) {
+  .topnav.responsive {
+    position: fixed;
+    right: 0;
+    left: 0;
+    top: 50px;
+    background-color: white;
+    z-index: 9999;
+    overflow: visible;
+  }
+
+  .topnav.responsive .icon {
+    border-radius: 0 !important;
+  }
+
+  .topnav.responsive a, .topnav.responsive span/* , #ensign-caret-down, #ensign-caret-up */ {
+    float: none;
+    display: block;
+    text-align: left;
+    font-size: 15px;
+    color: #192e5b;
+  }
+
+  .topnav.responsive a:hover {
+    font-weight: bold;
+  }
+
+  .topnav.responsive a.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin-top: -50px;
+    text-align: right;
+    color: white;
+  }
+
+  .topnav a, .topnav span {
+    display: none;
+  }
+
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+
+  .fa-caret-down, .fa-caret-up {
+    color: #192e5b;
+  }
+
+  #ensign-children {
+    background-color: white;
+    margin-top: -10px;
+  }
+}
+
+@media screen and (min-width: 601px) {
+  .topnav {
+    display: flex;
+    font-weight: 600;
+  }
+
+  #ensign-children {
+    display: none;
+    position: absolute;
+    margin-left: 16px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .fa-caret-down, .fa-caret-up {
+    display: none !important;
+  }
+
+  #ensign-children {
+    display: block;
+    padding-top: 10px;
+    padding-left: 16px;
+  }
 }
 
 /* Style the data-playground search results. */
@@ -2801,64 +2891,6 @@ blockquote {
 
 em {
   font-weight: 500 !important;
-}
-
-@media screen and (max-width: 910px) {
-  .topnav a {
-    display: none;
-  }
-
-  .topnav a.icon {
-    float: right;
-    display: block;
-  }
-}
-
-/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
-
-@media screen and (max-width: 910px) {
-  .topnav.responsive {
-    position: fixed;
-    right: 0;
-    left: 0;
-    top: 50px;
-    background-color: white;
-    z-index: 9999;
-    overflow: visible;
-  }
-
-  .topnav.responsive .icon {
-    border-radius: 0 !important;
-  }
-
-  .topnav.responsive a {
-    float: none;
-    display: block;
-    text-align: left;
-    font-size: 15px;
-    color: #192e5b;
-    border-bottom: 1px solid #eee;
-  }
-
-  .topnav.responsive a:hover {
-    font-weight: bold;
-  }
-
-  .topnav.responsive a.icon {
-    position: absolute;
-    right: 0;
-    top: 0;
-    margin-top: -50px;
-    text-align: right;
-    color: white;
-  }
-}
-
-@media screen and (min-width: 601px) {
-  .topnav {
-    display: flex;
-    font-weight: 600;
-  }
 }
 
 .hover-card:hover {
@@ -3292,10 +3324,6 @@ em {
     margin-top: 5rem;
   }
 
-  .sm\:-ml-4 {
-    margin-left: -1rem;
-  }
-
   .sm\:ml-20 {
     margin-left: 5rem;
   }
@@ -3499,6 +3527,10 @@ em {
     margin-left: 0.5rem;
   }
 
+  .md\:mt-40 {
+    margin-top: 10rem;
+  }
+
   .md\:mb-4 {
     margin-bottom: 1rem;
   }
@@ -3698,11 +3730,6 @@ em {
   .md\:leading-snug {
     line-height: 1.375;
   }
-
-  .md\:text-white {
-    --tw-text-opacity: 1;
-    color: rgb(255 255 255 / var(--tw-text-opacity));
-  }
 }
 
 @media (min-width: 1024px) {
@@ -3750,10 +3777,6 @@ em {
 
   .lg\:mt-12 {
     margin-top: 3rem;
-  }
-
-  .lg\:mt-40 {
-    margin-top: 10rem;
   }
 
   .lg\:ml-3 {
@@ -3820,10 +3843,6 @@ em {
     gap: 0px;
   }
 
-  .lg\:bg-transparent {
-    background-color: transparent;
-  }
-
   .lg\:px-12 {
     padding-left: 3rem;
     padding-right: 3rem;
@@ -3867,11 +3886,6 @@ em {
   .lg\:text-xl {
     font-size: 1.25rem;
     line-height: 1.75rem;
-  }
-
-  .lg\:text-white {
-    --tw-text-opacity: 1;
-    color: rgb(255 255 255 / var(--tw-text-opacity));
   }
 }
 

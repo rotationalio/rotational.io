@@ -379,20 +379,22 @@ priceContactForm?.addEventListener('submit', (event) => {
 });
 
 // Toggle Ensign drop-down menu when user clicks the carat button.
+
+
 function showEnsignMenu() {
   const ensignMenu = document.getElementById('ensign-children');
-  const ensignCaratUp = document.getElementById('ensign-carat-up');
-  const ensignCaratDown = document.getElementById('ensign-carat-down');
-  ensignMenu.classList.remove('hidden');
-  ensignCaratUp.classList.add('hidden');
-  ensignCaratDown.classList.remove('hidden');
+  const openEnsignMenu = document.getElementById('ensign-caret-down');
+  const closeEnsignMenu = document.getElementById('ensign-caret-up');
+  ensignMenu.style.display = 'block';
+  openEnsignMenu.style.display = 'none';
+  closeEnsignMenu.style.display = 'inline-block';
 }
 
 function hideEnsignMenu() {
   const ensignMenu = document.getElementById('ensign-children');
-  const ensignCaratUp = document.getElementById('ensign-carat-up');
-  const ensignCaratDown = document.getElementById('ensign-carat-down');
-  ensignMenu.classList.add('hidden');
-  ensignCaratUp.classList.remove('hidden');
-  ensignCaratDown.classList.add('hidden');
+  const openEnsignMenu = document.getElementById('ensign-caret-down');
+  const closeEnsignMenu = document.getElementById('ensign-caret-up');
+  ensignMenu.style.display = 'none';
+  openEnsignMenu.style.display = 'inline-block';
+  closeEnsignMenu.style.display = 'none';
 }

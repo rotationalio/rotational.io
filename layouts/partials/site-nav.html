@@ -5,16 +5,24 @@
     <ul class="topnav" id="myTopnav">
         {{ $currentPage := . }}
         {{ range .Site.Menus.main }}
-        <li class="flex">
-            <a id="{{ .Name}}-link" class=" {{ if $currentPage.IsMenuCurrent " main" . }}active{{ end }}" href="{{ .URL }}">
+        <li>
+        {{ if eq .Name "Ensign" }}
+        <span>
+            <div class="ensign-menu-title flex pt-[14px] px-4">
+                {{ .Name }}
+            <button type="button" title="Open Ensign menu" onclick="showEnsignMenu()" id="ensign-caret-down"><i class="fa fa-caret-down -mt-2 ml-1" aria-hidden="true"></i></button>
+            <button type="button" title="Close Ensign menu" onclick="hideEnsignMenu()" id="ensign-caret-up" class="hidden"><i class="fa fa-caret-up -mt-2 ml-1" aria-hidden="true"></i></button>
+            </div>
+        </span>
+            {{ else }}
+            <a class=" {{ if $currentPage.IsMenuCurrent " main" . }}active{{ end }}" href="{{ .URL }}">
                 {{ .Name }}
             </a>
+            {{ end }}
             {{ if .HasChildren }}
-            <button type="button" title="Open Ensign menu" onclick="showEnsignMenu()" id="ensign-carat-up"><i class="fa fa-caret-down -ml-4 mt-2 text-[#192E5B] lg:text-white" aria-hidden="true"></i></button>
-            <button type="button" title="Close Ensign menu" onclick="hideEnsignMenu()" id="ensign-carat-down" class="hidden"><i class="fa fa-caret-up -ml-4 mt-2 text-[#192E5B] lg:text-white" aria-hidden="true"></i></button>
-            <ul id="ensign-children" class="hidden absolute mt-10 bg-white lg:bg-transparent">
+            <ul id="ensign-children">
                 {{ range .Children }}
-                <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+                <li><a href="{{ .URL }}">- {{ .Name }}</a></li>
                 {{ end }}
             </ul>
             {{ end }}
