@@ -157,6 +157,32 @@ pre {
   padding: 14px 16px 0px 16px;
 }
 
+#ensign-dropdown-menu a {
+  font-size: medium;
+}
+
+@media screen and (min-width: 911px) {
+  #ensign-dropdown-menu {
+    background-color: #192e5b;
+    margin-top: -10px;
+    border-radius: 8px;
+  }
+  
+  #ensign-dropdown-menu a:hover {
+    color: #CFCFCF;
+  }
+  
+  #ensign-dropdown-menu li {
+    overflow: hidden;
+    padding: 2px;
+    border-bottom: 1px solid #CFCFCF;
+  }
+  
+  #ensign-dropdown-menu li:last-child {
+    border-bottom: none;
+  }
+}
+
 /* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
 @media screen and (max-width: 910px) {
   .topnav.responsive {
@@ -200,13 +226,16 @@ pre {
     display: block;
   }
 
-  #ensign-menu-children {
-    background-color: white;
-    margin-top: -10px;
-  }
-
   .fa-caret-down, .fa-caret-up {
     color: #192e5b;
+  }
+}
+
+@media screen and ((min-width: 601px) and (max-width: 910px)) {
+  #ensign-dropdown-menu {
+    background-color: white;
+    margin-top: -10px;
+    border-radius: 8px;
   }
 }
 
@@ -216,13 +245,13 @@ pre {
     font-weight: 600;
   }
 
-  #ensign-menu-children {
+  #ensign-dropdown-menu {
     display: none;
     position: absolute;
     margin-left: 16px;
   }
 
-  #close-ensign-menu {
+  #close-ensign-menu-bttn {
     display: none;
   }
 }
@@ -232,7 +261,7 @@ pre {
     display: none !important;
   }
 
-  #ensign-menu-children {
+  #ensign-dropdown-menu {
     display: block;
     padding-top: 10px;
     padding-left: 16px;

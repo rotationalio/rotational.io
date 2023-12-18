@@ -393,21 +393,29 @@ function setMessageTimeOut(element, timeLimit) {
   }, timeLimit || 10000);
 }
 
-// Toggles the Ensign menu on screens bigger than 600px.
+// Toggles the Ensign menu on screens with a width larger than 600px.
 function showEnsignMenu() {
-  const ensignMenu = document.getElementById('ensign-menu-children');
-  const openEnsignMenu = document.getElementById('open-ensign-menu');
-  const closeEnsignMenu = document.getElementById('close-ensign-menu');
+  const ensignMenu = document.getElementById('ensign-dropdown-menu');
+  const openEnsignMenu = document.getElementById('open-ensign-menu-bttn');
+  const closeEnsignMenu = document.getElementById('close-ensign-menu-bttn');
   ensignMenu.style.display = 'block';
   openEnsignMenu.style.display = 'none';
   closeEnsignMenu.style.display = 'block';
+
+  document?.addEventListener('click', (event) => {
+    const isClickInside = ensignMenu.contains(event.target);
+    const isClickOnButton = openEnsignMenu.contains(event.target);
+    if (!isClickInside && !isClickOnButton) {
+      hideEnsignMenu();
+    }
+  });
 }
 
 function hideEnsignMenu() {
-  const ensignMenu = document.getElementById('ensign-menu-children');
-  const openEnsignMenu = document.getElementById('open-ensign-menu');
-  const closeEnsignMenu = document.getElementById('close-ensign-menu');
+  const ensignMenu = document.getElementById('ensign-dropdown-menu');
+  const openEnsignMenu = document.getElementById('open-ensign-menu-bttn');
+  const closeEnsignMenu = document.getElementById('close-ensign-menu-bttn');
   ensignMenu.style.display = 'none';
   openEnsignMenu.style.display = 'block';
   closeEnsignMenu.style.display = 'none';
-}
+};
