@@ -402,6 +402,7 @@ function showEnsignMenu() {
   openEnsignMenu.style.display = 'none';
   closeEnsignMenu.style.display = 'block';
 
+  // Close the Ensign menu if a user clicks anywhere outside of the menu.
   document?.addEventListener('click', (event) => {
     const isClickInside = ensignMenu.contains(event.target);
     const isClickOnButton = openEnsignMenu.contains(event.target);
