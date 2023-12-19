@@ -53,9 +53,9 @@
 
         <div class="relative max-w-7xl mx-auto flex items-center justify-between text-white px-4 sm:px-6">
             <div class="lg:w-2/3 text-3x">
-                <div class="flex items-center mt-10 lg:mt-40">
+                <div class="flex items-center mt-10 md:mt-40">
                     {{ with .Params.headertext }}
-                    <h3 class="font-bold text-3xl lg:text-5xl">{{ . }}</h3>
+                    <h3 class="font-bold text-3xl md:text-5xl">{{ . }}</h3>
                     {{ end }}
                     {{ if not .Params.headertext }}
                     <h3 class="font-bold text-3xl lg:text-5xl">{{ .Title }}</h3>
