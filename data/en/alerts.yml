@@ -1,6 +1,6 @@
 ############################# Ensign Data ###################################
 notice:
-  enable: true
+  enable: false
   notice: "Data Science Do's and Don'ts to Stay Afloat in 2024"
   action:
     text: Register Now
