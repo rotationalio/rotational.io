@@ -2,15 +2,40 @@
     <a href="/" class="">
         <img src="img/logo.png" alt="Rotational Lab logo" class="h-14 w-auto sm:h-14">
     </a>
-    <div class="topnav" id="myTopnav">
+    <ul class="topnav" id="myTopnav">
         {{ $currentPage := . }}
         {{ range .Site.Menus.main }}
-        <a class=" {{ if $currentPage.IsMenuCurrent " main" . }}active{{ end }}" href="{{ .URL }}">
-            {{ .Name }}
-        </a>
+        <li>
+        {{ if eq .Name "Ensign" }}
+        <span>
+            <div class="ensign-menu">
+                {{ .Name }}
+            <button type="button" onclick="showEnsignMenu()" id="open-ensign-menu-bttn">
+                <i class="fa fa-caret-down" aria-hidden="true"></i>
+                <span class="sr-only">Open menu</span>
+            </button>
+            <button type="button" onclick="hideEnsignMenu()" id="close-ensign-menu-bttn">
+                <i class="fa fa-caret-up" aria-hidden="true"></i>
+                <span class="sr-only">Close menu</span>
+            </button>
+            </div>
+        </span>
+            {{ else }}
+            <a class=" {{ if $currentPage.IsMenuCurrent " main" . }}active{{ end }}" href="{{ .URL }}">
+                {{ .Name }}
+            </a>
+            {{ end }}
+            {{ if .HasChildren }}
+            <ul id="ensign-dropdown-menu">
+                {{ range .Children }}
+                <li><a href="{{ .URL }}">- {{ .Name }}</a></li>
+                {{ end }}
+            </ul>
+            {{ end }}
+        </li>
         {{ end }}
         <a class="icon" onclick="openMobNav()">
             <i class="fa fa-bars"></i>
         </a>
-    </div>
+    </ul>
 </nav>
