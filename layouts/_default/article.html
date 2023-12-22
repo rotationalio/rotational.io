@@ -11,10 +11,10 @@
                     </li> 
                 {{ end }}
             </ul>
-            <h3 class="text-xl font-extrabold mt-3 pb-2 "><a class="block h-24" href="{{ .Permalink }}">{{ .Title }}</a>
+            <h3 class="text-xl font-extrabold mt-3 pb-2 "><a class="block h-auto md:h-24" href="{{ .Permalink }}">{{ .Title }}</a>
             </h3>
-            <div class='h-36'>
-                <p class="mt-8 text-base">{{ .Summary | markdownify | truncate 240 }}</p>
+            <div class='h-auto md:h-36'>
+                <p class="mt-3 md:mt-8 text-base">{{ .Summary | markdownify | truncate 240 }}</p>
 
             </div>
 

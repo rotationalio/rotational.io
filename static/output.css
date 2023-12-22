@@ -2395,6 +2395,10 @@ video {
   padding-top: 0.25rem;
 }
 
+.pt-2 {
+  padding-top: 0.5rem;
+}
+
 .text-left {
   text-align: left;
 }
@@ -3963,12 +3967,20 @@ em {
     margin-left: 1.25rem;
   }
 
+  .xl\:mt-auto {
+    margin-top: auto;
+  }
+
   .xl\:grid {
     display: grid;
   }
 
   .xl\:h-56 {
     height: 14rem;
+  }
+
+  .xl\:h-auto {
+    height: auto;
   }
 
   .xl\:w-\[96\%\] {
