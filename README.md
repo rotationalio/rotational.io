@@ -306,6 +306,78 @@ Next, update the following fields:
 
 Please note that `stat`, `stat_text`, and `icon` will update the visual element displayed on the right side of each case study page.
 
+## Resources
+
+The resources page is a collection of our webinars, conference talks, and other appearances that are available online. To add a resource use the hugo new command as follows:
+
+```
+$ hugo new resources/resource-name.md
+```
+
+This will create a new file in the `content/en/resources` directory. When using the new command, Hugo uses the `archetypes/resources.md` template file to generate the following frontmatter:
+
+```
+---
+title: "Resource Name"
+slug: "resource-name"
+draft: false
+event_date: "2023-12-22"
+image: "img/resources/event-image.png"
+name: "Write the name or title of the event"
+description: "Write the event's description"
+events: ['Podcast', 'Webinar', 'Conference Talk']
+registration_link: https://link-to-register-for-event.com
+call_to_action: "Write call to action for upcoming event"
+video_link: youtube.com/link-to-video
+audio_link: https://link-to-audio-source.com
+categories: ['Video', 'Audio']
+presenters: ['Presenter Name 1', 'Presenter Name 2']
+topics: ['Add Topic 1 Here', 'Add Topic 2 Here']
+---
+```
+Next, update the fields in the frontmatter.
+
+**NOTE** After creating a new resource with the hugo new command, the `slug` for the resource's page on the website will be the same as the `resource-name` used when creating a new resource. For example, `https://rotational.io/resources/resource-name`. If a different `slug` should be used, it should be updated in the frontmatter.
+
+Depending on the type of resource that will be added, some of the fields may be optional, such as `registration_link`, `call_to_action`, `video_link`, and `audio_link`.
+
+1. If the `event_date` is in the future and has a `registration_link`, include the time of the event in the field, `2024-01-16T12:00:00-05:00`. This will display a button with text from the `call_to_action` field on the resource encouraging users to register. However, if the event occurred in the past or will not have a registration link, the date may be listed without the time, `2024-01-16`.
+
+2. If the resource's `description` will have multiple lines, the [YAML syntax for multiline strings](https://yaml-multiline.info/) should be used.
+
+Below is an example of a `description` with multiple lines:
+
+```
+description: |
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+
+  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+```
+
+If the description has multiple lines and you see an error or the text appears in a `red` color, try indenting the text by using the `tab` button. This should resolve the issue.
+
+3. List the event type in the `events` field.
+
+4. If a resource has a video that is on YouTube, use the embed link. To locate this link, go to the video's page on YouTube. 
+Then select `Share`. 
+Click the `Embed` option.
+You should then see the info similar to the following:
+
+```
+<iframe width="560" height="315" src="https://www.youtube.com/embed/youtube-video" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+```
+
+Copy the link that appears after `src=` and use it for the `video_link` field.
+
+5. Update the `categories` field with the resource's media type.
+
+6. Update the `presenters` field with the name of any staff featured in the resource.
+
+7. Update the `topics` field with any topics that could provide more detail about the resource. This is similar to the `tags` listed in a `blog` post.
+
+**NOTE**: Make sure that the `draft: true` in the front matter is removed or changed to `draft: false` before publishing a resource.
+
+
 ## Acknowledgements
 
 We couldn't do what we do without the contributions of others, so we want to acknowledge and thank them for their efforts. Our website uses the following open source tools and royalty-free media:
