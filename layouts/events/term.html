@@ -4,7 +4,7 @@
         <ul class="grid md:grid-cols-2 xl:grid-cols-3 gap-6 md:gap-8">
             {{ $paginator := .Paginate .Data.Pages }}
             {{ range $paginator.Pages }}
-            <li class="mt-6 sm:mt-0 h-auto">
+            <li class="mt-6 sm:mt-0 h-auto bg-[#ECF6FF] rounded-b-xl">
                 {{ .Render "resource" }}
             </li>
             {{ end }}
