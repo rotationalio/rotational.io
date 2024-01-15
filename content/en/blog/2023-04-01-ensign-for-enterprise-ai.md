@@ -7,7 +7,7 @@ image: img/blog/bridgerace.jpg
 authors: ["Edwin Schmierer"]
 profile: img/team/edwin-schmierer.png
 tags: ['AI', 'Automation']
-photo_credit: Metropolitan Transportation Authority via Flickr Commons
+photo_credit: Photo by Metropolitan Transportation Authority via Flickr Commons
 description: "Everyone is gearing up to win the AI/automation race. Who will win?"
 ---
 

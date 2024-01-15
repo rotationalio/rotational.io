@@ -1,10 +1,10 @@
 ---
 title: "Practical AI Strategies for 2024"
-slug: "Practical-AI-Strategies-for-2024"
+slug: "practical-ai-strategies-for-2024"
 date: "2024-01-10T12:52:57-05:00"
 draft: true
 image: img/blog/2024-01-12-practical-ai-strategies-for-2024/shipping.jpg
-photo_credit: "Photo by <a href="https://unsplash.com/@ihs_photo?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Ian Simmonds</a> on <a href="https://unsplash.com/photos/ship-cruising-on-body-of-water-XrDbdmqsPdk?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>"
+photo_credit: "Photo by [Ian Simmonds on Unsplash](https://unsplash.com/@ihs_photo?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash)"
 authors: ['Edwin Schmerer']
 profile: img/team/edwin-schmierer.png
 tags: ['AI/ML', 'Strategy']

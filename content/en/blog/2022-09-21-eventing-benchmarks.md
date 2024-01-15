@@ -6,7 +6,7 @@ draft: true
 authors: [Rebecca Bilbro]
 image: img/blog/pastries.jpg
 tags: ['Microservices', 'Eventing', 'Programming']
-photo_credit: George Tan via Flickr Commons
+photo_credit: Photo by George Tan via Flickr Commons
 description: "In this post we'll dig into the wild world of eventing system performance benchmarks, and explore how features like throughput and latency compare for different eventing platforms."
 profile: img/team/rebecca-bilbro.png
 ---

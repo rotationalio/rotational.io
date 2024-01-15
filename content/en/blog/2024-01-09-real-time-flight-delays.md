@@ -4,7 +4,7 @@ slug: "real-time-flight-delays"
 date: "2024-01-09T14:58:48-05:00"
 draft: false
 image: /img/blog/2024-01-09-real-time-flight-delays/nasa-virtual-airport.jpg
-photo_credit: "NASA Commons CD99-0095-1.1"
+photo_credit: "Photo by NASA Commons CD99-0095-1.1"
 authors: ['Jason Chandra', 'Kevin Sianto', 'Toby Chiu']
 profile: img/butterfly.png
 tags: ["Hackathon", "Data Science", "Ensign"]

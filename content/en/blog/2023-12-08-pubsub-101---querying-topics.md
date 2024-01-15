@@ -4,7 +4,7 @@ slug: "pubsub-101---querying-topics"
 date: "2023-12-08T14:09:46-06:00"
 draft: false
 image: img/blog/otter_investigator.png
-photo_credit: "Pangstu"
+photo_credit: "Photo by Pangstu"
 authors: ['Patrick Deziel']
 profile: img/team/patrick-deziel.png
 tags: ['Ensign', 'enSQL', 'PubSub 101']
