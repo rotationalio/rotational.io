@@ -9,7 +9,7 @@ description: "How should business and tech leaders approach 2024? We've talked t
 events: ['Webinar']
 registration_link: "https://us06web.zoom.us/webinar/register/6017013025890/WN_DMqpJPulQY-_0-RpVJklGg#/registration"
 call_to_action: Register Now
-video_link:
+video_link: 
 audio_link:
 categories: ['Video']
 presenters: ['Edwin Schmierer', 'Benjamin Bengfort']
