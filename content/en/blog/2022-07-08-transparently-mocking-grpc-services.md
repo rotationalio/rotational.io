@@ -6,7 +6,7 @@ draft: false
 authors: [Patrick Deziel]
 image: img/blog/blue_laser.jpg
 tags: ['gRPC', 'Mocks', 'Programming']
-photo_credit: JJ Ying via Unsplash
+photo_credit: Photo by JJ Ying via Unsplash
 description: "gRPC is a common framework used to facilitate communication between microservices, but testing these services can be a challenge. In this post we will present a simple strategy for mocking gRPC services in Go."
 profile: img/team/patrick-deziel.png
 ---
