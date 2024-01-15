@@ -4,7 +4,7 @@ slug: "uchicago-hackathon"
 date: "2023-09-27T08:04:58-07:00"
 draft: false
 image: img/blog/autumn_leaves.jpg
-photo_credit: "Hiro via Flickr Commons"
+photo_credit: "Photo by Hiro via Flickr Commons"
 authors: ["Edwin Schmierer"]
 profile: img/team/edwin-schmierer.png
 tags: ["Hackathon", "Data Science", "Python"]
