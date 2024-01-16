@@ -13,5 +13,5 @@ video_link: https://www.youtube.com/embed/phdASG6yAsM?si=Z5f3RVeVDPJK_Tj1
 audio_link:
 categories: ['Video']
 presenters: ['Edwin Schmierer', 'Benjamin Bengfort']
-topics: ['ML/AI']
+topics: ['AI', 'ML', 'Strategy']
 ---

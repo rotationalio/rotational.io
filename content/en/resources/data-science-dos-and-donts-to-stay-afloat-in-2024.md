@@ -13,5 +13,5 @@ video_link: https://www.youtube.com/embed/9ZVBQ2clOps?si=JD2imXlfXBG9W-HJ
 audio_link: 
 categories: ['Video']
 presenters: ['Prema Roman', 'Rebecca Bilbro']
-topics: ['Data Science', 'Reinforcement Training', 'ML/AI']
+topics: ['Data Science', 'AI', 'ML', 'Reinforcement Training', 'Transfer Learning']
 ---
