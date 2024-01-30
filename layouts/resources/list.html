@@ -6,13 +6,16 @@
 <div class="relative max-w-7xl mx-auto px-4 sm:px-2">
     <section class="mt-9 sm:mt-11 lg:mt-14">
         <ul class="grid md:grid-cols-2 xl:grid-cols-3 gap-6 md:gap-8">
-            {{ range (.Data.Pages.ByParam "event_date").Reverse }}
+            {{ $pages := (.Data.Pages.ByParam "event_date").Reverse }}
+            {{ range (.Paginate $pages ).Pages }}
             <li class="mt-6 sm:mt-0 h-auto bg-[#ECF6FF] rounded-b-xl">
                {{ .Render "resource" }}
             </li>
             {{ end }}
 
         </ul>
+
+        {{ partial "paginator.html" . }}
 
     </section>
 </div>
