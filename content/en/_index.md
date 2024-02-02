@@ -1,13 +1,7 @@
 ---
 date: 2023-02-09T10:21:41-06:00
-header: Ensign
-headertext: Database meets streaming for data scientists.
-headertextmore: Build real-time data products without breaking Prod or learning DevOps. Ensign is a database-meets-event-streaming platform for data science teams that want to get their data moving and their models into production.
-headeractions:
-- action: Sign up for Free
-  link: "https://rotational.app/register"
-- action: Learn more
-  link: "/ensign/"
+header: We Are AI Enablement Experts
+headertext: We help organizations make smart and responsible AI investments that accelerate growth, reduce costs, or automate the boring stuff.
 ---
 
 <!-- Ensign features -->
