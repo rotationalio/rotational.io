@@ -1,12 +1,21 @@
 ############################### cloud partnerships ############################
 partnerships:
   enable : true
-  title : On the Cloud
+  title : We Meet Our Clients Where They Are
   partner_item :
     # partner_item loop
-    - name : Google Cloud Partner
-      image : img/partners/googlecloud.png
-    - name : Linode - Akamai Connected Cloud Partner
-      image : img/partners/linode.png
+  - name : Google Cloud Partner
+    image : img/partners/googlecloud.png
+    link : https://cloud.google.com/
+  - name : Amazon Web Services (AWS)
+    image : img/partners/aws.png
+    link : https://aws.amazon.com/
+  - name : Microsoft Azure
+    image : img/partners/azure.png
+    link : https://azure.microsoft.com/
+  - name : Linode - Akamai Connected Cloud Partner
+    image : img/partners/linode.png
+    link : https://www.linode.com/
+
 
 

@@ -10,8 +10,6 @@ headertext: We help organizations make smart and responsible AI investments that
 <!-- On the Cloud section -->
 {{< container color="#ECF6FF" >}}
 
-{{< button href="https://rotational.app/register" text="Create Account">}}
-
 <!-- Data for cloud partners can be found at data/en/cloud.yml -->
 {{< clouds >}}
 

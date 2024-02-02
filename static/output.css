@@ -2519,10 +2519,6 @@ video {
   line-height: 1.5;
 }
 
-.leading-snug {
-  line-height: 1.375;
-}
-
 .text-\[\#1D65A6\] {
   --tw-text-opacity: 1;
   color: rgb(29 101 166 / var(--tw-text-opacity));
@@ -3542,10 +3538,6 @@ em {
     font-size: 1.25rem;
     line-height: 1.75rem;
   }
-
-  .sm\:leading-tight {
-    line-height: 1.25;
-  }
 }
 
 @media (min-width: 768px) {
@@ -3791,18 +3783,9 @@ em {
     line-height: 1;
   }
 
-  .md\:text-3xl {
-    font-size: 1.875rem;
-    line-height: 2.25rem;
-  }
-
   .md\:text-lg {
     font-size: 1.125rem;
     line-height: 1.75rem;
-  }
-
-  .md\:leading-snug {
-    line-height: 1.375;
   }
 }
 
@@ -3982,10 +3965,6 @@ em {
 
   .xl\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  .xl\:leading-tight {
-    line-height: 1.25;
   }
 }
 

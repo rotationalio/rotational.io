@@ -12,7 +12,9 @@
   <ul class="sm:flex mt-10 mx-auto justify-center sm:space-x-24">
   {{- range .partner_item -}}
     <li class="p-4 sm:p-0 text-center">
-      <img src="{{ .image }}" alt="{{ .name }}" class="h-24 mx-auto">
+      <a href="{{ .link }}" target="_blank">
+        <img src="{{ .image }}" alt="{{ .name }}" class="h-24 mx-auto">
+      </a>
     </li>
   {{- end -}}
   </ul>
