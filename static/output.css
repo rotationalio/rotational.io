@@ -1776,6 +1776,10 @@ video {
   gap: 1.25rem;
 }
 
+.gap-14 {
+  gap: 3.5rem;
+}
+
 .gap-x-20 {
   -moz-column-gap: 5rem;
        column-gap: 5rem;
@@ -3786,6 +3790,11 @@ em {
   .md\:text-lg {
     font-size: 1.125rem;
     line-height: 1.75rem;
+  }
+
+  .md\:text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
   }
 }
 

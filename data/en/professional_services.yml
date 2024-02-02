@@ -1,0 +1,11 @@
+professional_services:
+  enable: true
+  service_item:
+  - header_text: Professional Services
+    description: Every organization is different. We work with clients to leverage their domain expertise and make sensible AI investments in LLMs and agents tailored to their use cases, strategy, and mission.
+    button_text: Learn More
+    link: /services
+  - header_text: Data Management & Engineering
+    description: Our data ingestion, storage, and hosting solutions make it easy to get started, refine domain-specific corpora,  and responsibly manage and monitor data sets or sources that power models.
+    button_text: Learn More
+    link: /ensign-enterprise

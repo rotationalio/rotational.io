@@ -4,6 +4,9 @@ header: We Are AI Enablement Experts
 headertext: We help organizations make smart and responsible AI investments that accelerate growth, reduce costs, or automate the boring stuff.
 ---
 
+<!-- Edit services data in data/en/professional_services.yml -->
+{{< professional-services >}}
+
 <!-- Edit and add clients in data/en/clients.yml -->
 {{< clients >}}
 
