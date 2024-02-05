@@ -1776,6 +1776,10 @@ video {
   gap: 1.25rem;
 }
 
+.gap-14 {
+  gap: 3.5rem;
+}
+
 .gap-x-20 {
   -moz-column-gap: 5rem;
        column-gap: 5rem;
@@ -2517,10 +2521,6 @@ video {
 
 .leading-normal {
   line-height: 1.5;
-}
-
-.leading-snug {
-  line-height: 1.375;
 }
 
 .text-\[\#1D65A6\] {
@@ -3542,10 +3542,6 @@ em {
     font-size: 1.25rem;
     line-height: 1.75rem;
   }
-
-  .sm\:leading-tight {
-    line-height: 1.25;
-  }
 }
 
 @media (min-width: 768px) {
@@ -3791,18 +3787,14 @@ em {
     line-height: 1;
   }
 
-  .md\:text-3xl {
-    font-size: 1.875rem;
-    line-height: 2.25rem;
-  }
-
   .md\:text-lg {
     font-size: 1.125rem;
     line-height: 1.75rem;
   }
 
-  .md\:leading-snug {
-    line-height: 1.375;
+  .md\:text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
   }
 }
 
@@ -3982,10 +3974,6 @@ em {
 
   .xl\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  .xl\:leading-tight {
-    line-height: 1.25;
   }
 }
 

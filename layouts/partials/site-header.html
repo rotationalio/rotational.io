@@ -23,7 +23,7 @@
                   {{ $headertext := .Params.headertext }}
                   {{ $headertextmore := .Params.headertextmore }}
                   {{ with $headertext }}
-                  <p class="mt-6 leading-snug sm:leading-tight md:leading-snug xl:leading-tight text-xl md:text-3xl font-bold">
+                  <p class="mt-6 text-sm md:text-xl">
                       {{ . | markdownify }}
                   </p>
                   {{ if $headertextmore }}
