@@ -1,14 +1,13 @@
 ############################# Services ###################################
 services:
   enable : true
-  title : Services
+  title : Professional Services
   approach:
     enable : true
-    title: We Accelerate Your Growth
+    title: A Proven Team
     description: |
-      We're **a proven team of senior data scientists and engineers** ready to tackle complex data and machine learning projects 
-      in government or commercial markets. We deliver solutions through advisory, software engineering, and data science services. 
-      We scope, sequence, and budget projects for client success.
+      We're **a proven team of senior data scientists and engineers** with a collective 50 years of experience tackling complex data
+      and machine learning projects end-to-end in government and commercial markets.
   testimonials:
     enable : true
     testimonial:
@@ -24,30 +23,6 @@ services:
         client_name: Qredo
   services:
     enable : true
-  cloud_partners:
-    enable: true
-    title: We Meet Our Clients Where They Are
-    description: We have experience working in cloud, hybrid, and on-prem environments.
-    cloud_partner:
-      - name: Google Cloud Partner
-        logo: img/partners/googlecloud.png
-        link: https://cloud.google.com/
-      - name: Amazon Web Services (AWS)
-        logo: img/partners/aws.png
-        link: https://aws.amazon.com/
-      - name: Microsoft Azure
-        logo: img/partners/azure.png
-        link: https://azure.microsoft.com/
-      - name: Linode - Akamai Connected Cloud Partner
-        logo: img/partners/linode.png
-        link: https://www.linode.com/
-  partners:
-    enable: true
-    title: Partners
-    description: We are proud to partner with [**Approachable Geek**](https://approachablegeek.com/) to deliver consumer-facing mobile and web apps powered by our machine learning and data science models.
-    partner_name: Approachable Geek
-    partner_logo: img/partners/approachable_geek.png
-    partner_link: https://approachablegeek.com/
   action:
     enable: true
     description: Schedule your no-cost, risk-free consultation.

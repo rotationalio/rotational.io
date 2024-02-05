@@ -16,10 +16,23 @@
         </div>
         <p class="mt-4 text-base sm:mt-5 lg:mt-7 lg:text-xl">{{ .approach.description | markdownify }}</p>
         {{ end }}
+
+        {{ if .action.enable }}
+        {{ with .action }}
+        <section class="my-9 md:flex md:justify-between items-center pl-4 py-6 rounded-lg bg-[#E3E3E1]">
+            <p class="pb-6 md:pb-0 font-bold md:text-xl">{{ .description }}</p>
+            <div>
+                <a href="{{ .schedule_link }}" target="_blank" class="bg-[#1D65A6] hover:bg-[#192E5B] p-4 mx-2 rounded-lg font-bold text-[#FCFCFC] md:text-base">{{ .button_text }}</a>
+            </div>
+        </section>
+        {{ end }}
+        {{ end }}
         
         {{ if $data.wheelhouse.wheelhouse.enable}}
         {{ with $data.wheelhouse.wheelhouse }}
         <section class="mt-9">
+            <h2 class="mb-4 font-bold text-xl sm:text-2xl lg:text-3xl">{{ .title }}</h2>
+            <p class="md:text-xl">{{ .subtitle }}</p>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 sm:mt-8 text-center">
                 {{ range .experience }}
                 <div class="bg-[#E3E3E1] pb-4 rounded-md">
@@ -128,7 +141,7 @@
         {{ end }}
         {{ end }}
         
-        {{ if $data.products.products.enable }}
+       <!--  {{ if $data.products.products.enable }}
         {{ with $data.products.products }}
         <section class="my-9 lg:my-14">
             <h2 class="mb-4 font-bold text-xl sm:text-2xl lg:text-3xl">{{ .title }}</h2>
@@ -153,14 +166,14 @@
                     
         </section>
         {{ end }}
-        {{ end }} 
+        {{ end }}  -->
         
         {{ if .action.enable }}
         {{ with .action }}
-        <section class="my-9 lg:my-14 md:flex md:space-x-5 items-center pl-4 py-6 rounded-lg bg-[#F5F5F5]">
+        <section class="my-9 lg:my-14 md:flex md:justify-between items-center pl-4 py-6 rounded-lg bg-[#E3E3E1]">
             <p class="pb-6 md:pb-0 font-bold md:text-xl">{{ .description }}</p>
             <div>
-                <a href="{{ .schedule_link }}" target="_blank" class="bg-[#1D65A6] p-4 rounded-lg font-bold text-[#FCFCFC] md:text-base">{{ .button_text }}</a>
+                <a href="{{ .schedule_link }}" target="_blank" class="bg-[#1D65A6] p-4 mx-2 rounded-lg font-bold text-[#FCFCFC] md:text-base">{{ .button_text }}</a>
             </div>
         </section>
         {{ end }}

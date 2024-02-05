@@ -1,5 +1,9 @@
 wheelhouse:
   enable: true
+  title: AI Enablement Services
+  subtitle: AI and LLMs offer powerful opportunities for organizations to leverage their domain expertise 
+            and data to automate workflows, personalize experiences, and deepen competitive moats, 
+            provided you make the right choices to maximize ROI, safety, and alignment.
   experience:
     - area: Data Science & Data Engineering
       description: From exploratory data analysis to data pipelines and model evaluation, we help organizations maximize ROI on data science investments.
