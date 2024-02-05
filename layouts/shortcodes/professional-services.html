@@ -1,0 +1,18 @@
+{{ $data := index site.Data site.Language.Lang }}
+
+{{ if $data.professional_services.professional_services.enable }}
+{{ with $data.professional_services.professional_services }}
+<section class="grid grid-cols-1 md:grid-cols-2 gap-14 md:gap-4 items-center mt-8">
+  {{ range .service_item }}
+  <section class="flex flex-col h-full px-14">
+    <h2 class="font-bold text-xl md:text-2xl">{{ .header_text }}</h2>
+    <p class="mt-3 mb-6">{{ .description }}</p>
+    <div class="flex mt-auto justify-center">
+      <a href="{{ .link }}" class="bg-[#192E5B] text-white text-center font-bold px-16 py-4 rounded-md hover:bg-[#1D65A6]">{{ .button_text }}</a>
+    </div>
+  </section>
+  {{ end }}
+</section>
+{{ end }}
+{{ end }}
+

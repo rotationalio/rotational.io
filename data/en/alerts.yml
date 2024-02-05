@@ -1,8 +1,8 @@
 ############################# Ensign Data ###################################
 notice:
-  enable: false
-  notice: "Data Science Do's and Don'ts to Stay Afloat in 2024"
+  enable: true
+  notice: "The Nuts & Bolts of Vector Databases: A No-frills Technical Review"
   action:
     text: Register Now
-    link: "https://us06web.zoom.us/webinar/register/2817013132543/WN_IuQ0XZEZQSyibNJdUCAw4A"
-  expires: 2023-12-19T16:00:00Z
+    link: "https://us06web.zoom.us/webinar/register/8617062216459/WN_95O7q4B2Si2tivwC9OAmnQ"
+  expires: 2024-02-27T16:00:00Z
