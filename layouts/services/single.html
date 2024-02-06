@@ -32,7 +32,7 @@
         {{ with $data.wheelhouse.wheelhouse }}
         <section class="mt-9">
             <h2 class="mb-4 font-bold text-xl sm:text-2xl lg:text-3xl">{{ .title }}</h2>
-            <p class="md:text-xl">{{ .subtitle }}</p>
+            <p class="md:text-xl mb-4">{{ .subtitle }}</p>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 sm:mt-8 text-center">
                 {{ range .experience }}
                 <div class="bg-[#E3E3E1] rounded-md">
@@ -41,14 +41,15 @@
                         <i class="fa {{ .icon }} text-4xl text-[#1D65A6]"></i>
                         <p class="md:text-lg mx-4 py-6">{{ .description }}</p>
                         <div class="flex flex-col mt-auto">
-                            {{ if .cost }}
-                            <p>Cost Estimate:</p>
-                            <p class="md:text-lg mx-4 pb-4">{{ .cost }}</p>
-                            {{ end }}
-                            {{ if .time }}
-                            <p>Time Estimate:</p>
-                            <p class="md:text-lg mx-4 pb-4">{{ .time | markdownify }}</p>
-                            {{ end }}
+                          {{ if .cost }}
+                          <p>Cost Estimate:</p>
+                          <p class="md:text-lg mx-4 pb-4">{{ .cost }}</p>
+                          {{ end }}
+
+                          {{ if .time }}
+                          <p>Time Estimate:</p>
+                          <p class="md:text-lg mx-4 pb-4">{{ .time }}</p>
+                          {{ end }}
                         </div>
                     </div>
                 </div>
@@ -63,21 +64,21 @@
 
         <section class="my-9 lg:my-14">
             <h2 class="mb-4 font-bold text-xl sm:text-2xl lg:text-3xl">{{ .title }}</h2>
-        <section class="grid md:grid-cols-2 gap-5">
-            {{ range .testimonial }}
-            <section class="bg-[#ECF6FF] p-6 rounded-xl">
-                <p class="text-xl text-center">
-                    {{ $quote := index (split .quote " ") }}
-                    <span class="font-bold text-[#A32C00]">{{ range first 2 $quote }} {{ . }} {{ end }}</span>
-                    {{ range after 2 $quote }} {{ . }} {{ end }}
-                </p>
-                <p class="pt-4 text-xl text-center">
-                  <span class="text-[#A32C00] font-bold">{{ .quotee }}</span>,
-                  <span class="text-[#192E5B] font-bold">{{ .client_name }}</span>
-                </p>
-            </section>
-            {{ end }}
-          </section>
+            <div class="grid md:grid-cols-2 gap-5">
+                {{ range .testimonial }}
+                <section class="bg-[#ECF6FF] p-6 rounded-xl">
+                    <p class="text-xl text-center">
+                        {{ $quote := index (split .quote " ") }}
+                        <span class="font-bold text-[#A32C00]">{{ range first 2 $quote }} {{ . }} {{ end }}</span>
+                        {{ range after 2 $quote }} {{ . }} {{ end }}
+                    </p>
+                    <p class="pt-4 text-xl text-center">
+                        <span class="text-[#A32C00] font-bold">{{ .quotee }}</span>,
+                        <span class="text-[#192E5B] font-bold">{{ .client_name }}</span>
+                    </p>
+                </section>
+                {{ end }}
+            </div>
         </section>
           
           {{ end }}
