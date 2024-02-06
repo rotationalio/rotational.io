@@ -498,7 +498,7 @@ em {
 
 /* Resource page styles */
 
-.resource-header {
+#clouds-header, .resource-header {
   text-wrap: balance;
 }
 
