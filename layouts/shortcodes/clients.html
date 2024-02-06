@@ -12,11 +12,12 @@
       </span>
     </h2>
     {{ end }}
-    <ul class="grid items-center gap-8 sm:grid-cols-2 md:flex md:flex-wrap lg:gap-0">
+    <ul class="flex flex-col md:flex-row md:flex-wrap items-center justify-center gap-8 space-y-6 lg:gap-0">
       {{ range .clients_item}}
       {{ if .show }}
-      <li class="flex justify-center"><img class="mx-7 max-w-[180px]" src="{{ .image | absURL }}"
-              alt="{{ .name }}"></li>
+      <li>
+        <img class="mx-7 max-w-[180px]" src="{{ .image | absURL }}" alt="{{ .name }}">
+      </li>
       {{ end }}
       {{ end }}
     </ul>
