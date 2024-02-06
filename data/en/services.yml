@@ -10,6 +10,7 @@ services:
       and machine learning projects end-to-end in government and commercial markets.
   testimonials:
     enable : true
+    title: Testimonials
     testimonial:
       - quote: Rotational Labs has been a true partner to us -- from helping us realize and deploy our ambitious visions for next-gen supply chain analytics, 
              to empowering our technical team with the skills and ability to maintain our products and services long-term.
@@ -23,6 +24,30 @@ services:
         client_name: Qredo
   services:
     enable : true
+  cloud_partners:
+    enable: false
+    title: We Meet Our Clients Where They Are
+    description: We have experience working in cloud, hybrid, and on-prem environments.
+    cloud_partner:
+      - name: Google Cloud Partner
+        logo: img/partners/googlecloud.png
+        link: https://cloud.google.com/
+      - name: Amazon Web Services (AWS)
+        logo: img/partners/aws.png
+        link: https://aws.amazon.com/
+      - name: Microsoft Azure
+        logo: img/partners/azure.png
+        link: https://azure.microsoft.com/
+      - name: Linode - Akamai Connected Cloud Partner
+        logo: img/partners/linode.png
+        link: https://www.linode.com/
+  partners:
+    enable: false
+    title: Partners
+    description: We are proud to partner with [**Approachable Geek**](https://approachablegeek.com/) to deliver consumer-facing mobile and web apps powered by our machine learning and data science models.
+    partner_name: Approachable Geek
+    partner_logo: img/partners/approachable_geek.png
+    partner_link: https://approachablegeek.com/
   action:
     enable: true
     description: Schedule your no-cost, risk-free consultation.

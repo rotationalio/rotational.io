@@ -5,30 +5,31 @@ wheelhouse:
             and data to automate workflows, personalize experiences, and deepen competitive moats, 
             provided you make the right choices to maximize ROI, safety, and alignment.
   experience:
-    - area: Data Science & Data Engineering
-      description: From exploratory data analysis to data pipelines and model evaluation, we help organizations maximize ROI on data science investments.
-      specialists:
-        - image: img/team/rebecca-bilbro.png
-          link: authors/rebecca-bilbro
-        - image: img/team/prema-roman.png
-          link: authors/prema-roman
-        - image: img/team/benjamin-bengfort.png
-          link: authors/benjamin-bengfort
-    - area: Domain-specific LLMs
-      description: Apply open source LLMs to your products and services with careful consideration to your budget and customer concerns.
-      specialists:
-        - image: img/team/patrick-deziel.png
-          link: authors/patrick-deziel
-        - image: img/team/prema-roman.png
-          link: authors/prema-roman
-        - image: img/team/rebecca-bilbro.png
-          link: authors/rebecca-bilbro
-    - area: Machine Learning Operations
-      description: Get your models into production in your target environments reliably, with the ability to monitor and adjust in real-time.
-      specialists:
-        - image: img/team/danielle-maxwell.png
-          link: authors/danielle-maxwell
-        - image: img/team/benjamin-bengfort.png
-          link: authors/benjamin-bengfort
-        - image: img/team/rebecca-bilbro.png
-          link: authors/rebecca-bilbro
+    - area: Open LLM Integration
+      description: Connect your organization's workflows to open source or cloud service provider LLM APIs (e.g. OpenAI). 
+                   Rotational creates custom plugins for your services to work seamlessly with provider LLMs.
+      cost: Cost Est&colon; $5,000 - $15,000
+      time: Time Est&colon; 3 - 6 months
+    - area: Domain-Specific LLMs
+      description: Create a domain-specific LLM using open source models, your corpus, and  transfer learning. We provide MLOps to 
+                   deploy the LLM in your organization's infrastructure or can host for you.
+      cost: Cost Est&colon; $20,000 - $60,000
+      time: Time Est&colon; 3 - 6 months
+    - area: Retrieval Augmented Generation (RAG)
+      description: Apply RAG to ground your LLM in your organizational context to generate fact-checked, tailored LLM responses. 
+                   We connect, transform and integrate your knowledge base with any LLM to serve precise and aligned answers.
+      cost: Cost Est&colon; $10,000 - $80,000
+      time: Time Est&colon; 1 - 4 months
+    - area: Knowledge Graphs
+      description: Scale expertise and provide insights that competitors cannot match by turning your data into intuitive search graphs.
+                   Enhance LLM relevance and clarity with custom ontologies wrapped in accessible APIs.
+      cost: Cost Est&colon; $5,000 - $40,000
+      time: Time Est&colon; 3 - 6 months
+    - area: Custom AI Agents
+      description: Streamline or automate workflows with custom AI agents that boost efficiency, provide tailored experiences, and free your team for strategic work. 
+                   Accelerate automation for your specific use cases.
+      cost: Cost Est&colon; $60,000 - $140,000
+      time: Time Est&colon; 6 - 9 months
+    - area: Hosting Services
+      description: Host your model with us and scale effortlessly with our managed API services. Focus on growth while we ensure your models perform on inferencing hardware that scales with your needs.
+      cost: Cost Est&colon; $500 - $4,000 per month

@@ -36,19 +36,12 @@
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 sm:mt-8 text-center">
                 {{ range .experience }}
                 <div class="bg-[#E3E3E1] pb-4 rounded-md">
-                    <div class="md:h-44 lg:h-60">
+                    <div>
                         <h4 class="text-center text-lg md:text-xl font-bold my-6">{{ .area }}</h4>
                         <p class="md:text-lg mx-4 pb-4">{{ .description }}</p>
+                        <p class="md:text-lg mx-4 pb-4">{{ .cost | markdownify }}</p>
+                        <p class="md:text-lg mx-4 pb-4">{{ .time | markdownify }}</p>
                     </div>
-                    <ul class="flex justify-center mx-2 gap-x-4 my-6 lg:my-0 lg:mb-6">
-                        {{ range .specialists }}
-                        <li>
-                            <a href="{{ .link }}">
-                                <img src="{{ .image }}" class="w-auto h-[92px]" />
-                            </a>
-                        </li>
-                        {{ end }}
-                    </ul>
                 </div>
                 {{ end }}
             </div>
@@ -59,7 +52,9 @@
         {{ if .testimonials.enable }}
         {{ with .testimonials }}
 
-        <section class="my-9 lg:my-14 grid md:grid-cols-2 gap-5">
+        <section class="my-9 lg:my-14">
+            <h2 class="mb-4 font-bold text-xl sm:text-2xl lg:text-3xl">{{ .title }}</h2>
+        <section class="grid md:grid-cols-2 gap-5">
             {{ range .testimonial }}
             <section class="bg-[#ECF6FF] p-6 rounded-xl">
                 <p class="text-xl text-center">
@@ -74,6 +69,7 @@
             </section>
             {{ end }}
           </section>
+        </section>
           
           {{ end }}
           {{ end }}
