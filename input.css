@@ -498,7 +498,7 @@ em {
 
 /* Resource page styles */
 
-.resource-header {
+#clouds-header, .resource-header {
   text-wrap: balance;
 }
 
@@ -549,8 +549,4 @@ em {
   .price-grid-item p:first-of-type {
     height: 8rem;
   }
-}
-
-#cloud-header {
-  text-wrap: balance;
 }
