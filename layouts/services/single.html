@@ -16,26 +16,42 @@
         </div>
         <p class="mt-4 text-base sm:mt-5 lg:mt-7 lg:text-xl">{{ .approach.description | markdownify }}</p>
         {{ end }}
+
+        {{ if .action.enable }}
+        {{ with .action }}
+        <section class="my-9 md:flex md:justify-between items-center pl-4 py-6 rounded-lg bg-[#E3E3E1]">
+            <p class="pb-6 md:pb-0 font-bold md:text-xl">{{ .description }}</p>
+            <div>
+                <a href="{{ .schedule_link }}" target="_blank" class="bg-[#192E5B] hover:bg-[#1D65A6] p-4 mx-2 rounded-lg font-bold text-[#FCFCFC] md:text-base">{{ .button_text }}</a>
+            </div>
+        </section>
+        {{ end }}
+        {{ end }}
         
         {{ if $data.wheelhouse.wheelhouse.enable}}
         {{ with $data.wheelhouse.wheelhouse }}
         <section class="mt-9">
+            <h2 class="mb-4 font-bold text-xl sm:text-2xl lg:text-3xl">{{ .title }}</h2>
+            <p class="md:text-xl mb-4">{{ .subtitle }}</p>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 sm:mt-8 text-center">
                 {{ range .experience }}
-                <div class="bg-[#E3E3E1] pb-4 rounded-md">
-                    <div class="md:h-44 lg:h-60">
+                <div class="bg-[#E3E3E1] rounded-md">
+                    <div class="flex flex-col h-full">
                         <h4 class="text-center text-lg md:text-xl font-bold my-6">{{ .area }}</h4>
-                        <p class="md:text-lg mx-4 pb-4">{{ .description }}</p>
+                        <i class="fa {{ .icon }} text-4xl text-[#1D65A6]"></i>
+                        <p class="md:text-lg mx-4 py-6">{{ .description }}</p>
+                        <div class="flex flex-col mt-auto">
+                          {{ if .cost }}
+                          <p>Cost Estimate:</p>
+                          <p class="md:text-lg mx-4 pb-4">{{ .cost }}</p>
+                          {{ end }}
+
+                          {{ if .time }}
+                          <p>Time Estimate:</p>
+                          <p class="md:text-lg mx-4 pb-4">{{ .time }}</p>
+                          {{ end }}
+                        </div>
                     </div>
-                    <ul class="flex justify-center mx-2 gap-x-4 my-6 lg:my-0 lg:mb-6">
-                        {{ range .specialists }}
-                        <li>
-                            <a href="{{ .link }}">
-                                <img src="{{ .image }}" class="w-auto h-[92px]" />
-                            </a>
-                        </li>
-                        {{ end }}
-                    </ul>
                 </div>
                 {{ end }}
             </div>
@@ -46,21 +62,24 @@
         {{ if .testimonials.enable }}
         {{ with .testimonials }}
 
-        <section class="my-9 lg:my-14 grid md:grid-cols-2 gap-5">
-            {{ range .testimonial }}
-            <section class="bg-[#ECF6FF] p-6 rounded-xl">
-                <p class="text-xl text-center">
-                    {{ $quote := index (split .quote " ") }}
-                    <span class="font-bold text-[#A32C00]">{{ range first 2 $quote }} {{ . }} {{ end }}</span>
-                    {{ range after 2 $quote }} {{ . }} {{ end }}
-                </p>
-                <p class="pt-4 text-xl text-center">
-                  <span class="text-[#A32C00] font-bold">{{ .quotee }}</span>,
-                  <span class="text-[#192E5B] font-bold">{{ .client_name }}</span>
-                </p>
-            </section>
-            {{ end }}
-          </section>
+        <section class="my-9 lg:my-14">
+            <h2 class="mb-4 font-bold text-xl sm:text-2xl lg:text-3xl">{{ .title }}</h2>
+            <div class="grid md:grid-cols-2 gap-5">
+                {{ range .testimonial }}
+                <section class="bg-[#ECF6FF] p-6 rounded-xl">
+                    <p class="text-xl text-center">
+                        {{ $quote := index (split .quote " ") }}
+                        <span class="font-bold text-[#A32C00]">{{ range first 2 $quote }} {{ . }} {{ end }}</span>
+                        {{ range after 2 $quote }} {{ . }} {{ end }}
+                    </p>
+                    <p class="pt-4 text-xl text-center">
+                        <span class="text-[#A32C00] font-bold">{{ .quotee }}</span>,
+                        <span class="text-[#192E5B] font-bold">{{ .client_name }}</span>
+                    </p>
+                </section>
+                {{ end }}
+            </div>
+        </section>
           
           {{ end }}
           {{ end }}
@@ -128,7 +147,7 @@
         {{ end }}
         {{ end }}
         
-        {{ if $data.products.products.enable }}
+       <!--  {{ if $data.products.products.enable }}
         {{ with $data.products.products }}
         <section class="my-9 lg:my-14">
             <h2 class="mb-4 font-bold text-xl sm:text-2xl lg:text-3xl">{{ .title }}</h2>
@@ -153,14 +172,14 @@
                     
         </section>
         {{ end }}
-        {{ end }} 
+        {{ end }}  -->
         
         {{ if .action.enable }}
         {{ with .action }}
-        <section class="my-9 lg:my-14 md:flex md:space-x-5 items-center pl-4 py-6 rounded-lg bg-[#F5F5F5]">
+        <section class="my-9 lg:my-14 md:flex md:justify-between items-center pl-4 py-6 rounded-lg bg-[#E3E3E1]">
             <p class="pb-6 md:pb-0 font-bold md:text-xl">{{ .description }}</p>
             <div>
-                <a href="{{ .schedule_link }}" target="_blank" class="bg-[#1D65A6] p-4 rounded-lg font-bold text-[#FCFCFC] md:text-base">{{ .button_text }}</a>
+                <a href="{{ .schedule_link }}" target="_blank" class="bg-[#192E5B] hover:bg-[#1D65A6] p-4 mx-2 rounded-lg font-bold text-[#FCFCFC] md:text-base">{{ .button_text }}</a>
             </div>
         </section>
         {{ end }}
