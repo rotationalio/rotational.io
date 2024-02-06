@@ -18,13 +18,13 @@ Move over ChatGPT, here come the Large Language Models (LLMs). More and more com
 # 5 Steps to LLM Project Success
 
 The popularity of ChatGPT has brought Large Language Models (LLMs) to the forefront, and many companies we're speaking with are interested in costing out an initial project. Many questions we hear are to the effect of:
-*Is this something that will take us 3 months, or 1 year? Will this cost under $50k? Is that even the right magnitude?*
+*Is this something that will take us 3 months, or 1 year? Will this cost under $50k? Is that even the right order of magnitude?*
 
 Every company is unique, and our team has seen a lot of extremely innovative pitches for pilot projects. We've even been lucky enough to implement some of them! Over time, we've noticed a few common themes in the scoping and planning of the projects that ultimately realize success. These are:
 
 ## Step 1: Define A Use Case Around A **Small, But Real, Pain Point**
 
-It's hard to learn how to spot good use cases for AI &mdash;  it's something that comes with experience (or you can [hire us!](https://rotational.io/services/)). There are some telltale signs that you learn to look for (things like very repetitive review tasks, extremely unique vocabularies and acronyms) that signal an opportunity to solve a problem with data. 
+It's hard to learn how to spot good use cases for AI &mdash;  it's something that comes with experience (or you can [hire us!](https://rotational.io/services/)). There are some telltale signs that you learn to look for (things like very repetitive review tasks, extremely unique vocabularies and acronyms) that signal an opportunity to solve a problem with data.
 
 But when you're just starting out, it can feel a little overwhelming, since LLMs can be used in a wide variety of applications: chatbots, text summarization, content creation, information retrieval, etc. LLMs have so many potential uses that companies can't figure out where to start.  One way to get past this hurdle is to simplify your goals.  It's best to think in terms of only one or two specific use cases at the beginning, then build up from there.
 
@@ -38,7 +38,7 @@ Let's take customer service as an example.  Despite all the innovations in custo
 
 Imagine instead if your CSRs had some knowledge about the customer's history with your business that will enable them to provide a more tailored experience?  Think about how much better that interaction will be and now instead of having an unhappy customer you have a customer who is delighted and is more likely to recommend your company to others.  This leads to a virtuous cycle leading to enhanced customer experiences that create the kind of enthusiasm for your product that ultimately helps grow your business. As your business grows, the CSRs handle the demands better than ever, boosting the number of happy clients, who will start to champion your products.
 
-This is exactly the [strategy](https://www.entrepreneur.com/finance/williams-sonoma-a-retail-odyssey-in-the-modern-market/468587) that Williams-Sonoma used to maintain profitability in a difficult market.  
+This is exactly the [strategy](https://www.entrepreneur.com/finance/williams-sonoma-a-retail-odyssey-in-the-modern-market/468587) that Williams-Sonoma used to maintain profitability in a difficult market.
 
 
 ## Step 2: Assemble A Data Team To Help With Scoping
@@ -66,7 +66,7 @@ The DPRD does not have to be overly complicated.  In fact, it's best to keep it 
 
 ChatGPT captured everyone's attention in 2023 with its ability to perform a wide variety of tasks like writing articles and drafting emails.  However, using it in an enterprise solution comes with many risks.  It can get very expensive and users don't have the ability to address issues when they arise and there are privacy concerns.  Also, OpenAI controls when and how features are added or updated, which can have detrimental impact on your business if you rely on features that are no longer supported.  Furthermore, while ChatGPT has proven to be good at a lot of general tasks, it doesn't do as well in narrow domains.
 
-Fortunately, [Huggingface](https://huggingface.co), [Mistral](https://mistral.ai), and others provide open source LLMs that companies can fine tune with their own data to build domain-specific LLMs tailored for their specific use case.  Organizations using these open source LLMs have the ability to build the features that are most relevant for their use cases and do not have to worry about a third party vendor having access to their IP.  These LLMs are categorized by the types of tasks they can perform and there is plenty of documentation to get started. 
+Fortunately, [Huggingface](https://huggingface.co), [Mistral](https://mistral.ai), and others provide open source LLMs that companies can fine tune with their own data to build domain-specific LLMs tailored for their specific use case.  Organizations using these open source LLMs have the ability to build the features that are most relevant for their use cases and do not have to worry about a third party vendor having access to their IP.  These LLMs are categorized by the types of tasks they can perform and there is plenty of documentation to get started.
 
 And the best part?  Companies don't need a lot of data.  Open source LLMs are already pre-trained on a large corpus of data but with a technique called transfer learning, these models can be fine tuned on a much smaller corpus from a specific domain.  The end result is that not only are costs cut on compute and data, the results are much more accurate than those generated by a proprietary closed source LLM such as ChatGPT.
 
@@ -79,10 +79,10 @@ Traditionally, machine learning projects were built in a research-oriented fashi
 
 So how can organizations balance the need for both speed and accuracy?  The answer: take a cue from software engineering projects and employ an agile-based framework to machine learning projects.  An agile based framework for a machine learning project looks like this:
 
-- Break down a large project into smaller tasks that can be completed within 1 or 2 sprints (two weeks to a month).  
+- Break down a large project into smaller tasks that can be completed within 1 or 2 sprints (two weeks to a month).
 - Create a feedback mechanism through which stakeholders provide feedback to the model developers so that the model can be improved over time.
 
-Here is the thing: just because an ML model performed well during the training phase doesn't mean that it will necessarily perform well in production.  This is because there are a lot of uncertainties.  Nobody knows ahead of time the kind of data the model will encounter in production.  On top of that, data is constantly evolving, so a deployed model can get stale quickly.  
+Here is the thing: just because an ML model performed well during the training phase doesn't mean that it will necessarily perform well in production.  This is because there are a lot of uncertainties.  Nobody knows ahead of time the kind of data the model will encounter in production.  On top of that, data is constantly evolving, so a deployed model can get stale quickly.
 
 It is precisely for this reason that it's best to do the work in short cycles so that feedback can be incorporated early and often to ensure that machine learning projects succeed.
 
