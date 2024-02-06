@@ -17,7 +17,7 @@ Move over ChatGPT, here come the Large Language Models (LLMs). More and more com
 
 # 5 Steps to LLM Project Success
 
-The popularity of ChatGPT has brought Large Language Models (LLMs) to the forefront, and many companies we're speaking are interested in costing out an initial project. The questions we hear are to the effect of:
+The popularity of ChatGPT has brought Large Language Models (LLMs) to the forefront, and many companies we're speaking with are interested in costing out an initial project. Many questions we hear are to the effect of:
 *Is this something that will take us 3 months, or 1 year? Will this cost under $50k? Is that even the right magnitude?*
 
 Every company is unique, and our team has seen a lot of extremely innovative pitches for pilot projects. We've even been lucky enough to implement some of them! Over time, we've noticed a few common themes in the scoping and planning of the projects that ultimately realize success. These are:
