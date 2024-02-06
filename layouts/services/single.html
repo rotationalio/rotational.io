@@ -35,12 +35,21 @@
             <p class="md:text-xl">{{ .subtitle }}</p>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 sm:mt-8 text-center">
                 {{ range .experience }}
-                <div class="bg-[#E3E3E1] pb-4 rounded-md">
-                    <div>
+                <div class="bg-[#E3E3E1] rounded-md">
+                    <div class="flex flex-col h-full">
                         <h4 class="text-center text-lg md:text-xl font-bold my-6">{{ .area }}</h4>
-                        <p class="md:text-lg mx-4 pb-4">{{ .description }}</p>
-                        <p class="md:text-lg mx-4 pb-4">{{ .cost | markdownify }}</p>
-                        <p class="md:text-lg mx-4 pb-4">{{ .time | markdownify }}</p>
+                        <i class="fa {{ .icon }} text-4xl text-[#1D65A6]"></i>
+                        <p class="md:text-lg mx-4 py-6">{{ .description }}</p>
+                        <div class="flex flex-col mt-auto">
+                            {{ if .cost }}
+                            <p>Cost Estimate:</p>
+                            <p class="md:text-lg mx-4 pb-4">{{ .cost }}</p>
+                            {{ end }}
+                            {{ if .time }}
+                            <p>Time Estimate:</p>
+                            <p class="md:text-lg mx-4 pb-4">{{ .time | markdownify }}</p>
+                            {{ end }}
+                        </div>
                     </div>
                 </div>
                 {{ end }}
