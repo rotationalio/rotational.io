@@ -20,13 +20,15 @@ products:
       buttons:
         - text: Try Ensign
           link: https://www.rotational.app
-        - text: Pricing
-          link: /pricing
+        - text: View Pricing
+          link: /ensign-pricing
+        - text: SDKs
+          link: https://ensign.rotational.dev/sdk/
     - product_name: Yellowbrick
       description: Yellowbrick is an open source diagnostic visualization tool for machine learning that allows data scientists to steer the model selection process.
                    Yellowbrick has been incorporated into data science workflows across companies, federal agencies, and individual data scientists. It reaches an 
                    international audience and averages 60,000+ downloads/month.
-      logo: img/yellowbrick-flat-logo.png
+      logo: img/yellowbrick-flat-logo-cropped.png
       product_details:
         - text: Extends the Scikit-Learn API to make model selection and hyperparameter tuning easier
         - text: Includes production-ready visualizers for features, classification, regression, clustering, model selection, and text

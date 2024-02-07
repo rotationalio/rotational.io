@@ -147,33 +147,6 @@
         {{ end }}
         {{ end }}
         
-       <!--  {{ if $data.products.products.enable }}
-        {{ with $data.products.products }}
-        <section class="my-9 lg:my-14">
-            <h2 class="mb-4 font-bold text-xl sm:text-2xl lg:text-3xl">{{ .title }}</h2>
-            <p class="md:text-xl">{{ .subtitle }}</p>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8 text-center">
-                {{ range .products }}
-                <div class="bg-[#1D65A6] pb-4 rounded-md text-[#FCFCFC]">
-                    <div>
-                        <h4 class="text-lg md:text-xl font-bold my-6">{{ .product_name}}</h4>
-                        <p class="md:text-lg mx-4 pb-4 md:pb-0 md:h-64 xl:h-56">{{ .description }}</p>
-                    </div>
-                    <a href="{{ .link }}" target="_blank" class="flex justify-center items-center md:text-lg font-bold">
-                        <span class="mr-1">
-                            Learn More 
-                        </span>
-                        <i class="fa fa-chevron-right"></i>
-                        <i class="fa fa-chevron-right"></i>
-                    </a>
-                </div>
-                {{ end }}
-            </div>
-                    
-        </section>
-        {{ end }}
-        {{ end }}  -->
-        
         {{ if .action.enable }}
         {{ with .action }}
         <section class="my-9 lg:my-14 md:flex md:justify-between items-center pl-4 py-6 rounded-lg bg-[#E3E3E1]">

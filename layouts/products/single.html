@@ -10,25 +10,36 @@
 {{ with $data.products.products }}
 
 <div class="max-w-7xl mx-auto px-4 relative">
-  <p>{{ .subtitle }}</p>
+  <p class="mt-12 text-lg">{{ .subtitle }}</p>
   {{ range .products }}
-  <section>
-    <h2>{{ .product_name }}</h2>
-    <p>{{ .description }}</p>
-    <section class="grid grid-cols-3">
-      <img src="{{ .logo }}" />
-      <ul>
-        {{ range .product_details }}
-        <li>{{ .text }}</li>
+  <section class="my-12">
+    <h2 class="mb-4 font-bold text-3xl">{{ .product_name }}</h2>
+    <p class="mb-4 text-lg">{{ .description }}</p>
+    <section class="grid gap-8 mt-8 lg:mt-14 lg:grid-cols-3">
+      <section>
+        {{ if eq .product_name "Ensign" }}
+        <p class="font-bold text-4xl text-center text-[#1D65A6] mb-4">Ensign</p>
         {{ end }}
-      </ul>
-      <ul>
-        {{ range .buttons }}
-        <li>
-          <a href="{{ .link }}" class="">{{ .text }}</a>
+        <img src="{{ .logo }}" class="h-48 lg:w-8/12 lg:h-auto mx-auto"/>
+      </section>
+      <section class="leading-relaxed lg:w-full">
+        <ul class="ml-4 lg:ml-0">
+          {{ range .product_details }}
+          <li class="list-disc leading-relaxed pb-2">{{ .text }}</li>
           {{ end }}
-        </li>
-      </ul>
+        </ul>
+      </section>
+      <section>
+        <ul>
+          {{ range .buttons }}
+          <li class="text-center mb-6">
+            <a href="{{ .link }}" target="_blank" class="w-1/2 inline-block bg-[#192E5B] hover:bg-[#1D65A6] p-3 rounded-lg font-bold text-[#FCFCFC]">
+              {{ .text }}
+            </a>
+            {{ end }}
+          </li>
+        </ul>
+      </section>
     </section>
   </section>
   {{ end }}
