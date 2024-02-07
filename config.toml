@@ -56,15 +56,16 @@ link = "https://unpkg.com/lunr/lunr.js"
 
 ## English Navigation
 [[Languages.en.menu.main]]
-identifier = 'Ensign'
-name = 'Product'
-weight = 2
-
-[[Languages.en.menu.main]]
 identifier = 'Services'
 pageRef = 'services'
 name = 'Services'
 weight = 1
+
+[[Languages.en.menu.main]]
+identifier = 'Products'
+pageRef = 'products'
+name = 'Products'
+weight = 2
 
 [[Languages.en.menu.main]]
 identifier = 'blog'
@@ -86,18 +87,6 @@ pageRef = 'contact'
 name = 'Contact Us'
 url = '/contact'
 weight = 5
-
-[[Languages.en.menu.main]]
-name = 'Ensign for Enterprise'
-pageRef = '/ensign-enterprise'
-parent = 'Ensign'
-weight = 1
-
-[[Languages.en.menu.main]]
-name = 'Pricing'
-pageRef = '/ensign-pricing'
-parent = 'Ensign'
-weight = 2
 
 ## English Language
 [Languages.en]
