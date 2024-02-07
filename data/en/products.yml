@@ -19,7 +19,7 @@ products:
         - text: Hosted or self-hosted versions available
       buttons:
         - text: Try Ensign
-          link: https://www.rotational.app
+          link: https://rotational.app
         - text: View Pricing
           link: /ensign-pricing
         - text: SDKs
