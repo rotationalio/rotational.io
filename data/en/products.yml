@@ -9,7 +9,7 @@ products:
       description: A cloud-native, cloud agnostic database designed for data teams to prototype and deploy data products and services. 
                    Ensign makes it easy to ingest structured and unstructured data, build and analyze corpora, and responsibly manage and 
                    monitor data sets/sources that power LLMs and models.
-      image: img/mesh-logo.png
+      logo: img/mesh-logo.png
       product_details:
         - text: Easily ingest structured or unstructured data from any source system or data set using our Python or Go SDKs
         - text: Build a custom corpora or data set for domain-specific LLMs or models
@@ -26,7 +26,7 @@ products:
       description: Yellowbrick is an open source diagnostic visualization tool for machine learning that allows data scientists to steer the model selection process.
                    Yellowbrick has been incorporated into data science workflows across companies, federal agencies, and individual data scientists. It reaches an 
                    international audience and averages 60,000+ downloads/month.
-      image: img/yellowbrick-flat-logo.png
+      logo: img/yellowbrick-flat-logo.png
       product_details:
         - text: Extends the Scikit-Learn API to make model selection and hyperparameter tuning easier
         - text: Includes production-ready visualizers for features, classification, regression, clustering, model selection, and text
