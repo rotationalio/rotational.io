@@ -6,32 +6,9 @@
         {{ $currentPage := . }}
         {{ range .Site.Menus.main }}
         <li>
-        {{ if eq .Name "Product" }}
-        <span>
-            <div class="ensign-menu">
-                {{ .Name }}
-            <button type="button" onclick="showEnsignMenu()" id="open-ensign-menu-bttn">
-                <i class="fa fa-caret-down" aria-hidden="true"></i>
-                <span class="sr-only">Open menu</span>
-            </button>
-            <button type="button" onclick="hideEnsignMenu()" id="close-ensign-menu-bttn">
-                <i class="fa fa-caret-up" aria-hidden="true"></i>
-                <span class="sr-only">Close menu</span>
-            </button>
-            </div>
-        </span>
-            {{ else }}
             <a class=" {{ if $currentPage.IsMenuCurrent " main" . }}active{{ end }}" href="{{ .URL }}">
                 {{ .Name }}
             </a>
-            {{ end }}
-            {{ if .HasChildren }}
-            <ul id="ensign-dropdown-menu">
-                {{ range .Children }}
-                <li><a href="{{ .URL }}">- {{ .Name }}</a></li>
-                {{ end }}
-            </ul>
-            {{ end }}
         </li>
         {{ end }}
         <a class="icon" onclick="openMobNav()">

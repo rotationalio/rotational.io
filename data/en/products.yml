@@ -6,12 +6,34 @@ products:
             our product expertise, tricks, and lessons learned with our clients.
   products:
     - product_name: Ensign
-      description: Ensign is a database-meets-event-streaming platform for data science teams that want to get their data moving and their models into production.
-      link: /ensign
+      description: A cloud-native, cloud agnostic database designed for data teams to prototype and deploy data products and services. 
+                   Ensign makes it easy to ingest structured and unstructured data, build and analyze corpora, and responsibly manage and 
+                   monitor data sets/sources that power LLMs and models.
+      logo: img/mesh-logo.png
+      product_details:
+        - text: Easily ingest structured or unstructured data from any source system or data set using our Python or Go SDKs
+        - text: Build a custom corpora or data set for domain-specific LLMs or models
+        - text: Automated deduplication and anomaly detection
+        - text: Conduct data transformations for downstream models or consumers
+        - text: No complex cloud vendor accounts or configurations required (or surprise bills)
+        - text: Hosted or self-hosted versions available
+      buttons:
+        - text: Try Ensign
+          link: https://rotational.app
+        - text: View Pricing
+          link: /ensign-pricing
+        - text: SDKs
+          link: https://ensign.rotational.dev/sdk/
     - product_name: Yellowbrick
-      description: Yellowbrick is an open source project built using Python that extends the scikit-learn API with visual analysis and diagnostic tools. 
-                   The Yellowbrick library is a diagnostic visualization platform for machine learning.
-      link: https://www.scikit-yb.org/en/latest/index.html
-    - product_name: Baleen
-      description: Baleen is an automated ingestion service of RSS feeds to construct a corpus for NLP research.
-      link: https://github.com/rotationalio/baleen
+      description: Yellowbrick is an open source diagnostic visualization tool for machine learning that allows data scientists to steer the model selection process.
+                   Yellowbrick has been incorporated into data science workflows across companies, federal agencies, and individual data scientists. It reaches an 
+                   international audience and averages 60,000+ downloads/month.
+      logo: img/yellowbrick-flat-logo-cropped.png
+      product_details:
+        - text: Extends the Scikit-Learn API to make model selection and hyperparameter tuning easier
+        - text: Includes production-ready visualizers for features, classification, regression, clustering, model selection, and text
+        - text: Commonly used inside of a Jupyter Notebook alongside Pandas data frames
+        - text: Requires scikit-learn and matplotlib libraries
+      buttons:
+        - text: View Docs
+          link: https://www.scikit-yb.org/en/latest/index.html

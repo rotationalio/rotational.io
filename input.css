@@ -119,17 +119,6 @@ pre {
   font-size: 17px;
 }
 
-.fa-caret-down, .fa-caret-up {
-  float: left;
-  color: #f2f2f2;
-  text-align: center;
-  margin-top: -8px;
-  margin-left: 4px;
-  padding: 14px 0px;
-  text-decoration: none;
-  font-size: 17px;
-}
-
 /* Change the color of links on hover */
 .topnav a:hover {
   /* background-color: #ddd; */
@@ -152,36 +141,6 @@ pre {
   text-align: right;
 }
 
-.ensign-menu {
-  display: flex;
-  padding: 14px 16px 0px 16px;
-}
-
-#ensign-dropdown-menu a {
-  font-size: medium;
-}
-
-@media screen and (min-width: 911px) {
-  #ensign-dropdown-menu {
-    background-color: #192e5b;
-    margin-top: -10px;
-    border-radius: 8px;
-  }
-  
-  #ensign-dropdown-menu a:hover {
-    color: #CFCFCF;
-  }
-  
-  #ensign-dropdown-menu li {
-    overflow: hidden;
-    padding: 2px;
-    border-bottom: 1px solid #CFCFCF;
-  }
-  
-  #ensign-dropdown-menu li:last-child {
-    border-bottom: none;
-  }
-}
 
 /* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
 @media screen and (max-width: 910px) {
@@ -225,46 +184,12 @@ pre {
     float: right;
     display: block;
   }
-
-  .fa-caret-down, .fa-caret-up {
-    color: #192e5b;
-  }
-}
-
-@media screen and ((min-width: 601px) and (max-width: 910px)) {
-  #ensign-dropdown-menu {
-    background-color: white;
-    margin-top: -10px;
-    border-radius: 8px;
-  }
 }
 
 @media screen and (min-width: 601px) {
   .topnav {
     display: flex;
     font-weight: 600;
-  }
-
-  #ensign-dropdown-menu {
-    display: none;
-    position: absolute;
-    margin-left: 16px;
-  }
-
-  #close-ensign-menu-bttn {
-    display: none;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .fa-caret-down, .fa-caret-up {
-    display: none !important;
-  }
-
-  #ensign-dropdown-menu {
-    display: block;
-    padding-top: 10px;
-    padding-left: 16px;
   }
 }
 
