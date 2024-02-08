@@ -3761,6 +3761,11 @@ em {
     margin-bottom: 3.5rem;
   }
 
+  .lg\:my-6 {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
   .lg\:ml-0 {
     margin-left: 0px;
   }
