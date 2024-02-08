@@ -35,12 +35,14 @@
         </section>
     </div>
 
-    <section class="md:flex md:space-x-5 items-center pl-2 py-5 rounded-lg bg-[#F5F5F5]">
+    <section class="md:flex md:justify-between items-center pl-4 py-6 rounded-lg bg-[#E3E3E1]">
         <p class="pb-6 md:pb-0 font-bold md:text-xl">Schedule your no-cost, risk-free consultation.</p>
         {{ $data := index site.Data site.Language.Lang }}
         {{ if $data.services.services.action.enable }}
         {{ with $data.services.services.action }}
-        <a href="{{ .schedule_link }}" target="_blank" class="border rounded-lg text-white font-bold bg-[#1D65A6] p-2.5">Schedule Consultation</a>
+        <div>
+            <a href="{{ .schedule_link }}" target="_blank" class="text-white font-bold bg-[#192E5B] hover:bg-[#1D65A6] p-4 mx-2 rounded-lg">Schedule Consultation</a>
+        </div>
         {{ end }}
         {{ end }}
     </section>
