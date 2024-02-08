@@ -20,7 +20,7 @@ products:
       buttons:
         - text: Learn More
           link: /ensign
-        - text: Try Ensign
+        - text: Try Ensign Free
           link: https://rotational.app
         - text: View Pricing
           link: /ensign-pricing
