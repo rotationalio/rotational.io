@@ -1514,6 +1514,10 @@ video {
   height: 1rem;
 }
 
+.h-48 {
+  height: 12rem;
+}
+
 .h-5 {
   height: 1.25rem;
 }
@@ -2555,6 +2559,10 @@ video {
   line-height: 1.5;
 }
 
+.leading-relaxed {
+  line-height: 1.625;
+}
+
 .leading-tight {
   line-height: 1.25;
 }
@@ -2798,17 +2806,6 @@ pre {
   font-size: 17px;
 }
 
-.fa-caret-down, .fa-caret-up {
-  float: left;
-  color: #f2f2f2;
-  text-align: center;
-  margin-top: -8px;
-  margin-left: 4px;
-  padding: 14px 0px;
-  text-decoration: none;
-  font-size: 17px;
-}
-
 /* Change the color of links on hover */
 
 .topnav a:hover {
@@ -2832,37 +2829,6 @@ pre {
   border-radius: 8px;
   width: 100%;
   text-align: right;
-}
-
-.ensign-menu {
-  display: flex;
-  padding: 14px 16px 0px 16px;
-}
-
-#ensign-dropdown-menu a {
-  font-size: medium;
-}
-
-@media screen and (min-width: 911px) {
-  #ensign-dropdown-menu {
-    background-color: #192e5b;
-    margin-top: -10px;
-    border-radius: 8px;
-  }
-
-  #ensign-dropdown-menu a:hover {
-    color: #CFCFCF;
-  }
-
-  #ensign-dropdown-menu li {
-    overflow: hidden;
-    padding: 2px;
-    border-bottom: 1px solid #CFCFCF;
-  }
-
-  #ensign-dropdown-menu li:last-child {
-    border-bottom: none;
-  }
 }
 
 /* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
@@ -2911,46 +2877,12 @@ pre {
     float: right;
     display: block;
   }
-
-  .fa-caret-down, .fa-caret-up {
-    color: #192e5b;
-  }
-}
-
-@media screen and ((min-width: 601px) and (max-width: 910px)) {
-  #ensign-dropdown-menu {
-    background-color: white;
-    margin-top: -10px;
-    border-radius: 8px;
-  }
 }
 
 @media screen and (min-width: 601px) {
   .topnav {
     display: flex;
     font-weight: 600;
-  }
-
-  #ensign-dropdown-menu {
-    display: none;
-    position: absolute;
-    margin-left: 16px;
-  }
-
-  #close-ensign-menu-bttn {
-    display: none;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .fa-caret-down, .fa-caret-up {
-    display: none !important;
-  }
-
-  #ensign-dropdown-menu {
-    display: block;
-    padding-top: 10px;
-    padding-left: 16px;
   }
 }
 
@@ -3662,10 +3594,6 @@ em {
     height: 9rem;
   }
 
-  .md\:h-64 {
-    height: 16rem;
-  }
-
   .md\:h-\[280px\] {
     height: 280px;
   }
@@ -3833,6 +3761,10 @@ em {
     margin-bottom: 3.5rem;
   }
 
+  .lg\:ml-0 {
+    margin-left: 0px;
+  }
+
   .lg\:ml-3 {
     margin-left: 0.75rem;
   }
@@ -3889,6 +3821,10 @@ em {
     height: 380px;
   }
 
+  .lg\:h-auto {
+    height: auto;
+  }
+
   .lg\:w-1\/2 {
     width: 50%;
   }
@@ -3901,12 +3837,20 @@ em {
     width: 66.666667%;
   }
 
+  .lg\:w-8\/12 {
+    width: 66.666667%;
+  }
+
   .lg\:w-\[20ch\] {
     width: 20ch;
   }
 
   .lg\:w-\[94\%\] {
     width: 94%;
+  }
+
+  .lg\:w-full {
+    width: 100%;
   }
 
   .lg\:grid-cols-2 {
@@ -3978,10 +3922,6 @@ em {
 
   .xl\:grid {
     display: grid;
-  }
-
-  .xl\:h-56 {
-    height: 14rem;
   }
 
   .xl\:w-\[96\%\] {
