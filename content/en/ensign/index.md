@@ -79,12 +79,12 @@ How does Ensign stack up to other, similar tools and products?
 <!-- Edit the competitive landscape table at data/en/ensign.yml -->
 {{< competitive-landscape >}}
 
-## Built for the Modern Data Team
+<!-- ## Built for the Modern Data Team
 
-Whether you wear one hat or all the hats, the right tool can make a world of difference.
+Whether you wear one hat or all the hats, the right tool can make a world of difference. -->
 
 <!-- Different Hats Section with 3 Cards -->
-{{< triple >}}
+<!-- {{< triple >}}
 {{% vtriple color="#E3E3E1" %}}
 ### Developers
 
@@ -143,7 +143,7 @@ Let downstream consumers define their own data schemas rather than struggling to
 {{% /skinnyright %}}
 
 {{< comic >}}
-{{% /uneven %}}
+{{% /uneven %}} -->
 
 {{< ensigncoa btnhref="https://rotational.app/register" btntext="Create Account" >}}
 Create your no-cost starter account today!
