@@ -18,7 +18,9 @@ products:
         - text: No complex cloud vendor accounts or configurations required (or surprise bills)
         - text: Hosted or self-hosted versions available
       buttons:
-        - text: Try Ensign
+        - text: Learn More
+          link: /ensign
+        - text: Try Ensign Free
           link: https://rotational.app
         - text: View Pricing
           link: /ensign-pricing

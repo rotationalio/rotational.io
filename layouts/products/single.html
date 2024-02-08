@@ -15,21 +15,21 @@
   <section class="my-12">
     <h2 class="mb-4 font-bold text-3xl">{{ .product_name }}</h2>
     <p class="mb-4 text-lg">{{ .description }}</p>
-    <section class="grid gap-8 mt-8 lg:mt-14 lg:grid-cols-3">
-      <section>
+    <section class="grid gap-8 mt-8 border-2 rounded lg:grid-cols-3">
+      <section class="mt-6 lg:my-6">
         {{ if eq .product_name "Ensign" }}
         <p class="font-bold text-4xl text-center text-[#1D65A6] mb-4">Ensign</p>
         {{ end }}
         <img src="{{ .logo }}" class="h-48 lg:w-8/12 lg:h-auto mx-auto"/>
       </section>
-      <section class="leading-relaxed lg:w-full">
-        <ul class="ml-4 lg:ml-0">
+      <section class="lg:my-6 leading-relaxed lg:w-full">
+        <ul class="ml-6 lg:ml-0">
           {{ range .product_details }}
-          <li class="list-disc leading-relaxed pb-2">{{ .text }}</li>
+          <li class="list-disc leading-relaxed">{{ .text }}</li>
           {{ end }}
         </ul>
       </section>
-      <section>
+      <section class="lg:my-6">
         <ul>
           {{ range .buttons }}
           <li class="text-center mb-6">
