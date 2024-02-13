@@ -2,7 +2,7 @@
 title: "{{ replaceRE "^[-0-9]{10}-" "" .Name | replaceRE "-" " " | title }}"
 slug: "{{ replaceRE "^[-0-9]{10}-" "" .Name }}"
 draft: false
-event_date: "YYYY-MM-DD" (Include the time, "YYYY-MM-DDT13:00:00-5:00", if the event will happen in the future and would like to display a registration button.)
+event_date: "YYYY-MM-DD" (Include the time, "YYYY-MM-DDT13:00:00-05:00", if the event will happen in the future and would like to display a registration button.)
 image: "img/resources/event-image.png"
 name: "Write the name or title of the event"
 description: "Write the event's description"
