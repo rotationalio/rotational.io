@@ -66,7 +66,18 @@ class Trainer:
     Class for training a model with the transformers library and PyTorch.
     """
 
-    def __init__(self, model_topic="sentiment-models", ensign_client_id=None, ensign_client_secret=None, tokenizer="distilbert-base-uncased", model="distilbert-base-uncased", eval_metric="accuracy", output_dir="results", num_epochs=2, version="v0.1.0"):
+    def __init__(
+        self,
+        model_topic="sentiment-models",
+        ensign_client_id=None,
+        ensign_client_secret=None,
+        tokenizer="distilbert-base-uncased",
+        model="distilbert-base-uncased",
+        eval_metric="accuracy",
+        output_dir="results",
+        num_epochs=2,
+        version="v0.1.0"
+    ):
         if isinstance(tokenizer, str):
             self.tokenizer = AutoTokenizer.from_pretrained(tokenizer)
         else:
@@ -75,7 +86,12 @@ class Trainer:
         self.accuracy = evaluate.load(eval_metric)
         id2label = {0: "negative", 1: "positive"}
         label2id = {"negative": 0, "positive": 1}
-        self.model = AutoModelForSequenceClassification.from_pretrained(model, num_labels=2, id2label=id2label, label2id=label2id)
+        self.model = AutoModelForSequenceClassification.from_pretrained(
+            model,
+            num_labels=2,
+            id2label=id2label,
+            label2id=label2id
+        )
         self.output_dir = output_dir
         self.model_topic = model_topic
         self.train_args = {
@@ -90,7 +106,10 @@ class Trainer:
             "load_best_model_at_end": True,
         }
         self.training_args = TrainingArguments(**self.train_args)
-        self.ensign = Ensign(client_id=ensign_client_id, client_secret=ensign_client_secret)
+        self.ensign = Ensign(
+            client_id=ensign_client_id,
+            client_secret=ensign_client_secret
+        )
         self.loader = EnsignLoader(self.ensign)
         self.train_set = None
         self.test_set = None
@@ -101,11 +120,15 @@ class Trainer:
         preds, labels = eval_pred
         preds = np.argmax(preds, axis=1)
         return self.accuracy.compute(predictions=preds, references=labels)
-    
+
     async def load_dataset(self, topic):
         df = await self.loader.load_all(topic)
-        self.train_set = DataFrameSet(df[df["split"] == "train"], tokenizer=self.tokenizer)
-        self.test_set = DataFrameSet(df[df["split"] == "test"], tokenizer=self.tokenizer)
+        self.train_set = DataFrameSet(
+            df[df["split"] == "train"], tokenizer=self.tokenizer
+        )
+        self.test_set = DataFrameSet(
+            df[df["split"] == "test"], tokenizer=self.tokenizer
+        )
         self.train_set.preprocess()
         self.test_set.preprocess()
 
@@ -124,14 +147,20 @@ class Trainer:
 
 We certainly have to push the model somewhere for it to be useful. HuggingFace has done a lot of work to make this easy - you just need to [create an accout](https://huggingface.co) and an [access key](https://huggingface.co/settings/tokens) with write permissions. However, to do MLOps correctly you need to consider a few things:
 
-1. Versioning - You need a way to distinguish between models and specify which model to use.
-2. Provenance - You need to include sufficient metadata along with the models to remember how they were trained.
-3. Reproducibility - Is the model training process deterministic? Will you be able to reproduce inferences and evaluations of the model for debugging?
+1. **Versioning** - You need a way to distinguish between models and specify which model to use.
+2. **Provenance** - You need to include sufficient metadata along with the models to remember how they were trained.
+3. **Reproducibility** - Is the model training process deterministic? Will you be able to reproduce inferences and evaluations of the model for debugging?
 
 One solution to these problems is a well defined audit log. This is where Ensign comes in. With Ensign, you can create a topic to keep track of training runs and include as much detail as necessary. The class method below publishes the latest trained model to HuggingFace and *also* publishes some important model metadata to the `sentiment-models` Ensign topic.
 
 ```python
-    async def publish_latest_model(self, hub_username, hub_token, model_name="movie-reviews-sentiment", eval=True):
+    async def publish_latest_model(
+        self,
+        hub_username,
+        hub_token,
+        model_name="movie-reviews-sentiment",
+        eval=True
+    ):
         latest = None
         checkpoint = 0
         for name in os.listdir(self.output_dir):
@@ -151,10 +180,18 @@ One solution to these problems is a well defined audit log. This is where Ensign
             "trained_at": os.path.getmtime(model_path)
         }
         if eval:
-            sent = pipeline("sentiment-analysis", model=model, tokenizer=self.tokenizer, truncation=True)
+            sent = pipeline(
+                "sentiment-analysis",
+                model=model,
+                tokenizer=self.tokenizer,
+                truncation=True
+            )
             preds = sent(self.test_set.features())
             labels = self.test_set.labels()
-            data["eval_accuracy"] = self.accuracy.compute(predictions=preds, references=labels)
+            data["eval_accuracy"] = self.accuracy.compute(
+                predictions=preds,
+                references=labels
+            )
         event = Event(
             json.dumps(data).encode("utf-8"),
             mimetype="application/json",
@@ -171,10 +208,17 @@ With that, we've created a high-level API for training LLMs and pushing them int
 
 ```python
 from train import Trainer
-trainer = Trainer(ensign_client_id=<Your Ensign Client ID>, ensign_client_secret=<Your Ensign Client Secret>)
+trainer = Trainer(
+    ensign_client_id=<Your Ensign Client ID>,
+    ensign_client_secret=<Your Ensign Client Secret>
+)
 await trainer.load_dataset("movie-reviews-text")
 trainer.train()
-await trainer.publish_latest_model(<Your HuggingFace Username>, <Your HuggingFace Access Token>, eval=False)
+await trainer.publish_latest_model(
+    <Your HuggingFace Username>,
+    <Your HuggingFace Access Token>,
+    eval=False
+)
 ```
 
 On the `sentiment-models` topic page, you can run the sample query to confirm that the model training event made it to Ensign.
@@ -214,7 +258,10 @@ async def app(ensign):
     st.write("Using model {} @ {}".format(model_path, model_version))
 
     # Build the pipeline to score raw text samples
-    model = AutoModelForSequenceClassification.from_pretrained(model_path, revision=model_version)
+    model = AutoModelForSequenceClassification.from_pretrained(
+        model_path,
+        revision=model_version
+    )
     tokenizer = AutoTokenizer.from_pretrained(model_path, revision=model_version)
     sent = pipeline("sentiment-analysis", model=model, tokenizer=tokenizer)
     handle_input(sent)
