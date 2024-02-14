@@ -33,6 +33,15 @@ This [free, structured curriculum](/blog/welcome-to-ensign-u/) is guaranteed to 
 - [1.5 PubSub 101: Querying Topics with SQL](/blog/pubsub-101---querying-topics/)
 
 {{% /ensign-u-module %}}
+{{% ensign-u-module %}}
+
+### Build Your Own LLM: DIY Large Language Models
+
+- [2.0 Data Ingestion](/blog/build-your-own-llm---data-ingestion/)
+- [2.1 Training and Fine-Tuning](/blog/build-your-own-llm---training/)
+- [2.2 Getting Into Production](/blog/build-your-own-llm---getting-into-production/)
+
+{{% /ensign-u-module %}}
 
 {{< /ensign-u-double >}}
 
