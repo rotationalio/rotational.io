@@ -27,7 +27,7 @@ Add in world news and personal situations and well it's easy to see why I've see
 
 Feeling overwhelmed is natural, so what can we do to not let it consume us? Well, I have a few tips. 
 
-I'd like to note that I'm not a trained professional and so these recommendations are purely based on what have worked for me or what others have shared with me in the past.
+I'd like to note that I'm not a trained professional and so these recommendations are purely based on what has worked for me or what others have shared with me in the past.
 
 ## Why Am I Overwhelmed?
 A great place to start with managing overwhelm is to determine what's really causing you to feel this way. Reading social media is my way of catching up on the news and so beginning my day somewhat bombarded with multiple topics can make me feel overloaded. 
@@ -37,7 +37,7 @@ Before I know it, I'm searching for more details on different topics and then it
 As you're probably thinking, that's not a great way to start my day. If I'm overwhelmed before I get out of bed, then once I start working it won't take much to pile on to that feeling. This is why it's necessary to discover the root causes because only then can we begin to make changes that can help us lighten the load.
 
 ## Take A Breather
-It feels as if taking a break is often suggested as a way to handle anything and well that's because it works. You ever have trouble fixing a bug only to have the solution come to you while doing something completely unrelated? Of course, you have.
+It feels as if taking a break is often suggested as a way to handle anything and well that's because it works. You ever had trouble fixing a bug only to have the solution come to you while doing something completely unrelated? Of course, you have.
 
 We should try the same thing when we're feeling overwhelmed. To be honest, I had trouble writing this blog post. In the middle of writing, I lost my flow. Suddenly, I disliked every sentence I typed. 
 
@@ -48,11 +48,15 @@ Taking that break not only helped me figure out why I was struggling to write th
 ## Don't Add More to Your Plate
 At times, we give ourselves more to do without truly considering how it may impact everything else we have going on. Sometimes, we don't have much of a choice. Life lifes. Emergencies happen. Kids do the darndest things. However, if you can help it, don't give yourself more than you can handle at a given time. 
 
-I recently had a chat with a friend about creating a website for her tutoring business. It’s a simple site, right? I can easily create that. At the same time, I’ve gotten it into my head that I must attend a Liverpool FC match this season now that their manager has announced that he’s stepping down at the end of the season. I wish it were as simple as going to Ticketmaster, purchasing a ticket, and booking a flight. Due to how the team sells tickets, there's maybe a 1% chance that I'll be able to buy one a week before the game. Yet, I'm still convinced that I'll be able to make this happen.
+I recently had a chat with a friend about creating a website for her tutoring business. It’s a simple site, right? I can easily create that. 
+
+At the same time, I’ve gotten it into my head that I must attend a Liverpool FC match now that their manager has announced that he’ll step down at the end of the season. I wish it were as simple as going to Ticketmaster, purchasing a ticket, and booking a flight. Due to how the team sells tickets, there's maybe a 1% chance that I'll be able to buy one a week before the game. Yet, I recently spent so much time trying to figure out how to make this work.
 
 I haven’t even mentioned any of the other things I’ve internally decided that I must do this year. And this is what I mean by not adding on to your plate, if you can help it. It may not be easy, but before you agree or decide to do something, take some time to consider how it will affect your schedule and workload.
 
-If you feel like it could potentially lead to you feeling overwhelmed, don't do it. Find a time quieter period in your schedule or try an alternative solution? For example, I could ask someone else I know and trust if they could build my friend's website. I could so look into a no-code/low-code solution that could potentially require less effort. As for the Liverpool FC tickets, I could wait until next season. Although, let's be real, I've got my fingers crossed for a miracle.
+If you feel like it could potentially lead to you feeling overwhelmed, don't do it. (This tip also applies to non-urgent things you previously agreed to.) Find a quieter period in your schedule or try an alternative solution. 
+
+For example, I could ask someone else I know and trust if they could build my friend's website. I could also use a no-code/low-code solution that could potentially require less effort. As for the Liverpool FC tickets, I could wait until next season. Although, let's be real, I've got my fingers crossed for a miracle.
 
 ## Additional Resources
 Hopefully, these few tips will help you start thinking about how you can manage overwhelming feelings in the future. By the way, the following articles provide additional tips and techniques that you may find useful:
