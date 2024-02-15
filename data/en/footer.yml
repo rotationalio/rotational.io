@@ -43,3 +43,23 @@ footer:
       link: /opensource
     - name: Resources
       link: /resources
+
+#Social Media Links
+  social:
+    enable: true
+    social_media:
+    - name: Twitter
+      link: https://twitter.com/rotationalio
+      icon: fa fa-twitter
+    - name: GitHub
+      link: https://github.com/rotationalio
+      icon: fa fa-github
+    - name: LinkedIn
+      link: https://www.linkedin.com/company/rotational
+      icon: fa fa-linkedin
+    - name: YouTube
+      link: https://www.youtube.com/@rotationalio
+      icon: fa fa-youtube
+    - name: Email
+      link: mailto:info@rotational.io
+      icon: fa fa-envelope

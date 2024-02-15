@@ -52,34 +52,22 @@
                         {{ end }}
                     </div>
                 </div>
-                <div class="max-w-7xl sm:flex justify-between border-t py-6 mt-12 sm:mt-32">
-                    <div class="mx-auto xl:ml-5 sm:mt-0 mt-8">
+                <div class="max-w-7xl sm:flex justify-center border-t py-6 mt-12 sm:mt-32">
+                    <div class="mx-auto xl:ml-5">
                         <div>
-                            <ul class="mx-auto grid grid-cols-2 gap-x-20 md:gap-x-32 lg:grid-cols-4">
-                                <li class="pb-8 mt-1">
-                                        <a href="https://twitter.com/rotationalio" class="flex items-center p-2 hover:rounded-full hover:bg-icon-hover" target="_blank">
-                                            <img src="img/footer/twitter.svg" alt="" class="scale-75">
-                                            <span class="ml-4">Twitter</span>
-                                        </a>
+                            <ul class="grid gap-8 sm:flex justify-center lg:gap-28 xl:gap-36">
+                                {{ if $data.footer.footer.social.enable }}
+                                {{ with $data.footer.footer.social }}
+                                {{ range .social_media }}
+                                <li>
+                                    <a href="{{ .link }}" target="_blank" class="flex items-center gap-2 hover:text-[#1D65A6]">
+                                        <i class="text-2xl {{ .icon }}"></i>
+                                        <p>{{ .name }}</p>
+                                    </a>                                    
                                 </li>
-                                <li class="pb-8 mt-1">
-                                    <a href="https://github.com/rotationalio" class="flex items-center p-2 hover:rounded-full hover:bg-icon-hover" target="_blank">
-                                        <img src="img/footer/github.svg" alt="" class="scale-[.8]">
-                                        <span class="ml-4">GitHub</span>
-                                    </a>
-                                </li>
-                                <li class="pb-8 ">
-                                    <a href="https://www.linkedin.com/company/rotational" class="flex items-center p-2 hover:rounded-full hover:bg-icon-hover" target="_blank">
-                                        <img src="img/footer/linkedin.svg" alt="" class="scale-75">
-                                        <span class="mt-2 ml-4">LinkedIn</span>
-                                    </a>
-                                </li>
-                                <li class="pb-8 mt-2">
-                                    <a href="mailto:info@rotational.io" class="flex items-center p-2 hover:rounded-full hover:bg-icon-hover" target="_blank">
-                                        <img src="img/footer/email.svg" alt="" class="scale-[.8]">
-                                        <span class="ml-4">Email</span>
-                                    </a>
-                                </li>
+                                {{ end }}
+                                {{ end }}
+                                {{ end }}
                             </ul>
                         </div>
                     </div>
