@@ -475,3 +475,9 @@ em {
     height: 8rem;
   }
 }
+
+.resource-description a {
+  text-decoration: underline;
+  color: #1d65a6;
+  font-weight: 500;
+}
