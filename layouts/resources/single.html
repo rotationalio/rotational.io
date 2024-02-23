@@ -27,10 +27,6 @@
         </div>
         {{ end }}
 
-        <!-- If the resource has an audio link, add the link to the image. -->
-
-        <!-- If the resource has a description and an audio link, adjust the style to include the audio link. -->
-
         <section class="resource-description my-12 text-lg text-center">{{ .Params.description | .RenderString }}</section>
 
         {{ if .Params.audio_link }}
