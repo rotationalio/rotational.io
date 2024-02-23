@@ -3199,6 +3199,12 @@ em {
   }
 }
 
+.resource-description a {
+  text-decoration: underline;
+  color: #1d65a6;
+  font-weight: 500;
+}
+
 .hover\:bg-\[\#192E5B\]:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(25 46 91 / var(--tw-bg-opacity));

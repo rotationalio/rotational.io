@@ -27,11 +27,21 @@
         </div>
         {{ end }}
 
-        <section class="resource-description my-12 text-lg px-10">{{ .Params.description | .RenderString }}</section>
+        <!-- If the resource has an audio link, add the link to the image. -->
+
+        <!-- If the resource has a description and an audio link, adjust the style to include the audio link. -->
+
+        <section class="resource-description my-12 text-lg text-center">{{ .Params.description | .RenderString }}</section>
+
+        {{ if .Params.audio_link }}
+        <section class="mb-12 text-lg text-center">
+            <a href="{{ .Params.audio_link }}" target="_blank" class="text-[#1D65A6] underline font-semibold">Listen here</a>
+        </section>
+        {{ end }}
 
         <section class="mb-14 p-8 text-center bg-[#E8EFF6] mx-auto max-w-[800px] rounded-lg">
             <section class="mb-6">
-                <h2 class="mb-3 font-bold text-xl sm:text-2xl lg:text-3xl"><span class="text-[#1D65A6]">About</span> This Event</h2>
+                <h2 class="mb-3 font-bold text-xl sm:text-2xl lg:text-3xl"><span class="text-[#1D65A6]">More</span> Details</h2>
                 <span >{{ dateFormat "Jan 2, 2006" .Params.event_date }}</span>
             </section>
             <h3 class="mt-3 font-bold text-lg sm:text-xl lg:text-2xl">Featuring</h3>
