@@ -33,8 +33,10 @@
                 {{ else }}
                 <img src="{{ .Params.profile }}" alt="" class="rounded-full h-10 w-10">
                 <ul class="flex flex-wrap ml-4">
-                    {{ range .Params.authors }}
-                    <li class="list-multi-author font-extralight"><a href="/authors/{{ . | urlize }}">{{ . }}</a></li>
+                    {{ range $key, $value := .Params.authors }}
+                    <li class="list-multi-author font-extralight">
+                        <a href="/authors/{{ $value | urlize }}">{{ $value }}</a>{{ if ne $key (sub ( len $.Params.authors) 1) }}, {{ else }}{{ end }}
+                    </li>
                     {{ end }}
                 </ul>
                 {{ end }}

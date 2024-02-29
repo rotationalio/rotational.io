@@ -36,13 +36,13 @@
         <img src="{{ $profile }}" alt="" class="mr-3 border-4 border-white rounded-full h-11 drop-shadow-lg">
         {{ end }}
         
-        {{ range .Params.authors }}
-        <span class="blog-date">
-          <a href="/authors/{{ . | urlize }}" class="single-multi-author">{{ . }}</a> {{ end }} | {{ dateFormat "Monday, Jan 2, 2006" .Date }} |&nbsp;
+        {{ range $key, $value := .Params.authors }}
+        <span>
+          <a href="/authors/{{ $value | urlize }}">{{ $value }}</a>{{ if ne $key (sub ( len $.Params.authors) 1) }}, {{ else }}{{ end }} {{ end }} | {{ dateFormat "Monday, Jan 2, 2006" .Date }} |&nbsp;
         </span>
         <span>
           {{ range $key, $value := .Params.tags }}
-          <a href="/tags/{{ $value | urlize }}" class="blog-tag">{{ $value }}</a>{{ if ne $key (sub ( len $.Params.tags) 1) }},&nbsp; {{ else }}{{ end }}
+          <a href="/tags/{{ $value | urlize }}" class="blog-tag">{{ $value }}</a>{{ if ne $key (sub ( len $.Params.tags) 1) }}, {{ else }}{{ end }}
         </span>
         {{ end }}
 
