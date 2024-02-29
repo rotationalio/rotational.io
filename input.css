@@ -401,14 +401,6 @@ em {
   color: black;
 }
 
-.blog-tag::before {
-  content: ', ';
-}
-
-.blog-tag:first-child::before {
-  content: '';
-}
-
 .list-multi-author::after {
   content: '\00a0&';
 }

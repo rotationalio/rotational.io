@@ -41,8 +41,8 @@
           <a href="/authors/{{ . | urlize }}" class="single-multi-author">{{ . }}</a> {{ end }} | {{ dateFormat "Monday, Jan 2, 2006" .Date }} |&nbsp;
         </span>
         <span>
-          {{ range .Params.tags }}
-          <a href="/tags/{{ . | urlize }}" class="blog-tag">{{ . }}</a>
+          {{ range $key, $value := .Params.tags }}
+          <a href="/tags/{{ $value | urlize }}" class="blog-tag">{{ $value }}</a>{{ if ne $key (sub ( len $.Params.tags) 1) }},&nbsp; {{ else }}{{ end }}
         </span>
         {{ end }}
 

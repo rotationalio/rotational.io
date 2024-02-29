@@ -4,10 +4,10 @@
     <div class="bg-[#ECF6FF] rounded-b-xl ">
 
         <div class="px-6 pt-4">
-            <ul class="flex whitespace-nowrap">
-                {{ range .Params.tags }}
+            <ul class="flex flex-wrap">
+                {{ range $key, $value := .Params.tags }}
                     <li class="blog-tag text-base font-bold text-[#1D65A6]">
-                        <a href="/tags/{{ . | urlize }}">{{ . }}</a>
+                        <a href="/tags/{{ $value | urlize }}">{{ $value }}</a>{{ if ne $key (sub ( len $.Params.tags) 1) }},&nbsp; {{ else }}{{ end }}
                     </li> 
                 {{ end }}
             </ul>
