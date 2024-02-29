@@ -6,7 +6,7 @@
         <div class="px-6 pt-4">
             <ul class="flex flex-wrap">
                 {{ range $key, $value := .Params.tags }}
-                    <li class="blog-tag text-base font-bold text-[#1D65A6]">
+                    <li class="text-base font-bold text-[#1D65A6]">
                         <a href="/tags/{{ $value | urlize }}">{{ $value }}</a>{{ if ne $key (sub ( len $.Params.tags) 1) }},&nbsp; {{ else }}{{ end }}
                     </li> 
                 {{ end }}
@@ -34,8 +34,8 @@
                 <img src="{{ .Params.profile }}" alt="" class="rounded-full h-10 w-10">
                 <ul class="flex flex-wrap ml-4">
                     {{ range $key, $value := .Params.authors }}
-                    <li class="list-multi-author font-extralight">
-                        <a href="/authors/{{ $value | urlize }}">{{ $value }}</a>{{ if ne $key (sub ( len $.Params.authors) 1) }}, {{ else }}{{ end }}
+                    <li class="font-extralight">
+                        <a href="/authors/{{ $value | urlize }}">{{ $value }}</a>{{ if ne $key (sub ( len $.Params.authors) 1) }},&nbsp; {{ else }}{{ end }}
                     </li>
                     {{ end }}
                 </ul>

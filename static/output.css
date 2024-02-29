@@ -1434,6 +1434,10 @@ video {
   margin-top: auto;
 }
 
+.mb-auto {
+  margin-bottom: auto;
+}
+
 .block {
   display: block;
 }
