@@ -42,7 +42,7 @@
         </span>
         <span>
           {{ range $key, $value := .Params.tags }}
-          <a href="/tags/{{ $value | urlize }}" class="blog-tag">{{ $value }}</a>{{ if ne $key (sub ( len $.Params.tags) 1) }}, {{ else }}{{ end }}
+          <a href="/tags/{{ $value | urlize }}">{{ $value }}</a>{{ if ne $key (sub ( len $.Params.tags) 1) }},&nbsp; {{ else }}{{ end }}
         </span>
         {{ end }}
 
@@ -83,7 +83,7 @@
         {{ end }}
           {{ range .Params.authors }}
           <span class="flex flex-wrap">
-            <a href="/authors/{{ . | urlize }}" class="single-multi-author lg:w-[20ch] mx-2">{{ . }}</a> 
+            <a href="/authors/{{ . | urlize }}" class="lg:w-[20ch] mx-2">{{ . }}</a> 
             {{ end }}
           </span>
       </div>
@@ -120,7 +120,7 @@
       </div>
     </div>
     <div>
-      <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-8 sm:mt-16">
+      <div class="grid lg:grid-cols-2 xl:grid-cols-3 gap-8 sm:mt-16">
         {{ range first 3 (where site.RegularPages "Section" "==" "blog")}}
         <div class="mt-6 ">
           {{ .Render "article"}}
