@@ -51,7 +51,8 @@
       <article class="max-w-[800px] mx-auto prose">
         {{ .Content | safeHTML }}
         {{ if .Params.photo_credit }}
-        <span>{{ .Params.photo_credit | markdownify }}</span>
+        <hr class="border-t my-12" />
+          <p>{{ .Params.photo_credit | markdownify }}</p>
         {{ end }}
       </article>
     </div>
