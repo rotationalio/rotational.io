@@ -36,13 +36,13 @@
         <img src="{{ $profile }}" alt="" class="mr-3 border-4 border-white rounded-full h-11 drop-shadow-lg">
         {{ end }}
         
-        {{ range .Params.authors }}
-        <span class="blog-date">
-          <a href="/authors/{{ . | urlize }}" class="single-multi-author">{{ . }}</a> {{ end }} | {{ dateFormat "Monday, Jan 2, 2006" .Date }} |&nbsp;
+        {{ range $key, $value := .Params.authors }}
+        <span>
+          <a href="/authors/{{ $value | urlize }}">{{ $value }}</a>{{ if ne $key (sub ( len $.Params.authors) 1) }}, {{ else }}{{ end }} {{ end }} | {{ dateFormat "Monday, Jan 2, 2006" .Date }} |&nbsp;
         </span>
         <span>
-          {{ range .Params.tags }}
-          <a href="/tags/{{ . | urlize }}" class="blog-tag">{{ . }}</a>
+          {{ range $key, $value := .Params.tags }}
+          <a href="/tags/{{ $value | urlize }}">{{ $value }}</a>{{ if ne $key (sub ( len $.Params.tags) 1) }},&nbsp; {{ else }}{{ end }}
         </span>
         {{ end }}
 
@@ -84,7 +84,7 @@
         {{ end }}
           {{ range .Params.authors }}
           <span class="flex flex-wrap">
-            <a href="/authors/{{ . | urlize }}" class="single-multi-author lg:w-[20ch] mx-2">{{ . }}</a> 
+            <a href="/authors/{{ . | urlize }}" class="lg:w-[20ch] mx-2">{{ . }}</a> 
             {{ end }}
           </span>
       </div>
@@ -121,7 +121,7 @@
       </div>
     </div>
     <div>
-      <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-8 sm:mt-16">
+      <div class="grid lg:grid-cols-2 xl:grid-cols-3 gap-8 sm:mt-16">
         {{ range first 3 (where site.RegularPages "Section" "==" "blog")}}
         <div class="mt-6 ">
           {{ .Render "article"}}
