@@ -4,23 +4,23 @@
     <div class="bg-[#ECF6FF] rounded-b-xl ">
 
         <div class="px-6 pt-4">
-            <ul class="flex whitespace-nowrap">
-                {{ range .Params.tags }}
-                    <li class="blog-tag text-base font-bold text-[#1D65A6]">
-                        <a href="/tags/{{ . | urlize }}">{{ . }}</a>
+            <ul class="flex flex-wrap">
+                {{ range $key, $value := .Params.tags }}
+                    <li class="text-base font-bold text-[#1D65A6]">
+                        <a href="/tags/{{ $value | urlize }}">{{ $value }}</a>{{ if ne $key (sub ( len $.Params.tags) 1) }},&nbsp; {{ else }}{{ end }}
                     </li> 
                 {{ end }}
             </ul>
-            <h3 class="text-xl font-extrabold mt-3 pb-2 "><a class="block h-auto md:h-24" href="{{ .Permalink }}">{{ .Title }}</a>
+            <h3 class="text-xl font-extrabold mt-3 md:mt-4 pb-2 "><a class="block h-auto lg:h-24" href="{{ .Permalink }}">{{ .Title }}</a>
             </h3>
-            <div class='h-auto md:h-36'>
-                <p class="mt-3 md:mt-8 text-base">{{ .Summary | markdownify | truncate 240 }}</p>
+            <div class='h-auto lg:h-36'>
+                <p class="mt-3 md:mt-4 text-base">{{ .Summary | markdownify | truncate 240 }}</p>
 
             </div>
 
         </div>
 
-        <div class="flex justify-between items-center px-6 py-3 border-t mt-6">
+        <div class="flex justify-between items-center px-6 py-3 border-t mt-6 xl:mt-8">
             <div class="flex items-center">
                 {{ $profile := .Params.profile }}
                 {{ if eq (len .Params.authors) 1}}
@@ -33,8 +33,10 @@
                 {{ else }}
                 <img src="{{ .Params.profile }}" alt="" class="rounded-full h-10 w-10">
                 <ul class="flex flex-wrap ml-4">
-                    {{ range .Params.authors }}
-                    <li class="list-multi-author font-extralight"><a href="/authors/{{ . | urlize }}">{{ . }}</a></li>
+                    {{ range $key, $value := .Params.authors }}
+                    <li class="font-extralight">
+                        <a href="/authors/{{ $value | urlize }}">{{ $value }}</a>{{ if ne $key (sub ( len $.Params.authors) 1) }},&nbsp; {{ else }}{{ end }}
+                    </li>
                     {{ end }}
                 </ul>
                 {{ end }}
