@@ -11,29 +11,23 @@ tags: ['ML', 'NLP', 'Neural Networks', 'JavaScript']
 description: "Get to know 5 JavaScript libraries you can use for machine learning."
 ---
 
-I’d say it’s well documented that Python and machine learning go together like babies and pacifiers. But what about other programming languages, such as JavaScript?
+Over the years, several JavaScript libraries have been created for machine learning. Let's sort through the ones that can help you get started quickly, even if you don't have much experience with machine learning or data science.
 
 <!--more-->
 
-Though several JavaScript libraries have been created for machine learning, several have been deprecated or aren't actively maintained. To keep this list from getting too long, I decided to focus on 5 developer friendly tools that can help you get started rather quickly even if you don't have much experience with machine learning or data science.
-
-Before digging into the 5 JavaScript libraries for machine learning that I think you should use, let’s consider why we may want to use JavaScript in the first place.
-
-### Why use JavaScript for Machine Learning
-
+Before getting to the list, I should note that it was difficult to narrow this list down to 5. There were many libraries to choose from, but I wanted to focus on a diverse set of tools that I believe are also developer friendly.
 
 ### [TensorFlow.js](https://www.tensorflow.org/js)
 
-TensorFlow.js is quite possibly the most well known JavaScript machine learning library. [First announced by Google in 2018](https://blog.tensorflow.org/2018/03/introducing-tensorflowjs-machine-learning-javascript.html), TensorFlow.js allows for the development of machine learning models in JavaScript. Developers can work with existing pre-trained models or even import their own.
+TensorFlow.js is quite possibly the most well known JavaScript machine learning library. [First announced by Google in 2018](https://blog.tensorflow.org/2018/03/introducing-tensorflowjs-machine-learning-javascript.html), TensorFlow.js allows for the development of machine learning models in JavaScript via the browser or Node.js. Developers can work with existing models and also import their own.
 
 If you’re in need of a little inspiration for working with TensorFlow.js, check out this [playlist](https://www.youtube.com/playlist?list=PLQY2H8rRoyvzSZZuF0qJpoJxZR1NgzcZw) of what others have built with it. 
 
 ### [Brain.js](https://brain.js.org/#/)
 
-Want to create your own neural network in JavaScript? Look no further than Brain.js. What makes this library worth looking into is how easy it is to get started, especially if you don’t have a lot of machine learning experience.
+Want to train your own model? Look no further than Brain.js. After installing the library, you can train a model in just a few lines of code. Once you have your dataset, follow one of their [examples](https://brain.js.org/#/examples) and get going in no time.
 
-After looking at a [few examples](https://brain.js.org/#/examples), you should be able to train a model pretty quickly with any dataset.
-
+Brain.js allows for training data to be saved and serialized to JSON. This could be useful if you need to add data and retrain a model.
 
 ### [Danfo.js](https://danfo.jsdata.org/) 
 
@@ -46,13 +40,20 @@ If you’re familiar with using Python’s [pandas](https://pandas.pydata.org/) 
 
 ### [ml.js](https://github.com/mljs/ml) 
 
-Need to work with classification and regression algorithms for your machine learning project? ml.js has got you covered. They’ve even compiled all of their machine learning and numerical analytics tools into the ml.js library which is currently recommended for use in the browser.
+Need to work with classification and regression algorithms for your next machine learning project? ml.js has got you covered. 
+
+They’ve even compiled all of their machine learning and numerical analytics tools into the ml.js library which is currently recommended for use in the browser.
 
 Should you need to work with one of their tools in Node.js, it is recommended to install dependencies individually. Check out all of their [repositories here](https://github.com/mljs) to get started.
 
 ### [winkJS](https://github.com/winkjs)
 
-Though more of a collection of libraries, I would be remiss to leave out winkJS. This compilation of open source libraries makes it possible to easily work with Natural Language Processing (NLP), machine learning, and statistical analysis in JavaScript. The [winkNLP library](https://winkjs.org/wink-nlp/) “has a comprehensive natural language processing (NLP) pipeline covering tokenization, sentence boundary detection (sbd), negation handling, sentiment analysis, part-of-speech (pos) tagging, named entity recognition (ner), custom entities recognition (cer).”
+Though more of a collection of libraries, I could not leave out winkJS. This compilation of open source libraries makes it possible to easily work with Natural Language Processing (NLP), machine learning, and statistical analysis in JavaScript either in the browser on Node.js.
 
-winkNLP also has full TypeScript support, may be used in the browser or Node.
+The most popular library, [winkNLP](https://winkjs.org/wink-nlp/) 
+> has a comprehensive natural language processing (NLP) pipeline covering tokenization, sentence boundary detection (sbd), negation handling, sentiment analysis, part-of-speech (pos) tagging, named entity recognition (ner), custom entities recognition (cer).
 
+Another great thing about winkNLP is that it has full support for TypeScript.
+
+### Build Machine Learning Projects with JavaScript
+I hope this list has inspired you to use one of or all of these tools while working on your next machine learning project. If there's a JavaScript library that you think should be on this list, let me know!
