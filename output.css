@@ -1845,10 +1845,6 @@ video {
   white-space: nowrap;
 }
 
-.whitespace-nowrap {
-  white-space: nowrap;
-}
-
 .rounded {
   border-radius: 0.25rem;
 }
@@ -3124,26 +3120,6 @@ em {
   color: black;
 }
 
-.blog-tag::before {
-  content: ', ';
-}
-
-.blog-tag:first-child::before {
-  content: '';
-}
-
-.list-multi-author::after {
-  content: '\00a0&';
-}
-
-.single-multi-author::after {
-  content: '\00a0&\00a0';
-}
-
-.list-multi-author:last-child::after, .single-multi-author:last-child::after {
-  content: '';
-}
-
 /* Resource page styles */
 
 #clouds-header, .resource-header {
@@ -3649,6 +3625,11 @@ em {
     padding: 1.25rem;
   }
 
+  .md\:px-10 {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+
   .md\:px-12 {
     padding-left: 3rem;
     padding-right: 3rem;
@@ -3783,6 +3764,14 @@ em {
     height: 3rem;
   }
 
+  .lg\:h-24 {
+    height: 6rem;
+  }
+
+  .lg\:h-36 {
+    height: 9rem;
+  }
+
   .lg\:h-\[380px\] {
     height: 380px;
   }
@@ -3844,6 +3833,11 @@ em {
     padding-right: 3rem;
   }
 
+  .lg\:px-2 {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
   .lg\:py-5 {
     padding-top: 1.25rem;
     padding-bottom: 1.25rem;
@@ -3888,6 +3882,10 @@ em {
 @media (min-width: 1280px) {
   .xl\:ml-5 {
     margin-left: 1.25rem;
+  }
+
+  .xl\:mt-8 {
+    margin-top: 2rem;
   }
 
   .xl\:grid {
