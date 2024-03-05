@@ -27,7 +27,17 @@
         </div>
         {{ end }}
 
-        <section class="resource-description my-12 text-lg text-center">{{ .Params.description | .RenderString }}</section>
+        {{ if .Params.audio_link  }}
+        <section class="resource-description my-12 text-lg text-center">
+            {{ .Params.description | .RenderString }}
+            <p class="mt-4">
+              <a href="{{ .Params.audio_link }}" target="_blank">Listen here</a>
+            </p>
+        </section>
+        {{ else }}
+        <section class="resource-description my-12 text-lg">{{ .Params.description | .RenderString }}</section>
+        {{ end }}
+
 
         <section class="mb-14 p-8 text-center bg-[#E8EFF6] mx-auto max-w-[800px] rounded-lg">
             <section class="mb-6">
