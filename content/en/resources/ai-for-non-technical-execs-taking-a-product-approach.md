@@ -1,10 +1,10 @@
 ---
-title: "AI for Normies: Making the Business Case"
-slug: "ai-for-normies-making-the-business-case"
+title: "AI for Non-Technical Execs: Taking a Product Approach"
+slug: "ai-for-non-technical-execs-taking-a-product-approach"
 draft: false
 event_date: "2024-03-12T12:00:00-05:00"
-image: "img/resources/webinars/ai-for-normies-making-the-business-case.webp"
-name: "AI for Normies: Making the Business Case"
+image: "img/resources/webinars/ai-for-non-technical-execs-taking-a-product-approach.webp"
+name: "AI for Non-Technical Execs: Taking a Product Approach"
 description: "Video Coming Soon!"
 events: ['Webinar']
 registration_link: https://r8l.co/XVq5jonHL5j
