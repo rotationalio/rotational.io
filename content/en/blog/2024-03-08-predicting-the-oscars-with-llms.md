@@ -2,7 +2,7 @@
 title: "Predicting the Oscars With LLMs"
 slug: "predicting-the-oscars-with-llms"
 date: "2024-03-08T15:17:58-06:00"
-draft: true
+draft: false
 image: img/blog/trophies.jpg
 photo_credit: 'Photo by <a href="https://unsplash.com/@tommaomaoer?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">tommao wang</a> on <a href="https://unsplash.com/photos/gold-and-silver-pendant-lamps-GjtqYFnQEY4?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>'
 authors: ['Patrick Deziel']
@@ -11,16 +11,21 @@ tags: ['LLMs', 'Semantic Similarity', 'Python']
 description: "Can LLMs predict the Oscars?"
 ---
 
-If you're looking for a middle ground between custom LLMs and traditional machine learning models, semantic search might be worth looking into. In this post I will use semantic search do something silly - predict which film will take home the "Best Picture" Oscar this year.
+Looking for a middle ground between custom LLMs and traditional ML? Please welcome semantic search to the stage! Let's use semantic search to predict which film will take home the "Best Picture" Oscar this year 🤩
 
 <!--more-->
 
+Last year we all went to see "Everything Everywhere All at Once" at our team retreat, and it went on to take home several awards, including Best Picture. Let's see if we can predict the future again!
+
 ## Data Ingestion
 
-To start there is a nice dataset on [kaggle](https://www.kaggle.com/datasets/unanimad/the-oscar-award) which compiles all the Oscar nominees and winners since 1927. It turns out that the best picture award has changed names several times, so it took some manual data engineering to extract the labels.
+To start, there is a nice dataset on [Kaggle](https://www.kaggle.com/datasets/unanimad/the-oscar-award) which compiles all the Oscar nominees and winners since 1927. It turns out that the best picture award has changed names several times, so it took some manual data engineering to extract the labels.
 
 ```python
->> bp = ['BEST PICTURE', 'BEST MOTION PICTURE', 'OUTSTANDING PICTURE', 'OUTSTANDING PRODUCTION', 'OUTSTANDING MOTION PICTURE']
+>> bp = [
+    'BEST PICTURE', 'BEST MOTION PICTURE', 'OUTSTANDING PICTURE',
+    'OUTSTANDING PRODUCTION', 'OUTSTANDING MOTION PICTURE'
+   ]
 >> df = df[df['category'].isin(bp)]
 >> df['winner'].value_counts()
 winner
@@ -29,7 +34,7 @@ True      95
 Name: count, dtype: int64
 ```
 
-So there have been 591 best picture nominees and 95 winners. Not the largest data set but the class imbalance isn't terrible. To do machine learning I needed features so I scraped text from Wikipedia. Most films have a corresponding Wikipedia in the format:
+There have been 591 best picture nominees and 95 winners over the years. Not the largest data set, but at least the class imbalance isn't terrible. To do machine learning I needed features so I scraped text from Wikipedia. Most films have a corresponding Wikipedia in the format:
 
 `wikipedia.org/wiki/{film_title}_({year}_film)`
 
@@ -43,7 +48,7 @@ df["cleaned_text"].iloc[0]
 'The Racket is a 1928 American silent crime drama film directed by Lewis Milestone and starring Thomas Meighan, Marie Prevost, Louis Wolheim, and George E. Stone...'
 ```
 
-A TSNE projection is one way to visualize the high-dimensional data (e.g. encoded documents with TF-IDF). It shows that there are at least some interesting clusters in the Wikipedia text.
+A [TSNE projection](https://www.scikit-yb.org/en/latest/api/text/tsne.html) is one way to visualize the high-dimensional data (e.g. encoded documents with TF-IDF). It shows that there are at least some interesting clusters in the Wikipedia text. The green dots are the winners.
 
 !["TSNE Projection"](/img/blog/2024-03-08-predicting-the-oscars-with-llms/tsne.png)
 
@@ -53,7 +58,7 @@ My first idea was to encode the article text with a tried-and-tested approach li
 
 !["Decision Tree"](/img/blog/2024-03-08-predicting-the-oscars-with-llms/decision_tree.png)
 
-The next idea was to train `distilbert` for sequence classification to take advantage of the massive amount of pre-training. I was able to train a "will it win" model but the inferences were still not useful.
+The next idea was to train `distilbert` for sequence classification to take advantage of the massive amount of pre-training. I was able to train a "will it win" model but the inferences were still not useful. Everything looks like a winner this year!
 
 !["distilbert results"](/img/blog/2024-03-08-predicting-the-oscars-with-llms/distilbert_results.png)
 
@@ -67,7 +72,9 @@ The first step to computing similarity is to encode the articles text into vecto
 from sentence_transformers import SentenceTransformer
 
 model = SentenceTransformer("all-MiniLM-L6-v2")
-best_pictures["embeddings"] = best_pictures["cleaned_text"].apply(lambda x: model.encode(x))
+best_pictures["embeddings"] = best_pictures["cleaned_text"].apply(
+    lambda x: model.encode(x)
+)
 ```
 
 Now that we have the embeddings we can compute the similarity between an arbitrary bit of text and all the films in the corpus. Ranking by similarity gives us the "nearest neighbors" to a particular film.
@@ -77,7 +84,9 @@ from sentence_transformers import util
 
 def get_most_similar(text, n=3):
     embeddings = model.encode(text)
-    df["sim_score"] = df["embeddings"].apply(lambda x: util.cos_sim(embeddings, x).item())
+    df["sim_score"] = df["embeddings"].apply(
+        lambda x: util.cos_sim(embeddings, x).item()
+    )
     return df.sort_values(by="sim_score", ascending=False).head(n)
 
 film = "American Fiction"
@@ -118,4 +127,5 @@ Maestro +15000
 
 ## Conclusion
 
-When you need to boost the performance of your machine learning model, it usually comes down to improving the quality of the training dataset. In cases where you *don't* have access to more data or you can't afford to train custom LLMs, a similarity approach can be a cost-effective (and more explainable) solution.
+When you need to boost the performance of your machine learning model, it usually comes down to improving the quality of the training dataset. In cases where you *don't* have access to more data or you can't afford to train custom LLMs, a similarity approach can be a cost-effective (and more explainable) solution. And just as with film, a bit of creativity goes a long way!
+
