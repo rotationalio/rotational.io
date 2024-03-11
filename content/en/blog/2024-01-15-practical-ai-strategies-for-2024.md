@@ -5,7 +5,7 @@ date: "2024-01-15T10:52:57-05:00"
 draft: false
 image: img/blog/2024-01-15-practical-ai-strategies-for-2024/shipping.jpg
 photo_credit: "Photo by [Ian Simmonds on Unsplash](https://unsplash.com/@ihs_photo?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash)"
-authors: ['Edwin Schmerer']
+authors: ['Edwin Schmierer']
 profile: img/team/edwin-schmierer.png
 tags: ['AI/ML', 'Strategy']
 description: "Explore the top AI Strategies for 2024 from building domain-specific LLMs to empowering end-to-end data teams that can get models into production to generate immediate value."
