@@ -1,9 +1,9 @@
 ---
 title: "5 Javascript Libraries to Use for Machine Learning"
 slug: "5-javascript-libraries-to-use-for-machine-learning"
-date: "2024-03-05T13:25:57-05:00"
+date: "2024-03-11T09:25:57-05:00"
 draft: false
-image: img/blog/2024-03-05-5-javascript-libraries-to-use-for-machine-learning/5-javascript-libraries-to-use-for-machine-learning.webp
+image: img/blog/2024-03-11-javascript-libraries-to-use-for-machine-learning/5-javascript-libraries-to-use-for-machine-learning.webp
 photo_credit: "Photo by [Prateek Katyal](https://unsplash.com/@prateekkatyal) on [Unsplash](https://unsplash.com/photos/piled-books-on-brown-wooden-shelf-_YzGQvASeMk)"
 authors: ['Danielle Maxwell']
 profile: img/team/danielle-maxwell.png
@@ -15,7 +15,7 @@ Over the years, several JavaScript libraries have been created for machine learn
 
 <!--more-->
 
-Before getting to the list, I should note that it was difficult to narrow this list down to 5. There were many libraries to choose from, but I wanted to focus on a diverse set of tools that I believe are also developer friendly.
+Before getting to the list, I should note that it was difficult to narrow it down to 5. There were many libraries to choose from, but I wanted to focus on a diverse set of tools that I believe are also developer friendly.
 
 ### [TensorFlow.js](https://www.tensorflow.org/js)
 
@@ -48,7 +48,7 @@ Should you need to work with one of their tools in Node.js, it is recommended to
 
 ### [winkJS](https://github.com/winkjs)
 
-Though more of a collection of libraries, I could not leave out winkJS. This compilation of open source libraries makes it possible to easily work with Natural Language Processing (NLP), machine learning, and statistical analysis in JavaScript either in the browser on Node.js.
+Though more of a collection of libraries, I could not leave out winkJS. This compilation of open source libraries makes it possible to easily work with Natural Language Processing (NLP), machine learning, and statistical analysis in JavaScript either in the browser or Node.js.
 
 The most popular library, [winkNLP](https://winkjs.org/wink-nlp/) 
 > has a comprehensive natural language processing (NLP) pipeline covering tokenization, sentence boundary detection (sbd), negation handling, sentiment analysis, part-of-speech (pos) tagging, named entity recognition (ner), custom entities recognition (cer).
