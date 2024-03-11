@@ -1,7 +1,7 @@
 ############################# Ensign Data ###################################
 notice:
   enable: true
-  notice: "AI for Normies: Making the Business Case"
+  notice: "AI for Non-Technical Execs: Taking a Product Approach"
   action:
     text: Register Now
     link: "https://r8l.co/XVq5jonHL5j"
