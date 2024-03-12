@@ -7,7 +7,7 @@ image: img/blog/2022-11-29-storm-clouds.jpg
 authors: [Edwin Schmierer]
 profile: img/team/edwin-schmierer.png
 tags: ['Distributed Systems']
-photo_credit: Photo by Drew Hays on Unsplash
+photo_credit: Photo by [Drew Hays]((https://unsplash.com/@drew_hays)) on [Unsplash](https://unsplash.com/photos/JHHDUs23wjA)
 description: "In this post we delve into the logistics of a real world distributed system, and explore what failure does and does not look like."
 ---
 
@@ -60,10 +60,3 @@ In addition to its core microblogging service, Twitter provides ancillary servic
 Twitter is emblematic of how distributed systems have come to play increasingly important and arguably dominant roles in daily life. These systems have become integral to modern digital services, commanding a great deal of resources. Resilient distributed systems will only become more critical as more services, more of our time, and more of the economy move online, requiring always-on, available-anywhere computing services.
 
 The risk for Twitter isn’t the technical infrastructure, but the business model and leadership needed to maintain and grow its services. At this point, Twitter’s fate is unclear. Regardless, the next time you access your favorite app, take a moment to consider the distributed system - and people - who make it reliably available, accessible, and integral to your needs no matter where you are.
-
-
----
-
-Photo by [Drew Hays](https://unsplash.com/@drew_hays) on [Unsplash](https://unsplash.com/photos/JHHDUs23wjA).
-
----
