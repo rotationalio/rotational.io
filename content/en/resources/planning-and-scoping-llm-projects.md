@@ -2,7 +2,7 @@
 title: "Planning and Scoping LLM Projects"
 slug: "planning-and-scoping-llm-projects"
 draft: false
-event_date: "2024-03-26T13:00:00-05:00"
+event_date: "2024-03-26T12:00:00-05:00"
 image: "img/resources/webinars/planning-and-scoping-llm-projects.webp"
 name: "Planning and Scoping LLM Projects"
 description: "Video coming soon!"
