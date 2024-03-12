@@ -7,7 +7,7 @@ image: img/blog/2022-11-29-storm-clouds.jpg
 authors: [Edwin Schmierer]
 profile: img/team/edwin-schmierer.png
 tags: ['Distributed Systems']
-photo_credit: Photo by Drew Hays on Unsplash
+photo_credit: Photo by [Drew Hays]((https://unsplash.com/@drew_hays)) on [Unsplash](https://unsplash.com/photos/JHHDUs23wjA)
 description: "In this post we delve into the logistics of a real world distributed system, and explore what failure does and does not look like."
 ---
 
