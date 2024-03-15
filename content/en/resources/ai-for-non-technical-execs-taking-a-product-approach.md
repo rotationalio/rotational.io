@@ -23,5 +23,5 @@ video_link: https://www.youtube.com/embed/8diFA0PSV0c?si=uVRJuM43fDhc1UoN
 audio_link: 
 categories: ['Video']
 presenters: ['Rebecca Bilbro']
-topics: ['AI']
+topics: ['AI', 'ML']
 ---
