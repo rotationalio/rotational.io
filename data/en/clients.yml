@@ -4,8 +4,8 @@ clients:
   title: Our Clients
   show_title: false
   clients_item:
-    - name: Ciphertrace
-      image: img/clients/ciphertrace.png
+    - name: Mastercard
+      image: img/clients/ma_symbol_opt_73_1x.png
       show: true
 
     - name: Tactile
