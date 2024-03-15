@@ -12,7 +12,7 @@ casestudies:
     summary: Staying Globally Compliant
     link: case-studies/trisa
     image: img/clients/trisa-transparent.png
-  - client_name: Mastercard
-    summary: Productizing Your Analytics
-    link: case-studies/mastercard
-    image: img/clients/ciphertrace.png
+  - client_name: Supply Chain Defense
+    summary: Leveraging Unstructured Text
+    link: case-studies/scd
+    image: img/clients/BlueVoyant_Symbol_RGB_Cobalt_100x100.png
