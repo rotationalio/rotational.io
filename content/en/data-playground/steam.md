@@ -41,11 +41,7 @@ New steam report received: {'game': 'Fat Rat Pinball', 'id': 2484420, 'count': 4
 
 {{% /data-playground-wrapper %}}
 
-{{% data-playground-content %}}
-
-<!-- Add content for data playground here, including a table for data products if available -->
-
-{{% /data-playground-content %}}
+{{< data-playground-content >}}
 
 {{% coming-soon %}}
 
