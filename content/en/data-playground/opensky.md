@@ -37,11 +37,7 @@ Received flight vector: {'icao24': 'e94c88', 'callsign': 'BOV709  ', 'origin_cou
 
 {{% /data-playground-wrapper %}}
 
-{{% data-playground-content %}}
-
-<!-- Add content for data playground here, including a table for data products if available -->
-
-{{% /data-playground-content %}}
+{{< data-playground-content >}}
 
 <section class="ml-10">
     <table class="table-auto border border-collapse border-slate-600 text-md mt-2 overflow-auto">

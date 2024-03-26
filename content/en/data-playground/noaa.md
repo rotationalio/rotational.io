@@ -40,9 +40,7 @@ New weather report received: {'name': 'Tuesday Night', 'summary': 'Mostly Cloudy
 
 {{% /data-playground-wrapper %}}
 
-{{% data-playground-content %}}
-<!-- section left blank -->
-{{% /data-playground-content %}}
+{{< data-playground-content >}}
 
 <section class="ml-10">
     <table class="table-auto border border-collapse border-slate-600 text-md mt-2 overflow-auto">

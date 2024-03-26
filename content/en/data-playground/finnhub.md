@@ -37,10 +37,6 @@ weight: 1
 
 {{% /data-playground-wrapper %}}
 
-{{% data-playground-content %}}
-
-<!-- Add content for data playground here, including a table for data products if available -->
-
-{{% /data-playground-content %}}
+{{< data-playground-content >}}
 
 {{< data-playground-showcase >}}

@@ -40,11 +40,7 @@ New earthquake report received: {'magnitude': 2.47, 'place': '3 km WSW of La Par
 
 {{% /data-playground-wrapper %}}
 
-{{% data-playground-content %}}
-
-<!-- Add content for data playground here, including a table for data products if available -->
-
-{{% /data-playground-content %}}
+{{< data-playground-content >}}
 
 {{% coming-soon %}}
 

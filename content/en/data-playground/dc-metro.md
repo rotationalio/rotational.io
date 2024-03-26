@@ -40,11 +40,7 @@ New metro report received: {'incident_id': '7B640278-9219-430F-A59C-81C5F7BDE5EA
 
 {{% /data-playground-wrapper %}}
 
-{{% data-playground-content %}}
-
-<!-- Add content for data playground here, including a table for data products if available -->
-
-{{% /data-playground-content %}}
+{{< data-playground-content >}}
 
 {{% coming-soon %}}
 
