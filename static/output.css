@@ -2953,6 +2953,10 @@ em {
   padding-right: .5em;
 }
 
+#header-action {
+  text-wrap: balance;
+}
+
 .vtriple h3 {
   font-size: 1.5rem;
   line-height: 2rem;
@@ -3122,7 +3126,7 @@ em {
 
 /* Resource page styles */
 
-#header-action, #clouds-header, .resource-header {
+#clouds-header, .resource-header {
   text-wrap: balance;
 }
 

@@ -283,6 +283,10 @@ em {
   padding-right: .5em;
 }
 
+#header-action {
+  text-wrap: balance;
+}
+
 .vtriple h3 {
   @apply text-2xl;
   font-weight: bold;
@@ -403,7 +407,7 @@ em {
 
 /* Resource page styles */
 
-#header-action, #clouds-header, .resource-header {
+#clouds-header, .resource-header {
   text-wrap: balance;
 }
 
