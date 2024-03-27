@@ -31,10 +31,11 @@
                   {{ end }}
 
                   {{ if .Params.headeractions }}
-                  <div class="mt-8 lg:mt-12">
+                  <div class="flex mt-8 lg:mt-12">
                     {{ range .Params.headeractions }}
                     <a href="{{ .link }}"
-                      class="text-xs md:text-md lg:text-lg font-semibold rounded-lg px-5 lg:px-12 py-3 lg:py-5 bg-[#192E5B] hover:bg-[#72A3C0] uppercase mr-3">{{
+                      id="header-action"
+                      class="text-xs md:text-base xl:text-lg text-center font-semibold rounded-lg px-5 md:px-2 xl:px-12 py-3 lg:py-5 bg-[#192E5B] hover:bg-[#72A3C0] uppercase mr-3">{{
                       .action }}
                     </a>
                     {{ end }}

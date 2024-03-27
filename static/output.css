@@ -2953,6 +2953,10 @@ em {
   padding-right: .5em;
 }
 
+#header-action {
+  text-wrap: balance;
+}
+
 .vtriple h3 {
   font-size: 1.5rem;
   line-height: 2rem;
@@ -3640,6 +3644,11 @@ em {
     padding-right: 4rem;
   }
 
+  .md\:px-2 {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
   .md\:px-5 {
     padding-left: 1.25rem;
     padding-right: 1.25rem;
@@ -3828,11 +3837,6 @@ em {
     gap: 7rem;
   }
 
-  .lg\:px-12 {
-    padding-left: 3rem;
-    padding-right: 3rem;
-  }
-
   .lg\:px-2 {
     padding-left: 0.5rem;
     padding-right: 0.5rem;
@@ -3902,6 +3906,16 @@ em {
 
   .xl\:gap-36 {
     gap: 9rem;
+  }
+
+  .xl\:px-12 {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
+  .xl\:text-lg {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
   }
 }
 

@@ -5,6 +5,8 @@ headertext: We help organizations make smart and responsible AI investments that
 headeractions:
 - action: Download AI Playbook
   link: "/pdf/the_ai_playbook_1st_edition.pdf"
+- action: AI Enablement Services
+  link: "/services/#ai-enablement"
 ---
 
 <!-- Edit services data in data/en/professional_services.yml -->
