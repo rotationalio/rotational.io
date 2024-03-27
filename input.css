@@ -403,7 +403,7 @@ em {
 
 /* Resource page styles */
 
-#clouds-header, .resource-header {
+#header-action, #clouds-header, .resource-header {
   text-wrap: balance;
 }
 
