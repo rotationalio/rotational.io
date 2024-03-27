@@ -1,0 +1,8 @@
+{{ define "title" }}
+{{ .Title }} &ndash; {{ .Site.Title }}
+{{ end }}
+
+{{ define "main" }}
+{{ $data := index site.Data site.Language.Lang }}
+
+{{ end }}
