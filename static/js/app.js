@@ -331,7 +331,7 @@ openModalButton.forEach(button => {
 });
 
 // Close the Ensign pricing page modal when a user clicks the "X" button in the modal.
-closeModalButton.addEventListener('click', () => {
+closeModalButton?.addEventListener('click', () => {
   const modal = document.getElementById('price-contact-modal');
   const modalOverlay = document.getElementById('price-modal-overlay');
   modal.classList.add('hidden');
@@ -392,3 +392,23 @@ function setMessageTimeOut(element, timeLimit) {
     element.classList.add('hidden');
   }, timeLimit || 10000);
 }
+
+// Display download playbook dropdown menu.
+const downloadPlaybookBttn = document.getElementById('download-playbook');
+const downloadDropdown = document.getElementById('download-dropdown-menu');
+
+downloadPlaybookBttn?.addEventListener('click', () => {
+  downloadDropdown.classList.toggle('hidden');
+
+  // Hide dropdown menu if the user clicks outside of it.
+  document.addEventListener('click', (e) => {
+    if (!downloadPlaybookBttn.contains(e.target)) {
+      downloadDropdown.classList.add('hidden');
+    }
+  });
+
+  // Hide dropdown menu if the user scrolls the page.
+  window.addEventListener('scroll', () => {
+    downloadDropdown.classList.add('hidden');
+  });
+})

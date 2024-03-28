@@ -283,7 +283,7 @@ em {
   padding-right: .5em;
 }
 
-#header-action {
+#download-playbook, #ai-services {
   text-wrap: balance;
 }
 
