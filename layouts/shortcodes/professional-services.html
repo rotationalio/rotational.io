@@ -2,7 +2,7 @@
 
 {{ if $data.professional_services.professional_services.enable }}
 {{ with $data.professional_services.professional_services }}
-<section class="grid grid-cols-1 md:grid-cols-2 gap-14 md:gap-4 items-center mt-8">
+<section class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-14 md:gap-4 items-center mt-8">
   {{ range .service_item }}
   <section class="flex flex-col h-full px-14">
     <h2 class="font-bold text-xl md:text-2xl">{{ .header_text }}</h2>
