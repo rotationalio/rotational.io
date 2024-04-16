@@ -13,9 +13,9 @@ headeractions:
   id: ai-services
 download:
 - text: Download PDF
-  link: "/pdf/the_ai_playbook_1st_edition.pdf"
+  link: "https://rtnl.link/me8fufQPfVb"
 - text: Download ePub
-  link: "/epub/the_ai_playbook_1st_edition.epub"
+  link: "https://rtnl.link/ha34VBLWjIb"
 ---
 
 <!-- Edit services data in data/en/professional_services.yml -->
