@@ -5,7 +5,7 @@ headertext: "Privacy Policy"
 image: "img/horizontal-global-data-flow.png"
 ---
 
-This Privacy Policy governs the manner in which Rotational Labs, LLC collects, uses, maintains and discloses information collected from users (each, a "User") of the https://rotational.io website ("Site"). This privacy policy applies to the Site and all products and services offered by Rotational Labs, LLC at related websites.
+This Privacy Policy governs the manner in which Rotational Labs, Inc. collects, uses, maintains and discloses information collected from users (each, a "User") of the https://rotational.io website ("Site"). This privacy policy applies to the Site and all products and services offered by Rotational Labs, Inc. at related websites.
 
 ## Personally Identifying Information
 
@@ -21,7 +21,7 @@ Our Site may use "cookies" to enhance User experience. The User's web browser pl
 
 ## How We Use Collected Information
 
-Rotational Labs, LLC may collect and use Users' personal information for the following purposes:
+Rotational Labs, Inc. may collect and use Users' personal information for the following purposes:
 
 - To improve customer service. Information you provide helps us respond to your customer service requests and support User needs more effectively.
 - To personalize user experience. We may use information in the aggregate to understand how our Users as a group use the services and resources provided on our Site.
@@ -46,7 +46,7 @@ Protecting the privacy of the very young is especially important. For that reaso
 
 ## Changes to this Privacy Policy
 
-Rotational Labs, LLC has the discretion to update this privacy policy at any time. When we do, we will revise the updated date at the bottom of this page. We encourage Users to frequently check this page for any changes to stay informed about how we are helping to protect the personal information we collect. You acknowledge and agree that it is your responsibility to review this privacy policy periodically and become aware of modifications.
+Rotational Labs, Inc. has the discretion to update this privacy policy at any time. When we do, we will revise the updated date at the bottom of this page. We encourage Users to frequently check this page for any changes to stay informed about how we are helping to protect the personal information we collect. You acknowledge and agree that it is your responsibility to review this privacy policy periodically and become aware of modifications.
 
 ## Your Acceptance of these Terms
 
