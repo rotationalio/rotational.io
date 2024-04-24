@@ -1,8 +1,8 @@
 ############################# Ensign Data ###################################
 notice:
-  enable: false
-  notice: "Planning & Scoping LLM Projects"
+  enable: true
+  notice: "Why ChatGPT Works as a Product — A Model is Not a Solution!"
   action:
     text: Register Now
-    link: "https://r8l.co/0Y7E5fFJ3ts"
-  expires: 2024-03-26T16:00:00Z
+    link: "https://us06web.zoom.us/webinar/register/5017139819706/WN_mijTPkO6Tr6HOCuqOCmlbw"
+  expires: 2024-05-07T16:00:00Z
