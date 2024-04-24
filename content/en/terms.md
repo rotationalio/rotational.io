@@ -24,7 +24,7 @@ For the purposes of these Terms and Conditions:
 - __Affiliate__ means an entity that controls, is controlled by or is under common control with a party, where "control" means ownership of 50% or more of the shares, equity interest or other securities entitled to vote for election of directors or other managing authority.
 - __Account__ means a unique account created for You to access our Service or parts of our Service.
 - __Country__ refers to: Maryland,  United States
-- __Company__ (referred to as either "the Company", "We", "Us" or "Our" in this Agreement) refers to Rotational Labs, LLC, Queenstown, MD 21658.
+- __Company__ (referred to as either "the Company", "We", "Us" or "Our" in this Agreement) refers to Rotational Labs, Inc., Queenstown, MD 21658.
 - __Device__ means any device that can access the Service such as a computer, a cellphone or a digital tablet.
 - __Feedback__ means feedback, innovations or suggestions sent by You regarding the attributes, performance or features of our Service.
 - __Free Trial__ refers to a limited period of time that may be free when purchasing a Subscription.
