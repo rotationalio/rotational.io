@@ -50,16 +50,16 @@ footer:
     social_media:
     - name: Twitter
       link: https://twitter.com/rotationalio
-      icon: fa fa-twitter
+      icon: fa-brands fa-twitter
     - name: GitHub
       link: https://github.com/rotationalio
-      icon: fa fa-github
+      icon: fa-brands fa-github
     - name: LinkedIn
       link: https://www.linkedin.com/company/rotational
-      icon: fa fa-linkedin
+      icon: fa-brands fa-linkedin
     - name: YouTube
       link: https://www.youtube.com/@rotationalio
-      icon: fa fa-youtube
+      icon: fa-brands fa-youtube
     - name: Email
       link: mailto:info@rotational.io
       icon: fa fa-envelope
