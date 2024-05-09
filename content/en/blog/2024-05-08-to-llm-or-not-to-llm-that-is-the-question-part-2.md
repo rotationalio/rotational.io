@@ -21,12 +21,14 @@ In the last post, we discussed that while LLMs have unlocked new use cases that 
 
 In this blog post we will walk through a project that demonstrates how organizations can get started by using simpler ML models that show promise and then iterate and scale up as needed.  
 
-If you’re like the many adults in the U.S. there’s a great chance that you get your news from social media. According to the [Social Media and News Fact Sheet published by the Pew Research Center](https://www.pewresearch.org/journalism/fact-sheet/social-media-and-news-fact-sheet/), 17% of U.S. adults often used social media outlets for news in 2022. During that same year, 33% of U.S. adults shared that they sometimes use social media to obtain news.
+## How Do You Get Your News?
+If you’re like many adults in the U.S. there’s a great chance that you get your news from social media. According to the [Social Media and News Fact Sheet published by the Pew Research Center](https://www.pewresearch.org/journalism/fact-sheet/social-media-and-news-fact-sheet/), 17% of U.S. adults often used social media outlets for news in 2022. During that same year, 33% of U.S. adults shared that they sometimes use social media to obtain news.
 
 Per the same report, in 2023, the most popular social media sites for those who use social media for news were Twitter, Facebook, and TikTok.
 
 Using social media for news isn't a good or bad thing. However, as concerns for misleading news grows, developing a model to detect online hype felt like a great use case to test out.
 
+## Don't Believe the Hype
 But, first, we had to define hype in a way that a model can understand. After deciding to use a [LinkedIn Influencer dataset from Kaggle](https://www.kaggle.com/datasets/shreyasajal/linkedin-influencers-data), we took to the task of labeling a subset of the posts as **hype** or **not_hype**. Unfortunately, this didn’t lead to the best results.
 
 We determined that it was likely that these categories were too broad and decided to come up with more granular categories.  The following table lists the categories along with the number of instances per category.
@@ -44,21 +46,21 @@ From there, we tried a number of classification models, but were not able to pro
 
 Here is a look at the Uniform Manifold Approximation and Projection (UMAP) projection of all of the LinkedIn posts.  This visualization shows that there is a lot of overlap between embeddings attributed to each of the categories, which helps explain why it was challenging to find a model that performed well.
 
-![UMAP](img/blog/2024-05-08-to-llm-or-not-to-llm-that-is-the-question-part-2/umap.png)
+![UMAP](img/blog/2024-05-08-to-llm-or-not-to-llm-that-is-the-question-part-2/umap.webp)
 
 Through further analysis we determined that it made sense to combine the clickbait and promotion categories into the **hype** category as the intention behind both types of posts is to get the audience’s attention towards the product, service, or idea the influencer was promoting.  The other categories were combined into a second category we called **non_hype**.  We achieved the best performance using the open source package [XGBoost](https://xgboost.readthedocs.io/en/stable/#).  
 
 Here are the precision, recall, and f1 scores for both classes:
 
-![Metrics](img/blog/2024-05-08-to-llm-or-not-to-llm-that-is-the-question-part-2/metrics.png)
+![Metrics](img/blog/2024-05-08-to-llm-or-not-to-llm-that-is-the-question-part-2/metrics.webp)
 
 These results are not that bad considering that we did not perform any hyperparameter tuning on the model and had only labeled 399 instances.  Here are the model inferences on a couple of examples.  The first example is a post where the influence is promoting their talk on a podcast.  The model scored the post as **hype**.
 
-![Hype](img/blog/2024-05-08-to-llm-or-not-to-llm-that-is-the-question-part-2/hype.png)
+![Hype](img/blog/2024-05-08-to-llm-or-not-to-llm-that-is-the-question-part-2/hype.webp)
 
 The following example is an education post on how to improve LLM performance.  The model scored the post as **not_hype**.
 
-![Not Hype](img/blog/2024-05-08-to-llm-or-not-to-llm-that-is-the-question-part-2/not_hype.png)
+![Not Hype](img/blog/2024-05-08-to-llm-or-not-to-llm-that-is-the-question-part-2/not_hype.webp)
 
 ## Conclusion
 
