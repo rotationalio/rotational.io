@@ -1,19 +1,30 @@
 ---
 title: "To LLM or Not to LLM, That Is the Question (Part 2)"
 slug: "to-llm-or-not-to-llm-that-is-the-question-part-2"
-date: "2024-05-08T09:33:34-05:00"
+date: "2024-05-16T09:00:00-05:00"
 draft: false
-image: img/blog/2024-05-08-to-llm-or-not-to-llm-that-is-the-question-part-2/elena-mozhvilo-unsplash.jpg
-photo_credit: "Photo by [Elena Mozhvilo on Unsplash](https://unsplash.com/photos/white-and-blue-round-device-FBaJVyV_NvU?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash)"
+image: /img/blog/2024-05-08-to-llm-or-not-to-llm-that-is-the-question-part-2/cover-photo.webp
+photo_credit: "Photo by [camilo jimenez on Unsplash](https://unsplash.com/@camstejim?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash)"
 authors: ['Danielle Maxwell', 'Prema Roman']
 profile: img/butterfly.png
 tags: ['LLMs', 'AI', 'ML', 'Python', 'Data']
 description: "When it comes to AI projects, be cautious about the hype around cutting-edge technologies that make promises they can't deliver"
 ---
+What if you could check whether the content you've read on a social media site is genuine or full of hot air?
 
 <!--more-->
 
-We tried a number of classifiers but were not able to produce a suitable model.  Here is a look at the Uniform Manifold Approximation and Projection (UMAP) projection of all of the LinkedIn posts.  This visualization shows that there is a lot of overlap between embeddings attributed to each of the categories, which helps explain why it was challenging to find a model that performed well.
+If you’re like the majority of adults in the U.S. there’s a great chance that you get your news from social media. According to the [Social Media and News Fact Sheet published by the Pew Research Center](https://www.pewresearch.org/journalism/fact-sheet/social-media-and-news-fact-sheet/), 17% of U.S. adults often used social media outlets for news in 2022. During that same year, 33% of U.S. adults shared that they sometimes use social media to obtain news.
+
+Per the same report, in 2023, the most popular social media sites for those who use social media for news were Twitter, Facebook, and TikTok.
+
+Using social media for news isn't a good or bad thing. However, as concerns for misleading news grows, developing a model to detect online hype felt like a great use case to test out.
+
+But, first, we had to define hype in a way that a model can understand. After deciding to use a [LinkedIn Influencer dataset from Kaggle](https://www.kaggle.com/datasets/shreyasajal/linkedin-influencers-data), we took to the task of labeling posts as hype or not hype. Unfortunately, this didn’t lead to the best results.
+
+From there, we tried a number of classifiers (promotion, clickbait, news, opinion, motivational, or other) for each post, but were not able to produce a suitable model.
+
+Here is a look at the Uniform Manifold Approximation and Projection (UMAP) projection of all of the LinkedIn posts.  This visualization shows that there is a lot of overlap between embeddings attributed to each of the categories, which helps explain why it was challenging to find a model that performed well.
 
 ![UMAP](img/blog/2024-05-08-to-llm-or-not-to-llm-that-is-the-question-part-2/umap.png)
 
