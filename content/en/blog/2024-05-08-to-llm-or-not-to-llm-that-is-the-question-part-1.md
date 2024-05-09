@@ -11,7 +11,7 @@ tags: ['LLMs', 'AI', 'ML', 'Python', 'Data']
 description: "When it comes to AI projects, be cautious about the hype around cutting-edge technologies that make promises they can't deliver"
 ---
 
-We have seen a proliferation of Large Language Models (LLMs) due to the popularity of ChatGPT.  LLMs are responsible for the current AI revolution as companies seek to replicate the success of OpenAI.
+We have seen a proliferation of Large Language Models (LLMs) due to the popularity of ChatGPT.  LLMs are responsible for the current AI revolution as companies seek to replicate the success of OpenAI. Is this a strategy your company should try to emulate?
 
 <!--more-->
 
