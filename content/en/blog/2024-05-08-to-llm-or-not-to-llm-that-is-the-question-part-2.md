@@ -1,18 +1,25 @@
 ---
 title: "To LLM or Not to LLM, That Is the Question (Part 2)"
 slug: "to-llm-or-not-to-llm-that-is-the-question-part-2"
-date: "2024-05-16T09:00:00-05:00"
+date: "2024-05-09T09:00:00-05:00"
 draft: false
 image: /img/blog/2024-05-08-to-llm-or-not-to-llm-that-is-the-question-part-2/cover-photo.webp
 photo_credit: "Photo by [camilo jimenez on Unsplash](https://unsplash.com/@camstejim?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash)"
 authors: ['Danielle Maxwell', 'Prema Roman']
 profile: img/butterfly.png
 tags: ['LLMs', 'AI', 'ML', 'Python', 'Data']
-description: "When it comes to AI projects, be cautious about the hype around cutting-edge technologies that make promises they can't deliver"
+description: "When it comes to AI projects, be cautious about the hype around cutting-edge technologies that are too difficult to implement and maintain"
 ---
 What if you could check whether the content you've read on a social media site is genuine or full of hot air?
 
 <!--more-->
+
+In the last post, we discussed that while LLMs have unlocked new use cases that companies can leverage to generate more revenue, they are not the catch-all solution for every single AI use case.  We identied the following drawbacks:
+- High energy consumption
+- Difficulty understanding and documenting the underlying data used
+- Difficult to deploy, maintain, and monitor software applications using LLMs due to added complexity
+
+In this blog post we will walk through a project that demonstrates how organizations can get started by using simpler ML models that show promise and then iterate and scale up as needed.  
 
 If you’re like the majority of adults in the U.S. there’s a great chance that you get your news from social media. According to the [Social Media and News Fact Sheet published by the Pew Research Center](https://www.pewresearch.org/journalism/fact-sheet/social-media-and-news-fact-sheet/), 17% of U.S. adults often used social media outlets for news in 2022. During that same year, 33% of U.S. adults shared that they sometimes use social media to obtain news.
 
@@ -20,9 +27,20 @@ Per the same report, in 2023, the most popular social media sites for those who 
 
 Using social media for news isn't a good or bad thing. However, as concerns for misleading news grows, developing a model to detect online hype felt like a great use case to test out.
 
-But, first, we had to define hype in a way that a model can understand. After deciding to use a [LinkedIn Influencer dataset from Kaggle](https://www.kaggle.com/datasets/shreyasajal/linkedin-influencers-data), we took to the task of labeling posts as hype or not hype. Unfortunately, this didn’t lead to the best results.
+But, first, we had to define hype in a way that a model can understand. After deciding to use a [LinkedIn Influencer dataset from Kaggle](https://www.kaggle.com/datasets/shreyasajal/linkedin-influencers-data), we took to the task of labeling a subset of the posts as **hype** or **not_hype**. Unfortunately, this didn’t lead to the best results.
 
-From there, we tried a number of classifiers (promotion, clickbait, news, opinion, motivational, or other) for each post, but were not able to produce a suitable model.
+We determined that it was likely that these categories were too broad and decided to come up with more granular categories.  The following table lists the categories along with the number of instances per category.
+
+| Category | Number of posts |
+| ----- | ----- |
+| Clickbait | 157 |
+| Promotion | 116 |
+| Opinion | 54 |
+| News | 34 |
+| Motivational | 15 |
+| Other | 15 |
+
+From there, we tried a number of classification models, but were not able to produce a suitable model.
 
 Here is a look at the Uniform Manifold Approximation and Projection (UMAP) projection of all of the LinkedIn posts.  This visualization shows that there is a lot of overlap between embeddings attributed to each of the categories, which helps explain why it was challenging to find a model that performed well.
 
@@ -42,11 +60,18 @@ The following example is an education post on how to improve LLM performance.  T
 
 ![Not Hype](img/blog/2024-05-08-to-llm-or-not-to-llm-that-is-the-question-part-2/not_hype.png)
 
+## Conclusion
+
 This example demonstrates how companies can get started on AI projects with small upfront costs to see if there is signal and then scale up and cost up as necessary.  All of this work was done in less than a month using personal laptops, not expensive cloud infrastructure.  
 
 While it may seem that we are dismissing the benefits of LLMs, that is far from the case.  In fact, we have also worked on projects that eventually became successful because we used LLMs.  There was a client project where we tried a number of traditional ML models, which initially provided some signal, but did not quite meet our their needs.  Subsequently, we used the DistilBERT model from Hugging Face, applied transfer learning, and were able to meet the client's goal.
 
 Instead, what we are advocating for is to keep AI systems as simple as possible.  These are some of the benefits:
 
-- Simpler systems are easier to maintain
-- Aiming for simplicity means that companies can leverage a larger talent pool whose diverse perspectives can enable them to build truly innovative products, i.e., there is no need to be competing for the limited number of people who have a narrow view of what it takes to innovate in the AI space
+- Simpler systems are cheaper and easier to maintain
+- Simpler systems foster easier collaboration among teams
+- Simpler systems allow for rapid iteration
+- Simpler systems are more profitable
+
+
+Aiming for simplicity also means that companies can leverage a larger talent pool whose diverse perspectives enables organizations to build truly innovative products, i.e., there is no need to be competing for the limited number of people who have a narrow view of what it takes to innovate in the AI space.
