@@ -3,7 +3,7 @@ title: "To LLM or Not to LLM, That Is the Question (Part 1)"
 slug: "to-llm-or-not-to-llm-that-is-the-question-part-1"
 date: "2024-05-08T09:33:34-04:00"
 draft: false
-image: img/blog/2024-05-08-to-llm-or-not-to-llm-that-is-the-question-part-1/elena-mozhvilo-unsplash.jpg
+image: img/blog/2024-05-08-to-llm-or-not-to-llm-that-is-the-question-part-1/elena-mozhvilo-unsplash.webp
 photo_credit: "Photo by [Elena Mozhvilo on Unsplash](https://unsplash.com/photos/white-and-blue-round-device-FBaJVyV_NvU?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash)"
 authors: ['Danielle Maxwell', 'Prema Roman']
 profile: img/butterfly.png
