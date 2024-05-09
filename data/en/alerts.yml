@@ -1,6 +1,6 @@
 ############################# Ensign Data ###################################
 notice:
-  enable: true
+  enable: false
   notice: "Why ChatGPT Works as a Product — A Model is Not a Solution!"
   action:
     text: Register Now
