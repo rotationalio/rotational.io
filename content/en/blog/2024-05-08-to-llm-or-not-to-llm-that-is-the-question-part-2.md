@@ -8,7 +8,7 @@ photo_credit: "Photo by [camilo jimenez on Unsplash](https://unsplash.com/@camst
 authors: ['Danielle Maxwell', 'Prema Roman']
 profile: img/butterfly.png
 tags: ['LLMs', 'AI', 'ML', 'Python', 'Data']
-description: "Using easier ML models could be the solution"
+description: "In part 2 of our series, we examine whether using simpler ML models could be the solution"
 ---
 What if you could check whether the content you've read on a social media site is genuine or full of hot air?
 
