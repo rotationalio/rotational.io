@@ -8,20 +8,20 @@ photo_credit: "Photo by [camilo jimenez on Unsplash](https://unsplash.com/@camst
 authors: ['Danielle Maxwell', 'Prema Roman']
 profile: img/butterfly.png
 tags: ['LLMs', 'AI', 'ML', 'Python', 'Data']
-description: "When it comes to AI projects, be cautious about the hype around cutting-edge technologies that are too difficult to implement and maintain"
+description: "Using easier ML models could be the solution"
 ---
 What if you could check whether the content you've read on a social media site is genuine or full of hot air?
 
 <!--more-->
 
-In the last post, we discussed that while LLMs have unlocked new use cases that companies can leverage to generate more revenue, they are not the catch-all solution for every single AI use case.  We identied the following drawbacks:
+In the last post, we discussed that while LLMs have unlocked new use cases that companies can leverage to generate more revenue, they are not the catch-all solution for every single AI use case.  We identified the following drawbacks:
 - High energy consumption
 - Difficulty understanding and documenting the underlying data used
 - Difficult to deploy, maintain, and monitor software applications using LLMs due to added complexity
 
 In this blog post we will walk through a project that demonstrates how organizations can get started by using simpler ML models that show promise and then iterate and scale up as needed.  
 
-If you’re like the majority of adults in the U.S. there’s a great chance that you get your news from social media. According to the [Social Media and News Fact Sheet published by the Pew Research Center](https://www.pewresearch.org/journalism/fact-sheet/social-media-and-news-fact-sheet/), 17% of U.S. adults often used social media outlets for news in 2022. During that same year, 33% of U.S. adults shared that they sometimes use social media to obtain news.
+If you’re like the many adults in the U.S. there’s a great chance that you get your news from social media. According to the [Social Media and News Fact Sheet published by the Pew Research Center](https://www.pewresearch.org/journalism/fact-sheet/social-media-and-news-fact-sheet/), 17% of U.S. adults often used social media outlets for news in 2022. During that same year, 33% of U.S. adults shared that they sometimes use social media to obtain news.
 
 Per the same report, in 2023, the most popular social media sites for those who use social media for news were Twitter, Facebook, and TikTok.
 
