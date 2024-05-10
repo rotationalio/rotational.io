@@ -45,7 +45,7 @@ In this post, [Danielle Maxwell](https://rotational.io/authors/danielle-maxwell/
 
 *The best approach to achieve ROI on your investments is to first take a step back and ask yourself what is the end goal you wish to achieve.  After that, have your team work on brainstorming ideas on how to achieve this goal. LLMs are only one set of tools in a large collection of tools that businesses can leverage.*
 
-*It's really important to determine what type of machine learning approach makes sense for a given problem before diving into costly compute and hardware spending. This is actually one of the key tenants of Responsible Innovation, an approach we use at Rotational Labs.*
+*It's really important to determine what type of machine learning approach makes sense for a given problem before diving into costly compute and hardware spending. This is actually one of the key tenets of Responsible Innovation, an approach we use at Rotational Labs.*
 
 *We propose answering the following questions at the start of a project:*
 
