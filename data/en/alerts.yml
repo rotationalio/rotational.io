@@ -1,8 +1,8 @@
 ############################# Ensign Data ###################################
 notice:
-  enable: false
+  enable: true
   notice: "Why ChatGPT Works as a Product — A Model is Not a Solution!"
   action:
-    text: Register Now
-    link: "https://r8l.co/yWKVCJbksRn"
-  expires: 2024-05-07T16:00:00Z
+    text: Watch Our Webinar
+    link: "https://r8l.co/cKCj5GRhKjt"
+  expires: 2024-07-01T16:00:00Z
