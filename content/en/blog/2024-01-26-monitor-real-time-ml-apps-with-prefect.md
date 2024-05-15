@@ -31,7 +31,7 @@ Prefect offers a lot of neat features but what’s even more awesome is that get
 3. Run the following command in a terminal window: `prefect server start` (note that your virtual environment must be activated before running this command).
 4. Run your application and view the live status of the application in the Prefect dashboard.
 
-The example I will demonstrate is a real-time sentiment analysis application that uses [Ensign](https://rotational.io/ensign/) as the streaming data platform, [River](https://riverml.xyz) for the real-time machine learning model, and [Prefect]((https://www.prefect.io)) as the orchestration platform. We'll use this sample dataset of [Yelp reviews](https://github.com/rotationalio/prefect-example/tree/main/data) as a stand-in for the data streaming into our to-be-deployed model.
+The example I will demonstrate is a real-time sentiment analysis application that uses [Ensign](https://rotational.io/ensign/) as the streaming data platform, [River](https://riverml.xyz) for the real-time machine learning model, and [Prefect](https://www.prefect.io) as the orchestration platform. We'll use this sample dataset of [Yelp reviews](https://github.com/rotationalio/prefect-example/tree/main/data) as a stand-in for the data streaming into our to-be-deployed model.
 
 For those of you who have read some of my previous blog posts, you will recognize that the code that I am using is eerily similar to one that I used in an earlier blog post :stuck_out_tongue_winking_eye:.  This proves that it doesn’t take much to integrate Prefect into an existing application.
 
