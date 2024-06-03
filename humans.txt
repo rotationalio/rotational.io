@@ -28,6 +28,9 @@ Bio: https://rotational.io/authors/amanda-stanley
 Technical Advisor: Pete Keleher
 Bio: https://rotational.io/authors/pete-keleher
 
+Summer 2024 Intern: Nneka Okigbo
+Bio: https://rotational.io/authors/nneka-okigbo
+
 Summer 2023 Intern: Aatmaj Janardanan
 Bio: https://rotational.io/authors/aatmaj-janardanan
 
@@ -56,7 +59,7 @@ Bio: https://rotational.io/authors/tianshu-li
 
 /* SITE */
 
-Last update: 2024-05-20
+Last update: 2024-06-03
 Site name: Rotational Labs
 URL: https://rotational.io/
 CMS: Hugo
