@@ -8,14 +8,8 @@ field: Data Science Specialist
 # If you would like to not include any social media links, delete lines 8 - 17. 
 # If you would like to not include a specific social media type, delete the "name", "link", and "icon"
 social :
-  - name : "linkedin"
-    link: 'Add Link to Your LinkedIn Profile'
-    icon: 'fa-linkedin-in'
-  - name : "twitter"
-    link : "Add Link to Your Twitter Profile"
-    icon: 'fa-twitter'
   - name : "github"
-    link: 'Add Link to Your GitHub Profile'
+    link: 'https://github.com/nokigbo21'
     icon: 'fa-github'
 ---
 

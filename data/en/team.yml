@@ -108,10 +108,8 @@ team:
       designation: Summer 2024 Intern
       content: Data Science Specialist
       social:
-        - icon: "ti-linkedin" # themify icon pack : https://themify.me/themify-icons
-          link: "https://www.linkedin.com/"
         - icon: "ti-github" # themify icon pack : https://themify.me/themify-icons
-          link: "https://www.github.com/"
+          link: "https://github.com/nokigbo21"
       bioLink: 'authors/nneka-okigbo'
     # team member loop
     - name : Aatmaj Janardanan
