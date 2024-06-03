@@ -103,6 +103,17 @@ team:
           link : "https://www.linkedin.com/in/pete-keleher-a03639b"
       bioLink: 'authors/pete-keleher'
     # team member loop
+    - name: Nneka Okigbo
+      image: img/team/nneka-okigbo.webp
+      designation: Summer 2024 Intern
+      content: Data Science Specialist
+      social:
+        - icon: "ti-linkedin" # themify icon pack : https://themify.me/themify-icons
+          link: "https://www.linkedin.com/"
+        - icon: "ti-github" # themify icon pack : https://themify.me/themify-icons
+          link: "https://www.github.com/"
+      bioLink: 'authors/nneka-okigbo'
+    # team member loop
     - name : Aatmaj Janardanan
       image : img/team/aatmaj-janardanan.png
       designation : Summer 2023 Intern
