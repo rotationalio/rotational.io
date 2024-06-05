@@ -11,8 +11,6 @@ tags: ['ML', 'NLP', 'Neural Networks', 'JavaScript']
 description: "Get to know 5 JavaScript libraries you can use for machine learning."
 ---
 
-Over the years, several JavaScript libraries have been created for machine learning. Let's sort through the ones that can help you get started quickly, even if you don't have much experience with machine learning or data science.
-
 <!--more-->
 
 Before getting to the list, I should note that it was difficult to narrow it down to 5. There were many libraries to choose from, but I wanted to focus on a diverse set of tools that I believe are also developer friendly.
