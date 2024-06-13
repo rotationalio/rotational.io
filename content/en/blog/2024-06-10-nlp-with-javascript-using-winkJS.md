@@ -11,12 +11,12 @@ tags: ['JavaScript', 'NLP']
 description: "Use the JavaScript machine learning library winkJS to make Natural Language Processing (NLP) beginner friendly."
 ---
 
-An increasing amount of JavaScript libraries are available to perform machine learning tasks in Node.js or in the browser. Of particular interest is winkJS. A library designed to help perform Natural Language Processing (NLP) tasks. Let’s look further into how it works and what it can do.
+winkJS is a collection of libraries designed to make Natural Language Processing (NLP) accessible in JavaScript. Let's take an in-depth look into what makes it a handy tool for developers, including those with not much machine learning experience.
 
 <!--more-->
 
 ## What is winkJS?
-In a previous blog post on machine learning libraries written in JavaScript, the collection created by winkJS was mentioned. Of particular interest is the winkNLP library which can assist in performing covering tokenization, sentence boundary detection (sbd), negation handling, sentiment analysis, part-of-speech (pos) tagging, named entity recognition (ner), custom entities recognition (cer).
+In a blog post about [machine learning libraries written in JavaScript](/blog/5-javascript-libraries-to-use-for-machine-learning/), the winkNLP library by winkJS was recommended. What makes winkNLP so useful is that it can assist in performing covering tokenization, sentence boundary detection (sbd), negation handling, sentiment analysis, part-of-speech (pos) tagging, named entity recognition (ner), custom entities recognition (cer).
 
 
 ## Who should use winkJS?
