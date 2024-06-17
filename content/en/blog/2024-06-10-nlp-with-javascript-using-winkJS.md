@@ -28,7 +28,7 @@ Need to create a frequency table for sentences, tokens, or entities? as.freqTabl
 winkNLP also includes a vector tool that uses BM25 algorithm to compute weights for terms. If necessary, the vectorizer's default configuration can be updated.
 
 ## Let’s Code!
-A major highlight of using winkNLP is how beginner friendly it is. Though I'm not the most experienced with NLP, I was able to create a quick demo that returns readability stats (Flesch reading score, sentiment, reading time, and complex word count) for a text input and highlights all of the complex words.
+A major highlight of using winkNLP is how beginner friendly it is. Though I'm not the most experienced with NLP, I was able to create a quick demo that returns readability stats (Flesch reading score, sentiment, reading time, and complex word count) for a text input and highlight each complex word.
 
 To get started, we'll have to install the winkNLP package and the wink-eng-lite-web-model. Another model is available (wink-eng-lite-model), but it's not recommended for use with browsers or Node.js versions lower than v16. No judgement here, but if you're using a version of Node.js that's lower than v16, I highly recommend updating to a later version.
 
