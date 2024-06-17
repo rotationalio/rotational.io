@@ -11,32 +11,27 @@ tags: ['AI', 'ML', 'LLM', 'Python']
 description: "Accelerate data analysis by leveraging LLMs to build text-to-sql applications"
 ---
 
-We have already discovered the capability of Large Language Models (LLMs) to streamline software development by generating boilerplate code that reduces a lot of up front work when developing new software.  But what about SQL?  Turns out there are text-to-sql LLMs that can do the same for SQL queries.
+As industry races for use cases of Large Language Models, software devs have emerged as early adopters. Can LLMs help us translate between tech and talk? Let's build a text-to-SQL application with Vanna and Streamlit!
 
 <!--more-->
 
-This post will demonstrate how to use Vanna and Streamlit to build a text-to-sql application using Vanna and [Streamlit](https://streamlit.io).
+How many of us have struggled to communicate with non-technical audiences about data? So much of what we do as software engineers doesn't translate to our users and our counterparts on the business side. If your customer wants to understand why their account has been flagged, they can't query the database directly. Admittedly, that would be a bad idea for many reasons, but even if you were to give them readonly credentials, they'd have to write a valid query in order to answer their question. That's pretty unlikely unless they somehow already know SQL!
+
+Most applications include web-based user interfaces with drop-down menus which enable the customer to compose parameters for a valid query, which can then be executed on the back end. With the rise of Large Language Models (LLMs), many businesses are starting to wonder if it might be possible to streamline with simple chat interfaces, which use a text-to-SQL language model on the back end to translate between the natural language questions of the user to valid SQL queries that can be directly executed against the database.
+
+In this post, we'll explore the technical feasibility of such an approach.
 
 Just here for the code? Check out this [repo](https://github.com/pdamodaran/vanna-text-to-sql) for the full example.
 
-Vanna is an open source python library developed by [Vanna.AI](https://vanna.ai).   It uses Retrieval Augmented Generation (RAG), which is a technique that is used to improve the accuracy of LLMs.  The idea is to provide data to an LLM that it was not previously trained on to ensure that it can generate reasonable responses to questions related to this data.  In this case, the data provided is the knowledge about the internals of your database.  The process will be covered later in this post.
-
-Vanna supports many databases including Postgres, SQLite, BigQuery, Snowflake, etc.   You can start experimenting with a Jupyter Notebook or create applications using Streamlit, Flask, Slackbot, or integrate it within your own front end application.  The pricing options are as follows:
-
-- **Open source**: You use your own LLM, set up a local metadata storage using ChromaDB or any other vector database, and deploy via self-hosted Streamlit, Flask app, etc.  You also have the ability to customize as you see fit.
-- **Free tier**: This tier uses the GPT 3.5 foundational model, hosted metadata storage and rate-limited usage of the LLM.
-- **Paid tier**: This tier costs $30/ 1 million tokens, uses the GPT-4 with a load-balanced fallback to other LLMs.  It also provides SLA guarantees.
-- **Enterprise tier**: Contact Vanna AI for a pricing plan that gives you access to developers who can help you customize your application based on your enterprise needs.
-
-This example uses the free tier plan and a Postgres database.  
-
 ## Getting Started
+
+Vanna is an open source Python library developed by [Vanna.AI](https://vanna.ai). It uses Retrieval Augmented Generation (RAG), which is a technique that is used to improve the accuracy of LLMs. The idea is to provide data to an LLM that it was not previously trained on to ensure that it can generate reasonable responses to questions related to this data. In this case, the data provided is the knowledge about the internals of your database. The process will be covered later in this post.
 
 ### Step 1: Create a free Vanna.AI account
 
-Follow the instructions in the [Vanna.AI](https://vanna.ai) website to create an account.  Once you are logged in, you will need to do the following:
+Follow the instructions in the [Vanna.AI](https://vanna.ai) website to create an account. Once you are logged in, you will need to do the following:
 
-- Get an API key (click on `API Keys` on the left side of the page) 
+- Get an API key (click on `API Keys` on the left side of the page)
 - Create a new RAG model (click on `RAG Models` on the left side of the page and choose a unique name for your model and click on the `Create Model` button)
 
 ### Step 2: Create and activate a virtual environment
@@ -50,7 +45,7 @@ source venv/bin/activate
 ### Step 3: Install the requirements
 In order to run the code, the following Python libraries are required:
 
-- streamlit
+- [streamlit](https://streamlit.io)
 - vanna
 - vanna[postgres]
 
@@ -79,7 +74,7 @@ class DatabaseTrainer:
         ----------
         api_key : string
             The API key used to connect to Vanna AI
-        
+
         model : string
             The name of the model that will be trained; the model needs
             to be set up in your Vanna AI account prior to use
@@ -94,19 +89,19 @@ class DatabaseTrainer:
             raise ValueError("model must be valid non-empty string")
         if db_creds is None:
             raise ValueError("db_creds must be a valid non-empty dictionary")
-        # Initialize vanna 
+        # Initialize vanna
         self.vn = self._init_vanna(api_key=api_key, model=model)
         # Connect to the Postgres database
         self._connect_db(db_creds)
-  
+
     def _init_vanna(self, api_key, model):
         """
         Initialize the VannaDefault class by using the API key to connect to
-        the model set up in your Vanna AI account 
+        the model set up in your Vanna AI account
         """
         vn = VannaDefault(api_key=api_key, model=model)
         return vn
-    
+
     def _connect_db(self, db_creds):
         """
         Connect Vanna to the postgres database
@@ -119,7 +114,7 @@ class DatabaseTrainer:
         Parameters
         ----------
         ddl : string
-            "CREATE TABLE" SQL statements of the tables in your database.    
+            "CREATE TABLE" SQL statements of the tables in your database.
         """
         if ddl is None or ddl == "":
              raise ValueError("ddl must be a valid non-empty string")
@@ -134,7 +129,7 @@ class DatabaseTrainer:
 
 Let’s break it down step by step.
 
-To initialize the DatabaseTrainer, you need to pass in the following parameters:
+To initialize the `DatabaseTrainer`, you need to pass in the following parameters:
 
 - `api_key`: Vanna API Key
 - `model`: RAG model name
@@ -155,8 +150,8 @@ The following code snippet is an example of how you can execute the training pro
 ```python
 from src.database_trainer import DatabaseTrainer
 
-database_trainer = DatabaseTrainer(api_key="Your Vanna API key", 
-    model="Your Vanna RAG model", 
+database_trainer = DatabaseTrainer(api_key="Your Vanna API key",
+    model="Your Vanna RAG model",
     db_creds="Your database credentials")
 database_trainer.train(ddl="Your database DDL")
 ```
@@ -169,7 +164,7 @@ Now that the RAG model has been trained, it’s time to integrate it into an app
 VANNA_API_KEY="Your Vanna API key"
 MODEL="Your Vanna RAG model"
 POSTGRES_HOST="Database host"
-POSTGRES_PORT="Database port" 
+POSTGRES_PORT="Database port"
 POSTGRES_USER="Database user"
 POSTGRES_PWD="Database password"
 POSTGRES_DB="Database name"
@@ -190,14 +185,29 @@ The following is a screenshot of the application.  It provides the following fun
 
 ![screenshot](img/blog/2024-06-07-text-to-sql-llm-app/sql_app.webp)
 
-The [repo](https://github.com/pdamodaran/vanna-text-to-sql) includes a demo of the application.  
+The [repo](https://github.com/pdamodaran/vanna-text-to-sql) includes a demo of the application.
 
 ## Conclusion
-As this post demonstrated, LLMs can be used to accelerate data analysis tasks by training a RAG model to build a text-to-sql application.  This post just scratches the surface on how to build these types of applications.
+As this post demonstrated, LLMs can be used to accelerate data analysis tasks by training a RAG model to build a text-to-sql application. This post just scratches the surface on how to build these types of applications.
 
 A few enhancements can be made to reduce errors:
-- Train the model on documentation about your tables.  For example, you can describe the type of data the table holds and possible values for fields in those tables.  The way to train on documentation is as follows: `vn.train(documentation="insert documentation here")`
+- Train the model on documentation about your tables. For example, you can describe the type of data the table holds and possible values for fields in those tables. The way to train on documentation is as follows: `vn.train(documentation="insert documentation here")`
 - Train the model on commonly run SQL queries: `vn.train(sql="insert sql here")`
 - Train the model on question-sql pairs: `vn.train(question="insert question here", sql="insert sql here")`
 
-There is one important thing to keep in mind.  Depending on the sensitivity of the data in your database, you may want to consider the options when you are building the application.  This particular example uses a hosted LLM solution so data will be sent to the LLM.  You have the option to use Vanna with your own custom LLM, vector database,  and RAG process and host the application on your own server.  Vanna AI provides documentation on how to set this up.  More details about Vanna's data security policy can be found [here.](https://vanna.ai/data-security-faq.html)
+Two important things to keep in mind...
+
+### Data Privacy
+
+Vanna supports many databases including Postgres, SQLite, BigQuery, Snowflake, etc.   You can start experimenting with a Jupyter Notebook or create applications using Streamlit, Flask, Slackbot, or integrate it within your own front end application. The pricing options are as follows:
+
+- **Open source**: You use your own LLM, set up a local metadata storage using ChromaDB or any other vector database, and deploy via self-hosted Streamlit, Flask app, etc.  You also have the ability to customize as you see fit.
+- **Free tier**: This tier uses the GPT 3.5 foundational model, hosted metadata storage and rate-limited usage of the LLM. *Note: This example uses the free tier plan for Vanna and a Postgres database.*
+- **Paid tier**: This tier costs $30/ 1 million tokens, uses the GPT-4 with a load-balanced fallback to other LLMs.  It also provides SLA guarantees.
+- **Enterprise tier**: Contact Vanna AI for a pricing plan that gives you access to developers who can help you customize your application based on your enterprise needs.
+
+Depending on the sensitivity of the data in your database, carefully consider the above options when you are building the application.  This particular example uses a hosted LLM solution, which means that the data will be sent externally to the LLM. If you do not want to share your internal data with Vanna, you have the option to use Vanna with your own custom LLM, vector database, and RAG process and host the application on your own server. Vanna AI provides documentation on how to set this up.  More details about Vanna's data security policy can be found [here.](https://vanna.ai/data-security-faq.html)
+
+### Accuracy
+
+
