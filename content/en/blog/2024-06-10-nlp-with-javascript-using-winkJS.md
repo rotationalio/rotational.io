@@ -21,9 +21,9 @@ In a blog post about [machine learning libraries written in JavaScript](/blog/5-
 ## How does it work?
 winkNLP has a readDoc method where text passed to it may be split into tokens, sentences, or entities. It's possible define entities by using the learnCustomEntities method. Once the text is divided up, it can be accessed by the **its** or **as** helpers to make development a breeze.
 
-Want to get the type for each character in a text collection? Use its.type and get an array specifying the type for each token.
+Want to get the type for each character in a text collection? Use `its.type` and get an array specifying the type for each token.
 
-Need to create a frequency table for sentences, tokens, or entities? as.freqTable will return a frequency table in descending order.
+Need to create a frequency table for sentences, tokens, or entities? `as.freqTable` will return a frequency table in descending order.
 
 winkNLP also includes a vector tool that uses BM25 algorithm to compute weights for terms. If necessary, the vectorizer's default configuration can be updated.
 
