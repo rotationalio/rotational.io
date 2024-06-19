@@ -3,7 +3,7 @@ title: "NLP with Javascript Using winkJS"
 slug: "nlp-with-javascript-using-winkJS"
 date: "2024-06-10T16:06:03-04:00"
 draft: false
-image: img/blog/2024-06-10-performing-nlp-in-javascript/machine-learning-robot.webp
+image: img/blog/2024-06-10-nlp-with-javascript-using-winkJS/machine-learning-robot.webp
 photo_credit: "Image by [fszalai](https://pixabay.com/users/fszalai-32964329/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=7770312) from [Pixabay](https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=7770312)"
 authors: ['Danielle Maxwell']
 profile: img/team/danielle-maxwell.png
