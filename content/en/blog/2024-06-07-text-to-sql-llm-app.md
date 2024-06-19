@@ -190,11 +190,6 @@ The [repo](https://github.com/pdamodaran/vanna-text-to-sql) includes a demo of t
 ## Conclusion
 As this post demonstrated, LLMs can be used to accelerate data analysis tasks by training a RAG model to build a text-to-sql application. This post just scratches the surface on how to build these types of applications.
 
-A few enhancements can be made to reduce errors:
-- Train the model on documentation about your tables. For example, you can describe the type of data the table holds and possible values for fields in those tables. The way to train on documentation is as follows: `vn.train(documentation="insert documentation here")`
-- Train the model on commonly run SQL queries: `vn.train(sql="insert sql here")`
-- Train the model on question-sql pairs: `vn.train(question="insert question here", sql="insert sql here")`
-
 Two important things to keep in mind...
 
 ### Data Privacy
@@ -209,5 +204,20 @@ Vanna supports many databases including Postgres, SQLite, BigQuery, Snowflake, e
 Depending on the sensitivity of the data in your database, carefully consider the above options when you are building the application.  This particular example uses a hosted LLM solution, which means that the data will be sent externally to the LLM. If you do not want to share your internal data with Vanna, you have the option to use Vanna with your own custom LLM, vector database, and RAG process and host the application on your own server. Vanna AI provides documentation on how to set this up.  More details about Vanna's data security policy can be found [here.](https://vanna.ai/data-security-faq.html)
 
 ### Accuracy
+
+One of the major drawbacks of LLMs is their tendency to hallucinate and produce inaccurate results.  According to the [BIRD](https://bird-bench.github.io) benchmark, the best performing text-to-SQL LLM in its leaderboard has an accuracy rate of **67.86%**.  The BIRD paper stated that in spite of advances in LLMs and creative use of prompt engineering, they still struggle to outperform human beings.  On some level, it makes sense, foundation LLMs are trained on a broader data set and struggle to perform well on a niche use case such as converting text to SQL.  
+
+However, the paper also notes that "external knowledge evidence in BIRD is effective and instructive for models to better understand the database values".  In fact, the accuracy of one of the models in the tests it conducted went up from **34.88%** to **54.89%**. What this means is that providing the LLM with more knowledge and context about your database and the underlying data will help improve the quality of the text-to-SQL application.  In fact, Vanna also published an [article](https://vanna.ai/blog/ai-sql-accuracy.html) that demonstrates how it tested different LLMs and context strategies to maximize accuracy. 
+
+They recommend the following suggestions to reduce errors:
+- Train the model on documentation about your tables. For example, you can describe the type of data the table holds and possible values for fields in those tables. The way to train on documentation is as follows: `vn.train(documentation="insert documentation here")`
+- Train the model on commonly run SQL queries: `vn.train(sql="insert sql here")`
+- Train the model on question-sql pairs: `vn.train(question="insert question here", sql="insert sql here")`
+
+Furthermore, the accuracy of the model can be improved over time by incorporating user feedback.  For example, you can ask users to indicate whether a result was correct or not and have an input section where they can provide the correct answer.  This feedback can be turned into new question-SQL pairs that can be used to train the model.
+
+All of this highlights a salient point: using LLMs to completely automate data analysis tasks is not advisable.  What we have seen in practice is that the best use case for LLM applications is to streamline a end user's workflow, not to replace the workflow entirely with an automated solution.  *Think of these applications as intelligent agents or copilots rather than replacements.*
+
+
 
 
