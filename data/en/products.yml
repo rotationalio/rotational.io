@@ -26,6 +26,20 @@ products:
           link: /ensign-pricing
         - text: SDKs
           link: https://ensign.rotational.dev/sdk/
+    - product_name: Envoy
+      description: An open source peer-to-peer messaging platform built to help compliance teams handle travel rule exchanges efficiently and securely. 
+      logo: img/envoy-logo.webp
+      product_details:
+        - text: Designed by compliance experts and TRISA engineers to provide simplified data exchanges using the TRISA or TRP protocols
+        - text: Offers three options (DIY, one-time integration service, or managed service) to deploy or manage your Envoy Node
+        - text: Protects customer privacy and IVMS101 data with encrypted peer-to-peer communication
+      buttons:
+        - text: View Docs
+          link: https://trisa.dev/envoy/index.html
+        - text: The TRISA Network
+          link: https://trisa.io/
+        - text: Schedule Demo
+          link: https://r8l.co/9ITm325GGXq
     - product_name: Yellowbrick
       description: Yellowbrick is an open source diagnostic visualization tool for machine learning that allows data scientists to steer the model selection process.
                    Yellowbrick has been incorporated into data science workflows across companies, federal agencies, and individual data scientists. It reaches an 
