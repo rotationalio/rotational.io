@@ -20,7 +20,7 @@
         {{ if eq .product_name "Ensign" }}
         <p class="font-bold text-4xl text-center text-[#1D65A6] mb-4">Ensign</p>
         {{ end }}
-        <img src="{{ .logo }}" class="h-48 lg:w-8/12 lg:h-auto mx-auto"/>
+        <img src="{{ .logo }}" class="h-48 mx-auto"/>
       </section>
       <section class="lg:my-6 leading-relaxed lg:w-full">
         <ul class="ml-6 lg:ml-0">
@@ -33,7 +33,7 @@
         <ul>
           {{ range .buttons }}
           <li class="text-center mb-6">
-            <a href="{{ .link }}" target="_blank" class="w-1/2 inline-block bg-[#192E5B] hover:bg-[#1D65A6] p-3 rounded-lg font-bold text-[#FCFCFC]">
+            <a href="{{ .link }}" target="_blank" class="w-48 inline-block bg-[#192E5B] hover:bg-[#1D65A6] p-3 rounded-lg font-bold text-[#FCFCFC]">
               {{ .text }}
             </a>
             {{ end }}
