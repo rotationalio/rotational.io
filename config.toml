@@ -46,11 +46,6 @@ link = "https://unpkg.com/@highlightjs/cdn-assets/styles/default.min.css"
 
 ## JavaScript Plugins
 [[params.plugins.js]]
-# Font Awesome
-link = "https://kit.fontawesome.com/2c36e9b7b1.js"
-crossorigin = "anonymous"
-
-[[params.plugins.js]]
 # Lunr
 link = "https://unpkg.com/lunr/lunr.js"
 
