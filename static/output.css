@@ -1611,6 +1611,10 @@ video {
   width: 1rem;
 }
 
+.w-48 {
+  width: 12rem;
+}
+
 .w-56 {
   width: 14rem;
 }
@@ -3802,10 +3806,6 @@ em {
     height: 380px;
   }
 
-  .lg\:h-auto {
-    height: auto;
-  }
-
   .lg\:w-1\/2 {
     width: 50%;
   }
@@ -3815,10 +3815,6 @@ em {
   }
 
   .lg\:w-2\/3 {
-    width: 66.666667%;
-  }
-
-  .lg\:w-8\/12 {
     width: 66.666667%;
   }
 
