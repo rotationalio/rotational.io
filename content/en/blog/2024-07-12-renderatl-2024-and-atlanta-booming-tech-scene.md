@@ -41,7 +41,7 @@ This is likely why *Expanding Open Source in the Age of AI* by [Demetris Cheatha
 ## LangChainJS and AI Agents
 The AI Stage was dominated by talks with examples of tools useful for building AI applications. Two that I found interesting were *Building AI Applications with LangChain and Node.js* by [Julián Duque](https://twitter.com/julian_duque) and *The Prompt Engineer and the AI Agents in Javascript* by [Ron Dagdag](https://twitter.com/rondagdag).
 
-I have a keen interest in machine learning libraries [written in JavaScript](/5-javascript-libraries-to-use-for-machine-learning/) so both talks were right down my alley. I appreciated the examples Julián and Ron displayed during their talks. They definitely helped spark some ideas that will hopefully turn into future blog posts.
+I have a keen interest in machine learning libraries [written in JavaScript](/blog/5-javascript-libraries-to-use-for-machine-learning/) so both talks were right down my alley. I appreciated the examples Julián and Ron displayed during their talks. They definitely helped spark some ideas that will hopefully turn into future blog posts.
 
 
 ## RenderATL 2024 Wrap Up
