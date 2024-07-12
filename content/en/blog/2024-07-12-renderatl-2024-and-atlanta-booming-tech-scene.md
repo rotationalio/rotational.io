@@ -7,7 +7,7 @@ image: img/blog/2024-07-12-renderatl-2024-and-atlanta-booming-tech-scene/render-
 photo_credit: "Photo taken by Danielle Maxwell"
 authors: ['Danielle Maxwell']
 profile: img/team/danielle-maxwell.png
-tags: ['AI/ML', 'Conference']
+tags: ['AI', 'ML', 'Tech Conferences']
 description: "RenderATL and the city of Atlanta are proving that the South's tech scene has something to say."
 ---
 
