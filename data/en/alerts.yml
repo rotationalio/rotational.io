@@ -1,6 +1,6 @@
 ############################# Ensign Data ###################################
 notice:
-  enable: true
+  enable: false
   notice: "What's in an LLM? Demystifying Hugging Face Models to Leverage them for Business Impact"
   action:
     text: Register Now
