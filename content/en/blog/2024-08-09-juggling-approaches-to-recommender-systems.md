@@ -3,15 +3,15 @@ title: "Juggling Approaches to Recommender Systems"
 slug: "juggling-approaches-to-recommender-systems"
 date: "2024-08-07T21:01:57-04:00"
 draft: false
-image: /img/blog/2024-08-09-juggling-approaches-to-recommender-systems/messy-room-disorder-concept-living-room-bedroom-scattered-clothes-stuff-floor.jpg
-photo_credit: "Image by [user15285612 on Freepik](https://www.freepik.com/free-photo/messy-room-disorder-concept-living-room-bedroom-scattered-clothes-stuff-floor_16061550.htm#fromView=search&page=1&position=14&uuid=7a006e0c-a3a2-4d06-88c4-986580433851)"
+image: /img/blog/2024-08-09-juggling-approaches-to-recommender-systems/messy-room.webp
+photo_credit: "Image by [user15285612 on Freepik](https://www.freepik.com/free-photo/messy-room-disorder-concept-living-room-bedroom-scattered-clothes-stuff-floor_16061550.htm)"
 authors: ['Nneka Okigbo']
 profile: /img/team/nneka-okigbo.webp
-tags: ['Sentiment Analysis', 'Recommender System', 'GLiNER', 'Prodigy']
+tags: ['Sentiment Analysis', 'GLiNER', 'Prodigy']
 description: "Add Description Here"
 ---
 
-Messy rooms are a hassle. They can leave you sifting through piles of random things until you find what you’re looking for. In the messy world in which we live, the progress of the recommender system and the many approaches one can take in developing one seeks to achieve the goal of the desired choice while eliminating the hassle. 
+Messy rooms are a hassle. They can leave you sifting through piles of random things until you find what you’re looking for. In the messy world in which we live, the progress of the recommender system and the many approaches one can take in developing one seeks to achieve the goal of the desired choice while eliminating the hassle.
 
 <!--more-->
 My room can get quite messy. It’s not that I am a messy person, hopefully; but rather there are too many things to organize. I have so many clothes I cannot remember the last time I saw the carpet on the floor of my closet. Things do not seem to stay where I put them, as if they have a mind of their own. The thing I struggle to realize is how all of these things came to be mine. I surely do not need all of these clothes now, but at some point, I must have thought it to be the best choice. With the conception of Amazon and the click of three buttons I can reside within the comfort of my room and whatever I desire will be at my door by tomorrow morning. The irony of it all is that I never have anything to wear. There will always be something new. It is human nature to have desire. Some are innate while others develop as we do. As time flows the only constant is that everything changes. Everything from the thoughts in our minds to the environment around us, nothing remains exactly as it was. With this evolution, desire leads mankind to innovate on all fronts.
@@ -28,7 +28,7 @@ SBIR has several topic areas in which businesses can submit proposals in order t
 
 ### Our dilemmas when finding a topic area
 
-1. The embedded search engine in the SBIR website is inefficient. 
+1. The embedded search engine in the SBIR website is inefficient.
 
 2. Proposals take a few weeks to write, so we need a topic area whose closing date is farther away.
 
@@ -44,7 +44,7 @@ Luckily, retrieving the data on the agency topic areas was a breeze. Although th
 
 With the help of Patrick Deziel, I decided my first approach would be a [semantic similarity model](https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2) I retrieved from Hugging Face.
 
-The semantic similarity approach seemed ideal since we already had topic areas that we had approved. Our two approved topic areas were titled [Context Aware Data Stream Pre-processor for Time-Sensitive Applications](https://www.sbir.gov/topics/10835) and [Signal Cueing in Complex Environments](https://www.sbir.gov/topics/10837). My idea was to compare other topic areas with ones we had already approved. 
+The semantic similarity approach seemed ideal since we already had topic areas that we had approved. Our two approved topic areas were titled [Context Aware Data Stream Pre-processor for Time-Sensitive Applications](https://www.sbir.gov/topics/10835) and [Signal Cueing in Complex Environments](https://www.sbir.gov/topics/10837). My idea was to compare other topic areas with ones we had already approved.
 
 ```python
 def similarity(text, df, n=3):
@@ -78,7 +78,7 @@ Unfortunately, this approach proved to be even less accurate than the former. Al
 
 Despite, the several flaws associated with this approach, the truth remained that I needed a more accurate approach.
 
-## Approach 2: GLiNER 
+## Approach 2: GLiNER
 
 GLiNER (Generalist Model for Named Entity Recognition using Bidirectional Transformer) is a Named Entity Recognition (NER) model that is a practical alternative to other NER options. Unlike other options, GLiNER is not restricted to predefined entities. Usually, other NER models have limited to simple labels such as person, place, organization, etc. GLiNER allows users to select any label they desire.
 
@@ -93,7 +93,7 @@ So I created a function that takes 3 inputs: a pandas data frame, the selected c
 
 ```python
 def top10_withGLiNER(df, column, labels):
- 
+
  model = GLiNER.from_pretrained("urchade/gliner_medium-v2.1")
 
  labels = labels
@@ -138,7 +138,7 @@ Despite Prodigy's amazing work on this project, my project had its flaws that ev
 Due to this, I could only train using about 60 samples. Although text classification models do not require much training data, it would be better to have more than 60. Regardless, I still trained it.
 
 ```
-% prodigy train --textcat-multilabel SBIRAnnotations2  /Users/nnokigbo/Desktop/Rotational-Labs-Internship/SBIR/Prodigy-Use/Annotations-for-training/sbir-model 
+% prodigy train --textcat-multilabel SBIRAnnotations2  /Users/nnokigbo/Desktop/Rotational-Labs-Internship/SBIR/Prodigy-Use/Annotations-for-training/sbir-model
 ```
 
 !["Prodigy Training Results"](/img/blog/2024-08-09-juggling-approaches-to-recommender-systems/prodigy-spacy-results.png)
