@@ -59,7 +59,7 @@ Bio: https://rotational.io/authors/tianshu-li
 
 /* SITE */
 
-Last update: 2024-08-12
+Last update: 2024-08-15
 Site name: Rotational Labs
 URL: https://rotational.io/
 CMS: Hugo
