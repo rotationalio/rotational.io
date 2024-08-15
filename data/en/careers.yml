@@ -4,6 +4,14 @@ careers:
   title: Rotational Careers
   subtitle: We value diversity of experience, empathy, and impact. We hire for “add”, not “fit”.
   careers_item:
+    - name: Machine Learning Engineer
+      description:  We believe machine learning is most useful when it's built-for-purpose. Help us design, develop, and deploy custom machine learning models using open source tools (full time, fully remote, US Citizenship Required).
+      link: "/pdf/jobs/machine_learning_engineer.pdf"
+
+    - name: Data Engineer
+      description:  If it isn't deployed, it doesn't exist! Help us deliver end-to-end solutions by building and maintaining scalable data pipelines and infrastructure to support AI and LLM Ops. (full time, fully remote, US Citizenship Required).
+      link: "/pdf/jobs/data_engineer.pdf"
+
     - name: Vice President of Sales
       description:  Ready to take the helm of a product sales team? We see you! Help us identify leads and introduce them to all we have to offer, convert users into customers, and build lasting and meaningful relationships (full time, fully remote).
       link: "/pdf/jobs/vp_of_sales.pdf"
