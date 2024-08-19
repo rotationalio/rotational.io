@@ -4,7 +4,7 @@ slug: "introduction-to-polars"
 date: "2023-08-22T09:32:37-04:00"
 draft: false
 image: img/blog/2023-08-18-introduction-to-polars/polar-bears-unsplash.jpg
-photo_credit: Photo by Hans-Jurgen Mager on Unsplash
+photo_credit: Photo by [Hans-Jurgen Mager](https://unsplash.com/@hansjurgen007) on [Unsplash](https://unsplash.com/photos/NL1vH0hnIbQ)
 authors: [Prema Roman]
 profile: img/team/prema-roman.png
 tags: ['Python', 'Data']
@@ -140,6 +140,3 @@ It's usually not necessary to complete remove Pandas in order to make your data 
 
 As you can see, Polars is a very easy-to-use library that offers a lot of powerful features. If you are someone who "thinks in dataframes", Polars is a great resource to help you build more efficient data science and machine learning models. Check out the [docs](https://pola-rs.github.io/polars-book/user-guide/) for more details, features, and code snippets!
 
-
-***
-Photo by [Hans-Jurgen Mager](https://unsplash.com/@hansjurgen007) on [Unsplash](https://unsplash.com/photos/NL1vH0hnIbQ)

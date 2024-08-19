@@ -4,7 +4,7 @@ slug: "mlops-through-eventing"
 date: "2023-07-11T15:22:29-04:00"
 draft: false
 image: img/blog/airshow.jpg
-photo_credit: Photo by Johannes Tandl via Flickr Commons
+photo_credit: Photo by [Johannes Tandl](https://www.flickr.com/photos/johannestandl/) on [Flickr Commons](https://flic.kr/p/r4iU8A)
 authors: [Rotational Labs]
 profile: img/butterfly.png
 tags: ['MLOps', 'Eventing', 'AI', 'ML']
@@ -140,6 +140,3 @@ Models get deployed when we design systems that align with our organization’s 
 Ready to take the next step? Check out [MLOps 201: Data Flows for Real Time Model Inferencing](https://youtu.be/w69glRpOBD4?si=7V6vYUZa3uPBbXXy).
 
 Ready to experiment with data streams and change data capture? Check out our [data playground](https://rotational.io/data-playground/) and [create an Ensign account](https://rotational.app/register/) today!
-
-
-Photo by [Johannes Tandl](https://www.flickr.com/photos/johannestandl/) on [Flickr Commons](https://flic.kr/p/r4iU8A).

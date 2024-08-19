@@ -6,7 +6,7 @@ draft: false
 authors: [Patrick Deziel]
 image: img/blog/blue_laser.jpg
 tags: ['gRPC', 'Mocks', 'Programming']
-photo_credit: Photo by JJ Ying via Unsplash
+photo_credit: Photo by [JJ Ying](https://unsplash.com/@jjying?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/technology?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 description: "gRPC is a common framework used to facilitate communication between microservices, but testing these services can be a challenge. In this post we will present a simple strategy for mocking gRPC services in Go."
 profile: img/team/patrick-deziel.png
 ---
@@ -330,9 +330,6 @@ func TestSchedule(t *testing.T) {
 Mocking gRPC services for the purposes of testing isn't always straightforward. However, with tools like `bufconn` and some clever code factoring, we can create an in-memory mock that is completely isolated from production code. Introducing some measure of configurability into the mocks can also help us focus on _what_ we're testing rather than _how_ we're testing it.
 
 Check out the full tutorial code [here](https://github.com/rotationalio/agenda).
-
----
-Photo by [JJ Ying](https://unsplash.com/@jjying?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/technology?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 
 ---
 

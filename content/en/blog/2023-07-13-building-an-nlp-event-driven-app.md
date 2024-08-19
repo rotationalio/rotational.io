@@ -4,7 +4,7 @@ slug: "building-an-nlp-event-driven-app"
 date: "2023-07-13T16:45:10-04:00"
 draft: false
 image: img/blog/victory.jpg
-photo_credit: Photo by Zion National Park via Flickr Commons
+photo_credit: Photo by [Zion National Park](https://www.flickr.com/photos/zionnps/) on [Flickr Commons](https://flic.kr/p/auFchv)
 authors: [Aatmaj Janardanan]
 profile: img/team/aatmaj-janardanan.png
 tags: ['NLP', 'AI', 'ML', 'Eventing']
@@ -256,6 +256,3 @@ For now, here are my key takeaways from my first month of eventing:
 Want to try your hand at an event-driven data science project? Check out the [Data Playground](https://rotational.io/data-playground/) for open data sets and ideas for how to get started!
 
 If you're looking to start your first event-driven app, check out [Ensign](https://rotational.app/register/), a platform and community for data scientists working on event-driven projects.
-
-***
-Photo by [Zion National Park](https://www.flickr.com/photos/zionnps/) on [Flickr Commons](https://flic.kr/p/auFchv).

@@ -4,7 +4,7 @@ slug: "what-are-microfrontends"
 date: "2023-05-23T13:24:42-04:00"
 draft: false
 image: img/blog/2023-05-29/puzzle-pieces.jpg
-photo_credit: Photo by Hans-Peter Gauster via Unsplash
+photo_credit: Photo by [Hans-Peter Gauster](https://unsplash.com/@sloppyperfectionist?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/photos/3y1zF4hIPCg)
 authors: [Danielle Maxwell]
 profile: img/team/danielle-maxwell.png
 tags: ['Frontend', 'Microfrontend']
@@ -47,5 +47,3 @@ To learn even more about micro-frontends, I highly recommend checking out [singl
 [^1]: [Micro frontends](https://www.thoughtworks.com/radar/techniques/micro-frontends)
 [^2]: [Micro-frontends in context](https://increment.com/frontend/micro-frontends-in-context/)
 [^3]: [Getting Started with single-spa](https://single-spa.js.org/docs/getting-started-overview)
-
-Photo by [Hans-Peter Gauster](https://unsplash.com/@sloppyperfectionist?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/photos/3y1zF4hIPCg)

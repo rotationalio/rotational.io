@@ -4,7 +4,7 @@ slug: "streaming-nlp-with-llms-and-ensign"
 date: "2023-08-01T12:56:58-04:00"
 draft: false
 image: img/blog/egret-and-buffalo.jpg
-photo_credit: Photo by Francesco Veronesi via Flickr Commons
+photo_credit: Photo by [Francesco Veronesi](https://www.flickr.com/photos/francesco_veronesi/) on [Flickr Commons](https://flic.kr/p/2ne6M5j)
 authors: [Rotational Labs]
 profile: img/butterfly.png
 tags: ['MLOps', 'Eventing', 'AI', 'ML']
@@ -239,6 +239,3 @@ Ready to take the next step? Check out [MLOps 201: Data Flows for Real Time Mode
 
 
 Ready to experiment with data streams and change data capture? Check out [The Data Playground](https://rotational.io/data-playground/) and set up your own [free Ensign account](https://rotational.app/register/).
-
-***
-Photo by [Francesco Veronesi](https://www.flickr.com/photos/francesco_veronesi/) on [Flickr Commons](https://flic.kr/p/2ne6M5j).

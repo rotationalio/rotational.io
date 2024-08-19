@@ -4,7 +4,7 @@ slug: "real-time-processing"
 date: "2023-05-26T09:00:00-04:00"
 draft: false
 image: img/blog/starburst.jpg
-photo_credit: Photo by Joshua Sortino on Unsplash
+photo_credit: Photo by [Joshua Sortino](https://unsplash.com/@sortino?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/photos/LqKhnDzSF-8?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText).
 authors: [Faraz Rahman]
 profile: img/butterfly.png
 tags: ['Eventing', 'AI', 'ML']
@@ -97,5 +97,3 @@ If you're looking to get into real-time data science, check out [Ensign](https:/
 
 
 *[Faraz Rahman](https://www.linkedin.com/in/faraz-rahman41/) is a Data & Machine Learning Product Manager and professional Data Scientist. She is currently pursuing a graduate degree at Carnegie Mellon University in Silicon Valley, where she works on software products that benefit society and use ML/AI as their core technology.*
-
-Photo by [Joshua Sortino](https://unsplash.com/@sortino?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/photos/LqKhnDzSF-8?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText).
