@@ -4,7 +4,7 @@ slug: "pubsub-101---creating-your-project"
 date: "2023-11-08T09:30:29-06:00"
 draft: false
 image: /img/blog/2023-11-08-pubsub-101---creating-your-project/boat-frame.jpg
-photo_credit: "Photo by Waldviertler via Wikimedia Commons"
+photo_credit: "Photo by [Waldviertler](https://de.wikipedia.org/wiki/Benutzer:Waldviertler) via [Wikimedia Commons](https://en.m.wikipedia.org/wiki/File:Samos_Agios_Isidoros_002.jpg)"
 authors: ['Patrick Deziel']
 profile: img/team/patrick-deziel.png
 tags: ['Ensign', 'PubSub 101']
@@ -116,6 +116,3 @@ Congratulations on setting up your project! Your Ensign dashboard should look so
 In the [next module](https://rotational.io/blog/pubsub-101---using-the-python-sdk), you'll use your API key to stream data to Ensign!
 
 *Note: If you get stuck anywhere, don't stress! You can always reach out to us for help at support@rotational.io*
-
-***
-Photo by [Waldviertler](https://de.wikipedia.org/wiki/Benutzer:Waldviertler) via [Wikimedia Commons](https://en.m.wikipedia.org/wiki/File:Samos_Agios_Isidoros_002.jpg).

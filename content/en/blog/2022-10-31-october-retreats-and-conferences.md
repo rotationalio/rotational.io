@@ -7,7 +7,7 @@ image: img/blog/2022-10-31-willis-tower.jpg
 authors: [Benjamin Bengfort]
 profile: img/team/benjamin-bengfort.png
 tags: ['News', 'Company']
-photo_credit: Photo by Cody Engel on Unsplash
+photo_credit: Photo by [Cody Engel](https://unsplash.com/@codyengel?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/willis-tower?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 description: "October was a big month for Rotational; we had our second annual team retreat in Chicago and attended GopherCon and KubeCon!"
 ---
 
@@ -34,9 +34,3 @@ Later that month, we continued our conference circuit at KubeCon in Detroit wher
 #### Geography Matters
 
 Geography is essential to Rotational's distributed platform and so it seems natural that our team enjoys travel, learning about new places, cultures, customs, and foods ([Malört](https://www.thebacklabel.com/what-is-malort/#.Y4TVQ-xudQI), anyone?). The pandemic has constrained us to the continental United States for the first two years of our startup, but we're certainly looking forward to new horizons and traveling the globe together!
-
----
-
-Photo by [Cody Engel](https://unsplash.com/@codyengel?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/willis-tower?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText).
-
----

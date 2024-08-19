@@ -4,7 +4,7 @@ slug: "uchicago-hackathon"
 date: "2023-09-27T08:04:58-07:00"
 draft: false
 image: img/blog/autumn_leaves.jpg
-photo_credit: "Photo by Hiro via Flickr Commons"
+photo_credit: Photo by [Hiro_A](https://www.flickr.com/photos/114063888@N08/) on [Flickr Commons](https://flic.kr/p/NdjhR3).
 authors: ["Edwin Schmierer"]
 profile: img/team/edwin-schmierer.png
 tags: ["Hackathon", "Data Science", "Python"]
@@ -24,7 +24,3 @@ The objective is to challenge students to "think beyond the batch" by tapping in
 The hackathon will take place online from October 10 to October 18. Winners will be announced October 25.
 
 *Are you a student, faculty member or administrator interested in partnering with us for a hackathon? Drop us a line at [support@rotational.io](mailto:support@rotational.io).*
-
-
-***
-Photo by [Hiro_A](https://www.flickr.com/photos/114063888@N08/) on [Flickr Commons](https://flic.kr/p/NdjhR3).

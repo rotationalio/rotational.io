@@ -4,7 +4,7 @@ slug: "welcome-to-ensign-u"
 date: "2023-10-20T12:41:46-04:00"
 draft: false
 image: img/blog/library.jpg
-photo_credit: "Photo by Pablo Dodda"
+photo_credit: "Photo by [Pablo Dodda](https://www.flickr.com/photos/dodda/) on [Flickr Commons](https://flic.kr/p/4A2GQ4)"
 authors: ['Rotational Labs']
 profile: img/butterfly.png
 tags: ['Python', 'Eventing', 'ML']
@@ -106,7 +106,3 @@ Here are some common data science projects that can add value to an organization
 - Publish streams to web apps, mobile apps, dashboards, an
 - Publish data from different topics into a new a new topic
 - Collect data from edge devices and sensors.
-
-
-***
-Photo by [Pablo Dodda](https://www.flickr.com/photos/dodda/) on [Flickr Commons](https://flic.kr/p/4A2GQ4).

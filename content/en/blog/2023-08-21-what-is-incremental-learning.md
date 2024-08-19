@@ -4,7 +4,7 @@ slug: "what-is-incremental-machine-learning"
 date: "2023-08-21T10:17:03-04:00"
 draft: false
 image: img/blog/festival-lights.jpg
-photo_credit: Photo by Viaggio Routard via Flickr Commons
+photo_credit: Photo by [Viaggio Routard](https://www.flickr.com/photos/viaggioroutard/) on [Flickr Commons](https://flic.kr/p/AuVArX).
 authors: [Aatmaj Janardanan]
 profile: img/team/aatmaj-janardanan.png
 tags: ['NLP', 'AI', 'ML', 'Eventing']
@@ -155,13 +155,3 @@ Ready to experiment with data streams and change data capture? Check out [The Da
 - Virajdatt Kohir [Incremental Machine Learning for Streaming data with River: Part 1](https://kvirajdatt.medium.com/incremental-machine-learning-for-streaming-data-with-river-part-1-f0131459e85b), *May 2022*.
 - River 0.18.0 Documentation [From batch to online/stream](https://riverml.xyz/0.18.0/examples/batch-to-online/), *retrieved August 2023*.
 
-
-
-
-
-
-
-
-
-***
-Photo by [Viaggio Routard](https://www.flickr.com/photos/viaggioroutard/) on [Flickr Commons](https://flic.kr/p/AuVArX).

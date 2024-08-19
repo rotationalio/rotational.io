@@ -4,7 +4,7 @@ slug: "realtime-machine-learning"
 date: "2023-08-11T15:19:00-04:00"
 draft: false
 image: img/blog/2023-08-07-realtime-machine-learning/bird-fly-unsplash.jpg
-photo_credit: Photo by Navi on Unsplash
+photo_credit: Photo by [Navi](https://unsplash.com/@navi_photography) on [Unsplash](https://unsplash.com/photos/HeoATyJ1DFQ)
 authors: [Prema Roman]
 profile: img/team/prema-roman.png
 tags: ['NLP', 'AI', 'ML', 'Eventing']
@@ -138,6 +138,3 @@ For a deeper dive into real-time machine learning, check out the following resou
 Ready to take the next step? Check out [MLOps 201: Data Flows for Real Time Model Inferencing](https://youtu.be/w69glRpOBD4?si=7V6vYUZa3uPBbXXy).
 
 Ready to experiment with data streams and change data capture? Check out [The Data Playground](https://rotational.io/data-playground/) and set up your own [free Ensign account](https://rotational.app/register/).
-
-***
-Photo by [Navi](https://unsplash.com/@navi_photography) on [Unsplash](https://unsplash.com/photos/HeoATyJ1DFQ)

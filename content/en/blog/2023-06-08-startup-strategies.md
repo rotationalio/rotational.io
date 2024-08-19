@@ -4,7 +4,7 @@ slug: "startup-strategies"
 date: "2023-06-08T19:15:26-04:00"
 draft: false
 image: img/blog/balloons.jpg
-photo_credit: Photo by Patrick Down on Flickr Commons
+photo_credit: Photo by [Patrick_Down](https://www.flickr.com/photos/patrickdown/) on [Flickr Commons](https://flic.kr/p/nST5Ag)
 authors: [Beci Lambrecht]
 profile: img/team/beci-lambrecht.png
 tags: ['Startups']
@@ -43,5 +43,3 @@ Empathy also pays dividends when you can use it to imagine your way into your cu
 These small meaningful acts ensure that you don't just list empathy as one of your company’s core values on the website; instead you're practicing empathy every day.
 
 Want to check out what our team is building? Take a gander at [Ensign](https://rotational.app/register/), a new platform and community for data teams working on event-driven analytics. Interested in a company who values empathy as much as you do? Consider [joining our growing team](https://rotational.io/about/).
-
-Photo by [Patrick_Down](https://www.flickr.com/photos/patrickdown/) on [Flickr Commons](https://flic.kr/p/nST5Ag).

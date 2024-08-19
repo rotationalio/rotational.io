@@ -4,7 +4,7 @@ slug: "async-or-swim"
 date: "2023-06-05T10:39:51-05:00"
 draft: false
 image: img/blog/mississippi.jpg
-photo_credit: Photo by USGS on Unsplash
+photo_credit: Photo by [USGS](https://unsplash.com/@usgs) on [Unsplash](https://unsplash.com/photos/35Z2ylLRCO8)
 authors: [Patrick Deziel]
 profile: img/team/patrick-deziel.png
 tags: ['Eventing', 'Golang']
@@ -296,5 +296,3 @@ But being able to name your problem is most of the battle, and hopefully the exa
 Want more? Check out the [Ensign repo on GitHub](https://github.com/rotationalio/ensign/blob/main/pkg/utils/tasks)!
 
 *If you're looking to add more concurrency to your architecture, check out [Ensign](https://rotational.app/register/), a platform and community for developers building asynchronous apps.*
-
-Photo by [USGS](https://unsplash.com/@usgs) on [Unsplash](https://unsplash.com/photos/35Z2ylLRCO8)
