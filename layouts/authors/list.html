@@ -57,7 +57,7 @@ relative bg-[#1D65A6]">
         <ul class="grid md:grid-cols-2 xl:grid-cols-3 gap-6 md:gap-8">
             {{ $paginator := .Paginate .Data.Pages 6 }}
             {{ range $paginator.Pages }}
-            <li class="mt-6 sm:mt-0 h-auto">
+            <li class="mt-6 sm:mt-0 h-auto rounded-b-xl bg-[#ECF6FF]">
                 {{ .Render "article" }}
             </li>
             {{ end }}
