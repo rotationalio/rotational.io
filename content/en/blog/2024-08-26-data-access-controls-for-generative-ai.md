@@ -11,18 +11,32 @@ tags: ['Security', 'AI', 'Data Access']
 description: "A proposal for a POSIX-like access control list for vector databases to enable fine-grained data access control for generative AI and machine learning."
 ---
 
-Anyone who has worked on a POSIX system is used to fine-grained data access rights for files and directories. In a world of generative AI we need to not only think about file access, but how those files are used to train LLMs and inference.
+Anyone who has worked on a POSIX system is used to fine-grained data access rights for files and directories. In a world of generative AI, do we need a new permissions model for files used to train LLMs and serve live inferences?
 
 <!--more-->
 
+## When Access Control Was Easy
+
+File permissions and access controls have long been essential for managing security and data integrity. The POSIX (Portable Operating System Interface) standard, introduced in the early 1980s, provides a straightforward mechanism for defining who can read, write, or execute a file, using a combination of user-based (owner, group, and others) and permission-based (read, write, execute) controls. This model, though simple, has been foundational for managing access in Unix-like systems and remains a cornerstone in many modern operating environments.
+
+As technology has evolved, so too have the demands placed on access control mechanisms. Unlike traditional file systems where access control is relatively straightforward, vector databases used in AI and machine learning environments deal with vast amounts of data vectors that are continuously accessed and modified.
+
+For these new contexts, the traditional POSIX model reveals its limitations. Vector databases often involve intricate data structures that don't map neatly onto the file-centric access control model. Furthermore, the scale and dynamics of modern data use (e.g. training large language models, serving real-time inferences, reconstructing conversation histories, etc.) introduce additional layers of complexity. This complexity necessitates a more granular and flexible approach to access control, one that can handle not only the scale but also the specificity of access requirements.
+
+## POSIX for GenAI: A Proposal
+
+I propose a new permission model for dataset collections and embedded objects that will directly influence model management operations (i.e. MLOps, LLMOps).
+
+This proposal seeks to address these challenges by introducing a POSIX-like access control list tailored for vector databases. Such a system should provide a familiar interface for defining permissions while extending the capabilities to accommodate the unique needs of AI applications.
+
 ![Data Access Controls are POSIX-like but adapted for Generative AI](/img/blog/2024-08-26-data-access-controls-for-generative-ai/permissions.webp)
 
-Here is the quick summary for those not looking to read a long blog post. I propose a new permission model for dataset collections and embedded objects that will directly influence model management operations. Similar to POSIX file permissions, each model, collection and object will have a user and a group, along with the following permissions flags:
+Similar to POSIX file permissions, each model, collection and object will have a user and a group, along with the following permissions flags:
 
-1. **Read**: the entity can retrieve the object for input to a prompt (e.g. for a RAG)
-2. **Write**: the entity can write to the given object (e.g. to update a vector)
-3. **Train**: the entity can use the object for training a model
-4. **Inference**: the object can be output as part of an inference
+1. **`r`**/**Read**: the entity can retrieve the object for input to a prompt (e.g. for a RAG)
+2. **`w`**/**Write**: the entity can write to the given object (e.g. to update a vector)
+3. **`t`**/**Train**: the entity can use the object for training a model
+4. **`x`**/**Inference**: the object can be output as part of an inference
 
 The two new permissions: _train_ and _inference_ prevent sensitive information from being included in models targeting a specific use case (e.g. as defined by the group permissions) or to prevent data leakage by excluding data from inferencing output.
 
@@ -64,9 +78,13 @@ For auditing and provenance purposes, every version of the artifact should also 
 
 ### Permissions and Inheritance
 
-Permissions are applied at the time of access to an artifact based on the privileges of the logged in user or process. For those not familiar with POSIX permissions, here are a few examples for an artifact with the following permissions: `orwtxr--xr---`.
+Permissions are applied at the time of access to an artifact based on the privileges of the logged in user or process. Here are a few examples for an artifact with the below permissions.
 
-- The owner of the object may read, write, train, and inference using the object. That means that they can view the contents of the object (read), update the object and create a new version (write), use the object to train a new model (train), and the object may be used in retrieval augmented generation or as part of the output (execute).
+```bash
+>>> orwtxr--xr---
+```
+
+- The owner of the object may read (`r`), write (`w`), train (`t`), and inference (`x`) using the object. That means that they can view the contents of the object (read), update the object and create a new version (write), use the object to train a new model (train), and the object may be used in retrieval augmented generation or as part of the output (execute).
 - If the user is in the group that the object belongs to, they may read or inference with the object.
 - Anyone else on the system may read the contents of the object but not use it in any other way.
 
@@ -84,4 +102,8 @@ Additionally, it is up to the system to determine if the `r` or `x` permission s
 
 ## Why it Matters
 
-Generative AI is an interface that allows us to access the vast amounts of data on the Internet and in our organizations more easily and in a more human fashion. When we consider LLMs from that perspective, data access controls clearly become more important. Moreover, it's also becoming increasingly important to ensure high data quality in LLMs so that they don't degrade; data access controls are just one safeguard that helps us ensure high data quality and to manage MLOps in a more meaningful fashion.
+Generative AI is [an interface](https://rotational.io/blog/ai-isnt-chatbots-its-an-interface/) that allows us to access the vast amounts of data on the Internet and in our organizations more easily and in a more human fashion. It's becoming increasingly important to ensure high data quality in LLMs so that they don't degrade, hallucinate, or violate our privacy or security expectations.
+
+The evolving landscape of AI and machine learning demands an equally sophisticated approach to data access control. The traditional POSIX model has served us well for decades, but as we push the boundaries of what’s possible, we find ourselves at a crossroads. We need a POSIX-like solution that not only upholds the integrity and security of our data but also embraces the complexities of modern use cases.
+
+This post describes one proposal for such a solution. The approach promises to safeguard data with the precision and flexibility required for the next generation of technological advancements, enabling us to achieve more while mitigating risks, fostering innovation and ensuring that our advances in AI and machine learning are built on a foundation of trust and accountability.
