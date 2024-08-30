@@ -101,7 +101,7 @@ Rotational may collect and use Users’ personal information for the following p
 - Contact you about our products and services that may be of interest;
 - Contact you about third parties’ goods and services;
 - Send you periodic emails, in accordance with the CAN-SPAM Act of 2003 as detailed in Section 15, via the email address provided by you to (i) send information, respond to inquiries, and/or other requests or questions; (ii) process orders and send information and updates pertaining to such orders; (iii) send additional information related to your product and/or service; and (iv) market to our mailing list or continue to send email to you after the original transaction has occurred.
-- To advertise, promote, and encourage interaction with the Services: We utilize your contact details and information about your usage of our Services to send marketing communications that are tailored to your interests in order to advertise, promote, and encourage engagement with our Services. You have the ability to manage whether you receive such communications, as explained in the “opt-out of marketing communications” section.
+- To advertise, promote, and encourage interaction with the Services: We utilize your contact details and information about your usage of our Services to send marketing communications that are tailored to your interests in order to advertise, promote, and encourage engagement with our Services. You have the ability to manage whether you receive such communications, as explained in “Choices Users Have About How Rotational Uses and Discloses Information”.
 
 ## How We Protect Your Information
 
@@ -124,9 +124,9 @@ We may disclose personal information in the following situations: (i) to comply 
 
 ### Third Party Disclosure
 
-We do not sell, trade, rent, or share your personal information with others without giving you advance notice. This excludes our hosting partners and service providers who help us operate our website, products, and services, as long as they agree to keep your information confidential.
+We will never sell personal information ever. We do not sell, trade, rent, or share your personal information with others. This excludes our hosting partners and service providers who help us operate our website, products, and services, as long as they agree to keep your information confidential.
 
-We do not provide non-personally identifiable visitor information for marketing purposes.
+Rotational does not and will not sell aggregated, non-personally identifiable data about our users or website visitors to 3rd parties for marketing purposes.
 
 ### Choices Users Have About How Rotational Uses and Discloses Information
 
@@ -144,7 +144,7 @@ Your request and choices may be limited in certain cases:
 
 ## Third Party Websites
 
-Users may find advertising or other content on our Site that links to the sites and services of our partners, suppliers, advertisers, sponsors, licensors and other third parties. We do not control the content or links that appear on these sites and are not responsible for the practices employed by websites linked to or from our Site. In addition, these sites or services, including their content and links, may be constantly changing. These sites and services may have their own privacy policies and customer service policies. Browsing and interaction on any other website, including websites which have a link to our Site, is subject to that website’s own terms and policies.
+Users may find advertising or other content on our Site that link to the sites and services of our partners, suppliers, advertisers, sponsors, licensors and other third parties. We do not control the content or links that appear on these sites and are not responsible for the practices employed by websites linked to or from our Site. In addition, these sites or services, including their content and links, may be constantly changing. These sites and services may have their own privacy policies and customer service policies. Browsing and interaction on any other website, including websites which have a link to our Site, is subject to that website’s own terms and policies.
 
 ## Children’s Online Privacy Protection Act (COPPA)
 
@@ -156,7 +156,7 @@ The CAN-SPAM Act establishes requirements for commercial messages, gives recipie
 
 - not use false or misleading subjects or email addresses;
 - identify the email message as an advertisement in some reasonable way;
-- include the physical address of Rotational Labs, which is 2204 Dayton Ave, St. Paul, MN 55015
+- include the physical address of Rotational Labs, which is Attn: Rotational Labs, 202 N Cedar Ave, Suite #1, Owatonna, MN 55060, USA.
 - reasonably monitor third-party email marketing services for compliance, if one is used;
 h- onor opt-out/unsubscribe requests quickly; and
 - give an “opt-out” or “unsubscribe” option.
@@ -198,8 +198,8 @@ If you have any questions about this Privacy Policy, the practices of our site, 
 
 Data Protection Officer<br />
 Email: [privacy@rotational.io](privacy@rotational.io)<br />
-Address: Rotational Labs, Inc., 2204 Dayton Avenue, St. Paul, MN 55104
+Address: Attn: Rotational Labs, 202 N Cedar Ave, Suite #1, Owatonna, MN 55060, USA
 
 ## Changelog
 
-Privacy Policy Last Updated on Sept 1, 2024.
+Privacy Policy Last Updated on August 30, 2024.
