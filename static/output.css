@@ -2133,10 +2133,6 @@ video {
   background-image: url('/img/hero.png');
 }
 
-.bg-hexagon {
-  background-image: url('/img/tileable-hexagon.png');
-}
-
 .bg-transparent-overlay {
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), transparent);
 }
@@ -2149,16 +2145,8 @@ video {
   background-size: 882.5px 480px;
 }
 
-.bg-contain {
-  background-size: contain;
-}
-
 .bg-cover {
   background-size: cover;
-}
-
-.bg-center {
-  background-position: center;
 }
 
 .bg-right-center {
