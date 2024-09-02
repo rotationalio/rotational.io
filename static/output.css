@@ -2125,10 +2125,6 @@ video {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
-.bg-hero-footer {
-  background-image: url('/img/foot.png');
-}
-
 .bg-hero-pattern {
   background-image: url('/img/hero.png');
 }
@@ -2143,10 +2139,6 @@ video {
 
 .bg-\[length\:882\.5px_480px\] {
   background-size: 882.5px 480px;
-}
-
-.bg-cover {
-  background-size: cover;
 }
 
 .bg-right-center {
@@ -2331,6 +2323,10 @@ video {
   padding-bottom: 0.75rem;
 }
 
+.pb-36 {
+  padding-bottom: 9rem;
+}
+
 .pb-4 {
   padding-bottom: 1rem;
 }
@@ -2407,8 +2403,8 @@ video {
   padding-top: 25px;
 }
 
-.pt-\[350px\] {
-  padding-top: 350px;
+.pt-12 {
+  padding-top: 3rem;
 }
 
 .text-left {
