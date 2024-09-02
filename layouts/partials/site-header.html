@@ -2,21 +2,17 @@
 
 {{ if eq $.Page.Kind "home" }}
 <div class="relative sm:min-h-[691px] min-h-[480px] w-full">
-    <!-- hero element -->
-    <div
-        class="relative top-0 left-0 w-full h-full bg-[#1D65A6] sm:min-h-[691px] min-h-[480px]">
-
-        <!-- overlay to make white text readable over clouds -->
-        <div class="absolute top-0 left-0 w-full block h-full z-[1] md:hidden"></div>
-
+    <div class="relative top-0 left-0 w-full h-full bg-[#1D65A6] sm:min-h-[691px] min-h-[480px]">
         <div class="absolute top-0 left-0 w-full h-full z-[9]">
           {{ partial "site-nav.html" . }}
 
           <div class="max-w-7xl mx-auto flex items-center justify-between text-white px-4 sm:px-6">
               <div class="w-full sm:w-3/5 text-center sm:text-start text-3xl ">
+                {{ $intro := .Params.intro }}
                 {{ $header := .Params.header }}
                 {{ with $header }}
                 <div class="mt-6 sm:mt-20">
+                    <h5 class="mb-4 text-sm font-bold">{{ $intro | markdownify }}</h5>
                     <h1 class="font-bold text-3xl md:text-5xl">{{ . | markdownify }}</h1>
                 </div>
                 {{ end}}
@@ -66,13 +62,17 @@
                       {{ end }}
                   </div>
               </div>
+              <!-- TODO: Display logo in header -->
+             <!--  <div class="mx-auto">
+                <img src="img/logo-white.png" alt="Rotational Lab logo" class="h-44 w-auto">
+              </div> -->
           </div>
         </div>
     </div>
 </div>
 {{ else }}
 <div class="min-h-[480px] w-full">
-    <div class="min-h-[480px] w-full">
+    <div class="min-h-[480px] w-full bg-[#1D65A6]">
 
         {{ partial "site-nav.html" . }}
 
