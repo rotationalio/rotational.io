@@ -2125,30 +2125,6 @@ video {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
-.bg-hero-pattern {
-  background-image: url('/img/hero.png');
-}
-
-.bg-transparent-overlay {
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), transparent);
-}
-
-.bg-wave-pattern {
-  background-image: url('/img/wave.png');
-}
-
-.bg-\[length\:882\.5px_480px\] {
-  background-size: 882.5px 480px;
-}
-
-.bg-right-center {
-  background-position: right center;
-}
-
-.bg-no-repeat {
-  background-repeat: no-repeat;
-}
-
 .fill-current {
   fill: currentColor;
 }
@@ -2401,10 +2377,6 @@ video {
 
 .pt-\[25px\] {
   padding-top: 25px;
-}
-
-.pt-12 {
-  padding-top: 3rem;
 }
 
 .text-left {
@@ -3379,14 +3351,6 @@ em {
     --tw-space-x-reverse: 0;
     margin-right: calc(6rem * var(--tw-space-x-reverse));
     margin-left: calc(6rem * calc(1 - var(--tw-space-x-reverse)));
-  }
-
-  .sm\:bg-wavelg-pattern {
-    background-image: url('/img/wave_lg.png');
-  }
-
-  .sm\:bg-\[length\:1267px_691px\] {
-    background-size: 1267px 691px;
   }
 
   .sm\:p-0 {

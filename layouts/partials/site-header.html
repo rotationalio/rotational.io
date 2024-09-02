@@ -1,13 +1,13 @@
 {{ partial "alerts.html" }}
 
 {{ if eq $.Page.Kind "home" }}
-<div class="relative sm:bg-wavelg-pattern bg-wave-pattern bg-right-center sm:min-h-[691px] min-h-[480px] w-full">
+<div class="relative sm:min-h-[691px] min-h-[480px] w-full">
     <!-- hero element -->
     <div
-        class="relative top-0 left-0 w-full h-full bg-hero-pattern sm:bg-[length:1267px_691px] bg-[length:882.5px_480px] bg-right-center bg-no-repeat sm:min-h-[691px] min-h-[480px]">
+        class="relative top-0 left-0 w-full h-full bg-[#1D65A6] sm:min-h-[691px] min-h-[480px]">
 
         <!-- overlay to make white text readable over clouds -->
-        <div class="absolute top-0 left-0 w-full block h-full z-[1] bg-transparent-overlay md:hidden"></div>
+        <div class="absolute top-0 left-0 w-full block h-full z-[1] md:hidden"></div>
 
         <div class="absolute top-0 left-0 w-full h-full z-[9]">
           {{ partial "site-nav.html" . }}
@@ -71,8 +71,8 @@
     </div>
 </div>
 {{ else }}
-<div class=" bg-wave-pattern bg-right-center min-h-[480px] w-full">
-    <div class="bg-hero-pattern bg-[length:882.5px_480px] bg-right-center bg-no-repeat min-h-[480px] w-full">
+<div class="min-h-[480px] w-full">
+    <div class="min-h-[480px] w-full">
 
         {{ partial "site-nav.html" . }}
 
