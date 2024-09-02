@@ -51,37 +51,44 @@ link = "https://unpkg.com/lunr/lunr.js"
 
 ## English Navigation
 [[Languages.en.menu.main]]
-identifier = 'Services'
-pageRef = 'services'
-name = 'Services'
+identifier = 'about'
+pageRef = 'about'
+name = 'About Us'
+url = '/about'
 weight = 1
 
 [[Languages.en.menu.main]]
-identifier = 'Products'
-pageRef = 'products'
-name = 'Products'
+identifier = 'Services'
+pageRef = 'services'
+name = 'Our Services'
 weight = 2
+
+[[Languages.en.menu.main]]
+identifier = 'caseStudies'
+pageRef = 'caseStudies'
+name = 'Case Studies'
+url = '/case-studies'
+weight = 3
 
 [[Languages.en.menu.main]]
 identifier = 'blog'
 pageRef = 'blog'
 name = 'Blog'
 url = '/blog'
-weight = 3
-
-[[Languages.en.menu.main]]
-identifier = 'about'
-pageRef = 'about'
-name = 'About'
-url = '/about'
 weight = 4
 
 [[Languages.en.menu.main]]
-identifier = 'contact'
-pageRef = 'contact'
-name = 'Contact Us'
-url = '/contact'
+identifier = 'learning'
+pageRef = 'learning'
+name = 'Learning'
+url = '/resources'
 weight = 5
+
+[[Languages.en.menu.main]]
+identifier = 'Products'
+pageRef = 'products'
+name = 'Product'
+weight = 6
 
 ## English Language
 [Languages.en]

@@ -1,7 +1,8 @@
 ---
 date: 2023-02-09T10:21:41-06:00
-header: If it isn’t deployed, it doesn’t exist
-headertext: We help you bring AI to your team to identify and solve the most impactful customer problems.
+intro: WELCOME TO ROTATIONAL
+header: YOUR GO-TO AI <br /> INNOVATION PARTNER
+headertext: We work with enterprises to build trusted data foundations and AI solutions for sustainable business impact.
 headeractions:
 - action: Download AI Playbook
   link:
@@ -17,9 +18,6 @@ download:
 - text: Download ePub
   link: "https://rtnl.link/ha34VBLWjIb"
 ---
-
-<!-- Edit services data in data/en/professional_services.yml -->
-{{< professional-services >}}
 
 <!-- Edit and add clients in data/en/clients.yml -->
 {{< clients >}}

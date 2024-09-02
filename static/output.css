@@ -1163,10 +1163,6 @@ video {
   z-index: 50;
 }
 
-.z-\[1\] {
-  z-index: 1;
-}
-
 .z-\[9999\] {
   z-index: 9999;
 }
@@ -1482,10 +1478,6 @@ video {
   height: 2.75rem;
 }
 
-.h-14 {
-  height: 3.5rem;
-}
-
 .h-16 {
   height: 4rem;
 }
@@ -1512,6 +1504,10 @@ video {
 
 .h-4 {
   height: 1rem;
+}
+
+.h-44 {
+  height: 11rem;
 }
 
 .h-48 {
@@ -3311,10 +3307,6 @@ em {
     display: grid;
   }
 
-  .sm\:h-14 {
-    height: 3.5rem;
-  }
-
   .sm\:h-8 {
     height: 2rem;
   }
@@ -3497,10 +3489,6 @@ em {
 
   .md\:grid {
     display: grid;
-  }
-
-  .md\:hidden {
-    display: none;
   }
 
   .md\:h-24 {
