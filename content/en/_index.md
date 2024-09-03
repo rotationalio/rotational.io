@@ -19,8 +19,14 @@ download:
   link: "https://rtnl.link/ha34VBLWjIb"
 ---
 
+<!-- Edit copy in data/en/delivery_team.yml -->
+{{< delivery-team >}}
+
 <!-- Edit and add clients in data/en/clients.yml -->
 {{< clients >}}
+
+<!-- Edit and add testimonials in data/en/testimonials.yml -->
+{{< testimonials >}}
 
 <!-- On the Cloud section -->
 {{< container color="#ECF6FF" >}}

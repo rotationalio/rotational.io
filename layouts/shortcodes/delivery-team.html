@@ -1,0 +1,32 @@
+{{ $data := index site.Data site.Language.Lang }}
+
+{{ if $data.delivery_team.delivery_team.enable }}
+{{ with $data.delivery_team.delivery_team }}
+<section class="max-w-7xl mx-auto my-12 grid md:grid-cols-2 items-center gap-20">
+  <section>
+    <img src="img/ensign_enterprise.png" class="" />
+  </section>
+  <section>
+    <h5 class="py-2 text-sm font-semibold text-gray-700">{{ .tagline }}</h5>
+    <h2 class="py-2 text-2xl font-bold">{{ .title }} </h2>
+    <p class="py-2">{{ .description }}</p>
+    <ul class="py-4 grid grid-cols-2">
+      {{ range .benefits }}
+      <div class="flex items-center gap-x-1">
+        <i class="fa-solid fa-circle-check"></i>
+        <li>{{ .benefit }}</li>
+      </div>
+      {{ end }}
+    </ul>
+    <ul class="py-2 grid grid-cols-4 items-start">
+      {{ range .expertise }}
+      <div>
+        <li class="py-2 self-start text-xl font-bold">{{ .experience }}</li>
+        <li class="text-sm max-w-10">{{ .text }}</li>
+      </div>
+      {{ end }}
+    </ul>
+  </section>
+</section>
+{{ end }}
+{{ end }}

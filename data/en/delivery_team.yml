@@ -1,0 +1,22 @@
+delivery_team:
+  enable: true
+  tagline: EXPERTISE YOU CAN COUNT ON
+  title: YOUR DELIVERY TEAM
+  description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet purus in odio varius tincidunt. 
+               Nullam nec nunc nec nunc ultricies ultricies. Nullam nec nunc nec nunc ultricies ultricies.
+  benefits:
+    - benefit: Tailored Service
+    - benefit: Domain Expertise
+    - benefit: Client Priority
+    - benefit: Flexible
+    - benefit: Exceptional Work
+    - benefit: Reliable
+  expertise:
+    - experience: 50 Years
+      text: COLLECTIVE EXPERIENCE
+    - experience: "4"
+      text: PUBLISHED BOOKS
+    - experience: "+12"
+      text: CLIENTS
+    - experience: "+3"
+      text: PRODUCTS LAUNCHED
