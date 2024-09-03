@@ -1,0 +1,15 @@
+process:
+  enable: true
+  tagline: HOW WE WORK
+  title: OUR PROCESS
+  processes:
+    - icon: fa-solid fa-comments
+      title: DISCOVER
+      description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet.
+    - icon: fa-solid fa-pen-ruler
+      title: DEVELOP
+      description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet.
+      background_style: bg-[#1D65A6] text-white
+    - icon: fa-solid fa-house-chimney
+      title: DEPLOY
+      description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet.

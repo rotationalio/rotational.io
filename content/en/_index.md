@@ -22,6 +22,8 @@ download:
 <!-- Edit copy in data/en/delivery_team.yml -->
 {{< delivery-team >}}
 
+{{< process >}}
+
 <!-- Edit and add clients in data/en/clients.yml -->
 {{< clients >}}
 
