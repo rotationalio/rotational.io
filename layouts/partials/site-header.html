@@ -6,7 +6,7 @@
         <div class="absolute top-0 left-0 w-full h-full z-[9]">
           {{ partial "site-nav.html" . }}
 
-          <div class="max-w-7xl mx-auto flex items-center justify-between text-white px-4 sm:px-6">
+          <div class="max-w-7xl mx-auto flex flex-col-reverse sm:flex-row sm:items-center sm:justify-between text-white px-4 sm:px-6">
               <div class="w-full sm:w-3/5 text-center sm:text-start text-3xl ">
                 {{ $intro := .Params.intro }}
                 {{ $header := .Params.header }}
@@ -27,7 +27,7 @@
                   {{ end }}
 
                   {{ if .Params.headeractions }}
-                  <div class="flex mt-8 lg:mt-12">
+                  <div class="flex mt-8 justify-center sm:justify-start lg:mt-12">
                     {{ range .Params.headeractions }}
                     {{ if in .action "Download" }}
                     <button id="{{ .id }}" class="text-xs md:text-base text-center font-semibold rounded-lg px-5 md:px-2 xl:px-12 py-3 lg:py-5 bg-[#192E5B] hover:bg-[#72A3C0] uppercase mr-3">
@@ -62,15 +62,15 @@
                       {{ end }}
                   </div>
               </div>
-              <!-- TODO: Display logo in header -->
-             <!--  <div class="mx-auto">
-                <img src="img/logo-white.png" alt="Rotational Lab logo" class="h-44 w-auto">
-              </div> -->
+              <div class="mx-auto">
+                <img src="img/white-logo.png" alt="Rotational Labs logo" class="h-12 sm:h-40 md:h-64 w-auto">
+              </div>
           </div>
         </div>
     </div>
 </div>
 {{ else }}
+<!-- TODO: Adjust min height -->
 <div class="min-h-[480px] w-full">
     <div class="min-h-[480px] w-full bg-[#1D65A6]">
 
@@ -85,18 +85,15 @@
                     {{ if not .Params.headertext }}
                     <h3 class="font-bold text-3xl lg:text-5xl">{{ .Title }}</h3>
                     {{ end }}
-                    {{ if not .Params.noicon }}
-                    <img src="../img/butterfly.png" class="h-8 lg:h-12 ml-2 lg:ml-3 w-8 lg:w-12" />
-                    {{ end }}
                 </div>
                 {{ if .Params.subheadertext }}
                 {{ with .Params.subheadertext }}
-                <p class="hidden sm:block text-2xl lg:text-4xl mt-1 lg:mt-2 font-extralight">{{ . }}</p>
+                <p class="text-2xl lg:text-4xl mt-1 lg:mt-2 font-extralight">{{ . }}</p>
                 {{ end }}
                 {{ end }}
                 {{ if .Params.moresubheadertext }}
                 {{ with .Params.moresubheadertext }}
-                <p class="hidden sm:block text-2xl lg:text-4xl mt-1 lg:mt-2 font-extralight">{{ . }}</p>
+                <p class="text-2xl lg:text-4xl mt-1 lg:mt-2 font-extralight">{{ . }}</p>
                 {{ end }}
                 {{ end }}
             </div>
