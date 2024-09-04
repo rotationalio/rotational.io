@@ -1,12 +1,12 @@
 {{ partial "alerts.html" }}
 
 {{ if eq $.Page.Kind "home" }}
-<div class="relative sm:min-h-[691px] min-h-[480px] w-full">
-    <div class="relative top-0 left-0 w-full h-full bg-[#1D65A6] sm:min-h-[691px] min-h-[480px]">
-        <div class="absolute top-0 left-0 w-full h-full z-[9]">
+<div class="relative w-full">
+    <div class="relative w-full h-full bg-[#1D65A6] md:min-h-[691px] min-h-[400px]">
+        <div>
           {{ partial "site-nav.html" . }}
 
-          <div class="max-w-7xl mx-auto flex flex-col-reverse sm:flex-row sm:items-center sm:justify-between text-white px-4 sm:px-6">
+          <div class="max-w-7xl mx-auto flex flex-col-reverse sm:flex-row sm:items-start sm:justify-between text-white px-4 sm:px-6">
               <div class="w-full sm:w-3/5 text-center sm:text-start text-3xl ">
                 {{ $intro := .Params.intro }}
                 {{ $header := .Params.header }}
@@ -27,7 +27,7 @@
                   {{ end }}
 
                   {{ if .Params.headeractions }}
-                  <div class="flex mt-8 justify-center sm:justify-start lg:mt-12">
+                  <div class="flex my-8 justify-center sm:justify-start lg:mt-12">
                     {{ range .Params.headeractions }}
                     {{ if in .action "Download" }}
                     <button id="{{ .id }}" class="text-xs md:text-base text-center font-semibold rounded-lg px-5 md:px-2 xl:px-12 py-3 lg:py-5 bg-[#192E5B] hover:bg-[#72A3C0] uppercase mr-3">
@@ -53,7 +53,7 @@
                   {{ if .Params.download }}
                   <div id="download-dropdown-menu" class="hidden w-1/2 lg:w-[46%] mt-1 md:mt-2">
                     <div class="rounded-lg shadow bg-white">
-                        <ul class="pt-4 px-4">
+                        <ul class="p-4 px-4">
                             {{ range .Params.download }}
                             <li class="pb-4"><a href="{{ .link }}" class="block p-1 font-semibold text-center text-[#192E5B] text-xs md:text-base hover:bg-[#BCC6CF]/40 ">{{ .text }}</a></li>
                             {{ end }}
@@ -63,14 +63,30 @@
                   </div>
               </div>
               <div class="mx-auto">
-                <img src="img/white-logo.png" alt="Rotational Labs logo" class="h-12 sm:h-40 md:h-64 w-auto">
+                <img src="img/white-logo.png" alt="Rotational Labs logo" class="sm:mt-24 h-12 sm:h-40 md:h-64 w-auto">
               </div>
           </div>
         </div>
     </div>
+    {{ if .Params.services }}
+    <div class="hidden md:block md:absolute md:-bottom-[85%] xl:-bottom-[80%] md:left-1/2 md:-translate-x-1/2 w-full md:max-w-2xl lg:max-w-4xl xl:max-w-5xl md:h-full">
+        <div class="grid grid-cols-3">
+            {{ range .Params.services }}
+            <section class="{{ .style }} pt-2 px-4 flex flex-col h-full">
+                <h2 class="my-2 font-bold text-xl">{{ .service }}</h2>
+                <p class="mt-auto pt-2">{{ .description }}</p>
+                <div class="mt-auto flex justify-end items-end">
+                    <a href="{{ .url }}">
+                        <i class="fa-solid fa-arrow-right text-lg text-gray-900"></i>
+                    </a>
+                </div>
+            </section>
+            {{ end }}
+        </div>
+    </div>
 </div>
+{{ end }}
 {{ else }}
-<!-- TODO: Adjust min height -->
 <div class="min-h-[480px] w-full">
     <div class="min-h-[480px] w-full bg-[#1D65A6]">
 
