@@ -2,27 +2,22 @@
 
 {{ if $data.delivery_team.delivery_team.enable }}
 {{ with $data.delivery_team.delivery_team }}
-<section class="max-w-7xl mx-auto my-12 grid md:grid-cols-2 items-center gap-20">
-  <section>
-    <img src="img/ensign_enterprise.png" class="" />
+<section class="max-w-7xl mx-auto my-12 md:mt-72 lg:mt-44 grid md:grid-cols-2 items-center gap-12 md:gap-32">
+  <section class="mx-auto order-2 md:order-none">
+    <!-- TODO: Check image repositioning as screen size adjusts-->
+    <img src="img/ensign_enterprise.png" />
   </section>
-  <section>
-    <h5 class="py-2 text-sm font-semibold text-gray-700">{{ .tagline }}</h5>
+  <section class="mx-auto px-4 sm:px-6 order-1 md:order-none">
+    <h5 class="py-2 text-sm font-semibold text-[#2F4858]">{{ .tagline }}</h5>
     <h2 class="py-2 text-2xl font-bold">{{ .title }} </h2>
-    <p class="py-2">{{ .description }}</p>
-    <ul class="py-4 grid grid-cols-2">
-      {{ range .benefits }}
-      <div class="flex items-center gap-x-1">
-        <i class="fa-solid fa-circle-check"></i>
-        <li>{{ .benefit }}</li>
-      </div>
-      {{ end }}
-    </ul>
-    <ul class="py-2 grid grid-cols-4 items-start">
+    <!-- TODO: Add padding between p elements -->
+    <div class="py-2">{{ .description | markdownify }}</div>
+    <!-- TODO: Check style on mobile devices & fix overflow -->
+    <ul class="py-2 flex justify-around">
       {{ range .expertise }}
-      <div>
-        <li class="py-2 self-start text-xl font-bold">{{ .experience }}</li>
-        <li class="text-sm max-w-10">{{ .text }}</li>
+      <div class="">
+        <li class="py-2 self-start text-xl md:text-3xl font-extrabold text-[#2F4858]">{{ .experience }}</li>
+        <li class="max-w-10 text-sm md:font-semibold">{{ .text }}</li>
       </div>
       {{ end }}
     </ul>

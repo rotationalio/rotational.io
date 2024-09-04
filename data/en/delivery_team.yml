@@ -2,8 +2,10 @@ delivery_team:
   enable: true
   tagline: EXPERTISE YOU CAN COUNT ON
   title: YOUR DELIVERY TEAM
-  description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet purus in odio varius tincidunt. 
-               Nullam nec nunc nec nunc ultricies ultricies. Nullam nec nunc nec nunc ultricies ultricies.
+  description: |
+      Batman has Robin. Sherlock Holmes has Dr. Watson. You have Rotational.
+
+      Our mission is to help organizations build and deploy new enterprise capabilities with generative AI and machine learning. We help companies leverage their domain expertise and data to build custom LLMs, applications, and AI systems for business impact with the goal of maximizing ROI, controlling costs, and prioritizing trust.
   benefits:
     - benefit: Tailored Service
     - benefit: Domain Expertise
@@ -12,11 +14,9 @@ delivery_team:
     - benefit: Exceptional Work
     - benefit: Reliable
   expertise:
-    - experience: 50 Years
+    - experience: 50 YRS
       text: COLLECTIVE EXPERIENCE
-    - experience: "4"
-      text: PUBLISHED BOOKS
-    - experience: "+12"
+    - experience: "+25"
       text: CLIENTS
-    - experience: "+3"
-      text: PRODUCTS LAUNCHED
+    - experience: "5"
+      text: INDUSTRY VERTICALS

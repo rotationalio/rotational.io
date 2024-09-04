@@ -44,20 +44,10 @@ services:
 <!-- Edit copy in data/en/process.yml -->
 {{< process >}}
 
-<!-- Edit and add clients in data/en/clients.yml -->
-{{< clients >}}
-
 <!-- Edit and add testimonials in data/en/testimonials.yml -->
 {{< testimonials >}}
 
-<!-- On the Cloud section -->
-{{< container color="#ECF6FF" >}}
-
-<!-- Data for cloud partners can be found at data/en/cloud.yml -->
-{{< clouds >}}
-
-{{< /container >}}
-
-
+<!-- Edit and add clients in data/en/clients.yml -->
+{{< clients >}}
 
 <!-- NOTE: Recent Rotations is part of the template and is added after the content -->
