@@ -1151,10 +1151,6 @@ video {
   top: 0px;
 }
 
-.top-1 {
-  top: 0.25rem;
-}
-
 .isolate {
   isolation: isolate;
 }
@@ -3814,16 +3810,16 @@ em {
     margin-top: 6rem;
   }
 
+  .lg\:mt-64 {
+    margin-top: 16rem;
+  }
+
   .lg\:mt-7 {
     margin-top: 1.75rem;
   }
 
   .lg\:mt-8 {
     margin-top: 2rem;
-  }
-
-  .lg\:mt-64 {
-    margin-top: 16rem;
   }
 
   .lg\:flex {
@@ -3954,20 +3950,12 @@ em {
     margin-left: 1.25rem;
   }
 
-  .xl\:mt-36 {
-    margin-top: 9rem;
-  }
-
-  .xl\:mt-8 {
-    margin-top: 2rem;
-  }
-
   .xl\:mt-44 {
     margin-top: 11rem;
   }
 
-  .xl\:mt-40 {
-    margin-top: 10rem;
+  .xl\:mt-8 {
+    margin-top: 2rem;
   }
 
   .xl\:grid {
