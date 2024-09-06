@@ -2585,11 +2585,6 @@ video {
   color: rgb(75 85 99 / var(--tw-text-opacity));
 }
 
-.text-gray-700 {
-  --tw-text-opacity: 1;
-  color: rgb(55 65 81 / var(--tw-text-opacity));
-}
-
 .text-gray-900 {
   --tw-text-opacity: 1;
   color: rgb(17 24 39 / var(--tw-text-opacity));
@@ -3186,6 +3181,14 @@ em {
   text-decoration: underline;
   color: #1d65a6;
   font-weight: 500;
+}
+
+.\*\:block > * {
+  display: block;
+}
+
+.\*\:inline-block > * {
+  display: inline-block;
 }
 
 .\*\:py-2 > * {
@@ -3893,10 +3896,6 @@ em {
 
   .lg\:gap-28 {
     gap: 7rem;
-  }
-
-  .lg\:gap-32 {
-    gap: 8rem;
   }
 
   .lg\:gap-x-2 {
