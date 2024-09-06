@@ -13,7 +13,7 @@
                 {{ with $header }}
                 <div class="mt-6 sm:mt-20">
                     <h5 class="mb-4 text-sm font-bold">{{ $intro | markdownify }}</h5>
-                    <h1 class="font-bold text-3xl md:text-5xl">{{ . | markdownify }}</h1>
+                    <h1 class="font-bold text-3xl md:text-5xl *:block">{{ . | markdownify }}</h1>
                 </div>
                 {{ end}}
                   {{ $headertext := .Params.headertext }}
