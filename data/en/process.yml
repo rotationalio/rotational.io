@@ -3,13 +3,13 @@ process:
   tagline: HOW WE WORK
   title: OUR PROCESS
   processes:
-    - icon: fa-solid fa-comments
+    - icon: fa-solid fa-comments text-[#757575]
       title: DISCOVER
-      description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet.
+      description: With a focus on the highest ROI use cases, we dive into your organization, goals, and data and help you de/refine the problem.
     - icon: fa-solid fa-pen-ruler
       title: DEVELOP
-      description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet.
+      description: We leverage and protect your IP by customizing open-source solutions, developing APIs to unify data for your AI and LLM solutions.
       background_style: bg-[#1D65A6] text-white
-    - icon: fa-solid fa-house-chimney
-      title: DEPLOY
-      description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet.
+    - icon: fa-solid fa-square-arrow-up-right text-[#757575]
+      title: DEPLOY YOUR AI
+      description: We collaborate with your team to deploy models into production, ensuring ongoing maintenance is efficient, cost-effective, and minimally disruptive to operations.
