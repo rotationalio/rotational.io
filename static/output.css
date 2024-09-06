@@ -3187,9 +3187,9 @@ em {
   font-weight: 500;
 }
 
-.\*\:py-1 > * {
-  padding-top: 0.25rem;
-  padding-bottom: 0.25rem;
+.\*\:py-2 > * {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 
 .hover\:bg-\[\#192E5B\]:hover {

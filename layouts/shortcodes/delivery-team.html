@@ -10,7 +10,7 @@
   <section class="mx-auto">
     <h5 class="py-2 text-sm font-bold text-[#757575]">{{ .tagline }}</h5>
     <h2 class="py-2 text-4xl font-bold">{{ .title }} </h2>
-    <div class="py-2 *:py-1">{{ .description | markdownify }}</div>
+    <div class="py-2 *:py-2">{{ .description | markdownify }}</div>
     <ul class="py-2 flex justify-between w-full">
       {{ range .expertise }}
       <div class="">
