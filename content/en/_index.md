@@ -1,7 +1,7 @@
 ---
 date: 2023-02-09T10:21:41-06:00
 intro: WELCOME TO ROTATIONAL
-header: YOUR GO-TO AI <br /> INNOVATION PARTNER
+header: YOUR GO-TO AI <span>INNOVATION PARTNER</span>
 headertext: We work with enterprises to build trusted data foundations and AI solutions for sustainable business impact.
 headeractions:
 - action: Download AI Playbook
@@ -44,23 +44,13 @@ services:
 <!-- Edit copy in data/en/process.yml -->
 {{< process >}}
 
-<!-- Edit copy in data/en/humanloop.yml>
+<!-- Edit copy in data/en/humanloop.yml -->
 {{< human-loop >}}
-
-<!-- Edit and add clients in data/en/clients.yml -->
-{{< clients >}}
 
 <!-- Edit and add testimonials in data/en/testimonials.yml -->
 {{< testimonials >}}
 
-<!-- On the Cloud section -->
-{{< container color="#ECF6FF" >}}
-
-<!-- Data for cloud partners can be found at data/en/cloud.yml -->
-{{< clouds >}}
-
-{{< /container >}}
-
-
+<!-- Edit and add clients in data/en/clients.yml -->
+{{< clients >}}
 
 <!-- NOTE: Recent Rotations is part of the template and is added after the content -->
