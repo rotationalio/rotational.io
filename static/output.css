@@ -1647,6 +1647,10 @@ video {
   width: 100%;
 }
 
+.max-w-10 {
+  max-width: 2.5rem;
+}
+
 .max-w-2xl {
   max-width: 42rem;
 }
@@ -1667,16 +1671,8 @@ video {
   max-width: 28rem;
 }
 
-.max-w-sm {
-  max-width: 24rem;
-}
-
 .max-w-xl {
   max-width: 36rem;
-}
-
-.max-w-10 {
-  max-width: 2.5rem;
 }
 
 .flex-1 {
@@ -2052,6 +2048,11 @@ video {
   background-color: rgb(35 133 83 / var(--tw-bg-opacity));
 }
 
+.bg-\[\#2F4858\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(47 72 88 / var(--tw-bg-opacity));
+}
+
 .bg-\[\#37A36E\] {
   --tw-bg-opacity: 1;
   background-color: rgb(55 163 110 / var(--tw-bg-opacity));
@@ -2307,11 +2308,6 @@ video {
 .py-6 {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
-}
-
-.py-8 {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
 }
 
 .pb-1 {
@@ -3204,11 +3200,6 @@ em {
   font-weight: 500;
 }
 
-.\*\:py-2 > * {
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-}
-
 .hover\:bg-\[\#192E5B\]:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(25 46 91 / var(--tw-bg-opacity));
@@ -3217,6 +3208,10 @@ em {
 .hover\:bg-\[\#1D65A6\]:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(29 101 166 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-\[\#2F4858\]\/80:hover {
+  background-color: rgb(47 72 88 / 0.8);
 }
 
 .hover\:bg-\[\#3CB47A\]:hover {
@@ -3562,10 +3557,6 @@ em {
     margin-top: 1.75rem;
   }
 
-  .md\:mt-72 {
-    margin-top: 18rem;
-  }
-
   .md\:mt-8 {
     margin-top: 2rem;
   }
@@ -3671,10 +3662,6 @@ em {
     gap: 2rem;
   }
 
-  .md\:gap-2 {
-    gap: 0.5rem;
-  }
-
   .md\:space-y-0 > :not([hidden]) ~ :not([hidden]) {
     --tw-space-y-reverse: 0;
     margin-top: calc(0px * calc(1 - var(--tw-space-y-reverse)));
@@ -3747,6 +3734,11 @@ em {
   .md\:text-2xl {
     font-size: 1.5rem;
     line-height: 2rem;
+  }
+
+  .md\:text-4xl {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
   }
 
   .md\:text-5xl {
@@ -3826,10 +3818,6 @@ em {
     margin-top: 6rem;
   }
 
-  .lg\:mt-64 {
-    margin-top: 16rem;
-  }
-
   .lg\:mt-7 {
     margin-top: 1.75rem;
   }
@@ -3898,12 +3886,12 @@ em {
     gap: 0px;
   }
 
-  .lg\:gap-28 {
-    gap: 7rem;
+  .lg\:gap-24 {
+    gap: 6rem;
   }
 
-  .lg\:gap-32 {
-    gap: 8rem;
+  .lg\:gap-28 {
+    gap: 7rem;
   }
 
   .lg\:gap-x-2 {
@@ -3964,10 +3952,6 @@ em {
 
   .xl\:ml-5 {
     margin-left: 1.25rem;
-  }
-
-  .xl\:mt-36 {
-    margin-top: 9rem;
   }
 
   .xl\:mt-8 {

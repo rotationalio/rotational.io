@@ -1,0 +1,8 @@
+humanloop:
+  enable: true
+  tagline: OUR PHILOSOPHY
+  title: HUMAN-IN-THE-LOOP
+  description: We believe AI should enhance human workflows by automating repetitive, routine tasks, especially those prone to inconsistent outcomes. This allows humans to focus on high-value creative work. Our AI solutions prioritize trust and explainability, ensuring transparency and reliability in decision-making processes.
+  button:
+    text: LEARN MORE
+    url: 

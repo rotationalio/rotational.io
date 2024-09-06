@@ -44,6 +44,9 @@ services:
 <!-- Edit copy in data/en/process.yml -->
 {{< process >}}
 
+<!-- Edit copy in data/en/humanloop.yml>
+{{< human-loop >}}
+
 <!-- Edit and add clients in data/en/clients.yml -->
 {{< clients >}}
 
