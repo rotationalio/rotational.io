@@ -3,15 +3,15 @@
 {{ if $data.process.process.enable }}
 {{ with $data.process.process }}
 
-<section class="max-w-7xl mx-auto my-12">
-  <h5 class="py-2 text-sm font-semibold text-gray-700">{{ .tagline }}</h5>
-  <h2 class="py-2 text-2xl font-bold">{{ .title }} </h2>
-  <section class="grid grid-cols-3 gap-8">
+<section class="max-w-7xl mx-auto my-12 px-4 sm:px-6">
+  <h5 class="py-2 font-bold text-[#757575]">{{ .tagline }}</h5>
+  <h2 class="py-2 text-4xl font-extrabold">{{ .title }} </h2>
+  <section class="grid md:grid-cols-3 md:gap-4">
     {{ range .processes }}
     <div class="my-4 border p-6 {{ .background_style }}">
-      <i class="{{ .icon }} text-2xl"></i>
-      <h4 class="py-4 text-xl font-semibold">{{ .title }}</h4>
-      <p class="py-4 max-w-sm">{{ .description }}</p>
+      <i class="{{ .icon }} text-4xl"></i>
+      <h4 class="my-8 text-2xl font-extrabold">{{ .title }}</h4>
+      <p class="my-4">{{ .description }}</p>
     </div>
     {{ end }}
   </section>
