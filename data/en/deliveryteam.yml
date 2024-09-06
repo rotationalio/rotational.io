@@ -1,4 +1,4 @@
-delivery_team:
+deliveryteam:
   enable: true
   tagline: EXPERTISE YOU CAN COUNT ON
   title: YOUR DELIVERY TEAM
@@ -6,17 +6,10 @@ delivery_team:
       Batman has Robin. Sherlock Holmes has Dr. Watson. You have Rotational.
 
       Our mission is to help organizations build and deploy new enterprise capabilities with generative AI and machine learning. We help companies leverage their domain expertise and data to build custom LLMs, applications, and AI systems for business impact with the goal of maximizing ROI, controlling costs, and prioritizing trust.
-  benefits:
-    - benefit: Tailored Service
-    - benefit: Domain Expertise
-    - benefit: Client Priority
-    - benefit: Flexible
-    - benefit: Exceptional Work
-    - benefit: Reliable
   expertise:
     - experience: 50 YRS
-      text: COLLECTIVE EXPERIENCE
+      text: COLLECTIVE <br /> EXPERIENCE
     - experience: "+25"
       text: CLIENTS
     - experience: "5"
-      text: INDUSTRY VERTICALS
+      text: INDUSTRY <br /> VERTICALS
