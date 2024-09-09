@@ -1,0 +1,26 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+Contact: mailto:support@rotational.io
+Expires: 2026-01-22T06:00:00.000Z
+Encryption: https://keys.openpgp.org/vks/v1/by-fingerprint/8976758EC922C9362520F83E953A902549826C95
+Acknowledgments: https://rotational.io/about
+Preferred-Languages: en
+Canonical: https://rotational.io/.well-known/security.txt
+Hiring: https://rotational.io/about/#careers
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCAAdFiEEiXZ1jskiyTYlIPg+lTqQJUmCbJUFAmbfS5wACgkQlTqQJUmC
+bJUWchAAsxcD5hX2aK2eN5xo47NMuhIvtwIGa0YkWRl1IqMwXqb1dxMtcJ+vyOnU
+CEazsvXdm56rfTOJOqsbk8lTq2IuiBHDnCVMoT+e6T74aqpqoQLR1HeOHodMQ5K5
+MvMaDsu5G3Kjms7+7oLreQ8R/6jBsP70DVaFVyULKCQGv7V0iEBdugMg+g7cJey8
+R78QNdiPhGQ/hULAT4PKheETkdVGFeInRR1tb0sp8CsuFDrbfE3VPOx1ddGdiqP/
+fIKk57NvlbpQ5ye10FQrFP/vdAyRnQgcNWFORYiZRTGb2q28xh50U3c91N3b1qJD
+bZy2wek0LgidmCYaexcKLxkY4schujfi0GC1DDQk5OvBI5vnoFQU9m0ioaGGRUuJ
+UVZr6PEFo/T0686Dxl0VxyebsBdAiTwZrku3LLrWf8ozAU2AG78rrvp+qLm5xvDA
+U9Pua2ewd+qqRGqy+RSNcl0tqTL7mevrW1vzhHSLMmEH4cOfWGcvT4R5kXL7vDTn
+EryXmo0g18lRhcN1AP29F7+s7JE0Xv9BHSbcwX/LlE5rvuxIj8bjaLajoKWghKbx
+fESouqMNg58k4tBjWwfDBFjVtUYbOcWKYPJHdNvG6mWSs0scOZSUb+WfBmgQNt26
+wAydTrgAwGDp5BoG4FRgOEBSt1wqUzl9X7SXshEkyX72+b07I/U=
+=DCtu
+-----END PGP SIGNATURE-----
