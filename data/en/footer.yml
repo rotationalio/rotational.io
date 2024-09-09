@@ -3,8 +3,8 @@ footer:
 
   contact:
     enable: true
-    text: LET'S ENVISION & BUILD THE FUTURE TOGETHER    
-    btntext: CONTACT US
+    text: LET'S ENVISION & BUILD THE FUTURE TOGETHER.    
+    buttontext: CONTACT US
     email: mailto:hello@rotational.ai
 
 #Product

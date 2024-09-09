@@ -3,7 +3,7 @@
     
     <div class="relative w-full pt-32 font-extralight text-white">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="mt-44 max-[650px]:text-center sm:grid grid-cols-3">
+            <div class="md:mt-56 lg:mt-44 max-[650px]:text-center sm:grid grid-cols-3">
                 <div class="my-10 sm:my-0">
 
                     {{ if $data.footer.footer.product.enable }}
@@ -84,11 +84,11 @@
     </div>
     {{ if $data.footer.footer.contact.enable }}
     {{ with $data.footer.footer.contact }}
-    <div class="hidden md:block md:absolute w-full max-w-screen-2xl px-12 -top-28 left-1/2 -translate-x-1/2 ">
-        <section class="bg-[rgb(114,162,192)] w-full p-16">
-            <h2 class="my-4 md:text-4xl xl:text-5xl text-white font-extrabold">{{ .text | safeHTML }}</h2>
-            <div class="pt-4">
-                <a href="{{ .email }}" class="p-4 md:px-6 bg-[#2F4858] font-bold text-white text-center hover:bg-[#2F4858]/80">{{ .btntext }}</a>
+    <div class="hidden md:block md:absolute w-full max-w-screen-2xl px-12 -top-32 left-1/2 -translate-x-1/2 ">
+        <section class="bg-[#72A2C0] w-full py-20 px-16">
+            <h2 class="my-4 text-5xl text-white font-extrabold">{{ .text }}</h2>
+            <div class="py-6">
+                <a href="{{ .email }}" class="p-4 md:px-6 bg-[#2F4858] font-bold text-white text-center hover:bg-[#2F4858]/80">{{ .buttontext }}</a>
             </div>
         </section>
     </div>
