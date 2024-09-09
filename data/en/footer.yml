@@ -7,48 +7,40 @@ footer:
     buttontext: CONTACT US
     email: mailto:hello@rotational.ai
 
-#Product
-  product:
-    enable: true 
-    title: PRODUCT
-    product_items:
-    - name: Ensign
-      link: https://rotational.app
-    - name: Pricing
-      link: /ensign-pricing
-    - name: Docs
-      link: https://ensign.rotational.dev/getting-started/
-    - name: SDKs
-      link: https://ensign.rotational.dev/sdk/
-    - name: Status
-      link: https://status.rotational.dev/
-
-
+  presence:
+    enable: true
+    title: OUR PRESENCE
+    description: We share because we care, about topics, tools, and technologies that we believe impact the AI economy.
 #Company
   company:
     enable: true
     title:  COMPANY
     company_items:
+    - name: About Us
+      link: /about
     - name: Services
       link: /services
+    - name: Case Studies
+      link: /case-studies
+    - name: Product
+      link: /products
     - name: Blog
       link: /blog
-    - name: About
-      link: /about
 
 #Community
   info:
     enable: true
     title: COMMUNITY
     info_items:
-    - name: Ensign U
-      link: /ensign-u
-    - name: Data Playground
-      link: /data-playground
+    - name: AI Playbook
+      link: https://rtnl.link/me8fufQPfVb
+    - name: Learning
+      link: /resources
     - name: Open Source
       link: /opensource
-    - name: Resources
-      link: /resources
+    - name: Ensign U
+      link: /ensign-u
+
 
 #Social Media Links
   social:
@@ -56,16 +48,27 @@ footer:
     social_media:
     - name: Twitter
       link: https://twitter.com/rotationalio
-      icon: fa-brands fa-twitter
-    - name: GitHub
-      link: https://github.com/rotationalio
-      icon: fa-brands fa-github
+      icon: fa-brands fa-x-twitter
     - name: LinkedIn
       link: https://www.linkedin.com/company/rotational
       icon: fa-brands fa-linkedin
+    - name: GitHub
+      link: https://github.com/rotationalio
+      icon: fa-brands fa-github
     - name: YouTube
       link: https://www.youtube.com/@rotationalio
       icon: fa-brands fa-youtube
-    - name: Email
-      link: mailto:info@rotational.io
-      icon: fa fa-envelope
+    - name: Twitch
+      link: https://www.twitch.tv/rotationallabs
+      icon: fa-brands fa-twitch
+
+  contactus:
+    enable: true
+    title: CONTACT US
+    contact_items:
+      - name: St. Paul, MN & Washington, DC
+        icon: fa-solid fa-map-marker-alt
+      - name: hello@rotational.ai
+        icon: fa-solid fa-envelope
+    buttontext: CONTACT US
+    email: mailto:hello@rotational.ai
