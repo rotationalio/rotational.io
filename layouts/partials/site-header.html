@@ -69,18 +69,20 @@
         </div>
     </div>
     {{ if .Params.services }}
-    <div class="hidden md:block md:absolute md:-bottom-[85%] xl:-bottom-[80%] md:left-1/2 md:-translate-x-1/2 w-full md:max-w-2xl lg:max-w-4xl xl:max-w-5xl md:h-full">
+    <div class="absolute left-1/2 -translate-x-1/2 w-full max-w-screen-xl text-white">
         <div class="grid grid-cols-3">
             {{ range .Params.services }}
-            <section class="{{ .style }} pt-2 px-4 flex flex-col h-full">
-                <h2 class="my-2 font-bold text-xl">{{ .service }}</h2>
-                <p class="mt-auto pt-2">{{ .description }}</p>
-                <div class="mt-auto flex justify-end items-end">
+                <section class="{{ .style }} pt-2 px-4 flex flex-col h-full">
                     <a href="{{ .url }}">
-                        <i class="fa-solid fa-arrow-right text-lg text-gray-900"></i>
-                    </a>
-                </div>
-            </section>
+                    <h2 class="my-2 font-bold text-2xl">{{ .service }}</h2>
+                    <p class="mt-auto text-xl">{{ .description }}</p>
+                    <div class="mt-auto flex justify-end items-end">
+                        <a href="{{ .url }}">
+                            <i class="fa-solid fa-arrow-right text-xl"></i>
+                        </a>
+                    </div>
+                </a>
+                </section>
             {{ end }}
         </div>
     </div>
