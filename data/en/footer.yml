@@ -1,9 +1,15 @@
 footer:
   enable: true
 
+  contact:
+    enable: true
+    text: LET'S ENVISION & BUILD THE FUTURE TOGETHER    
+    btntext: CONTACT US
+    email: mailto:hello@rotational.ai
+
 #Product
   product:
-    enable: true
+    enable: true 
     title: PRODUCT
     product_items:
     - name: Ensign
