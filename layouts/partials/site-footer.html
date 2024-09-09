@@ -1,4 +1,4 @@
-<footer class="relative mt-56 bg-[#192E5B]">
+<footer class="relative mt-40 md:mt-56 bg-[#192E5B]">
     {{ $data := index site.Data site.Language.Lang }}
     
     <div class="relative w-full pt-32 font-extralight text-white">
@@ -84,11 +84,11 @@
     </div>
     {{ if $data.footer.footer.contact.enable }}
     {{ with $data.footer.footer.contact }}
-    <div class="hidden md:block md:absolute w-full max-w-screen-2xl px-12 -top-32 left-1/2 -translate-x-1/2 ">
-        <section class="bg-[#72A2C0] w-full py-20 px-16">
-            <h2 class="my-4 text-5xl text-white font-extrabold">{{ .text }}</h2>
+    <div class="absolute w-full max-w-screen-2xl px-4 sm:px-12 -top-20 md:-top-32 left-1/2 -translate-x-1/2 ">
+        <section class="bg-[#72A2C0] w-full p-6 md:py-20 md:px-16">
+            <h2 class="my-4 text-2xl sm:text-3xl md:text-5xl text-white font-extrabold">{{ .text }}</h2>
             <div class="py-6">
-                <a href="{{ .email }}" class="p-4 md:px-6 bg-[#2F4858] font-bold text-white text-center hover:bg-[#2F4858]/80">{{ .buttontext }}</a>
+                <a href="{{ .email }}" class="p-3 md:p-4 md:px-6 bg-[#2F4858] font-bold md:text-lg text-white text-center hover:bg-[#2F4858]/80">{{ .buttontext }}</a>
             </div>
         </section>
     </div>

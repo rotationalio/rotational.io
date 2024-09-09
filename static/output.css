@@ -1243,6 +1243,14 @@ video {
   top: -8rem;
 }
 
+.-top-16 {
+  top: -4rem;
+}
+
+.-top-14 {
+  top: -3.5rem;
+}
+
 .isolate {
   isolation: isolate;
 }
@@ -1540,6 +1548,14 @@ video {
 
 .mt-52 {
   margin-top: 13rem;
+}
+
+.mt-36 {
+  margin-top: 9rem;
+}
+
+.mt-40 {
+  margin-top: 10rem;
 }
 
 .block {
@@ -3452,6 +3468,10 @@ em {
 }
 
 @media (min-width: 640px) {
+  .sm\:-top-20 {
+    top: -5rem;
+  }
+
   .sm\:my-0 {
     margin-top: 0px;
     margin-bottom: 0px;
@@ -3639,6 +3659,11 @@ em {
     font-size: 1.25rem;
     line-height: 1.75rem;
   }
+
+  .sm\:text-3xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
 }
 
 @media (min-width: 768px) {
@@ -3656,6 +3681,10 @@ em {
 
   .md\:left-1\/2 {
     left: 50%;
+  }
+
+  .md\:-top-32 {
+    top: -8rem;
   }
 
   .md\:my-4 {
@@ -3863,6 +3892,14 @@ em {
     padding: 1.25rem;
   }
 
+  .md\:p-6 {
+    padding: 1.5rem;
+  }
+
+  .md\:p-4 {
+    padding: 1rem;
+  }
+
   .md\:px-10 {
     padding-left: 2.5rem;
     padding-right: 2.5rem;
@@ -3896,6 +3933,36 @@ em {
   .md\:py-5 {
     padding-top: 1.25rem;
     padding-bottom: 1.25rem;
+  }
+
+  .md\:py-20 {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  .md\:py-4 {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .md\:py-8 {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .md\:py-10 {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+  }
+
+  .md\:py-12 {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  .md\:py-6 {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
   }
 
   .md\:pb-0 {
