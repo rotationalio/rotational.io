@@ -1,9 +1,10 @@
-<footer class="bg-[#192E5B]">
-    <div class="pt-8 font-extralight text-white">
+<footer class="relative mt-40 md:mt-56 bg-[#192E5B]">
+    {{ $data := index site.Data site.Language.Lang }}
+    
+    <div class="relative w-full pt-32 font-extralight text-white">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="max-[650px]:text-center sm:grid grid-cols-3">
+            <div class="md:mt-56 lg:mt-44 max-[650px]:text-center sm:grid grid-cols-3">
                 <div class="my-10 sm:my-0">
-                    {{ $data := index site.Data site.Language.Lang }}
 
                     {{ if $data.footer.footer.product.enable }}
                     {{ with $data.footer.footer.product }}
@@ -19,8 +20,6 @@
                     {{ end }}
                 </div>
                 <div class="mb-10 sm:mb-0">
-                    {{ $data := index site.Data site.Language.Lang }}
-
                     {{ if $data.footer.footer.company.enable }}
                     {{ with $data.footer.footer.company }}
                     <h5 class="mb-3">{{ .title }}</h5>
@@ -83,4 +82,16 @@
             </div>
         </div>
     </div>
+    {{ if $data.footer.footer.contact.enable }}
+    {{ with $data.footer.footer.contact }}
+    <div class="absolute w-full max-w-screen-2xl px-4 sm:px-12 -top-20 md:-top-32 left-1/2 -translate-x-1/2 ">
+        <section class="bg-[#72A2C0] w-full p-6 md:py-20 md:px-16">
+            <h2 class="my-4 text-2xl sm:text-3xl md:text-5xl text-white font-extrabold">{{ .text }}</h2>
+            <div class="py-6">
+                <a href="{{ .email }}" class="p-3 md:p-4 md:px-6 bg-[#2F4858] font-bold md:text-lg text-white text-center hover:bg-[#2F4858]/80">{{ .buttontext }}</a>
+            </div>
+        </section>
+    </div>
+    {{ end }}
+    {{ end }}
 </footer>
