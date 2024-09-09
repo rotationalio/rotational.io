@@ -53,4 +53,6 @@ services:
 <!-- Edit and add clients in data/en/clients.yml -->
 {{< clients >}}
 
+{{< privacy >}}
+
 <!-- NOTE: Recent Rotations is part of the template and is added after the content -->
