@@ -1,28 +1,23 @@
 <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
     <div class="flex justify-between mt-12 sm:mt-24 items-center">
-        <h2 class="font-bold text-2xl sm:text-4xl flex">
-            <span>
-                <b class="text-[#1D65A6]">{{ with i18n "blogTitle" }} {{ index (split . " ") 0 | safeHTML }} {{ end
-                    }}</b>
-                {{ with i18n "blogTitle" }} {{ after (len (index (split . " ") 0)) . | safeHTML }} {{ end }}
-            </span>
-            <img src="img/butterfly.png" alt="butterfly" class="ml-4 h-6 sm:h-8 relative top-1">
-        </h2>
         <div>
-            <a href="/blog" class="flex text-base sm:text-lg items-center font-bold text-[#1D65A6]"><span>View
-                    all</span>
-                <img src="img/arr-right.png" alt="arrow right" class="h-4 ml-2"></a>
+            <h5 class="text-[#757575] font-bold uppercase">{{ with i18n "blogTagline" }} {{ . }} {{ end }}</h5>
+            <h2 class="py-2 font-extrabold text-2xl uppercase md:text-4xl">{{ with i18n "blogTitle" }} {{ . }} {{ end }}</h2>
+        </div>
+        <div>
+            <a href="/blog" class="flex text-base sm:text-lg items-center font-bold text-[#1D65A6]">
+                <span>View all</span>
+                <img src="img/arr-right.png" alt="arrow right" class="h-4 ml-2">
+            </a>
         </div>
     </div>
     <div>
-        <div class="grid lg:grid-cols-2 xl:grid-cols-3 gap-8 sm:mt-16">
+        <div class="grid lg:grid-cols-2 xl:grid-cols-3 gap-8">
             {{ range first 3 (where site.RegularPages "Section" "==" "blog")}}
-            <div class="mt-6 ">
+            <div class="mt-6 bg-[#ECF6FF] rounded-xl">
                 {{ .Render "article"}}
             </div>
             {{ end }}
-
-
         </div>
     </div>
 </div>

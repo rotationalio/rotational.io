@@ -3,23 +3,21 @@
 {{ if $data.testimonials.testimonials.enable }}
 {{ with $data.testimonials.testimonials }}
 
-<section class="max-w-7xl mx-auto my-12">
-  <h2 class="mb-4 font-bold text-xl sm:text-2xl lg:text-3xl">{{ .title }}</h2>
-    <div class="grid md:grid-cols-2 gap-5">
-      {{ range .testimonial }}
-      <section class="bg-[#ECF6FF] p-6 rounded-xl">
-        <p class="text-xl text-center">
-          {{ $quote := index (split .quote " ") }}
-            <span class="font-bold text-[#A32C00]">{{ range first 2 $quote }} {{ . }} {{ end }}</span>
-            {{ range after 2 $quote }} {{ . }} {{ end }}
-        </p>
-        <p class="pt-4 text-xl text-center">
-          <span class="text-[#A32C00] font-bold">{{ .quotee }}</span>,
-          <span class="text-[#192E5B] font-bold">{{ .client_name }}</span>
-        </p>
-      </section>
-        {{ end }}
+<section class="max-w-7xl w-full mx-auto my-12 px-4 sm:px-6">
+  <section>
+    <h5 class="text-[#757575] font-bold">{{ .tagline }}</h5>
+    <h2 class="py-2 font-extrabold text-xl sm:text-2xl lg:text-4xl">{{ .title }}</h2>
+    <p class="my-4 md:text-lg">{{ .description }}</p>
+  </section>
+  <section class="my-4 grid md:grid-cols-2 gap-8 w-full">
+    {{ range .testimonial }}
+    <div class="border p-4">
+        <p class="md:text-lg">{{ .quote }}</p>
+        <p class="pt-4 font-bold md:font-extrabold">{{ .quotee }}</p>
+        <p class="text-[#757575] font-semibold md:font-bold">{{ .client_name }}</p>
     </div>
+    {{ end }}
+  </section>
 </section>
           
 {{ end }}

@@ -1151,10 +1151,6 @@ video {
   top: 0px;
 }
 
-.top-1 {
-  top: 0.25rem;
-}
-
 .isolate {
   isolation: isolate;
 }
@@ -1514,6 +1510,10 @@ video {
   height: 1.25rem;
 }
 
+.h-56 {
+  height: 14rem;
+}
+
 .h-6 {
   height: 1.5rem;
 }
@@ -1818,6 +1818,11 @@ video {
 .gap-x-1 {
   -moz-column-gap: 0.25rem;
        column-gap: 0.25rem;
+}
+
+.gap-x-8 {
+  -moz-column-gap: 2rem;
+       column-gap: 2rem;
 }
 
 .space-y-6 > :not([hidden]) ~ :not([hidden]) {
@@ -2674,6 +2679,26 @@ video {
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
+}
+
+.duration-\[10s\] {
+  transition-duration: 10s;
+}
+
+.duration-1000 {
+  transition-duration: 1000ms;
+}
+
+.duration-500 {
+  transition-duration: 500ms;
+}
+
+.ease-in-out {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.ease-linear {
+  transition-timing-function: linear;
 }
 
 body {
@@ -3581,6 +3606,10 @@ em {
     height: 16rem;
   }
 
+  .md\:h-96 {
+    height: 24rem;
+  }
+
   .md\:h-\[280px\] {
     height: 280px;
   }
@@ -3711,6 +3740,11 @@ em {
     padding-bottom: 1.25rem;
   }
 
+  .md\:px-6 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
   .md\:pb-0 {
     padding-bottom: 0px;
   }
@@ -3760,6 +3794,14 @@ em {
   .md\:text-xl {
     font-size: 1.25rem;
     line-height: 1.75rem;
+  }
+
+  .md\:font-extrabold {
+    font-weight: 800;
+  }
+
+  .md\:font-bold {
+    font-weight: 700;
   }
 }
 
@@ -3814,16 +3856,16 @@ em {
     margin-top: 6rem;
   }
 
+  .lg\:mt-64 {
+    margin-top: 16rem;
+  }
+
   .lg\:mt-7 {
     margin-top: 1.75rem;
   }
 
   .lg\:mt-8 {
     margin-top: 2rem;
-  }
-
-  .lg\:mt-64 {
-    margin-top: 16rem;
   }
 
   .lg\:flex {
@@ -3954,20 +3996,12 @@ em {
     margin-left: 1.25rem;
   }
 
-  .xl\:mt-36 {
-    margin-top: 9rem;
-  }
-
-  .xl\:mt-8 {
-    margin-top: 2rem;
-  }
-
   .xl\:mt-44 {
     margin-top: 11rem;
   }
 
-  .xl\:mt-40 {
-    margin-top: 10rem;
+  .xl\:mt-8 {
+    margin-top: 2rem;
   }
 
   .xl\:grid {
