@@ -3,19 +3,21 @@
 {{ if $data.testimonials.testimonials.enable }}
 {{ with $data.testimonials.testimonials }}
 
-<section class="max-w-7xl w-full mx-auto my-12 px-4 grid lg:grid-cols-2 gap-12 lg:gap-24 sm:px-6">
+<section class="max-w-7xl w-full mx-auto my-12 px-4 sm:px-6">
   <section>
     <h5 class="text-[#757575] font-bold">{{ .tagline }}</h5>
     <h2 class="py-2 font-extrabold text-xl sm:text-2xl lg:text-4xl">{{ .title }}</h2>
-    <p>{{ .description }}</p>
+    <p class="my-4 md:text-lg">{{ .description }}</p>
   </section>
-  {{ range .testimonial }}
-  <section class="border p-4">
-    <p class="text-xl">{{ .quote }}</p>
-    <p class="pt-4 text-xl font-extrabold">{{ .quotee }}</p>
-    <p class="text-[#757575] font-bold">{{ .client_name }}</p>
-  </section>
+  <section class="my-4 grid md:grid-cols-2 gap-8 w-full">
+    {{ range .testimonial }}
+    <div class="border p-4">
+        <p class="md:text-lg">{{ .quote }}</p>
+        <p class="pt-4 font-bold md:font-extrabold">{{ .quotee }}</p>
+        <p class="text-[#757575] font-semibold md:font-bold">{{ .client_name }}</p>
+    </div>
     {{ end }}
+  </section>
 </section>
           
 {{ end }}
