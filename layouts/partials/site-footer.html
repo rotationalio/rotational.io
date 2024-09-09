@@ -1,67 +1,24 @@
 <footer class="relative mt-40 md:mt-56 bg-[#192E5B]">
     {{ $data := index site.Data site.Language.Lang }}
-    
-    <div class="relative w-full pt-32 font-extralight text-white">
+    <div class="relative w-full pt-36 md:pt-16 lg:pt-24 2xl:pt-20 font-extralight text-white">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="md:mt-56 lg:mt-44 max-[650px]:text-center sm:grid grid-cols-3">
-                <div class="my-10 sm:my-0">
+            <div class="mt-12 md:mt-52 lg:mt-44 flex flex-col md:flex-row lg:justify-between gap-x-8">
+                <div class="my-4 max-w-xs">
 
-                    {{ if $data.footer.footer.product.enable }}
-                    {{ with $data.footer.footer.product }}
-                    <h5 class="mb-3">{{ .title }}</h5>
-                    <ul>
-                        {{ range .product_items }}
-                        <li class="pb-3">
-                            <a href="{{ .link }}" target="_blank" class="font-bold">{{ .name }}</a>
-                        </li>
-                        {{ end }}
-                    </ul>
-                    {{ end }}
-                    {{ end }}
-                </div>
-                <div class="mb-10 sm:mb-0">
-                    {{ if $data.footer.footer.company.enable }}
-                    {{ with $data.footer.footer.company }}
-                    <h5 class="mb-3">{{ .title }}</h5>
-                    <ul>
-                        {{ range .company_items }}
-                        <li class="pb-3">
-                            <a href="{{ .link }}" class="font-bold">{{ .name }}</a>
-                        </li>
-                        {{ end }}
-                    </ul>
-                    {{ end }}
-                    {{ end }}
-                </div>
-                <div>
-                    {{ $data := index site.Data site.Language.Lang }}
-
-                    {{ if $data.footer.footer.info.enable }}
-                    {{ with $data.footer.footer.info }}
-                    <h5 class="mb-3">{{ .title }}</h5>
-                    <ul>
-                        {{ range .info_items }}
-                        <li class="pb-3">
-                            <a href="{{ .link }}" class="font-bold">{{ .name }}</a>
-                        </li>
-                        {{ end }}
-                    </ul>
-                    {{ end }}
-                    {{ end }}
-                </div>
-            </div>
-            <div class="max-w-7xl sm:flex justify-center border-t py-6 mt-12 sm:mt-32">
-                <div class="mx-auto xl:ml-5">
-                    <div>
-                        <ul class="grid gap-8 sm:flex justify-center lg:gap-28 xl:gap-36">
+                    {{ if $data.footer.footer.presence.enable }}
+                    {{ with $data.footer.footer.presence }}
+                    <h5 class="mb-3 font-extrabold">{{ .title }}</h5>
+                    <p>{{ .description }}</p>
+                    <div class="py-4">
+                        <ul class="flex justify-between items-center gap-x-8">
                             {{ if $data.footer.footer.social.enable }}
                             {{ with $data.footer.footer.social }}
                             {{ range .social_media }}
                             <li>
-                                <a href="{{ .link }}" target="_blank"
-                                    class="flex items-center gap-2 hover:text-[#1D65A6]">
+                                <a href="{{ .link }}" target="_blank" class="hover:text-[#1D65A6]">
                                     <i class="text-2xl {{ .icon }}"></i>
-                                    <p>{{ .name }}</p>
+                                    <!-- TODO: Add tooltip for icons-->
+                                    <p class="sr-only">{{ .name }}</p>
                                 </a>
                             </li>
                             {{ end }}
@@ -69,13 +26,63 @@
                             {{ end }}
                         </ul>
                     </div>
+                    {{ end }}
+                    {{ end }}
                 </div>
+                <div class="my-4">
+                    {{ if $data.footer.footer.company.enable }}
+                    {{ with $data.footer.footer.company }}
+                    <h5 class="mb-3 font-extrabold">{{ .title }}</h5>
+                    <ul>
+                        {{ range .company_items }}
+                        <li class="pb-3 flex items-center gap-x-2">
+                            <i class="fa-solid fa-chevron-right text-[#757575] text-xs"></i>
+                            <a href="{{ .link }}" class="">{{ .name }}</a>
+                        </li>
+                        {{ end }}
+                    </ul>
+                    {{ end }}
+                    {{ end }}
+                </div>
+                <div class="my-4">
+                    {{ if $data.footer.footer.info.enable }}
+                    {{ with $data.footer.footer.info }}
+                    <h5 class="mb-3 font-extrabold">{{ .title }}</h5>
+                    <ul>
+                        {{ range .info_items }}
+                        <li class="pb-3 flex items-center gap-x-2">
+                            <i class="fa-solid fa-chevron-right text-[#757575] text-xs"></i>
+                            <a href="{{ .link }}" class="">{{ .name }}</a>
+                        </li>
+                        {{ end }}
+                    </ul>
+                    {{ end }}
+                    {{ end }}
+                </div>
+                {{ if $data.footer.footer.contactus.enable }}
+                {{ with $data.footer.footer.contactus }}
+                <div class="my-4">
+                    <h5 class="mb-3 font-extrabold">{{ .title }}</h5>
+                    <ul>
+                        {{ range .contact_items }}
+                        <li class="flex items-baseline lg:items-center gap-x-2">
+                            <i class="{{ .icon }} text-[#757575]"></i>
+                            {{ .name }}
+                        </li>
+                        {{ end }}
+                    </ul>
+                    <div class="py-8">
+                        <a href="{{ .email }}" class="p-3 bg-[#ECF6FF] font-bold text-black text-center hover:bg-[#ECF6FF]/80">{{ .buttontext }}</a>
+                    </div>
+                </div>
+                {{ end }}
+                {{ end }}
             </div>
-            <div class="sm:flex justify-between py-6">
+            <div class="sm:flex justify-between py-6 border-t mt-4">
                 <p>{{ replace site.Params.copyright "{year}" now.Year | markdownify }}</p>
                 <div>
-                    <ul class="sm:mt-0 mt-4 flex">
-                        <li class="border-r pr-4 mr-4 "><a href="/privacy/">{{ i18n "privacyPolicy" }}</a></li>
+                    <ul class="sm:mt-0 mt-4 flex gap-x-8">
+                        <li><a href="/privacy/">{{ i18n "privacyPolicy" }}</a></li>
                         <li><a href="/terms/">{{ i18n "termsOfUse" }}</a></li>
                     </ul>
                 </div>
@@ -84,7 +91,7 @@
     </div>
     {{ if $data.footer.footer.contact.enable }}
     {{ with $data.footer.footer.contact }}
-    <div class="absolute w-full max-w-screen-2xl px-4 sm:px-12 -top-20 md:-top-32 left-1/2 -translate-x-1/2 ">
+    <div class="absolute w-full max-w-screen-xl px-4 sm:px-10 md:px-4 -top-20 md:-top-32 left-1/2 -translate-x-1/2 ">
         <section class="bg-[#72A2C0] w-full p-6 md:py-20 md:px-16">
             <h2 class="my-4 text-2xl sm:text-3xl md:text-5xl text-white font-extrabold">{{ .text }}</h2>
             <div class="py-6">
