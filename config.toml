@@ -53,14 +53,14 @@ link = "https://unpkg.com/lunr/lunr.js"
 [[Languages.en.menu.main]]
 identifier = 'about'
 pageRef = 'about'
-name = 'About Us'
+name = 'About'
 url = '/about'
 weight = 1
 
 [[Languages.en.menu.main]]
 identifier = 'Services'
 pageRef = 'services'
-name = 'Our Services'
+name = 'Services'
 weight = 2
 
 [[Languages.en.menu.main]]
