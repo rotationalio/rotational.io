@@ -2,7 +2,7 @@
 
 {{ if $data.deliveryteam.deliveryteam.enable }}
 {{ with $data.deliveryteam.deliveryteam }}
-<section class="max-w-7xl w-full mx-auto mb-12 px-4 sm:px-6 mt-8 md:mt-72 lg:mt-64 xl:mt-44 grid lg:grid-cols-2 gap-12 lg:gap-24">
+<section class="max-w-7xl w-full mx-auto py-14 px-4 sm:px-6 grid lg:grid-cols-2 gap-12 lg:gap-24">
   <section class="mx-auto">
     <img src="img/team/rotational-labs-team.webp" alt="" class="w-full" />
   </section>
@@ -10,7 +10,7 @@
     <h5 class="font-bold text-[#757575]">{{ .tagline }}</h5>
     <h2 class="py-2 text-2xl md:text-4xl font-extrabold">{{ .title }} </h2>
     <div class="py-2 *:py-2 md:text-lg">{{ .description | markdownify }}</div>
-    <ul class="py-2 flex justify-between">
+    <ul class="py-2 flex justify-between px-6">
       {{ range .expertise }}
       <div class="p-2 text-center">
         <li class="py-2 text-2xl md:text-4xl font-extrabold text-[#757575]">{{ .experience | markdownify }}</li>
