@@ -26,7 +26,7 @@
                   <p class="mt-6 text-sm md:text-xl">{{ $headertextmore | markdownify }}{{ end }}</p>
                   {{ end }}
 
-                  {{ if .Params.headeractions }}
+                 <!--  {{ if .Params.headeractions }}
                   <div class="flex my-8 justify-center sm:justify-start lg:mt-12">
                     {{ range .Params.headeractions }}
                     {{ if in .action "Download" }}
@@ -49,8 +49,8 @@
                     {{ end }}
                     {{ end }}
                   </div>
-                  {{ end }}
-                  {{ if .Params.download }}
+                  {{ end }} -->
+                  <!-- {{ if .Params.download }}
                   <div id="download-dropdown-menu" class="hidden w-1/2 lg:w-[46%] mt-1 md:mt-2">
                     <div class="rounded-lg shadow bg-white">
                         <ul class="p-4 px-4">
@@ -60,7 +60,7 @@
                         </ul>
                       </div>
                       {{ end }}
-                  </div>
+                  </div> -->
               </div>
               <div class="mx-auto">
                 <img src="img/white-logo.png" alt="Rotational Labs logo" class="sm:mt-24 h-12 sm:h-40 md:h-64 w-auto">
