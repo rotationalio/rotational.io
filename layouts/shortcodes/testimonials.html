@@ -9,14 +9,20 @@
     <h2 class="py-2 font-extrabold text-xl sm:text-2xl lg:text-4xl">{{ .title }}</h2>
     <p class="my-4 md:text-lg">{{ .description }}</p>
   </section>
-  <section class="my-4 grid md:grid-cols-2 gap-8 w-full">
-    {{ range .testimonial }}
-    <div class="border p-4">
-        <p class="md:text-lg">{{ .quote }}</p>
-        <p class="pt-4 font-bold md:font-extrabold">{{ .quotee }}</p>
-        <p class="text-[#757575] font-semibold md:font-bold">{{ .client_name }}</p>
+  <section class="my-4">
+    <div class="flex flex-col justify-between items-center h-full">
+      <div class="flex gap-8">
+        {{ range .testimonial }}
+      <div class="border p-4 w-full">
+          <p class="md:text-lg">{{ .quote }}</p>
+          <div class="mt-auto">
+            <p class="pt-4 font-bold md:font-extrabold">{{ .quotee }}</p>
+            <p class="text-[#757575] font-semibold md:font-bold">{{ .client_name }}</p>
+          </div>
+      </div>
+      {{ end }}
+      </div>
     </div>
-    {{ end }}
   </section>
 </section>
           
