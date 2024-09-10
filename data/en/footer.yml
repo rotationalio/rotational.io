@@ -32,8 +32,6 @@ footer:
     enable: true
     title: COMMUNITY
     info_items:
-    - name: AI Playbook
-      link: https://rtnl.link/me8fufQPfVb
     - name: Learning
       link: /resources
     - name: Open Source

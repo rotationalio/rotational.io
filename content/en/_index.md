@@ -38,11 +38,11 @@ services:
   style: bg-[#2F4858]
 ---
 
-<!-- Edit copy in data/en/delivery_team.yml -->
-{{< delivery-team >}}
-
 <!-- Edit copy in data/en/process.yml -->
 {{< process >}}
+
+<!-- Edit copy in data/en/delivery_team.yml -->
+{{< delivery-team >}}
 
 <!-- Edit copy in data/en/humanloop.yml -->
 {{< human-loop >}}
