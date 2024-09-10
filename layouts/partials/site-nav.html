@@ -3,7 +3,7 @@
     <ul class="topnav" id="myTopnav">
         {{ $currentPage := . }}
         {{ range .Site.Menus.main }}
-        <li>
+        <li class="uppercase">
             <a class=" {{ if $currentPage.IsMenuCurrent " main" . }}active{{ end }}" href="{{ .URL }}">
                 {{ .Name }}
             </a>

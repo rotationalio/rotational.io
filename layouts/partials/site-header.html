@@ -12,8 +12,8 @@
                 {{ $header := .Params.header }}
                 {{ with $header }}
                 <div class="mt-6 sm:mt-20">
-                    <h5 class="mb-4 text-sm font-bold">{{ $intro | markdownify }}</h5>
-                    <h1 class="font-bold text-3xl md:text-5xl *:block">{{ . | markdownify }}</h1>
+                    <h5 class="mb-4 text-lg font-bold">{{ $intro | markdownify }}</h5>
+                    <h1 class="font-extrabold text-3xl md:text-5xl *:block">{{ . | markdownify }}</h1>
                 </div>
                 {{ end}}
                   {{ $headertext := .Params.headertext }}
@@ -69,24 +69,27 @@
         </div>
     </div>
     {{ if .Params.services }}
-    <div class="absolute left-1/2 -translate-x-1/2 w-full max-w-screen-xl text-white">
-        <div class="grid grid-cols-3">
+    <div class="hidden md:block md:absolute top-[85%] xl:top-[80%] left-1/2 -translate-x-1/2 w-full max-w-screen-xl text-white px-4">
+        <section class="grid grid-cols-3">
             {{ range .Params.services }}
-                <section class="{{ .style }} pt-2 px-4 flex flex-col h-full">
-                    <a href="{{ .url }}">
-                    <h2 class="my-2 font-bold text-2xl">{{ .service }}</h2>
-                    <p class="mt-auto text-xl">{{ .description }}</p>
-                    <div class="mt-auto flex justify-end items-end">
-                        <a href="{{ .url }}">
-                            <i class="fa-solid fa-arrow-right text-xl"></i>
-                        </a>
+            <a href="{{ .url }}">
+                <div class="{{ .style}} pt-2 px-4 flex flex-col h-full">
+                    <div class="mb-4 md:mb-4">
+                        <h2 class="text-2xl font-bold">{{ .service}}</h2>
                     </div>
-                </a>
-                </section>
+                    <div class="mt-auto">
+                        <p class="text-lg">{{ .description}}</p>
+                        <div class="flex justify-end items-end">
+                            <i class="fa-solid fa-arrow-right text-xl"></i>
+                        </div>
+                    </div>
+                </div>
+            </a>
             {{ end }}
-        </div>
+        </section>
     </div>
 </div>
+</section>
 {{ end }}
 {{ else }}
 <div class="min-h-[480px] w-full">
@@ -94,8 +97,8 @@
 
         {{ partial "site-nav.html" . }}
 
-        <div class="relative max-w-7xl mx-auto flex items-center justify-between text-white px-4 sm:px-6">
-            <div class="lg:w-2/3 text-3x">
+        <div class="max-w-7xl mx-auto flex flex-col-reverse sm:flex-row sm:items-start sm:justify-between text-white px-4 sm:px-6">
+            <div class="w-full sm:w-3/5 sm:text-start text-3xl">
                 <div class="flex items-center mt-10 md:mt-40">
                     {{ with .Params.headertext }}
                     <h3 class="font-bold text-3xl md:text-5xl">{{ . }}</h3>
@@ -114,6 +117,9 @@
                 <p class="text-2xl lg:text-4xl mt-1 lg:mt-2 font-extralight">{{ . }}</p>
                 {{ end }}
                 {{ end }}
+            </div>
+            <div class="md:mx-auto">
+                <img src="img/white-logo.png" alt="Rotational Labs logo" class="sm:mt-24 h-12 sm:h-40 md:h-64 w-auto">
             </div>
         </div>
     </div>
