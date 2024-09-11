@@ -412,3 +412,16 @@ downloadPlaybookBttn?.addEventListener('click', () => {
     downloadDropdown.classList.add('hidden');
   });
 })
+
+// Initialize Embla carousel
+const emblaEl = document.querySelector('.embla');
+const emblaViewport = emblaEl?.querySelector('.embla__viewport');
+const prevBtn = emblaEl?.querySelector('.embla__prev');
+const nextBtn = emblaEl?.querySelector('.embla__next');
+const options = { loop: true };
+
+if (emblaEl) {
+  const emblaApi = EmblaCarousel(emblaViewport, options);
+  prevBtn.addEventListener('click', emblaApi.scrollPrev, false);
+  nextBtn.addEventListener('click', emblaApi.scrollNext, false);
+}

@@ -3,24 +3,36 @@
 {{ if $data.testimonials.testimonials.enable }}
 {{ with $data.testimonials.testimonials }}
 
-<section class="max-w-7xl w-full mx-auto my-12 px-4 sm:px-6">
+<section class="max-w-7xl w-full mx-auto my-12 grid md:grid-cols-2 gap-x-8 px-4 sm:px-6">
   <section>
     <h5 class="text-[#757575] font-bold">{{ .tagline }}</h5>
     <h2 class="py-2 font-extrabold text-xl sm:text-2xl lg:text-4xl">{{ .title }}</h2>
     <p class="my-4 md:text-lg">{{ .description }}</p>
   </section>
   <section class="my-4">
-    <div class="flex flex-col justify-between items-center h-full">
-      <div class="flex gap-8">
-        {{ range .testimonial }}
-      <div class="border p-4 w-full">
-          <p class="md:text-lg">{{ .quote }}</p>
-          <div class="mt-auto">
-            <p class="pt-4 font-bold md:font-extrabold">{{ .quotee }}</p>
-            <p class="text-[#757575] font-semibold md:font-bold">{{ .client_name }}</p>
+    <div class="embla overflow-hidden border">
+      <div class="embla__viewport">
+        <div class="embla__container flex">
+          {{ range .testimonial }}
+          <div class="embla__slide p-4 flex-[0_0_100%] min-w-0">
+            <p class="md:text-lg">{{ .quote }}</p>
+            <div class="mt-auto">
+              <p class="pt-4 font-bold md:font-extrabold">{{ .quotee }}</p>
+              <p class="text-[#757575] font-semibold md:font-bold">{{ .client_name }}</p>
+            </div>
           </div>
+          {{ end }}
+        </div>
       </div>
-      {{ end }}
+      <div class="flex justify-between p-4">
+        <button class="embla__prev">
+          <i class="fa-solid fa-chevron-left"></i>
+          <span class="sr-only">Previous</span>
+        </button>
+        <button class="embla__next">
+          <i class="fa-solid fa-chevron-right"></i>
+          <span class="sr-only">Next</span>
+        </button>
       </div>
     </div>
   </section>
