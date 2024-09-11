@@ -394,7 +394,8 @@ function setMessageTimeOut(element, timeLimit) {
 }
 
 // Display download playbook dropdown menu.
-const downloadPlaybookBttn = document.getElementById('download-playbook');
+// TODO: Remove toggle dropdown code if Flowbite styling will be used.
+/* const downloadPlaybookBttn = document.getElementById('download-playbook');
 const downloadDropdown = document.getElementById('download-dropdown-menu');
 
 downloadPlaybookBttn?.addEventListener('click', () => {
@@ -411,7 +412,7 @@ downloadPlaybookBttn?.addEventListener('click', () => {
   window.addEventListener('scroll', () => {
     downloadDropdown.classList.add('hidden');
   });
-})
+}) */
 
 // Initialize Embla carousel
 const emblaRoot = document.querySelector('.embla');
