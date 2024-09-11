@@ -3593,10 +3593,6 @@ em {
     margin-top: 1.75rem;
   }
 
-  .md\:mt-72 {
-    margin-top: 18rem;
-  }
-
   .md\:mt-8 {
     margin-top: 2rem;
   }
@@ -3880,10 +3876,6 @@ em {
     margin-top: 11rem;
   }
 
-  .lg\:mt-64 {
-    margin-top: 16rem;
-  }
-
   .lg\:mt-7 {
     margin-top: 1.75rem;
   }
@@ -4018,10 +4010,6 @@ em {
 @media (min-width: 1280px) {
   .xl\:top-\[80\%\] {
     top: 80%;
-  }
-
-  .xl\:mt-44 {
-    margin-top: 11rem;
   }
 
   .xl\:mt-8 {
