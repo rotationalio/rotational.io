@@ -27,7 +27,7 @@
                   {{ end }}
 
                  {{ if .Params.headeractions }}
-                  <div class="flex justify-center sm:justify-start lg:mt-8">
+                  <div class="mt-8 flex justify-center sm:justify-start">
                     {{ range .Params.headeractions }}
                     {{ if in .action "Download" }}
                     <button id="{{ .id }}" class="text-xs md:text-base text-center font-semibold rounded-lg px-5 md:px-2 xl:px-12 py-3 lg:py-5 bg-[#192E5B] hover:bg-[#72A3C0] uppercase mr-3">
@@ -69,7 +69,7 @@
         </div>
     </div>
     {{ if .Params.services }}
-    <div class="relative hidden md:block md:-mt-20 md:mb-10 md:z-10 md:mx-auto w-full max-w-screen-2xl text-white px-4">
+    <div class="relative hidden md:block md:-mt-16 md:mb-10 md:z-10 md:mx-auto w-full max-w-screen-xl text-white px-4">
         <section class="grid grid-cols-3">
             {{ range .Params.services }}
             <a href="{{ .url }}">
@@ -77,11 +77,11 @@
                     <div class="mb-4">
                         <h2 class="text-xl font-bold">{{ .service}}</h2>
                     </div>
-                    <div class="mt-auto">
+                    <div class="mt-auto pt-2">
                         <p>{{ .description}}</p>
-                    </div>
-                    <div class="my-2 flex justify-end items-end">
-                        <i class="fa-solid fa-arrow-right text-xl"></i>
+                        <div class="pt-2 flex justify-end items-end">
+                            <i class="fa-solid fa-arrow-right text-2xl"></i>
+                        </div>
                     </div>
                 </div>
             </a>

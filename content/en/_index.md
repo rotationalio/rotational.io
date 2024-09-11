@@ -23,7 +23,7 @@ services:
     Expertise to assist corporate boards and executive teams evaluate AI/ML investments that enhance efficiency, accelerate decision-making, 
     and improve customer value.
   url: /services
-  style: bg-[#2F4858]
+  style: bg-[#192E5B]
 - service: PRODUCT DEVELOPMENT & AI ENGINEERING
   description: | 
     Know-how for product and engineering teams developing native AI/ML applications, enhancing existing products, 
@@ -35,7 +35,7 @@ services:
     Support for technical and platform teams to set up or tune their infrastructure, processes, data pipelines and 
     governance policies to compete in the AI-accelerated economy.
   url: /services
-  style: bg-[#2F4858]
+  style: bg-[#192E5B]
 ---
 
 <!-- Edit copy in data/en/process.yml -->
