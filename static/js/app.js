@@ -414,14 +414,14 @@ downloadPlaybookBttn?.addEventListener('click', () => {
 })
 
 // Initialize Embla carousel
-const emblaEl = document.querySelector('.embla');
-const emblaViewport = emblaEl?.querySelector('.embla__viewport');
-const prevBtn = emblaEl?.querySelector('.embla__prev');
-const nextBtn = emblaEl?.querySelector('.embla__next');
+const emblaRoot = document.querySelector('.embla');
+const emblaViewport = emblaRoot?.querySelector('.embla__viewport');
+const prevBtn = emblaRoot?.querySelector('.embla__prev');
+const nextBtn = emblaRoot?.querySelector('.embla__next');
 const options = { loop: true };
 
-if (emblaEl) {
-  const emblaApi = EmblaCarousel(emblaViewport, options);
-  prevBtn.addEventListener('click', emblaApi.scrollPrev, false);
-  nextBtn.addEventListener('click', emblaApi.scrollNext, false);
+if (emblaRoot) {
+  const carousel = EmblaCarousel(emblaViewport, options);
+  prevBtn.addEventListener('click', carousel.scrollPrev, false);
+  nextBtn.addEventListener('click', carousel.scrollNext, false);
 }
