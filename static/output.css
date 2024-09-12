@@ -1249,6 +1249,11 @@ video {
   margin-bottom: auto;
 }
 
+.my-14 {
+  margin-top: 3.5rem;
+  margin-bottom: 3.5rem;
+}
+
 .-mt-0 {
   margin-top: -0px;
 }
@@ -1459,6 +1464,10 @@ video {
 
 .contents {
   display: contents;
+}
+
+.list-item {
+  display: list-item;
 }
 
 .hidden {
@@ -1732,6 +1741,10 @@ video {
 
 .cursor-pointer {
   cursor: pointer;
+}
+
+.list-inside {
+  list-style-position: inside;
 }
 
 .list-outside {
@@ -2469,6 +2482,10 @@ video {
 
 .text-center {
   text-align: center;
+}
+
+.indent-1 {
+  text-indent: 0.25rem;
 }
 
 .align-middle {
@@ -3248,6 +3265,11 @@ em {
   padding-bottom: 0.5rem;
 }
 
+.\*\:py-1 > * {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+
 .hover\:bg-\[\#192E5B\]:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(25 46 91 / var(--tw-bg-opacity));
@@ -3601,12 +3623,12 @@ em {
     margin-top: 3.5rem;
   }
 
-  .md\:mt-24 {
-    margin-top: 6rem;
-  }
-
   .md\:mt-3 {
     margin-top: 0.75rem;
+  }
+
+  .md\:mt-36 {
+    margin-top: 9rem;
   }
 
   .md\:mt-4 {
@@ -3631,22 +3653,6 @@ em {
 
   .md\:mt-8 {
     margin-top: 2rem;
-  }
-
-  .md\:mt-32 {
-    margin-top: 8rem;
-  }
-
-  .md\:mt-36 {
-    margin-top: 9rem;
-  }
-
-  .md\:-mt-28 {
-    margin-top: -7rem;
-  }
-
-  .md\:mt-28 {
-    margin-top: 7rem;
   }
 
   .md\:block {
