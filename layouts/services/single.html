@@ -58,31 +58,6 @@
         </section>
         {{ end }}
         {{ end }}
-        
-        {{ if .testimonials.enable }}
-        {{ with .testimonials }}
-
-        <section class="my-9 lg:my-14">
-            <h2 class="mb-4 font-bold text-xl sm:text-2xl lg:text-3xl">{{ .title }}</h2>
-            <div class="grid md:grid-cols-2 gap-5">
-                {{ range .testimonial }}
-                <section class="bg-[#ECF6FF] p-6 rounded-xl">
-                    <p class="text-xl text-center">
-                        {{ $quote := index (split .quote " ") }}
-                        <span class="font-bold text-[#A32C00]">{{ range first 2 $quote }} {{ . }} {{ end }}</span>
-                        {{ range after 2 $quote }} {{ . }} {{ end }}
-                    </p>
-                    <p class="pt-4 text-xl text-center">
-                        <span class="text-[#A32C00] font-bold">{{ .quotee }}</span>,
-                        <span class="text-[#192E5B] font-bold">{{ .client_name }}</span>
-                    </p>
-                </section>
-                {{ end }}
-            </div>
-        </section>
-          
-          {{ end }}
-          {{ end }}
 
         {{ if .cloud_partners.enable }}
         {{ with .cloud_partners }}
@@ -99,39 +74,6 @@
                 {{ end }}
             </ul>
         </section>
-        {{ end }}
-        {{ end }}
-
-        {{ if $data.casestudies.casestudies.enable }}
-        {{ with $data.casestudies.casestudies }}
-        <section class="my-9 lg:my-14">
-            <h2 class="mb-4 font-bold text-xl sm:text-2xl lg:text-3xl">{{ .title }}</h2>
-            <p class="md:text-xl">{{ .subtitle }}</p>
-            <section class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8 text-center">
-                {{ range .studies }}
-                <a href="{{ .link }}">
-                    <div class="bg-[#E3E3E1] pb-4 rounded-md">
-                        <div class="mb-4 md:mb-4">
-                            <h4 class="text-lg md:text-xl font-bold py-6">{{ .summary}}</h4>
-                            <div class="md:h-36 inline-flex items-center mb-6 md:mb-3">
-                                <img src="{{ .image }}" alt="" class="mx-auto" />
-                            </div>
-                        </div>
-                        <span class="flex justify-center items-center md:text-lg font-bold">
-                            <span class="mr-1">
-                                Learn More 
-                            </span>
-                            <i class="fa fa-chevron-right"></i>
-                            <i class="fa fa-chevron-right"></i>
-                        </span>
-                    </div>
-                </a>
-                {{ end }}
-
-            </section>
-
-        </section>
-
         {{ end }}
         {{ end }}
 
