@@ -10,6 +10,7 @@
     {{ range .motivation_items }}
     <div class="my-8 border p-6 {{ .style }}">
       <i class="{{ .icon }} text-4xl"></i>
+      <img src="{{ .image }}" alt="">
       <h4 class="my-8 text-xl md:text-2xl font-extrabold">{{ .title }}</h4>
       <p class="my-4 md:text-lg">{{ .description }}</p>
     </div>
