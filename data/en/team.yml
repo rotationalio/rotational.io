@@ -1,7 +1,8 @@
 ############################### team ############################
 team:
   enable : true
-  title : Our Team
+  subtitle: PROVEN EXPERTISE
+  title : OUR TEAM
   team_member :
     # team member loop
     - name : Benjamin Bengfort
