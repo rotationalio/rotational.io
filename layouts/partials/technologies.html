@@ -2,22 +2,22 @@
 
 {{ if $data.tech.tech.enable }}
     {{ with $data.tech.tech }}
-    <div>
-        <div class="mt-9 text-center sm:mt-11 lg:mt-14">
-            <h3 class="font-bold text-xl sm:text-2xl lg:text-3xl">
-                <b class="text-[#1D65A6]">{{ with .title }} {{ index (split . " ") 0 | safeHTML }} {{ end }}</b>
-                {{ with .title }} {{ after (len (index (split . " ") 0)) . | safeHTML }} {{ end }}
-            </h3>
+    <section class="py-9">
+        <div>
+            <h5 class="font-bold text-[#757575]">{{ .subtitle }}</h5>
+            <h3 class="py-2 text-2xl md:text-4xl font-extrabold">{{ with .title }} {{ . }} {{ end }}</h3>
           </div>
         
-          <ul class="grid grid-cols-2 sm:grid-cols-7 gap-10 mt-10 mx-auto">
-            {{ range .tech_item}}
-                <li class="text-center">
-                    <img src="{{ .image }}" alt="{{ .name }}" class="h-24 mx-auto">
-                    <p class="text-lg font-bold">{{ .name }}</p>
-                </li>
-            {{ end }}
-        </ul>
-    </div>
+        <div class="pt-14 pb-9">
+            <ul class="grid grid-cols-2 sm:grid-cols-7 gap-10 mx-auto">
+                {{ range .tech_item}}
+                    <li class="text-center">
+                        <img src="{{ .image }}" alt="{{ .name }}" class="h-24 mx-auto">
+                        <p class="text-lg font-bold">{{ .name }}</p>
+                    </li>
+                {{ end }}
+            </ul>
+        </div>
+    </section>
     {{ end }}
 {{ end }}
