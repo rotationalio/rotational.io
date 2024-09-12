@@ -1,7 +1,8 @@
 ############################### technologies ############################
 tech:
   enable : true
-  title : Technologies We Use
+  subtitle: TECHNOLOGIES WE USE
+  title : OUR TRADE
   tech_item :
     # tech_item loop
     - name : Golang
