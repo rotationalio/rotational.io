@@ -102,10 +102,10 @@
                 <div class="mt-10 md:mt-40">
                     <h5 class="mb-4 text-lg font-bold">{{ .Site.Params.intro }}</h5>
                     {{ with .Params.headertext }}
-                    <h1 class="font-extrabold text-3xl md:text-5xl">{{ . }}</h1>
+                    <h1 class="font-extrabold text-3xl uppercase md:text-5xl">{{ . }}</h1>
                     {{ end }}
                     {{ if not .Params.headertext }}
-                    <h1 class="font-bold text-3xl lg:text-5xl">{{ .Title }}</h1>
+                    <h1 class="font-bold text-3xl uppercase lg:text-5xl">{{ .Title }}</h1>
                     {{ end }}
                 </div>
                 {{ if .Params.subheadertext }}
@@ -120,7 +120,7 @@
                 {{ end }}
             </div>
             <div class="md:mx-auto">
-                <img src="img/vertical-logo.png" alt="Rotational Labs logo" class="sm:mt-4 md:mt-24 h-12 sm:h-40 md:h-64 w-auto">
+                <img src="img/vertical-logo.png" alt="Rotational Labs logo" class="sm:mt-4 md:mt-36 h-12 sm:h-40 w-auto">
             </div>
         </div>
     </div>
