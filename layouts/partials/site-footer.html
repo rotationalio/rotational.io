@@ -1,8 +1,20 @@
 <footer class="relative mt-40 md:mt-56 bg-[#192E5B]">
     {{ $data := index site.Data site.Language.Lang }}
     <div class="relative w-full pt-36 md:pt-16 lg:pt-24 2xl:pt-20 font-extralight text-white">
+        {{ if $data.footer.footer.contact.enable }}
+        {{ with $data.footer.footer.contact }}
+        <div class="-mt-52 w-full mx-auto max-w-screen-xl px-4">
+            <section class="bg-[#72A2C0] w-full p-6 md:py-20 md:px-16">
+                <h2 class="my-4 text-2xl sm:text-3xl md:text-5xl text-white font-extrabold">{{ .text }}</h2>
+                <div class="py-6">
+                    <a href="{{ .email }}" class="p-3 md:p-4 md:px-6 bg-[#2F4858] font-bold md:text-lg text-white text-center hover:bg-[#2F4858]/80">{{ .buttontext }}</a>
+                </div>
+            </section>
+        </div>
+        {{ end }}
+        {{ end }}
         <div class="max-w-7xl mx-auto px-6">
-            <div class="mt-12 md:mt-52 lg:mt-44 flex flex-col md:flex-row lg:justify-between gap-x-8">
+            <div class="mt-12 flex flex-col md:flex-row lg:justify-between gap-x-8">
                 <div class="my-4 max-w-xs">
 
                     {{ if $data.footer.footer.presence.enable }}
@@ -89,16 +101,4 @@
             </div>
         </div>
     </div>
-    {{ if $data.footer.footer.contact.enable }}
-    {{ with $data.footer.footer.contact }}
-    <div class="absolute w-full max-w-screen-xl px-4 sm:px-10 md:px-4 -top-20 md:-top-32 left-1/2 -translate-x-1/2 ">
-        <section class="bg-[#72A2C0] w-full p-6 md:py-20 md:px-16">
-            <h2 class="my-4 text-2xl sm:text-3xl md:text-5xl text-white font-extrabold">{{ .text }}</h2>
-            <div class="py-6">
-                <a href="{{ .email }}" class="p-3 md:p-4 md:px-6 bg-[#2F4858] font-bold md:text-lg text-white text-center hover:bg-[#2F4858]/80">{{ .buttontext }}</a>
-            </div>
-        </section>
-    </div>
-    {{ end }}
-    {{ end }}
 </footer>
