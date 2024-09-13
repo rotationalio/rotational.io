@@ -33,6 +33,10 @@ tech:
       image : img/tech/postgresql.svg
 
     # tech_item loop
+    - name : PyTorch
+      image : img/tech/pytorch.png
+
+    # tech_item loop
     - name : TensorFlow
       image : img/tech/tensorflow.svg
 
@@ -55,3 +59,27 @@ tech:
     # tech_item loop
     - name : Reactjs
       image : img/tech/reactjs.svg
+
+    # tech_item loop
+    - name : Hugging Face
+      image : img/tech/hugging-face.svg
+
+    # tech_item loop
+    - name : LangChain
+      image : img/tech/langchain.svg
+
+    # tech_item loop
+    - name : Chroma
+      image : img/tech/chroma.svg
+
+    # tech_item loop
+    - name : NumPy
+      image : img/tech/numpy.svg
+
+    # tech_item loop
+    - name : SciPy
+      image : img/tech/scipy.svg
+
+    # tech_item loop
+    - name : OpenCV
+      image : img/tech/opencv.svg
