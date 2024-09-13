@@ -4,11 +4,11 @@
 <div class="relative max-w-7xl w-full mx-auto py-14 px-4 sm:px-6">
   <section>
     <h5 class="font-bold text-[#757575]">SERVICES</h5>
-    <h2 class="py-2 text-2xl md:text-4xl font-extrabold">{{ .Params.title }}</h2>
+    <h2 class="py-2 text-2xl md:text-4xl font-extrabold uppercase">{{ .Params.title }}</h2>
     <div class="my-4 grid lg:grid-cols-3 gap-8">
       {{ range .Params.services }}
       <div class="{{ .style }} my-4 border p-6">
-        <i class="fa-solid {{ .icon }} text-4xl"></i>
+        <img src="{{ .icon }}" alt="" class="scale-90" />
         <h4 class="my-8 text-xl md:text-2xl font-extrabold uppercase">{{ .title }}</h4>
         <ul class="list-disc list-outside ml-4">
           {{ range .list }}
@@ -19,17 +19,45 @@
       {{ end }}
     </div>
   </section>
-  <section class="py-14 grid grid-cols-2">
+  <section class="py-14 grid md:grid-cols-2 gap-8">
     {{ with .Params.innovate }}
     <div>
-      <h5 class="font-bold text-[#757575]">INNOVATE OR STAGNATE</h5>
+      <h5 class="font-bold text-[#757575] uppercase">{{ .tagline }}</h5>
       <h2 class="py-2 text-2xl md:text-4xl font-extrabold uppercase">{{ .title }}</h2>
       <div class="my-4">
         <div class="md:text-lg *:py-2">{{ .text | markdownify }}</div>
       </div>
     </div>
     {{ end }}
-    <div></div>
+    <div class="mx-auto md:mx-0 md:justify-self-end md:pt-4">
+      <ul>
+        {{ range .Params.contact }}
+        <li class="py-4">
+          <a href="{{ .url }}" class="uppercase w-56 inline-block bg-[#192E5B] hover:bg-[#1D65A6] p-4 font-bold text-white text-center">{{ .text }}</a>
+        </li>
+        {{ end }}
+      </ul>
+      <div class="py-4">
+        <h6 class="pb-2 text-lg font-semibold">See Other Services:</h6>
+        <ul class="list-disc list-outside ml-4">
+          {{ range where .Site.Pages.ByTitle "Type" "services" }}
+          {{ if and (ne .Permalink $.Permalink) (not (eq .RelPermalink "/")) (not (eq .RelPermalink "/services/")) }}
+          <li class="py-2">
+            <a href="{{ .RelPermalink }}" class="underline">{{ .Title }} &#62;&#62;</a>
+          </li>
+          {{ end }}
+          {{ end }}
+        </ul>
+      </div>
+    </div>
   </section>
+  {{ with .Params.clients }}
+  <section>
+    <h5 class="font-bold text-[#757575] uppercase">{{ .tagline }}</h5>
+    <h2 class="py-2 text-2xl md:text-4xl font-extrabold uppercase">{{ .title }}</h2>
+    <p class="py-4 text-lg">{{ .text }}</p>
+    {{ partial "clients.html" . }}
+  </section>
+  {{ end }}
 </div>
 {{ end }}
