@@ -2,18 +2,14 @@
 
 {{ if $data.clients.clients.enable }}
 {{ with $data.clients.clients }}
-<div class="relative max-w-7xl mx-auto px-4 sm:px-6">
-    <h2 class="font-bold text-2xl sm:text-4xl text-center mt-12 sm:mt-24">
-        <span>
-            {{ with .title }} {{ index (split . " ") 0 | safeHTML }} {{ end }}
-            <span class="text-[#1D65A6]">{{ with .title }} {{ after (len (index (split . " ") 0)) . | safeHTML }} {{ end
-                }}</span>
-        </span>
-    </h2>
-    <ul class="mt-10 grid grid-cols-2 md:grid-cols-4 gap-20 items-center">
-        {{ range .clients_item}}
-        <li class="mt-10 flex justify-center"><img class="h-10 sm:h-[auto]" src="{{ .image | absURL }}"
-                alt="{{ .name }}"></li>
+<div class="relative max-w-7xl w-full">
+    <ul class="py-4 flex-col flex md:flex-row flex-wrap items-center md:justify-around lg:justify-between">
+        {{ range .clients_item }}
+            {{ if .showServices }}
+        <li class="py-8 md:px-8 lg:px-0 mx-auto md:mx-0">
+            <img class="w-auto" src="{{ .image | absURL }}" alt="{{ .name }}">
+        </li>
+        {{ end }}
         {{ end }}
     </ul>
 </div>

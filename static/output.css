@@ -1726,6 +1726,12 @@ video {
   border-collapse: collapse;
 }
 
+.scale-90 {
+  --tw-scale-x: .9;
+  --tw-scale-y: .9;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
 .transform {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
@@ -3414,10 +3420,6 @@ em {
     height: 2rem;
   }
 
-  .sm\:h-\[auto\] {
-    height: auto;
-  }
-
   .sm\:min-h-\[480px\] {
     min-height: 480px;
   }
@@ -3551,6 +3553,11 @@ em {
     z-index: 10;
   }
 
+  .md\:mx-0 {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+
   .md\:mx-auto {
     margin-left: auto;
     margin-right: auto;
@@ -3601,12 +3608,12 @@ em {
     margin-top: 3.5rem;
   }
 
-  .md\:mt-24 {
-    margin-top: 6rem;
-  }
-
   .md\:mt-3 {
     margin-top: 0.75rem;
+  }
+
+  .md\:mt-36 {
+    margin-top: 9rem;
   }
 
   .md\:mt-4 {
@@ -3631,22 +3638,6 @@ em {
 
   .md\:mt-8 {
     margin-top: 2rem;
-  }
-
-  .md\:mt-32 {
-    margin-top: 8rem;
-  }
-
-  .md\:mt-36 {
-    margin-top: 9rem;
-  }
-
-  .md\:-mt-28 {
-    margin-top: -7rem;
-  }
-
-  .md\:mt-28 {
-    margin-top: 7rem;
   }
 
   .md\:block {
@@ -3733,6 +3724,10 @@ em {
     justify-content: space-between;
   }
 
+  .md\:justify-around {
+    justify-content: space-around;
+  }
+
   .md\:gap-4 {
     gap: 1rem;
   }
@@ -3745,6 +3740,10 @@ em {
     --tw-space-y-reverse: 0;
     margin-top: calc(0px * calc(1 - var(--tw-space-y-reverse)));
     margin-bottom: calc(0px * var(--tw-space-y-reverse));
+  }
+
+  .md\:justify-self-end {
+    justify-self: end;
   }
 
   .md\:rounded-lg {
@@ -3798,6 +3797,11 @@ em {
     padding-right: 1.5rem;
   }
 
+  .md\:px-8 {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
   .md\:py-20 {
     padding-top: 5rem;
     padding-bottom: 5rem;
@@ -3822,6 +3826,10 @@ em {
 
   .md\:pt-16 {
     padding-top: 4rem;
+  }
+
+  .md\:pt-4 {
+    padding-top: 1rem;
   }
 
   .md\:pt-6 {
@@ -3998,6 +4006,11 @@ em {
   .lg\:gap-x-2 {
     -moz-column-gap: 0.5rem;
          column-gap: 0.5rem;
+  }
+
+  .lg\:px-0 {
+    padding-left: 0px;
+    padding-right: 0px;
   }
 
   .lg\:px-2 {

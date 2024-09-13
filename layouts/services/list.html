@@ -1,0 +1,106 @@
+{{ define "title" }}
+{{ .Title }} &ndash; {{ .Site.Title }}
+{{ end }}
+
+{{ define "main" }}
+
+{{ $data := index site.Data site.Language.Lang }}
+
+{{ if $data.services.services.enable }}
+{{ with $data.services.services }}
+<div class="max-w-7xl mx-auto px-4 relative">
+    <div>
+        {{ if .approach.enable }}
+        <div class="flex items-center mt-9 sm:mt-11 lg:mt-14">
+            <h3 class="font-bold text-xl sm:text-2xl lg:text-3xl">{{ .approach.title }}</h3>
+        </div>
+        <p class="mt-4 text-base sm:mt-5 lg:mt-7 lg:text-xl">{{ .approach.description | markdownify }}</p>
+        {{ end }}
+
+        {{ if .action.enable }}
+        {{ with .action }}
+        <section class="my-9 md:flex md:justify-between items-center pl-4 py-6 rounded-lg bg-[#E3E3E1]">
+            <p class="pb-6 md:pb-0 font-bold md:text-xl">{{ .description }}</p>
+            <div>
+                <a href="{{ .schedule_link }}" target="_blank" class="bg-[#192E5B] hover:bg-[#1D65A6] p-4 mx-2 rounded-lg font-bold text-[#FCFCFC] md:text-base">{{ .button_text }}</a>
+            </div>
+        </section>
+        {{ end }}
+        {{ end }}
+        
+        {{ if $data.wheelhouse.wheelhouse.enable}}
+        {{ with $data.wheelhouse.wheelhouse }}
+        <section id="ai-enablement" class="mt-9">
+            <h2 class="mb-4 font-bold text-xl sm:text-2xl lg:text-3xl">{{ .title }}</h2>
+            <p class="md:text-xl mb-4">{{ .subtitle }}</p>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 sm:mt-8 text-center">
+                {{ range .experience }}
+                <div class="bg-[#E3E3E1] rounded-md">
+                    <div class="flex flex-col h-full">
+                        <h4 class="text-center text-lg md:text-xl font-bold my-6">{{ .area }}</h4>
+                        <i class="fa {{ .icon }} text-4xl text-[#1D65A6]"></i>
+                        <p class="md:text-lg mx-4 py-6">{{ .description }}</p>
+                        <div class="flex flex-col mt-auto">
+                          {{ if .cost }}
+                          <p>Cost Estimate:</p>
+                          <p class="md:text-lg mx-4 pb-4">{{ .cost }}</p>
+                          {{ end }}
+
+                          {{ if .time }}
+                          <p>Time Estimate:</p>
+                          <p class="md:text-lg mx-4 pb-4">{{ .time }}</p>
+                          {{ end }}
+                        </div>
+                    </div>
+                </div>
+                {{ end }}
+            </div>
+        </section>
+        {{ end }}
+        {{ end }}
+
+        {{ if .cloud_partners.enable }}
+        {{ with .cloud_partners }}
+        <section class="my-9 lg:my-14">
+            <h2 class="mb-4 font-bold text-xl sm:text-2xl lg:text-3xl">{{ .title }}</h2>
+            <p class="mt-6 md:text-xl">{{ .description }}</p>
+            <ul class="grid items-center space-y-8 md:grid-cols-4 md:space-y-0 mt-6">
+                {{ range .cloud_partner }}
+                <li>
+                    <a href="{{ .link }}" target="_blank">
+                        <img src="{{ .logo }}" alt="{{ .name }}" class="h-20 mx-auto md:h-24" />
+                    </a>
+                </li>
+                {{ end }}
+            </ul>
+        </section>
+        {{ end }}
+        {{ end }}
+
+        {{ if .partners.enable }}
+        {{ with .partners }}
+        <section class="my-9 lg:my-14">
+            <h2 class="mb-4 font-bold text-xl sm:text-2xl lg:text-3xl">{{ .title }}</h2>
+            <p class="mt-6 md:text-xl">{{ .description | markdownify }}</p>
+            <a href="{{ .partner_link }}" target="_blank" class="">
+                <img src="{{ .partner_logo }}" alt="{{ .partner_name }}" class="mt-6 w-56 md:w-80 mx-auto" />
+            </a>
+        </section>
+        {{ end }}
+        {{ end }}
+        
+        {{ if .action.enable }}
+        {{ with .action }}
+        <section class="my-9 lg:my-14 md:flex md:justify-between items-center pl-4 py-6 rounded-lg bg-[#E3E3E1]">
+            <p class="pb-6 md:pb-0 font-bold md:text-xl">{{ .description }}</p>
+            <div>
+                <a href="{{ .schedule_link }}" target="_blank" class="bg-[#192E5B] hover:bg-[#1D65A6] p-4 mx-2 rounded-lg font-bold text-[#FCFCFC] md:text-base">{{ .button_text }}</a>
+            </div>
+        </section>
+        {{ end }}
+        {{ end }}
+    </div>
+</div>
+{{ end }}
+{{ end }}
+{{ end }}
