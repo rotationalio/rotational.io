@@ -1,5 +1,7 @@
 - id: blogTitle
   translation: Recent Rotations
+- id: blogTagline
+  translation: Thought Leadership
 - id: readMore
   translation: Read more
 - id: seeMore

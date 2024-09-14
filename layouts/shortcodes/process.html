@@ -1,0 +1,21 @@
+{{ $data := index site.Data site.Language.Lang }}
+
+{{ if $data.process.process.enable }}
+{{ with $data.process.process }}
+
+<section class="max-w-7xl w-full mx-auto py-14 px-4 sm:px-6">
+  <h5 class="font-bold text-[#757575]">{{ .tagline }}</h5>
+  <h2 class="py-2 text-2xl md:text-4xl font-extrabold">{{ .title }} </h2>
+  <section class="grid md:grid-cols-2 lg:grid-cols-3 md:gap-8">
+    {{ range .processes }}
+    <div class="my-4 border p-6 {{ .background_style }}">
+      <i class="{{ .icon }} text-4xl"></i>
+      <h4 class="my-8 text-xl md:text-2xl font-extrabold">{{ .title }}</h4>
+      <p class="my-4 md:text-lg">{{ .description }}</p>
+    </div>
+    {{ end }}
+  </section>
+</section>
+
+{{ end }}
+{{ end }}

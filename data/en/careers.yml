@@ -1,7 +1,8 @@
 #################################### careers ###############################
 careers:
   enable: true
-  title: Rotational Careers
+  tagline: JOIN OUR TEAM
+  title: ROTATIONAL CAREERS
   subtitle: We value diversity of experience, empathy, and impact. We hire for “add”, not “fit”.
   careers_item:
     - name: Machine Learning Engineer

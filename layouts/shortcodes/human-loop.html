@@ -1,0 +1,21 @@
+{{ $data := index site.Data site.Language.Lang }}
+
+{{ if $data.humanloop.humanloop.enable }}
+{{ with $data.humanloop.humanloop }}
+
+<section class="max-w-7xl w-full mx-auto py-14 px-4 sm:px-6 grid lg:grid-cols-2 gap-12 lg:gap-24">
+  <section class="mx-auto">
+    <img src="img/humans-and-ai-together.webp" alt="" class="h-full w-auto" />
+  </section>
+  <section class="mx-auto">
+    <h5 class="font-bold text-[#757575]">{{ .tagline }}</h5>
+    <h2 class="py-2 text-2xl md:text-4xl font-extrabold">{{ .title }} </h2>
+    <p class="my-4 md:text-lg">{{ .description | markdownify }}</p>
+    <div class="py-4">
+      <a href="{{ .button.url }}" class="py-4 px-4 md:px-6 bg-[#2F4858] font-bold text-white text-center hover:bg-[#2F4858]/80">{{ .button.text }}</a>
+    </div>
+  </section>
+</section>
+
+{{ end }}
+{{ end }}

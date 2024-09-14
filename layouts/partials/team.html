@@ -3,17 +3,15 @@
 {{ if $data.team.team.enable }}
     {{ with $data.team.team }}
         {{"<!-- Start Our Team -->" | safeHTML}}
-        <section id="team" class="section">
+        <section id="team" class="py-9">
             <div>
                 {{"<!-- section title -->" | safeHTML}}
-                    <h3 class="font-bold text-xl sm:text-2xl lg:text-3xl text-center lg:mt-24">
-                        <b class="text-[#1D65A6]">{{ with .title }} {{ index (split . " ") 0 | safeHTML }} {{ end }}</b>
-                        {{ with .title }} {{ after (len (index (split . " ") 0)) . | safeHTML }} {{ end }}
-                    </h3>
+                <h5 class="font-bold text-[#757575]">{{ .subtitle }}</h5>
+                <h3 class="py-2 text-2xl md:text-4xl font-extrabold">{{ with .title }} {{ . }} {{ end }}</h3>
                 {{"<!-- /section title -->" | safeHTML}}
 
                 {{"<!-- section team -->" | safeHTML}}
-                <ul class="sm:grid grid-cols-3 gap-8 sm:mt-16">
+                <ul class="sm:grid grid-cols-3 gap-8 sm:my-8">
                     {{ range .team_member}}
                     {{"<!-- team member -->" | safeHTML}}
                     <a href="{{.bioLink}}">

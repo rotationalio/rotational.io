@@ -3,14 +3,12 @@
 
 {{ if $data.careers.careers.enable }}
     {{ with $data.careers.careers }}
-    <div id="careers" name="careers">
-        <div class="mt-9 text-center sm:mt-11 lg:mt-14">
-            <h3 class="font-bold text-xl sm:text-2xl lg:text-3xl">
-                <b class="text-[#1D65A6]">{{ with .title }} {{ index (split . " ") 0 | safeHTML }} {{ end }}</b>
-                {{ with .title }} {{ after (len (index (split . " ") 0)) . | safeHTML }} {{ end }}
-            </h3>
+    <section id="careers" name="careers" class="pb-9">
+        <div class="mt-9 sm:mt-11 lg:mt-14">
+            <h5 class="font-bold text-[#757575]">{{ .tagline }}</h5>
+            <h2 class="py-2 text-2xl md:text-4xl font-extrabold">{{ .title }} </h2>
           {{ with .subtitle }}
-          <p class="mt-5">{{ . }}</p>
+          <p class="mt-4">{{ . }}</p>
           {{ end }}
         </div>
         <ul class="mt-10">
@@ -34,6 +32,6 @@
           <a href="" class="bg-[#192E5B] px-8 py-4 rounded-lg text-sm text-white uppercase md:text-base">See more</a>
         </div>
         -->
-    </div>
+    </section>
     {{ end }}
 {{ end }}

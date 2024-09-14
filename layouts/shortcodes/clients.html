@@ -3,7 +3,7 @@
 {{ if $data.clients.clients.enable }}
 {{ with $data.clients.clients }}
 <section>
-  <div class="relative max-w-7xl mt-20 mx-auto px-4 sm:px-6">
+  <div class="max-w-7xl w-full py-14 mx-auto px-4 sm:px-6">
     {{ if .show_title }}
     <h2 class="font-bold text-2xl sm:text-4xl text-center mb-10">
       <span>
@@ -12,11 +12,11 @@
       </span>
     </h2>
     {{ end }}
-    <ul class="flex flex-col md:flex-row md:flex-wrap items-center justify-center gap-8 space-y-6 lg:gap-0">
+    <ul class="flex flex-col md:flex-row md:flex-wrap items-center lg:justify-between gap-12 md:gap-8">
       {{ range .clients_item}}
       {{ if .show }}
       <li>
-        <img class="mx-7 max-w-[180px]" src="{{ .image | absURL }}" alt="{{ .name }}">
+        <img class="max-w-[180px]" src="{{ .image | absURL }}" alt="{{ .name }}">
       </li>
       {{ end }}
       {{ end }}
