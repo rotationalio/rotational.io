@@ -1,8 +1,8 @@
 ---
-title: "Teaching LLMs With Human Feedback"
+title: "Teaching LLMs With Continuous Human Feedback"
 slug: "teaching-llms-with-human-feedback"
 date: "2024-09-13T13:38:26-05:00"
-draft: true
+draft: false
 image: img/blog/otter_teacher.jpg
 photo_credit: "AI Image Generated with Leonardo.ai"
 authors: ['Patrick Deziel']
@@ -11,7 +11,7 @@ tags: ['AI', 'LLMs', 'Fine-tuning']
 description: "Generative AI requires continual human feedback to produce useful and consistent results. Here's how to collect human feedback at the source for model tuning."
 ---
 
-If you've worked with generative AI models you know that they can be fickle. These models sometimes fail to meet the expectations of users. How can we train models that users trust and see clear value in? The answer is to capture continuous human feedback for model tuning.
+If you've worked with generative AI models you know they can be fickle and sometimes fail to meet the expectations of users. How can we move towards models users trust and see clear value in? Let's engineer a user-feedback loop!
 
 <!--more-->
 
@@ -19,7 +19,7 @@ If you've worked with generative AI models you know that they can be fickle. The
 
 A prerequisite for gaining user trust is to grant model access to the actual intended users. This might feel obvious but it really should be done as early as possible in development. End users will often have very different expectations than developers and engineers. For example, a model that allows users to "chat with their data" could be interpreted in many different ways. Exposing models to users exposes fundamental communication and expectations issues that you would rather know about early on in the collaboration process.
 
-Usually, this means setting up a test environment to validate the model in a *user context*. A side benefit of this is that it forces you to think about deployment at an early stage and answer questions (e.g. What GPU resources do I need to run this model?). For text generation, [TGI](https://huggingface.co/docs/text-generation-inference/en/index) or [text-generation-webui](https://github.com/oobabooga/text-generation-webui) are powerful backends that can serve transformer-based models. In the case of `text-generation-webui`, you also get a full-fleged UI that's targeted towards developers. If you just need a backend, TGI will get you there fairly quickly.
+Usually, this means setting up a test environment to validate the model in a *user context*. A side benefit of this is that it forces you to think about deployment at an early stage and answer logistical questions (e.g. What GPU resources do I need to run this model?). For text generation, [TGI](https://huggingface.co/docs/text-generation-inference/en/index) or [text-generation-webui](https://github.com/oobabooga/text-generation-webui) are powerful backends that can serve transformer-based models. In the case of `text-generation-webui`, you also get a full-fledged UI that's targeted towards developers. If you just need a backend, TGI will get you there fairly quickly.
 
 You can very easily build your own UI with [streamlit](https://streamlit.io/) or [gradio](https://www.gradio.app/). For chat-based applications I prefer gradio because there's a very handy `ChatInterface` element you can use to implement a ChatGPT-style interaction. Here's a basic gradio template that connects to a text generation server hosted by HuggingFace for real-time interactivity.
 
@@ -74,9 +74,13 @@ app.launch()
 
 ## Collecting user feedback
 
-Having a model that users *and* developers can interact with is a good first step. It can make obvious which features or aspects of the model are not working and helps set expectations more accurately. However, the piece that organizations may be missing is real-time user feedback. If our model is trained for a specific domain, only the end users may know if the responses are actually helpful or correct. It's not enough to say, "the response looks human so it's probably okay".
+Having a model that users *and* developers can interact with is a good first step. It can make obvious which features or aspects of the model are not working and helps set expectations more accurately.
 
-Since gradio apps are defined functionally it's fairly straightforward to add instrumentation code to capture human feedback. If we wanted to, we could capture all interactions that every user makes with the app. At the very least, we probably want to capture the user prompts, the generated responses, and a feedback indicator (like/dislike) and/or natural language feedback. A good exercise is to create some data structures that will represent this data on the receiving end.
+However, most tech teams struggle when it comes to gathering real-time user feedback. If our model is trained for a specific domain, only our end users know if the responses are actually helpful or correct. It's not enough for us as engineers to say, "the response looks human so it's probably okay".
+
+Since gradio apps are defined functionally it's fairly straightforward to add instrumentation code to capture human feedback. If we wanted to, we could capture all interactions that every user makes with the app. At the very least, we probably want to capture the user prompts, the generated responses, and a feedback indicator (like/dislike) and/or natural language feedback.
+
+A good exercise is to create some data structures that will represent this data on the receiving end.
 
 ```python
 from typing import List
@@ -117,7 +121,9 @@ class Conversation(BaseModel):
     )
 ```
 
-This allows us to capture each conversation users have with the model. Each message has feedback information associated with it so we know how to retrain the model. If we're using an event-based storage mechanism (e.g. Ensign), we can update this info *incrementally* as users are interacting with the app. For example, we might define the following events for updating an existing conversation.
+This allows us to capture each conversation users have with the model. Each message has feedback information associated with it so we know how to retrain the model. If we're using an event-based storage mechanism (e.g. [Ensign](https://rotational.app/)), we can update this info *incrementally* as users are interacting with the app.
+
+For example, we might define the following events for updating an existing conversation.
 
 ```python
 import os
@@ -333,7 +339,7 @@ if __name__ == "__main__":
 
 ## Ingesting user feedback for model tuning
 
-The advantage of event-based capturing is that we can reconstruct the conversations with user feedback at any point in time. Here's how to do it with PyEnsign:
+The advantage of event-based capturing is that we can reconstruct the conversations with user feedback at any point in time. Here's how to do it with [PyEnsign](https://github.com/rotationalio/pyensign):
 
 ```python
 ensign = Ensign()
@@ -353,4 +359,4 @@ update_message v0.0.0 {'id': '2', 'conversation_id': '01J7PTGBKBEYJHJAMZ9Q9EE9SD
 
 ## Train impactful models
 
-Training models that users actually want to use requires an infrastructure for capturing honest user feedback. Setting up these feedback mechanisms requires a bit of engineering work but the result is the ability to train generative models that can be validated and improved by both developers and end users.
+Training models that users *actually want to use* requires an infrastructure for capturing honest user feedback. Setting up these feedback mechanisms requires a bit of engineering work, but the result is the ability to train generative models that can be validated and improved by both developers and end users.
