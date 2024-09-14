@@ -48,7 +48,7 @@ You can view our certification online by visiting the U.S. Department of Commerc
 
 Rotational remains responsible for any of your personal information shared with subprocessors for external processing on our behalf, as described in the “Sharing Personal Information” section of our Privacy Policy.
 
-In adherence to our privacy policy, if any concerns regarding personal data, as per the Data Privacy Framework (DPF) principles, remain unresolved internally, customers are encouraged to utilize our designated third-party dispute resolution provider EU DPA through the US Council for International Business [https://uscib.org/], free of charge.
+In adherence to our privacy policy, if any concerns regarding personal data, as per the Data Privacy Framework (DPF) principles, remain unresolved internally, customers are encouraged to utilize our designated third-party dispute resolution provider EU DPA through the (US Council for International Business)[https://uscib.org/], free of charge.
 
 Additionally, we agree to cooperate with relevant data protection authorities in the European Economic Area and the UK, if necessary, to address any outstanding complaints.
 

@@ -19,20 +19,20 @@ download:
   link: "https://rtnl.link/ha34VBLWjIb"
 services:
 - service: STRATEGIC ADVISORY & AI ASSESSMENTS
-  description: | 
-    Expertise to assist corporate boards and executive teams evaluate AI/ML investments that enhance efficiency, accelerate decision-making, 
+  description: |
+    Expertise to assist corporate boards and executive teams evaluate AI/ML investments that enhance efficiency, accelerate decision-making,
     and improve customer value.
   url: /services/ai-assessments
   style: bg-[#192E5B]
 - service: PRODUCT DEVELOPMENT & AI ENGINEERING
-  description: | 
-    Know-how for product and engineering teams developing native AI/ML applications, enhancing existing products, 
+  description: |
+    Know-how for product and engineering teams developing native AI/ML applications, enhancing existing products,
     or helping companies move from proof-of-concept to new capabilities.
   url: /services/ai-product-development
   style: bg-[#EC5012]
 - service: AI OPS & DATA FOUNDATIONS
-  description: | 
-    Support for technical and platform teams to set up or tune their infrastructure, processes, data pipelines and 
+  description: |
+    Support for technical and platform teams to set up or tune their infrastructure, processes, data pipelines and
     governance policies to compete in the AI-accelerated economy.
   url: /services/ai-ops-and-data-foundations
   style: bg-[#192E5B]
