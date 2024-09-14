@@ -2,25 +2,18 @@
 about:
   enable: true
   title: About Us
-  mission:
+  motivation:
     enable: true
-    title: Our Mission
-    mission_item:
-    - text: |
-        Our mission is to empower modern data teams to build next-generation apps, APIs,
-        and models quickly, reliably, and securely. We help developers and organizations
-        unlock value and growth by getting the right data to the right process at the
-        right time and place. As specialists who occupy the unique intersection of cloud
-        native computing, event-driven data systems, and machine learning, we aim to
-        create shared tools across technical teams that encourage collaboration,
-        empathy, and curiosity.
-
-  values:
-    enable: true
-    title: Our Values
-    values_item:
-      - text: Respect - We take the time to listen and care with humility, valuing all contributions.
-      - text: Curiosity - We ask questions, experiment, and explore, with an empathetic mindset.
-      - text: Growth - We can and always strive to continuously learn and improve and make an impact.
-      - text: Excellence - We take pride in our style, our craftsmanship and aim to exceed expectations.
-      - text: Collaboration - Together we are resilient and can solve problems for a sustainable future.
+    subtitle: MOTIVATION
+    title: OUR CORE
+    motivation_items:
+      - icon: fa-solid fa-mountain text-[#757575]
+        title: MISSION
+        description: We seek to give our enterprise clients the confidence, tools, and processes to compete and excel in an AI-accelerated economy.
+      - image: img/horizon.svg
+        title: VISION
+        description: Make AI application development and deployment affordable, accessible and customizable for mainstream and emerging enterprises.
+        style: bg-[#1D65A6] text-white
+      - icon: fa-solid fa-house-chimney text-[#757575]
+        title: VALUES
+        description: Our core values of respect, curiosity, growth, excellence, and collaboration animate our work with each other and our partners on a daily basis.

@@ -3,14 +3,9 @@
 {{ end }}
 
 {{ define "main" }}
-    <div class="max-w-7xl mx-auto px-4 relative">
-        <div class="md:grid grid-cols-2">
+    <div class="relative max-w-7xl w-full mx-auto py-14 px-4 sm:px-6">
 
-            {{ partial "mission.html" . }}
-
-            {{ partial "values.html" . }}
-
-        </div>
+        {{ partial "motivation.html" . }}
 
         {{ partial "team.html" . }}
 

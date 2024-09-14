@@ -1,7 +1,8 @@
 ############################# Case Studies Data ###################################
 casestudies:
   enable: true
-  title: Case Studies
+  tagline: Proven Expertise
+  title: Success Stories
   subtitle: Read our success stories to learn how we've helped accelerate clients from both the public and private sectors.
   studies:
   - client_name: BlueVoyant

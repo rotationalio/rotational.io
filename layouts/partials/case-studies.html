@@ -1,0 +1,37 @@
+{{ $data := index site.Data site.Language.Lang }}
+
+{{ if $data.casestudies.casestudies.enable }}
+{{ with $data.casestudies.casestudies }}
+<section class="sm:py-9">
+    <h5 class="font-bold uppercase text-[#757575]">{{ .tagline }}</h5>
+    <h2 class="py-2 text-2xl uppercase md:text-4xl font-extrabold">{{ .title }}</h2>
+    <p class="py-4 md:text-lg">{{ .subtitle }}</p>
+    <section class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 py-8 text-center">
+        {{ range .studies }}
+        <a href="{{ .link }}">
+            <div class="flex flex-col h-full bg-[#E3E3E1] pb-4 rounded-md">
+                <div class="mb-4 md:mb-4">
+                    <h4 class="text-lg md:text-xl font-bold py-6">{{ .summary}}</h4>
+                    <div class="md:h-36 inline-flex items-center mb-6 md:mb-3">
+                        <img src="{{ .image }}" alt="" class="mx-auto" />
+                    </div>
+                </div>
+                <div class="mt-auto">
+                  <span class="flex justify-center items-center md:text-lg font-bold">
+                    <span class="mr-1">
+                        Learn More 
+                    </span>
+                    <i class="fa fa-chevron-right"></i>
+                    <i class="fa fa-chevron-right"></i>
+                </span>
+                </div>
+            </div>
+        </a>
+        {{ end }}
+
+    </section>
+
+</section>
+
+{{ end }}
+{{ end }}

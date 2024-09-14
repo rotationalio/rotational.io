@@ -7,27 +7,34 @@ clients:
     - name: Mastercard
       image: img/clients/ma_symbol_opt_73_1x.png
       show: true
+      showServices: true
 
     - name: Tactile
       image: img/clients/tactile.png
       show: true
+      showServices: true
 
     - name: Trisa
       image: img/clients/trisa.png
       show: true
+      showServices: true
 
     - name: Qredo
       image: img/clients/qredo.png
       show: true
+      showServices: true
 
     - name: 202 Group
       image: img/clients/202group.png
       show: true
+      showServices: true
 
     - name: AMG
       image: img/clients/amg.png
       show: false
+      showServices: false
 
     - name: University of Chicago
       image: img/clients/uchicago.png
       show: true
+      showServices: false
