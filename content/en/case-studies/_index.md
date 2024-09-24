@@ -1,5 +1,5 @@
 ---
 title: "Case Studies"
 slug: "case-studies"
-subheadertext:
+subheadertext: Opportunities abound.
 ---

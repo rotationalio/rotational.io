@@ -1,12 +1,24 @@
 ---
 title: "{{ replaceRE "^[-0-9]{10}-" "" .Name | replaceRE "-" " " | title }}"
 slug: "{{ replaceRE "^[-0-9]{10}-" "" .Name }}"
-noicon: true
-description: Briefly introduce the client's problem and solution here
+headertext: Case Studies
+subheadertext: "Real Results: AI in Action"
 problem: "Describe client's problem here"
-approach: "Describe Rotational's approach to solve client's problem"
-result: "Describe result after providing solution to client's problem"
-stat: "Add a numerical stat about the case study here. (Ex. 85%)"
-stat_text: "Add text to be included with the numerical stat" 
-icon: "Add Font Awesome icon here. Icons may be found at the following site: https://fontawesome.com/v4/icons/"
+case:
+  - title: Problem
+    description: Describe problem here
+  - title: Solution
+    description: Describe solution here
+  - title: Results
+    results:
+      - result: Describe result here
+      - result: Describe result here
+real_results:
+  tagline: Innovate or Stagnate
+  title: Real Results
+  description: Describe results in more detail here
+  approach: "Describe Rotational's approach to solve client's problem"
+  result: "Describe result after providing solution to client's problem"
+industry: Add client's industry here
+service: Add service type here
 ---

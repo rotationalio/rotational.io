@@ -7,13 +7,30 @@ casestudies:
   studies:
   - client_name: BlueVoyant
     summary: Automating with LLMs
-    link: case-studies/blue-voyant
+    link: case-studies/automating-with-llms
     image: img/clients/202group.png
-  - client_name: TRISA
-    summary: Staying Globally Compliant
-    link: case-studies/trisa
-    image: img/clients/trisa-transparent.png
   - client_name: Supply Chain Defense
     summary: Leveraging Unstructured Text
-    link: case-studies/scd
+    link: case-studies/automating-vendor-questionnaires
     image: img/clients/BlueVoyant_Symbol_RGB_Cobalt_100x100.png
+  links:
+    - text: More Case Studies
+      url: /case-studies
+    - text: Contact Us
+      url: mailto:hello@rotational.ai
+  provenexpertise:
+    tagline: Proven Expertise
+    title: The Rotational Difference
+    expertise:
+      - title: Tailored AI Solutions
+        description: We create customized AI/ML systems that directly address your business needs, ensuring impactful, scalable results.
+      - title: Proven Expertise
+        description: We know how to train, deploy, and maintain AI solutions that maximize efficiency and ROI.
+      - title: Sensible Tech
+        description: We use sensible, proven tech that delivers business value while ensuring your systems are future-proof for evolving needs.
+      - title: End-to-End Support
+        description: From R&D to deployment and monitoring, we provide comprehensive services that ensure long-term success.
+      - title: Security & Control
+        description: Your data stays within your environment—no third parties involved—ensuring full control and compliance.
+      - title: Operational Impact
+        description: We focus on measurable outcomes that save costs, generate growth, or improve  productivity for lasting business value.
