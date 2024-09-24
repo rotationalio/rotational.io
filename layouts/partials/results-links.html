@@ -1,0 +1,17 @@
+{{ $data := index site.Data site.Language.Lang }}
+
+{{ if $data.casestudies.casestudies.enable }}
+{{ with $data.casestudies.casestudies.links }}
+
+<div class="mx-auto md:mx-0 md:justify-self-end md:pt-4">
+  <ul>
+    {{ range . }}
+    <li class="py-4">
+      <a href="{{ .url }}" class="uppercase w-56 inline-block bg-[#192E5B] hover:bg-[#1D65A6] p-4 font-bold text-white text-center">{{ .text }}</a>
+    </li>
+    {{ end }}
+  </ul>
+</div>
+
+{{ end }}
+{{ end }}
