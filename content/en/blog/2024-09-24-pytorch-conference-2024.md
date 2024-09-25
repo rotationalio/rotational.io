@@ -18,7 +18,7 @@ PyTorch is increasingly becoming a most-loved tool in the toolbelt for many of u
 
 ## PyTorch-Native LLMs Are Here
 
-Exciting developments with [TorchTitan](https://github.com/pytorch/torchtitan), [TorchTune](https://github.com/pytorch/torchtune), and [TorchChat](https://github.com/pytorch/torchchat) are moving us towards a future where you can build, finetune, and deploy models directly in PyTorch.
+Exciting developments with [TorchTitan](https://github.com/pytorch/torchtitan), [TorchTune](https://github.com/pytorch/torchtune), and [TorchChat](https://github.com/pytorch/torchchat) provide a more streamlined workflow where you can build, finetune, and deploy models directly in PyTorch.
 
 ![Towards a PyTorch-Native Workflow](img/blog/pytorch-native-workflow.png)
 
@@ -37,11 +37,11 @@ One of the most consistent themes across the talks at PyTorch was the criticalit
 
 This calls to mind the old adage that ["more data beats better algorithms"](https://anand.typepad.com/datawocky/2008/03/more-data-usual.html) (perhaps it should be updated to "better data beats better algorithms").
 
-Unfortunately, data quality one of the things that AI developers rarely control, which has driven most of us to explore more complex algorithms and GPUs. But for the executives and decision-makers out there, spending more on quality data will take you further than spending more on hardware.
+Unfortunately, data quality is one of the things that AI developers rarely control, which has driven most of us to explore more complex algorithms and GPUs. But for the executives and decision-makers out there, spending more on quality data will take you further than spending more on hardware.
 
 ## Context Matters in Testing
 
-Testing models is hard, which as Chip Huyen pointed out in her keynote, "Why You Should Think Twice Before Paying for an Evaluation Tool," is complicating the development of general-purpose LLM training and evaluation platforms.
+Testing models is hard, which as [Chip Huyen](https://huyenchip.com/) pointed out in her keynote, "Why You Should Think Twice Before Paying for an Evaluation Tool," is complicating the development of general-purpose LLM training and evaluation platforms.
 
 ![Testing LLMs is hard](img/blog/evaluation.png)
 
@@ -49,14 +49,15 @@ Huyen pointed out that models are also increasingly contextual, meaning that at 
 
 ## Model Depth vs. Size
 
-For a long time, there hasn't been a clear rule of thumb on how to tune model parameters to improve models. This often requires significant experimentation that can sometimes look more like art than science. However, several speakers and attendees talked about [recent research](https://arxiv.org/pdf/2404.07066) which suggests that shallow layers can effectively encode simple knowledge bases, while complex reasoning tasks need deeper layers. In other words, to make models smarter, we may first need to determine if our primary goal is more knowledge or better reasoning.
+For a long time, there hasn't been a clear rule of thumb on how to tune LLM model parameters to improve models for information retrieval versus other more complex tasks. Tuning often requires significant experimentation that can sometimes look more like art than science.
 
+Several speakers and attendees mentioned [recent research](https://arxiv.org/pdf/2404.07066) which suggests that shallow layers can effectively encode simple knowledge bases, while complex reasoning tasks need deeper layers. In other words, to make models "smarter" we may first need to determine if our primary goal is more knowledge or better reasoning.
 
 ## Final Thoughts
 
 PyTorch Conference is still oriented towards core developers (most open source package-oriented conferences start out this way, in my experience), and most of the talks were oriented towards issues faced by teams at companies like Meta, NVIDIA, Google, and Intel. There were tons of talks about topics like auto-sharding, hardware acceleration, and ML on the edge. It was fascinating to hear how these organizations understand the current state-of-the-art, and how the PyTorch API is evolving. Next year I'll bet there will be more talks from practitioners (i.e. AI/ML use cases and "what we built with PyTorch").
 
-The PyTorch/Tensorflow [flame wars](https://x.com/fchollet/status/1348664247388049416) feel like a long time ago. Incubated at Google, [TensorFlow](https://www.tensorflow.org/) was open-sourced first (~2016) and initially dominated the deep learning field with its stable API (thanks largely to Keras), and the novel visual diagnostics of Tensorboard. PyTorch was open-sourced by Facebook a year later and has steadily gained popularity, particularly since the release of the v1.0 API. Back in the late 2010's, machine learning practitioners were increasingly talking about much more pythonic PyTorch was compared to Tensorflow, but there was a sense that it wasn't quite as production-ready. Today, both frameworks are still widely used.
+The PyTorch/Tensorflow [flame wars](https://x.com/fchollet/status/1348664247388049416) feel like a long time ago. Incubated at Google, [TensorFlow](https://www.tensorflow.org/) was open-sourced first (~2016) and initially dominated the deep learning field with its stable API (thanks largely to Keras), and the novel visual diagnostics of Tensorboard. [PyTorch](https://github.com/pytorch/pytorch) was open-sourced by Facebook a year later and has steadily gained popularity, particularly since the release of the v1.0 API. Back in the late 2010's, machine learning practitioners were increasingly talking about much more pythonic PyTorch was compared to Tensorflow, but there was a sense that it wasn't quite as production-ready. Today, both frameworks are still widely used.
 
 One message came through loud and clear in the 2024 conference &mdash; PyTorch is evolving to support generative AI use cases. Given how complex and painful LLM development is for those of us in the trenches right now, this could give PyTorch the edge over other AI/ML frameworks.
 
