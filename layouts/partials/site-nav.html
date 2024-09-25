@@ -7,11 +7,11 @@
             <span class="sr-only">Open main menu</span>
             <i class="fa fa-bars text-xl text-white"></i>
         </button>
-        <div class="hidden w-full lg:block md:w-auto bg-white md:bg-transparent text-blue-900 md:text-[#F2F2F2] py-4 rounded-md" id="navbar-dropdown">
-            <ul class="flex flex-col gap-4 lg:flex-row font-semibold">
+        <div class="hidden fixed lg:static top-20 lg:top-0 z-[9999] max-w-screen-xl w-full lg:block md:w-auto bg-white lg:bg-transparent text-blue-900 lg:text-[#F2F2F2] py-4 rounded-md" id="navbar-dropdown">
+            <ul class="flex flex-col gap-4 md:flex-row font-semibold">
                 {{ $currentPage := . }}
                 {{ range .Site.Menus.main }}
-                <li class="uppercase lg:text-[17px]">
+                <li class="uppercase text-sm lg:text-[17px]">
                     {{ if eq .Name "Services" }}
                     <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar" class="uppercase flex items-center justify-between gap-x-2 w-full py-2 px-3 rounded md:border-0 md:p-0 md:w-auto hover:text-black">
                         {{ .Name }}
