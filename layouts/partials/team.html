@@ -15,7 +15,7 @@
                     {{ range .team_member}}
                     {{"<!-- team member -->" | safeHTML}}
                     <a href="{{.bioLink}}">
-                        <li class="mt-6 sm:mt-0 bg-[#ECF6FF] rounded-b-xl h-full">
+                        <li class="mt-6 sm:mt-0 bg-[#ECF6FF] rounded-xl h-full">
                             <img src="{{ .image | absURL }}" alt="{{ .name }}" class="rounded-t-xl covatar">
                             <div class="">
                                 <div class="px-6 pt-8 pb-5">
