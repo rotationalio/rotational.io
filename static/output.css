@@ -1151,16 +1151,8 @@ video {
   top: 0px;
 }
 
-.top-12 {
-  top: 3rem;
-}
-
 .top-16 {
   top: 4rem;
-}
-
-.top-20 {
-  top: 5rem;
 }
 
 .isolate {
@@ -1177,10 +1169,6 @@ video {
 
 .z-50 {
   z-index: 50;
-}
-
-.z-\[999\] {
-  z-index: 999;
 }
 
 .z-\[9999\] {
@@ -1445,10 +1433,6 @@ video {
   margin-top: auto;
 }
 
-.mt-1\.5 {
-  margin-top: 0.375rem;
-}
-
 .block {
   display: block;
 }
@@ -1573,18 +1557,6 @@ video {
   height: 100%;
 }
 
-.h-12 {
-  height: 3rem;
-}
-
-.h-44 {
-  height: 11rem;
-}
-
-.h-72 {
-  height: 18rem;
-}
-
 .max-h-96 {
   max-height: 24rem;
 }
@@ -1678,16 +1650,16 @@ video {
   width: 1200px;
 }
 
+.w-\[92\%\] {
+  width: 92%;
+}
+
 .w-auto {
   width: auto;
 }
 
 .w-full {
   width: 100%;
-}
-
-.w-\[150\%\] {
-  width: 150%;
 }
 
 .min-w-0 {
@@ -1905,6 +1877,11 @@ video {
   --tw-divide-y-reverse: 0;
   border-top-width: calc(1px * calc(1 - var(--tw-divide-y-reverse)));
   border-bottom-width: calc(1px * var(--tw-divide-y-reverse));
+}
+
+.divide-\[\#192E5B\] > :not([hidden]) ~ :not([hidden]) {
+  --tw-divide-opacity: 1;
+  border-color: rgb(25 46 91 / var(--tw-divide-opacity));
 }
 
 .divide-gray-100 > :not([hidden]) ~ :not([hidden]) {
@@ -2633,6 +2610,11 @@ video {
   color: rgb(163 44 0 / var(--tw-text-opacity));
 }
 
+.text-\[\#F2F2F2\] {
+  --tw-text-opacity: 1;
+  color: rgb(242 242 242 / var(--tw-text-opacity));
+}
+
 .text-\[\#FCFCFC\] {
   --tw-text-opacity: 1;
   color: rgb(252 252 252 / var(--tw-text-opacity));
@@ -2641,11 +2623,6 @@ video {
 .text-black {
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
-}
-
-.text-blue-900 {
-  --tw-text-opacity: 1;
-  color: rgb(30 58 138 / var(--tw-text-opacity));
 }
 
 .text-gray-400 {
@@ -2826,105 +2803,6 @@ pre {
 
 .tab-button.active {
   font-weight: bold;
-}
-
-/* Add a black background color to the top navigation */
-
-.topnav {
-  /* background-color: #333; */
-  overflow: hidden;
-}
-
-/* Style the links inside the navigation bar */
-
-.topnav a {
-  float: left;
-  display: block;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-}
-
-/* Change the color of links on hover */
-
-.topnav a:hover {
-  /* background-color: #ddd; */
-  color: black;
-}
-
-/* Add an active class to highlight the current page */
-
-.topnav a.active {
-  /* background-color: #04AA6D; */
-  color: white;
-  font-weight: bold;
-}
-
-/* Hide the link that should open and close the topnav on small screens */
-
-.topnav .icon {
-  display: none;
-  background-color: #192e5b;
-  border-radius: 8px;
-  width: 100%;
-  text-align: right;
-}
-
-/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
-
-@media screen and (max-width: 910px) {
-  .topnav.responsive {
-    position: fixed;
-    right: 0;
-    left: 0;
-    top: 50px;
-    background-color: white;
-    z-index: 9999;
-    overflow: visible;
-  }
-
-  .topnav.responsive .icon {
-    border-radius: 0 !important;
-  }
-
-  .topnav.responsive a, .topnav.responsive span {
-    float: none;
-    display: block;
-    text-align: left;
-    font-size: 15px;
-    color: #192e5b;
-  }
-
-  .topnav.responsive a:hover {
-    font-weight: bold;
-  }
-
-  .topnav.responsive a.icon {
-    position: absolute;
-    right: 0;
-    top: 0;
-    margin-top: -50px;
-    text-align: right;
-    color: white;
-  }
-
-  .topnav a, .topnav span {
-    display: none;
-  }
-
-  .topnav a.icon {
-    float: right;
-    display: block;
-  }
-}
-
-@media screen and (min-width: 601px) {
-  .topnav {
-    display: flex;
-    font-weight: 600;
-  }
 }
 
 /* Style the data-playground search results. */
@@ -3321,6 +3199,10 @@ em {
   --tw-bg-opacity: 0.5;
 }
 
+.hover\:font-bold:hover {
+  font-weight: 700;
+}
+
 .hover\:text-\[\#1D65A6\]:hover {
   --tw-text-opacity: 1;
   color: rgb(29 101 166 / var(--tw-text-opacity));
@@ -3448,10 +3330,6 @@ em {
     height: 2rem;
   }
 
-  .sm\:h-36 {
-    height: 9rem;
-  }
-
   .sm\:min-h-\[480px\] {
     min-height: 480px;
   }
@@ -3466,10 +3344,6 @@ em {
 
   .sm\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  .sm\:grid-cols-2 {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .sm\:flex-row {
@@ -3577,16 +3451,8 @@ em {
 }
 
 @media (min-width: 768px) {
-  .md\:static {
-    position: static;
-  }
-
   .md\:inset-0 {
     inset: 0px;
-  }
-
-  .md\:top-0 {
-    top: 0px;
   }
 
   .md\:z-10 {
@@ -3728,6 +3594,10 @@ em {
     width: 20rem;
   }
 
+  .md\:w-\[96\%\] {
+    width: 96%;
+  }
+
   .md\:w-auto {
     width: auto;
   }
@@ -3801,10 +3671,6 @@ em {
 
   .md\:border-0 {
     border-width: 0px;
-  }
-
-  .md\:bg-transparent {
-    background-color: transparent;
   }
 
   .md\:p-0 {
@@ -3934,20 +3800,11 @@ em {
   .md\:font-extrabold {
     font-weight: 800;
   }
-
-  .md\:text-\[\#F2F2F2\] {
-    --tw-text-opacity: 1;
-    color: rgb(242 242 242 / var(--tw-text-opacity));
-  }
 }
 
 @media (min-width: 1024px) {
   .lg\:static {
     position: static;
-  }
-
-  .lg\:top-0 {
-    top: 0px;
   }
 
   .lg\:my-14 {
@@ -4036,10 +3893,6 @@ em {
     height: 380px;
   }
 
-  .lg\:h-44 {
-    height: 11rem;
-  }
-
   .lg\:w-1\/2 {
     width: 50%;
   }
@@ -4056,6 +3909,10 @@ em {
     width: 94%;
   }
 
+  .lg\:w-auto {
+    width: auto;
+  }
+
   .lg\:w-full {
     width: 100%;
   }
@@ -4070,10 +3927,6 @@ em {
 
   .lg\:grid-cols-4 {
     grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-
-  .lg\:flex-row {
-    flex-direction: row;
   }
 
   .lg\:flex-nowrap {
@@ -4134,8 +3987,8 @@ em {
     line-height: 1;
   }
 
-  .lg\:text-\[17px\] {
-    font-size: 17px;
+  .lg\:text-\[15px\] {
+    font-size: 15px;
   }
 
   .lg\:text-base {
@@ -4182,6 +4035,15 @@ em {
 
   .xl\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .xl\:text-lg {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+
+  .xl\:text-\[17px\] {
+    font-size: 17px;
   }
 }
 
