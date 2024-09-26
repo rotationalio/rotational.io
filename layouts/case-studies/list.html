@@ -9,11 +9,10 @@
       <h5 class="font-bold uppercase text-[#757575]">{{ .subheading }}</h5>
       <h2 class="py-2 text-2xl uppercase md:text-4xl font-extrabold">{{ .heading }}</h2>
       <p class="py-4 md:text-lg">{{ .description }}</p>
-      {{ end }}
-      
-      {{ with .Params.button }}
+      {{ with .button }}
      <a href="{{ .url }}" target="_blank"  class="uppercase inline-block bg-[#192E5B] hover:bg-[#1D65A6] p-4 font-bold text-white text-center">{{ .text }}</a>
      {{ end }}
+      {{ end }}
   </section>
     {{ partial "case-studies.html" }}
   </div>
