@@ -58,8 +58,8 @@ similarity(text, sbir_data, n = 10)[["TopicTitle", "Similarity_Score", "CloseDat
 
 The topic areas that had higher scores were deemed more semantically similar to the ones we had chosen, therefore being good candidates. I ranked the top 10 similarity scores from highest to lowest and printed the output for both approved topic areas.
 
-!["Semantic Similarity 1"](img/blog/2024-08-09-juggling-approaches-to-recommender-systems/first-semanticsim.png)
-!["Semantic Similarity 2"](img/blog/2024-08-09-juggling-approaches-to-recommender-systems/second-semanticsim.png)
+!["Semantic Similarity 1"](/img/blog/2024-08-09-juggling-approaches-to-recommender-systems/first-semanticsim.png)
+!["Semantic Similarity 2"](/img/blog/2024-08-09-juggling-approaches-to-recommender-systems/second-semanticsim.png)
 
 As I received into the outputted topic areas, I dug deeper into the full descriptions of them to see whether they truly match Rotational Lab's mission and values. The results were very hit-or-miss. Some of the topic areas were very far off while the others required a different expertise than Rotational provides. There were few topics that were ideal.
 
