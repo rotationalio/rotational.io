@@ -4037,11 +4037,6 @@ em {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
-  .xl\:text-lg {
-    font-size: 1.125rem;
-    line-height: 1.75rem;
-  }
-
   .xl\:text-\[17px\] {
     font-size: 17px;
   }
