@@ -1151,8 +1151,16 @@ video {
   top: 0px;
 }
 
+.top-16 {
+  top: 4rem;
+}
+
 .isolate {
   isolation: isolate;
+}
+
+.z-10 {
+  z-index: 10;
 }
 
 .z-20 {
@@ -1425,10 +1433,6 @@ video {
   margin-top: auto;
 }
 
-.mt-1\.5 {
-  margin-top: 0.375rem;
-}
-
 .block {
   display: block;
 }
@@ -1553,18 +1557,6 @@ video {
   height: 100%;
 }
 
-.h-12 {
-  height: 3rem;
-}
-
-.h-44 {
-  height: 11rem;
-}
-
-.h-72 {
-  height: 18rem;
-}
-
 .max-h-96 {
   max-height: 24rem;
 }
@@ -1656,6 +1648,10 @@ video {
 
 .w-\[1200px\] {
   width: 1200px;
+}
+
+.w-\[92\%\] {
+  width: 92%;
 }
 
 .w-auto {
@@ -1881,6 +1877,11 @@ video {
   --tw-divide-y-reverse: 0;
   border-top-width: calc(1px * calc(1 - var(--tw-divide-y-reverse)));
   border-bottom-width: calc(1px * var(--tw-divide-y-reverse));
+}
+
+.divide-\[\#192E5B\] > :not([hidden]) ~ :not([hidden]) {
+  --tw-divide-opacity: 1;
+  border-color: rgb(25 46 91 / var(--tw-divide-opacity));
 }
 
 .divide-gray-100 > :not([hidden]) ~ :not([hidden]) {
@@ -2327,6 +2328,11 @@ video {
   padding-bottom: 0.75rem;
 }
 
+.py-3\.5 {
+  padding-top: 0.875rem;
+  padding-bottom: 0.875rem;
+}
+
 .py-4 {
   padding-top: 1rem;
   padding-bottom: 1rem;
@@ -2604,6 +2610,11 @@ video {
   color: rgb(163 44 0 / var(--tw-text-opacity));
 }
 
+.text-\[\#F2F2F2\] {
+  --tw-text-opacity: 1;
+  color: rgb(242 242 242 / var(--tw-text-opacity));
+}
+
 .text-\[\#FCFCFC\] {
   --tw-text-opacity: 1;
   color: rgb(252 252 252 / var(--tw-text-opacity));
@@ -2792,105 +2803,6 @@ pre {
 
 .tab-button.active {
   font-weight: bold;
-}
-
-/* Add a black background color to the top navigation */
-
-.topnav {
-  /* background-color: #333; */
-  overflow: hidden;
-}
-
-/* Style the links inside the navigation bar */
-
-.topnav a {
-  float: left;
-  display: block;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-}
-
-/* Change the color of links on hover */
-
-.topnav a:hover {
-  /* background-color: #ddd; */
-  color: black;
-}
-
-/* Add an active class to highlight the current page */
-
-.topnav a.active {
-  /* background-color: #04AA6D; */
-  color: white;
-  font-weight: bold;
-}
-
-/* Hide the link that should open and close the topnav on small screens */
-
-.topnav .icon {
-  display: none;
-  background-color: #192e5b;
-  border-radius: 8px;
-  width: 100%;
-  text-align: right;
-}
-
-/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
-
-@media screen and (max-width: 910px) {
-  .topnav.responsive {
-    position: fixed;
-    right: 0;
-    left: 0;
-    top: 50px;
-    background-color: white;
-    z-index: 9999;
-    overflow: visible;
-  }
-
-  .topnav.responsive .icon {
-    border-radius: 0 !important;
-  }
-
-  .topnav.responsive a, .topnav.responsive span {
-    float: none;
-    display: block;
-    text-align: left;
-    font-size: 15px;
-    color: #192e5b;
-  }
-
-  .topnav.responsive a:hover {
-    font-weight: bold;
-  }
-
-  .topnav.responsive a.icon {
-    position: absolute;
-    right: 0;
-    top: 0;
-    margin-top: -50px;
-    text-align: right;
-    color: white;
-  }
-
-  .topnav a, .topnav span {
-    display: none;
-  }
-
-  .topnav a.icon {
-    float: right;
-    display: block;
-  }
-}
-
-@media screen and (min-width: 601px) {
-  .topnav {
-    display: flex;
-    font-weight: 600;
-  }
 }
 
 /* Style the data-playground search results. */
@@ -3268,6 +3180,11 @@ em {
   background-color: rgb(246 129 40 / var(--tw-bg-opacity));
 }
 
+.hover\:bg-gray-100:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(243 244 246 / var(--tw-bg-opacity));
+}
+
 .hover\:bg-gray-200:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(229 231 235 / var(--tw-bg-opacity));
@@ -3282,9 +3199,18 @@ em {
   --tw-bg-opacity: 0.5;
 }
 
+.hover\:font-bold:hover {
+  font-weight: 700;
+}
+
 .hover\:text-\[\#1D65A6\]:hover {
   --tw-text-opacity: 1;
   color: rgb(29 101 166 / var(--tw-text-opacity));
+}
+
+.hover\:text-black:hover {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 
 .hover\:text-gray-600:hover {
@@ -3307,6 +3233,12 @@ em {
   outline-offset: 2px;
 }
 
+.focus\:ring-2:focus {
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+}
+
 .focus\:ring-4:focus {
   --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
   --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(4px + var(--tw-ring-offset-width)) var(--tw-ring-color);
@@ -3316,6 +3248,11 @@ em {
 .focus\:ring-blue-300:focus {
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(147 197 253 / var(--tw-ring-opacity));
+}
+
+.focus\:ring-gray-200:focus {
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(229 231 235 / var(--tw-ring-opacity));
 }
 
 @media (min-width: 640px) {
@@ -3393,10 +3330,6 @@ em {
     height: 2rem;
   }
 
-  .sm\:h-36 {
-    height: 9rem;
-  }
-
   .sm\:min-h-\[480px\] {
     min-height: 480px;
   }
@@ -3411,10 +3344,6 @@ em {
 
   .sm\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  .sm\:grid-cols-2 {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .sm\:flex-row {
@@ -3665,6 +3594,14 @@ em {
     width: 20rem;
   }
 
+  .md\:w-\[96\%\] {
+    width: 96%;
+  }
+
+  .md\:w-auto {
+    width: auto;
+  }
+
   .md\:max-w-sm {
     max-width: 24rem;
   }
@@ -3730,6 +3667,14 @@ em {
   .md\:rounded-l-xl {
     border-top-left-radius: 0.75rem;
     border-bottom-left-radius: 0.75rem;
+  }
+
+  .md\:border-0 {
+    border-width: 0px;
+  }
+
+  .md\:p-0 {
+    padding: 0px;
   }
 
   .md\:p-16 {
@@ -3858,6 +3803,10 @@ em {
 }
 
 @media (min-width: 1024px) {
+  .lg\:static {
+    position: static;
+  }
+
   .lg\:my-14 {
     margin-top: 3.5rem;
     margin-bottom: 3.5rem;
@@ -3920,8 +3869,16 @@ em {
     margin-top: 2rem;
   }
 
+  .lg\:block {
+    display: block;
+  }
+
   .lg\:flex {
     display: flex;
+  }
+
+  .lg\:hidden {
+    display: none;
   }
 
   .lg\:h-24 {
@@ -3934,10 +3891,6 @@ em {
 
   .lg\:h-\[380px\] {
     height: 380px;
-  }
-
-  .lg\:h-44 {
-    height: 11rem;
   }
 
   .lg\:w-1\/2 {
@@ -3956,6 +3909,10 @@ em {
     width: 94%;
   }
 
+  .lg\:w-auto {
+    width: auto;
+  }
+
   .lg\:w-full {
     width: 100%;
   }
@@ -3972,6 +3929,10 @@ em {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
+  .lg\:flex-nowrap {
+    flex-wrap: nowrap;
+  }
+
   .lg\:items-center {
     align-items: center;
   }
@@ -3986,6 +3947,10 @@ em {
 
   .lg\:gap-24 {
     gap: 6rem;
+  }
+
+  .lg\:bg-transparent {
+    background-color: transparent;
   }
 
   .lg\:px-0 {
@@ -4022,6 +3987,10 @@ em {
     line-height: 1;
   }
 
+  .lg\:text-\[15px\] {
+    font-size: 15px;
+  }
+
   .lg\:text-base {
     font-size: 1rem;
     line-height: 1.5rem;
@@ -4035,6 +4004,11 @@ em {
   .lg\:text-xl {
     font-size: 1.25rem;
     line-height: 1.75rem;
+  }
+
+  .lg\:text-\[\#F2F2F2\] {
+    --tw-text-opacity: 1;
+    color: rgb(242 242 242 / var(--tw-text-opacity));
   }
 }
 
@@ -4061,6 +4035,10 @@ em {
 
   .xl\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .xl\:text-\[17px\] {
+    font-size: 17px;
   }
 }
 
