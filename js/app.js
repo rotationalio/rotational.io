@@ -1,13 +1,4 @@
 // static
-function openMobNav() {
-  var x = document.getElementById('myTopnav');
-  if (x.className === 'topnav') {
-    x.className += ' responsive';
-  } else {
-    x.className = 'topnav';
-  }
-}
-
 // Contact Form submission
 const form = document.getElementById('contactForm');
 
