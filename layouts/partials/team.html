@@ -11,13 +11,13 @@
                 {{"<!-- /section title -->" | safeHTML}}
 
                 {{"<!-- section team -->" | safeHTML}}
-                <ul class="sm:grid grid-cols-3 gap-8 sm:my-8">
+                <ul class="grid grid-cols-2 md:grid-cols-3 gap-8 sm:my-8">
                     {{ range .team_member}}
                     {{"<!-- team member -->" | safeHTML}}
                     <a href="{{.bioLink}}">
-                        <li class="mt-6 sm:mt-0">
+                        <li class="mt-6 sm:mt-0 bg-[#ECF6FF] rounded-xl h-full">
                             <img src="{{ .image | absURL }}" alt="{{ .name }}" class="rounded-t-xl covatar">
-                            <div class="bg-[#ECF6FF] rounded-b-xl">
+                            <div class="">
                                 <div class="px-6 pt-8 pb-5">
                                     <h4 class="text-base font-bold text-[#1D65A6]">{{ .designation | markdownify}}</h4>
                                     <h3 class="text-xl font-extrabold mt-3 ">{{ .name }}</h3>
