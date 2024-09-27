@@ -3,7 +3,8 @@ title: "{{ replaceRE "^[-0-9]{10}-" "" .Name | replaceRE "-" " " | title }}"
 slug: "{{ replaceRE "^[-0-9]{10}-" "" .Name }}"
 headertext: Case Studies
 subheadertext: "Real Results: AI in Action"
-problem: "Describe client's problem here"
+industry: Add client's industry here
+service: Add service type here
 case:
   - title: Problem
     description: Describe problem here
@@ -19,6 +20,4 @@ real_results:
   description: Describe results in more detail here
   approach: "Describe Rotational's approach to solve client's problem"
   result: "Describe result after providing solution to client's problem"
-industry: Add client's industry here
-service: Add service type here
 ---
