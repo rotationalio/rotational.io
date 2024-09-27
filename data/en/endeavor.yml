@@ -1,0 +1,22 @@
+endeavor:
+  enable: true
+  subtitle: Product
+  title: Your "HR" For AI
+  description: | 
+    Endeavor by Rotational is the AI equivalent of your HR department—designed to nurture, manage, and grow your AI models for optimal performance. 
+    As a cloud- and model-agnostic suite of tools, Endeavor is an <span class="font-bold">AI studio that structures the entire AI lifecycle</span>, 
+    ensuring that your AI models are as trusted, reliable, efficient, and adaptable as your top employees.
+  valueprop:
+    title: Value Proposition
+    description: | 
+      Just like HR manages talent, Endeavor helps you grow and trust your AI models, ensuring they deliver measurable business impact 
+      and long-term scalability.
+  keybenefits:
+      title: Key Benefits
+      benefits:
+        - benefit: '<span class="font-bold">Structured AI Deployment</span>: No need for custom coding—deploy AI models tailored to your business needs and understand their business impact.'
+        - benefit: '<span class="font-bold">Cloud-Agnostic Flexibility</span>: Deployed in your environment, use any cloud provider or model, avoiding vendor lock-in and ensuring long-term scalability.'
+        - benefit: '<span class="font-bold">Improved Efficiency</span>: Automate the entire AI lifecycle, from data gathering to monitoring, reducing time and resource costs.'
+        - benefit: '<span class="font-bold">Enhanced Governance</span>: Ensure compliance and trusted AI use with built-in tools for transparency and accountability.'
+        - benefit: '<span class="font-bold">Customizable for Your Use Cases</span>: Tailor AI models specifically to your unique needs and operational challenges.'
+  cta: "Join our waitlist:"
