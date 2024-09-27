@@ -3,7 +3,7 @@ title: "{{ replaceRE "^[-0-9]{10}-" "" .Name | replaceRE "-" " " | title }}"
 slug: "{{ replaceRE "^[-0-9]{10}-" "" .Name }}"
 headertext: Case Studies
 subheadertext: "Real Results: AI in Action"
-problem: "Describe client's problem here"
+image: Add link to client logo here
 case:
   - title: Problem
     description: Describe problem here

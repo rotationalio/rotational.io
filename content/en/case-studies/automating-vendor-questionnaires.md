@@ -3,6 +3,7 @@ title: "Automating Vendor Questionnaires"
 slug: "automating-vendor-questionnaires"
 headertext: Case Studies
 subheadertext: "Real Results: AI in Action"
+image: img/clients/BlueVoyant_Symbol_RGB_Cobalt_100x100.png
 case:
   - title: Problem
     description: Slow process to evaluate & assess 3rd party cyber risks in lengthy questionnaires

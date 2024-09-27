@@ -9,4 +9,8 @@ innovate:
   button: 
     text: Schedule a Consultation
     url: https://calendar.app.google/R6kVf8qWLW5VCxVi8
+expertise:
+  subheading: Proven Expertise
+  heading: Success Stories
+  description: Read our success stories to learn how we've helped accelerate clients from both the public and private sectors.
 ---

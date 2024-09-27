@@ -3,6 +3,7 @@ title: "Automating With LLMs"
 slug: "automating-with-llms"
 headertext: Case Studies
 subheadertext: "Real Results: AI in Action"
+image: img/clients/202group.png
 case:
   - title: Problem
     description: Poor risk analytics & low analyst efficiency
