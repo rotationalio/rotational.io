@@ -89,14 +89,14 @@
 </section>
 {{ end }}
 {{ else }}
-<div class="min-h-[350px] sm:min-h-[480px] w-full">
-    <div class="min-h-[350px] sm:min-h-[480px] w-full bg-[#1D65A6]">
+<div class="min-h-[380px] md:min-h-[400px] w-full">
+    <div class="min-h-[380px] md:min-h-[400px] w-full bg-[#1D65A6]">
 
         {{ partial "site-nav.html" . }}
 
         <div class="max-w-7xl mx-auto flex flex-col-reverse sm:flex-row sm:items-start sm:justify-between text-white px-4 sm:px-6">
             <div class="w-full sm:w-3/5 sm:text-start text-3xl">
-                <div class="mt-10 md:mt-40">
+                <div class="mt-8 md:mt-20">
                     <h5 class="mb-4 text-lg font-bold">{{ .Site.Params.intro }}</h5>
                     {{ with .Params.headertext }}
                     <h1 class="font-extrabold text-3xl uppercase md:text-5xl">{{ . }}</h1>
@@ -117,7 +117,7 @@
                 {{ end }}
             </div>
             <div class="md:mx-auto">
-                <img src="img/vertical-logo.png" alt="Rotational Labs logo" class="sm:mt-4 md:mt-36 h-16 sm:h-40 w-auto">
+                <img src="img/vertical-logo.png" alt="Rotational Labs logo" class="sm:mt-4 md:mt-16 h-16 sm:h-40 w-auto">
             </div>
         </div>
     </div>
