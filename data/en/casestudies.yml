@@ -1,18 +1,6 @@
 ############################# Case Studies Data ###################################
 casestudies:
   enable: true
-  tagline: Proven Expertise
-  title: Success Stories
-  subtitle: Read our success stories to learn how we've helped accelerate clients from both the public and private sectors.
-  studies:
-  - client_name: BlueVoyant
-    summary: Automating with LLMs
-    link: case-studies/automating-with-llms
-    image: img/clients/202group.png
-  - client_name: Supply Chain Defense
-    summary: Leveraging Unstructured Text
-    link: case-studies/automating-vendor-questionnaires
-    image: img/clients/BlueVoyant_Symbol_RGB_Cobalt_100x100.png
   links:
     - text: More Case Studies
       url: /case-studies

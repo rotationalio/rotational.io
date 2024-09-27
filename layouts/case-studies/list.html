@@ -4,49 +4,11 @@
 
 {{ define "main" }}
   <div class="relative max-w-7xl w-full mx-auto sm:py-9 px-4 sm:px-6">
-    <section class="py-9">
-      {{ with .Params.innovate }}
-      <h5 class="font-bold uppercase text-[#757575]">{{ .subheading }}</h5>
-      <h2 class="py-2 text-2xl uppercase md:text-4xl font-extrabold">{{ .heading }}</h2>
-      <p class="py-4 md:text-lg">{{ .description }}</p>
-      {{ with .button }}
-     <a href="{{ .url }}" target="_blank"  class="uppercase inline-block bg-[#192E5B] hover:bg-[#1D65A6] p-4 font-bold text-white text-center">{{ .text }}</a>
-     {{ end }}
-      {{ end }}
-  </section>
 
+  {{ partial "schedule-consultation.html" . }}
+
+  {{ partial "case-studies.html" . }}
   
-  <section class="sm:py-9">
-    {{ with .Params.expertise }}
-    <h5 class="font-bold uppercase text-[#757575]">{{ .subheading }}</h5>
-    <h2 class="py-2 text-2xl uppercase md:text-4xl font-extrabold">{{ .heading }}</h2>
-    <p class="py-4 md:text-lg">{{ .description }}</p>
-    {{ end }}
-    <section class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 py-8 text-center">
-        
-      {{ $paginator := .Paginate .Data.Pages }}
-      {{ range $paginator.Pages.ByWeight }}
-        <a href="/case-studies/{{ .Params.slug }}">
-            <div class="flex flex-col h-full bg-[#E3E3E1] pb-4 rounded-md">
-                <div class="mb-4 md:mb-4">
-                    <h4 class="text-lg md:text-xl font-bold px-4 py-6">{{ .Params.title }}</h4>
-                    <div class="md:h-36 inline-flex items-center mb-6 md:mb-3">
-                        <img src="{{ .Params.image }}" alt="" class="mx-auto" />
-                    </div>
-                </div>
-                <div class="mt-auto">
-                  <span class="flex justify-center items-center md:text-lg font-bold">
-                    <span class="mr-1">
-                        Learn More 
-                    </span>
-                    <i class="fa-solid fa-angles-right"></i>
-                </span>
-                </div>
-            </div>
-        </a>
-        {{ end }}
-
-    </section>
 </section>
   </div>
 {{ end }}
