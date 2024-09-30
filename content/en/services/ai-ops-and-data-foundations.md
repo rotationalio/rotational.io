@@ -39,6 +39,8 @@ contact:
     url: /case-studies
   - text: Contact Us
     url: mailto:hello@rotational.ai
+  - text: Learn About Endeavor
+    url: /endeavor
 clients:
   tagline: Success Stories
   title: Featured Clients
