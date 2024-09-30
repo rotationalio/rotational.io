@@ -6,6 +6,8 @@ casestudies:
       url: /case-studies
     - text: Contact Us
       url: mailto:hello@rotational.ai
+    - text: Learn About Endeavor
+      url: /endeavor
   provenexpertise:
     tagline: Proven Expertise
     title: The Rotational Difference
