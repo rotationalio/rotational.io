@@ -42,6 +42,12 @@
               </div>
             </div>
           </form>
+          <div id="endeavorConfirmation" class="hidden my-4">
+            <p class="text-base text-[#192E5B] font-semibold">{{ site.Params.endeavorFormSuccessMessage }}</p>
+          </div>
+          <div id="endeavorError" class="hidden my-4">
+            <p class="text-base text-red-800 font-semibold">{{ site.Params.contactFormErrorMessage }}</p>
+          </div>
         </section>
       </section>
       {{ end }}

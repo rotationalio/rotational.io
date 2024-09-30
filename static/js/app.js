@@ -150,15 +150,14 @@ newsletterForm?.addEventListener('submit', (event) => {
 
 // submit ensign form
 
-const ensignForm = document.getElementById('ensignForm');
+const endeavorForm = document.getElementById('endeavorForm');
 
-ensignForm?.addEventListener('submit', (event) => {
+endeavorForm?.addEventListener('submit', (event) => {
   event.preventDefault();
-  const formData = new FormData(ensignForm);
+  const formData = new FormData(endeavorForm);
   const data = Object.fromEntries(formData);
-  const ensignHomeEl = document.getElementById('ensign-home');
-  const ensignAlertEl = document.getElementById('ensign-alert');
-  const ensignConfirmationEl = document.getElementById('ensign-confirmation');
+  const endeavorConfirmation = document.getElementById('endeavorConfirmation');
+  const endeavorError = document.getElementById('endeavorError');
   const { notify_me, ...rest } = data;
 
   const formattedData = {
@@ -176,19 +175,26 @@ ensignForm?.addEventListener('submit', (event) => {
   })
     .then(async (response) => {
       if (response.status === 204) {
-        ensignForm.reset();
-        ensignHomeEl.style.display = 'none';
-        ensignConfirmationEl.style.display = 'block';
+        endeavorForm.reset();
+        endeavorConfirmation.classList.remove('hidden');
+
+        setTimeout(() => {
+          endeavorConfirmation.classList.add('hidden');
+        }, 5000);
       }
       // return response avoid error in console
-      return await response.text();
+      return response.json();
     })
     .then((data) => {
-      console.log('successfully submitted ensign form:', data);
+      console.log('successfully submitted endeavor form:', data);
     })
     .catch((error) => {
       console.error('Error:', error);
-      ensignAlertEl.style.display = 'block';
+      endeavorError.classList.remove('hidden');
+
+      setTimeout(() => {
+        endeavorError.classList.add('hidden');
+      }, 10000);
     });
 });
 
