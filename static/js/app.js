@@ -156,14 +156,10 @@ endeavorForm?.addEventListener('submit', (event) => {
   event.preventDefault();
   const formData = new FormData(endeavorForm);
   const data = Object.fromEntries(formData);
-  const endeavorConfirmation = document.getElementById('endeavorConfirmation');
-  const endeavorError = document.getElementById('endeavorError');
-  const { notify_me, ...rest } = data;
 
   const formattedData = {
-    notifications: !!(notify_me === 'on'),
-    ...rest,
-    lists: ['d99ae1c6-1c25-4904-a56c-21e82a0fce52'],
+    ...data,
+    lists: ['4ada7d4b-e0a7-4017-8b9d-4db172b5be64'],
   };
 
   fetch('https://api.rotationallabs.com/v1/notifications/signup', {
@@ -175,6 +171,7 @@ endeavorForm?.addEventListener('submit', (event) => {
   })
     .then(async (response) => {
       if (response.status === 204) {
+        const endeavorConfirmation = document.getElementById('endeavorConfirmation');
         endeavorForm.reset();
         endeavorConfirmation.classList.remove('hidden');
 
@@ -193,6 +190,7 @@ endeavorForm?.addEventListener('submit', (event) => {
       endeavorError.classList.remove('hidden');
 
       setTimeout(() => {
+        const endeavorError = document.getElementById('endeavorError');
         endeavorError.classList.add('hidden');
       }, 10000);
     });
