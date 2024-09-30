@@ -148,7 +148,7 @@ newsletterForm?.addEventListener('submit', (event) => {
     });
 });
 
-// submit ensign form
+// Submit Endeavor form
 
 const endeavorForm = document.getElementById('endeavorForm');
 
@@ -178,21 +178,21 @@ endeavorForm?.addEventListener('submit', (event) => {
         setTimeout(() => {
           endeavorConfirmation.classList.add('hidden');
         }, 5000);
+      } else {
+        const endeavorError = document.getElementById('endeavorError');
+        endeavorForm.reset();
+        endeavorError.classList.remove('hidden');
+
+        setTimeout(() => {
+          endeavorError.classList.add('hidden');
+        }, 10000);
       }
-      // return response avoid error in console
-      return response.json();
     })
     .then((data) => {
       console.log('successfully submitted endeavor form:', data);
     })
     .catch((error) => {
       console.error('Error:', error);
-      endeavorError.classList.remove('hidden');
-
-      setTimeout(() => {
-        const endeavorError = document.getElementById('endeavorError');
-        endeavorError.classList.add('hidden');
-      }, 10000);
     });
 });
 
