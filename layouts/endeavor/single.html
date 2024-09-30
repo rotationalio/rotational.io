@@ -1,0 +1,61 @@
+{{ define "title" }}
+    {{ .Title }} &ndash; {{ .Site.Title }}
+{{ end }}
+
+{{ define "main" }}
+    <div class="relative grid md:grid-cols-2 gap-8 max-w-7xl w-full mx-auto py-14 px-4 sm:px-6">
+      {{ $data := index site.Data site.Language.Lang }}
+
+      {{ if $data.endeavor.endeavor.enable }}
+      {{ with $data.endeavor.endeavor }}
+      <section class="md:text-lg">
+        <h5 class="font-bold text-[#757575]">{{ .subtitle }}</h5>
+        <h2 class="py-2 text-2xl md:text-4xl font-extrabold uppercase">{{ .title }} </h2>
+        <p class="py-4">{{ .description | safeHTML }}</p>
+
+        {{ with .valueprop }}
+        <div class="py-4">
+          <h5 class="font-bold">{{ .title }}</h5>
+          <p>{{ .description }}</p>
+        </div>
+        {{ end }}
+
+        {{ with .keybenefits }}
+        <div class="py-4">
+          <h5 class="font-bold">{{ .title }}</h5>
+          <ul class="py-2 list-disc list-outside">
+           {{ range .benefits }}
+            <li class="py-1 ml-5">{{ .benefit | safeHTML }}</li>
+            {{ end }}
+          </ul>
+          {{ end }}
+        </div>
+
+        {{ with .cta }}
+        <section class="py-4">
+          <form action="endeavor" method="post" id="endeavorForm">
+            <div class="flex flex-col">
+              <label for="email" class="font-semibold">{{ . }}</label>
+              <div class="mt-2 flex gap-x-2">
+                <input type="email" id="email" name="email" placeholder="Enter your email address" class="w-full">
+                <button type="submit" class="uppercase w-56 bg-[#192E5B] hover:bg-[#1D65A6] p-4 font-bold text-white text-center">Submit</button>
+              </div>
+            </div>
+          </form>
+          <div id="endeavorConfirmation" class="hidden my-4">
+            <p class="text-base text-[#192E5B] font-semibold">{{ site.Params.endeavorFormSuccessMessage }}</p>
+          </div>
+          <div id="endeavorError" class="hidden my-4">
+            <p class="text-base text-red-800 font-semibold">{{ site.Params.contactFormErrorMessage }}</p>
+          </div>
+        </section>
+      </section>
+      {{ end }}
+      {{ end }}
+      {{ end }}
+
+      <section class="md:mt-24">
+        <img src="img/endeavor.webp" alt="Endeavor" class="mx-auto">
+      </section>
+    </div>
+{{ end }}

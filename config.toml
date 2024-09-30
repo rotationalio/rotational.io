@@ -124,6 +124,7 @@ contactFormSuccessMessage = "Thank you for your interest in Rotational Labs! Ple
 newsletterFormSuccessMessage = "Thank you for your interest!"
 priceContactFormSuccessMessage = "Thank you for your interest in Ensign! We will contact you soon."
 contactFormErrorMessage = "Your request did not go through, please try again. If you need immediate assistance, please email support@rotational.io. "
+endeavorFormSuccessMessage = "Thank you for joining the Endeavor wait list! We will contact you soon with additional details."
 
 [params.socials]
 [params.socials.twitter]
