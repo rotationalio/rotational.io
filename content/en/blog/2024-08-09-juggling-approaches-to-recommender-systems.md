@@ -58,8 +58,8 @@ similarity(text, sbir_data, n = 10)[["TopicTitle", "Similarity_Score", "CloseDat
 
 The topic areas that had higher scores were deemed more semantically similar to the ones we had chosen, therefore being good candidates. I ranked the top 10 similarity scores from highest to lowest and printed the output for both approved topic areas.
 
-!["Semantic Similarity 1"](/img/blog/2024-08-09-juggling-approaches-to-recommender-systems/first-semanticsim.png)
-!["Semantic Similarity 2"](/img/blog/2024-08-09-juggling-approaches-to-recommender-systems/second-semanticsim.png)
+!["Semantic Similarity 1"](img/blog/2024-08-09-juggling-approaches-to-recommender-systems/first-semanticsim.webp)
+!["Semantic Similarity 2"](img/blog/2024-08-09-juggling-approaches-to-recommender-systems/second-semanticsim.webp)
 
 As I received into the outputted topic areas, I dug deeper into the full descriptions of them to see whether they truly match Rotational Lab's mission and values. The results were very hit-or-miss. Some of the topic areas were very far off while the others required a different expertise than Rotational provides. There were few topics that were ideal.
 
@@ -113,7 +113,7 @@ def top10_withGLiNER(df, column, labels):
 
 top10_withGLiNER(sbir_data, 'Description2', labels)[["TopicTitle", "entity_count", "CloseDate", "entities"]]
 ```
-!["GLiNER Results"](/img/blog/2024-08-09-juggling-approaches-to-recommender-systems/gliner-results.png)
+!["GLiNER Results"](img/blog/2024-08-09-juggling-approaches-to-recommender-systems/gliner-results.webp)
 
 The GLiNER results were somewhat similar to the results of the semantic similarity approach. Despite that, the effectiveness of this approach can still be called into question. A big flaw with the GLiNER approach is that the government's meanings of the labels may not align with Rotational's.
 
@@ -129,7 +129,7 @@ For my SBIR project, annotating and training for a text classification model pro
  % prodigy textcat.manual SBIRAnnotations2 /path/to/firstrealprodigy.jsonl --label Rotational-Oriented
  ```
 
-!["Group Data Annotation"](/img/blog/2024-08-09-juggling-approaches-to-recommender-systems/group-annotation-picture.png)
+!["Group Data Annotation"](img/blog/2024-08-09-juggling-approaches-to-recommender-systems/group-annotation-picture.webp)
 
 Prodigy is an amazing annotation tool with a user-friendly interface. Prodigy provides easy-to-use recipes that make annotation and training a breeze. Thank you [Ines Montani](https://www.ines.io) and [Matthew Honnibal](https://www.linkedin.com/in/honnibal/?originalSubdomain=de) for creating such an influential and industry-break product. Prodigy will no doubt be a staple in Rotational Lab's work.
 
@@ -141,7 +141,7 @@ Due to this, I could only train using about 60 samples. Although text classifica
 % prodigy train --textcat-multilabel SBIRAnnotations2  /Users/nnokigbo/Desktop/Rotational-Labs-Internship/SBIR/Prodigy-Use/Annotations-for-training/sbir-model
 ```
 
-!["Prodigy Training Results"](/img/blog/2024-08-09-juggling-approaches-to-recommender-systems/prodigy-spacy-results.png)
+!["Prodigy Training Results"](img/blog/2024-08-09-juggling-approaches-to-recommender-systems/prodigy-spacy-results.webp)
 
 As seen above, a lot can be fixed to make this model more accurate. The loss stabilized at 0.00 meaning that there are signs of overfitting. Also, the score stabilized at 61%. This suggests that as the number of epochs increases, the model's performance does not improve. The beautiful thing about problems and flaws is that there is always room for improvement.
 
