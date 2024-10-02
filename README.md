@@ -275,7 +275,7 @@ Once the new data source is updated and ready to be added to the website, be sur
 To add a new case study page, use the hugo new command as follows:
 
 ```
-$ hugo new case-studies/$case-study-name.md
+$ hugo new case-studies/case-study-name.md
 ```
 
 This will create a new file in the `content/en/case-studies/` directory that you may open and edit. When creating a new data source,, Hugo uses the `archetypes/case-studies.md` template file and generates the following frontmatter:
@@ -284,27 +284,47 @@ This will create a new file in the `content/en/case-studies/` directory that you
 ---
 title: "New Case Study"
 slug: "new-case-study"
-noicon: true
-description: Briefly introduce the client's problem and solution here
-problem: "Describe client's problem here"
-approach: "Describe Rotational's approach to solve client's problem"
-result: "Describe result after providing solution to client's problem"
-stat: "Add a numerical stat about the case study here. (Ex. 85%)"
-stat_text: "Add text to be included with the numerical stat" 
-icon: "Add Font Awesome icon here. Icons may be found at the following site: https://fontawesome.com/v4/icons/"
+headertext: Case Studies
+subheadertext: "Real Results: AI in Action"
+industry: "Add client's industry here"
+service: "Add service type here"
+case:
+  - title: Problem
+    description: "Describe problem here"
+  - title: Solution
+    description:" Describe solution here"
+  - title: Results
+    results:
+      - result: "Describe result here"
+      - result: "Describe result here"
+real_results:
+  tagline: Innovate or Stagnate
+  title: Real Results
+  description: "Describe results in more detail here"
+  approach: "Describe Rotational's approach to solve client's problem"
+  result: "Describe result after providing solution to client's problem"
 ---
 ```
 
 Next, update the following fields:
+`industry`,
+`service`,
+below the `case` field update the following:
 `description`,
-`problem`,
-`approach`,
 `result`,
-`stat`,
-`stat_text`,
-`icon`
+below the `real_results` field, update the following
+`description`,
+`approach`,
+`result`
 
-Please note that `stat`, `stat_text`, and `icon` will update the visual element displayed on the right side of each case study page.
+By default, 2 results are listed below the `results` field:
+```
+results:
+  - result:
+  - result:
+```
+
+This will display 2 bullet points in the `Results` box on a case study page. If only 1 bullet point will be included, delete one of the `- result` fields. To display more bullet points, add a `- result` field.
 
 ## Resources
 
