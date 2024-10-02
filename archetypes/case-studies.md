@@ -11,9 +11,11 @@ case:
   - title: Solution
     description: Describe solution here
   - title: Results
+    # If there should only be 1 bullet point in the Results box, delete one of the - result fields
     results:
       - result: Describe result here
       - result: Describe result here
+    # - result: This is how to add an additional result field
 real_results:
   tagline: Innovate or Stagnate
   title: Real Results
