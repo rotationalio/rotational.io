@@ -92,6 +92,12 @@ name = 'Product'
 weight = 6
 
 [[Languages.en.menu.main]]
+identifier = 'Contact'
+pageRef = 'contact'
+name = 'Contact'
+weight = 7
+
+[[Languages.en.menu.main]]
 name = 'AI Assessments'
 pageRef = '/ai-assessments'
 parent = 'Services'

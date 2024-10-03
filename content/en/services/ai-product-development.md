@@ -38,7 +38,7 @@ contact:
   - text: View Case Studies
     url: /case-studies
   - text: Contact Us
-    url: mailto:hello@rotational.ai
+    url: /contact
 clients:
   tagline: Success Stories
   title: Featured Clients

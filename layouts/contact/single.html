@@ -63,7 +63,7 @@
                             <label for="email" class="hidden">Email</label>
                             <input type="email" name='email' id="email" required placeholder="{{ .email }}" class="input-sl">
                             <label for="phone" class="hidden">Phone Number</label>
-                            <input type="phone" name='phone' id="phone" placeholder="{{ .phone_number }}" class="input-sl">
+                            <input type="tel" name='phone' id="phone" placeholder="{{ .phone_number }}" class="input-sl">
                         </div>
                         <label for="message" class="hidden">Message</label>
                         <textarea name="message" required placeholder="Message" id="message" cols="30" rows="6"
@@ -75,7 +75,7 @@
                         <div class="md:flex items-center justify-between mt-6 text-center md:mt-7 lg:mt-8">
                             <!-- <div class="g-recaptcha" data-sitekey="{{site.Params.g_recaptcha_key}}"></div> -->
                             <div class="g-recaptcha"></div>
-                            <button type="submit" class="flex mr-9 bg-white mt-6 px-7 py-4 rounded-lg ">{{
+                            <button type="submit" class="flex mr-9 bg-white mt-6 px-7 py-4 rounded-lg hover:bg-white/90">{{
                                 .submit }}</button>
 
                             <!-- <button data-sitekey="{{site.Params.g_recaptcha_key}}" data-callback='onSubmit' data-action='submit' type="submit"
