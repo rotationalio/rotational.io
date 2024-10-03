@@ -15,8 +15,8 @@ rssLimit = 20
 [params]
 # Metadata
 logo = "img/rotational-small.png"
-description = "Rotational Labs is a data streaming company that helps data teams and organizations put data in motion, no matter where data lives. Our flagship product, Ensign, is a real-time data streaming platform that allows you to easily connect data sources, build real-time machine-learning models and applications, and automate workflows. Ensign is cloud agnostic, requires no overhead, and fits into any tech stack."
-keywords = "Rotational Labs,Ensign,Cloud-native,Real-time data streaming platform,Data collaboration,Data automation,Rapid prototyping,Real-time machine learning,Real-time data analytics,Real-time applications,Data streams,Event streams,Event-sourcing databaseEvent log"
+description = "Rotational helps mid-market companies unlock the full potential of AI with trusted, tailored solutions. Our proven process turns your data into AI-driven tools, from automations to personalized interfaces to intelligent agents, that streamline operations and boost performance. With deep expertise in natural language and computer vision, we deliver reliable and secure results that drive business growth and efficiency."
+keywords = "AI solutions for mid-market companies, AI-driven tools, Business automation solutions, AI-powered interfaces, Intelligent agents, Natural language processing (NLP), Computer vision AI, Streamline operations with AI, machine learning, Boost business performance with AI, AI for business growth, Tailored AI solutions, Trusted AI solutions, AI for operational efficiency, Secure AI tools, AI expertise for mid-market businesses, Endeavor"
 author = "Rotational Labs, Inc."
 image = "img/rotational-gophercon.webp"
 copyright = "Copyright &copy; Rotational Labs, Inc. 2021&ndash;{year} &middot; All Rights Reserved"

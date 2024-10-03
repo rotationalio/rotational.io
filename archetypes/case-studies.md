@@ -4,7 +4,7 @@ slug: "{{ replaceRE "^[-0-9]{10}-" "" .Name }}"
 headertext: Case Studies
 subheadertext: "Real Results: AI in Action"
 industry: Add client's industry here
-service: Add service type here
+service: Add service type here # Select one of the following service types: AI Assessment, AI Ops & Data Foundations, or AI Product Development
 case:
   - title: Problem
     description: Describe problem here
