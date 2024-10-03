@@ -8,10 +8,6 @@ headeractions:
   link:
   icon: fa-solid fa-caret-down
   id: download-playbook
-- action: CONTACT US
-  link: mailto:hello@rotational.io
-  icon:
-  id: contact-us
 download:
 - text: Download PDF
   link: "https://rtnl.link/me8fufQPfVb"

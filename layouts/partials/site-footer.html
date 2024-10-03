@@ -7,7 +7,7 @@
             <section class="bg-[#72A2C0] w-full p-6 md:py-20 md:px-16">
                 <h2 class="my-4 text-2xl sm:text-3xl md:text-5xl text-white font-extrabold">{{ .text }}</h2>
                 <div class="py-6">
-                    <a href="{{ .email }}" class="p-3 md:p-4 md:px-6 bg-[#2F4858] font-bold md:text-lg text-white text-center hover:bg-[#2F4858]/80">{{ .buttontext }}</a>
+                    <a href="{{ .url }}" class="p-3 md:p-4 md:px-6 bg-[#2F4858] font-bold md:text-lg text-white text-center hover:bg-[#2F4858]/80">{{ .buttontext }}</a>
                 </div>
             </section>
         </div>
@@ -84,7 +84,7 @@
                         {{ end }}
                     </ul>
                     <div class="py-8">
-                        <a href="{{ .email }}" class="p-3 bg-[#ECF6FF] font-bold text-black text-center hover:bg-[#ECF6FF]/80">{{ .buttontext }}</a>
+                        <a href="{{ .url }}" class="p-3 bg-[#ECF6FF] font-bold text-black text-center hover:bg-[#ECF6FF]/80">{{ .buttontext }}</a>
                     </div>
                 </div>
                 {{ end }}

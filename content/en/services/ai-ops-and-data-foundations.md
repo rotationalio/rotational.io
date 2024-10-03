@@ -38,7 +38,7 @@ contact:
   - text: View Case Studies
     url: /case-studies
   - text: Contact Us
-    url: mailto:hello@rotational.ai
+    url: /contact
   - text: Learn About Endeavor
     url: /endeavor
 clients:
