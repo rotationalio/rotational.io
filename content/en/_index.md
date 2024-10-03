@@ -3,20 +3,6 @@ date: 2023-02-09T10:21:41-06:00
 intro: WELCOME TO ROTATIONAL
 header: YOUR GO-TO AI <span>INNOVATION PARTNER</span>
 headertext: We work with enterprises to build trusted data foundations and AI solutions for sustainable business impact.
-headeractions:
-- action: Download AI Playbook
-  link:
-  icon: fa-solid fa-caret-down
-  id: download-playbook
-- action: CONTACT US
-  link: mailto:hello@rotational.io
-  icon:
-  id: contact-us
-download:
-- text: Download PDF
-  link: "https://rtnl.link/me8fufQPfVb"
-- text: Download ePub
-  link: "https://rtnl.link/ha34VBLWjIb"
 services:
 - service: STRATEGIC ADVISORY & AI ASSESSMENTS
   description: |
