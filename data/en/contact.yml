@@ -1,13 +1,13 @@
 contact:
   enable : true
   title : Get In Touch
-  subtitle : Learn how we can 10x the value of your data by getting it to the right stakeholder at the right time and place, quickly, securely, and reliably.
+  subtitle : AI is quickly becoming a critical driver of competitive advantage. Contact us to discover how our tailored AI solutions can help you achieve your top business priorities and stay ahead in the AI-driven economy.
 
   # Contact details
   contact_details:
     enable : true
     title: Contact Details
-    subtitle: We love to talk through resolving complex data challenges with AI driven tools. Drop us a line for a friendly chat. We'll make it worth your while.
+    subtitle: Humans matter more than ever in an AI-fueled world. Contact us for a friendly chat. We'll make it worth your while.
     details_item:
     - image : "img/material-email.png"
       info : "info@rotational.io"
