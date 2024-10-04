@@ -189,6 +189,7 @@ mediaType = "text/plain"
   includeNewer = true
   threshold = 80
   toLower = false
+  # Configuration for blog posts
   [[related.indices]]
     applyFilter = false
     cardinalityThreshold = 0
@@ -221,6 +222,7 @@ mediaType = "text/plain"
     toLower = false
     type = 'basic'
     weight = 80
+  # Configuration for learning resources
   [[related.indices]]
     applyFilter = false
     cardinalityThreshold = 0
