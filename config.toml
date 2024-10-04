@@ -189,6 +189,7 @@ mediaType = "text/plain"
   includeNewer = true
   threshold = 80
   toLower = false
+  # Configuration for blog posts
   [[related.indices]]
     applyFilter = false
     cardinalityThreshold = 0
@@ -221,6 +222,39 @@ mediaType = "text/plain"
     toLower = false
     type = 'basic'
     weight = 80
+  # Configuration for learning resources
+  [[related.indices]]
+    applyFilter = false
+    cardinalityThreshold = 0
+    name = 'topics'
+    pattern = ''
+    toLower = false
+    type = 'basic'
+    weight = 70
+   [[related.indices]]
+    applyFilter = false
+    cardinalityThreshold = 0
+    name = 'presenters'
+    pattern = ''
+    toLower = false
+    type = 'basic'
+    weight = 100
+   [[related.indices]]
+    applyFilter = false
+    cardinalityThreshold = 0
+    name = 'events'
+    pattern = ''
+    toLower = false
+    type = 'basic'
+    weight = 60
+   [[related.indices]]
+    applyFilter = false
+    cardinalityThreshold = 0
+    name = 'categories'
+    pattern = ''
+    toLower = false
+    type = 'basic'
+    weight = 20
 
 [taxonomies]
   tag = 'tags'
