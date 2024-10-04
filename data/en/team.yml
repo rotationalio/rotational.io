@@ -3,6 +3,7 @@ team:
   enable : true
   subtitle: PROVEN EXPERTISE
   title : OUR TEAM
+  description: We specialize in natural language processing (NLP) and computer vision use cases, applying our proven, secure approach to ensure businesses trust their data to deliver actionable insights and long-term value in an AI-driven world.
   team_member :
     # team member loop
     - name : Benjamin Bengfort
