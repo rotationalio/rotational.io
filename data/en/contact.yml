@@ -7,17 +7,14 @@ contact:
   contact_details:
     enable : true
     title: Contact Details
-    subtitle: We love to talk through complex data issues and building with event-driven architecture. Drop us a line for a friendly chat. We’ll make it worth your while.
+    subtitle: We love to talk through resolving complex data challenges with AI driven tools. Drop us a line for a friendly chat. We'll make it worth your while.
     details_item:
-    - image : "img/support.png"
-      info : "support@rotational.io"
-      link: "mailto:support@rotational.io"
     - image : "img/material-email.png"
       info : "info@rotational.io"
       link:  "mailto:info@rotational.io"
-    - image : "img/documentation.png"
-      info : "Ensign Docs"
-      link: "https://ensign.rotational.dev/getting-started/"
+    - image : "img/support.png"
+      info : "support@rotational.io"
+      link: "mailto:support@rotational.io"
     
   # Contact form
   contact_form:

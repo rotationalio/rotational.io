@@ -1,5 +1,5 @@
 ---
-title: "AI Product Development"
+title: "AI Product Development & Engineering"
 slug: ai-product-development
 date: 2024-09-12T15:42:57-04:00
 draft: false
@@ -27,7 +27,7 @@ services:
       - item: Control your destiny and protect your data
 innovate:
   tagline: Innovate or Stagnate
-  title: Think Before You Act
+  title: Build Intentionally
   text: |
     You don't need AI that knows every line of the "Godfather". You need AI solutions that know your business.
 
@@ -38,7 +38,7 @@ contact:
   - text: View Case Studies
     url: /case-studies
   - text: Contact Us
-    url: mailto:hello@rotational.ai
+    url: /contact
 clients:
   tagline: Success Stories
   title: Featured Clients
