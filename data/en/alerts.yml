@@ -1,8 +1,8 @@
 ############################# Ensign Data ###################################
 notice:
-  enable: false
-  notice: "What's in an LLM? Demystifying Hugging Face Models to Leverage them for Business Impact"
+  enable: true
+  notice: "Product Development in the AI Era"
   action:
     text: Register Now
-    link: "https://rtnl.link/aNzPahcX48n"
-  expires: 2024-08-01T16:00:00Z
+    link: "https://rtnl.link/IgJbclLEsfo"
+  expires: 2024-10-25T16:00:00Z
