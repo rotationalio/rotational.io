@@ -3,6 +3,7 @@ tech:
   enable : true
   subtitle: TECHNOLOGIES WE USE
   title : OUR TRADE
+  description: Rotational is committed to customer success. We work side-by-side with our clients to deliver on their most important priorities. We strive to “meet clients where they are”. We build for business impact.
   tech_item :
     # tech_item loop
     - name : Golang
