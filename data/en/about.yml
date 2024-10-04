@@ -4,9 +4,14 @@ about:
   title: About Us
   motivation:
     enable: true
-    subtitle: MOTIVATION
+    subtitle: Motivation
+    title: OUR FOCUS
+    description: We started Rotational as an <span class="font-bold">AI studio</span> to help mid-market and emerging businesses harness the full potential of AI, bridging the gap between state-of-the-art technology and practical, tailored solutions. As engineers, we know many companies struggle to implement AI in ways that truly improve efficiency and growth while addressing concerns about safety, trust, and reliability. We care deeply about privacy, security, and the responsible application of AI and work with organizations that share those priorities.
+  philosophy:
+    enable: true
+    subtitle: Philosophy
     title: OUR CORE
-    motivation_items:
+    philosophy_items:
       - icon: fa-solid fa-mountain text-[#757575]
         title: MISSION
         description: We seek to give our enterprise clients the confidence, tools, and processes to compete and excel in an AI-accelerated economy.

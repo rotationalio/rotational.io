@@ -17,7 +17,7 @@
                     {{ with .title }} {{ after (len (index (split . " ") 0)) . | safeHTML }} {{ end }}
                 </h3>
             </div>
-            <p class="mt-4 text-base mx-auto text-center sm:mt-5 lg:mt-7 lg:text-lg max-w-2xl">
+            <p class="mt-4 text-base mx-auto text-center text-balance sm:mt-5 lg:mt-7 lg:text-lg max-w-2xl">
                 {{ .subtitle}}
             </p>
         </div>
