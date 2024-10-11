@@ -86,9 +86,9 @@ url = '/resources'
 weight = 5
 
 [[Languages.en.menu.main]]
-identifier = 'Products'
-pageRef = 'products'
-name = 'Product'
+identifier = 'Endeavor'
+pageRef = 'endeavor'
+name = 'Endeavor'
 weight = 6
 
 [[Languages.en.menu.main]]

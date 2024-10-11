@@ -3,7 +3,7 @@
 {{ end }}
 
 {{ define "main" }}
-    <div class="relative grid md:grid-cols-2 gap-8 max-w-7xl w-full mx-auto py-14 px-4 sm:px-6">
+    <div class="relative grid md:grid-cols-2 gap-8 md:gap-16 max-w-7xl w-full mx-auto py-14 px-4 sm:px-6">
       {{ $data := index site.Data site.Language.Lang }}
 
       {{ if $data.endeavor.endeavor.enable }}
@@ -20,25 +20,15 @@
         </div>
         {{ end }}
 
-        {{ with .keybenefits }}
-        <div class="py-4">
-          <h5 class="font-bold">{{ .title }}</h5>
-          <ul class="py-2 list-disc list-outside">
-           {{ range .benefits }}
-            <li class="py-1 ml-5">{{ .benefit | safeHTML }}</li>
-            {{ end }}
-          </ul>
-          {{ end }}
-        </div>
-
         {{ with .cta }}
         <section class="py-4">
           <form action="endeavor" method="post" id="endeavorForm">
             <div class="flex flex-col">
-              <label for="email" class="font-semibold">{{ . }}</label>
-              <div class="mt-2 flex gap-x-2">
+              <h5 class="font-semibold">{{ . }}</h5>
+              <label for="email" class="hidden sr-only">Enter your email address</label>
+              <div class="mt-2 md:flex gap-2">
                 <input type="email" id="email" name="email" placeholder="Enter your email address" class="w-full">
-                <button type="submit" class="uppercase w-56 bg-[#192E5B] hover:bg-[#1D65A6] p-4 font-bold text-white text-center">Submit</button>
+                <button type="submit" class="mt-2 md:mt-0 uppercase w-full md:w-56 bg-[#192E5B] hover:bg-[#1D65A6] p-3 font-bold text-white text-center">Submit</button>
               </div>
             </div>
           </form>
@@ -49,13 +39,27 @@
             <p class="text-base text-red-800 font-semibold">{{ site.Params.contactFormErrorMessage }}</p>
           </div>
         </section>
+      {{ end }}
       </section>
-      {{ end }}
-      {{ end }}
-      {{ end }}
 
-      <section class="md:mt-24">
-        <img src="img/endeavor.webp" alt="Endeavor" class="mx-auto">
+      <section class="md:mt-24 md:text-lg">
+        {{ with .keybenefits }}
+        <div>
+          <h5 class="font-bold">{{ .title }}</h5>
+          <ul class="py-2 list-disc list-outside">
+           {{ range .benefits }}
+            <li class="py-1 ml-5">{{ .benefit | safeHTML }}</li>
+            {{ end }}
+          </ul>
+          {{ end }}
+        </div>
       </section>
     </div>
+
+    <section class="md:py-14 px-4 sm:px-6">
+      <img src="{{ .previewimage }}" alt="" class="mx-auto md:w-2/3" />
+    </section>
+
+{{ end }}
+{{ end }}
 {{ end }}
