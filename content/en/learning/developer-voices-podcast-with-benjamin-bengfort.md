@@ -14,4 +14,5 @@ audio_link:
 categories: ['Video']
 presenters: ['Benjamin Bengfort']
 topics: ['Consensus', 'Distributed Systems']
+aliases: /resources/developer-voices-podcast-with-benjamin-bengfort
 ---

@@ -21,4 +21,5 @@ audio_link:
 categories: ['Video']
 presenters: ['Patrick Deziel', 'Rebecca Bilbro']
 topics: ['Data Science', 'PyEnsign']
+aliases: /resources/asynchronous-data-science-with-pyensign
 ---

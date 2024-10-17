@@ -14,4 +14,5 @@ audio_link:
 categories: ['Video']
 presenters: ['Prema Roman', 'Rebecca Bilbro']
 topics: ['Data Science', 'AI', 'ML', 'Reinforcement Training', 'Transfer Learning']
+aliases: /resources/data-science-dos-and-donts-to-stay-afloat-in-2024
 ---
