@@ -14,4 +14,5 @@ audio_link:
 categories: ['Video']
 presenters: ['Rebecca Bilbro']
 topics: ['AI/ML', 'ChatGPT']
+aliases: /resources/why-chatgpt-works-as-a-product
 ---

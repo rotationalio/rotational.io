@@ -24,4 +24,5 @@ audio_link:
 categories: ['Video']
 presenters: ['Rebecca Bilbro']
 topics: ['AI', 'ML']
+aliases: /resources/ai-for-non-technical-execs-taking-a-product-approach
 ---

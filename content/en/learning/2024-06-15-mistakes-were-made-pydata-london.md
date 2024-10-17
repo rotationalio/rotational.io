@@ -11,4 +11,5 @@ video_link: https://www.youtube.com/embed/aSCYal0w0NA?si=UCfSBqDUZQU4Ai_G
 categories: ['Video']
 presenters: ['Rebecca Bilbro']
 topics: ['Data Science', 'Python', 'PyData London']
+aliases: /resources/mistakes-were-made-pydata-london-2024-keynote
 ---

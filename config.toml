@@ -82,7 +82,6 @@ weight = 4
 identifier = 'learning'
 pageRef = 'learning'
 name = 'Learning'
-url = '/resources'
 weight = 5
 
 [[Languages.en.menu.main]]

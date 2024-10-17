@@ -14,4 +14,5 @@ audio_link:
 categories: ['Video']
 presenters: ['Rebecca Bilbro']
 topics: ['AI', 'Career', 'Data Science', 'LLM', 'NLP',]
+aliases: /resources/conversations-with-my-friends-in-ai-podcast-appearance
 ---

@@ -1,8 +1,8 @@
 ---
 date: 2023-12-05T17:57:42Z
-title: "Resources"
+title: "Learning"
 headertext: "LEARNING"
-type: "resources"
+type: "learning"
 headeractions:
 - action: Download AI Playbook
   link:
@@ -13,4 +13,5 @@ download:
   link: "https://rtnl.link/me8fufQPfVb"
 - text: Download ePub
   link: "https://rtnl.link/ha34VBLWjIb"
+aliases: /resources
 ---

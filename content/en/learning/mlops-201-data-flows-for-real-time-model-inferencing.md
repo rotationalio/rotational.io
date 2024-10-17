@@ -14,4 +14,5 @@ audio_link:
 categories: ['Video']
 presenters: ['Benjamin Bengfort', 'Rebecca Bilbro']
 topics: ['MLOps', 'Inferencing']
+aliases: /resources/mlops-201-data-flows-for-real-time-model-inferencing
 ---

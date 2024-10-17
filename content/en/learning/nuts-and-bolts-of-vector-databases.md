@@ -25,4 +25,5 @@ audio_link:
 categories: ['Video']
 presenters: ['Benjamin Bengfort']
 topics: ['AI', 'NLP', 'Vector Database']
+aliases: /resources/nuts-and-bolts-of-vector-databases
 ---

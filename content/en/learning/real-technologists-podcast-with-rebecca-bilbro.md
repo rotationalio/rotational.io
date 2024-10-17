@@ -14,4 +14,5 @@ audio_link: https://realtechnologists.org/rebecca-bilbro/
 categories: ['Audio']
 presenters: ['Rebecca Bilbro']
 topics: ['Career']
+aliases: /resources/real-technologists-podcast-with-rebecca-bilbro
 ---

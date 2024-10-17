@@ -28,4 +28,5 @@ audio_link:
 categories: ['Video']
 presenters: ['Benjamin Bengfort', 'Rebecca Bilbro']
 topics: ['MLOps', 'Event Streams', Data Science]
+aliases: /resources/mlops-101-managing-models-with-event-streams
 ---

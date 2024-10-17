@@ -14,4 +14,5 @@ audio_link:
 categories: ['Video']
 presenters: ['Patrick Deziel', 'Rebecca Bilbro']
 topics: ['PubSub', 'Data Science']
+aliases: /resources/pubsub-for-data-scientists
 ---

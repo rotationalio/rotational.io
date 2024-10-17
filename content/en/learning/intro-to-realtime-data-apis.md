@@ -18,4 +18,5 @@ audio_link:
 categories: ['Video']
 presenters: ['Prema Roman', 'Rebecca Bilbro']
 topics: ['Ensign', 'Realtime Data']
+aliases: /resources/intro-to-realtime-data-apis
 ---

@@ -15,4 +15,5 @@ audio_link:
 categories: ['Video']
 presenters: ['Prema Roman', 'Patrick Deziel']
 topics: ['LLMs', 'AI/ML', 'Hugging Face']
+aliases: /resources/demystifying-hugging-face-models
 ---

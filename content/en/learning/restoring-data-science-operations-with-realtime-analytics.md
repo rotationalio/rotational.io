@@ -14,4 +14,5 @@ audio_link:
 categories: ['Video']
 presenters: ['Benjamin Bengfort']
 topics: ['Data Science', 'Asynchronous Inferencing', 'Event Streams']
+aliases: /resources/restoring-data-science-operations-with-realtime-analytics
 ---

@@ -15,4 +15,5 @@ audio_link:
 categories: ['Video']
 presenters: ['Danielle Maxwell']
 topics: ['Micro-Frontend', 'React Miami']
+aliases: /resources/to-microfrontend-or-not-to-microfrontend
 ---

@@ -15,4 +15,5 @@ audio_link:
 categories: ['Video']
 presenters: ['Prema Roman']
 topics: ['LLM', 'ChatGPT']
+aliases: /resources/how-to-beat-chatgpt
 ---

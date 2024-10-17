@@ -15,4 +15,5 @@ audio_link:
 categories: ['Video']
 presenters: ['Rebecca Bilbro', 'Patrick Deziel']
 topics: ['Distributed Systems', 'KubeCon']
+aliases: /resources/how-to-build-a-distributed-system-kubecon
 ---
