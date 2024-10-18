@@ -71,14 +71,14 @@
         </h2>
       </div>
       <div>
-        <a href="/resources" class="flex text-base sm:text-lg items-center font-bold text-[#1D65A6]"><span>View all</span>
+        <a href="/learning" class="flex text-base sm:text-lg items-center font-bold text-[#1D65A6]"><span>View all</span>
           <img src="img/arr-right.png" alt="" class="h-4 ml-2">
         </a>
       </div>
     </div>
     <div>
       <div class="grid lg:grid-cols-2 xl:grid-cols-3 gap-8 sm:mt-16">
-        {{ $related := (where (.Site.RegularPages.Related .) "Type" "resources") | first 3 }}
+        {{ $related := (where (.Site.RegularPages.Related .) "Type" "learning") | first 3 }}
         {{ range ($related.ByParam "event_date").Reverse }}
         <div class="mt-6 bg-[#ECF6FF] rounded-xl">
           {{ .Render "resource"}}

@@ -14,4 +14,5 @@ audio_link:
 categories: ['Video']
 presenters: ['Edwin Schmierer', 'Benjamin Bengfort']
 topics: ['AI', 'ML', 'Strategy']
+aliases: /resources/four-practical-ai-strategies-for-2024
 ---

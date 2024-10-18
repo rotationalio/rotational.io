@@ -14,4 +14,5 @@ audio_link:
 categories: ['Video']
 presenters: ['Rebecca Bilbro', 'Prema Roman']
 topics: ['Data Science', 'Streaming Data']
+aliases: /resources/streaming-data-science-for-real-time-earthquake-detection
 ---

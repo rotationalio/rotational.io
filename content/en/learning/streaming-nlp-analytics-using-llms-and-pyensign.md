@@ -21,4 +21,5 @@ audio_link:
 categories: ['Video']
 presenters: ['Prema Roman', 'Rebecca Bilbro']
 topics: ['LLM', 'PyEnsign', 'NLP']
+aliases: /resources/streaming-nlp-analytics-using-llms-and-pyensign
 ---

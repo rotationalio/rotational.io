@@ -23,4 +23,5 @@ audio_link:
 categories: ['Video']
 presenters: ['Prema Roman']
 topics: ['LLMs']
+aliases: /resources/planning-and-scoping-llm-projects
 ---
