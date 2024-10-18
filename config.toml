@@ -41,14 +41,9 @@ link = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.cs
 # Flowbite
 link = "https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css"
 
-[[params.plugins.css]]
-# HighlightJS
-link = "https://unpkg.com/@highlightjs/cdn-assets/styles/default.min.css"
-
 ## JavaScript Plugins
-[[params.plugins.js]]
-# Lunr
-link = "https://unpkg.com/lunr/lunr.js"
+# Add JavaScript plugins used throughout the site here
+
 
 ## English Navigation
 [[Languages.en.menu.main]]

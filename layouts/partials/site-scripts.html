@@ -1,7 +1,15 @@
-<script src="https://unpkg.com/embla-carousel/embla-carousel.umd.js"></script>
-<script src="{{ `js/app.js` | absURL }}"></script>
 <!-- DISABLED TEMPORARILY: MUST BE ENABLED TO ALLOW SEARCH ON DATA PLAYGROUND
         <script src="{{ `js/playground-search.js` | absURL }}"></script> -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
-<script src="https://unpkg.com/@highlightjs/cdn-assets/highlight.min.js"></script>
-<!-- <script>hljs.highlightAll();</script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script> 
+
+{{- if .Site.Params.recaptchaKey -}}
+{{ "<!-- Google RECAPTCHA -->" | safeHTML }}
+<script src="https://www.google.com/recaptcha/enterprise.js?render={{.Site.Params.recaptchaKey}}"></script>
+<script>
+  grecaptcha.enterprise.ready(function () {
+    grecaptcha.enterprise.execute('{{ .Site.Params.recaptchaKey }}', { action: 'homepage' }).then(function (token) {
+      // Add your logic to submit to your backend server here.
+    });
+  });
+</script>
+{{ end }}
