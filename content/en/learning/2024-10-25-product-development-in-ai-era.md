@@ -13,4 +13,5 @@ video_link:
 categories: ['Video']
 presenters: ['Edwin Schmierer']
 topics: ['AI', 'Product Development']
+aliases: /resources/product-development-in-ai-era
 ---

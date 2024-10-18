@@ -27,4 +27,5 @@ audio_link:
 categories: ['Video']
 presenters: ['Rebecca Bilbro', 'Beci Lambrecht']
 topics: ['Distributed Systems']
+aliases: /resources/learning-distributed-systems-with-mcu
 ---

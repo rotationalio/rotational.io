@@ -15,4 +15,5 @@ audio_link:
 categories: ['Video']
 presenters: ['Benjamin Bengfort']
 topics: ['Reinforcement Learning', 'KubeCon']
+aliases: /resources/smart-global-replication-using-reinforcement-learning-kubecon
 ---

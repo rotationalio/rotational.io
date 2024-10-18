@@ -15,4 +15,5 @@ audio_link:
 categories: ['Video']
 presenters: ['Rebecca Bilbro']
 topics: ['Distributed Systems', 'GopherCon']
+aliases: /resources/how-to-build-a-distributed-system-gophercon
 ---
