@@ -140,3 +140,7 @@
         {{ .Content | safeHTML }}
         
         {{ end }}
+
+        {{ define "appcode" }}
+        <script src="{{ `js/dataPlaygroundSingle.js` | absURL }}"></script>
+        {{ end }}
