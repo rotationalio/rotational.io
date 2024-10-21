@@ -18,8 +18,6 @@ footer:
     company_items:
     - name: About Us
       link: /about
-    - name: Services
-      link: /services
     - name: Case Studies
       link: /case-studies
     - name: Endeavor
@@ -33,7 +31,7 @@ footer:
     title: COMMUNITY
     info_items:
     - name: Learning
-      link: /resources
+      link: /learning
     - name: Open Source
       link: /opensource
 
