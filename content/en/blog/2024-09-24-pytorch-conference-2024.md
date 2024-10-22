@@ -3,7 +3,6 @@ title: "Recapping PyTorch: Key Takeaways from the 2024 Conference"
 slug: "pytorch-conference-2024"
 date: "2024-09-24T14:25:57-04:00"
 draft: false
-image_webp: img/blog/pytorch_2024_recap.webp
 image: img/blog/pytorch_2024_recap.webp
 authors: ['Rebecca Bilbro']
 profile: img/team/rebecca-bilbro.png
