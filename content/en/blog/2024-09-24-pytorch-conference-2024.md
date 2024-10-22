@@ -3,7 +3,7 @@ title: "Recapping PyTorch: Key Takeaways from the 2024 Conference"
 slug: "pytorch-conference-2024"
 date: "2024-09-24T14:25:57-04:00"
 draft: false
-image: img/blog/pytorch_2024_recap.png
+image: img/blog/pytorch_2024_recap.webp
 authors: ['Rebecca Bilbro']
 profile: img/team/rebecca-bilbro.png
 tags: ['AI', 'LLMs', 'Fine-tuning']
@@ -20,14 +20,14 @@ PyTorch is increasingly becoming a most-loved tool in the toolbelt for many of u
 
 Exciting developments with [TorchTitan](https://github.com/pytorch/torchtitan), [TorchTune](https://github.com/pytorch/torchtune), and [TorchChat](https://github.com/pytorch/torchchat) provide a more streamlined workflow where you can build, finetune, and deploy models directly in PyTorch.
 
-![Towards a PyTorch-Native Workflow](img/blog/pytorch-native-workflow.png)
+![Towards a PyTorch-Native Workflow](img/blog/pytorch-native-workflow.webp)
 
 
 ## Simplicity Wins
 
 For a long time, the way to make deep learning models better was to make them more complex, but the popular opinion is starting to shift. In his talk on the evolution of LLM architectures, [Sebastian Raschka](https://pytorch2024.sched.com/event/1iw0K/keynote-navigating-the-architectural-timeline-of-llms-sebastian-raschka-staff-research-engineer-lightning-ai?iframe=no&w=100%&sidebar=yes&bg=no) explained that there is a growing trend towards simpler models.
 
-![The Evolution of LLMs: Towards Simplicity](img/blog/llm-architecture-evolution.png)
+![The Evolution of LLMs: Towards Simplicity](img/blog/llm-architecture-evolution.webp)
 
 For instance, Llama 1 7B ditched the Dropout layers and swapped LayerNorm for the simpler RMS. Simplifying these model architectures makes training, tuning, and deployment easier, and doesn't seem to handicap model performance as much as everyone used to think it would.
 
@@ -43,7 +43,7 @@ Unfortunately, data quality is one of the things that AI developers rarely contr
 
 Testing models is hard, which as [Chip Huyen](https://huyenchip.com/) pointed out in her keynote, "Why You Should Think Twice Before Paying for an Evaluation Tool," is complicating the development of general-purpose LLM training and evaluation platforms.
 
-![Testing LLMs is hard](img/blog/evaluation.png)
+![Testing LLMs is hard](img/blog/evaluation.webp)
 
 Huyen pointed out that models are also increasingly contextual, meaning that at least some of the evaluation criteria should be model-specific. For instance, if we perform [transfer learning on a pre-trained HuggingFace model](https://youtu.be/NdNh9OIj33Y?si=FluA9OLH-iGcHm86) using a domain-specific dataset, we could quantify how much better the model performs on domain-specific tasks compared to the base model.
 

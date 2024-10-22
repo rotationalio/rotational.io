@@ -3,7 +3,7 @@ title: "How to Build a Real-Time Model to Predict Flight Delays"
 slug: "real-time-flight-delays"
 date: "2024-01-09T14:58:48-05:00"
 draft: false
-image: /img/blog/2024-01-09-real-time-flight-delays/nasa-virtual-airport.jpg
+image: /img/blog/2024-01-09-real-time-flight-delays/nasa-virtual-airport.webp
 photo_credit: "Photo by NASA Commons CD99-0095-1.1"
 authors: ['Jason Chandra', 'Kevin Sianto', 'Toby Chiu']
 profile: img/butterfly.png
@@ -39,11 +39,11 @@ Our primary objective was to create a real-time flight delay prediction system t
 
 Given departure and arrival times for most frequent daily flights are the same, we decided to use historical airport/aircraft data, and flight path to predict the likelihood of delay, and update it through real-time tracking from our data pipeline.
 
-![Example Tracked Flight](/img/blog/2024-01-09-real-time-flight-delays/daily-flight-photo.png)
+![Example Tracked Flight](/img/blog/2024-01-09-real-time-flight-delays/daily-flight-photo.webp)
 
 We planned on retrieving live data from multiple sources, engineering a live data pipeline that could output ~5 relevant flights per second, with 30 pieces of info per flight. This data could then be fed into our event-driven model, with the goal of providing a continuously-updating predicted arrival time with a confidence interval backed by historical data and live updates.
 
-![Project Flowchart](/img/blog/2024-01-09-real-time-flight-delays/Flowchart_vFinal.png)
+![Project Flowchart](/img/blog/2024-01-09-real-time-flight-delays/Flowchart_vFinal.webp)
 
 ### Data Pipeline
 
@@ -51,17 +51,17 @@ One of the keys to our success in the hackathon was that we designed our data ar
 
 First, we utilised Ensign's flight data from [OpenSky Network's live API](https://openskynetwork.github.io/opensky-api/) to grab basic flight data. Each sample in the dataset represents a specific flight with various attributes related to that flight at one point in time (updated in 15-second intervals), such as a flight's callsigns and ICAO24 registration, in-air info (velocity, altitude, horizontal/vertical headings, etc.), and flight type (aircraft model, passenger vs. cargo, etc.). We can pull 1000+ flights across the continental US per second with this model, although most flights are irrelevant and untracked by our pipeline.
 
-![Example Input Streamed Data](/img/blog/2024-01-09-real-time-flight-delays/input_data.png)
+![Example Input Streamed Data](/img/blog/2024-01-09-real-time-flight-delays/input_data.webp)
 
 Next, we published this info into an intermediary topic, and subscribed with a pipeline file that filtered and processed this data. If a flight is "tracked", our pipeline will take more detailed info from [FlightRadar24's API](https://pypi.org/project/FlightRadarAPI/), grabbing airport-level data and detailed historical data to supplement each flight's profile. This info is then published into a final topic, and subscribed to with our model to fetch real-time events for further training.
 
-![Example Output Streamed Data](/img/blog/2024-01-09-real-time-flight-delays/output_data.png)
+![Example Output Streamed Data](/img/blog/2024-01-09-real-time-flight-delays/output_data.webp)
 
 Finally, our model - a basic regression model - is then updated through incremental training. We conducted feature engineering through data selection (time-based features, historical data, and airport data were prioritised), scaling, and pre-processing. Model performance is validated through data splitting (80/10/10 split) and cross-validation, then using evaluation metrics such as RMSE, MAE and R-squared.
 
 Given more time post-hackathon, we may try more complex versions of the model (e.g. polynomial regression, decision trees, random forests, etc.) and compare through k-cross validation performance.
 
-![Demo Output](/img/blog/2024-01-09-real-time-flight-delays/demo_output.png)
+![Demo Output](/img/blog/2024-01-09-real-time-flight-delays/demo_output.webp)
 
 ## Reflection
 
@@ -78,7 +78,7 @@ In the context of our flight delay prediction project, Ensign stands out (compar
 
 Given the short time duration of the hackathon (less than 2 weeks), we were heavily hampered by server-side unreliability issues from both APIs. OpenSky's API was heavily rate-limited and frequently timed out our pipeline (as seen below), and FlightRadar24's API could handle only ~1/50 of Ensign's input, creating a bottleneck that forced us to implement arbitrary rate limiters in our pipeline - leading to decreased data quality (unpredictable/missing/incorrect rows) and poor data consistency.
 
-![OpenSky API Timeout](/img/blog/2024-01-09-real-time-flight-delays/timeout.png)
+![OpenSky API Timeout](/img/blog/2024-01-09-real-time-flight-delays/timeout.webp)
 
 The APIs could not integrate perfectly - OpenSky's API only outputted **airline** registration info (24-bit ICAO/Callsign), while FlightRadar24's API required **aircraft** registration info (tail number). **Our creative solution was to create a tiny (~0.5 sq. mile) bounding box around each tracked aircraft, and identify the correct flight in each bounding box to retrieve flight details.** This method definitely slowed our pipeline down, and did not always result in finding our flight due to data collection inaccuracies. If given more time, we would be able to come up with a more elegant solution.
 
@@ -101,7 +101,7 @@ Specifically, we filter and analyze frequent itemsets and association rules base
 
 Our outcomes were the following:
 
-![Association Mining Outcomes](/img/blog/2024-01-09-real-time-flight-delays/AssociationMining.png)
+![Association Mining Outcomes](/img/blog/2024-01-09-real-time-flight-delays/AssociationMining.webp)
 
 - MDW (Chicago Midway International Airport) and Southwest Airlines: The association between MDW and Southwest Airlines reveals a very high confidence level (93.15%) and a significant lift value (4.52), indicating an extremely strong connection between Southwest Airlines and flights departing from MDW.
 
@@ -118,7 +118,7 @@ Our new approach involves leveraging graph theory, where airports are represente
 
 By using this graph-based model, our goal is to create a more comprehensive analysis. This way, we don't just identify commonly used routes but also consider historical delay trends. It's all about providing a refined framework that caters to travelers looking for smoother, less-delayed travel experiences and a wider array of travel choices.
 
-![Graph Theory Sample Output with Delays](/img/blog/2024-01-09-real-time-flight-delays/Weights%2C%20Delays.png)
+![Graph Theory Sample Output with Delays](/img/blog/2024-01-09-real-time-flight-delays/Weights%2C%20Delays.webp)
 
 
 There are 3 different applications that can be used here:
@@ -127,18 +127,18 @@ There are 3 different applications that can be used here:
 Consultants would benefit from this analysis if there are no direct flights between JFK and SFO as it helps identify popular indirect routes.
 Airlines, by leveraging this analysis, can identify market gaps, optimize their flight schedules, and potentially introduce new routes based on the demand for indirect flights between these two airports.
 
-![Example of A -> B -> C](/img/blog/2024-01-09-real-time-flight-delays/AtoBtoC.png)
+![Example of A -> B -> C](/img/blog/2024-01-09-real-time-flight-delays/AtoBtoC.webp)
 
 2. BFS (Breadth-First Search) algorithm considering delays in a graph (representing airline connections)
 The algorithm computes levels (or distances) between nodes (airports) while factoring in delays as weights on edges (routes).
 Levels are determined by incrementally adding delays to the current level as the algorithm traverses the graph, helping airlines understand the impact of delays on the connectivity and distances between airports in their network.
 
-![Example of Nodes with Delays incorporated](/img/blog/2024-01-09-real-time-flight-delays/Nodes.png)
+![Example of Nodes with Delays incorporated](/img/blog/2024-01-09-real-time-flight-delays/Nodes.webp)
 
 3. Airline Route Optimization: Leveraging High Connectivity Airports for Enhanced Efficiency
 Understanding the principles of in-degree and out-degree is essential: in-degree represents flights arriving at an airport, while out-degree signifies flights departing from an airport. For instance, let's take a look at Burbank Airport (BUR). It displays a total degree of 35,051, attributed to its 17,549 incoming and 17,502 outgoing flights, indicating significant connectivity. This information presents a potential strategy for airlines to refine their flight schedules efficiently. By prioritizing routes linked to airports with substantial connectivity, airlines can optimize their flight networks, potentially streamlining operations and offering improved travel options.
 
-![In and Out Degrees](/img/blog/2024-01-09-real-time-flight-delays/InandOutDegrees.png)
+![In and Out Degrees](/img/blog/2024-01-09-real-time-flight-delays/InandOutDegrees.webp)
 
 
 ## Next Steps

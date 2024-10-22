@@ -3,7 +3,7 @@ title: "Teaching LLMs With Continuous Human Feedback"
 slug: "teaching-llms-with-human-feedback"
 date: "2024-09-13T13:38:26-05:00"
 draft: false
-image: img/blog/otter_teacher.jpg
+image: img/blog/otter_teacher.webp
 photo_credit: "AI Image Generated with Leonardo.ai"
 authors: ['Patrick Deziel']
 profile: img/team/patrick-deziel.png
@@ -70,7 +70,7 @@ with gr.Blocks() as app:
 app.launch()
 ```
 
-![Simple Chatbot App with Gradio](/img/blog/2024-09-13-teaching-llms-with-human-feedback/simple_app.png)
+![Simple Chatbot App with Gradio](/img/blog/2024-09-13-teaching-llms-with-human-feedback/simple_app.webp)
 
 ## Collecting user feedback
 
@@ -335,7 +335,7 @@ if __name__ == "__main__":
     app.run()
 ```
 
-![Chatbot with user feedback](/img/blog/2024-09-13-teaching-llms-with-human-feedback/app_with_feedback.png)
+![Chatbot with user feedback](/img/blog/2024-09-13-teaching-llms-with-human-feedback/app_with_feedback.webp)
 
 ## Ingesting user feedback for model tuning
 

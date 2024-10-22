@@ -3,7 +3,7 @@ title: "Predicting the Oscars With LLMs"
 slug: "predicting-the-oscars-with-llms"
 date: "2024-03-08T15:17:58-06:00"
 draft: false
-image: img/blog/trophies.jpg
+image: img/blog/trophies.webp
 photo_credit: 'Photo by <a href="https://unsplash.com/@tommaomaoer?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">tommao wang</a> on <a href="https://unsplash.com/photos/gold-and-silver-pendant-lamps-GjtqYFnQEY4?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>'
 authors: ['Patrick Deziel']
 profile: img/team/patrick-deziel.png
@@ -50,17 +50,17 @@ df["cleaned_text"].iloc[0]
 
 A [TSNE projection](https://www.scikit-yb.org/en/latest/api/text/tsne.html) is one way to visualize the high-dimensional data (e.g. encoded documents with TF-IDF). It shows that there are at least some interesting clusters in the Wikipedia text. The green dots are the winners.
 
-!["TSNE Projection"](/img/blog/2024-03-08-predicting-the-oscars-with-llms/tsne.png)
+!["TSNE Projection"](/img/blog/2024-03-08-predicting-the-oscars-with-llms/tsne.webp)
 
 ## Initial Models
 
 My first idea was to encode the article text with a tried-and-tested approach like TF-IDF and fit a binary classifier using the encoded vectors as features. The best model was pretty overfit due to the small size of the training set.
 
-!["Decision Tree"](/img/blog/2024-03-08-predicting-the-oscars-with-llms/decision_tree.png)
+!["Decision Tree"](/img/blog/2024-03-08-predicting-the-oscars-with-llms/decision_tree.webp)
 
 The next idea was to train `distilbert` for sequence classification to take advantage of the massive amount of pre-training. I was able to train a "will it win" model but the inferences were still not useful. Everything looks like a winner this year!
 
-!["distilbert results"](/img/blog/2024-03-08-predicting-the-oscars-with-llms/distilbert_results.png)
+!["distilbert results"](/img/blog/2024-03-08-predicting-the-oscars-with-llms/distilbert_results.webp)
 
 ## Semantic Similarity
 
@@ -94,7 +94,7 @@ text = eval_df[eval_df["film"] == film]["cleaned_text"].iloc[0]
 get_most_similar(text, n=10)[["film", "sim_score", "winner"]]
 ```
 
-!["Similarity Ranking"](/img/blog/2024-03-08-predicting-the-oscars-with-llms/ranking.png)
+!["Similarity Ranking"](/img/blog/2024-03-08-predicting-the-oscars-with-llms/ranking.webp)
 
 From here it's a matter of creating some algorithm to produce a final ranking for this year's nominees. One approach might be to take the top n similar films and multiply the proportion of winners of that group by the average of the similarity scores.
 
@@ -108,7 +108,7 @@ eval_df["win_score"] = eval_df["cleaned_text"].apply(lambda x: win_score(x, n=10
 eval_df.sort_values(by="win_score", ascending=False)[["film", "win_score"]]
 ```
 
-!["Final Rankings"](/img/blog/2024-03-08-predicting-the-oscars-with-llms/sim_rankings.png)
+!["Final Rankings"](/img/blog/2024-03-08-predicting-the-oscars-with-llms/sim_rankings.webp)
 
 The similarity approach predicts that Oppenheimer will take it home. This is in line with the [betting odds](https://www.vegasinsider.com/awards/odds/oscars/) as of Friday, March 8.
 

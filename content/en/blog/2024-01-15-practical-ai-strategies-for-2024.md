@@ -3,7 +3,7 @@ title: "Practical AI Strategies for 2024"
 slug: "practical-ai-strategies-for-2024"
 date: "2024-01-15T10:52:57-05:00"
 draft: false
-image: img/blog/2024-01-15-practical-ai-strategies-for-2024/shipping.jpg
+image: img/blog/2024-01-15-practical-ai-strategies-for-2024/shipping.webp
 photo_credit: "Photo by [Ian Simmonds on Unsplash](https://unsplash.com/@ihs_photo?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash)"
 authors: ['Edwin Schmierer']
 profile: img/team/edwin-schmierer.png

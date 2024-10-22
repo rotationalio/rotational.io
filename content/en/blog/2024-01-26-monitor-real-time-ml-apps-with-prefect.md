@@ -3,7 +3,7 @@ title: "Monitoring Real-Time Machine Learning Applications With Prefect"
 slug: "monitor-real-time-ml-apps-with-prefect"
 date: "2024-01-26T08:57:31-05:00"
 draft: false
-image: img/blog/2024-01-26-monitor-real-time-ml-apps-with-prefect/orchestra.jpg
+image: img/blog/2024-01-26-monitor-real-time-ml-apps-with-prefect/orchestra.webp
 photo_credit: "Photo by [Manuel Nägeli on Unsplash](https://unsplash.com/@gwundrig?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash)"
 authors: ['Prema Roman']
 profile: img/team/prema-roman.png
@@ -242,15 +242,15 @@ $ python river_sentiment_analysis.py publish
 
 You can then take a look at the Prefect dashboard to view your jobs.  It will look something like the screenshot below.  Note that there are three bars below to the `Flow Runs` section.  The two blue bars are the Data Subscriber and the Metrics Subscriber components.  These are blue because they are still running.  The green bar is the Data Publisher which is green because it finished running and it ran successfully.  Since the publisher was reading from a csv file instead of a real-time API, it completed running after there were no more records in the csv file. You can see that the dashboard gives you a quick overview of the health and status of your application.
 
-![Prefect Dashboard](/img/blog/2024-01-26-monitor-real-time-ml-apps-with-prefect/prefect_dashboard.png)
+![Prefect Dashboard](/img/blog/2024-01-26-monitor-real-time-ml-apps-with-prefect/prefect_dashboard.webp)
 
 The following screenshot shows the Flow runs.  This gives you the ability to drill down further into a single component.
 
-![Prefect Flow Runs](/img/blog/2024-01-26-monitor-real-time-ml-apps-with-prefect/prefect_flow_runs.png)
+![Prefect Flow Runs](/img/blog/2024-01-26-monitor-real-time-ml-apps-with-prefect/prefect_flow_runs.webp)
 
 You can also check the logs for warnings and errors.  Note you can see the instances where the precision and recall were lower than the threshold.  One thing to note with real-time models is they tend to perform poorly at first and then get better over time as is evidenced by the screenshot below.
 
-![Prefect Logs](img/blog/2024-01-26-monitor-real-time-ml-apps-with-prefect/prefect_logs.png)
+![Prefect Logs](img/blog/2024-01-26-monitor-real-time-ml-apps-with-prefect/prefect_logs.webp)
 
 Prefect offers a lot more features not demonstrated in this example such as scheduling, notifications, and artifacts that can be used for data quality checks and documentation.  These are particularly useful for analyzing results over time.
 
