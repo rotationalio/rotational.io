@@ -3,7 +3,7 @@ title: "Building an AI Text Detector - Lessons Learned"
 slug: "building-an-ai-text-detector"
 date: "2024-05-15T06:48:20-05:00"
 draft: false
-image: img/blog/circuit_brain.jpg
+image: img/blog/circuit_brain.webp
 photo_credit: 'Photo by <a href="https://unsplash.com/@steve_j?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Steve Johnson</a> on <a href="https://unsplash.com/photos/a-computer-circuit-board-with-a-brain-on-it-_0iV9LmPDn0?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>'
 authors: ['Patrick Deziel']
 profile: img/team/patrick-deziel.png
@@ -33,7 +33,7 @@ Some recent research suggests that there are particular signals in AI-generated 
 
 I wanted to try building a text detector to take advantage of this signal. My approach was to mask out a certain percentage of tokens in the text, use a generative model to predict the tokens that were masked, and compare the predictions to the original tokens. In theory, human-written text is more varied than LLM-generated text so the more accurate the predictions were, the more likely it is that the text is AI-generated. This approach is very similar to the "perplexity" measure used by [GPTZero](https://gptzero.me/technology).
 
-!["Computing Perplexity"](/img/blog/2024-05-10-building-an-ai-text-detector/workflow.png)
+!["Computing Perplexity"](/img/blog/2024-05-10-building-an-ai-text-detector/workflow.webp)
 
 ## The Code
 
@@ -111,11 +111,11 @@ This code uses the [bert-base-uncased](https://huggingface.co/google-bert/bert-b
 
 To test the performance of the approach, I used a dataset of labeled human-written and AI-written essays from [kaggle](https://www.kaggle.com/datasets/jdragonxherrera/augmented-data-for-llm-detect-ai-generated-text). Since the `score` method outputs a value in the range [0, 1], I did some quick parameter tuning to select the binary classification threshold that maximizes the area under the ROC curve (AUC).
 
-!["AUC vs. Threshold"](/img/blog/2024-05-10-building-an-ai-text-detector/threshold.png)
+!["AUC vs. Threshold"](/img/blog/2024-05-10-building-an-ai-text-detector/threshold.webp)
 
 The results against the evaluation set show that the accuracy is a bit better than random guessing, but I certainly wouldn't stake any academic integrity on it!
 
-!["Results"](/img/blog/2024-05-10-building-an-ai-text-detector/results.png)
+!["Results"](/img/blog/2024-05-10-building-an-ai-text-detector/results.webp)
 
 ## Future Work
 
@@ -125,4 +125,4 @@ In order to combat the AI-ification of the internet we will need to have models 
 
 I did not use AI in the creation of this post - but for fun here's what GPTZero says.
 
-!["GPTZero output"](/img/blog/2024-05-10-building-an-ai-text-detector/gptzero.png)
+!["GPTZero output"](/img/blog/2024-05-10-building-an-ai-text-detector/gptzero.webp)

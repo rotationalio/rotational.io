@@ -3,7 +3,7 @@ title: "How to Plan and Scope LLM Projects"
 slug: "how-to-plan-and-scope-llm-projects"
 date: "2024-02-01T15:07:38-05:00"
 draft: false
-image: img/blog/2024-02-01-how-to-plan-and-scope-llm-projects/project-plan.jpg
+image: img/blog/2024-02-01-how-to-plan-and-scope-llm-projects/project-plan.webp
 photo_credit: "Photo by [Alvaro Reyes on Unsplash](https://unsplash.com/@alvarordesign?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash)"
 authors: ['Prema Roman']
 profile: img/team/prema-roman.png
@@ -95,7 +95,7 @@ A typical machine learning project consists of the following tasks:
 
 Estimate to complete each task in 1 to 2 sprint cycles, with a little cushion time to ensure that you are incorporating feedback into each step.  Your project will look something like this:
 
-<img src="img/blog/2024-02-01-how-to-plan-and-scope-llm-projects/ml-cycle.png" width="400" height="600">
+<img src="img/blog/2024-02-01-how-to-plan-and-scope-llm-projects/ml-cycle.webp" width="400" height="600">
 
 
 ### Project Cost Considerations
