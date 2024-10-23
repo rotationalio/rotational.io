@@ -16,7 +16,7 @@
       {{ range .clients_item}}
       {{ if .show }}
       <li>
-        <img class="max-w-[180px]" src="{{ .image | absURL }}" alt="{{ .name }}">
+        <img loading="lazy" class="max-w-[180px]" src="{{ .image | absURL }}" alt="{{ .name }}">
       </li>
       {{ end }}
       {{ end }}

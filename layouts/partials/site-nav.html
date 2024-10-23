@@ -7,13 +7,13 @@
             <span class="sr-only">Open main menu</span>
             <i class="fa fa-bars text-xl text-white"></i>
         </button>
-        <div class="hidden absolute z-[9999] lg:static top-16 w-[92%] md:w-[96%] lg:w-auto lg:block bg-white lg:bg-transparent text-[#192E5B] lg:text-[#F2F2F2] py-4 rounded-md" id="navbar-dropdown">
+        <div class="hidden absolute z-[9999] lg:static top-16 w-[92%] md:w-[96%] lg:w-auto lg:block bg-white lg:bg-transparent text-[#192E5B] lg:text-[#F2F2F2] py-2 rounded-md" id="navbar-dropdown">
             <ul class="flex flex-col lg:gap-2 xl:gap-4 md:flex-row font-semibold w-full md:justify-between">
                 {{ $currentPage := . }}
                 {{ range .Site.Menus.main }}
-                <li class="uppercase text-sm lg:text-[15px] xl:text-[17px]">
+                <li class="py-2 uppercase text-sm lg:text-[15px] xl:text-[17px]">
                     {{ if eq .Name "Services" }}
-                    <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar" class="uppercase flex items-center justify-between gap-x-2 w-full py-2 px-3 rounded md:border-0 md:p-0 md:w-auto hover:text-black">
+                    <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar" class="uppercase flex items-center justify-between gap-x-2 w-full px-3 rounded md:border-0 md:p-0 md:w-auto hover:text-black">
                         {{ .Name }}
                         <i class="fa fa-angle-down pt-1"></i>
                     </button>
@@ -23,7 +23,7 @@
                         <ul class="py-2 text-sm text-[#F2F2F2]" aria-labelledby="dropdownLargeButton">
                             {{ range .Children }}
                           <li>
-                            <a href="{{ .URL }}" class="block px-3 py-3.5 hover:font-bold">{{ .Name }}</a>
+                            <a href="{{ .URL }}" class="block px-3 py-1 hover:font-bold">{{ .Name }}</a>
                           </li>
                           {{ end }}
                         </ul>
