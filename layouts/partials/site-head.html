@@ -40,22 +40,24 @@
 
 {{/* TODO: Site Manifest and Apple Icons */}}
 
+{{ "<!-- Fonts -->" | safeHTML }}
+<link rel="preconnect" href="{{.Site.Params.googleFontsApi}}">
+<link rel="preconnect" href="{{.Site.Params.googlePreconnect}}" crossorigin>
+<link href="{{.Site.Params.googleFonts}}" rel="stylesheet">
+
 {{- if site.Params.plugins.css -}}
 {{- "<!-- Plugins -->" | safeHTML -}}
 {{ range site.Params.plugins.css }}
 <link rel="stylesheet" href="{{ .link | absURL }}">{{ end }}
 {{ end }}
 
-{{ "<!-- Fonts -->" | safeHTML }}
-<link href="{{.Site.Params.googleFonts}}" rel="stylesheet">
-
 {{"<!-- Main Stylesheet -->"|safeHTML}}
 <link rel="stylesheet" href="{{ `output.css` | absURL }}" media="screen">
 
 {{- if .Site.Params.googleAnalytics -}}
 {{ "<!-- Google Analytics -->" | safeHTML }}
-<script async src="https://www.googletagmanager.com/gtag/js?id={{ .Site.Params.googleAnalytics }}"></script>
-<script>
+<script src="https://www.googletagmanager.com/gtag/js?id={{ .Site.Params.googleAnalytics }}" defer></script>
+<script type="module">
   window.dataLayer = window.dataLayer || [];
   function gtag() { dataLayer.push(arguments); }
   gtag('js', new Date());
