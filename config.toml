@@ -34,17 +34,11 @@ googleFonts = "https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,1
 blog = "/blog/:slug/"
 
 
-## CSS Plugins
-[[params.plugins.css]]
-# Font Awesome
-link = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-
-[[params.plugins.css]]
-# Flowbite
-link = "https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css"
-
 ## JavaScript Plugins
-# Add JavaScript plugins used throughout the site here
+[[params.plugins.js]]
+# Font Awesome
+link = "https://kit.fontawesome.com/fea17a4e21.js"
+crossorigin = "anonymous"
 
 
 ## English Navigation

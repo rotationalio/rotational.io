@@ -45,12 +45,6 @@
 <link rel="preconnect" href="{{.Site.Params.googlePreconnect}}" crossorigin>
 <link href="{{.Site.Params.googleFonts}}" rel="stylesheet">
 
-{{- if site.Params.plugins.css -}}
-{{- "<!-- Plugins -->" | safeHTML -}}
-{{ range site.Params.plugins.css }}
-<link rel="stylesheet" href="{{ .link | absURL }}">{{ end }}
-{{ end }}
-
 {{"<!-- Main Stylesheet -->"|safeHTML}}
 <link rel="stylesheet" href="{{ `output.css` | absURL }}" media="screen">
 
