@@ -5,7 +5,7 @@ date: "2024-07-17T12:21:05-05:00"
 draft: false
 image: img/blog/sea-otter-dreaming.webp
 photo_credit: "AI Generated Image from Leonardo.ai"
-authors: ['Benjamin Bengfort', 'with Rebecca Bilbro']
+authors: ['Benjamin Bengfort', 'Rebecca Bilbro']
 profile: img/team/benjamin-bengfort.png
 tags: ['AI', 'HCI', 'Use Cases']
 description: "The reason everyone is so excited by AI is not that it can generate seemingly meaningful text in a chat, but rather that it can change the way we work with data by providing a more natural human interface to computing resources."

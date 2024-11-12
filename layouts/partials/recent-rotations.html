@@ -12,12 +12,12 @@
         </div>
     </div>
     <div>
-        <div class="grid lg:grid-cols-2 xl:grid-cols-3 gap-8">
+        <ul class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {{ range first 3 (where site.RegularPages "Section" "==" "blog")}}
-            <div class="mt-6 bg-[#ECF6FF] rounded-xl">
+            <li class="mt-6 bg-[#ECF6FF] rounded-xl">
                 {{ .Render "article"}}
-            </div>
+            </li>
             {{ end }}
-        </div>
+        </ul>
     </div>
 </div>

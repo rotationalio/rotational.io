@@ -120,16 +120,16 @@
       </div>
     </div>
     <div>
-      <div class="grid lg:grid-cols-2 xl:grid-cols-3 gap-8 sm:mt-16">
+      <ul class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:mt-16">
         {{ $related := (where (.Site.RegularPages.Related .) "Type" "blog") | first 3 }}
         {{ range ($related.ByParam "date").Reverse }}
-        <div class="mt-6 ">
+        <li class="mt-6 bg-[#ECF6FF] rounded-xl">
           {{ .Render "article"}}
-        </div>
+        </li>
         {{ end }}
 
 
-      </div>
+      </ul>
     </div>
   </div>
 </div>
