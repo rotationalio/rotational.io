@@ -22,6 +22,7 @@ image = "img/rotational-gophercon.webp"
 copyright = "Copyright &copy; Rotational Labs, Inc. 2021&ndash;{year} &middot; All Rights Reserved"
 googleAnalytics = "" # Google Analytics ID (set $HUGO_PARAMS_GOOGLEANALYTICS)
 recaptchaKey = "" # Google reCAPTCHA key (set $HUGO_PARAMS_RECAPTCHAKEY)
+hubspotCode = "" # HubSpot code (set $HUGO_PARAMS_HUBSPOTCODE)
 intro = "WELCOME TO ROTATIONAL"
 
 # google fonts
