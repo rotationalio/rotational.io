@@ -3,6 +3,7 @@
 <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
 
 {{- if .Site.Params.hubspotCode -}}
+{{ "<!-- HubSpot Code -->" | safeHTML }}
 <script type="text/javascript" id="hs-script-loader" async defer src="{{ .Site.Params.hubspotCode }}"></script>
 {{ end }}
 
