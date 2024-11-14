@@ -1,12 +1,5 @@
 {{ partial "alerts.html" }}
 
-{{ $logo := resources.Get "img/vertical-logo.png" }}
-{{ $logo := $logo.Process "webp q80" }}
-
-{{ $tiny := $logo.Resize "x64" }}
-{{ $small := $logo.Resize "x160" }}
-{{ $medium := $logo.Resize "x256" }}
-
 {{ if eq $.Page.Kind "home" }}
 <div class="relative w-full">
     <div class="relative w-full h-full bg-[#1D65A6] md:min-h-[691px] min-h-[480px]">
@@ -35,6 +28,12 @@
               </div>
               <div class="mx-auto">
                 <picture>
+                    {{ $logo := resources.Get "img/vertical-logo.png" }}
+                    {{ $logo := $logo.Process "webp q80" }}
+
+                    {{ $tiny := $logo.Resize "x64" }}
+                    {{ $small := $logo.Resize "x160" }}
+                    {{ $medium := $logo.Resize "x256" }}
                     <source srcset="{{ $medium.RelPermalink }}" media="(min-width: 768px)">
                     <source srcset="{{ $small.RelPermalink }}" media="(min-width: 640px)">
                     <img src="{{ $tiny.RelPermalink }}" alt="Rotational Labs logo" class="mt-4 sm:mt-[4.5rem] w-auto">
@@ -123,6 +122,11 @@
             </div>
             <div class="md:mx-auto">
                 <picture>
+                    {{ $logo := resources.Get "img/vertical-logo.png" }}
+                    {{ $logo := $logo.Process "webp q80" }}
+
+                    {{ $tiny := $logo.Resize "x64" }}
+                    {{ $small := $logo.Resize "x160" }}
                     <source srcset="{{ $small.RelPermalink }}" media="(min-width: 640px)">
                     <img src="{{ $tiny.RelPermalink }}" alt="Rotational Labs logo" class="sm:mt-4 md:mt-16 w-auto">
                 </picture>
