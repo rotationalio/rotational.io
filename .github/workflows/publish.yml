@@ -22,6 +22,7 @@ jobs:
         env:
           HUGO_PARAMS_GOOGLEANALYTICS: ${{ secrets.GOOGLE_ANALYTICS_ID }}
           HUGO_PARAMS_RECAPTCHAKEY: ${{ secrets.RECAPTCHA_KEY }}
+          HUGO_PARAMS_HUBSPOTCODE: ${{ secrets.HUBSPOT_CODE }}
         run: hugo --minify
 
       - name: Deploy GitHub Pages
