@@ -1,5 +1,12 @@
 {{ partial "alerts.html" }}
 
+{{ $logo := resources.Get "img/vertical-logo.png" }}
+{{ $logo := $logo.Process "webp q80" }}
+
+{{ $tiny := $logo.Resize "x64" }}
+{{ $small := $logo.Resize "x160" }}
+{{ $medium := $logo.Resize "x256" }}
+
 {{ if eq $.Page.Kind "home" }}
 <div class="relative w-full">
     <div class="relative w-full h-full bg-[#1D65A6] md:min-h-[691px] min-h-[480px]">
@@ -27,7 +34,11 @@
                   {{ end }}
               </div>
               <div class="mx-auto">
-                <img src="img/vertical-logo.png" alt="Rotational Labs logo" class="mt-4 sm:mt-[4.5rem] h-16 sm:h-40 md:h-64 w-auto">
+                <picture>
+                    <source srcset="{{ $medium.RelPermalink }}" media="(min-width: 768px)">
+                    <source srcset="{{ $small.RelPermalink }}" media="(min-width: 640px)">
+                    <img src="{{ $tiny.RelPermalink }}" alt="Rotational Labs logo" class="mt-4 sm:mt-[4.5rem] w-auto">
+                </picture>
               </div>
           </div>
         </div>
@@ -111,7 +122,10 @@
                 {{ end }}
             </div>
             <div class="md:mx-auto">
-                <img src="img/vertical-logo.png" alt="Rotational Labs logo" class="sm:mt-4 md:mt-16 h-16 sm:h-40 w-auto">
+                <picture>
+                    <source srcset="{{ $small.RelPermalink }}" media="(min-width: 640px)">
+                    <img src="{{ $tiny.RelPermalink }}" alt="Rotational Labs logo" class="sm:mt-4 md:mt-16 w-auto">
+                </picture>
             </div>
         </div>
     </div>
