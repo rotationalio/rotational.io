@@ -110,7 +110,6 @@ weight = 3
 [Languages.en]
 languageName = "En"
 languageCode = "en-us"
-contentDir = "content/en"
 weight = 1
 
 [Languages.en.params]
@@ -254,3 +253,26 @@ mediaType = "text/plain"
   presenter = 'presenters'
   event = 'events'
   topic = 'topics'
+
+[module]
+  [[module.mounts]]
+    source = 'content/en'
+    target = 'content'
+  [[module.mounts]]
+    source = 'static'
+    target = 'assets'
+  [[module.mounts]]
+    source = 'layouts'
+    target = 'layouts'
+  [[module.mounts]]
+    source = 'data'
+    target = 'data'
+  [[module.mounts]]
+    source = 'assets'
+    target = 'assets'
+  [[module.mounts]]
+    source = 'i18n'
+    target = 'i18n'
+  [[module.mounts]]
+    source = 'archetypes'
+    target = 'archetypes'
