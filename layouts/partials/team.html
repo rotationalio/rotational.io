@@ -19,8 +19,10 @@
                     <a href="{{.bioLink}}">
                         <li class="mt-6 sm:mt-0 bg-[#ECF6FF] rounded-xl h-full">
                             {{ $img := resources.Get .image }}
-                            {{ $img := $img.Process "resize x430 webp q80" }}
-                            <img src="{{ $img.RelPermalink }}" alt="{{ .name }}" class="rounded-t-xl covatar">
+                            {{ $img := $img.Resize "x430" }}
+                            {{ $webp := $img.Process "resize x430 webp q80"}}
+                            <img loading="lazy" src="{{ if ne $img.MediaType.SubType "webp" }}{{ $webp.RelPermalink }}{{ else }}{{ $img.RelPermalink }}{{ end }}" 
+                                 alt="{{ .name }}" class="rounded-t-xl covatar">
                             <div class="">
                                 <div class="px-6 pt-8 pb-5">
                                     <h4 class="text-base font-bold text-[#1D65A6]">{{ .designation | markdownify}}</h4>

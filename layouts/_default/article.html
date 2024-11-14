@@ -4,9 +4,9 @@
         {{ $img := resources.Get $image }}
         {{ $img := $img.Resize "640x360" }}
 
-        {{ $webp := $img.Process "resize 640x427 webp q80" }}    
-        <img loading="lazy" src="{{ if ne $img.MediaType.SubType "webp" }} {{ $webp.RelPermalink }} {{ else }} {{ $img.RelPermalink }} {{ end }}" 
-            alt="" class="rounded-t-xl object-cover" style="height:212px;width:100%" />
+        {{ $webp := $img.Process "resize 640x360 webp q80" }}    
+        <img loading="lazy" src="{{ if ne $img.MediaType.SubType "webp" }}{{ $webp.RelPermalink }}{{ else }}{{ $img.RelPermalink }}{{ end }}" 
+              alt="" class="rounded-t-xl object-cover" style="height:212px;width:100%" />
     </a>
     <div class="px-4 pt-4">
         <ul class="flex flex-wrap">
