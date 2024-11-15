@@ -2,9 +2,9 @@
     <a href="{{ .Permalink }}">
         {{ $image := .Params.image }}
         {{ $img := resources.Get $image }}
-        {{ $img := $img.Resize "640x360" }}
+        {{ $img := $img.Resize "640x" }}
 
-        {{ $webp := $img.Process "resize 640x360 webp q80" }}    
+        {{ $webp := $img.Process "resize 640x webp q80" }}    
         <img loading="lazy" src="{{ if ne $img.MediaType.SubType "webp" }}{{ $webp.RelPermalink }}{{ else }}{{ $img.RelPermalink }}{{ end }}" 
               alt="" class="rounded-t-xl object-cover" style="height:212px;width:100%" />
     </a>
