@@ -6,7 +6,7 @@ title = "Rotational Labs"
 removePathAccents = true
 enableEmoji = true  # allow emojification of things like :heart:
 post_share = true   # Share button on individual posts
-paginate = "9"      # Number of posts per page in blog listing
+pagerSize = "9"      # Number of posts per page in blog listing
 summaryLength = "1" # Length of excerpt for post descriptions
 enableRobotsTXT = true
 rssLimit = 20
@@ -90,19 +90,19 @@ weight = 7
 
 [[Languages.en.menu.main]]
 name = 'AI Assessments'
-pageRef = '/ai-assessments'
+pageRef = 'AI Assessments'
 parent = 'Services'
 weight = 1
 
 [[Languages.en.menu.main]]
 name = 'AI Product Development'
-pageRef = '/ai-product-development'
+pageRef = 'AI Product Development'
 parent = 'Services'
 weight = 2
 
 [[Languages.en.menu.main]]
 name = 'AI Ops & Data Foundations'
-pageRef = '/ai-ops-and-data-foundations'
+pageRef = 'AI Ops and Data Foundations'
 parent = 'Services'
 weight = 3
 
@@ -110,8 +110,31 @@ weight = 3
 [Languages.en]
 languageName = "En"
 languageCode = "en-us"
-contentDir = "content/en"
 weight = 1
+
+## Mounts configuration
+[module]
+  [[module.mounts]]
+    source = 'content/en'
+    target = 'content'
+  [[module.mounts]]
+    source = 'static'
+    target = 'assets'
+  [[module.mounts]]
+    source = 'layouts'
+    target = 'layouts'
+  [[module.mounts]]
+    source = 'data'
+    target = 'data'
+  [[module.mounts]]
+    source = 'assets'
+    target = 'assets'
+  [[module.mounts]]
+    source = 'i18n'
+    target = 'i18n'
+  [[module.mounts]]
+    source = 'archetypes'
+    target = 'archetypes'
 
 [Languages.en.params]
 home = "Home"

@@ -12,8 +12,15 @@
 {{ define "main" }}
 <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
   <div class="mt-14">
+    {{ $image := .Params.image }}
+    {{ $img := resources.Get $image }}
+    {{ $img := $img.Resize "640x" }}
+
+    {{ $webp := $img.Process "resize 640x webp q80" }}
+
     <div class="blog-img">
-      <img src="{{ .Params.image | absURL }}" alt="{{ .Title }}" class="mx-auto object-cover">
+      <img src="{{ if ne $img.MediaType.SubType "webp" }} {{ $webp.RelPermalink }} {{ else }} {{ $img.RelPermalink }} {{ end }}" 
+          alt="{{ .Title }}" class="mx-auto object-cover">
     </div>
 
 

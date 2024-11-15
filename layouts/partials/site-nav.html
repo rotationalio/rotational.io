@@ -1,7 +1,9 @@
 <nav class="w-full max-w-7xl mx-auto px-4 sm:px-6 py-5" aria-label="Global">
     <div class="relative max-w-7xl w-full flex flex-wrap lg:flex-nowrap items-center justify-between mx-auto">
         <a href="/">
-            <img src="img/rototational-white-text-only.png" alt="Rotational" class="h-6 w-auto">
+            {{ $img := resources.Get "img/rototational-white-text-only.png" }}
+            {{ $img := $img.Process "resize x24 webp q80" }}
+            <img src="{{ $img.RelPermalink }}" alt="Rotational" class="h-6 w-auto">
         </a>
         <button data-collapse-toggle="navbar-dropdown" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200" aria-controls="navbar-dropdown" aria-expanded="false">
             <span class="sr-only">Open main menu</span>
