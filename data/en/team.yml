@@ -87,6 +87,15 @@ team:
       content : Certified PMP & Agile Specialist
       bioLink: 'authors/beci-lambrecht'
     # team member loop
+    - name : Ryan Low
+      image : img/team/ryan-low.png
+      designation : Business Development Manager
+      content : Specialist in AI for Business Impact
+      social :
+        - icon : "ti-linkedin" # themify icon pack : https://themify.me/themify-icons
+          link : "https://www.linkedin.com/in/ryanclow/"
+      bioLink: 'authors/ryan-low'
+    # team member loop
     - name : Amanda Stanley
       image : img/team/amanda-stanley.png
       designation : Head of Growth
