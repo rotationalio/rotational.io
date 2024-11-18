@@ -22,6 +22,9 @@ Bio: https://rotational.io/authors/prema-roman
 Project Management Support: Beci Lambrecht
 Bio: https://rotational.io/authors/beci-lambrecht
 
+Business Development Manager: Ryan Low
+Bio: https://rotational.io/authors/ryan-low
+
 Head of Growth: Amanda Stanley
 Bio: https://rotational.io/authors/amanda-stanley
 
@@ -59,7 +62,7 @@ Bio: https://rotational.io/authors/tianshu-li
 
 /* SITE */
 
-Last update: 2024-11-15
+Last update: 2024-11-18
 Site name: Rotational Labs
 URL: https://rotational.io/
 CMS: Hugo
