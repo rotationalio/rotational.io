@@ -19,11 +19,13 @@ Please contact [privacy@rotational.io](mailto:privacy@rotational.io) with questi
 
 ## Data Privacy Framework
 
-We adhere to the EU-US Data Privacy Framework (DPF), which helps ensure that the personal data of our users is transferred and processed in a way that complies with EU data protection laws. We have certified to the U.S. Department of Commerce that Rotational follows the EU-US Data Privacy Framework Principles (EU-US DPF Principles) for handling personal data received from the European Union under the EU-US DPF.
+Rotational Labs, Inc. complies with the EU-U.S. Data Privacy Framework (EU-U.S. DPF) and the UK Extension to the EU-U.S. DPF, as set forth by the U.S. Department of Commerce.  Rotational Labs, Inc. has certified to the U.S. Department of Commerce that it adheres to the EU-U.S. Data Privacy Framework Principles (EU-U.S. DPF Principles) with regard to the processing of personal data received from the European Union and the United Kingdom in reliance on the EU-U.S. DPF and the UK Extension to the EU-U.S. DPF.  If there is any conflict between the terms in this privacy policy and the EU-U.S. DPF Principles, the Principles shall govern.  To learn more about the Data Privacy Framework (DPF) Program, and to view our certification, please visit [https://www.dataprivacyframework.gov](https://www.dataprivacyframework.gov/).
+
+In compliance with the EU-U.S. DPF and the UK Extension to the EU-U.S. DPF, Rotational Labs, Inc. commits to cooperate and comply with the advice of the panel established by the EU data protection authorities (DPAs) and the UK Information Commissioner’s Office (ICO) with regard to unresolved complaints concerning our handling of personal data received in reliance on the EU-U.S. DPF and the UK Extension to the EU-U.S. DPF.
 
 ### What is the EU-US Data Privacy Framework?
 
-The EU-U.S. Data Privacy Framework (EU-U.S. DPF), the UK Extension to the EU-U.S. Data Privacy Framework (UK Extension to the EU-U.S. DPF), and the Swiss-U.S. Data Privacy Framework (Swiss-U.S. DPF) were developed to facilitate transatlantic commerce by providing U.S. organizations with reliable mechanisms for personal data transfers to the United States from the European Union / European Economic Area, the United Kingdom (and Gibraltar), and Switzerland that are consistent with EU, UK, and Swiss law.
+The EU-U.S. Data Privacy Framework (EU-U.S. DPF) and the UK Extension to the EU-U.S. Data Privacy Framework (UK Extension to the EU-U.S. DPF) were developed to facilitate transatlantic commerce by providing U.S. organizations with reliable mechanisms for personal data transfers to the United States from the European Union / European Economic Area and the United Kingdom (and Gibraltar) that are consistent with EU and UK law.
 
 ### What does this mean for you?
 
@@ -202,4 +204,4 @@ Address: Attn: Rotational Labs, 202 N Cedar Ave, Suite #1, Owatonna, MN 55060, U
 
 ## Changelog
 
-Privacy Policy Last Updated on November 4, 2024.
+Privacy Policy Last Updated on November 21, 2024.
