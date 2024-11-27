@@ -1,5 +1,7 @@
 <div class="flex flex-col h-full">
     <a href="{{ .Permalink }}">
+
+        {{ if .Params.image }}
         {{ $image := .Params.image }}
         {{ $img := resources.Get $image }}
         {{ $img := $img.Resize "640x" }}
@@ -7,6 +9,7 @@
         {{ $webp := $img.Process "resize 640x webp q80" }}    
         <img loading="lazy" src="{{ if ne $img.MediaType.SubType "webp" }}{{ $webp.RelPermalink }}{{ else }}{{ $img.RelPermalink }}{{ end }}" 
               alt="" class="rounded-t-xl object-cover" style="height:212px;width:100%" />
+              {{ end }}
     </a>
     <div class="px-4 pt-4">
         <ul class="flex flex-wrap">
@@ -30,18 +33,16 @@
     <div class="flex justify-between mt-auto items-center border-t px-4 py-3 h-16">
         <div class="flex items-center">
             {{ $profile := .Params.profile }}
-            {{ $profile := resources.Get $profile }}
-            {{ $profile := $profile.Process "resize 40x40 webp q80" }}
 
             {{ if eq .Params.authors 1 }}
             {{ range .Params.authors }}
             <a href="/authors/{{ . | urlize }}" class="flex items-center">
-                <img loading="lazy" src="{{ $profile.RelPermalink }}" alt="" class="rounded-full">
+                <img loading="lazy" src="{{ $profile }}" alt="" class="rounded-full">
                 <span class="ml-4 font-extralight">{{ . }}</span>
             </a>
             {{ end }}
             {{ else }}
-            <img loading="lazy" src="{{ $profile.RelPermalink }}" alt="" class="rounded-full">
+            <img loading="lazy" src="{{ $profile }}" alt="" class="rounded-full">
             <ul class="flex flex-wrap ml-4">
                 {{ range $key, $value := .Params.authors }}
                 <li class="font-extralight">
