@@ -79,7 +79,7 @@ weight = 5
 [[Languages.en.menu.main]]
 identifier = 'Endeavor'
 pageRef = 'endeavor'
-name = 'Endeavor'
+name = 'Product'
 weight = 6
 
 [[Languages.en.menu.main]]
