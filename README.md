@@ -397,6 +397,29 @@ Copy the link that appears after `src=` and use it for the `video_link` field.
 
 **NOTE**: Make sure that the `draft: true` in the front matter is removed or changed to `draft: false` before publishing a resource.
 
+## Installing a specific Hugo version on MacOS
+
+[Hugo Version Manager](https://github.com/jmooring/hvm) is a tool that helps you download, manage, and switch between different versions of Hugo.
+
+Step 1 - Install the executable
+
+```
+go install github.com/jmooring/hvm@latest
+```
+
+Step 2 - Install the Hugo version you are interested in
+
+```
+hvm use <insert version here> (e.g. v0.138.0+extended+withdeploy)
+```
+
+Step 3 - Add the hvm location to the $PATH variable in your bash_profile. Make sure to run `source ~/.bash_profile` afterwards!  The following is an example:
+
+```
+export PATH="/Users/prema/Library/Caches/hvm/default:$PATH"
+```
+
+You should be able to see the installed package when you run `hugo version`.
 
 ## Acknowledgements
 
