@@ -18,6 +18,11 @@ endeavor:
         - benefit: '<span class="font-bold">Cloud-Agnostic Flexibility</span>: Deployed in your environment, use any cloud provider or model, avoiding vendor lock-in and ensuring long-term scalability.'
         - benefit: '<span class="font-bold">Improved Efficiency</span>: Automate the entire AI lifecycle, from data gathering to monitoring, reducing time and resource costs.'
         - benefit: '<span class="font-bold">Enhanced Governance</span>: Ensure compliance and trusted AI use with built-in tools for transparency and accountability.'
-        - benefit: '<span class="font-bold">Customizable for Your Use Cases</span>: Tailor AI models specifically to your unique needs and operational challenges.'
-  cta: "Schedule a Consultation:"
+        - benefit: '<span class="font-bold">Customizable for Your Use Cases</span>: Tailor AI models specifically to your unique needs and operational challenges. See our <a href="/case-studies" target="_blank" class="underline text-[#1D65A6]">case studies</a> for examples.'
+  form:
+    id: b7e55d31-4b5f-4928-a9e1-a57ae82b5eb6
+    title: Request a free requirements analysis meeting
+    description: Get get in touch to discuss your specific AI needs. Rotational builds domain-specific solutions for organizations that seek new capabilities, confidentiality, and control.
+    consentText: I want to receive updates about Endeavor from Rotational Labs. You agree to our <a href="/privacy" target="_blank" class="underline text-[#1D65A6]">Privacy Policy</a>. You may unsubscribe at any time.
+    buttonText: Schedule a Consultation
   previewimage: "img/endeavor-dashboard-preview.webp"

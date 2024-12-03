@@ -18,6 +18,10 @@
     @apply mt-6 mr-8 w-full basis-1/2 rounded-lg px-7 py-4;
   }
 
+  .input-style {
+    @apply w-full border-2 border-[#D9D9D9] p-2 rounded-lg focus:ring-blue-500 focus:border-blue-500;
+  }
+
   .price-label {
     @apply block mb-1;
   }
