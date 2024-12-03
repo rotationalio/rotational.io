@@ -1,26 +1,29 @@
 // Contact Form submission
 const form = document.getElementById('contactForm');
+const formID = document.getElementById('formID');
 
 form?.addEventListener('submit', (event) => {
   event.preventDefault();
   const formData = new FormData(form);
   const data = Object.fromEntries(formData);
-  const { subscribe, ...rest } = data;
 
-  const formattedData = {
-    subscribe: subscribe === 'on' ? true : false,
-    ...rest,
-    lists: [
-      '4ada7d4b-e0a7-4017-8b9d-4db172b5be64',
-      '54b7fc6a-db4b-491b-b6ff-4348c15072bc',
-    ],
-  };
-  fetch('https://api.rotationallabs.com/v1/contact', {
+  // Convert consent value to a bool.
+  if (data.consent === 'on') {
+    data.consent = true;
+  } else {
+    data.consent = false;
+  }
+
+  // Add consent text to the data object.
+  const consentText = document.getElementById('consentText');
+  data.consent_text = consentText?.innerText;
+
+  fetch(`https://api.rotationallabs.com/v1/contact/form/${formID?.value}`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify(formattedData),
+    body: JSON.stringify(data),
   })
     .then((response) => {
       if (response.status === 204) {
