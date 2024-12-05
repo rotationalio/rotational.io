@@ -9,43 +9,22 @@
       {{ if $data.endeavor.endeavor.enable }}
       {{ with $data.endeavor.endeavor }}
       <section class="md:text-lg">
-        <h5 class="font-bold text-[#757575]">{{ .subtitle }}</h5>
-        <h2 class="py-2 text-2xl md:text-4xl font-extrabold uppercase">{{ .title }} </h2>
-        <p class="py-4">{{ .description | safeHTML }}</p>
-
-        {{ with .valueprop }}
-        <div class="py-4">
-          <h5 class="font-bold">{{ .title }}</h5>
-          <p>{{ .description }}</p>
-        </div>
-        {{ end }}
-
-        {{ with .cta }}
-        <section class="py-4">
-          <form action="endeavor" method="post" id="endeavorForm">
-            <div class="flex flex-col">
-              <h5 class="font-semibold">{{ . }}</h5>
-              <label for="email" class="hidden sr-only">Enter your email address</label>
-              <div class="mt-2 md:flex gap-2">
-                <input type="email" id="email" name="email" placeholder="Enter your email address" class="w-full border-2 border-[#D9D9D9] px-2 rounded">
-                <button type="submit" class="mt-2 md:mt-0 uppercase w-full md:w-56 bg-[#192E5B] hover:bg-[#1D65A6] p-3 font-bold text-white text-center">Submit</button>
-              </div>
-            </div>
-          </form>
-          <div id="endeavorConfirmation" class="hidden my-4">
-            <p class="text-base text-[#192E5B] font-semibold">{{ site.Params.endeavorFormSuccessMessage }}</p>
-          </div>
-          <div id="endeavorError" class="hidden my-4">
-            <p class="text-base text-red-800 font-semibold">{{ site.Params.contactFormErrorMessage }}</p>
-          </div>
-        </section>
-      {{ end }}
-      </section>
-
-      <section class="md:mt-24 md:text-lg">
-        {{ with .keybenefits }}
         <div>
-          <h5 class="font-bold">{{ .title }}</h5>
+          <span class="uppercase font-bold text-[#757575]">{{ .subtitle }}</span>
+          <h2 class="py-2 text-2xl md:text-4xl font-extrabold uppercase">{{ .title }}</h2>
+          <p class="py-4">{{ .description | safeHTML }}</p>
+  
+          {{ with .valueprop }}
+          <div class="py-2">
+            <h3 class="font-bold">{{ .title }}</h3>
+            <p>{{ .description }}</p>
+          </div>
+          {{ end }}
+        </div>
+
+        {{ with .keybenefits }}
+        <div class="py-2">
+          <h3 class="font-bold">{{ .title }}</h3>
           <ul class="py-2 list-disc list-outside">
            {{ range .benefits }}
             <li class="py-1 ml-5">{{ .benefit | safeHTML }}</li>
@@ -53,12 +32,72 @@
           </ul>
           {{ end }}
         </div>
+
+      </section>
+
+      <section class="md:mt-24 md:text-lg">
+        {{ with .form }}
+        <div class="mx-auto">
+          <h3 class="text-2xl text-center text-balance font-bold pb-2">{{ .title }}</h3>
+          <p class="my-2 text-center text-pretty">{{ .description }}</p>
+          <div id="endeavorConfirmation" class="hidden my-4">
+            <p class="text-base text-[#192E5B] font-semibold">{{ site.Params.endeavorFormSuccessMessage }}</p>
+          </div>
+          <div id="endeavorError" class="hidden my-4">
+            <p class="text-base text-red-800 font-semibold">{{ site.Params.contactFormErrorMessage }}</p>
+          </div>
+          <input type="hidden" id="formID" name="formID" value="{{ .id }}" />
+          <form action="endeavor" method="post" id="endeavorForm">
+            <div class="flex flex-col">
+              <div class="grid grid-cols-2 gap-4 my-2">
+                <div>
+                  <label for="first_name" class="hidden sr-only">First Name</label>
+                  <input required type="text" id="first_name" name="first_name" placeholder="First Name*" autocomplete="given-name" class="input-style">
+                </div>
+                <div>
+                  <label for="last_name" class="hidden sr-only">Last Name</label>
+                  <input required type="text" id="last_name" name="last_name" placeholder="Last Name*" autocomplete="family-name" class="input-style">
+                </div>
+              </div>
+              <div class="grid grid-cols-2 gap-4 my-2">
+                <div>
+                  <label for="organization" class="hidden sr-only">Organization Name</label>
+                  <input required type="text" id="organization" name="organization" placeholder="Organization*" autocomplete="organization" class="input-style">
+                </div>
+                <div>
+                  <label for="phone" class="hidden sr-only">Phone Number</label>
+                  <input type="tel" id="phone" name="phone" placeholder="Phone (optional)" autocomplete="tel" class="input-style">
+                </div>
+              </div>
+              <div class="my-2">
+                <label for="email" class="hidden sr-only">Business Email Address</label>
+                <input required type="email" id="email" name="email" placeholder="Business email*" autocomplete="email" class="input-style">
+              </div>
+              <div class="my-2">
+                <label for="message" class="hidden sr-only">Message</label>
+                <textarea id="message" name="message" placeholder="Tell us about your use case or opportunity. (optional)" class="input-style"></textarea>
+              </div>
+              <div class="flex gap-x-2">
+                <input required type="checkbox" id="consent" name='consent' class="mt-1 md:mt-1.5 block w-4 h-4 border-0">
+                <label for="consent" id="consentText">
+                  <span class="text-base">{{ .consentText | safeHTML }}</span>
+                </label>
+              </div>
+              <div class="py-4">
+                <button type="submit" class="mt-2 md:mt-0 uppercase w-full bg-[#1D65A6] hover:bg-[#192E5B] p-3 font-bold text-white text-center">{{ .buttonText }}</button>
+              </div>
+            </div>
+          </form>
+        </div>
+        {{ end }}
+
+        <div class="py-8">
+          <img src="{{ .previewimage }}" alt="" class="mx-auto" />
+        </div>
+
       </section>
     </div>
 
-    <section class="md:py-14 px-4 sm:px-6">
-      <img src="{{ .previewimage }}" alt="" class="mx-auto md:w-2/3" />
-    </section>
 
 {{ end }}
 {{ end }}

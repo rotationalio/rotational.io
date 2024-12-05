@@ -18,6 +18,10 @@
     @apply block w-full mb-6 p-4 bg-gray-50 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500;  
   }
 
+  .input-style {
+    @apply w-full border-2 border-[#D9D9D9] p-2 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500;
+  }
+
   .price-label {
     @apply block mb-1;
   }
