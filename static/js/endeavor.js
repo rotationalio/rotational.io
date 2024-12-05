@@ -1,22 +1,29 @@
 // Submit Endeavor form
 const endeavorForm = document.getElementById('endeavorForm');
+const formID = document.getElementById('formID');
 
 endeavorForm?.addEventListener('submit', (event) => {
   event.preventDefault();
   const formData = new FormData(endeavorForm);
   const data = Object.fromEntries(formData);
 
-  const formattedData = {
-    ...data,
-    lists: ['4ada7d4b-e0a7-4017-8b9d-4db172b5be64'],
-  };
+  // Convert consent value to a bool.
+  if (data.consent === 'on') {
+    data.consent = true;
+  } else {
+    data.consent = false;
+  }
 
-  fetch('https://api.rotationallabs.com/v1/notifications/signup', {
+   // Add consent text to the data object.
+  const consentText = document.getElementById('consentText');
+  data.consent_text = consentText?.innerText;
+
+  fetch(`https://api.rotationallabs.com/v1/contact/form/${formID?.value}`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify(formattedData),
+    body: JSON.stringify(data),
   })
     .then(async (response) => {
       if (response.status === 204) {
