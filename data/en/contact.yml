@@ -20,7 +20,6 @@ contact:
   contact_form:
     enable : true
     title: Contact Form
-    form_action : "https://formspree.io/f/xoqbwrbq"
     firstname : "First Name*"
     lastname : "Last Name*"
     email : "Email*"
