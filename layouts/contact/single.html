@@ -40,50 +40,35 @@
                             </div>
                         </div>
                     </div>
-                    <!-- <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
-                        <strong class="font-bold">Missing field</strong>
-                        <span class="block sm:inline"></span>
-                        <span class="absolute top-0 bottom-0 right-0 px-4 py-3">
-                            <svg class="fill-current h-6 w-6 text-red-500" role="button"
-                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                                <title>Close</title>
-                                <path
-                                    d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z" />
-                            </svg>
-                        </span>
-                    </div> -->
+
+                    <input type="hidden" id="formID" value="e1bf5b24-ab7f-49f1-bcdc-bb389b28bec5">
                     <form action="contact" method="post" id="contactForm">
-                        <div class="lg:flex">
+                        <div class="lg:flex lg:gap-x-6">
                             <label for="first_name" class="hidden">First Name</label>
                             <input type="text" name='first_name' id="first_name" required placeholder="{{ .firstname }}" class="input-sl">
                             <label for="last_name" class="hidden">Last Name</label>
                             <input type="text" name='last_name' id="last_name" required placeholder="{{ .lastname }}" class="input-sl">
                         </div>
-                        <div class="lg:flex">
+                        <div class="lg:flex lg:gap-x-6">
                             <label for="email" class="hidden">Email</label>
                             <input type="email" name='email' id="email" required placeholder="{{ .email }}" class="input-sl">
                             <label for="phone" class="hidden">Phone Number</label>
                             <input type="tel" name='phone' id="phone" placeholder="{{ .phone_number }}" class="input-sl">
                         </div>
+                        <div>
+                            <label for="organization" class="hidden">Organization</label>
+                            <input type="text" name='organization' id="organization" required placeholder="{{ .organization }}" class="input-sl">
+                        </div>
                         <label for="message" class="hidden">Message</label>
-                        <textarea name="message" required placeholder="Message" id="message" cols="30" rows="6"
-                            class="px-7 py-4 mt-6 rounded-lg text-gray-500 w-full lg:w-[94%] xl:w-[96%]"></textarea>
-                        <div class="flex mt-4 items-center">
-                            <input type="checkbox" id="checkbox" required name='subscribe' class="w-4 h-4 border-0 ">
-                            <label for="checkbox"><span class="ml-2 text-white">{{ .subscribe_to_email }}</span></label>
+                        <textarea name="message" required placeholder="{{ .message }}" id="message" cols="30" rows="4"
+                            class="input-sl"></textarea>
+                        <div class="flex mt-4 items-base">
+                            <input type="checkbox" id="checkbox" required name="consent" class="w-4 h-4 mt-1 border-0">
+                            <label for="checkbox"><span class="ml-2 text-white" id="consentText">{{ .subscribe_consent_text }}</span></label>
                         </div>
                         <div class="md:flex items-center justify-between mt-6 text-center md:mt-7 lg:mt-8">
-                            <!-- <div class="g-recaptcha" data-sitekey="{{site.Params.g_recaptcha_key}}"></div> -->
-                            <div class="g-recaptcha"></div>
-                            <button type="submit" class="flex mr-9 bg-white mt-6 px-7 py-4 rounded-lg hover:bg-white/90">{{
-                                .submit }}</button>
-
-                            <!-- <button data-sitekey="{{site.Params.g_recaptcha_key}}" data-callback='onSubmit' data-action='submit' type="submit"
-                                    class="g-recaptcha flex mt-6 bg-[#1D65A6] text-white px-7 py-4 rounded-lg ">{{
-                                    .submit }}</button> -->
+                            <button type="submit" class="flex mr-9 bg-white mt-6 px-7 py-4 rounded-lg hover:bg-white/90">{{.submit }}</button>
                         </div>
-
-
 
                     </form>
                 </div>
