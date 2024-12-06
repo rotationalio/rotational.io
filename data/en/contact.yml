@@ -20,13 +20,12 @@ contact:
   contact_form:
     enable : true
     title: Contact Form
-    form_action : "https://formspree.io/f/xoqbwrbq"
-    firstname : "First Name"
-    lastname : "Last Name"
-    email : "Email"
-    phone_number : "Phone Number"
-    subject : "Subject"
-    subscribe_to_email : "Subscribe to Rotational email content."
-    message : "Message"
+    firstname : "First Name*"
+    lastname : "Last Name*"
+    email : "Email*"
+    phone_number : "Phone Number (optional)"
+    organization: "Organization*"
+    message : "Message (optional)"
+    subscribe_consent_text: "Subscribe to Rotational email content."
     submit : "Submit"
     
