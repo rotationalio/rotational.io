@@ -3,7 +3,7 @@ title: "Rotational Joins EU-US Data Privacy Framework to Strengthen Privacy Comm
 slug: "rotational-joins-eu-us-data-privacy-framework-to-strengthen-privacy-commitment"
 date: "2024-12-05T15:17:41-05:00"
 draft: false
-image: img/blog/eu-us-dpf.png #Change default image
+image: img/blog/EU-US-DPF.png #Change default image
 photo_credit: "EU-US DPF & Rotational logos"
 authors: ['Edwin Schmierer']
 profile: img/team/edwin-schmierer.png
