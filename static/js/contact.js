@@ -1,9 +1,29 @@
+import { getRecaptchaToken } from "./reCAPTCHA";
+
 // Contact Form submission
 const form = document.getElementById('contactForm');
 const formID = document.getElementById('formID');
 
 form?.addEventListener('submit', (event) => {
   event.preventDefault();
+
+  // Get reCAPTCHA token and verify the assessment score.
+  const contactBttn = document.getElementById('contact-bttn');
+  const siteKey = contactBttn.dataset.sitekey;
+  const action = contactBttn.dataset.action;
+
+  const assessment = fetchAssessment(siteKey, action);
+
+  if (!assessment) {
+    console.error('Unable to submit form');
+    return;
+  }
+
+  if (assessment?.riskAnalysis?.score < 0.5) {
+    console.error('Unable to submit form');
+    return;
+  }
+
   const formData = new FormData(form);
   const data = Object.fromEntries(formData);
 
@@ -46,3 +66,31 @@ form?.addEventListener('submit', (event) => {
       console.error('Error:', error);
     });
 });
+
+
+function fetchAssessment(sitekey, action) {
+  const token = getRecaptchaToken(sitekey, action);
+
+  if (!token) {
+    console.error('invalid recaptcha token');
+    return;
+  }
+
+  const req = {}
+  req.token = token;
+  req.action = action;
+
+  fetch(`https://api.rotationallabs.com/v1/recaptcha`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(req),
+  })
+    .then((response) => {
+      return response.json();
+    })
+    .catch((error) => {
+      console.error('Error:', error);
+    });
+}
