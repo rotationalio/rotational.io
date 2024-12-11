@@ -3,6 +3,10 @@ privacy:
   tagline: OUR PRIORITY
   title: PRIVACY & SECURITY
   description: Rotational is deeply committed to privacy and security. AI offers tremendous potential benefit to humanity, provided it is used properly, and enterprises commit to being good data stewards. To that end, we have committed to the US-EU Data Privacy Framework (DPF) and prioritize privacy and security in all our product and services work.
+  image: img/security_and_privacy.webp
   button:
     text: LEARN MORE
-    url: blog/data-access-controls-for-generative-ai/
+    url: blog/rotational-joins-eu-us-data-privacy-framework-to-strengthen-privacy-commitment/
+  dpf:
+    url: https://www.dataprivacyframework.gov/
+    logo: img/dpf-program-logo.png
