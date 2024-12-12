@@ -3,6 +3,7 @@ import { fetchAssessment } from "./recaptchaAssessment.js";
 // Contact Form submission
 const form = document.getElementById('contactForm');
 const formID = document.getElementById('formID');
+const errorEl = 'contact-error';
 
 form?.addEventListener('submit', (event) => {
   event.preventDefault();
@@ -14,17 +15,17 @@ form?.addEventListener('submit', (event) => {
   
   const assessment = fetchAssessment(siteKey, action);
 
-  // TODO: Display error message in the form.
   if (!assessment) {
     console.error('Unable to submit form');
+    setError(form, errorEl);
     return;
   }
 
   // If the risk analysis score is less than 0.5, do not submit the form.
   // There is a high probability that the request is spam.
-  // TODO: Display error message in the form.
   if (assessment?.riskAnalysis?.score < 0.5) {
     console.error('Unable to submit form');
+    setError(form, errorEl);
     return;
   }
 
@@ -55,11 +56,11 @@ form?.addEventListener('submit', (event) => {
         document.getElementById('contact-alert').style.display = 'block';
         form.reset();
 
-        // Hide contact form submission confirmation message after 10 seconds.
+        // Hide contact form submission confirmation message after 5 seconds.
         setTimeout(() => {
           const contactAlert = document.getElementById('contact-alert');
           contactAlert.style.display = 'none';
-        }, 10000);
+        }, 5000);
       }
       return response.json();
     })
@@ -69,5 +70,20 @@ form?.addEventListener('submit', (event) => {
 
     .catch((error) => {
       console.error('Error:', error);
+      setError(form, errorEl)
     });
 });
+
+// Display error message if form submission fails.
+function setError(formName, errorEl) {
+  document.getElementById(errorEl).style.display = 'block';
+  formName?.reset();
+
+  // Hide error message after 5 seconds.
+  setTimeout(() => {
+    const errorAlert = document.getElementById(errorEl);
+    errorAlert.style.display = 'none';
+  }, 5000);
+
+  return;
+}

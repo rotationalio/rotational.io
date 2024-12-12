@@ -29,21 +29,23 @@
                     {{ with .title }} {{ index (split . " ") 0 | safeHTML }} {{ end }}
                     {{ with .title }} {{ after (len (index (split . " ") 0)) . | safeHTML }} {{ end }}
                 </h5>
-                <div class="mt-4 lg:ml-6">
-                    <div class="bg-teal-100 border-t-4 border-teal-500 rounded-b text-teal-900 px-4 py-3 shadow-md hidden"
-                        id='contact-alert' role="alert">
-                        <div class="flex">
+                <div class="mt-2 lg:ml-6">
+                    <div id="contact-alert" class="bg-teal-100 border-t-4 border-teal-500 rounded-b text-teal-900 px-4 py-3 mb-3 shadow-md hidden" role="alert">
+                        <div>
+                            <p class="font-bold">{{site.Params.contactFormSuccessTitle}} </p>
+                            <p class="text-sm">{{site.Params.contactFormSuccessMessage}}</p>
+                        </div>
+                    </div>
 
-                            <div>
-                                <p class="font-bold">{{site.Params.contactFormSuccessTitle}} </p>
-                                <p class="text-sm">{{site.Params.contactFormSuccessMessage}}</p>
-                            </div>
+                    <div id="contact-error" class="hidden bg-red-200 border-t-4 border-red-600 text-red-900 rounded-b p-4 mb-4 shadow-md" role="alert">
+                        <div>
+                            <p class="text-sm">{{site.Params.contactFormErrorMessage}}</p>
                         </div>
                     </div>
 
                     <input type="hidden" id="formID" value="e1bf5b24-ab7f-49f1-bcdc-bb389b28bec5">
                     <form action="contact" method="post" id="contactForm">
-                        <div class="lg:flex lg:gap-x-6">
+                        <div class="pt-2 lg:flex lg:gap-x-6">
                             <label for="first_name" class="hidden">First Name</label>
                             <input type="text" name='first_name' id="first_name" required placeholder="{{ .firstname }}" class="input-sl">
                             <label for="last_name" class="hidden">Last Name</label>
@@ -60,7 +62,7 @@
                             <input type="text" name='organization' id="organization" required placeholder="{{ .organization }}" class="input-sl">
                         </div>
                         <label for="message" class="hidden">Message</label>
-                        <textarea name="message" required placeholder="{{ .message }}" id="message" cols="30" rows="4"
+                        <textarea name="message" placeholder="{{ .message }}" id="message" cols="30" rows="4"
                             class="input-sl"></textarea>
                         <div class="flex mt-4 items-base">
                             <input type="checkbox" id="checkbox" required name="consent" class="w-4 h-4 mt-1 border-0">
