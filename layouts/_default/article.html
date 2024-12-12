@@ -32,17 +32,21 @@
     </div>
     <div class="flex justify-between mt-auto items-center border-t px-4 py-3 h-16">
         <div class="flex items-center">
-            {{ $profile := .Params.profile }}
+            {{ if .Params.profile }}
+            {{ $profile := resources.Get .Params.profile }}
+            
+            {{ if $profile }}
+            {{ $resizedImg := $profile.Resize "40x40" }}
 
             {{ if eq .Params.authors 1 }}
             {{ range .Params.authors }}
             <a href="/authors/{{ . | urlize }}" class="flex items-center">
-                <img loading="lazy" src="{{ $profile }}" alt="" class="rounded-full h-10 w-10">
+                <img loading="lazy" src="{{ $resizedImg.RelPermalink }}" alt="" class="rounded-full h-10 w-10">
                 <span class="ml-4 font-extralight">{{ . }}</span>
             </a>
             {{ end }}
             {{ else }}
-            <img loading="lazy" src="{{ $profile }}" alt="" class="rounded-full h-10 w-10">
+            <img loading="lazy" src="{{ $resizedImg.RelPermalink }}" alt="" class="rounded-full h-10 w-10">
             <ul class="flex flex-wrap ml-4">
                 {{ range $key, $value := .Params.authors }}
                 <li class="font-extralight">
@@ -50,6 +54,8 @@
                 </li>
                 {{ end }}
             </ul>
+            {{ end }}
+            {{ end }}
             {{ end }}
         </div>
         <div class="font-extralight">
