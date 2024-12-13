@@ -6,15 +6,3 @@
 {{ "<!-- HubSpot Code -->" | safeHTML }}
 <script type="text/javascript" id="hs-script-loader" async defer src="{{ .Site.Params.hubspotCode }}"></script>
 {{ end }}
-
-{{- if .Site.Params.recaptchaKey -}}
-{{ "<!-- Google RECAPTCHA -->" | safeHTML }}
-<script src="https://www.google.com/recaptcha/enterprise.js?render={{.Site.Params.recaptchaKey}}"></script>
-<script>
-  grecaptcha.enterprise.ready(function () {
-    grecaptcha.enterprise.execute('{{ .Site.Params.recaptchaKey }}', { action: 'homepage' }).then(function (token) {
-      // Add your logic to submit to your backend server here.
-    });
-  });
-</script>
-{{ end }}
