@@ -1,4 +1,4 @@
-import { fetchAssessment } from "./recaptchaAssessment.js";
+// import { fetchAssessment } from "./recaptchaAssessment.js";
 
 // Contact Form submission
 const form = document.getElementById('contactForm');
@@ -8,8 +8,10 @@ const errorEl = 'contact-error';
 form?.addEventListener('submit', (event) => {
   event.preventDefault();
 
+  // TODO: Implement recaptcha assessment after determining how to get the sitekey value.
+  
   // Get reCAPTCHA token and obtain assessment score.
-  const contactBttn = document.getElementById('contact-bttn');
+  /* const contactBttn = document.getElementById('contact-bttn');
   const siteKey = contactBttn.dataset.sitekey;
   const action = contactBttn.dataset.action;
   
@@ -19,15 +21,15 @@ form?.addEventListener('submit', (event) => {
     console.error('Unable to submit form');
     setError(form, errorEl);
     return;
-  }
+  } */
 
   // If the risk analysis score is less than 0.5, do not submit the form.
   // There is a high probability that the request is spam.
-  if (assessment?.riskAnalysis?.score < 0.5) {
+/*   if (assessment?.riskAnalysis?.score < 0.5) {
     console.error('Unable to submit form');
     setError(form, errorEl);
     return;
-  }
+  } */
 
   // If the assessment score is greater than 0.5, submit the form.
   const formData = new FormData(form);
