@@ -1,6 +1,6 @@
 ############################# Ensign Data ###################################
 notice:
-  enable: true
+  enable: false
   notice: "Privacy & Security in the Gen AI Era"
   action:
     text: Register Now
