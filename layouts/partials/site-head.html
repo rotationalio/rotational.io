@@ -50,13 +50,18 @@
 
 {{- if .Site.Params.googleAnalytics -}}
 {{ "<!-- Google Analytics -->" | safeHTML }}
-<script src="https://www.googletagmanager.com/gtag/js?id={{ .Site.Params.googleAnalytics }}" defer></script>
+<script src="https://www.googletagmanager.com/gtag/js?id={{ .Site.Params.googleAnalytics }}" async defer></script>
 <script type="module">
   window.dataLayer = window.dataLayer || [];
   function gtag() { dataLayer.push(arguments); }
   gtag('js', new Date());
   gtag('config', '{{ .Site.Params.googleAnalytics }}');
 </script>
+{{ end }}
+
+{{- if .Site.Params.recaptchaKey -}}
+{{ "<!-- Google RECAPTCHA -->" | safeHTML }}
+<script async defer src="https://www.google.com/recaptcha/enterprise.js?render={{ .Site.Params.recaptchaKey }}"></script>
 {{ end }}
 
 {{ if site.Params.plugins.js }}
