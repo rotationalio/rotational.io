@@ -1,9 +1,19 @@
 ############################### cloud partnerships ############################
 partnerships:
   enable : true
-  title : We Meet Our Clients Where They Are
+  tag: Where We Deploy
+  title : Your Environment
+  description: We meet our clients where they are, depending on their security and privacy priorities, use cases, and customer base.
   partner_item :
     # partner_item loop
+  - name: On Premise
+    image: img/on-premise.webp
+  - name: Virtual Private Cloud (VPC)
+    image: img/virtual-private-cloud.webp
+  - name: Public Cloud
+    image: img/public-cloud.webp
+  - name: Edge/Embedded
+    image: img/edge.webp
   - name : Google Cloud Partner
     image : img/partners/googlecloud.png
     link : https://cloud.google.com/
