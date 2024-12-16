@@ -7,13 +7,13 @@ partnerships:
   partner_item :
     # partner_item loop
   - name: On Premise
-    image: img/on-premise.png
+    image: img/on-premise.webp
   - name: Virtual Private Cloud (VPC)
-    image: img/virtual-private-cloud.png
+    image: img/virtual-private-cloud.webp
   - name: Public Cloud
-    image: img/public-cloud.png
+    image: img/public-cloud.webp
   - name: Edge/Embedded
-    image: img/edge.png
+    image: img/edge.webp
   - name : Google Cloud Partner
     image : img/partners/googlecloud.png
     link : https://cloud.google.com/
