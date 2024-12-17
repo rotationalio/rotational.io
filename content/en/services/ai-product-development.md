@@ -31,7 +31,7 @@ innovate:
   text: |
     You don't need AI that knows every line of the "Godfather". You need AI solutions that know your business.
 
-    Transform your business with custom AI solutions designed to drive growth, reduce costs, and streamline operations. Our AI engineering services wil move your business from proof-of-concept to tailored models and seamless integration for measurable, long-term impact.
+    Transform your business with custom AI solutions designed to drive growth, reduce costs, and streamline operations. Our AI engineering services will move your business from proof-of-concept to tailored models and seamless integration for measurable, long-term impact.
 
     Contact us today to discover how AI can accelerate your success and maximize ROI.
 contact:
