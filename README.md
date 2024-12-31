@@ -362,7 +362,7 @@ Next, update the fields in the frontmatter.
 
 Depending on the type of learning resource added, some of the fields may be optional, such as `registration_link`, `call_to_action`, `video_link`, and `audio_link`.
 
-1. If the `event_date` is in the future and has a `registration_link`, include the time of the event in the field, `2024-01-16T12:00:00-05:00`. This will display a button with text from the `call_to_action` field encouraging users to register for an event. However, if the event occurred in the past or will not have a registration link, the date may be listed without the time, `2024-01-16`.
+1. If the `event_date` is in the future and has a `registration_link`, include the time of the event in the field, `2024-01-16T12:00:00-05:00`. This will display a button with text from the `call_to_action` field encouraging users to register for an event. However, if the event occurred in the past or does not have a registration link, the date may be listed without the time, `2024-01-16`.
 
 2. If the learning resource's `description` will have multiple lines, the [YAML syntax for multiline strings](https://yaml-multiline.info/) should be used.
 
