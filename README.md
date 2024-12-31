@@ -326,20 +326,20 @@ results:
 
 This will display 2 bullet points in the `Results` box on a case study page. If only 1 bullet point will be included, delete one of the `- result` fields. To display more bullet points, add a `- result` field.
 
-## Resources
+## Learning Page
 
-The resources page is a collection of our webinars, conference talks, and other appearances that are available online. To add a resource use the hugo new command as follows:
+The learning page is a collection of our webinars, conference talks, and other appearances that are available online. To add a resource to the learning page use the hugo new command as follows:
 
 ```
-$ hugo new resources/resource-name.md
+$ hugo new learning/learning-resource-name.md
 ```
 
-This will create a new file in the `content/en/resources` directory. When using the new command, Hugo uses the `archetypes/resources.md` template file to generate the following frontmatter:
+This will create a new file in the `content/en/learning` directory. When using the new command, Hugo uses the `archetypes/learning.md` template file to generate the following frontmatter:
 
 ```
 ---
-title: "Resource Name"
-slug: "resource-name"
+title: "Learning Resource Name"
+slug: "learning-resource-name"
 draft: false
 event_date: "2023-12-22"
 image: "img/resources/event-image.png"
@@ -353,17 +353,18 @@ audio_link: https://link-to-audio-source.com
 categories: ['Video', 'Audio']
 presenters: ['Presenter Name 1', 'Presenter Name 2']
 topics: ['Add Topic 1 Here', 'Add Topic 2 Here']
+photo_credit: "Add photo credit"
 ---
 ```
 Next, update the fields in the frontmatter.
 
-**NOTE** After creating a new resource with the hugo new command, the `slug` for the resource's page on the website will be the same as the `resource-name` used when creating a new resource. For example, `https://rotational.io/resources/resource-name`. If a different `slug` should be used, it should be updated in the frontmatter.
+**NOTE** After creating a new learning resource with the hugo new command, the `slug` for the learning page on the website will be the same as the `learning-resource-name` used when creating a new learning resource. For example, `https://rotational.io/learning/learning-resource-name`. If a different `slug` should be used, it should be updated in the frontmatter.
 
-Depending on the type of resource that will be added, some of the fields may be optional, such as `registration_link`, `call_to_action`, `video_link`, and `audio_link`.
+Depending on the type of learning resource added, some of the fields may be optional, such as `registration_link`, `call_to_action`, `video_link`, and `audio_link`.
 
-1. If the `event_date` is in the future and has a `registration_link`, include the time of the event in the field, `2024-01-16T12:00:00-05:00`. This will display a button with text from the `call_to_action` field on the resource encouraging users to register. However, if the event occurred in the past or will not have a registration link, the date may be listed without the time, `2024-01-16`.
+1. If the `event_date` is in the future and has a `registration_link`, include the time of the event in the field, `2024-01-16T12:00:00-05:00`. This will display a button with text from the `call_to_action` field encouraging users to register for an event. However, if the event occurred in the past or will not have a registration link, the date may be listed without the time, `2024-01-16`.
 
-2. If the resource's `description` will have multiple lines, the [YAML syntax for multiline strings](https://yaml-multiline.info/) should be used.
+2. If the learning resource's `description` will have multiple lines, the [YAML syntax for multiline strings](https://yaml-multiline.info/) should be used.
 
 Below is an example of a `description` with multiple lines:
 
@@ -378,7 +379,7 @@ If the description has multiple lines and you see an error or the text appears i
 
 3. List the event type in the `events` field.
 
-4. If a resource has a video that is on YouTube, use the embed link. To locate this link, go to the video's page on YouTube. 
+4. If a learning resource has a video that is on YouTube, use the embed link. To locate this link, go to the video's page on YouTube. 
 Then select `Share`. 
 Click the `Embed` option.
 You should then see the info similar to the following:
@@ -389,13 +390,13 @@ You should then see the info similar to the following:
 
 Copy the link that appears after `src=` and use it for the `video_link` field.
 
-5. Update the `categories` field with the resource's media type.
+5. Update the `categories` field with the learning resource's media type.
 
-6. Update the `presenters` field with the name of any staff featured in the resource.
+6. Update the `presenters` field with the name of any staff featured in the learning resource.
 
-7. Update the `topics` field with any topics that could provide more detail about the resource. This is similar to the `tags` listed in a `blog` post.
+7. Update the `topics` field with any topics that could provide more detail about the learning resource. This is similar to the `tags` listed in a `blog` post.
 
-**NOTE**: Make sure that the `draft: true` in the front matter is removed or changed to `draft: false` before publishing a resource.
+**NOTE**: Make sure that the `draft: true` in the front matter is removed or changed to `draft: false` before publishing a learning resource.
 
 ## Installing a specific Hugo version on MacOS
 
