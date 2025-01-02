@@ -1,9 +1,33 @@
+import { fetchAssessment, passAssessment } from "./recaptchaAssessment.js";
+
 // Submit Endeavor form
 const endeavorForm = document.getElementById('endeavorForm');
 const formID = document.getElementById('formID');
 
-endeavorForm?.addEventListener('submit', (event) => {
+endeavorForm?.addEventListener('submit', async (event) => {
   event.preventDefault();
+
+  const submitBttn = document.getElementById('submit-bttn');
+  const siteKey = submitBttn.dataset.sitekey;
+  const action = submitBttn.dataset.action;
+
+  // Create an assessment and return an error if the form submission appears to be
+  // spam or if some other error occurs while fetching the data.
+  try {
+    const assessment = await fetchAssessment(siteKey, action);
+
+    if (!assessment) {
+      console.error("Unable to submit form")
+      return
+    }
+
+    if (!passAssessment(assessment)) {
+      console.error("Unable to submit form")
+      return
+    }
+  } catch (error) {
+    console.error("Error:", error)
+  }
   const formData = new FormData(endeavorForm);
   const data = Object.fromEntries(formData);
 

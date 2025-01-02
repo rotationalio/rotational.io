@@ -84,7 +84,7 @@
                 </label>
               </div>
               <div class="py-4">
-                <button type="submit" class="mt-2 md:mt-0 uppercase w-full bg-[#1D65A6] hover:bg-[#192E5B] p-3 font-bold text-white text-center">{{ .buttonText }}</button>
+                <button type="submit" id="submit-bttn" data-sitekey="{{ site.Params.recaptchaKey }}" data-action="endeavor" class="mt-2 md:mt-0 uppercase w-full bg-[#1D65A6] hover:bg-[#192E5B] p-3 font-bold text-white text-center">{{ .buttonText }}</button>
               </div>
             </div>
           </form>
@@ -104,5 +104,5 @@
 {{ end }}
 
 {{ define "appcode" }}
-<script src="{{ `js/endeavor.js` | absURL }}"></script>
+<script type="module" src="{{ `js/endeavor.js` | absURL }}"></script>
 {{ end }}
