@@ -1,7 +1,7 @@
 // Get reCAPTCHA token after form submission and return an assessment score
 // to help determine if request is spam or not.
-export function fetchAssessment(siteKey, action) {
-  const token = fetchRecaptchaToken(siteKey, action);
+export async function fetchAssessment(siteKey, action) {
+  const token = await fetchRecaptchaToken(siteKey, action);
 
   if (!token) {
     console.error('invalid recaptcha token');
@@ -33,8 +33,20 @@ export function fetchAssessment(siteKey, action) {
 
 // Get the recaptcha token from the reCAPTCHA Enterprise API.
 function fetchRecaptchaToken(key, action) {
-  grecaptcha.enterprise.ready(async () => {
-    const token = await grecaptcha.enterprise.execute(key, { action: action });
-    return token;
-  });
+  return new Promise((resolve) => {
+    grecaptcha.enterprise.ready(async () => {
+      const token = await grecaptcha.enterprise.execute(key, { action: action });
+      resolve(token);
+    });
+  })
 };
+
+// Check if the assessment score is greater than 0.5.  There is a high probability that the request is spam if it is not.
+export function passAssessment(assessment) {
+  if (!assessment) {
+    setError(form, errorEl);
+    return;
+  }
+
+  return assessment?.riskAnalysis?.score < 0.5
+}
