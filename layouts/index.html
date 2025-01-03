@@ -6,9 +6,12 @@
 
 {{ partial "recent-rotations.html" }}
 
+{{ partial "newsletterForm.html" }}
+
 {{ end }}
 
 {{ define "appcode" }}
 <script src="https://unpkg.com/embla-carousel/embla-carousel.umd.js"></script>
 <script src="{{ `js/index.js` | absURL }}"></script>
+<script src="{{ `js/newsletterForm.js` | absURL }}"></script>
 {{ end }}
