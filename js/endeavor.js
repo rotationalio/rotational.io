@@ -1,4 +1,4 @@
-import { fetchAssessment, passAssessment, setError } from "./recaptchaAssessment.js";
+import { /* fetchAssessment, passAssessment, */ setError } from "./recaptchaAssessment.js";
 
 // Submit Endeavor form
 const endeavorForm = document.getElementById('endeavorForm');
@@ -8,7 +8,9 @@ const errorEl = 'endeavorError'
 endeavorForm?.addEventListener('submit', async (event) => {
   event.preventDefault();
 
-  const submitBttn = document.getElementById('submit-bttn');
+  // TODO: Restore the recaptcha implementation.
+
+/*   const submitBttn = document.getElementById('submit-bttn');
   const siteKey = submitBttn.dataset.sitekey;
   const action = submitBttn.dataset.action;
 
@@ -29,7 +31,7 @@ endeavorForm?.addEventListener('submit', async (event) => {
   } catch (error) {
     setError(endeavorForm, errorEl)
     return
-  }
+  } */
 
   const formData = new FormData(endeavorForm);
   const data = Object.fromEntries(formData);

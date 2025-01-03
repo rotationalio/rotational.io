@@ -1,4 +1,4 @@
-import { fetchAssessment, passAssessment, setError } from "./recaptchaAssessment.js";
+import { /* fetchAssessment, passAssessment, */ setError } from "./recaptchaAssessment.js";
 
 // Contact Form submission
 const form = document.getElementById('contactForm');
@@ -8,8 +8,10 @@ const errorEl = 'contact-error';
 form?.addEventListener('submit', async (event) => {
   event.preventDefault();
   
+  // TODO: Restore the reCAPTCHA implementation
+
   // Get reCAPTCHA token and form action.
-  const contactBttn = document.getElementById('contact-bttn');
+/*   const contactBttn = document.getElementById('contact-bttn');
   const siteKey = contactBttn.dataset.sitekey;
   const action = contactBttn.dataset.action;
 
@@ -31,7 +33,7 @@ form?.addEventListener('submit', async (event) => {
   } catch (error) {
     setError(form, errorEl)
     return
-  }
+  } */
 
   // If the assessment returns a passing score, send the form data.
   const formData = new FormData(form);
