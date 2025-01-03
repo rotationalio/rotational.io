@@ -1,9 +1,36 @@
+import { fetchAssessment, passAssessment, setError } from "./recaptchaAssessment.js";
+
 // Submit Endeavor form
 const endeavorForm = document.getElementById('endeavorForm');
 const formID = document.getElementById('formID');
+const errorEl = 'endeavorError'
 
-endeavorForm?.addEventListener('submit', (event) => {
+endeavorForm?.addEventListener('submit', async (event) => {
   event.preventDefault();
+
+  const submitBttn = document.getElementById('submit-bttn');
+  const siteKey = submitBttn.dataset.sitekey;
+  const action = submitBttn.dataset.action;
+
+  // Create an assessment and return an error if the form submission appears to be
+  // spam or if some other error occurs while fetching the data.
+  try {
+    const assessment = await fetchAssessment(siteKey, action);
+
+    if (!assessment) {
+      setError(endeavorForm, errorEl)
+      return
+    }
+
+    if (!passAssessment(assessment)) {
+      setError(endeavorForm, errorEl)
+      return
+    }
+  } catch (error) {
+    setError(endeavorForm, errorEl)
+    return
+  }
+
   const formData = new FormData(endeavorForm);
   const data = Object.fromEntries(formData);
 
@@ -25,7 +52,7 @@ endeavorForm?.addEventListener('submit', (event) => {
     },
     body: JSON.stringify(data),
   })
-    .then(async (response) => {
+    .then((response) => {
       if (response.status === 204) {
         const endeavorConfirmation = document.getElementById('endeavorConfirmation');
         endeavorForm.reset();
@@ -34,20 +61,14 @@ endeavorForm?.addEventListener('submit', (event) => {
         setTimeout(() => {
           endeavorConfirmation.classList.add('hidden');
         }, 5000);
-      } else {
-        const endeavorError = document.getElementById('endeavorError');
-        endeavorForm.reset();
-        endeavorError.classList.remove('hidden');
-
-        setTimeout(() => {
-          endeavorError.classList.add('hidden');
-        }, 10000);
       }
+      return response.json();
     })
     .then((data) => {
       console.log('successfully submitted endeavor form:', data);
     })
     .catch((error) => {
       console.error('Error:', error);
+      setError(endeavorForm, errorEl)
     });
 });

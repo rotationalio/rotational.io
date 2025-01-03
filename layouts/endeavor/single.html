@@ -43,8 +43,8 @@
           <div id="endeavorConfirmation" class="hidden my-4">
             <p class="text-base text-[#192E5B] font-semibold">{{ site.Params.endeavorFormSuccessMessage }}</p>
           </div>
-          <div id="endeavorError" class="hidden my-4">
-            <p class="text-base text-red-800 font-semibold">{{ site.Params.contactFormErrorMessage }}</p>
+          <div id="endeavorError" class="hidden bg-red-200 border-t-4 border-red-600 text-red-900 rounded-b p-4 mb-4 shadow-md">
+            <p class="text-sm">{{ site.Params.contactFormErrorMessage }}</p>
           </div>
           <input type="hidden" id="formID" name="formID" value="{{ .id }}" />
           <form action="endeavor" method="post" id="endeavorForm">
@@ -84,7 +84,7 @@
                 </label>
               </div>
               <div class="py-4">
-                <button type="submit" class="mt-2 md:mt-0 uppercase w-full bg-[#1D65A6] hover:bg-[#192E5B] p-3 font-bold text-white text-center">{{ .buttonText }}</button>
+                <button type="submit" id="submit-bttn" data-sitekey="{{ site.Params.recaptchaKey }}" data-action="endeavor" class="mt-2 md:mt-0 uppercase w-full bg-[#1D65A6] hover:bg-[#192E5B] p-3 font-bold text-white text-center">{{ .buttonText }}</button>
               </div>
             </div>
           </form>
@@ -104,5 +104,5 @@
 {{ end }}
 
 {{ define "appcode" }}
-<script src="{{ `js/endeavor.js` | absURL }}"></script>
+<script type="module" src="{{ `js/endeavor.js` | absURL }}"></script>
 {{ end }}
