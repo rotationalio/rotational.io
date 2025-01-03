@@ -14,4 +14,5 @@ audio_link: https://link-to-audio-source.com
 categories: ['Video', 'Audio']
 presenters: ['Presenter Name 1', 'Presenter Name 2']
 topics: ['Add Topic 1 Here', 'Add Topic 2 Here']
+photo_credit: "Add photo credit"
 ---
