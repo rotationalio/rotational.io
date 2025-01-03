@@ -1,4 +1,4 @@
-import { fetchAssessment, passAssessment } from "./recaptchaAssessment.js";
+import { fetchAssessment, passAssessment, setError } from "./recaptchaAssessment.js";
 
 // Contact Form submission
 const form = document.getElementById('contactForm');
@@ -78,16 +78,3 @@ form?.addEventListener('submit', async (event) => {
     });
 });
 
-// Display error message if form submission fails.
-function setError(formName, errorEl) {
-  document.getElementById(errorEl).style.display = 'block';
-  formName?.reset();
-
-  // Hide error message after 5 seconds.
-  setTimeout(() => {
-    const errorAlert = document.getElementById(errorEl);
-    errorAlert.style.display = 'none';
-  }, 5000);
-
-  return;
-}

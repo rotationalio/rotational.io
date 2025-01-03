@@ -38,7 +38,7 @@ function fetchRecaptchaToken(key, action) {
       const token = await grecaptcha.enterprise.execute(key, { action: action });
       resolve(token);
     });
-  })
+  });
 };
 
 // Check if the assessment score is greater than 0.5.  There is a high probability that the request is spam if it is not.
@@ -46,7 +46,21 @@ export function passAssessment(assessment) {
   if (!assessment) {
     setError(form, errorEl);
     return;
-  }
+  };
 
-  return assessment?.riskAnalysis?.score < 0.5
+  return assessment?.riskAnalysis?.score < 0.5;
+};
+
+// Display error message if form submission fails.
+export function setError(formName, errorEl) {
+  const errorAlert = document.getElementById(errorEl)
+  errorAlert.style.display = 'block';
+  formName?.reset();
+
+  // Hide error message after 5 seconds.
+  setTimeout(() => {
+    errorAlert.style.display = 'none';
+  }, 5000);
+
+  return;
 }

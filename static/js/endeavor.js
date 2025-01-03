@@ -1,8 +1,9 @@
-import { fetchAssessment, passAssessment } from "./recaptchaAssessment.js";
+import { fetchAssessment, passAssessment, setError } from "./recaptchaAssessment.js";
 
 // Submit Endeavor form
 const endeavorForm = document.getElementById('endeavorForm');
 const formID = document.getElementById('formID');
+const errorEl = 'endeavorError'
 
 endeavorForm?.addEventListener('submit', async (event) => {
   event.preventDefault();
@@ -17,17 +18,19 @@ endeavorForm?.addEventListener('submit', async (event) => {
     const assessment = await fetchAssessment(siteKey, action);
 
     if (!assessment) {
-      console.error("Unable to submit form")
+      setError(endeavorForm, errorEl)
       return
     }
 
     if (!passAssessment(assessment)) {
-      console.error("Unable to submit form")
+      setError(endeavorForm, errorEl)
       return
     }
   } catch (error) {
-    console.error("Error:", error)
+    setError(endeavorForm, errorEl)
+    return
   }
+
   const formData = new FormData(endeavorForm);
   const data = Object.fromEntries(formData);
 
@@ -49,7 +52,7 @@ endeavorForm?.addEventListener('submit', async (event) => {
     },
     body: JSON.stringify(data),
   })
-    .then(async (response) => {
+    .then((response) => {
       if (response.status === 204) {
         const endeavorConfirmation = document.getElementById('endeavorConfirmation');
         endeavorForm.reset();
@@ -58,20 +61,14 @@ endeavorForm?.addEventListener('submit', async (event) => {
         setTimeout(() => {
           endeavorConfirmation.classList.add('hidden');
         }, 5000);
-      } else {
-        const endeavorError = document.getElementById('endeavorError');
-        endeavorForm.reset();
-        endeavorError.classList.remove('hidden');
-
-        setTimeout(() => {
-          endeavorError.classList.add('hidden');
-        }, 10000);
       }
+      return response.json();
     })
     .then((data) => {
       console.log('successfully submitted endeavor form:', data);
     })
     .catch((error) => {
       console.error('Error:', error);
+      setError(endeavorForm, errorEl)
     });
 });
