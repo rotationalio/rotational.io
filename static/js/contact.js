@@ -1,37 +1,39 @@
-// import { fetchAssessment } from "./recaptchaAssessment.js";
+import { fetchAssessment, passAssessment, setError } from "./recaptchaAssessment.js";
 
 // Contact Form submission
 const form = document.getElementById('contactForm');
 const formID = document.getElementById('formID');
 const errorEl = 'contact-error';
 
-form?.addEventListener('submit', (event) => {
+form?.addEventListener('submit', async (event) => {
   event.preventDefault();
-
-  // TODO: Implement recaptcha assessment after determining how to get the sitekey value.
   
-  // Get reCAPTCHA token and obtain assessment score.
-  /* const contactBttn = document.getElementById('contact-bttn');
+  // Get reCAPTCHA token and form action.
+  const contactBttn = document.getElementById('contact-bttn');
   const siteKey = contactBttn.dataset.sitekey;
   const action = contactBttn.dataset.action;
+
+  // Create an assessment and return an error if the form submission appears to be spam or if some other error
+  // occurs while fetching the data.
+  try {
+    const assessment = await fetchAssessment(siteKey, action);
+
+    if (!assessment) {
+      setError(form, errorEl);
+      return;
+    }
   
-  const assessment = fetchAssessment(siteKey, action);
+    // If the risk analysis score is less than 0.5, do not send the form and display an error.
+    if (!passAssessment(assessment)) {
+      setError(form, errorEl)
+      return
+    } 
+  } catch (error) {
+    setError(form, errorEl)
+    return
+  }
 
-  if (!assessment) {
-    console.error('Unable to submit form');
-    setError(form, errorEl);
-    return;
-  } */
-
-  // If the risk analysis score is less than 0.5, do not submit the form.
-  // There is a high probability that the request is spam.
-/*   if (assessment?.riskAnalysis?.score < 0.5) {
-    console.error('Unable to submit form');
-    setError(form, errorEl);
-    return;
-  } */
-
-  // If the assessment score is greater than 0.5, submit the form.
+  // If the assessment returns a passing score, send the form data.
   const formData = new FormData(form);
   const data = Object.fromEntries(formData);
 
@@ -76,16 +78,3 @@ form?.addEventListener('submit', (event) => {
     });
 });
 
-// Display error message if form submission fails.
-function setError(formName, errorEl) {
-  document.getElementById(errorEl).style.display = 'block';
-  formName?.reset();
-
-  // Hide error message after 5 seconds.
-  setTimeout(() => {
-    const errorAlert = document.getElementById(errorEl);
-    errorAlert.style.display = 'none';
-  }, 5000);
-
-  return;
-}
