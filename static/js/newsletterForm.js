@@ -19,12 +19,12 @@ newsletterForm?.addEventListener('submit', (event) => {
   data.consent_text = consentText?.innerText;
 
 
-  fetch(`https://api.rotationallabs.com/v1/contact/form${formID?.value}`, {
+  fetch(`https://api.rotationallabs.com/v1/contact/form/${formID?.value}`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify(formattedData),
+    body: JSON.stringify(data),
   })
     .then((response) => {
       if (response.status === 204) {
