@@ -3,8 +3,8 @@ endeavor:
   subtitle: Product
   title: Your "HR" For AI
   description: | 
-    Endeavor by Rotational is the AI equivalent of your HR department—designed to nurture, manage, and grow your AI models for optimal performance. 
-    As a cloud- and model-agnostic suite of tools, Endeavor is an <span class="font-bold">AI studio that structures the entire AI lifecycle</span>, 
+    Endeavor by Rotational is the AI equivalent of your HR department&mdash;designed to nurture, manage, and grow your AI models for optimal performance. 
+    As a cloud&mdash; and model &mdash;agnostic suite of tools, Endeavor is an <span class="font-bold">AI studio that structures the entire AI lifecycle</span>, 
     ensuring that your AI models are as trusted, reliable, efficient, and adaptable as your top employees.
   valueprop:
     title: Value Proposition
@@ -14,7 +14,7 @@ endeavor:
   keybenefits:
       title: Key Benefits
       benefits:
-        - benefit: '<span class="font-bold">Structured AI Deployment</span>: No need for custom coding—deploy AI models tailored to your business needs and understand their business impact.'
+        - benefit: '<span class="font-bold">Structured AI Deployment</span>: No need for custom coding&mdash;deploy AI models tailored to your business needs and understand their business impact.'
         - benefit: '<span class="font-bold">Cloud-Agnostic Flexibility</span>: Deployed in your environment, use any cloud provider or model, avoiding vendor lock-in and ensuring long-term scalability.'
         - benefit: '<span class="font-bold">Improved Efficiency</span>: Automate the entire AI lifecycle, from data gathering to monitoring, reducing time and resource costs.'
         - benefit: '<span class="font-bold">Enhanced Governance</span>: Ensure compliance and trusted AI use with built-in tools for transparency and accountability.'
@@ -22,7 +22,7 @@ endeavor:
   form:
     id: b7e55d31-4b5f-4928-a9e1-a57ae82b5eb6
     title: Request a free requirements analysis meeting
-    description: Get get in touch to discuss your specific AI needs. Rotational builds domain-specific solutions for organizations that seek new capabilities, confidentiality, and control.
+    description: Get in touch to discuss your specific AI needs. Rotational builds domain-specific solutions for organizations that seek new capabilities, confidentiality, and control.
     consentText: I want to receive updates about Endeavor from Rotational Labs. You agree to our <a href="/privacy" target="_blank" class="underline text-[#1D65A6]">Privacy Policy</a>. You may unsubscribe at any time.
     buttonText: Schedule a Consultation
   previewimage: "img/endeavor-dashboard-preview.webp"
