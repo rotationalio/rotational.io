@@ -1,8 +1,8 @@
 ############################# Ensign Data ###################################
 notice:
-  enable: false
-  notice: "Privacy & Security in the Gen AI Era"
+  enable: true
+  notice: "Join us for our Pre-training LLMs Tutorial on Feb 28"
   action:
-    text: Register Now
-    link: "https://r8l.co/94RDoTfH1op"
-  expires: 2024-12-13T16:00:00Z
+    text: Learn More
+    link: "https://r8l.co/xZEhstjXPMn"
+  expires: 2025-02-28T16:00:00Z
