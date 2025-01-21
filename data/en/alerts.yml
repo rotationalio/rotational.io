@@ -1,8 +1,8 @@
 ############################# Ensign Data ###################################
 notice:
   enable: true
-  notice: "Pre-training LLMs Tutorial"
+  notice: "Join us for our Pre-training LLMs Tutorial on Feb 28"
   action:
-    text: Register Now
+    text: Learn More
     link: "https://r8l.co/xZEhstjXPMn"
   expires: 2025-02-28T16:00:00Z
