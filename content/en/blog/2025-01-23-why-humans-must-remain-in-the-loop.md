@@ -20,17 +20,11 @@ On the surface, it appears that this is possible. There are so many things that 
 
 But let’s take a step back and consider prior innovations. Computers can perform complex math calculations faster than any human being can. Did we stop learning math as a result? Were jobs such as bookkeeping, which largely involve performing mathematical calculations replaced by computers? The answer is no.
 
-Technological revolutions have led to the invention of products and services we never thought we needed. We would have probably laughed if someone told us 20 years ago that our lives would feel incomplete without our phones.
-
-If we look back on what all has been created over the last 20 years, not only has the way we interact with the world changed, the types of jobs available to us have as well.
-
 Those who have paused hiring because of the belief that AI can replace the need for workers have the following misguided ideas:
 - All of an employee’s tasks can be completely automated away.
-- The productivity gains obtained via the adoption of AI tools means that the tasks that can’t be automated away will be spread amongst fewer employees.
+- The productivity gains obtained via the adoption of AI tools means the tasks that can’t be automated away will be spread amongst fewer employees.
 
-Not only could this lead to a steep decline in employee retention, but it could negatively impact a company’s culture as well. 
-
-Who’s going to want to continue to work for a company knowing that the goal is to replace workers instead of helping them? Will there really be less work for those who remain to feel excited about going to work?
+Not only could this lead to a steep decline in employee retention, but it could negatively impact a company’s culture as well. Who will want to continue working for a company knowing that the goal is to replace them? Will there really be less work for those who remain to feel excited about their place of employment?
 
 ## AI can make costly mistakes
 
