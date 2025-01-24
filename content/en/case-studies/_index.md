@@ -8,7 +8,7 @@ innovate:
   description: Learn how our AI solutions have driven real-world results, transforming businesses with measurable impact and lasting success.
   button: 
     text: Schedule a Consultation
-    url: https://calendar.app.google/R6kVf8qWLW5VCxVi8
+    url: https://team.rotational.ai/meetings/ryan-low
 expertise:
   subheading: Proven Expertise
   heading: Success Stories
