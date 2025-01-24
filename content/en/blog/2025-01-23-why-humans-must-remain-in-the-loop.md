@@ -1,6 +1,6 @@
 ---
-title: "Why Humans Must Remain in the Loop"
-slug: "why-humans-must-remain-in-the-loop"
+title: "Why Employees Must Remain in the Loop"
+slug: "why-employees-must-remain-in-the-loop"
 date: "2025-01-23T15:49:14-05:00"
 draft: false
 image: img/blog/2025-01-23-why-humans-must-remain-in-the-loop/memento-media-2pPw5Glro5I-unsplash.jpg
@@ -16,11 +16,11 @@ There’s a new proclamation almost daily about how AI will make something obsol
 
 ## Change is inevitable, but let's pump the brakes
 
-On the surface, it appears that this is possible. There are so many things that the current AI tools are able to do effectively such as document summarization, image generation, and translation. On top of that, these tools can perform these tasks in a fraction of the time it would take a human. This is because these systems are good at processing large amounts of data at breakneck speed, and are able to use pattern recognition to mimic the work of humans.
+On the surface, it appears that this is possible. There are so many things that the current AI tools are able to do effectively such as document summarization, image generation, and translation. On top of that, these tools can perform tasks in a fraction of the time it would take a human. This is because these systems are good at processing large amounts of data at breakneck speed, and are able to use pattern recognition to mimic the work of humans.
 
-But let’s take a step back and consider prior innovations. Calculators can perform complex math calculations faster than any human being can. So did we stop learning math as a result? Were jobs such as bookkeeping, which largely involve performing mathematical calculations replaced by calculators? The answer is no.
+But let’s take a step back and consider prior innovations. Computers can perform complex math calculations faster than any human being can. Did we stop learning math as a result? Were jobs such as bookkeeping, which largely involve performing mathematical calculations replaced by computers? The answer is no.
 
-Technological revolutions have led to the invention of products and services we never thought we needed. We would have probably laughed if someone told us 20 years ago that our lives would feel incomplete without our phones. 
+Technological revolutions have led to the invention of products and services we never thought we needed. We would have probably laughed if someone told us 20 years ago that our lives would feel incomplete without our phones.
 
 If we look back on what all has been created over the last 20 years, not only has the way we interact with the world changed, the types of jobs available to us have as well.
 
@@ -46,7 +46,7 @@ There is a fundamental misunderstanding of the work human beings do. Everything 
 
 Let’s take customer service as an example. Chatbots have been touted as the replacement for customer service and yet customer service is only getting worse. This is because many companies have chosen to automate a function that is still largely not automatable. The companies that do provide excellent customer service recognize that there are parts of the job that are discrete tasks where machine learning and software automation can be used to reduce burden on their customer service staff, who not only have to juggle multiple tasks on a given day but also have to serve multiple customers per day. 
 
-Imagine if a retail customer service associate had a dashboard that provides key details about a loyal customer, including summaries of past interactions, and suggested recommendations based on previous purchases. This customer service associate can use that knowledge to provide service that is tailored for that customer. This increases the odds that both the customer service associate and the customer are satisfied, which increases loyalty and engagement, and also results in higher profits for the company. 
+Imagine if a retail customer service associate had a dashboard that provides key details about a loyal customer, including summaries of past interactions, and suggested recommendations based on previous purchases. This customer service associate can use that knowledge to provide service that is tailored for that customer. This increases the odds that both the customer service associate and the customer are satisfied, which increases loyalty and engagement, ultimately resulting in higher profits for the company.
 
 There have also been claims that software engineers can be replaced by tools like Github Copilot and Cursor. The assumption made here is that all software engineers do is write code when the reality is that coding is a fraction of what they do. Software engineers perform many more tasks such as working with stakeholders to understand requirements, creating software design documents, evaluating software solutions, presenting demos, etc. 
 
@@ -54,12 +54,10 @@ Rather than a replacement, tools like Github Copilot and Cursor unlock the abili
 
 ## Reduce monotony, increase innovation
 
-There are many jobs where employees have to perform a lot of repetitive, mundane tasks that can result in burnout. This is especially the case if they are expected to meet unrealistic deadlines on a continual basis due to the pressures of competition. These tasks can be things like having to constantly search for things in the company intranet, reading through multiple documents, producing summaries, recording meeting minutes, etc. These are areas where AI can be used to free up employees’ time to do work that is more meaningful and creative and can also reduce the pressure of deadlines.
+There are many jobs where employees have to perform a lot of repetitive, mundane tasks that can result in burnout. This is especially the case if they are expected to meet unrealistic deadlines on a continual basis due to the pressures of competition. These tasks can be things like having to constantly search for things in the company intranet, reading through multiple documents, producing summaries, recording meeting minutes, etc. These are areas where AI can be used to free up employees’ time to do work that is more meaningful and creative and can reduce the pressure of deadlines.
 
-Apart from automating tasks, AI helps employees who struggle with communication to better engage with fellow coworkers by crafting more clear emails and messages. A lot of the challenges within organizations are communication challenges.
+Apart from automating tasks, AI helps employees who struggle with communication to better engage with fellow coworkers by crafting clear emails and messages. A lot of the challenges within organizations are communication challenges.
 
-Companies that make smart investments in AI to overcome these challenges will stand to profit the most.
+Companies that make smart investments in AI to overcome these challenges will stand to profit the most. Bank of America, for example, uses [AI and VR](https://www.pymnts.com/metaverse/2023/bank-of-america-uses-virtual-reality-for-training-over-200000-staffers/) to train their employees to handle stressful interactions with customers and to help them learn how to remain calm during a potential robbery. Similarly, Adobe had a [4-month hackathon](https://fortune.com/2024/03/07/adobe-cfo-hackathon-ai-workflows-shark-tank/) where employees experimented with integrating generative AI into their workflows to improve efficiencies.
 
-It’s impossible to predict what will become popular over the next decade, but it’s safe to bet that AI will play a large role in that. What has never changed and won’t is that businesses exist to solve problems.
-
-Instead of moving work around and allowing employees to take their talent elsewhere, companies should use this time to let them explore new possibilities with AI.
+It’s impossible to predict the future, but it’s safe to bet that AI is here to stay. Instead of moving work around and allowing employees to take their talent elsewhere, companies should use this time to let them explore new possibilities with AI.
