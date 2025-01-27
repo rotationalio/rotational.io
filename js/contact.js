@@ -68,7 +68,6 @@ form?.addEventListener('submit', async (event) => {
           contactAlert.style.display = 'none';
         }, 5000);
       }
-      return response.json();
     })
     .then((data) => {
       console.log('Success:', data);
