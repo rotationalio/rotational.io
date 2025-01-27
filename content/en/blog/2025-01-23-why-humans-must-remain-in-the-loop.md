@@ -1,7 +1,7 @@
 ---
 title: "Why Employees Must Remain in the Loop"
 slug: "why-employees-must-remain-in-the-loop"
-date: "2025-01-23T15:49:14-05:00"
+date: "2025-01-27T11:40:43-05:00"
 draft: false
 image: img/blog/2025-01-23-why-humans-must-remain-in-the-loop/memento-media-2pPw5Glro5I-unsplash.jpg
 photo_credit: "Photo by [Memento Media](https://unsplash.com/@heymemento?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash) on [Unsplash](https://unsplash.com/photos/people-sitting-at-the-table-2pPw5Glro5I?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash)"
@@ -10,48 +10,64 @@ profile: img/butterfly.png
 tags: ['AI', 'Automation']
 description: "Making the case for using AI to augment employees."
 ---
-There’s a new proclamation almost daily about how AI will make something obsolete. Automation and advances in technology aren’t new. Yet, reading that [38% of companies expect AI to replace workers](https://www.staffingindustry.com/news/global-daily-news/30-of-companies-swapped-workers-for-ai-in-2024-more-to-come) feels myopic. 
+AI is rapidly transforming the workplace, but don't be fooled into thinking it's as simple as replacing workers. If you want to stay ahead of the curve, try a human-centered approach.
 
 <!--more-->
 
-## Change is inevitable, but let's pump the brakes
+## The AI Paradox: Why More Technology Means More Humanity
 
-On the surface, it appears that this is possible. There are so many things that the current AI tools are able to do effectively such as document summarization, image generation, and translation. On top of that, these tools can perform tasks in a fraction of the time it would take a human. This is because these systems are good at processing large amounts of data at breakneck speed, and are able to use pattern recognition to mimic the work of humans.
+With headlines predicting widespread job displacement due to AI ([38% of companies expect AI to replace workers](https://www.staffingindustry.com/news/global-daily-news/30-of-companies-swapped-workers-for-ai-in-2024-more-to-come)), leaders face the complex challenge of integrating totally new tech while keeping human workers engaged and productive as they increasingly "RTO" (return to the office). It raises the question, are these two goals even compatible?
 
-But let’s take a step back and consider prior innovations. Computers can perform complex math calculations faster than any human being can. Did we stop learning math as a result? Were jobs such as bookkeeping, which largely involve performing mathematical calculations replaced by computers? The answer is no.
+Automation and advances in technology aren’t new (anyone else remember the [RPA craze](https://en.wikipedia.org/wiki/Robotic_process_automation) of the mid 2010's?). On the surface, automation frequently seems easy and straightforward. There are so many things that new AI tools are able to do effectively, from document summarization to image generation and translation. On top of that, these tools can perform tasks in a fraction of the time it would take a human. Machines are good at processing large amounts of data at breakneck speed, and automations can use pattern recognition to mimic the work of humans.
 
-Those who have paused hiring because of the belief that AI can replace the need for workers have the following misguided ideas:
-- All of an employee’s tasks can be completely automated away.
-- The productivity gains obtained via the adoption of AI tools means the tasks that can’t be automated away will be spread amongst fewer employees.
+But let’s take a step back and consider prior innovations. CAD software revolutionized architecture and engineering, but it didn't eliminate the need for architects and engineers. Calculators perform complex math faster than any human, yet we haven't removed mathematics from school curricula. Jobs like bookkeeping, which involve calculations, weren't replaced by computers either. Instead, these technologies empowered people to do more.
 
-Not only could this lead to a steep decline in employee retention, but it could negatively impact a company’s culture as well. Who will want to continue working for a company knowing that the goal is to replace them? Will there really be less work for those who remain to feel excited about their place of employment?
+If you believe that AI is so unlike all past technologies as to no longer require a human element in order to return business value, consider where those beliefs came from. Are they rooted in a realistic assessment of AI's capabilities and limitations, or are they driven by hype and fear? Have you observed examples of total automation first hand, or do all your examples come from sources that are trying to sell you something?
 
-## AI can make costly mistakes
+Technology is always a gamble. Those who have paused hiring to explore how AI can replace human workers are taking a dangerous gamble, one that is based neither in historical patterns nor in current best practice. To make better bets with AI, it helps to know a bit more about its limitations and to break down the complexities of workflows in order to understand where AI can help, which we'll do in the next two sections.
 
-In addition, there is an argument to be made as to how effective these solutions are. Even before large language models (LLMs) came onto the scene, there were many machine learning algorithms that were introduced and hyped in a similar fashion to solve problems such as fraud and spam detection. Years later, in spite of the progress made, neither problem is fully solved.
+## The Hidden Cost of Unpredictable Errors
 
-Furthermore, in spite of ChatGPT’s success, there were many problems that companies faced when using the technology to automate functions. Air Canada was [forced to pay](https://www.theguardian.com/world/2024/feb/16/air-canada-chatbot-lawsuit) one of its customers after its chatbot mistakenly stated that the customer can apply for bereavement rates and will be refunded retroactively. LLMs also have the tendency to hallucinate and produce incorrect results.
+While AI holds great promise, we find it's important to also acknowledge limitations when talking to customers. Even before the advent of large language models (LLMs), countless machine learning algorithms (trees, ensembles, boosting, backprop, RNNs, GANs, attention, and on and on) have been introduced with great fanfare to solve problems like network intrusion, fraud, and spam detection. Years later, these problems remain largely "unsolved" in the sense that all still require humans in the loop. This is because all attempts at total automation for these problems has resulted in costs that have outweighed the benefits.
 
-While the technology is improving rapidly and a lot of improvements have been made to resolve these problems, there is an issue with the thinking that human beings will be rendered obsolete due to AI. LLMs do not have the ability to reason. They [mimic the reasoning](https://www.wired.com/story/apple-ai-llm-reasoning-research/?ref=2ndbreakfast.audreywatters.com) observed in the data that they are trained on.
+Consider what we can learn from public failures. Air Canada was [forced to pay](https://www.theguardian.com/world/2024/feb/16/air-canada-chatbot-lawsuit) one of its customers after its chatbot mistakenly stated that the customer can apply for bereavement rates and will be refunded retroactively. LLMs [mimic the reasoning](https://www.wired.com/story/apple-ai-llm-reasoning-research/?ref=2ndbreakfast.audreywatters.com) observed in the data that they are trained on, but they do not have the ability to reason. LLMs also have the tendency to hallucinate and produce incorrect results.
 
-## The complexity of work
+To be sure, innovations in AI guardrails can help resolve these kinds of problems, and commercial GPTs are improving all the time. But you should think of each AI you bring on board as a business risk, plan how to mitigate any failures (what will do you if it hallucinates, takes an incorrect action, or fails to act in an important situation?) and factor those costs into your projections. Keeping humans in the loop is often far cheaper than the cost to offset damage to reputation.
 
-There is a fundamental misunderstanding of the work human beings do. Everything we have mentioned so far that AI is capable of doing are discrete tasks with a finite set of inputs and outputs. But the work that human beings do is more than discrete tasks. Human beings perform complex functions, coordinate with a team, and work with stakeholders to deliver a product or service. There is a lot of uncertainty and back and forth and iterative work that is involved. None of this can be easily captured into a training program for an AI tool to mimic.
+## The Complexity of Work and the Human Advantage
 
-Let’s take customer service as an example. Chatbots have been touted as the replacement for customer service and yet customer service is only getting worse. This is because many companies have chosen to automate a function that is still largely not automatable. The companies that do provide excellent customer service recognize that there are parts of the job that are discrete tasks where machine learning and software automation can be used to reduce burden on their customer service staff, who not only have to juggle multiple tasks on a given day but also have to serve multiple customers per day. 
+There's a fundamental misunderstanding of the work human beings do. While AI excels at discrete tasks with clear inputs and outputs, human work often involves complex functions, collaboration, navigating uncertainty, and adapting to changing conditions. Because these aspects of work are complex and difficult to capture in training data, they are not well-suited for an AI.
 
-Imagine if a retail customer service associate had a dashboard that provides key details about a loyal customer, including summaries of past interactions, and suggested recommendations based on previous purchases. This customer service associate can use that knowledge to provide service that is tailored for that customer. This increases the odds that both the customer service associate and the customer are satisfied, which increases loyalty and engagement, ultimately resulting in higher profits for the company.
+Let’s take customer service as an example. Chatbots have been touted as the replacement for customer service and maybe it's just us, but it seems like customer service is only getting worse. Excellent customer service requires empathy, adaptability, and the ability to handle unexpected situations—skills that AI currently lacks.
 
-There have also been claims that software engineers can be replaced by tools like Github Copilot and Cursor. The assumption made here is that all software engineers do is write code when the reality is that coding is a fraction of what they do. Software engineers perform many more tasks such as working with stakeholders to understand requirements, creating software design documents, evaluating software solutions, presenting demos, etc. 
+On the other hand, companies we've worked with that have integrated AI tools to assist their human agents have been able to demonstrate increased efficiency without degrading customer satisfaction:
 
-Rather than a replacement, tools like Github Copilot and Cursor unlock the ability to rapidly experiment and prototype different solutions while getting end user feedback early and often to speed up time to market. This is akin to the movement to using cloud infrastructure where machines could be rented to prototype applications and then making the infrastructure investment instead of investing significant capital up front on machines that may or may not get used for developing applications.
+> Now our retail customer service associates have a dashboard that provides key details about customers, including summaries of past interactions, and suggests recommendations based on previous purchases. Our associates use that knowledge to provide service tailored fo that customer. This increases the odds that both my team and our customers are satisfied, which increases loyalty and engagement, ultimately resulting in higher profits for our business.
 
-## Reduce monotony, increase innovation
+Similarly, the idea that software engineers can be replaced by tools like Github Copilot and Cursor overlooks the multifaceted nature of software development. While these tools can assist with coding, they can't replace the human element of understanding requirements, designing solutions, and collaborating with stakeholders.
 
-There are many jobs where employees have to perform a lot of repetitive, mundane tasks that can result in burnout. This is especially the case if they are expected to meet unrealistic deadlines on a continual basis due to the pressures of competition. These tasks can be things like having to constantly search for things in the company intranet, reading through multiple documents, producing summaries, recording meeting minutes, etc. These are areas where AI can be used to free up employees’ time to do work that is more meaningful and creative and can reduce the pressure of deadlines.
+Instead of replacing humans, AI can empower them. Tools like Copilot and Cursor allow engineers to rapidly experiment and prototype, accelerating the development process. This is similar to the shift towards cloud infrastructure, where companies can rent resources as needed instead of making large upfront investments. By freeing humans from tedious tasks, AI allows them to focus on higher-level thinking, creativity, and innovation.
 
-Apart from automating tasks, AI helps employees who struggle with communication to better engage with fellow coworkers by crafting clear emails and messages. A lot of the challenges within organizations are communication challenges.
+## Reduced Monotony == Increased Innovation
 
-Companies that make smart investments in AI to overcome these challenges will stand to profit the most. Bank of America, for example, uses [AI and VR](https://www.pymnts.com/metaverse/2023/bank-of-america-uses-virtual-reality-for-training-over-200000-staffers/) to train their employees to handle stressful interactions with customers and to help them learn how to remain calm during a potential robbery. Similarly, Adobe had a [4-month hackathon](https://fortune.com/2024/03/07/adobe-cfo-hackathon-ai-workflows-shark-tank/) where employees experimented with integrating generative AI into their workflows to improve efficiencies.
+While AI can automate certain tasks, it doesn't have to mean layoffs. In fact, AI can be used to free up employees from repetitive and mundane tasks, allowing them to focus on more meaningful and creative work. This can lead to increased job satisfaction, higher productivity, and a more innovative workforce.
 
-It’s impossible to predict the future, but it’s safe to bet that AI is here to stay. Instead of moving work around and allowing employees to take their talent elsewhere, companies should use this time to let them explore new possibilities with AI.
+Many of us have jobs that requires us to perform repetitive, mundane tasks that can result in burnout. This is especially the case when we are are expected to meet unrealistic deadlines on a continual basis due to the pressures of competition. These tasks can be things like having to constantly search for things in the company intranet, reading through multiple documents, producing summaries, recording meeting minutes, etc. These are areas where AI can be used to free up employees’ time to do work that is more meaningful and creative and can reduce the pressure of deadlines.
+
+If you're looking to the headlines for inspiration, we recommend checking out examples of companies that are exploring AI to empower employees. Bank of America [uses AI and VR](https://www.pymnts.com/metaverse/2023/bank-of-america-uses-virtual-reality-for-training-over-200000-staffers/) to train employees on handling stressful customer interactions, while Adobe held a [4-month hackathon](https://fortune.com/2024/03/07/adobe-cfo-hackathon-ai-workflows-shark-tank/) where employees experimented with integrating generative AI into their workflows. These initiatives have led to improved employee morale, increased productivity, and a more competitive edge for these companies.
+
+It's also worth noting that AI can help solve one of the biggest challenges in most organizations, which is communication. If you're looking for an easy way to get started, consider integrating an AI assistant to help employees summarize lengthy email threads, saving time and reducing the risk of miscommunication.
+
+AI can help employees who struggle with communication by crafting clear emails and messages. This can be particularly helpful for non-native English speakers or those who simply aren't strong writers. GPTs can provide real-time feedback and suggestions, helping employees to improve their communication skills. AI can even help bridge communication gaps between different departments or teams by translating technical jargon into plain language or by identifying potential conflicts and suggesting ways to resolve them. As AI continues to evolve, we can expect even more innovative solutions to emerge that will help us communicate and be better humans to each other.
+
+## Final Thoughts
+
+It's impossible to predict the future, but it's safe to say that AI is here to stay. But don't get distracted by the "replace your workers" hype. If you want to remain competitive in the age of AI, start by creating a more functional workplace for your team.
+
+Here are some specific steps that companies can take to start leveraging AI:
+
+1. Interview your team to identify areas where AI could be used to improve their efficiency, productivity, and quality of life.
+2. Invest in training and development programs, or at the very least, give your employees permission to experiment with AI to learn how to use it effectively.
+3. Create a culture of innovation and collaboration where employees feel empowered to delegate mundane work to an AI so that they can focus on harder problems and help you level up.
+
+By taking these steps, companies can position themselves for success in the AI-powered future.
