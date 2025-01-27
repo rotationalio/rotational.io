@@ -22,9 +22,9 @@ Automation and advances in technology aren’t new (anyone else remember the [RP
 
 But let’s take a step back and consider prior innovations. CAD software revolutionized architecture and engineering, but it didn't eliminate the need for architects and engineers. Calculators perform complex math faster than any human, yet we haven't removed mathematics from school curricula. Jobs like bookkeeping, which involve calculations, weren't replaced by computers either. Instead, these technologies empowered people to do more.
 
-If you believe that AI is so unlike all past technologies as to no longer require a human element in order to return business value, consider where those beliefs came from. Are they rooted in a realistic assessment of AI's capabilities and limitations, or are they driven by hype and fear? Have you observed examples of total automation first hand, or do all your examples come from sources that are trying to sell you something?
+If you believe that AI is so unlike all past technologies as to no longer require a human element in order to return business value, consider where those beliefs came from. Are they rooted in a realistic assessment of AI's capabilities and limitations, or are they driven by hype and fear? Have you observed successful examples of total automation first hand, or do all your anecdotes come from sources that are trying to sell you something?
 
-Technology is always a gamble. Those who have paused hiring to explore how AI can replace human workers are taking a dangerous gamble, one that is based neither in historical patterns nor in current best practice. To make better bets with AI, it helps to know a bit more about its limitations and to break down the complexities of workflows in order to understand where AI can help, which we'll do in the next two sections.
+Technology is always a gamble. Those who have paused hiring to explore how AI can replace human workers are making the riskiest bet, one that is based neither in historical patterns nor in current best practice. To make better bets with AI, it helps to know a bit more about its limitations and to break down the complexities of workflows in order to understand where AI can help, which we'll do in the next two sections.
 
 ## The Hidden Cost of Unpredictable Errors
 
@@ -46,7 +46,7 @@ On the other hand, companies we've worked with that have integrated AI tools to 
 
 Similarly, the idea that software engineers can be replaced by tools like Github Copilot and Cursor overlooks the multifaceted nature of software development. While these tools can assist with coding, they can't replace the human element of understanding requirements, designing solutions, and collaborating with stakeholders.
 
-Instead of replacing humans, AI can empower them. Tools like Copilot and Cursor allow engineers to rapidly experiment and prototype, accelerating the development process. This is similar to the shift towards cloud infrastructure, where companies can rent resources as needed instead of making large upfront investments. By freeing humans from tedious tasks, AI allows them to focus on higher-level thinking, creativity, and innovation.
+Instead of replacing humans, AI can empower them. At Rotational, we've been using AI coding tools for the last two years to accelerate our development process. This is similar to the shift towards cloud infrastructure, where companies can rent resources as needed instead of making large upfront investments. By freeing humans from tedious tasks, AI allows us to focus on higher-level thinking, creativity, and innovation.
 
 ## Reduced Monotony == Increased Innovation
 
