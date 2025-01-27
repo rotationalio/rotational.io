@@ -37,7 +37,6 @@ newsletterForm?.addEventListener('submit', (event) => {
           newsletterAlert.style.display = 'none';
         }, 5000);
       }
-      return response.json();
     })
     .then((data) => {
       console.log('Success:', data);

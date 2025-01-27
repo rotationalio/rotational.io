@@ -64,7 +64,6 @@ endeavorForm?.addEventListener('submit', async (event) => {
           endeavorConfirmation.classList.add('hidden');
         }, 5000);
       }
-      return response.json();
     })
     .then((data) => {
       console.log('successfully submitted endeavor form:', data);
