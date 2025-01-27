@@ -1,5 +1,5 @@
 ---
-title: "Why Employees Must Remain in the Loop"
+title: "The AI Paradox: Why More Technology Means More Humanity"
 slug: "why-employees-must-remain-in-the-loop"
 date: "2025-01-27T11:40:43-05:00"
 draft: false
@@ -14,7 +14,7 @@ AI is rapidly transforming the workplace, but don't be fooled into thinking it's
 
 <!--more-->
 
-## The AI Paradox: Why More Technology Means More Humanity
+## Why Employees Must Remain in the Loop
 
 With headlines predicting widespread job displacement due to AI ([38% of companies expect AI to replace workers](https://www.staffingindustry.com/news/global-daily-news/30-of-companies-swapped-workers-for-ai-in-2024-more-to-come)), leaders face the complex challenge of integrating totally new tech while keeping human workers engaged and productive as they increasingly "RTO" (return to the office). It raises the question, are these two goals even compatible?
 
