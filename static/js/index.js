@@ -4,7 +4,7 @@ const emblaRoot = document.querySelectorAll('.embla');
 if (emblaRoot) {
   emblaRoot?.forEach((root) => {
     // Set carousel options from the data attributes.
-   const options = { loop: Boolean(root?.dataset?.loop), slidesToScroll: Number(root?.dataset?.scroll)};
+   const options = { loop: Boolean(root?.dataset?.loop), slidesToScroll: Number(root?.dataset?.scroll), align: "start" };
     const carousel = EmblaCarousel(root?.querySelector('.embla__viewport'), options);
 
     const prevBtn = root?.querySelector('.embla__prev');
