@@ -9,23 +9,48 @@ clients:
       show: true
       showServices: true
 
-    - name: Tactile
-      image: img/clients/tactile.png
+    - name: BlueVoyant
+      image: img/clients/bluevoyant.png
       show: true
-      showServices: true
+      showServices: false
 
-    - name: Trisa
+    - name: TRISA
       image: img/clients/trisa.png
-      show: true
-      showServices: true
-
-    - name: Qredo
-      image: img/clients/qredo.png
       show: true
       showServices: true
 
     - name: 202 Group
       image: img/clients/202group.png
+      show: true
+      showServices: true
+
+    - name: mersive
+      image: img/clients/mersive.png
+      show: true
+      showServices: false
+
+    - name: WorkMation
+      image: img/clients/workmation.png
+      show: true
+      showServices: false
+
+    - name: Bitcoin4U
+      image: img/clients/btcfu.png
+      show: true
+      showServices: false
+
+    - name: Tech Sierra
+      image: img/clients/techsierra.png
+      show: true
+      showServices: false
+
+    - name: Tactile
+      image: img/clients/tactile.png
+      show: true
+      showServices: true
+
+    - name: Qredo
+      image: img/clients/qredo.png
       show: true
       showServices: true
 
@@ -36,5 +61,15 @@ clients:
 
     - name: University of Chicago
       image: img/clients/uchicago.png
+      show: true
+      showServices: false
+    
+    - name: UMBC Training Centers
+      image: img/clients/umbc_c4ai.png
+      show: true
+      showServices: false
+
+    - name: Georgetown University
+      image: img/clients/georgetown.png
       show: true
       showServices: false
