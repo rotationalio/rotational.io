@@ -14,7 +14,7 @@ social :
     icon: 'fa-github'
   - name : "twitter" # themify icon pack : https://themify.me/themify-icons
     link : "https://twitter.com/thedanimaxwell"
-    icon: 'fa-twitter'
+    icon: 'fa-x-twitter'
 aliases: /bio/danielle-maxwell
 ---
 **Danielle Maxwell** is a Junior Distributed Systems Engineer at Rotational Labs, specializing in integrating AI into scalable architectures. Her expertise in full-stack development enables her to connect front-end interfaces with back-end AI-driven processes, enhancing system usability. 

@@ -13,7 +13,7 @@ social :
     icon: 'fa-linkedin-in'
   - name : "twitter"
     link : "Add Link to Your Twitter Profile"
-    icon: 'fa-twitter'
+    icon: 'fa-x-twitter'
   - name : "github"
     link: 'Add Link to Your GitHub Profile'
     icon: 'fa-github'

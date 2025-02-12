@@ -11,7 +11,7 @@ social :
     icon: 'fa-linkedin-in'
   - name : "twitter" # themify icon pack : https://themify.me/themify-icons
     link : "https://twitter.com/ESchmierer"
-    icon: 'fa-twitter'
+    icon: 'fa-x-twitter'
 aliases: /bio/edwin-schmierer
 ---
 **Edwin Schmierer**, co-founder and COO of Rotational Labs, is an accomplished business executive with over 20 years of experience leading high-impact organizations in both the private sector and academia. In his role, he focuses on strategy, marketing, finance, operations, and product development. 

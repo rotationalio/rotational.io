@@ -11,7 +11,7 @@ social :
     icon: 'fa-linkedin-in'
   - name : "twitter" # themify icon pack : https://themify.me/themify-icons
     link : "https://twitter.com/rebeccabilbro"
-    icon: 'fa-twitter'
+    icon: 'fa-x-twitter'
   - name : "github"
     link: 'https://github.com/rebeccabilbro'
     icon: 'fa-github'
