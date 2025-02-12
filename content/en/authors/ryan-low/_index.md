@@ -11,5 +11,6 @@ social :
     icon: 'fa-linkedin-in'
 aliases: /bio/ryan-low
 ---
+**Ryan Low** is a seasoned business development manager and solution-driven business analyst with over 15 years of experience in business process improvements and software implementations. At Rotational Labs, he specializes in leveraging AI to deliver real-world solutions across diverse industries, including retail merchandising, call center operations, e-commerce development, manufacturing administration, oilfield operations, and blockchain data center deployments. 
 
-Ryan Low is a professional business development manager and solution-driven business analyst with 15+ years of experience in business process improvements and software implementations. Leveraging experience in retail merchandising, call center operations, e-commerce development, manufacturing administration, oilfield operations, and blockchain data center deployments. In his role as Business Development Manager, he is focused on finding real-world solutions to business problems using the most relevant technology.
+Ryan’s focus is on integrating AI-driven strategies to optimize operations and drive business growth. He has authored insights on building custom AI solutions that yield significant returns on investment, emphasizing a system-based approach to AI implementation.  

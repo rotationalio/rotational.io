@@ -33,13 +33,12 @@ relative bg-[#1D65A6]">
             </div>
         </div>
         <div class="flex flex-col md:pl-5 w-full md:w-1/2">
-            <h1 class="text-xl font-bold text-sky-900 my-2 md:my-4 ">Bio</h1>
-            <div class="w-full mx-auto prose prose-blue">{{ .Content | safeHTML }}</div>
-            <ul class="mt-4 flex w-full gap-8 md:mt-6">
+            <div class="w-full mx-auto prose prose-blue py-4 md:py-0">{{ .Content | markdownify }}</div>
+            <ul class="mt-4 flex w-full gap-4 md:mt-6">
                 {{ range .Params.social }}
                 <li><a href="{{ .link | absURL }}" target="_blank"
-                        class="flex w-16 h-16 items-center  rounded-lg bg-sky-900 text-white">
-                        <i class="fa-brands {{ .icon }} text-2xl mx-auto"></i>
+                        class="flex w-10 h-10 items-center  rounded-lg bg-sky-900 text-white">
+                        <i class="fa-brands {{ .icon }} text-xl mx-auto"></i>
                     </a>
                 </li>
                 {{ end }}

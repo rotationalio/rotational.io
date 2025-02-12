@@ -11,16 +11,14 @@ social :
     icon: 'fa-linkedin-in'
   - name : "twitter" # themify icon pack : https://themify.me/themify-icons
     link : "https://twitter.com/rebeccabilbro"
-    icon: 'fa-twitter'
+    icon: 'fa-x-twitter'
   - name : "github"
     link: 'https://github.com/rebeccabilbro'
     icon: 'fa-github'
 aliases: /bio/rebecca-bilbro
 ---
-A pioneer of the data science revolution in the early 2010’s, Dr. Rebecca Bilbro is an applied AI/ML engineer, teacher, and author who has worked across academia, industry, and the public sector.
+**Dr. Rebecca Bilbro**, co-founder and CTO of Rotational Labs, is a trailblazer in applied AI and machine learning engineering. She co-created Yellowbrick, a Python library that enhances model diagnostics by integrating scikit-learn and matplotlib APIs, facilitating more intuitive model steering. 
 
-Rebecca (aka [@Elder_Data_Scientist](https://www.tiktok.com/@elder_data_scientist)) is co-creator of [Yellowbrick](https://www.scikit-yb.org/en/latest/), a Python library that integrates the scikit-learn and matplotlib APIs to support more convenient model diagnostics and steering.
+At Rotational Labs, Dr. Bilbro leads initiatives that empower companies to harness their domain expertise and data, resulting in the successful deployment of large language models and data-driven products. Her efforts bridge the gap between data science and engineering, driving AI solutions that are grounded in real-world business needs, informed by research, rigorously prototyped, and built with deployment and data governance in mind. 
 
-As co-founder and CTO of Rotational Labs, Rebecca is motivated by a desire to unite the data science and engineering communities. She and her team help other companies leverage in-house domain expertise and data to build and deploy LLMs, data products, and services.
-
-Rebecca earned her doctorate from the University of Illinois, Urbana-Champaign, where her research centered on domain-specific languages within engineering.
+She is the co-author of [Applied Text Analysis with Python](https://www.oreilly.com/library/view/applied-text-analysis/9781491963036/) (2018, O’Reilly) and [Apache Hudi: The Definitive Guide](https://www.oreilly.com/library/view/apache-hudi-the/9781098173821/) (2025, O’Reilly). Dr. Bilbro earned her Ph.D. from the University of Illinois, Urbana-Champaign, focusing her research on domain-specific languages within engineering.

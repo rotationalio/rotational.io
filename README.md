@@ -112,7 +112,7 @@ social :
     icon: 'fa-linkedin-in'
   - name : "twitter"
     link : "Link to Your Twitter Profile"
-    icon: 'fa-twitter'
+    icon: 'fa-x-twitter'
   - name : "github"
     link: 'Link to Your GitHub Profile'
     icon: 'fa-github'
