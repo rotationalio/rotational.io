@@ -17,7 +17,7 @@ social :
     icon: 'fa-github'
 aliases: /bio/patrick-deziel
 ---
-Patrick Deziel is a distributed systems engineer and machine learning specialist at Rotational Labs. He has extensive experience building and maintaining mission-critical systems in the private sector, as well as integrating AI solutions into existing applications. 
+**Patrick Deziel** is a distributed systems engineer and machine learning specialist at Rotational Labs. He has extensive experience building and maintaining mission-critical systems in the private sector, as well as integrating AI solutions into existing applications. 
 
 At Rotational, Patrick fine-tunes custom LLMs and optimizes architectures to enhance model efficiency, scalability, and real-world applicability. He is co-author of [Real-time Machine Learning](https://www.manning.com/books/real-time-machine-learning) (Manning, 2025). 
 

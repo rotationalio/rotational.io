@@ -14,7 +14,7 @@ social :
     icon: 'fa-github'
 aliases: /bio/prema-roman
 ---
-Prema Roman is a distributed systems engineer and MLOps specialist at Rotational Labs and a professor at Georgetown University, with over a decade of experience in software, data, and machine learning engineering. She has a proven track record of building high-quality software applications and data products. 
+**Prema Roman** is a distributed systems engineer and MLOps specialist at Rotational Labs and a professor at Georgetown University, with over a decade of experience in software, data, and machine learning engineering. She has a proven track record of building high-quality software applications and data products. 
 
 At Rotational Labs, Prema has led the development of globally distributed systems and machine learning data products, enhancing the company’s capabilities in delivering scalable AI solutions. Her passion for continuous learning has driven her to transition from her start as a data analyst to tackling complex challenges in AI engineering. 
 

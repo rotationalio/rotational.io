@@ -17,7 +17,7 @@ social :
     icon: 'fa-github'
 aliases: /bio/rebecca-bilbro
 ---
-Dr. Rebecca Bilbro, co-founder and CTO of Rotational Labs, is a trailblazer in applied AI and machine learning engineering. She co-created Yellowbrick, a Python library that enhances model diagnostics by integrating scikit-learn and matplotlib APIs, facilitating more intuitive model steering. 
+**Dr. Rebecca Bilbro**, co-founder and CTO of Rotational Labs, is a trailblazer in applied AI and machine learning engineering. She co-created Yellowbrick, a Python library that enhances model diagnostics by integrating scikit-learn and matplotlib APIs, facilitating more intuitive model steering. 
 
 At Rotational Labs, Dr. Bilbro leads initiatives that empower companies to harness their domain expertise and data, resulting in the successful deployment of large language models and data-driven products. Her efforts bridge the gap between data science and engineering, driving AI solutions that are grounded in real-world business needs, informed by research, rigorously prototyped, and built with deployment and data governance in mind. 
 

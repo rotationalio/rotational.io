@@ -17,7 +17,7 @@ social :
     icon: 'fa-twitter'
 aliases: /bio/danielle-maxwell
 ---
-Danielle Maxwell is a Junior Distributed Systems Engineer at Rotational Labs, specializing in integrating AI into scalable architectures. Her expertise in full-stack development enables her to connect front-end interfaces with back-end AI-driven processes, enhancing system usability. 
+**Danielle Maxwell** is a Junior Distributed Systems Engineer at Rotational Labs, specializing in integrating AI into scalable architectures. Her expertise in full-stack development enables her to connect front-end interfaces with back-end AI-driven processes, enhancing system usability. 
 
 Danielle has contributed to AI research and development, focusing on enabling front-end developers to integrate AI-driven features into web applications using libraries like Transformer.js for real-time inference and interactivity. 
 
