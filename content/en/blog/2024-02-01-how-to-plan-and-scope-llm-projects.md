@@ -105,7 +105,7 @@ Estimate to complete each task in 1 to 2 sprint cycles, with a little cushion ti
 - **First-party data versus third-party data:** First-party data will be cheaper than third-party data and often that might be all that is needed to develop the solution.  Only consider augmenting with third-party data if the data that is present within the organization is insufficient.  How much data do you need?  The answer is not as much as you may think.  Refer to the example below.
 - **Computer hardware requirements:** If you are fine tuning an open source LLM on a small subset of your data, it is entirely possible to have a working solution using just a single beefy laptop.  In other words, it is not a requirement to load up on GPUs.
 
-*To wrap all of this into a specific example, we were involved in a project where we built a domain-specific LLM for an organization using a pre-built model from Hugging Face using just 12 MB of the company's data and through the course of **three iterations** built a solution in a single laptop that **revolutionalized** the organization's business.*
+*To wrap all of this into a specific example, we were involved in a project where we built a domain-specific LLM for an organization using a pre-built model from Hugging Face using just 12 MB of the company's data and through the course of **three iterations** built a solution in a single laptop that **revolutionized** the organization's business.*
 
 
 ## Bonus Tip: Stay Agile
