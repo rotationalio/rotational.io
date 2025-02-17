@@ -11,7 +11,7 @@ tags: ['AI', 'ML', 'Strategy']
 description: "Get insights from seasoned experts on how to build successful AI products"
 ---
 
-Last month, we spoke to a panel of expert product managers who have successully implemented AI solutions in their organizations.  This post recaps some of the key strategies and insights they shared.      
+Last month, we spoke to a panel of expert product managers who have successfully implemented AI solutions in their organizations.  This post recaps some of the key strategies and insights they shared.      
 
 <!--more-->
 
@@ -48,7 +48,7 @@ Evelyn favors learning by doing as opposed to getting the latest certification. 
 
 ## What AI features excite them the most
 
-When asked what AI features excite them the most, Jessica mentioned drug discovery applications.  She added that there are a lot of opportunities in many areas such as DevOps where AI can be used to manage costs and to speed up deployments.  Sebastian quipped that he would love to have AI create slide decks for him.  Evelyn took it one step further and is excited about the product that she is building that will streamline board meetings and quaterly business reviews, which includes creating the slides and cleaning up the data.  Max is excited about agents, including the product that his team built that summarized a dashboard that saved 30 minutes of time by removing the need to answer rudimentary questions.
+When asked what AI features excite them the most, Jessica mentioned drug discovery applications.  She added that there are a lot of opportunities in many areas such as DevOps where AI can be used to manage costs and to speed up deployments.  Sebastian quipped that he would love to have AI create slide decks for him.  Evelyn took it one step further and is excited about the product that she is building that will streamline board meetings and quarterly business reviews, which includes creating the slides and cleaning up the data.  Max is excited about agents, including the product that his team built that summarized a dashboard that saved 30 minutes of time by removing the need to answer rudimentary questions.
 
 ## Final Thoughts
 - **Jessica:** Get in there and play.  Lead from strategy.  Work on storytelling and influence.

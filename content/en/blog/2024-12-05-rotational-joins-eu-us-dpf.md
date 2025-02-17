@@ -23,7 +23,7 @@ At Rotational Labs, data drives our business, and always will. As we develop and
 
 While our internal efforts and policies are intentional and effective, we recognize the growing importance of making a public commitment to responsible data stewardship on a global scale.  
 
-To reinforce our committment to privacy, Rotational has joined the **[EU-US Data Privacy Framework (DPF)](https://www.dataprivacyframework.gov/)**, a transcontinental initiative sponsored by the U.S. Department of Commerce and its counterparts in the EU and UK. The DPF establishes rigorous data protection policies, promotes responsible data use, and ensures independent recourse for dispute resolution.  
+To reinforce our commitment to privacy, Rotational has joined the **[EU-US Data Privacy Framework (DPF)](https://www.dataprivacyframework.gov/)**, a transcontinental initiative sponsored by the U.S. Department of Commerce and its counterparts in the EU and UK. The DPF establishes rigorous data protection policies, promotes responsible data use, and ensures independent recourse for dispute resolution.  
 
 ### Privacy in the Age of Generative AI  
 

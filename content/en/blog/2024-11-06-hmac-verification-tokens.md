@@ -139,7 +139,7 @@ func (t Token) String() string {
 }
 ```
 
-The message is marshalled into a binary form, then a rand secret key is generated and used to create the HMAC signature along with a SHA256 hash. This signature is stored alongside the message and the ID and the secret are concatened together to send to the recipient.
+The message is marshalled into a binary form, then a rand secret key is generated and used to create the HMAC signature along with a SHA256 hash. This signature is stored alongside the message and the ID and the secret are concatenated together to send to the recipient.
 
 You should store the `SignedMessage` in your database for retrieval later. I use the `Scanner` and `Valuer` interface for this, storing a binary representation of the signed message as a BLOB. This allows me to include the `nonce` and the `signature` in the binary data without worrying about exporting those fields. Just remember, you need to index on the `ID` field, so store that separately!
 

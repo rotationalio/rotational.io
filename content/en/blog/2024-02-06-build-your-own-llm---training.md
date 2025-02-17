@@ -38,7 +38,7 @@ Note that some models only an encoder (BERT, DistilBERT, RoBERTa), and other mod
 Training an LLM from scratch is intensive due to the data and compute requirements. However, the beauty of Transfer Learning is that we can utilize features that were trained previously as a starting point to train more custom models. More specifically, fine-tuning is the process of using a model that has been exhaustively _pre-trained_ and continuing the training with a custom data set. Theoretically, we should be able to take a large pre-trained model [like distilbert-base-uncased](https://huggingface.co/distilbert/distilbert-base-uncased) and train it on the movies dataset we ingested in [part one](https://rotational.io/blog/build-your-own-llm---data-ingestion/). The goal is to train a model that:
 
 1. Better "understands" the domain of movie reviews.
-2. Has additional layers at the end to classify reviews as postive or negative.
+2. Has additional layers at the end to classify reviews as positive or negative.
 
 Note: We're using the _uncased_ version of distilbert which treats cases the same (e.g. `Ryan Gosling` == `ryan gosling`). You can also try training from the [cased](https://huggingface.co/distilbert/distilbert-base-cased) version and see how it impacts the resulting model.
 
