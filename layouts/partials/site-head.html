@@ -48,10 +48,39 @@
 {{"<!-- Main Stylesheet -->"|safeHTML}}
 <link rel="stylesheet" href="{{ `output.css` | absURL }}" media="screen">
 
+{{ "<!-- Google Consent -->" | safeHTML }}
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied',
+  })
+
+  const _hsp = window._hsp = window._hsp || [];
+  _hsp.push(['addPrivacyConsentListener', function(consent) {
+    const hasAnalyticsConsent = consent && (consent.allowed  || (consent.categories && consent.categories.analytics));
+    const hasAdsConsent = consent && (consent.allowed || (consent.categories && consent.categories.advertisement));
+
+    gtag('consent', 'update', {
+      'ad_storage': hasAdsConsent ? 'granted': 'denied',
+      'ad_user_data': hasAdsConsent ? 'granted': 'denied',
+      'ad_personalization': hasAdsConsent ? 'granted': 'denied',
+      'analytics_storage': hasAnalyticsConsent ? 'granted': 'denied',
+    });
+  }]);
+</script>
+
 {{- if .Site.Params.googleAnalytics -}}
+
 {{ "<!-- Google Analytics -->" | safeHTML }}
 <script src="https://www.googletagmanager.com/gtag/js?id={{ .Site.Params.googleAnalytics }}" async defer></script>
-<script type="module">
+<script>
   window.dataLayer = window.dataLayer || [];
   function gtag() { dataLayer.push(arguments); }
   gtag('js', new Date());
