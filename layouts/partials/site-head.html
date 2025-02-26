@@ -66,12 +66,15 @@
   _hsp.push(['addPrivacyConsentListener', function(consent) {
     const hasAnalyticsConsent = consent && (consent.allowed  || (consent.categories && consent.categories.analytics));
     const hasAdsConsent = consent && (consent.allowed || (consent.categories && consent.categories.advertisement));
+    const hasFunctionalityConsent = consent && (consent.allowed || (consent.categories && consent.categories.functionality));
 
     gtag('consent', 'update', {
       'ad_storage': hasAdsConsent ? 'granted': 'denied',
       'ad_user_data': hasAdsConsent ? 'granted': 'denied',
       'ad_personalization': hasAdsConsent ? 'granted': 'denied',
       'analytics_storage': hasAnalyticsConsent ? 'granted': 'denied',
+      'functionality_storage': hasFunctionalityConsent ? 'granted': 'denied',
+      'personalization_storage': hasFunctionalityConsent ? 'granted': 'denied',
     });
   }]);
 </script>
