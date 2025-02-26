@@ -1,6 +1,7 @@
 ---
 title: "Automating Vendor Questionnaires"
 slug: "automating-vendor-questionnaires"
+keywords: ['ai application developer', 'apps for artificial intelligence', 'artificial technology companies', 'ai application development', 'ai app development company', 'artificial intelligence examples applications', 'application of ai in engineering', 'applications of ai in engineering']
 headertext: Case Studies
 subheadertext: "Real Results: AI in Action"
 industry: Cybersecurity

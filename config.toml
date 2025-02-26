@@ -16,7 +16,7 @@ rssLimit = 20
 # Metadata
 logo = "img/rotational-small.png"
 description = "Rotational helps mid-market businesses thrive in an AI-driven economy with trusted, tailored solutions. We turn your data into AI tools—automations, personalized interfaces, and intelligent agents—that streamline operations and boost revenue. Specializing in natural language and computer vision, we deliver secure, reliable results that drive business growth and efficiency."
-keywords = "AI solutions for mid-market companies, AI-driven tools, Business automation solutions, AI-powered interfaces, Intelligent agents, Natural language processing (NLP), Computer vision AI, Streamline operations with AI, machine learning, Boost business performance with AI, AI for business growth, Tailored AI solutions, Trusted AI solutions, AI for operational efficiency, Secure AI tools, AI expertise for mid-market businesses, Endeavor"
+keywords = ['ai for companies', 'ai software', 'ai consulting', 'ai solutions', 'ai development', 'enterprise ai', 'ai services', 'ai platform', 'ai applications', 'ai for business', 'artificial intelligence solutions', 'artificial intelligence consulting']
 author = "Rotational Labs, Inc."
 image = "img/rotational-gophercon.webp"
 copyright = "Copyright &copy; Rotational Labs, Inc. 2021&ndash;{year} &middot; All Rights Reserved"

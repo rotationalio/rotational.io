@@ -1,6 +1,7 @@
 ---
 title: "Real-Time Monitoring of Power Transmission"
 slug: "real-time-monitoring-transmission-power"
+keywords: ['ai applications', 'applications of artificial intelligence', 'artificial intelligence examples applications', 'application of ai in engineering', 'applications of ai in engineering', 'applying ai', 'apps for artificial intelligence']
 headertext: Case Studies
 subheadertext: "Real Results: AI in Action"
 industry: Utilities
