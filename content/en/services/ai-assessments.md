@@ -37,7 +37,7 @@ innovate:
 contact:
   - text: View Case Studies
     url: /case-studies
-  - text: Get Free AI Assessment
+  - text: Start Your AI Assessment
     url: https://team.rotational.ai/assessment
   - text: Contact Us
     url: /contact
