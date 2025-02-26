@@ -3,6 +3,7 @@ headertext: "AI Services"
 slug: ai-assessments
 date: 2024-09-12T13:23:18-04:00
 draft: false
+keywords: ['ai consultation', 'ai consulting firms', 'ai consulting companies', 'artificial intelligence consulting firm', 'ai and consulting', 'applications of artificial intelligence', 'ai in cloud', 'ai ops']
 subheadertext: Your trusted AI innovation partner.
 title: Strategic AI Assessments
 services:

@@ -1,6 +1,7 @@
 ---
 title: "Case Studies"
 slug: "case-studies"
+keywords: ['ai consultation', 'ai consulting firms', 'ai consulting companies', 'artificial intelligence consulting firm', 'ai and consulting', 'applications of artificial intelligence', 'ai in cloud', 'ai ops']
 subheadertext: Opportunities abound.
 innovate:
   subheading: Innovate or Stagnate
