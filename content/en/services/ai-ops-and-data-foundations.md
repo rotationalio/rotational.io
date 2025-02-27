@@ -38,6 +38,8 @@ innovate:
 contact:
   - text: View Case Studies
     url: /case-studies
+  - text: Start Your AI Assessment
+    url: https://team.rotational.ai/assessment
   - text: Contact Us
     url: /contact
   - text: Learn About Endeavor
