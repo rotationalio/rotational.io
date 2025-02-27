@@ -3,6 +3,9 @@ date: 2023-02-09T10:21:41-06:00
 intro: WELCOME TO ROTATIONAL
 header: YOUR GO-TO AI <span>INNOVATION PARTNER</span>
 headertext: We work with enterprises to build trusted data foundations and AI solutions for sustainable business impact.
+headeractions:
+- action: Start Your AI Assessment
+  link: https://team.rotational.ai/assessment
 services:
 - service: STRATEGIC ADVISORY & AI ASSESSMENTS
   description: |
