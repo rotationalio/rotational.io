@@ -1,6 +1,6 @@
 ############################# Ensign Data ###################################
 notice:
-  enable: true
+  enable: false
   notice: "Join us for our Pre-training LLMs Tutorial on Feb 28"
   action:
     text: Learn More
