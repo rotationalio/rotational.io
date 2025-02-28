@@ -15,9 +15,10 @@ if (emblaRoot) {
   });
 };
 
+// TODO: Debug cookie banner script.
 // Display cookie banner on user click.
-const cookieBttn = document.querySelector('.cookie-bttn');
+/* const cookieBttn = document.querySelector('.cookie-bttn');
 cookieBttn?.addEventListener('click', () => {
   const _hsp = window._hsp = window._hsp || [];
   _hsp.push(['showBanner']);
-})();
+})(); */
