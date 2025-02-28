@@ -4,7 +4,7 @@ const emblaRoot = document.querySelectorAll('.embla');
 if (emblaRoot) {
   emblaRoot?.forEach((root) => {
     // Set carousel options from the data attributes.
-   const options = { loop: Boolean(root?.dataset?.loop), slidesToScroll: Number(root?.dataset?.scroll), align: "start" };
+    const options = { loop: Boolean(root?.dataset?.loop), slidesToScroll: Number(root?.dataset?.scroll), align: "start" };
     const carousel = EmblaCarousel(root?.querySelector('.embla__viewport'), options);
 
     const prevBtn = root?.querySelector('.embla__prev');
@@ -14,3 +14,10 @@ if (emblaRoot) {
     nextBtn?.addEventListener('click', carousel?.scrollNext, false);
   });
 };
+
+// Display cookie banner on user click.
+const cookieBttn = document.querySelector('.cookie-bttn');
+cookieBttn?.addEventListener('click', () => {
+  const _hsp = window._hsp = window._hsp || [];
+  _hsp.push(['showBanner']);
+})();

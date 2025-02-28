@@ -28,6 +28,10 @@
   translation: Privacy Policy
 - id: termsOfUse
   translation: Terms of Use
+- id: cookiePolicy
+  translation: Cookie Policy
+- id: manageCookies
+  translation: Manage Cookies
 - id: backToHome
   translation: Back to Home
 - id: pageNotFound
