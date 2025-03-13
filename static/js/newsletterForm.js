@@ -1,6 +1,9 @@
+import { setError } from "./recaptchaAssessment.js";
+
 //  newsletter form submission
 const newsletterForm = document.getElementById('newsletterForm');
 const formID = document.getElementById('newsletterFormID');
+const errorEl = 'newsletter-error';
 
 newsletterForm?.addEventListener('submit', (event) => {
   event.preventDefault();
@@ -44,5 +47,6 @@ newsletterForm?.addEventListener('submit', (event) => {
 
     .catch((error) => {
       console.error('Error:', error);
+      setError(newsletterForm, errorEl)
     });
 });

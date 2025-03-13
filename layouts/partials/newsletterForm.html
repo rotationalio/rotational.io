@@ -3,14 +3,8 @@
   <input type="hidden" id="newsletterFormID" value="8aeeb77b-a5e0-4772-b726-44e1fc2eb6e1">
   <form action="blog" method="post" id="newsletterForm">
     <h6 class="font-bold text-center">{{ i18n "enterEmailToSubscribe" }}</h6>
-    <label for="email" class="hidden">Email</label>
-    <input type="text" name="email" id="email" required placeholder="{{ i18n " newsLetterEmail" }}"
-      class="w-full px-4 py-2.5 rounded-lg mt-6 text-black" style="color:black">
-    <div class="flex mt-6 items-start gap-x-2">
-      <input type="checkbox" id="checkbox" required name="consent" class="mt-1 w-4 h-4 block border-0 ">
-      <label for="checkbox"><span id="consentText">{{ i18n "newsLetterEngagment" }}</span></label>
-    </div>
-    <div class="bg-teal-100 border-t-4 border-teal-500 mt-10 rounded-b text-teal-900 px-4 py-3 shadow-md hidden "
+
+    <div class="bg-teal-100 border-t-4 border-teal-500 mt-3 rounded-b text-teal-900 p-4 shadow-md hidden "
       id='newsletter-alert' role="alert">
       <div class="flex">
 
@@ -18,6 +12,20 @@
           <p class="text-sm">{{site.Params.newsletterFormSuccessMessage}}</p>
         </div>
       </div>
+    </div>
+
+    <div id="newsletter-error" class="hidden mt-3 bg-red-200 border-t-4 border-red-600 text-red-900 rounded-b p-4 shadow-md" role="alert">
+      <div>
+          <p class="text-sm">{{ site.Params.contactFormErrorMessage }}</p>
+      </div>
+  </div>
+
+    <label for="email" class="hidden">Email</label>
+    <input type="text" name="email" id="email" required placeholder="{{ i18n " newsLetterEmail" }}"
+      class="w-full px-4 py-2.5 rounded-lg mt-6 text-black" style="color:black">
+    <div class="flex mt-6 items-start gap-x-2">
+      <input type="checkbox" id="checkbox" required name="consent" class="mt-1 w-4 h-4 block border-0 ">
+      <label for="checkbox"><span id="consentText">{{ i18n "newsLetterEngagment" }}</span></label>
     </div>
     <div class="flex justify-center">
 
