@@ -30,6 +30,10 @@
     @apply block w-full mb-6 bg-gray-50 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500;
   }
 
+  .casestudy-sel {
+    @apply bg-[#EEEEEE] border border-black rounded h-10 text-base w-96 md:mr-2 pl-3 appearance-none bg-[url(/img/chevron-down.svg)] bg-no-repeat bg-[right_12px_center];
+  }
+
 }
 
 
