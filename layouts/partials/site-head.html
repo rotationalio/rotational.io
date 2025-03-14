@@ -48,6 +48,11 @@
 {{"<!-- Main Stylesheet -->"|safeHTML}}
 <link rel="stylesheet" href="{{ `output.css` | absURL }}" media="screen">
 
+{{- if .Site.Params.hubspotCode -}}
+{{ "<!-- HubSpot Code -->" | safeHTML }}
+<script type="text/javascript" id="hs-script-loader" async defer src="{{ .Site.Params.hubspotCode }}"></script>
+{{ end }}
+
 {{ "<!-- Google Consent -->" | safeHTML }}
 <script>
   window.dataLayer = window.dataLayer || [];
