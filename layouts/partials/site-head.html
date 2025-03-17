@@ -69,8 +69,8 @@
     'personalization_storage': 'denied',
   })
 
-  const _hsp = window._hsp = window._hsp || [];
-  _hsp.push(['addPrivacyConsentListener', function(consent) {
+  const hspConsent = window._hsp = window._hsp || [];
+  hspConsent.push(['addPrivacyConsentListener', function(consent) {
     const hasAnalyticsConsent = consent && (consent.allowed  || (consent.categories && consent.categories.analytics));
     const hasAdsConsent = consent && (consent.allowed || (consent.categories && consent.categories.advertisement));
     const hasFunctionalityConsent = consent && (consent.allowed || (consent.categories && consent.categories.functionality));
