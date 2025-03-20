@@ -9,7 +9,7 @@ description: "Watch us break down some of the key engineering techniques utilize
 events: ['Webinar']
 registration_link:
 call_to_action:
-video_link: https://www.youtube-nocookie.com/embed/AvvNgvZ3VsU?si=X_dv0TylUG3WLz3W
+video_link: https://www.youtube.com/embed/AvvNgvZ3VsU?si=ML4lkLUnbEmO4lTR
 audio_link:
 categories: ['Video']
 presenters: ['Rebecca Bilbro', 'Edwin Schmierer']
