@@ -96,11 +96,12 @@
                     <ul class="sm:mt-0 mt-4 flex gap-x-8">
                         <li><a href="/privacy/">{{ i18n "privacyPolicy" }}</a></li>
                         <li><a href="/terms/">{{ i18n "termsOfUse" }}</a></li>
-                      <!--   <li>
-                            <button id="hs_show_banner_button" class="cookie-bttn" type="button">
+                      <li>
+                            <button id="hs_show_banner_button" type="button" 
+                            onclick="(() => { const showBanner = window._hsp = window._hsp || []; showBanner.push(['showBanner']); })()">
                                 {{ i18n "manageCookies" }}
                             </button>
-                        </li> -->
+                        </li>
                     </ul>
                 </div>
             </div>
