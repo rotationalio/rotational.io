@@ -5,9 +5,8 @@ headertext: "LEARNING"
 type: "learning"
 headeractions:
 - action: Download AI Playbook
-  link:
-  icon: fa-solid fa-caret-down
-  id: download-playbook
+  link: https://share.hsforms.com/2BkqPYdRjR2iAr5NZ56hOtQee085
+  icon: fa-solid fa-book-open
 download:
 - text: Download PDF
   link: "https://rtnl.link/me8fufQPfVb"
