@@ -53,7 +53,10 @@ form?.addEventListener('submit', async (event) => {
 
   // Get HubSpot tracking cookie.
   const hutk = getHubspotCookie();
-  data.hutk = hutk;
+  
+  if (hutk) {
+    data.hutk = hutk;
+  }
 
   fetch(`https://api.rotationallabs.com/v1/contact/form/${formID?.value}`, {
     method: 'POST',

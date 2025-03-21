@@ -22,9 +22,14 @@ newsletterForm?.addEventListener('submit', (event) => {
   const consentText = document.getElementById('consentText');
   data.consent_text = consentText?.innerText;
 
-  // Get the tracking cookie and conversion page details.
+  // Get the tracking cookie.
   const hutk = getHubspotCookie();
-  data.hutk = hutk;
+  
+  if (hutk) {
+    data.hutk = hutk;
+  }
+
+  // Get the conversion page details.
   data.page_uri = window.location.href;
   data.page_name = document.title;
 
