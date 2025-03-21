@@ -1,4 +1,5 @@
 import { setError } from "./recaptchaAssessment.js";
+import { getHubspotCookie } from "./utils.js";
 
 //  newsletter form submission
 const newsletterForm = document.getElementById('newsletterForm');
@@ -21,6 +22,11 @@ newsletterForm?.addEventListener('submit', (event) => {
   const consentText = document.getElementById('consentText');
   data.consent_text = consentText?.innerText;
 
+  // Get the tracking cookie and conversion page details.
+  const hutk = getHubspotCookie();
+  data.hutk = hutk;
+  data.page_uri = window.location.href;
+  data.page_name = document.title;
 
   fetch(`https://api.rotationallabs.com/v1/contact/form/${formID?.value}`, {
     method: 'POST',
@@ -50,3 +56,4 @@ newsletterForm?.addEventListener('submit', (event) => {
       setError(newsletterForm, errorEl)
     });
 });
+
