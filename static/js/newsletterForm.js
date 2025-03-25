@@ -26,7 +26,7 @@ newsletterForm?.addEventListener('submit', (event) => {
   const hutk = getHubspotCookie();
   
   // Verify the cookie exists before adding it to the data object. If it exists, send the conversion page details. 
-  // HubSpot will return a 404 if the hutk isn't included with the page URI and page name.
+  // HubSpot will return a 400 if the hutk isn't included with the page URI and page name.
   if (hutk) {
     data.hutk = hutk;
     data.page_uri = window.location.href;
