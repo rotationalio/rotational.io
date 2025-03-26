@@ -1,4 +1,5 @@
 import { /* fetchAssessment, passAssessment, */ setError } from "./recaptchaAssessment.js";
+import { getHubspotCookie } from "./utils.js";
 
 // Submit Endeavor form
 const endeavorForm = document.getElementById('endeavorForm');
@@ -46,6 +47,13 @@ endeavorForm?.addEventListener('submit', async (event) => {
    // Add consent text to the data object.
   const consentText = document.getElementById('consentText');
   data.consent_text = consentText?.innerText;
+
+  // Get HubSpot tracking cookie.
+  const hutk = getHubspotCookie();
+  
+  if (hutk) {
+    data.hutk = hutk;
+  }
 
   fetch(`https://api.rotationallabs.com/v1/contact/form/${formID?.value}`, {
     method: 'POST',
