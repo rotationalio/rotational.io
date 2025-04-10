@@ -1,4 +1,4 @@
-import { /* fetchAssessment, passAssessment, */ setError } from "./recaptchaAssessment.js";
+import { fetchAssessment, passAssessment, setError } from "./recaptchaAssessment.js";
 import { getHubspotCookie } from "./utils.js";
 
 // Submit Endeavor form
@@ -9,9 +9,7 @@ const errorEl = 'endeavorError'
 endeavorForm?.addEventListener('submit', async (event) => {
   event.preventDefault();
 
-  // TODO: Restore the recaptcha implementation.
-
-/*   const submitBttn = document.getElementById('submit-bttn');
+  const submitBttn = document.getElementById('submit-bttn');
   const siteKey = submitBttn.dataset.sitekey;
   const action = submitBttn.dataset.action;
 
@@ -32,7 +30,7 @@ endeavorForm?.addEventListener('submit', async (event) => {
   } catch (error) {
     setError(endeavorForm, errorEl)
     return
-  } */
+  }
 
   const formData = new FormData(endeavorForm);
   const data = Object.fromEntries(formData);
