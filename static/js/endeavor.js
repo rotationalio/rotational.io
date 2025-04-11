@@ -9,9 +9,9 @@ const errorEl = 'endeavorError'
 endeavorForm?.addEventListener('submit', async (event) => {
   event.preventDefault();
 
-  // TODO: Restore the reCAPTCHA implementation
+// TODO: Restore the reCAPTCHA implementation
 
-/*   const submitBttn = document.getElementById('submit-bttn');
+/* const submitBttn = document.getElementById('submit-bttn');
   const siteKey = submitBttn.dataset.sitekey;
   const action = submitBttn.dataset.action;
 
