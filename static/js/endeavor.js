@@ -1,4 +1,4 @@
-import { /* fetchAssessment, passAssessment, */ setError } from "./recaptchaAssessment.js";
+import { fetchAssessment, passAssessment, setError } from "./recaptchaAssessment.js";
 import { getHubspotCookie } from "./utils.js";
 
 // Submit Endeavor form
