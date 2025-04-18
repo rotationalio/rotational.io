@@ -10,9 +10,9 @@ newsletterForm?.addEventListener('submit', async (event) => {
   event.preventDefault();
 
   // Get reCAPTCHA token and form action.
-  const contactBttn = document.getElementById('newsletter-bttn');
-  const siteKey = contactBttn.dataset.sitekey;
-  const action = contactBttn.dataset.action;
+  const newsletterBttn = document.getElementById('newsletter-bttn');
+  const siteKey = newsletterBttn.dataset.sitekey;
+  const action = newsletterBttn.dataset.action;
 
   // Create an assessment and return an error if the form submission appears to be spam or if some other error
   // occurs while fetching the data.
