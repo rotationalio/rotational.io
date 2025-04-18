@@ -1,7 +1,7 @@
 <div class="bg-[#1D65A6] max-w-[800px] mx-auto mt-20 py-8 px-12 md:px-16 text-white md:rounded-lg">
 
   <input type="hidden" id="newsletterFormID" value="8aeeb77b-a5e0-4772-b726-44e1fc2eb6e1">
-  <form action="blog" method="post" id="newsletterForm">
+  <form action="newsletter" method="post" id="newsletterForm">
     <h6 class="font-bold text-center">{{ i18n "enterEmailToSubscribe" }}</h6>
 
     <div class="bg-teal-100 border-t-4 border-teal-500 mt-3 rounded-b text-teal-900 p-4 shadow-md hidden "
@@ -29,7 +29,7 @@
     </div>
     <div class="flex justify-center">
 
-      <button type="submit" class="bg-[#192E5B] px-10 py-3 mt-8 rounded-lg text-sm text-white uppercase md:text-base hover:bg-[#192E5B]/80">
+      <button id="newsletter-bttn" type="submit" data-sitekey="{{ site.Params.recaptchaKey }}" data-action="newsletter" class="bg-[#192E5B] px-10 py-3 mt-8 rounded-lg text-sm text-white uppercase md:text-base hover:bg-[#192E5B]/80">
         {{ i18n
         "submit" }}</button>
     </div>
