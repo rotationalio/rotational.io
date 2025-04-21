@@ -44,11 +44,10 @@ function fetchRecaptchaToken(key, action) {
 // Check if the assessment score is greater than 0.5.  There is a high probability that the request is spam if it is not.
 export function passAssessment(assessment) {
   if (!assessment) {
-    setError(form, errorEl);
-    return;
+    return false;
   };
 
-  return assessment?.riskAnalysis?.score < 0.5;
+  return assessment?.riskAnalysis?.score > 0.5;
 };
 
 // Display error message if form submission fails.
