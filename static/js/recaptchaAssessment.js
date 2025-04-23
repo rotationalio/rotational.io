@@ -12,23 +12,21 @@ export async function fetchAssessment(siteKey, action) {
   req.token = token;
   req.action = action;
 
-  fetch(`https://api.rotationallabs.com/v1/recaptcha`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(req),
-  })
-    .then((response) => {
-      return response.json();
-    })
-    .then((data) => {
-      console.log('Success:', data);
-      return data;
-    })
-    .catch((error) => {
-      console.error('Error:', error);
+  try {
+    const response = await fetch(`https://api.rotationallabs.com/v1/recaptcha`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(req),
     });
+
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error('Error fetching assessment:', error);
+    throw error;
+  }
 };
 
 // Get the recaptcha token from the reCAPTCHA Enterprise API.
@@ -47,7 +45,7 @@ export function passAssessment(assessment) {
     return false;
   };
 
-  return assessment?.riskAnalysis?.score > 0.5;
+  return assessment?.risk_analysis?.score > 0.5;
 };
 
 // Display error message if form submission fails.
