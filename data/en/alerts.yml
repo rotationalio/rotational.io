@@ -1,6 +1,6 @@
 ############################# Ensign Data ###################################
 notice:
-  enable: true
+  enable: false
   notice: "Join us for our Essential Techniques for Real-Time Computer Vision Webinar on Apr 25"
   action:
     text: Learn More
