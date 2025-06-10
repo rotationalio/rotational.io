@@ -1,8 +1,8 @@
 ############################# Ensign Data ###################################
 notice:
-  enable: false
-  notice: "Join us for our Essential Techniques for Real-Time Computer Vision Webinar on Apr 25"
+  enable: true
+  notice: "Join us for our Engineering AI Experiments with Intent & Business Impact Webinar on June 27"
   action:
     text: Learn More
     link: "https://r8l.co/RG8tV7KWC8n"
-  expires: 2025-04-25T13:00:00Z
+  expires: 2025-06-27T13:00:00Z
