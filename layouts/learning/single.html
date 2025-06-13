@@ -57,8 +57,10 @@
         {{ range .Params.presenters }}
         <li>
           <a href="/authors/{{ . | urlize }}" class="text-base">
-            <img src="/img/team/{{ . | urlize }}.png" alt="{{ . }}"
-              class="mb-2 border-4 border-white w-24 h-24 mx-auto rounded-full drop-shadow-lg">
+            {{ $imgPath := printf "/img/team/%s.png" (. | urlize) }}
+            {{ $imgExists := fileExists (printf "static/%s" $imgPath) }}
+            <img src="{{ if $imgExists }}{{ $imgPath }}{{ else }}img/butterfly.png{{ end }}" alt="{{ . }}"
+              class="mb-2 border-4 border-white mx-auto rounded-full drop-shadow-lg {{ if $imgExists }}w-24 h-24{{ end }}">
             <p class="mt-2">{{ . }}</p>
           </a>
         </li>
