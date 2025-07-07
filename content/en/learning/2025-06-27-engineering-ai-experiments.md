@@ -1,6 +1,6 @@
 ---
 title: "Engineering AI Experiments with Intent & Business Impact"
-slug: "engineering-ai-experiments"
+slug: "how-to-engineer-ai-experiments"
 draft: false
 event_date: "2025-06-27"
 image: "img/resources/webinars/2025-06-27-engineering-ai-experiments.png"
