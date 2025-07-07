@@ -10,12 +10,11 @@ profile: img/team/edwin-schmierer.png
 tags: ['AI Agents', 'Prompt Engineering']
 description: "We continue our exploration of AI agents with an overview of prompt engineering."
 ---
-
-In the next part of our AI Agents series we provide an overview of prompt engineering and 
+Add intro that will appear on the blog page.
 
 <!--more-->
 
-This is Part 2 in our AI Agents series. If you missed Part 1 on “What is an AI Agent?”, check it out here.
+*This is Part 2 in our AI Agents series. If you missed Part 1 “AI Agents Defined”, check it out [here](/blog/ai-agents-defined).*
 
 ## What Is a “Prompt”?
 At its core, a **prompt** is how you instruct an AI agent. **Prompt engineering** is the art of crafting messages, both system-level and user-facing, to get useful, consistent results from large language models (LLMs).
@@ -26,8 +25,10 @@ At its core, a **prompt** is how you instruct an AI agent. **Prompt engineering*
 
 The rule of thumb? If it’s something you want the agent to always remember (e.g., “you’re a finance expert”), it typically belongs in the system prompt. If it’s request-specific (e.g., “analyze this quarter’s sales data”), that goes into the user prompt.
 
+<!-- Include a link to best practices? -->
 The system prompt may or may not be visible to the end user, depending on the product design. Hiding it can prevent confusion or tampering; showing it can improve transparency and trust.
 
+<!-- We should mention authority or prioritization a bit more. -->
 If there’s a conflict, the model usually follows the system prompt, assuming it’s well-defined. In multi-step tasks, keep the system prompt consistent and adjust user prompts per step. User prompts may override system prompts in cases like persona shifts, boundary changes, or domain switches.
 
 ## Why Prompt Engineering Matters
