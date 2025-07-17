@@ -5,8 +5,8 @@ date: "2025-07-17T09:46:06-04:00"
 draft: false
 image: img/blog/2025-07-17-prompt-engineering-overview-key-to-steering-agents/prompt-engineering.png
 photo_credit: "Image generated using GPT-4o"
-authors: ['Edwin Schmierer']
-profile: img/team/edwin-schmierer.png
+authors: ['Edwin Schmierer', 'Danielle Maxwell']
+profile: img/butterfly.png
 tags: ['AI Agents', 'Prompt Engineering']
 description: "We continue our exploration of AI agents with an overview of prompt engineering."
 ---
