@@ -1,16 +1,16 @@
 ---
 title: "Prompts: The Key to Steering Agents"
 slug: "prompt-engineering-overview-key-to-steering-agents"
-date: "2025-07-04T09:46:06-04:00"
+date: "2025-07-17T09:46:06-04:00"
 draft: false
-image: img/blog/waterfall.webp #Change default image
+image: img/blog/2025-07-04-prompt-engineering-overview-key-to-steering-agents/prompt-engineering.png
 photo_credit: "Image generated using GPT-4o"
 authors: ['Edwin Schmierer']
 profile: img/team/edwin-schmierer.png
 tags: ['AI Agents', 'Prompt Engineering']
 description: "We continue our exploration of AI agents with an overview of prompt engineering."
 ---
-Add intro that will appear on the blog page.
+AI agents have the ability to complete tasks autonomously, but without clear, well-structured prompts, they stumble. Prompt engineering helps bridge the gap between potential and performance.
 
 <!--more-->
 
@@ -25,16 +25,14 @@ At its core, a **prompt** is how you instruct an AI agent. **Prompt engineering*
 
 The rule of thumb? If it’s something you want the agent to always remember (e.g., “you’re a finance expert”), it typically belongs in the system prompt. If it’s request-specific (e.g., “analyze this quarter’s sales data”), that goes into the user prompt.
 
-<!-- Include a link to best practices? -->
-The system prompt may or may not be visible to the end user, depending on the product design. Hiding it can prevent confusion or tampering; showing it can improve transparency and trust.
+The system prompt tends to not be visible to the end user as hiding it can prevent confusion or tampering, though [showing the prompt](https://techcrunch.com/2024/08/26/anthropic-publishes-the-system-prompt-that-makes-claude-tick/) could improve transparency and trust.
 
-<!-- We should mention authority or prioritization a bit more. -->
-If there’s a conflict, the model usually follows the system prompt, assuming it’s well-defined. In multi-step tasks, keep the system prompt consistent and adjust user prompts per step. User prompts may override system prompts in cases like persona shifts, boundary changes, or domain switches.
+Conflicts are possible as user prompts may override system prompts in cases like persona shifts, boundary changes, or domain switches. This may cause inconsistent behavior or confusion, since models blend instructions rather than following one set over another. To address this, researchers have proposed an [instruction hierarchy](https://arxiv.org/abs/2404.13208) that teaches LLMs how to to prioritize privileged instructions.
 
 ## Why Prompt Engineering Matters
 This gets us to the importance of prompt design and development. Allocating time, effort, and budget to prompt engineering is justified for the following reasons: 
 1. **Consistent performance**: Well-designed prompts lead to repeatable, reliable responses, critical for enterprise workflows where accuracy and tone must hold steady.
-2. **Use-case templates**: For repeating tasks (summaries, emails, analysis), designing prompt templates with variable slots helps scale high-quality output with minimal manual adjustment.
+2. **Use-case templates**: For repetitive tasks (summaries, emails, analysis), designing prompt templates with variable slots helps scale high-quality output with minimal manual adjustment.
 3. **Few-shot learning**:  Instead of fine-tuning, you can embed sample Question & Answer (Q&A) pairs directly in the prompt (called “few-shot learning”). This teaches the model the pattern you want without training a new model.
 4. **Modular workflows**: Break complex problems into steps, each step guided by its own prompt. This not only improves accuracy, but also helps with monitoring, auditing, and troubleshooting.
 5. **Safety via guardrails**: Embedding clear boundaries in system prompts (or using guardrail frameworks like Llama Guard) helps avoid hallucinations or risky outputs.
