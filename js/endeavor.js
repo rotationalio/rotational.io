@@ -1,6 +1,9 @@
 import { fetchAssessment, passAssessment, setError } from "./recaptchaAssessment.js";
 import { getHubspotCookie } from "./utils.js";
 
+// Google Ads
+const googleAdsID = 'AW-374501142/08GeCK2ppYAbEJbeybIB';
+
 // Submit Endeavor form
 const endeavorForm = document.getElementById('endeavorForm');
 const formID = document.getElementById('formID');
@@ -48,7 +51,7 @@ const submitBttn = document.getElementById('submit-bttn');
 
   // Get HubSpot tracking cookie.
   const hutk = getHubspotCookie();
-  
+
   if (hutk) {
     data.hutk = hutk;
   }
@@ -72,6 +75,18 @@ const submitBttn = document.getElementById('submit-bttn');
       }
     })
     .then((data) => {
+      // Report conversion event to GoogleAds
+      if (window.gtag) {
+        window.gtag('event', 'conversion', {
+          'send_to': googleAdsID,
+          'value': 2.8,
+          'currency': 'USD',
+          'event_callback': () => {
+            console.debug('Google Ads conversion event reported');
+          }
+        });
+      };
+
       console.log('successfully submitted endeavor form:', data);
     })
     .catch((error) => {
