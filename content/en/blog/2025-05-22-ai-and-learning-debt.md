@@ -19,7 +19,7 @@ Everywhere I look online right now someone is talking about how AI is either mag
 
 ## Learning Debt
 
-Technical debt is a widely discussed topic in software engineering. Dramatically oversimplified, it refers to the idea that applying a quick bandaid to a problem rather than taking the extra time to solve it properly does not fully solve the problem. Instead you accumulate debt in the form of future work to untangle the progressively more complicated layers of digital duct tape that holds your system together.
+Technical debt is a widely discussed topic in software engineering. Dramatically oversimplified, it refers to the idea that applying a quick bandaid to a problem rather than taking the extra time to solve it properly does not fully solve the problem. Instead you accumulate debt in the form of future work to untangle the progressively more complicated layers of digital duct tape that hold your system together.
 
 Learning debt works much the same way. As we are presented with challenges throughout our personal, professional, and academic lives we are often given the opportunity to apply a quick fix or to dig in and truly learn how to tackle the task at hand. There is immediate-term benefit to the shortcut, but in the long run too many of these accumulate into learning debt - skills and knowledge that we need but never fully developed.
 
