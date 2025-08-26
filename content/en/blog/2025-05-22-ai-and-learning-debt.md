@@ -13,7 +13,7 @@ description: "Add Description Here"
 
 # How to Use AI to Make Yourself Smarter - Not Dumber
 
-Everywhere I look online right now someone is talking about how AI is either magically granting everyone super powers or catalyzing society’s downward slide into a post-apocalyptic hellscape reminiscent of the movie Idiocracy. I’m here today to tell you that both of these things can be true simultaneously, and offer some suggestions for how you can make sure you end up on the right side of history when the (digital) dust settles.
+Everywhere I look right now someone is either talking about how AI is magically granting everyone super powers or catalyzing society’s downward slide into a post-apocalyptic hellscape reminiscent of the movie Idiocracy. While hyperbole is great for clicks and engagement, reality - as is often the case - is much more nuanced. AI use is more like a chose your own adventure book, where the small decisions we make gradually accumulate into consequences that are not always readily apparent.
 
 <!--more-->
 
