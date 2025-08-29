@@ -64,7 +64,8 @@ Choosing between models depends on business priorities and trade-offs:
 Other considerations affect model selection including:  
 - **Latency**: Edge use cases (e.g., sensors, vehicles, mobile devices) often require local inferencing, making cloud APIs impractical.  
 - **Regulation**: Highly regulated industries (e.g., healthcare, defense) may prohibit sending sensitive data to external providers.  
-- **Cost efficiency**: As smaller models improve, they’re becoming attractive alternatives for specific workloads.  
+- **Cost efficiency**: As smaller models improve, they’re becoming attractive alternatives for specific workloads.
+- **Guardrails**: Best-in-class proprietary models often include robust, thoroughly tested mechanisms to prevent misuse and abuse. However companies that need to ensure their AI models adhere to specific safety, ethical, or compliance policies may require the ability to implement and manage their own guardrails. While a greater level of control is available with self-hosted models, when setting up custom guardrails make sure to plan for the same careful design and thorough testing required for the other components of your AI system.
 
 ---
 
