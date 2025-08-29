@@ -2,7 +2,7 @@
 title: "Making Sense of LLMs"
 slug: "making-sense-of-llms"
 date: "2025-08-27T09:45:00-04:00"
-draft: true
+draft: false
 image: img/blog/2025-08-27-making-sense-of-llms/llm-architecture.png
 photo_credit: "Image generated using GPT-5"
 authors: ['Edwin Schmierer', 'Steve Veldman']
