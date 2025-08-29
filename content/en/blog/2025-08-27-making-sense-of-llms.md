@@ -17,14 +17,14 @@ Now that we’ve covered [agents at a high level](https://rotational.io/blog/ai-
 ---
 
 ## What Are LLMs?  
-At their core, LLMs are probabilistic algorithms trained on vast text corpora (e.g., [Common Crawl](https://commoncrawl.org/)) to generate text. Most are “next token predictors,” meaning they generate the next word (or token) in a sequence based on what came before. They come in a variety of forms and sizes, including “reasoning” models that evaluate multiple possibilities before producing a final output.  
+At their core, LLMs are probabilistic machine learning models that have been algorithmically trained on vast text corpora (e.g., [Common Crawl](https://commoncrawl.org/)) to generate text. Most are “next token predictors,” meaning they generate the next word (or token) in a sequence based on what came before. They come in a variety of forms and sizes, including “reasoning” models that generate and evaluate multiple possibilities before producing a final output.  
 
-Generative AI isn’t limited to text. Other modalities include audio, images, and video, as well as domain-specific applications like biology. For this post, though, we’ll focus on text-based LLMs.  
+Generative AI isn’t limited to text. Other modalities include audio, images, and video (and models of any modality can be adapted to domain-specific applications like biology). For this post, though, we’ll focus on text-based LLMs.  
 
 ---
 
 ## How They Work  
-Unlike traditional software, which follows deterministic rules, LLMs operate probabilistically. They aren’t hard-coded with logic; instead, they’re “instructed” via prompts to complete tasks within a given context.  
+Unlike traditional software, which follows deterministic rules, LLMs operate probabilistically. They aren’t hard-coded with logic; instead, they’re “instructed” via prompts to complete tasks within a given context. They then complete these tasks by generating tokens (which represent words, portions of words, or specific text characters) based on a probability distribution learned during the training process.  
 
 How well they perform depends on several factors: model fit, the quality of the prompt, and the context provided. Outputs can be assessed informally (“does this seem right?”) or through more rigorous evaluation as we discussed in [this post](https://rotational.io/blog/pick-the-best-ai/).  
 
@@ -38,15 +38,15 @@ For a clear visualization of this complexity, see [bbycroft.net/llm](https://bby
 Organizations typically access LLMs in three ways:  
 
 ### 1. Proprietary Models  
-Providers such as OpenAI, Anthropic, Google, and Microsoft offer API-based access to high-performance “foundation” models. These companies invest heavily in training, infrastructure, and R&D. Pricing is usage-based, commonly per million input tokens (e.g., $1) and per million output tokens (e.g., $4). The higher output cost reflects the greater compute required to generate text.  
+Providers such as OpenAI, Anthropic, Google, and Microsoft offer API-based access to high-performance “foundation” models. These companies invest heavily in training, infrastructure, and R&D. Pricing for individuals and smaller organizations is usage-based, commonly per million input tokens (e.g., $1) and per million output tokens (e.g., $4). The higher output cost reflects the greater compute required to generate text. Enterprise customers may also arrange for "provisioned throughput" or "reserved capacity" agreements, where they pay a fixed fee for a certain level of performance rather than paying per token (though these are typically reserved for large organizations with substantial AI budgets).  
 
 ### 2. Open Source Models  
-More accurately called “open weight” models since the underlying training data and source code are often unavailable, these can be downloaded and run in your own environment: on device (such as your laptop), on-premise servers, or in a private cloud.  
+More accurately called “open weight” models because the underlying training data and source code are often unavailable, these can be downloaded and run in your own environment. While some models are small enough to run on a local device like a laptop, most common use cases benefit from models that need to be hosted with GPU access, such as an on-premise server or in a private cloud. 
 
 Examples include **Meta’s Llama, Mistral, and DeepSeek**, many of which are distributed via platforms like [**Hugging Face**](https://huggingface.co/).
 
 ### 3. API Gateways  
-A newer approach is using providers like **OpenRouter, LiteLLM, or Portkey**, which act as a unified API across many models. This makes it possible to route queries based on cost, performance, or availability with automatic failover for continuity.  
+A newer approach is using providers like **OpenRouter, LiteLLM, or Portkey**, which act as a unified API across many models and providers. This single, standardized interface makes it possible to route queries in real-time based on cost, performance, or availability (including automatic failover for continuity).  
 
 ---
 
