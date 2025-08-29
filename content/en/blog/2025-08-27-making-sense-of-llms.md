@@ -10,7 +10,6 @@ profile: img/butterfly.png
 tags: ['AI Agents', 'LLMs']
 description: "How LLMs power AI agents and what to consider when choosing the right approach."
 ---
-# Making Sense of LLMs
 
 Now that we’ve covered [agents at a high level](https://rotational.io/blog/ai-agents-defined/) and [prompts](https://rotational.io/tags/prompt-engineering/) specifically, let’s move to the next component in our series: **Large Language Models (LLMs)**, a key subset of generative AI. In an agentic framework, LLMs serve as the “brain” or decision-execution component of the agent.  
 
