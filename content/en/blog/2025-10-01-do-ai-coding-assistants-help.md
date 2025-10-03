@@ -19,7 +19,7 @@ We spent three months testing two AI coding assistants across our team of six. S
 
 At the start of this year, our CTO challenged us all to try out some of the newly available AI coding tools. The promises of 10x productivity gains seemed like mostly marketing, but she wondered “could these tools accelerate us?”
 
-In June, we formalized our investigation by asking everyone to select from one of two options (Cursor and/or Copilot; some agreed to test both) and participate in a 6-month study, covering sprints 14-26 of CY2025. We weren’t aiming for research-grade rigor but wanted to capture as much data as possible, including both quantitative and qualitative measures of productivity. At the end of the year, we plan to select one of the two tools to continue paying for based on the outcomes of the study.
+In June, we formalized our investigation by asking everyone to select from one of two options (Cursor and/or Copilot; some agreed to test both, and one opted out) and participate in a 6-month study, covering sprints 14-26 of CY2025. We weren’t aiming for research-grade rigor but wanted to capture as much data as possible, including both quantitative and qualitative measures of productivity. At the end of the year, we plan to select one of the two tools to continue paying for based on the outcomes of the study.
 
 ### Quantitative Measures
 
