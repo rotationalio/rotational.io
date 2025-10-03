@@ -70,7 +70,7 @@ By Sprint 16, something interesting happened: team members began carving out spe
 
 ### Lesson Two: Riding the Reliability Rollercoaster
 
-Two months into our study, a senior engineer spoke up about something we’d all felt but couldn't quite articulate: using these tools day-to-day felt like accountability whiplash.
+Two months into our study, a senior engineer spoke up about something we’d all felt but couldn't quite articulate: using these tools day-to-day felt like "accountability whiplash."
 
 While some days everything was great, others were filled with 500 errors from overwhelmed servers. A prompt that worked yesterday would suddenly start returning dozens of bullet points instead of a tidy brief. You’d find your favorite GPT model and learn the next week that it had been deprecated (this happened more than once). There were also the elephants in everyone’s LinkedIn feed, the allegations against the builders of these tools, for misappropriating intellectual property. Several times we were alarmed to discover policies on user data retention and privacy (often buried in terms of service and obscure application settings) changing seemingly overnight.
 
