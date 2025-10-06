@@ -45,11 +45,11 @@ All interviews are captured and transcribed using the AI notetaking tool Firefli
 
 We now find ourselves at the midway point of our investigation. So far the quantitative data is not conclusive, but it is interesting.
 
-![2025 Individual Velocity and Throughput](/img/blog/2025-10-01-do-ai-coding-assistants-help/2025-metrics.png)
+![2025 Individual Velocity and Throughput](/img/blog/2025-10-01-do-ai-coding-assistants-help/individual-velocity-throughput-2025.png)
 
 Two of our participating engineers (Engineer 5 and Engineer 6 in the graph above) joined our team in 2025, and for them, we have definitely observed individual acceleration over the course of the year. While we do not attribute *all* of this acceleration to AI coding tools, they are both AI power users, so we suspect the increase in their individual velocity (points per week) and throughput (stories per week) is not simply coincidence. However, neither individual velocity nor individual throughput has changed substantially for the four veteran engineers who are participating in our study.
 
-In the group of graphs below, we compare the metrics for the team across two years. The top lefthand shows an increase in our team velocity from 2024 to 2025 (i.e. how many points we finish as a group each week), though this increase is substantially less when we consider the lower lefthand graph, which shows a much smaller (but still noticeable) increase in average velocity from 2024 to 2025 (i.e. how many points we finish each week, divided by the number of engineers). This makes sense, since part of the "acceleration" we observe in the top lefthand chart is actually the result of growing our team, and thus, our capacity.
+In the group of graphs below, we compare the metrics for the team across two years. The top lefthand shows an increase in our team velocity from 2024 to 2025 (i.e. how many points we finish as a group each week), though this increase is substantially less when we consider the lower lefthand graph, which shows a much smaller (but still noticeable) increase in average velocity from 2024 to 2025 (i.e. how many points we finish each week, divided by the number of engineers). This makes sense, since part of the "acceleration" we observe in the top lefthand chart is actually the result of growing our team, and thus, our capacity. Nonetheless, all four graphs have positive slopes.
 
 ![2024 vs 2025 Team and Average Metrics](/img/blog/2025-10-01-do-ai-coding-assistants-help/2024-vs-2025.png)
 
@@ -111,4 +111,4 @@ We learned to be more skeptical about AI; rather than assuming an LLM can defini
 
 Most importantly, we have learned that the biggest driver of productivity is leaning into human collaboration. While off-the-shelf tools are convenient, we needed a solution designed to accelerate us as a group, not just as individuals. The most valuable agents we’ve created so far address organizational friction points (e.g. helping us get from an unstructured brainstorming call to a set of clearly defined stories to pull into the next sprint). Looking ahead, we’ll be focused on tools that help us achieve more together than any one of us could alone, with or without AI.
 
-*Want to check out what our team is building?* Connect with us on [LinkedIn](https://www.linkedin.com/company/rotational/)!
+*Have suggestions for other ways we could crunch the numbers?* Connect with us on [LinkedIn](https://www.linkedin.com/company/rotational/)!
