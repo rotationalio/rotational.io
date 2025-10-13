@@ -3,8 +3,8 @@ title: "Guts, Glory, and Statistics: My Summer Internship at Rotational"
 slug: "intuition-and-statistics"
 date: "2025-07-15T15:01:46-04:00"
 draft: false
-image: img/blog/2025-07-15-intuition-and-statistics/intuition-and-statistics.png
-photo_credit: "Image created via imgflip: https://imgflip.com/memegenerator/145139900/Scooby-doo-mask-reveal"
+image: img/blog/2025-07-15-intuition-and-statistics/intuition-and-statistics.jpg
+photo_credit: Photo by [ThisisEngineering](https://unsplash.com/@thisisengineering?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/photos/woman-in-black-long-sleeve-shirt-GzDrm7SYQ0g?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 authors: ['Julie Rakitine']
 profile: img/blog/2025-07-15-intuition-and-statistics/julie-small.png
 tags: ['Statistics', 'Data Science', 'Interns']
