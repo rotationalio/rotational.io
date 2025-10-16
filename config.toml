@@ -79,8 +79,8 @@ weight = 5
 
 [[Languages.en.menu.main]]
 identifier = 'Endeavor'
-pageRef = 'endeavor'
 name = 'Product'
+url = 'https://rotational.ai'
 weight = 6
 
 [[Languages.en.menu.main]]
