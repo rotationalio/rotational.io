@@ -5,12 +5,10 @@ headertext: "LEARNING"
 type: "learning"
 headeractions:
 - action: Download AI Playbook
-  link: https://team.rotational.ai/playbook-download
+  link: https://rotational.io/pdf/the_ai_playbook_2nd_edition.pdf
   icon: fa-solid fa-book-open
 download:
 - text: Download PDF
-  link: "https://rtnl.link/me8fufQPfVb"
-- text: Download ePub
-  link: "https://rtnl.link/ha34VBLWjIb"
+  link: "https://rtnl.link/wcDwv7jWreq"
 aliases: /resources
 ---

@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="{{ with site.LanguageCode }}{{ . }}{{ else }}en-us{{ end }}">
 <head>
-  {{ block "head" . }}{{ partial "site-head.html" .}}{{ end }}
+  {{ block "head" . }}{{ partial "site-head.html" . }}{{ end }}
+  {{ block "extrahead" . }}{{ end }}
 </head>
 <body>
 
