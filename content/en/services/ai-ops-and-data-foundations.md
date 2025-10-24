@@ -43,7 +43,7 @@ contact:
   - text: Contact Us
     url: /contact
   - text: Learn About Endeavor
-    url: /endeavor
+    url: https://rotational.ai
 clients:
   tagline: Success Stories
   title: Featured Clients
