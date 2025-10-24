@@ -11,7 +11,7 @@ tags: ['AI', 'Learning Debt']
 description: "AI is making it possible to do things faster than ever. But do you really understand what you are doing? And are you missing out on opportunities to learn and grow?"
 ---
 
-Everywhere I look right now someone is either talking about how AI is magically granting everyone super powers or catalyzing society’s downward slide into a post-apocalyptic hellscape reminiscent of the movie Idiocracy. Hyperbole like that may be great for clicks and engagement but reality, as is often the case, is much more nuanced. AI use is more like a choose your own adventure book, where the small decisions we make gradually accumulate into consequences that are not always immediately apparent. The key is to make thoughtful decisions that leverage AI's capabilities without neglecting to nurture your own.
+Everywhere I look right now someone is either talking about how AI is magically granting everyone super powers or catalyzing society’s downward slide into a post-apocalyptic hellscape reminiscent of the movie Idiocracy. Hyperbole like that may be great for clicks and engagement but reality, as is often the case, is much more nuanced. I spent over 12 years in the manufacturing and consulting industries before transitioning to a Machine Learning Engineer role, and experienced the explosion of public-facing AI tools from a front row seat while completing my Master's in Applied Data Science at the University of Chicago. AI use is more like a choose your own adventure book, where the small decisions we make gradually accumulate into consequences that are not always immediately apparent. The key is to make thoughtful decisions that leverage AI's capabilities without neglecting to nurture your own.
 
 <!--more-->
 
