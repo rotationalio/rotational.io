@@ -8,7 +8,7 @@ photo_credit: "Photo Credit: Gemini 2.5 Flash Image"
 authors: ['Steve Veldman']
 profile: img/butterfly.png
 tags: ['AI', 'Learning Debt']
-description: "AI is making it possible to do things faster than ever. But do you really understand what you are doing? And are you missing out on opportunities to learn a grow?"
+description: "AI is making it possible to do things faster than ever. But do you really understand what you are doing? And are you missing out on opportunities to learn and grow?"
 ---
 
 Everywhere I look right now someone is either talking about how AI is magically granting everyone super powers or catalyzing society’s downward slide into a post-apocalyptic hellscape reminiscent of the movie Idiocracy. Hyperbole like that may be great for clicks and engagement but reality, as is often the case, is much more nuanced. AI use is more like a choose your own adventure book, where the small decisions we make gradually accumulate into consequences that are not always immediately apparent. The key is to make thoughtful decisions that leverage AI's capabilities without neglecting to nurture your own.
@@ -39,11 +39,17 @@ For example, in my role as an ML engineer, I build functionality around tools an
 
 In any of these situations, I could choose to vibe code my way through the process by writing a lengthy description of what I needed to do, asking a coding assistant to implement it in Python, and then feeding any errors back into the chat until the code “worked” (quotes intentionally sarcastic -  there is a very good chance this code would embarrass me when it came time to put it into production). 
 
-// maybe add an example of a prompt that does all the work?
-
 But as an alternative, I could start with an outline of how I think the application should be structured, write the basic code, ask a coding assistant to look up any specific syntax I'm not sure about (instead of manually searching through pages of documentation myself), and then carefully review the produced code to both learn from and critique it. 
 
-// Now give example of prompt that delegates tasks but not all decision making
+Compare:  
+`"Generate a python script to connect to a Neo4j database, execute the following queries [insert long list of queries], and export the results to a JSON file."`
+
+Against:  
+`"Review the file Neo4f_connect.py, where I have outlined a python class to manage my application's connection to a Neo4j database. Identify any missing credentials or other required connection information and add them to the instance variables in the constructor method."`  
+
+`"Now complete the stub for the establish_connection() function to correctly format the credentials according the the API specifications."`  
+
+`"In a new file named "query_examples.md" provide 3-5 examples to illustrate the structure and format of a Neo4j query, along with how to execute them using the python SDK. Include a link to the relevant pages of the official documentation."`
 
 Both of these approaches leverage AI to get the job done faster; but one abdicates my responsibility to ensure that the work is done well (if opaquely), while the other saves less time in the immediate term but ensures I get progressively better at my job and continue to develop skills that bring value to my team.
 
