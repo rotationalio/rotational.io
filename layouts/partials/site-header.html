@@ -52,7 +52,7 @@
     <div class="relative md:-mt-8 lg:-mt-28 xl:-mt-32 md:mb-10 md:z-10 md:mx-auto w-full max-w-screen-xl text-white md:px-4">
         <section class="grid sm:grid-cols-3">
             {{ range .Params.services }}
-            <a href="{{ .url }}">
+            <a href="{{ .url }}" {{ if .newTab }} target="_blank" {{ end }}>
                 <div class="{{ .style}} p-6 flex flex-col h-full">
                     <div class="mb-4">
                         <h2 class="md:text-xl font-bold">{{ .service}}</h2>

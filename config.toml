@@ -45,16 +45,16 @@ link = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.cs
 
 ## English Navigation
 [[Languages.en.menu.main]]
+identifier = 'Endeavor'
+name = 'Product'
+url = 'https://rotational.ai'
+weight = 1
+
+[[Languages.en.menu.main]]
 identifier = 'about'
 pageRef = 'about'
 name = 'About'
 url = '/about'
-weight = 1
-
-[[Languages.en.menu.main]]
-identifier = 'Services'
-pageRef = 'services'
-name = 'Services'
 weight = 2
 
 [[Languages.en.menu.main]]
@@ -78,34 +78,10 @@ name = 'Learning'
 weight = 5
 
 [[Languages.en.menu.main]]
-identifier = 'Endeavor'
-name = 'Product'
-url = 'https://rotational.ai'
-weight = 6
-
-[[Languages.en.menu.main]]
 identifier = 'Contact'
 pageRef = 'contact'
 name = 'Contact'
 weight = 7
-
-[[Languages.en.menu.main]]
-name = 'AI Assessments'
-pageRef = 'AI Assessments'
-parent = 'Services'
-weight = 1
-
-[[Languages.en.menu.main]]
-name = 'AI Product Development'
-pageRef = 'AI Product Development'
-parent = 'Services'
-weight = 2
-
-[[Languages.en.menu.main]]
-name = 'AI Ops & Data Foundations'
-pageRef = 'AI Ops and Data Foundations'
-parent = 'Services'
-weight = 3
 
 ## English Language
 [Languages.en]

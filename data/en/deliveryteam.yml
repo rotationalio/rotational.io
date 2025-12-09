@@ -1,15 +1,16 @@
 deliveryteam:
   enable: true
-  tagline: EXPERTISE YOU CAN COUNT ON
-  title: YOUR DELIVERY TEAM
+  tagline: BUILT BY AN EXPERIENCED AI ENGINEERING TEAM
+  title: REAL EXPERTISE
   description: |
-      Batman has Robin. Sherlock Holmes has Dr. Watson. You have Rotational.  
+      Endeavor was built by a world-class team. 
 
-      Our mission is to help organizations build and deploy new enterprise capabilities with generative AI and machine learning. We help companies leverage their domain expertise and data to build custom LLMs, applications, and AI systems for business impact with the goal of maximizing ROI, controlling costs, and prioritizing trust.
+      Endeavor is built by an AI engineering team with deep, practical experience. We've seen what works — and what doesn't — and our mission 
+      is to help organizations build trustworthy, high-impact AI systems that leverage their unique data and expertise aligned with their strategic and operational priorities.
   expertise:
-    - experience:  "&plus;25" 
-      text: SATISFIED <span>CLIENTS</span>
-    - experience: 50 YRS
+    - experience: 50YRS
       text: COLLECTIVE <span>EXPERIENCE</span>
+    - experience:  "&plus;25" 
+      text: CLIENTS
     - experience: "5"
       text: INDUSTRY <span>VERTICALS</span>

@@ -2,28 +2,29 @@
 date: 2023-02-09T10:21:41-06:00
 intro: WELCOME TO ROTATIONAL
 header: YOUR GO-TO AI <span>INNOVATION PARTNER</span>
-headertext: We work with enterprises to build trusted data foundations and AI solutions for sustainable business impact.
+headertext: Endeavor is our platform for building reliable, governed enterprise AI systems shaped by real engineering experience.
 headeractions:
 - action: Learn About Endeavor
   link: https://rotational.ai
 services:
-- service: STRATEGIC ADVISORY & AI ASSESSMENTS
+- service: ENDEAVOR AI SUITE
   description: |
-    Expertise to assist corporate boards and executive teams evaluate AI/ML investments that enhance efficiency, accelerate decision-making,
-    and improve customer value.
-  url: /services/ai-assessments
+    Built from real production experience, Endeavor is our AI accountability platform that gives enterprises the structure and governance needed for trustworthy AI adoption and adaptation.
+  url: https://rotational.ai
+  newTab: true
   style: bg-[#192E5B]
-- service: PRODUCT DEVELOPMENT & AI ENGINEERING
+- service: PARTNER NETWORK
   description: |
-    Know-how for product and engineering teams developing native AI/ML applications, enhancing existing products,
-    or helping companies move from proof-of-concept to new capabilities.
-  url: /services/ai-product-development
+    Join our Partner Network to deliver faster, more reliable AI outcomes for your clients using Endeavor. We give consultancies 
+    the platform, expertise, and support to scale AI acceleration services with confidence.
+  url: https://rotational.ai/partners
+  newTab: true
   style: bg-[#EC5012]
-- service: AI OPS & DATA FOUNDATIONS
+- service: OPEN INNOVATION
   description: |
-    Support for technical and platform teams to set up or tune their infrastructure, processes, data pipelines and
-    governance policies to compete in the AI-accelerated economy.
-  url: /services/ai-ops-and-data-foundations
+    We champion open source because it enables open innovation and long-term reliability. Browse the projects we’ve built and maintained across the ecosystem.
+  url: /opensource
+  newTab: false
   style: bg-[#192E5B]
 ---
 
