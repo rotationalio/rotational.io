@@ -15,4 +15,4 @@ social :
 aliases: /bio/chris-okuda
 ---
 
-Insert Bio Here
+Christopher Okuda is a backend software engineer with seven years of experience working in Python, Go, and SQL. His expertise has been in big data ingestion, transformation, and processing, and in IoT equipment optimization algorithms. He holds a degree in Computer Science from the US Naval Academy, and a mathematics degree from the University of Hawaii. In his spare time, he enjoys woodworking and sim-racing in classic cars.
