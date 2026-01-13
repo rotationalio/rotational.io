@@ -4,29 +4,32 @@
 Founder/CEO: Benjamin Bengfort
 Bio: https://rotational.io/authors/benjamin-bengfort
 
-Founder/CTO: Rebecca Bilbro
-Bio: https://rotational.io/authors/rebecca-bilbro
-
 Founder/COO: Edwin Schmierer
 Bio: https://rotational.io/authors/edwin-schmierer
 
-Distributed Systems Engineer: Patrick Deziel
-Bio: https://rotational.io/authors/patrick-deziel
-
-Jr Distributed Systems Engineer: Danielle Maxwell
-Bio: https://rotational.io/authors/danielle-maxwell
-
-Distributed Systems Engineer: Prema Roman
+Director of Engineering: Prema Roman
 Bio: https://rotational.io/authors/prema-roman
 
-Project Management Support: Beci Lambrecht
+AI/ML Engineer: Patrick Deziel
+Bio: https://rotational.io/authors/patrick-deziel
+
+Software Engineer: Danielle Maxwell
+Bio: https://rotational.io/authors/danielle-maxwell
+
+Lead AI/ML Engineer: Steve Veldman
+Bio: https://rotational.io/authors/steve-veldman
+
+Project Management: Beci Lambrecht
 Bio: https://rotational.io/authors/beci-lambrecht
 
 Business Development Manager: Ryan Low
 Bio: https://rotational.io/authors/ryan-low
 
-Head of Growth: Amanda Stanley
-Bio: https://rotational.io/authors/amanda-stanley
+Software Engineer: Chris Okuda
+Bio: https://rotational.io/authors/chris-okuda
+
+Software Engineer: Devon Slonaker
+Bio: https://rotational.io/authors/devon-slonaker
 
 Technical Advisor: Pete Keleher
 Bio: https://rotational.io/authors/pete-keleher
@@ -40,29 +43,11 @@ Bio: https://rotational.io/authors/aatmaj-janardanan
 Summer 2022 Intern: Natasha White
 Bio: https://rotational.io/authors/natasha-white
 
-Open Source Contributor: Nabiha Naqvie
-Bio: https://rotational.io/authors/nabiha-naqvie
-
-Open Source Contributor: Karen Belita
-Bio: https://rotational.io/authors/karen-belita
-
-Open Source Contributor: Daniel Sollis
-Bio: https://rotational.io/authors/daniel-sollis
-
-Open Source Contributor: Cletus Razakou
-Bio: https://rotational.io/authors/cletus-razakou
-
-Open Source Contributor: Elysee Bleu
-Bio: https://rotational.io/authors/elysee-bleu
-
-Open Source Contributor: Tianshu Li
-Bio: https://rotational.io/authors/tianshu-li
-
 
 
 /* SITE */
 
-Last update: 2025-12-09
+Last update: 2026-01-13
 Site name: Rotational Labs
 URL: https://rotational.io/
 CMS: Hugo
