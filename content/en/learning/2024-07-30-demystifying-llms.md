@@ -1,7 +1,9 @@
 ---
 title: "Demystifying Hugging Face Models & How to Leverage Them For Business Impact"
 slug: "demystifying-hugging-face-models"
-aliases: /resources/demystifying-llms
+aliases: 
+- /resources/demystifying-llms
+- /resources/demystifying-hugging-face-models
 draft: false
 event_date: "2024-07-30T13:00:00-05:00"
 image: "img/resources/webinars/2024-07-30-demystifying-llms/demystifying-hugging-face-models.webp"
@@ -15,5 +17,4 @@ audio_link:
 categories: ['Video']
 presenters: ['Prema Roman', 'Patrick Deziel']
 topics: ['LLMs', 'AI/ML', 'Hugging Face']
-aliases: /resources/demystifying-hugging-face-models
 ---

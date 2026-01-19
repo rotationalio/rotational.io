@@ -20,7 +20,7 @@ As I walked around the convention center, it was obvious that RenderATL, like th
 
 This year almost 5,000 people were in attendance. In addition to the main stage, there were six stages graced by over 100 amazing speakers. Though I didn't attend the workshops, there were several to choose from. The feedback I heard from those who did have a chance to go was positive.
 
-{{< twitter user="RenderATL" id="1803886466809856054" >}}
+{{< x user="RenderATL" id="1803886466809856054" >}}
 
 This year's conference schedule featured an array of AI talks. Considering what we do here at Rotational Labs, this was a fantastic opportunity for me to learn what organizations truly think about AI and how other developers are working with AI tools.
 
