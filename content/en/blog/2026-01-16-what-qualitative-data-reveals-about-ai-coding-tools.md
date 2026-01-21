@@ -4,7 +4,7 @@ slug: "what-qualitative-data-reveals-about-ai-coding-tools"
 date: "2026-01-16T06:57:40-05:00"
 draft: false
 image: img/blog/2026-01-16-what-qualitative-data-reveals-about-ai-coding-tools/working-with-agents.webp
-photo_credit: "Image generated using GPT-5"
+photo_credit: "AI-generated image using Canva Magic Media"
 authors: ['Rebecca Bilbro', 'Beci Lambrecht']
 profile: img/butterfly.png
 tags: ['AI Tools', 'Project Management']
