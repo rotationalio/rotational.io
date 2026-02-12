@@ -3,7 +3,7 @@ title: "Why Your AI Prompts Aren't Working: The Gap Between Intention and Output
 slug: "why-ai-prompts-arent-working"
 date: "2026-02-12T09:44:50-05:00"
 draft: false
-image: img/blog/2026-12-12-why-ai-prompts-arent-working/frustrated-otter.png
+image: img/blog/2026-02-12-why-ai-prompts-arent-working/frustrated-otter.png
 photo_credit: "Image generated using GPT-5"
 authors: ['Danielle Maxwell']
 profile: img/team/danielle-maxwell.png
