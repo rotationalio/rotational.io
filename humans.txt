@@ -47,7 +47,7 @@ Bio: https://rotational.io/authors/natasha-white
 
 /* SITE */
 
-Last update: 2026-02-12
+Last update: 2026-02-13
 Site name: Rotational Labs
 URL: https://rotational.io/
 CMS: Hugo
