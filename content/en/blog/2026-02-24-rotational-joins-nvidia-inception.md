@@ -1,21 +1,21 @@
 ---
 title: "Rotational Joins NVIDIA Inception to Accelerate Enterprise AI Accountability"
 slug: "rotational-joins-nvidia-inception"
-date: "2025-02-24T09:00:00-05:00"
+date: "2026-02-24T09:00:00-05:00"
 draft: true
-image: img/blog/2026-02-26-rotational-joins-nvidia-inception/r8l-nvidia-workshop.png
+image: img/blog/2026-02-24-rotational-joins-nvidia-inception/r8l-nvidia-workshop.png
 photo_credit: "Image generated using GPT-5"
 authors: ['Edwin Schmierer']
 profile: img/team/edwin-schmierer.png
 tags: ['AI', 'NVIDIA', 'Endeavor', 'Enterprise AI', 'Partnerships']
 description: "Rotational Labs has joined NVIDIA Inception, strengthening Endeavor's ability to deliver governed, enterprise-grade AI with deeper technical access, cost advantages, and expanded development resources."
 ---
-We're pleased to share that **Rotational Labs has joined the NVIDIA Inception program**. This milestone reflects the progress of our product and engineering teams in building Endeavor, our AI accountability and governance platform for mid-market enterprises.
+We're pleased to share that **Rotational Labs has joined the NVIDIA Inception program**. This milestone reflects the progress of our product and engineering teams in building [Endeavor](https://rotational.ai), our AI accountability and governance platform for mid-market enterprises.
 
-NVIDIA Inception **supports startups developing durable, high-impact AI products**. For us, it reinforces our mission: **helping organizations adopt and deploy AI systems responsibly, with visibility and control built in from the start.**
+[NVIDIA Inception](https://www.nvidia.com/en-us/stInception) **supports startups developing durable, high-impact AI products**. For us, it reinforces our mission: **helping organizations adopt and deploy AI systems responsibly, with visibility and control built in from the start.**
 <!--more-->
 
-{{< figure src="img/blog/r8l-nvidia.png" alt="Rotational Labs joins NVIDIA Inception Program" >}}
+{{< figure src="/img/blog/r8l-nvidia.png" alt="Rotational Labs joins NVIDIA Inception Program" >}}
 
 
 ## What This Means for Customers
@@ -32,7 +32,7 @@ The result is improved performance, better economics, and sustained competitiven
 
 NVIDIA's ecosystem extends well beyond GPUs. The company develops and releases open models, software development kits, and implementation tools that support real-world AI systems.
 
-Through Inception, we gain direct access to these resources. We are particularly interested in efficient **small language models and vision models suited to targeted enterprise use cases**, where performance, cost control, and reliability matter more than scale alone.
+Through Inception, we gain direct access to these resources. We are particularly interested in efficient and open **[small language and vision models suited to targeted enterprise use cases](https://www.nvidia.com/en-us/ai-data-science/foundation-models/nemotron/)**, where performance, cost control, and reliability matter more than scale alone.
 
 These capabilities complement Endeavor's focus on governed deployment, evaluation, and operational oversight.
 
@@ -50,4 +50,4 @@ NVIDIA is setting the pace for enterprise AI. Our participation in the NVIDIA In
 
 ---
 
-*© 2025 NVIDIA and the NVIDIA logo are trademarks and/or registered trademarks of NVIDIA Corporation in the U.S. and other countries.*
+*© 2026 NVIDIA and the NVIDIA logo are trademarks and/or registered trademarks of NVIDIA Corporation in the U.S. and other countries.*
