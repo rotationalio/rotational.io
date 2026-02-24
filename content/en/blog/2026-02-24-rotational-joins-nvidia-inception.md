@@ -3,7 +3,7 @@ title: "Rotational Joins NVIDIA Inception to Accelerate Enterprise AI Accountabi
 slug: "rotational-joins-nvidia-inception"
 date: "2026-02-24T09:00:00-05:00"
 draft: true
-image: img/blog/2026-02-24-rotational-joins-nvidia-inception/r8l-nvidia-workshop.png
+image: img/blog/2026-02-26-rotational-joins-nvidia-inception/r8l-nvidia-workshop.png
 photo_credit: "Image generated using GPT-5"
 authors: ['Edwin Schmierer']
 profile: img/team/edwin-schmierer.png
@@ -12,7 +12,7 @@ description: "Rotational Labs has joined NVIDIA Inception, strengthening Endeavo
 ---
 We're pleased to share that **Rotational Labs has joined the NVIDIA Inception program**. This milestone reflects the progress of our product and engineering teams in building [Endeavor](https://rotational.ai), our AI accountability and governance platform for mid-market enterprises.
 
-[NVIDIA Inception](https://www.nvidia.com/en-us/stInception) **supports startups developing durable, high-impact AI products**. For us, it reinforces our mission: **helping organizations adopt and deploy AI systems responsibly, with visibility and control built in from the start.**
+[NVIDIA Inception](https://www.nvidia.com/en-us/startups) **supports startups developing durable, high-impact AI products**. For us, it reinforces our mission: **helping organizations adopt and deploy AI systems responsibly, with visibility and control built in from the start.**
 <!--more-->
 
 {{< figure src="/img/blog/r8l-nvidia.png" alt="Rotational Labs joins NVIDIA Inception Program" >}}
