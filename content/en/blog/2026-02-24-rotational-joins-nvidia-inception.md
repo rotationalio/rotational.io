@@ -2,7 +2,7 @@
 title: "Rotational Joins NVIDIA Inception to Accelerate Enterprise AI Accountability"
 slug: "rotational-joins-nvidia-inception"
 date: "2026-02-24T09:00:00-05:00"
-draft: true
+draft: false
 image: img/blog/2026-02-26-rotational-joins-nvidia-inception/r8l-nvidia-workshop.png
 photo_credit: "Image generated using GPT-5"
 authors: ['Edwin Schmierer']
@@ -16,7 +16,6 @@ We're pleased to share that **Rotational Labs has joined the NVIDIA Inception pr
 <!--more-->
 
 {{< figure src="/img/blog/r8l-nvidia.png" alt="Rotational Labs joins NVIDIA Inception Program" >}}
-
 
 ## What This Means for Customers
 
