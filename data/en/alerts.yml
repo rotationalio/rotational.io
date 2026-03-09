@@ -1,8 +1,9 @@
 ############################# Ensign Data ###################################
 notice:
-  enable: false
-  notice: "Join us for our Engineering AI Experiments with Intent & Business Impact Webinar on June 27"
+  enable: true
+  notice: "Rotational Labs joins the NVIDIA Inception program."
   action:
-    text: Learn More
-    link: "https://r8l.co/RG8tV7KWC8n"
-  expires: 2025-06-27T13:00:00Z
+    text: "See what this means for Endeavor customers"
+    icon: "fa-solid fa-arrow-right-long"
+    link: "https://rotational.io/blog/rotational-joins-nvidia-inception/"
+  expires: 2026-12-27T13:00:00Z
