@@ -9,8 +9,11 @@
     {{ .notice | markdownify }}
     {{ if .action }}
     <span class="px-2">|</span>
-    <a href="{{ .action.link }}" target="_blank" class="underline hover:text-slate-400">
-      {{ .action.text }}
+    <a href="{{ .action.link }}" target="_blank" class="inline-flex items-center gap-x-2 hover:text-slate-400">
+      <span class="underline">{{ .action.text }}</span>
+      {{ if .action.icon }}
+      <i class="{{ .action.icon }}"></i>
+      {{ end }}
     </a>
     {{ end }}
   </p>
