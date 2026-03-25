@@ -2,7 +2,7 @@
 title: "Prompt Injection, Jailbreaking, and the Risk Every AI Deployment Inherits"
 slug: "prompt-injection-jailbreaking-ai-risk"
 date: "2026-03-24T09:00:00-05:00"
-draft: true
+draft: false
 image: img/blog/2026-03-24-prompt-injection-jailbreaking-ai-risk/otter-guardian.png
 photo_credit: "Image generated using GPT-5"
 authors: ['Edwin Schmierer']
