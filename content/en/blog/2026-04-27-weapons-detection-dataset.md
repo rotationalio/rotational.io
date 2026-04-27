@@ -3,7 +3,7 @@ title: "Rotational Labs' Very Own Weapons Detection Dataset"
 slug: "weapons-detection-dataset"
 date: "2026-04-23T09:00:00-05:00"
 draft: false
-image: img/blog/2026-04-27-weapons-detection-dataset/otter-security-camera.png
+image: img/blog/2026-04-27-weapons-detection-dataset/otter-security-cameras.png
 photo_credit: "Image generated using Nano Banana"
 authors: ['Steve Veldman']
 profile: img/team/steve-veldman.png
