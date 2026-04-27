@@ -1,9 +1,9 @@
 ---
 title: "Beyond the Chatbox: Why the Future of AI is Purpose-Built Task-Driven Applications"
 slug: "beyond-the-chatbox"
-date: "2026-04-28T08:53:01-04:00"
-draft: true
-image: img/blog/2026-04-22-beyond-the-chatbox/angry-otter.webp
+date: "2026-04-27T08:53:01-04:00"
+draft: false
+image: img/blog/2026-04-27-beyond-the-chatbox/angry-otter.webp
 photo_credit: "Image generated using Google Gemini"
 authors: ['Prema Roman']
 profile: img/team/prema-roman.png
@@ -14,7 +14,7 @@ description: "Building purpose-built, task-driven applications brings back the r
 ChatGPT ruined it for application developers. Contrary to the hype, building and deploying AI applications has become harder, not easier. The percentage of companies that have seen ROI in their AI investments is still low. Find out why and what you can do to be among the few who have become successful.
 
 <!--more-->
-ChatGPT stormed on to the scene by providing a chat interface in which users can ask random questions and get meaningful answers within seconds. Its power was undeniable.
+ChatGPT stormed on to the scene by providing a chat interface in which users can ask questions and get meaningful answers within seconds. Its power was undeniable.
 
 OpenAI’s user growth skyrocketed. However, ChatGPT fostered a mindset that a user can enter any random query into a chatbox and get an accurate answer 100% of the time. Many discovered quickly that the reality does not meet expectations and as a result, there were several instances where companies that followed this model had many failures that caused financial and reputational damage.
 
