@@ -7,7 +7,7 @@ designation : Founder/COO
 field: The Business
 social :
   - name : "linkedin"
-    link: 'https://www.linkedin.com/in//edwinschmierer/'
+    link: 'https://www.linkedin.com/in/edwinschmierer/'
     icon: 'fa-linkedin-in'
   - name : "twitter" # themify icon pack : https://themify.me/themify-icons
     link : "https://twitter.com/ESchmierer"
