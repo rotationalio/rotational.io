@@ -1,6 +1,6 @@
 ############################# Ensign Data ###################################
 notice:
-  enable: true
+  enable: false
   notice: "Skip the hype. See a real AI agent build June 26."
   action:
     text: "Register now"
