@@ -1,6 +1,6 @@
 ############################# Ensign Data ###################################
 notice:
-  enable: true
+  enable: false
   notice: "Join our Fall seminar series to learn how to turn AI models into reliable business systems."
   action:
     text: "Register now"
